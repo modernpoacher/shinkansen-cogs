@@ -123,8 +123,8 @@ export default class Input extends Component {
       (props.label !== this.props.label) ||
       (props.value !== this.props.value) ||
       (props.required !== this.props.required) ||
-      (props.placeholder !== this.props.placeholder) ||
-      (props.description !== this.props.description)
+      (props.disabled !== this.props.disabled) ||
+      (props.placeholder !== this.props.placeholder)
     )
   }
 
