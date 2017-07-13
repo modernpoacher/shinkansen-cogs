@@ -2,6 +2,7 @@
  * Radio component
  */
 import React from 'react'
+import PropTypes from 'prop-types'
 import Input from '~/src/input'
 
 export default class Radio extends Input {
@@ -9,36 +10,24 @@ export default class Radio extends Input {
     return 'radio'
   }
 
-  getLabel () {
-    const {
-      id,
-      label
-    } = this.props
-
-    return (
-      <label htmlFor={id} className={this.getLabelClassName()}>
-        {label}
-        {this.getRequired()}
-      </label>
-    )
+  getId () {
+    return this.props.id
   }
 
   getInput () {
     const {
-      id,
       name,
-      value,
-      required,
-      checked
+      value
     } = this.props
 
     return (
       <input
-        id={id}
+        id={this.getId()}
         name={name}
         defaultValue={value}
-        required={required}
         defaultChecked={checked}
+        required={this.getRequired()}
+        disabled={this.getDisabled()}
         type='radio'
         className={this.getInputClassName()}
         ref={this.setRef}
@@ -49,5 +38,5 @@ export default class Radio extends Input {
 
 Radio.propTypes = {
   ...Input.propTypes,
-  id: React.PropTypes.string.isRequired
+  id: PropTypes.string.isRequired
 }

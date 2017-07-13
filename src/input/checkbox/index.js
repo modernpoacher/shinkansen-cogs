@@ -15,7 +15,6 @@ export default class Checkbox extends Input {
 
   getInput () {
     const {
-      id,
       name,
       value,
       required,
@@ -23,18 +22,17 @@ export default class Checkbox extends Input {
     } = this.props
 
     return (
-      <div className='checkbox-shell'>
-        <input
-          id={id || name}
-          name={name}
-          defaultValue={value}
-          required={required}
-          defaultChecked={checked}
-          className={this.getInputClassName()}
-          type='checkbox'
-          ref={this.setRef}
-        />
-      </div>
+      <input
+        id={this.getId()}
+        name={name}
+        defaultValue={value}
+        defaultChecked={checked}
+        required={this.getRequired()}
+        disabled={this.getDisabled()}
+        className={this.getInputClassName()}
+        type='checkbox'
+        ref={this.setRef}
+      />
     )
   }
 }

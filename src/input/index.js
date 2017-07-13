@@ -2,14 +2,18 @@
  * Input component
  */
 import React, { Component } from 'react'
-import classNames from 'src/classNames'
+import PropTypes from 'prop-types'
 
 export default class Input extends Component {
   state = {}
 
   getRef = () => this.input
   setRef = (ref) => {
-    this.input = ref
+    if (ref) {
+      this.input = ref
+    } else {
+      delete this.input
+    }
   }
 
   validate = () => {
@@ -32,7 +36,13 @@ export default class Input extends Component {
   }
 
   getLabelClassName () {
-    return 'label'
+    const {
+      required
+    } = this.props
+
+    return (required)
+      ? 'label required'
+      : 'label'
   }
 
   getInputClassName () {
@@ -43,46 +53,60 @@ export default class Input extends Component {
     return 'shinkansen-cogs'
   }
 
+  getRequired () {
+    return this.props.required
+  }
+
+  getDisabled () {
+    return this.props.disabled
+  }
+
   getValue () {
     return this.input.value
   }
 
   getLabel () {
     const {
-      id,
-      name,
-      label,
-      required
+      label
     } = this.props
 
     return (
-      <label htmlFor={id || name} className={this.getLabelClassName()}>
-        <span>{label}</span>
-        {(required) ? <span className='required'>&nbsp;*</span> : false}
+      <label htmlFor={this.getId()} className={this.getLabelClassName()}>
+        <span class='text-content'>
+          {label}
+        </span>
       </label>
     )
   }
 
   getInput () {
     const {
-      id,
       name,
-      value,
-      required
+      value
     } = this.props
 
     return (
       <input
-        id={id || name}
+        id={this.getId()}
         name={name}
         defaultValue={value}
-        required={required}
+        required={this.getRequired()}
+        disabled={this.getDisabled()}
         className={this.getInputClassName()}
         type='text'
         placeholder={this.getPlaceholder()}
         ref={this.setRef}
       />
     )
+  }
+
+  getId () {
+    const {
+      id,
+      name
+    } = this.props
+
+    return id || name
   }
 
   getPlaceholder () {
@@ -117,14 +141,14 @@ export default class Input extends Component {
 }
 
 Input.propTypes = {
-  id: React.PropTypes.string,
-  name: React.PropTypes.string.isRequired,
-  label: React.PropTypes.string,
-  value: React.PropTypes.string,
+  id: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  label: PropTypes.string,
+  value: PropTypes.string,
   required: React.PropTypes.bool,
-  placeholder: React.PropTypes.string,
-  description: React.PropTypes.string,
-  validator: React.PropTypes.func
+  placeholder: PropTypes.string,
+  description: PropTypes.string,
+  validator: PropTypes.func
 }
 
 Input.defaultProps = {

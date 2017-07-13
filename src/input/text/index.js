@@ -11,18 +11,17 @@ export default class Text extends Input {
 
   getInput () {
     const {
-      id,
       name,
-      value,
-      required
+      value
     } = this.props
 
     return (
       <input
-        id={id || name}
+        id={this.getId()}
         name={name}
         defaultValue={value}
-        required={required}
+        required={this.getRequired()}
+        disabled={this.getDisabled()}
         className={this.getInputClassName()}
         placeholder={this.getPlaceholder()}
         type='text'
