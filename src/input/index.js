@@ -1,8 +1,6 @@
 /**
  * Input component
- *
-*/
-
+ */
 import React, { Component } from 'react'
 import classNames from 'src/classNames'
 
