@@ -104,14 +104,6 @@ export default class Input extends Component {
     return id || name
   }
 
-  getPlaceholder () {
-    const { placeholder } = this.props
-
-    if (placeholder) {
-      return placeholder
-    }
-  }
-
   shouldComponentUpdate (props) {
     return (
       (props.id !== this.props.id) ||
