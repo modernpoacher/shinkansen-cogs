@@ -9,6 +9,6 @@
     "transform-class-properties",
     "transform-object-rest-spread",
     "transform-react-jsx",
-    "babel-plugin-root-import"
+    "root-import"
   ]
 }

@@ -6,13 +6,16 @@ import Input from '~/src/input'
 
 export default class Email extends Input {
   getInputClassName () {
-    return 'email'
+    return `${super.getInputClassName()} email`
   }
 
   getInput () {
     const {
       name,
-      value
+      value,
+      required,
+      disabled,
+      placeholder
     } = this.props
 
     return (
@@ -20,10 +23,10 @@ export default class Email extends Input {
         id={this.getId()}
         name={name}
         defaultValue={value}
-        required={this.getRequired()}
-        disabled={this.getDisabled()}
+        required={required}
+        disabled={disabled}
+        placeholder={placeholder}
         className={this.getInputClassName()}
-        placeholder={this.getPlaceholder()}
         type='email'
         ref={this.setRef}
       />

@@ -6,13 +6,15 @@ import Input from '~/src/input'
 
 export default class Select extends Input {
   getInputClassName () {
-    return 'select'
+    return `${super.getInputClassName()} select`
   }
 
   getInput () {
     const {
       name,
-      value
+      value,
+      required,
+      disabled
     } = this.props
 
     return (
@@ -20,11 +22,9 @@ export default class Select extends Input {
         id={this.getId()}
         name={name}
         defaultValue={value}
-        required={this.getRequired()}
-        disabled={this.getDisabled()}
+        required={required}
+        disabled={disabled}
         className={this.getInputClassName()}
-        placeholder={this.getPlaceholder()}
-        type='text'
         ref={this.setRef}
       />
     )

@@ -53,14 +53,6 @@ export default class Input extends Component {
     return 'shinkansen-cogs'
   }
 
-  getRequired () {
-    return this.props.required
-  }
-
-  getDisabled () {
-    return this.props.disabled
-  }
-
   getValue () {
     return this.input.value
   }
@@ -72,7 +64,7 @@ export default class Input extends Component {
 
     return (
       <label htmlFor={this.getId()} className={this.getLabelClassName()}>
-        <span class='text-content'>
+        <span className='text-content'>
           {label}
         </span>
       </label>
@@ -82,7 +74,10 @@ export default class Input extends Component {
   getInput () {
     const {
       name,
-      value
+      value,
+      required,
+      disabled,
+      placeholder
     } = this.props
 
     return (
@@ -90,11 +85,11 @@ export default class Input extends Component {
         id={this.getId()}
         name={name}
         defaultValue={value}
-        required={this.getRequired()}
-        disabled={this.getDisabled()}
+        required={required}
+        disabled={disabled}
+        placeholder={placeholder}
         className={this.getInputClassName()}
         type='text'
-        placeholder={this.getPlaceholder()}
         ref={this.setRef}
       />
     )
@@ -145,7 +140,8 @@ Input.propTypes = {
   name: PropTypes.string.isRequired,
   label: PropTypes.string,
   value: PropTypes.string,
-  required: React.PropTypes.bool,
+  required: PropTypes.bool,
+  disabled: PropTypes.bool,
   placeholder: PropTypes.string,
   description: PropTypes.string,
   validator: PropTypes.func
@@ -155,6 +151,7 @@ Input.defaultProps = {
   label: String.fromCharCode(32),
   value: '',
   required: false,
+  disabled: false,
   placeholder: '',
   description: '',
   validator: () => null

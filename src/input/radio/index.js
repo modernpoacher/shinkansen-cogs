@@ -7,7 +7,7 @@ import Input from '~/src/input'
 
 export default class Radio extends Input {
   getInputClassName () {
-    return 'radio'
+    return `${super.getInputClassName()} radio`
   }
 
   getId () {
@@ -17,7 +17,10 @@ export default class Radio extends Input {
   getInput () {
     const {
       name,
-      value
+      value,
+      checked,
+      required,
+      disabled
     } = this.props
 
     return (
@@ -26,10 +29,10 @@ export default class Radio extends Input {
         name={name}
         defaultValue={value}
         defaultChecked={checked}
-        required={this.getRequired()}
-        disabled={this.getDisabled()}
-        type='radio'
+        required={required}
+        disabled={disabled}
         className={this.getInputClassName()}
+        type='radio'
         ref={this.setRef}
       />
     )

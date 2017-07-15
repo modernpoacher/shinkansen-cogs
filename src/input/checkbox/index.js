@@ -6,7 +6,7 @@ import Input from '~/src/input'
 
 export default class Checkbox extends Input {
   getInputClassName () {
-    return 'checkbox'
+    return `${super.getInputClassName()} checkbox`
   }
 
   getValue () {
@@ -17,8 +17,9 @@ export default class Checkbox extends Input {
     const {
       name,
       value,
+      checked,
       required,
-      checked
+      disabled
     } = this.props
 
     return (
@@ -27,8 +28,8 @@ export default class Checkbox extends Input {
         name={name}
         defaultValue={value}
         defaultChecked={checked}
-        required={this.getRequired()}
-        disabled={this.getDisabled()}
+        required={required}
+        disabled={disabled}
         className={this.getInputClassName()}
         type='checkbox'
         ref={this.setRef}
