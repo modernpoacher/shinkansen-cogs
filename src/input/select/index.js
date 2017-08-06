@@ -5,16 +5,21 @@ import React from 'react'
 import Input from '~/src/input'
 
 export default class Select extends Input {
+  getLabelClassName () {
+    return `${super.getLabelClassName()} select`
+  }
+
   getInputClassName () {
     return `${super.getInputClassName()} select`
   }
 
-  getInput () {
+  renderInput () {
     const {
       name,
       value,
       required,
-      disabled
+      disabled,
+      readOnly
     } = this.props
 
     return (
@@ -24,6 +29,7 @@ export default class Select extends Input {
         defaultValue={value}
         required={required}
         disabled={disabled}
+        readOnly={readOnly}
         className={this.getInputClassName()}
         ref={this.setRef}
       />

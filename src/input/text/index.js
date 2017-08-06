@@ -5,16 +5,21 @@ import React from 'react'
 import Input from '~/src/input'
 
 export default class Text extends Input {
+  getLabelClassName () {
+    return `${super.getLabelClassName()} text`
+  }
+
   getInputClassName () {
     return `${super.getInputClassName()} text`
   }
 
-  getInput () {
+  renderInput () {
     const {
       name,
       value,
       required,
       disabled,
+      readOnly,
       placeholder
     } = this.props
 
@@ -25,6 +30,7 @@ export default class Text extends Input {
         defaultValue={value}
         required={required}
         disabled={disabled}
+        readOnly={readOnly}
         placeholder={placeholder}
         className={this.getInputClassName()}
         type='text'

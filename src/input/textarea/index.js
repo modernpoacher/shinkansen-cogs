@@ -5,16 +5,21 @@ import React from 'react'
 import Input from '~/src/input'
 
 export default class Textarea extends Input {
-  getInputClassName () {
-    return `${super.getInputClassName()} texarea`
+  getLabelClassName () {
+    return `${super.getLabelClassName()} textarea`
   }
 
-  getInput () {
+  getInputClassName () {
+    return `${super.getInputClassName()} textarea`
+  }
+
+  renderInput () {
     const {
       name,
       value,
       required,
       disabled,
+      readOnly,
       placeholder
     } = this.props
 
@@ -25,6 +30,7 @@ export default class Textarea extends Input {
         defaultValue={value}
         required={required}
         disabled={disabled}
+        readOnly={readOnly}
         placeholder={placeholder}
         className={this.getInputClassName()}
         ref={this.setRef}

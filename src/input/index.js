@@ -4,6 +4,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
+import classNames from 'classnames'
+
 export default class Input extends Component {
   state = {}
 
@@ -25,74 +27,34 @@ export default class Input extends Component {
     return (error === null)
   }
 
-  getError () {
-    const { error } = this.state
-
-    if (error) {
-      return (
-        <p>{error}</p>
-      )
-    }
-  }
-
   getLabelClassName () {
     const {
-      required
+      required,
+      disabled,
+      readOnly
     } = this.props
 
-    return (required)
-      ? 'label required'
-      : 'label'
+    return `label ${classNames({ required, disabled, readOnly })}`
   }
 
   getInputClassName () {
-    return 'input'
+    const {
+      required,
+      disabled,
+      readOnly
+    } = this.props
+
+    return `input ${classNames({ required, disabled, readOnly })}`
   }
 
   getClassName () {
-    return 'shinkansen-cogs'
+    return 'cog'
   }
 
   getValue () {
-    return this.input.value
-  }
+    const { value } = this.getRef()
 
-  getLabel () {
-    const {
-      label
-    } = this.props
-
-    return (
-      <label htmlFor={this.getId()} className={this.getLabelClassName()}>
-        <span className='text-content'>
-          {label}
-        </span>
-      </label>
-    )
-  }
-
-  getInput () {
-    const {
-      name,
-      value,
-      required,
-      disabled,
-      placeholder
-    } = this.props
-
-    return (
-      <input
-        id={this.getId()}
-        name={name}
-        defaultValue={value}
-        required={required}
-        disabled={disabled}
-        placeholder={placeholder}
-        className={this.getInputClassName()}
-        type='text'
-        ref={this.setRef}
-      />
-    )
+    return value
   }
 
   getId () {
@@ -111,17 +73,92 @@ export default class Input extends Component {
       (props.value !== this.props.value) ||
       (props.required !== this.props.required) ||
       (props.disabled !== this.props.disabled) ||
+      (props.readOnly !== this.props.readOnly) ||
       (props.placeholder !== this.props.placeholder)
     )
   }
 
   handleChange = () => this.validate()
 
+  renderLabelTextContent () {
+    const {
+      label
+    } = this.props
+
+    if (label) {
+      return (
+        <span className='text-content'>
+          {label}
+        </span>
+      )
+    }
+  }
+
+  renderLabelRequireText () {
+    const {
+      required
+    } = this.props
+
+    if (required) {
+      return (
+        <span className='require-text'>
+          {String.fromCharCode(42)}
+        </span>
+      )
+    }
+  }
+
+  renderError () {
+    const { error } = this.state
+
+    if (error) {
+      return (
+        <p>{error}</p>
+      )
+    }
+  }
+
+  renderLabel () {
+    return (
+      <label htmlFor={this.getId()} className={this.getLabelClassName()}>
+        {this.renderLabelTextContent()}
+        {this.renderLabelRequireText()}
+      </label>
+    )
+  }
+
+  renderInput () {
+    const {
+      name,
+      value,
+      required,
+      disabled,
+      readOnly,
+      placeholder
+    } = this.props
+
+    return (
+      <input
+        id={this.getId()}
+        name={name}
+        defaultValue={value}
+        required={required}
+        disabled={disabled}
+        readOnly={readOnly}
+        placeholder={placeholder}
+        className={this.getInputClassName()}
+        type='text'
+        ref={this.setRef}
+      />
+    )
+  }
+
   render () {
     return (
       <div className={this.getClassName()} onChange={this.handleChange}>
-        {this.getLabel()}
-        {this.getInput()}
+        {this.renderLabel()}
+        {this.renderInput()}
+        {this.renderError()}
       </div>
     )
   }
@@ -134,17 +171,14 @@ Input.propTypes = {
   value: PropTypes.string,
   required: PropTypes.bool,
   disabled: PropTypes.bool,
+  readOnly: PropTypes.bool,
   placeholder: PropTypes.string,
-  description: PropTypes.string,
   validator: PropTypes.func
 }
 
 Input.defaultProps = {
-  label: String.fromCharCode(32),
-  value: '',
   required: false,
   disabled: false,
-  placeholder: '',
-  description: '',
+  readOnly: false,
   validator: () => null
 }

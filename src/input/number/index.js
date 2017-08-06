@@ -1,16 +1,16 @@
 /**
- * Password component
+ * Text component
  */
 import React from 'react'
 import Input from '~/src/input'
 
-export default class Password extends Input {
+export default class Number extends Input {
   getLabelClassName () {
-    return `${super.getLabelClassName()} password`
+    return `${super.getLabelClassName()} number`
   }
 
   getInputClassName () {
-    return `${super.getInputClassName()} password`
+    return `${super.getInputClassName()} number`
   }
 
   renderInput () {
@@ -33,7 +33,7 @@ export default class Password extends Input {
         readOnly={readOnly}
         placeholder={placeholder}
         className={this.getInputClassName()}
-        type='password'
+        type='number'
         ref={this.setRef}
       />
     )

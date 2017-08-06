@@ -5,21 +5,28 @@ import React from 'react'
 import Input from '~/src/input'
 
 export default class Checkbox extends Input {
+  getLabelClassName () {
+    return `${super.getLabelClassName()} checkbox`
+  }
+
   getInputClassName () {
     return `${super.getInputClassName()} checkbox`
   }
 
   getValue () {
-    return this.input.checked
+    const { checked } = this.getRef()
+
+    return checked
   }
 
-  getInput () {
+  renderInput () {
     const {
       name,
       value,
       checked,
       required,
-      disabled
+      disabled,
+      readOnly
     } = this.props
 
     return (
@@ -30,6 +37,7 @@ export default class Checkbox extends Input {
         defaultChecked={checked}
         required={required}
         disabled={disabled}
+        readOnly={readOnly}
         className={this.getInputClassName()}
         type='checkbox'
         ref={this.setRef}
