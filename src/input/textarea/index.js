@@ -38,3 +38,8 @@ export default class Textarea extends Input {
     )
   }
 }
+
+Textarea.defaultProps = {
+  ...Input.defaultProps,
+  label: 'Textarea'
+}

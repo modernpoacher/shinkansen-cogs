@@ -39,3 +39,8 @@ export default class Text extends Input {
     )
   }
 }
+
+Text.defaultProps = {
+  ...Input.defaultProps,
+  label: 'Text'
+}

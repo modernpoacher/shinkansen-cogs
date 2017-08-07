@@ -36,3 +36,8 @@ export default class Select extends Input {
     )
   }
 }
+
+Select.defaultProps = {
+  ...Input.defaultProps,
+  label: 'Select'
+}

@@ -39,3 +39,8 @@ export default class Password extends Input {
     )
   }
 }
+
+Password.defaultProps = {
+  ...Input.defaultProps,
+  label: 'Password'
+}

@@ -45,3 +45,8 @@ export default class Checkbox extends Input {
     )
   }
 }
+
+Checkbox.defaultProps = {
+  ...Input.defaultProps,
+  label: 'Checkbox'
+}

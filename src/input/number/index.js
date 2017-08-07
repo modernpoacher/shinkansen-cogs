@@ -39,3 +39,8 @@ export default class Number extends Input {
     )
   }
 }
+
+Number.defaultProps = {
+  ...Input.defaultProps,
+  label: 'Number'
+}

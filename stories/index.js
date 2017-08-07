@@ -14,25 +14,25 @@ import {
 } from '~/src'
 
 storiesOf('Checkbox', module)
-  .add('Default props', () => <Checkbox />)
+  .add('Required and default props', () => <Checkbox name='checkbox' />)
 
 storiesOf('Email', module)
-  .add('Default props', () => <Email />)
+  .add('Required and default props', () => <Email name='email' />)
 
 storiesOf('Number', module)
-  .add('Default props', () => <Number />)
+  .add('Required and default props', () => <Number name='number' />)
 
 storiesOf('Password', module)
-  .add('Default props', () => <Password />)
+  .add('Required and default props', () => <Password name='password' />)
 
 storiesOf('Radio', module)
-  .add('Default props', () => <Radio />)
+  .add('Required and default props', () => <Radio name='radio' id='radio-one' />)
 
 storiesOf('Select', module)
-  .add('Default props', () => <Select />)
+  .add('Required and default props', () => <Select name='select' />)
 
 storiesOf('Text', module)
-  .add('Default props', () => <Text />)
+  .add('Required and default props', () => <Text name='text' />)
 
 storiesOf('Textarea', module)
-  .add('Default props', () => <Textarea />)
+  .add('Required and default props', () => <Textarea name='textarea' />)

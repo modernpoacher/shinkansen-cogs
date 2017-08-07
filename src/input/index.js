@@ -18,6 +18,12 @@ export default class Input extends Component {
     }
   }
 
+  hasError () {
+    const { error } = this.state
+
+    return !!error
+  }
+
   validate = () => {
     const { validator } = this.props
     const value = this.getValue()
@@ -28,27 +34,27 @@ export default class Input extends Component {
   }
 
   getLabelClassName () {
-    const {
-      required,
-      disabled,
-      readOnly
-    } = this.props
-
-    return `label ${classNames({ required, disabled, readOnly })}`
+    return 'label'
   }
 
   getInputClassName () {
+    return 'input'
+  }
+
+  getClassName () {
     const {
       required,
       disabled,
       readOnly
     } = this.props
 
-    return `input ${classNames({ required, disabled, readOnly })}`
-  }
+    const className = (required || disabled || readOnly)
+      ? `cog ${classNames({ required, disabled, readOnly })}`
+      : 'cog'
 
-  getClassName () {
-    return 'cog'
+    return this.hasError()
+      ? `${className} error`
+      : className
   }
 
   getValue () {
@@ -78,7 +84,15 @@ export default class Input extends Component {
     )
   }
 
-  handleChange = () => this.validate()
+  handleChange = () => {
+    this.validate()
+
+    const { onChange } = this.props
+
+    onChange(
+      this.getValue()
+    )
+  }
 
   renderLabelTextContent () {
     const {
@@ -94,14 +108,42 @@ export default class Input extends Component {
     }
   }
 
-  renderLabelRequireText () {
+  renderIsRequired () {
     const {
       required
     } = this.props
 
     if (required) {
       return (
-        <span className='require-text'>
+        <span className='is-required'>
+          {String.fromCharCode(42)}
+        </span>
+      )
+    }
+  }
+
+  renderIsDisabled () {
+    const {
+      disabled
+    } = this.props
+
+    if (disabled) {
+      return (
+        <span className='is-disabled'>
+          {String.fromCharCode(42)}
+        </span>
+      )
+    }
+  }
+
+  renderIsReadOnly () {
+    const {
+      readOnly
+    } = this.props
+
+    if (readOnly) {
+      return (
+        <span className='is-readonly'>
           {String.fromCharCode(42)}
         </span>
       )
@@ -122,7 +164,9 @@ export default class Input extends Component {
     return (
       <label htmlFor={this.getId()} className={this.getLabelClassName()}>
         {this.renderLabelTextContent()}
-        {this.renderLabelRequireText()}
+        {this.renderIsRequired()}
+        {this.renderIsDisabled()}
+        {this.renderIsReadOnly()}
       </label>
     )
   }
@@ -173,12 +217,15 @@ Input.propTypes = {
   disabled: PropTypes.bool,
   readOnly: PropTypes.bool,
   placeholder: PropTypes.string,
-  validator: PropTypes.func
+  validator: PropTypes.func,
+  onChange: PropTypes.func
 }
 
 Input.defaultProps = {
+  label: 'Input',
   required: false,
   disabled: false,
   readOnly: false,
-  validator: () => null
+  validator: () => null,
+  onChange: () => true
 }

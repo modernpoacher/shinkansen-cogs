@@ -49,3 +49,8 @@ Radio.propTypes = {
   ...Input.propTypes,
   id: PropTypes.string.isRequired
 }
+
+Radio.defaultProps = {
+  ...Input.defaultProps,
+  label: 'Radio'
+}

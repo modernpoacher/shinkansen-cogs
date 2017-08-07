@@ -39,3 +39,8 @@ export default class Email extends Input {
     )
   }
 }
+
+Email.defaultProps = {
+  ...Input.defaultProps,
+  label: 'Email'
+}
