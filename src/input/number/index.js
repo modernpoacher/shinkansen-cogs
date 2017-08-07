@@ -1,5 +1,5 @@
 /**
- * Text component
+ * Number component
  */
 import React from 'react'
 import Input from '~/src/input'
