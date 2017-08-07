@@ -6,6 +6,16 @@ import PropTypes from 'prop-types'
 import Input from '~/src/input'
 
 export default class Radio extends Input {
+  getValue () {
+    return this.getInput()
+      .checked
+  }
+
+  setValue (checked) {
+    this.getInput()
+      .checked = checked
+  }
+
   getLabelClassName () {
     return `${super.getLabelClassName()} radio`
   }
