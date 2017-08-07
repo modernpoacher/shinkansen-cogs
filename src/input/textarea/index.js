@@ -33,7 +33,7 @@ export default class Textarea extends Input {
         readOnly={readOnly}
         placeholder={placeholder}
         className={this.getInputClassName()}
-        ref={this.setRef}
+        ref={this.setInput}
       />
     )
   }

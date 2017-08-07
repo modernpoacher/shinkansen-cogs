@@ -31,7 +31,7 @@ export default class Select extends Input {
         disabled={disabled}
         readOnly={readOnly}
         className={this.getInputClassName()}
-        ref={this.setRef}
+        ref={this.setInput}
       />
     )
   }

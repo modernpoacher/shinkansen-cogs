@@ -39,7 +39,7 @@ export default class Radio extends Input {
         readOnly={readOnly}
         className={this.getInputClassName()}
         type='radio'
-        ref={this.setRef}
+        ref={this.setInput}
       />
     )
   }

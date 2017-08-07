@@ -9,13 +9,23 @@ import classNames from 'classnames'
 export default class Input extends Component {
   state = {}
 
-  getRef = () => this.input
-  setRef = (ref) => {
-    if (ref) {
-      this.input = ref
+  getInput = () => this.input
+  setInput = (input) => {
+    if (input) {
+      this.input = input
     } else {
       delete this.input
     }
+  }
+
+  getValue () {
+    return this.getInput()
+      .value
+  }
+
+  setValue (value) {
+    this.getInput()
+      .value = value
   }
 
   hasError () {
@@ -57,12 +67,6 @@ export default class Input extends Component {
       : className
   }
 
-  getValue () {
-    const { value } = this.getRef()
-
-    return value
-  }
-
   getId () {
     const {
       id,
@@ -95,9 +99,7 @@ export default class Input extends Component {
   }
 
   renderLabelTextContent () {
-    const {
-      label
-    } = this.props
+    const { label } = this.props
 
     if (label) {
       return (
@@ -109,9 +111,7 @@ export default class Input extends Component {
   }
 
   renderIsRequired () {
-    const {
-      required
-    } = this.props
+    const { required } = this.props
 
     if (required) {
       return (
@@ -123,9 +123,7 @@ export default class Input extends Component {
   }
 
   renderIsDisabled () {
-    const {
-      disabled
-    } = this.props
+    const { disabled } = this.props
 
     if (disabled) {
       return (
@@ -137,9 +135,7 @@ export default class Input extends Component {
   }
 
   renderIsReadOnly () {
-    const {
-      readOnly
-    } = this.props
+    const { readOnly } = this.props
 
     if (readOnly) {
       return (
@@ -155,7 +151,9 @@ export default class Input extends Component {
 
     if (error) {
       return (
-        <p>{error}</p>
+        <p className='error-text'>
+          {error}
+        </p>
       )
     }
   }
@@ -192,7 +190,7 @@ export default class Input extends Component {
         placeholder={placeholder}
         className={this.getInputClassName()}
         type='text'
-        ref={this.setRef}
+        ref={this.setInput}
       />
     )
   }

@@ -34,7 +34,7 @@ export default class Email extends Input {
         placeholder={placeholder}
         className={this.getInputClassName()}
         type='email'
-        ref={this.setRef}
+        ref={this.setInput}
       />
     )
   }

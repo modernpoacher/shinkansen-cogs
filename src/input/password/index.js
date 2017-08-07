@@ -34,7 +34,7 @@ export default class Password extends Input {
         placeholder={placeholder}
         className={this.getInputClassName()}
         type='password'
-        ref={this.setRef}
+        ref={this.setInput}
       />
     )
   }

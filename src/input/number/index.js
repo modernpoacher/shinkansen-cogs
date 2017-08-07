@@ -34,7 +34,7 @@ export default class Number extends Input {
         placeholder={placeholder}
         className={this.getInputClassName()}
         type='number'
-        ref={this.setRef}
+        ref={this.setInput}
       />
     )
   }

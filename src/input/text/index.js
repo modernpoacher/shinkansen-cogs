@@ -34,7 +34,7 @@ export default class Text extends Input {
         placeholder={placeholder}
         className={this.getInputClassName()}
         type='text'
-        ref={this.setRef}
+        ref={this.setInput}
       />
     )
   }

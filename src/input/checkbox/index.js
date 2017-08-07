@@ -14,7 +14,7 @@ export default class Checkbox extends Input {
   }
 
   getValue () {
-    const { checked } = this.getRef()
+    const { checked } = this.getInput()
 
     return checked
   }
@@ -40,7 +40,7 @@ export default class Checkbox extends Input {
         readOnly={readOnly}
         className={this.getInputClassName()}
         type='checkbox'
-        ref={this.setRef}
+        ref={this.setInput}
       />
     )
   }
