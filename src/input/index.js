@@ -10,6 +10,7 @@ export default class Input extends Component {
   state = {}
 
   getInput = () => this.input
+
   setInput = (input) => {
     if (input) {
       this.input = input

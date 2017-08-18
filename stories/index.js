@@ -29,7 +29,13 @@ storiesOf('Radio', module)
   .add('Required and default props', () => <Radio name='radio' id='radio-one' />)
 
 storiesOf('Select', module)
-  .add('Required and default props', () => <Select name='select' />)
+  .add('Required and default props', () => (
+    <Select name='select'>
+      <option>One</option>
+      <option>Two</option>
+      <option>Three</option>
+    </Select>
+  ))
 
 storiesOf('Text', module)
   .add('Required and default props', () => <Text name='text' />)

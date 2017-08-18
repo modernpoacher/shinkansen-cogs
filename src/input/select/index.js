@@ -2,6 +2,7 @@
  * Select component
  */
 import React from 'react'
+import PropTypes from 'prop-types'
 import Input from '~/src/input'
 
 export default class Select extends Input {
@@ -19,7 +20,8 @@ export default class Select extends Input {
       value,
       required,
       disabled,
-      readOnly
+      readOnly,
+      children
     } = this.props
 
     return (
@@ -31,10 +33,16 @@ export default class Select extends Input {
         disabled={disabled}
         readOnly={readOnly}
         className={this.getInputClassName()}
-        ref={this.setInput}
-      />
+        ref={this.setInput}>
+        {children}
+      </select>
     )
   }
+}
+
+Select.propTypes = {
+  ...Input.propTypes,
+  children: PropTypes.element
 }
 
 Select.defaultProps = {
