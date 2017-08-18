@@ -42,7 +42,12 @@ export default class Select extends Input {
 
 Select.propTypes = {
   ...Input.propTypes,
-  children: PropTypes.element
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.arrayOf(
+      PropTypes.element
+    )
+  ])
 }
 
 Select.defaultProps = {
