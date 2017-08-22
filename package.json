@@ -1,6 +1,6 @@
 {
   "name": "shinkansen-cogs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Shinkansen Cogs",
   "main": "./index.js",
   "keywords": [
@@ -42,9 +42,7 @@
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.1.1",
     "babel-plugin-root-import": "^5.1.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-es2016": "^6.24.1",
-    "babel-preset-es2017": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
