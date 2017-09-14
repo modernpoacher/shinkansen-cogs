@@ -13,17 +13,17 @@
     "type": "git",
     "url": "git@github.com/modernpoacher/Shinkansen.Cogs.git"
   },
-  "author": "Jonathan Perry for Modern Poacher",
+  "author": "Jonathan Perry for Modern Poacher Limited",
   "license": "MIT",
   "engines": {
     "node": ">=7.0.0"
   },
   "scripts": {
     "build": "babel src -d lib",
-    "build:watch": "babel src -d lib -w",
+    "build:watch": "npm run build -- -w",
     "prepublishOnly": "npm run build",
     "lint": "eslint src stories",
-    "lint:fix": "eslint src stories --fix",
+    "lint:fix": "npm run lint -- --fix",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -36,18 +36,19 @@
     "react": "^15.6.1"
   },
   "devDependencies": {
-    "@storybook/react": "^3.2.5",
+    "@storybook/react": "^3.2.8",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.1.1",
-    "babel-plugin-root-import": "^5.1.0",
+    "babel-plugin-module-resolver": "^2.7.1",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
     "eslint": "^4.4.1",
     "eslint-config-standard": "^10.2.1",
+    "eslint-import-resolver-babel-module": "^3.0.0",
     "eslint-plugin-import": "^2.3.0",
     "eslint-plugin-node": "^5.1.1",
     "eslint-plugin-promise": "^3.5.0",

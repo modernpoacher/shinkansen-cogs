@@ -1,5 +1,6 @@
 {
   "compact": true,
+  "comments": false,
   "presets": [
     "env",
     "react",
@@ -7,6 +8,12 @@
     "stage-1"
   ],
   "plugins": [
-    "root-import"
+    [
+      "module-resolver", {
+        "alias": {
+          "shinkansen-cogs": "./src"
+        }
+      }
+    ]
   ]
 }

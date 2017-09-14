@@ -2,7 +2,7 @@
  * Textarea component
  */
 import React from 'react'
-import Input from '~/src/input'
+import Input from 'shinkansen-cogs/input'
 
 export default class Textarea extends Input {
   getLabelClassName () {

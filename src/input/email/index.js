@@ -2,7 +2,7 @@
  * Email component
  */
 import React from 'react'
-import Input from '~/src/input'
+import Input from 'shinkansen-cogs/input'
 
 export default class Email extends Input {
   getLabelClassName () {

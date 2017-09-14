@@ -11,7 +11,7 @@ import {
   Select,
   Text,
   Textarea
-} from '~/src'
+} from 'shinkansen-cogs'
 
 storiesOf('Checkbox', module)
   .add('Required and default props', () => <Checkbox name='checkbox' />)
