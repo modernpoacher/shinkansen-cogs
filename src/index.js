@@ -1,19 +1,8 @@
-import Checkbox from './input/checkbox'
-import Email from './input/email'
-import Number from './input/number'
-import Password from './input/password'
-import Radio from './input/radio'
-import Select from './input/select'
-import Text from './input/text'
-import Textarea from './input/textarea'
-
-export {
-  Checkbox,
-  Email,
-  Number,
-  Password,
-  Radio,
-  Select,
-  Text,
-  Textarea
-}
+export CheckboxCog from './cog/checkbox'
+export EmailCog from './cog/email'
+export NumberCog from './cog/number'
+export PasswordCog from './cog/password'
+export RadioCog from './cog/radio'
+export SelectCog from './cog/select'
+export TextCog from './cog/text'
+export TextareaCog from './cog/textarea'
