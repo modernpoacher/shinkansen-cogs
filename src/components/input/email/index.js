@@ -19,6 +19,8 @@ export default class EmailInput extends ValueInput {
       required,
       disabled,
       readOnly,
+      tabIndex,
+      accessKey,
       placeholder
     } = this.props
 
@@ -33,6 +35,8 @@ export default class EmailInput extends ValueInput {
         required={required}
         disabled={disabled}
         readOnly={readOnly}
+        tabIndex={tabIndex}
+        accessKey={accessKey}
         placeholder={placeholder}
         onChange={this.handleChange}
         className={className}

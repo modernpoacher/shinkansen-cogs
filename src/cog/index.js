@@ -45,6 +45,8 @@ export default class Cog extends Component {
       (props.required !== this.props.required) ||
       (props.disabled !== this.props.disabled) ||
       (props.readOnly !== this.props.readOnly) ||
+      (props.tabIndex !== this.props.tabIndex) ||
+      (props.accessKey !== this.props.accessKey) ||
       (props.placeholder !== this.props.placeholder) ||
       (props.onChange !== this.props.onChange)
     )
@@ -80,6 +82,8 @@ export default class Cog extends Component {
       required,
       disabled,
       readOnly,
+      tabIndex,
+      accessKey,
       placeholder,
       onChange
     } = this.props
@@ -91,6 +95,8 @@ export default class Cog extends Component {
         required={required}
         disabled={disabled}
         readOnly={readOnly}
+        tabIndex={tabIndex}
+        accessKey={accessKey}
         placeholder={placeholder}
         onChange={onChange}
         ref={this.setInput}
@@ -99,8 +105,10 @@ export default class Cog extends Component {
   }
 
   render () {
+    const className = this.getClassName()
+
     return (
-      <div className={this.getClassName()}>
+      <div className={className}>
         {this.renderLabel()}
         {this.renderInput()}
       </div>
@@ -150,7 +158,8 @@ export class CheckCog extends Cog {
   shouldComponentUpdate (props) {
     return (
       super.shouldComponentUpdate(props) ||
-      (props.checked !== this.props.checked)
+      (props.checked !== this.props.checked) ||
+      (props.onClick !== this.props.onClick)
     )
   }
 }

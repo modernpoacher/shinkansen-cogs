@@ -8,112 +8,59 @@ const actionClick = action('click')
 const actionChange = action('change')
 
 export default class RadioState extends State {
-  constructor (props) {
-    super(props)
-
-    const { children } = props
-
-    let state = {}
-    Children.forEach(children, ({ props }) => {
-      const { checked } = props // eslint-disable-line
-
-      if (checked) {
-        const { value } = props // eslint-disable-line
-
-        state = { value }
-      }
-    })
-
-    this.state = {
-      ...state
-    }
+  state = {
+    ...this.props
   }
 
-  componentWillReceiveProps ({ children }) {
-    Children.forEach(children, ({ props }) => {
-      const { checked } = props
-
-      if (checked) {
-        const { value } = props
-
-        this.setState({ value })
-      }
-    })
+  hasDefaultValue () {
+    return (
+      'defaultValue' in this.props
+    )
   }
 
-  hasDefaultChecked () {
-    const { children } = this.props
-
-    let hasDefaultChecked = false
-    Children.forEach(children, ({ props: { defaultChecked } }) => {
-      if (defaultChecked) {
-        hasDefaultChecked = true
-      }
-    })
-
-    return hasDefaultChecked
+  hasValue () {
+    return (
+      'value' in this.props
+    )
   }
 
-  hasChecked () {
-    const { children } = this.props
-
-    let hasChecked = false
-    Children.forEach(children, ({ props: { checked } }) => {
-      if (checked) {
-        hasChecked = true
-      }
-    })
-
-    return hasChecked
-  }
-
-  mapDefaultChildren (children, props, state = {}) {
+  mapDefaultChildren (children, props, { defaultValue } = {}) {
     return Children.map(children, (child) => {
       const {
-        props: PROPS
+        props: PROPS,
+        props: {
+          value: VALUE
+        }
       } = child
-
-      const { defaultChecked } = PROPS
 
       return cloneElement(
         child,
         {
           ...PROPS,
           ...props,
-          defaultChecked: !!defaultChecked
+          defaultChecked: defaultValue === VALUE,
+          value: VALUE
         }
       )
     })
   }
 
-  mapChildren (children, props, state = {}) {
+  mapChildren (children, props, { value } = {}) {
     return Children.map(children, (child) => {
       const {
-        props: PROPS
+        props: PROPS,
+        props: {
+          value: VALUE
+        }
       } = child
-
-      if ('value' in state) {
-        const { value } = state
-        const { value: VALUE } = PROPS
-
-        return cloneElement(
-          child,
-          {
-            ...PROPS,
-            ...props,
-            checked: value === VALUE
-          }
-        )
-      }
-
-      const { checked } = PROPS
 
       return cloneElement(
         child,
         {
           ...PROPS,
           ...props,
-          checked: !!checked
+          checked: value === VALUE,
+          value: VALUE
         }
       )
     })
@@ -122,18 +69,23 @@ export default class RadioState extends State {
   getChildren () {
     const { children, ...props } = this.props
 
-    if (this.hasDefaultChecked()) {
+    if (this.hasDefaultValue()) {
+      const { defaultValue } = this.state
+
       return this.mapDefaultChildren(
         children,
         {
           ...props,
           onClick: (value) => actionClick(value),
           onChange: (value) => actionChange(value)
+        },
+        {
+          defaultValue
         }
       )
     }
 
-    const { ...state } = this.state
+    const { value } = this.state
 
     return this.mapChildren(
       children,
@@ -143,7 +95,7 @@ export default class RadioState extends State {
         onChange: (value) => { this.setState({ value }, () => actionChange(value)) }
       },
       {
-        ...state
+        value
       }
     )
   }

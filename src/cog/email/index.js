@@ -45,6 +45,8 @@ export default class EmailCog extends ValueCog {
       required,
       disabled,
       readOnly,
+      tabIndex,
+      accessKey,
       placeholder,
       onChange
     } = this.props
@@ -58,6 +60,8 @@ export default class EmailCog extends ValueCog {
         required={required}
         disabled={disabled}
         readOnly={readOnly}
+        tabIndex={tabIndex}
+        accessKey={accessKey}
         placeholder={placeholder}
         onChange={onChange}
         ref={this.setInput}

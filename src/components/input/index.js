@@ -18,6 +18,8 @@ export default class Input extends Component {
       (props.required !== this.props.required) ||
       (props.disabled !== this.props.disabled) ||
       (props.readOnly !== this.props.readOnly) ||
+      (props.tabIndex !== this.props.tabIndex) ||
+      (props.accessKey !== this.props.accessKey) ||
       (props.placeholder !== this.props.placeholder) ||
       (props.onChange !== this.props.onChange)
     )
@@ -29,6 +31,8 @@ export default class Input extends Component {
       required,
       disabled,
       readOnly,
+      tabIndex,
+      accessKey,
       placeholder
     } = this.props
 
@@ -38,6 +42,8 @@ export default class Input extends Component {
         required={required}
         disabled={disabled}
         readOnly={readOnly}
+        tabIndex={tabIndex}
+        accessKey={accessKey}
         placeholder={placeholder}
         className={this.getClassName()}
         ref={this.setDOMNode}
@@ -53,6 +59,8 @@ Input.propTypes = {
   required: PropTypes.bool,
   disabled: PropTypes.bool,
   readOnly: PropTypes.bool,
+  tabIndex: PropTypes.number,
+  accessKey: PropTypes.string,
   placeholder: PropTypes.string,
   onChange: PropTypes.func
 }
@@ -82,7 +90,8 @@ export class CheckInput extends Input {
   shouldComponentUpdate (props) {
     return (
       super.shouldComponentUpdate(props) ||
-      (props.checked !== this.props.checked)
+      (props.checked !== this.props.checked) ||
+      (props.onClick !== this.props.onClick)
     )
   }
 

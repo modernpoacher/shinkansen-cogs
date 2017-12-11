@@ -24,9 +24,7 @@ import TextareaState from './state/textarea'
 
 storiesOf('CheckboxCog', module)
   .add('Required and default props', () => (
-    <CheckboxState>
-      <CheckboxCog name='checkbox' />
-    </CheckboxState>
+    <CheckboxCog name='checkbox' />
   ))
   .add('"checked"', () => (
     <CheckboxState
@@ -41,25 +39,29 @@ storiesOf('CheckboxCog', module)
     </CheckboxState>
   ))
   .add('"required"', () => (
-    <CheckboxState>
-      <CheckboxCog
-        required
-        name='checkbox' />
-    </CheckboxState>
+    <CheckboxCog
+      required
+      name='checkbox' />
   ))
   .add('"disabled"', () => (
-    <CheckboxState>
-      <CheckboxCog
-        disabled
-        name='checkbox' />
-    </CheckboxState>
+    <CheckboxCog
+      disabled
+      name='checkbox' />
   ))
   .add('"readOnly"', () => (
-    <CheckboxState>
-      <CheckboxCog
-        readOnly
-        name='checkbox' />
-    </CheckboxState>
+    <CheckboxCog
+      readOnly
+      name='checkbox' />
+  ))
+  .add('"tabIndex"', () => (
+    <CheckboxCog
+      tabIndex={0}
+      name='checkbox' />
+  ))
+  .add('"accessKey"', () => (
+    <CheckboxCog
+      accessKey='A'
+      name='checkbox' />
   ))
   .add('"checked" "required"', () => (
     <CheckboxState
@@ -85,23 +87,91 @@ storiesOf('CheckboxCog', module)
         name='checkbox' />
     </CheckboxState>
   ))
-  .add('"checked" "required" "disabled" "readOnly"', () => (
+  .add('"checked" "tabIndex"', () => (
+    <CheckboxState
+      checked>
+      <CheckboxCog
+        tabIndex={0}
+        name='checkbox' />
+    </CheckboxState>
+  ))
+  .add('"checked" "accessKey"', () => (
+    <CheckboxState
+      checked>
+      <CheckboxCog
+        accessKey='A'
+        name='checkbox' />
+    </CheckboxState>
+  ))
+  .add('"checked" "required" "disabled" "readOnly" "tabIndex" "accessKey"', () => (
     <CheckboxState
       checked>
       <CheckboxCog
         required
         disabled
         readOnly
+        tabIndex={0}
+        accessKey='A'
+        name='checkbox' />
+    </CheckboxState>
+  ))
+  .add('"defaultChecked" "required"', () => (
+    <CheckboxState
+      defaultChecked>
+      <CheckboxCog
+        required
+        name='checkbox' />
+    </CheckboxState>
+  ))
+  .add('"defaultChecked" "disabled"', () => (
+    <CheckboxState
+      defaultChecked>
+      <CheckboxCog
+        disabled
+        name='checkbox' />
+    </CheckboxState>
+  ))
+  .add('"defaultChecked" "readOnly"', () => (
+    <CheckboxState
+      defaultChecked>
+      <CheckboxCog
+        readOnly
+        name='checkbox' />
+    </CheckboxState>
+  ))
+  .add('"defaultChecked" "tabIndex"', () => (
+    <CheckboxState
+      defaultChecked>
+      <CheckboxCog
+        tabIndex={0}
+        name='checkbox' />
+    </CheckboxState>
+  ))
+  .add('"defaultChecked" "accessKey"', () => (
+    <CheckboxState
+      defaultChecked>
+      <CheckboxCog
+        accessKey='A'
+        name='checkbox' />
+    </CheckboxState>
+  ))
+  .add('"defaultChecked" "required" "disabled" "readOnly" "tabIndex" "accessKey"', () => (
+    <CheckboxState
+      defaultChecked>
+      <CheckboxCog
+        required
+        disabled
+        readOnly
+        tabIndex={0}
+        accessKey='A'
         name='checkbox' />
     </CheckboxState>
   ))
 
 storiesOf('EmailCog', module)
   .add('Required and default props', () => (
-    <EmailState>
-      <EmailCog
-        name='email' />
-    </EmailState>
+    <EmailCog
+      name='email' />
   ))
   .add('"value"', () => (
     <EmailState
@@ -118,124 +188,146 @@ storiesOf('EmailCog', module)
     </EmailState>
   ))
   .add('"required"', () => (
-    <EmailState
-      required>
-      <EmailCog
-        name='email' />
-    </EmailState>
+    <EmailCog
+      required
+      name='email' />
   ))
   .add('"disabled"', () => (
-    <EmailState
-      disabled>
-      <EmailCog
-        name='email' />
-    </EmailState>
+    <EmailCog
+      disabled
+      name='email' />
   ))
   .add('"readOnly"', () => (
-    <EmailState
-      readOnly>
-      <EmailCog
-        name='email' />
-    </EmailState>
+    <EmailCog
+      readOnly
+      name='email' />
   ))
-  .add('"required" "disabled" "readOnly"', () => (
-    <EmailState
+  .add('"tabIndex"', () => (
+    <EmailCog
+      tabIndex={0}
+      name='email' />
+  ))
+  .add('"accessKey"', () => (
+    <EmailCog
+      accessKey='A'
+      name='email' />
+  ))
+  .add('"required" "disabled" "readOnly" "tabIndex" "accessKey"', () => (
+    <EmailCog
       required
       disabled
-      readOnly>
-      <EmailCog
-        name='email' />
-    </EmailState>
+      readOnly
+      tabIndex={0}
+      accessKey='A'
+      name='email' />
   ))
 
 storiesOf('NumberCog', module)
   .add('Required and default props', () => (
-    <NumberState>
-      <NumberCog name='number' />
-    </NumberState>
+    <NumberCog
+      name='number' />
   ))
   .add('"value"', () => (
     <NumberState
       value={1}>
-      <NumberCog name='number' />
+      <NumberCog
+        name='number' />
     </NumberState>
   ))
   .add('"defaultValue"', () => (
     <NumberState
       defaultValue={1}>
-      <NumberCog name='number' />
+      <NumberCog
+        name='number' />
     </NumberState>
   ))
   .add('"required"', () => (
-    <NumberState
-      required>
-      <NumberCog name='number' />
-    </NumberState>
+    <NumberCog
+      required
+      name='number' />
   ))
   .add('"disabled"', () => (
-    <NumberState
-      disabled>
-      <NumberCog name='number' />
-    </NumberState>
+    <NumberCog
+      disabled
+      name='number' />
   ))
   .add('"readOnly"', () => (
-    <NumberState
-      readOnly>
-      <NumberCog name='number' />
-    </NumberState>
+    <NumberCog
+      readOnly
+      name='number' />
   ))
-  .add('"required" "disabled" "readOnly"', () => (
-    <NumberState
+  .add('"tabIndex"', () => (
+    <NumberCog
+      tabIndex={0}
+      name='number' />
+  ))
+  .add('"accessKey"', () => (
+    <NumberCog
+      accessKey='A'
+      name='number' />
+  ))
+  .add('"required" "disabled" "readOnly" "tabIndex" "accessKey"', () => (
+    <NumberCog
       required
       disabled
-      readOnly>
-      <NumberCog name='number' />
-    </NumberState>
+      readOnly
+      tabIndex={0}
+      accessKey='A'
+      name='number' />
   ))
 
 storiesOf('PasswordCog', module)
   .add('Required and default props', () => (
-    <PasswordState>
-      <PasswordCog name='password' />
-    </PasswordState>
+    <PasswordCog
+      name='password' />
   ))
   .add('"value"', () => (
     <PasswordState
       value='Password'>
-      <PasswordCog name='password' />
+      <PasswordCog
+        name='password' />
     </PasswordState>
   ))
   .add('"defaultValue"', () => (
     <PasswordState
       defaultValue='Password'>
-      <PasswordCog name='password' />
+      <PasswordCog
+        name='password' />
     </PasswordState>
   ))
   .add('"required"', () => (
-    <PasswordState
-      required>
-      <PasswordCog name='password' />
-    </PasswordState>
+    <PasswordCog
+      required
+      name='password' />
   ))
   .add('"disabled"', () => (
-    <PasswordState
-      disabled>
-      <PasswordCog name='password' />
-    </PasswordState>
+    <PasswordCog
+      disabled
+      name='password' />
   ))
   .add('"readOnly"', () => (
-    <PasswordState
-      readOnly>
-      <PasswordCog name='password' />
-    </PasswordState>
+    <PasswordCog
+      readOnly
+      name='password' />
   ))
-  .add('"required" "disabled" "readOnly"', () => (
-    <PasswordState
+  .add('"tabIndex"', () => (
+    <PasswordCog
+      tabIndex={0}
+      name='password' />
+  ))
+  .add('"accessKey"', () => (
+    <PasswordCog
+      accessKey='A'
+      name='password' />
+  ))
+  .add('"required" "disabled" "readOnly" "tabIndex" "accessKey"', () => (
+    <PasswordCog
       required
       disabled
-      readOnly>
-      <PasswordCog name='password' />
-    </PasswordState>
+      readOnly
+      tabIndex={0}
+      accessKey='A'
+      name='password' />
   ))
 
 storiesOf('RadioCog', module)
@@ -246,83 +338,148 @@ storiesOf('RadioCog', module)
     </RadioState>
   ))
   .add('"checked"', () => (
-    <RadioState>
-      <RadioCog id='radio-one' name='radio' value='one' checked />
+    <RadioState
+      value='one'>
+      <RadioCog id='radio-one' name='radio' value='one' />
       <RadioCog id='radio-two' name='radio' value='two' />
     </RadioState>
   ))
   .add('"defaultChecked"', () => (
-    <RadioState>
-      <RadioCog id='radio-one' name='radio' value='one' defaultChecked />
+    <RadioState
+      defaultValue='one'>
+      <RadioCog id='radio-one' name='radio' value='one' />
       <RadioCog id='radio-two' name='radio' value='two' />
     </RadioState>
   ))
   .add('"required"', () => (
-    <RadioState
-      required>
-      <RadioCog id='radio-one' name='radio' value='one' />
-      <RadioCog id='radio-two' name='radio' value='two' />
+    <RadioState>
+      <RadioCog id='radio-one' name='radio' value='one' required />
+      <RadioCog id='radio-two' name='radio' value='two' required />
     </RadioState>
   ))
   .add('"disabled"', () => (
-    <RadioState
-      disabled>
-      <RadioCog id='radio-one' name='radio' value='one' />
-      <RadioCog id='radio-two' name='radio' value='two' />
+    <RadioState>
+      <RadioCog id='radio-one' name='radio' value='one' disabled />
+      <RadioCog id='radio-two' name='radio' value='two' disabled />
     </RadioState>
   ))
   .add('"readOnly"', () => (
-    <RadioState
-      readOnly>
-      <RadioCog id='radio-one' name='radio' value='one' />
-      <RadioCog id='radio-two' name='radio' value='two' />
+    <RadioState>
+      <RadioCog id='radio-one' name='radio' value='one' readOnly />
+      <RadioCog id='radio-two' name='radio' value='two' readOnly />
+    </RadioState>
+  ))
+  .add('"tabIndex"', () => (
+    <RadioState>
+      <RadioCog id='radio-one' name='radio' value='one' tabIndex={0} />
+      <RadioCog id='radio-two' name='radio' value='two' tabIndex={0} />
+    </RadioState>
+  ))
+  .add('"accessKey"', () => (
+    <RadioState>
+      <RadioCog id='radio-one' name='radio' value='one' accessKey='1' />
+      <RadioCog id='radio-two' name='radio' value='two' accessKey='2' />
     </RadioState>
   ))
   .add('"checked" "required"', () => (
     <RadioState
-      required>
-      <RadioCog id='radio-one' name='radio' value='one' checked />
-      <RadioCog id='radio-two' name='radio' value='two' />
+      value='one'>
+      <RadioCog id='radio-one' name='radio' value='one' required />
+      <RadioCog id='radio-two' name='radio' value='two' required />
     </RadioState>
   ))
   .add('"checked" "disabled"', () => (
     <RadioState
-      disabled>
-      <RadioCog id='radio-one' name='radio' value='one' checked />
-      <RadioCog id='radio-two' name='radio' value='two' />
+      value='one'>
+      <RadioCog id='radio-one' name='radio' value='one' disabled />
+      <RadioCog id='radio-two' name='radio' value='two' disabled />
     </RadioState>
   ))
   .add('"checked" "readOnly"', () => (
     <RadioState
-      readOnly>
-      <RadioCog id='radio-one' name='radio' value='one' checked />
-      <RadioCog id='radio-two' name='radio' value='two' />
+      value='one'>
+      <RadioCog id='radio-one' name='radio' value='one' readOnly />
+      <RadioCog id='radio-two' name='radio' value='two' readOnly />
     </RadioState>
   ))
-  .add('"checked" "required" "disabled" "readOnly"', () => (
+  .add('"checked" "tabIndex"', () => (
     <RadioState
-      required
-      disabled
-      readOnly>
-      <RadioCog id='radio-one' name='radio' value='one' checked />
-      <RadioCog id='radio-two' name='radio' value='two' />
+      value='one'>
+      <RadioCog id='radio-one' name='radio' value='one' tabIndex={0} />
+      <RadioCog id='radio-two' name='radio' value='two' tabIndex={0} />
+    </RadioState>
+  ))
+  .add('"checked" "accessKey"', () => (
+    <RadioState
+      value='one'>
+      <RadioCog id='radio-one' name='radio' value='one' accessKey='1' />
+      <RadioCog id='radio-two' name='radio' value='two' accessKey='2' />
+    </RadioState>
+  ))
+  .add('"checked" "required" "disabled" "readOnly" "tabIndex" "accessKey"', () => (
+    <RadioState
+      value='one'>
+      <RadioCog id='radio-one' name='radio' value='one' required disabled readOnly tabIndex={0} accessKey='1' />
+      <RadioCog id='radio-two' name='radio' value='two' required disabled readOnly tabIndex={0} accessKey='2' />
+    </RadioState>
+  ))
+  .add('"defaultChecked" "required"', () => (
+    <RadioState
+      defaultValue='one'>
+      <RadioCog id='radio-one' name='radio' value='one' required />
+      <RadioCog id='radio-two' name='radio' value='two' required />
+    </RadioState>
+  ))
+  .add('"defaultChecked" "disabled"', () => (
+    <RadioState
+      defaultValue='one'>
+      <RadioCog id='radio-one' name='radio' value='one' disabled />
+      <RadioCog id='radio-two' name='radio' value='two' disabled />
+    </RadioState>
+  ))
+  .add('"defaultChecked" "readOnly"', () => (
+    <RadioState
+      defaultValue='one'>
+      <RadioCog id='radio-one' name='radio' value='one' readOnly />
+      <RadioCog id='radio-two' name='radio' value='two' readOnly />
+    </RadioState>
+  ))
+  .add('"defaultChecked" "tabIndex"', () => (
+    <RadioState
+      defaultValue='one'>
+      <RadioCog id='radio-one' name='radio' value='one' tabIndex={0} />
+      <RadioCog id='radio-two' name='radio' value='two' tabIndex={0} />
+    </RadioState>
+  ))
+  .add('"defaultChecked" "accessKey"', () => (
+    <RadioState
+      defaultValue='one'>
+      <RadioCog id='radio-one' name='radio' value='one' accessKey='1' />
+      <RadioCog id='radio-two' name='radio' value='two' accessKey='2' />
+    </RadioState>
+  ))
+  .add('"defaultChecked" "required" "disabled" "readOnly" "tabIndex" "accessKey"', () => (
+    <RadioState
+      defaultValue='one'>
+      <RadioCog id='radio-one' name='radio' value='one' required disabled readOnly tabIndex={0} accessKey='1' />
+      <RadioCog id='radio-two' name='radio' value='two' required disabled readOnly tabIndex={0} accessKey='2' />
     </RadioState>
   ))
 
 storiesOf('SelectCog', module)
   .add('Required and default props', () => (
-    <SelectState>
-      <SelectCog name='select'>
-        <option>One</option>
-        <option>Two</option>
-        <option>Three</option>
-      </SelectCog>
-    </SelectState>
+    <SelectCog
+      name='select'>
+      <option>One</option>
+      <option>Two</option>
+      <option>Three</option>
+    </SelectCog>
   ))
   .add('"value"', () => (
     <SelectState
       value='one'>
-      <SelectCog name='select'>
+      <SelectCog
+        name='select'>
         <option value='one'>One</option>
         <option value='two'>Two</option>
         <option value='three'>Three</option>
@@ -332,7 +489,8 @@ storiesOf('SelectCog', module)
   .add('"defaultValue"', () => (
     <SelectState
       defaultValue='one'>
-      <SelectCog name='select'>
+      <SelectCog
+        name='select'>
         <option value='one'>One</option>
         <option value='two'>Two</option>
         <option value='three'>Three</option>
@@ -340,122 +498,168 @@ storiesOf('SelectCog', module)
     </SelectState>
   ))
   .add('"required"', () => (
-    <SelectState
-      required>
-      <SelectCog name='select'>
-        <option>One</option>
-        <option>Two</option>
-        <option>Three</option>
-      </SelectCog>
-    </SelectState>
+    <SelectCog
+      required
+      name='select'>
+      <option>One</option>
+      <option>Two</option>
+      <option>Three</option>
+    </SelectCog>
   ))
   .add('"disabled"', () => (
-    <SelectState
-      disabled>
-      <SelectCog name='select'>
-        <option>One</option>
-        <option>Two</option>
-        <option>Three</option>
-      </SelectCog>
-    </SelectState>
+    <SelectCog
+      disabled
+      name='select'>
+      <option>One</option>
+      <option>Two</option>
+      <option>Three</option>
+    </SelectCog>
   ))
   .add('"readOnly"', () => (
-    <SelectState
-      readOnly>
-      <SelectCog name='select'>
-        <option>One</option>
-        <option>Two</option>
-        <option>Three</option>
-      </SelectCog>
-    </SelectState>
+    <SelectCog
+      readOnly
+      name='select'>
+      <option>One</option>
+      <option>Two</option>
+      <option>Three</option>
+    </SelectCog>
+  ))
+  .add('"tabIndex"', () => (
+    <SelectCog
+      tabIndex={0}
+      name='select'>
+      <option>One</option>
+      <option>Two</option>
+      <option>Three</option>
+    </SelectCog>
+  ))
+  .add('"accessKey"', () => (
+    <SelectCog
+      accessKey='A'
+      name='select'>
+      <option>One</option>
+      <option>Two</option>
+      <option>Three</option>
+    </SelectCog>
+  ))
+  .add('"required" "disabled" "readOnly" "tabIndex" "accessKey"', () => (
+    <SelectCog
+      required
+      disabled
+      readOnly
+      tabIndex={0}
+      accessKey='A'
+      name='select'>
+      <option>One</option>
+      <option>Two</option>
+      <option>Three</option>
+    </SelectCog>
   ))
 
 storiesOf('TextCog', module)
   .add('Required and default props', () => (
-    <TextState>
-      <TextCog name='text' />
-    </TextState>
+    <TextCog
+      name='text' />
   ))
   .add('"value"', () => (
     <TextState
       value='Text'>
-      <TextCog name='text' />
+      <TextCog
+        name='text' />
     </TextState>
   ))
   .add('"defaultValue"', () => (
     <TextState
       defaultValue='Text'>
-      <TextCog name='text' />
+      <TextCog
+        name='text' />
     </TextState>
   ))
   .add('"required"', () => (
-    <TextState
-      required>
-      <TextCog name='text' />
-    </TextState>
+    <TextCog
+      required
+      name='text' />
   ))
   .add('"disabled"', () => (
-    <TextState
-      disabled>
-      <TextCog name='text' />
-    </TextState>
+    <TextCog
+      disabled
+      name='text' />
   ))
   .add('"readOnly"', () => (
-    <TextState
-      readOnly>
-      <TextCog name='text' />
-    </TextState>
+    <TextCog
+      readOnly
+      name='text' />
   ))
-  .add('"required" "disabled" "readOnly"', () => (
-    <TextState
+  .add('"tabIndex"', () => (
+    <TextCog
+      tabIndex={0}
+      name='text' />
+  ))
+  .add('"accessKey"', () => (
+    <TextCog
+      accessKey='A'
+      name='text' />
+  ))
+  .add('"required" "disabled" "readOnly" "tabIndex" "accessKey"', () => (
+    <TextCog
       required
       disabled
-      readOnly>
-      <TextCog name='text' />
-    </TextState>
+      readOnly
+      tabIndex={0}
+      accessKey='A'
+      name='text' />
   ))
 
 storiesOf('TextareaCog', module)
   .add('Required and default props', () => (
-    <TextareaState>
-      <TextareaCog name='textarea' />
-    </TextareaState>
+    <TextareaCog
+      name='textarea' />
   ))
   .add('"value"', () => (
     <TextareaState
       value='Textarea'>
-      <TextareaCog name='textarea' />
+      <TextareaCog
+        name='textarea' />
     </TextareaState>
   ))
   .add('"defaultValue"', () => (
     <TextareaState
       defaultValue='Textarea'>
-      <TextareaCog name='textarea' />
+      <TextareaCog
+        name='textarea' />
     </TextareaState>
   ))
   .add('"required"', () => (
-    <TextareaState
-      required>
-      <TextareaCog name='textarea' />
-    </TextareaState>
+    <TextareaCog
+      required
+      name='textarea' />
   ))
   .add('"disabled"', () => (
-    <TextareaState
-      disabled>
-      <TextareaCog name='textarea' />
-    </TextareaState>
+    <TextareaCog
+      disabled
+      name='textarea' />
   ))
   .add('"readOnly"', () => (
-    <TextareaState
-      readOnly>
-      <TextareaCog name='textarea' />
-    </TextareaState>
+    <TextareaCog
+      readOnly
+      name='textarea' />
   ))
-  .add('"required" "disabled" "readOnly"', () => (
-    <TextareaState
+  .add('"tabIndex"', () => (
+    <TextareaCog
+      tabIndex={0}
+      name='textarea' />
+  ))
+  .add('"accessKey"', () => (
+    <TextareaCog
+      accessKey='A'
+      name='textarea' />
+  ))
+  .add('"required" "disabled" "readOnly" "tabIndex" "accessKey"', () => (
+    <TextareaCog
       required
       disabled
-      readOnly>
-      <TextareaCog name='textarea' />
-    </TextareaState>
+      readOnly
+      tabIndex={0}
+      accessKey='A'
+      name='textarea' />
   ))

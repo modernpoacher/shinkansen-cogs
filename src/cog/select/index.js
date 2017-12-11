@@ -45,6 +45,8 @@ export default class SelectCog extends ValueCog {
       required,
       disabled,
       readOnly,
+      tabIndex,
+      accessKey,
       placeholder,
       onChange,
       children
@@ -59,6 +61,8 @@ export default class SelectCog extends ValueCog {
         required={required}
         disabled={disabled}
         readOnly={readOnly}
+        tabIndex={tabIndex}
+        accessKey={accessKey}
         placeholder={placeholder}
         onChange={onChange}
         ref={this.setInput}>

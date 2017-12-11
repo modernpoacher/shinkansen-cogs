@@ -20,6 +20,8 @@ export default class SelectInput extends ValueInput {
       required,
       disabled,
       readOnly,
+      tabIndex,
+      accessKey,
       children
     } = this.props
 
@@ -34,6 +36,8 @@ export default class SelectInput extends ValueInput {
         required={required}
         disabled={disabled}
         readOnly={readOnly}
+        tabIndex={tabIndex}
+        accessKey={accessKey}
         onChange={this.handleChange}
         className={className}
         ref={this.setInput}>

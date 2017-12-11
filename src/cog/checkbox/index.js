@@ -45,6 +45,8 @@ export default class CheckboxCog extends CheckCog {
       required,
       disabled,
       readOnly,
+      tabIndex,
+      accessKey,
       placeholder,
       onClick,
       onChange
@@ -59,6 +61,8 @@ export default class CheckboxCog extends CheckCog {
         required={required}
         disabled={disabled}
         readOnly={readOnly}
+        tabIndex={tabIndex}
+        accessKey={accessKey}
         placeholder={placeholder}
         onClick={onClick}
         onChange={onChange}

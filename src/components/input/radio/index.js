@@ -32,7 +32,9 @@ export default class RadioInput extends CheckInput {
       defaultChecked,
       required,
       disabled,
-      readOnly
+      readOnly,
+      tabIndex,
+      accessKey
     } = this.props
 
     const className = this.getClassName()
@@ -47,6 +49,8 @@ export default class RadioInput extends CheckInput {
         required={required}
         disabled={disabled}
         readOnly={readOnly}
+        tabIndex={tabIndex}
+        accessKey={accessKey}
         onClick={this.handleClick}
         onChange={this.handleChange}
         className={className}
