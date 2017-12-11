@@ -73,7 +73,7 @@ export class ValueState extends State {
       )
     }
 
-    const { value = '' } = this.state
+    const { value } = this.state
 
     return this.mapChildren(
       children,
