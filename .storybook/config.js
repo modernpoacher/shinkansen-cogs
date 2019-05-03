@@ -1,9 +1,11 @@
 /* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 
-import { configure } from '@storybook/react'
+import {
+  configure
+} from '@storybook/react'
 
-function loadStories () {
-  require('../stories')
-}
+import '../stories'
 
-configure(loadStories, module)
+function loaders () { console.log('loaders()') }
+
+configure(loaders, module)
