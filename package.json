@@ -62,6 +62,8 @@
     "husky": "^2.2.0"
   },
   "husky": {
-    "pre-commit": "npm run pre-commit"
+    "hooks": {
+      "pre-commit": "npm run pre-commit"
+    }
   }
 }
