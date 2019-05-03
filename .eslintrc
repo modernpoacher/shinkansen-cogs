@@ -3,8 +3,17 @@
     "standard",
     "plugin:react/recommended"
   ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "env": {
+    "es6": true,
+    "browser": true
+  },
   "parserOptions": {
-    "ecmaVersion": 6,
+    "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
     }
