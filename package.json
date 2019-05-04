@@ -11,7 +11,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com/modernpoacher/Shinkansen.Cogs.git"
+    "url": "git@github.com/modernpoacher/shinkansen-cogs.git"
   },
   "author": "Jonathan Perry for Modern Poacher Limited",
   "license": "MIT",
