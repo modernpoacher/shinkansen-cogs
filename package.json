@@ -16,14 +16,16 @@
   "author": "Jonathan Perry for Modern Poacher Limited",
   "license": "MIT",
   "scripts": {
-    "build": "babel src -d lib",
-    "build:watch": "npm run build -- -w",
     "prepublishOnly": "npm run build",
+    "build": "npm run babel",
+    "clean": "bash clean.sh",
+    "babel": "babel src -d lib",
+    "babel:watch": "npm run babel -- -w",
     "lint": "eslint src stories .storybook *.js",
     "lint:fix": "npm run lint -- --fix",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "pre-commit": "npm run lint && npm run build && git add lib"
+    "pre-commit": "npm run lint && npm run babel && git add lib"
   },
   "standard": {
     "parser": "babel-eslint"
