@@ -25,10 +25,10 @@
     "lint:fix": "npm run lint -- --fix",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "pre-commit": "npm run lint && npm run babel && git add lib"
-  },
-  "standard": {
-    "parser": "babel-eslint"
+    "pre-commit": "npm run lint && npm run babel && git add lib",
+    "deps": "deps",
+    "deps:prod": "deps --save-prod",
+    "deps:dev": "deps --save-dev"
   },
   "dependencies": {
     "classnames": "^2.2.6",
@@ -47,21 +47,22 @@
     "@babel/preset-env": "^7.4.4",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.4.4",
+    "@modernpoacher/deps": "0.0.4",
     "@storybook/addon-actions": "^5.0.11",
     "@storybook/addon-links": "^5.0.11",
     "@storybook/react": "^5.0.11",
     "babel-eslint": "^10.0.1",
-    "babel-loader": "^8.0.5",
+    "babel-loader": "^8.0.6",
     "babel-plugin-module-resolver": "^3.2.0",
     "eslint": "^5.16.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-import-resolver-babel-module": "^5.1.0",
     "eslint-plugin-import": "^2.17.2",
-    "eslint-plugin-node": "^9.0.0",
+    "eslint-plugin-node": "^9.0.1",
     "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-react": "^7.13.0",
     "eslint-plugin-standard": "^4.0.0",
-    "husky": "^2.2.0"
+    "husky": "^2.3.0"
   },
   "husky": {
     "hooks": {
