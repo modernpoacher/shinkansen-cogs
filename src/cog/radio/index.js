@@ -80,6 +80,17 @@ export default class Radio extends CheckCog {
       />
     )
   }
+
+  render () {
+    const className = this.getClassName()
+
+    return (
+      <div className={className}>
+        {this.renderInput()}
+        {this.renderLabel()}
+      </div>
+    )
+  }
 }
 
 Radio.propTypes = {

@@ -24,19 +24,43 @@ import TextareaState from './state/textarea'
 
 storiesOf('CheckboxCog', module)
   .add('Required and default props', () => (
-    <CheckboxCog name='checkbox' />
+    <div className='group'>
+      <CheckboxCog name='checkbox-one' />
+      <CheckboxCog name='checkbox-two' />
+      <CheckboxCog name='checkbox-three' />
+    </div>
   ))
   .add('"checked"', () => (
-    <CheckboxState
-      checked>
-      <CheckboxCog name='checkbox' />
-    </CheckboxState>
+    <div className='group'>
+      <CheckboxState
+        checked>
+        <CheckboxCog name='checkbox-one' />
+      </CheckboxState>
+      <CheckboxState
+        checked>
+        <CheckboxCog name='checkbox-two' />
+      </CheckboxState>
+      <CheckboxState
+        checked>
+        <CheckboxCog name='checkbox-three' />
+      </CheckboxState>
+    </div>
   ))
   .add('"defaultChecked"', () => (
-    <CheckboxState
-      defaultChecked>
-      <CheckboxCog name='checkbox' />
-    </CheckboxState>
+    <div className='group'>
+      <CheckboxState
+        defaultChecked>
+        <CheckboxCog name='checkbox-one' />
+      </CheckboxState>
+      <CheckboxState
+        defaultChecked>
+        <CheckboxCog name='checkbox-two' />
+      </CheckboxState>
+      <CheckboxState
+        defaultChecked>
+        <CheckboxCog name='checkbox-three' />
+      </CheckboxState>
+    </div>
   ))
   .add('"required"', () => (
     <CheckboxCog
@@ -335,6 +359,7 @@ storiesOf('RadioCog', module)
     <RadioState>
       <RadioCog id='radio-one' name='radio' value='one' />
       <RadioCog id='radio-two' name='radio' value='two' />
+      <RadioCog id='radio-three' name='radio' value='three' />
     </RadioState>
   ))
   .add('"checked"', () => (
@@ -342,6 +367,7 @@ storiesOf('RadioCog', module)
       value='one'>
       <RadioCog id='radio-one' name='radio' value='one' />
       <RadioCog id='radio-two' name='radio' value='two' />
+      <RadioCog id='radio-three' name='radio' value='three' />
     </RadioState>
   ))
   .add('"defaultChecked"', () => (
@@ -349,36 +375,42 @@ storiesOf('RadioCog', module)
       defaultValue='one'>
       <RadioCog id='radio-one' name='radio' value='one' />
       <RadioCog id='radio-two' name='radio' value='two' />
+      <RadioCog id='radio-three' name='radio' value='three' />
     </RadioState>
   ))
   .add('"required"', () => (
     <RadioState>
       <RadioCog id='radio-one' name='radio' value='one' required />
       <RadioCog id='radio-two' name='radio' value='two' required />
+      <RadioCog id='radio-three' name='radio' value='three' required />
     </RadioState>
   ))
   .add('"disabled"', () => (
     <RadioState>
       <RadioCog id='radio-one' name='radio' value='one' disabled />
       <RadioCog id='radio-two' name='radio' value='two' disabled />
+      <RadioCog id='radio-three' name='radio' value='three' disabled />
     </RadioState>
   ))
   .add('"readOnly"', () => (
     <RadioState>
       <RadioCog id='radio-one' name='radio' value='one' readOnly />
       <RadioCog id='radio-two' name='radio' value='two' readOnly />
+      <RadioCog id='radio-three' name='radio' value='three' readOnly />
     </RadioState>
   ))
   .add('"tabIndex"', () => (
     <RadioState>
       <RadioCog id='radio-one' name='radio' value='one' tabIndex={0} />
       <RadioCog id='radio-two' name='radio' value='two' tabIndex={0} />
+      <RadioCog id='radio-three' name='radio' value='three' tabIndex={0} />
     </RadioState>
   ))
   .add('"accessKey"', () => (
     <RadioState>
       <RadioCog id='radio-one' name='radio' value='one' accessKey='1' />
       <RadioCog id='radio-two' name='radio' value='two' accessKey='2' />
+      <RadioCog id='radio-three' name='radio' value='three' accessKey='3' />
     </RadioState>
   ))
   .add('"checked" "required"', () => (
@@ -386,6 +418,7 @@ storiesOf('RadioCog', module)
       value='one'>
       <RadioCog id='radio-one' name='radio' value='one' required />
       <RadioCog id='radio-two' name='radio' value='two' required />
+      <RadioCog id='radio-three' name='radio' value='three' required />
     </RadioState>
   ))
   .add('"checked" "disabled"', () => (
@@ -393,6 +426,7 @@ storiesOf('RadioCog', module)
       value='one'>
       <RadioCog id='radio-one' name='radio' value='one' disabled />
       <RadioCog id='radio-two' name='radio' value='two' disabled />
+      <RadioCog id='radio-three' name='radio' value='three' disabled />
     </RadioState>
   ))
   .add('"checked" "readOnly"', () => (
@@ -400,6 +434,7 @@ storiesOf('RadioCog', module)
       value='one'>
       <RadioCog id='radio-one' name='radio' value='one' readOnly />
       <RadioCog id='radio-two' name='radio' value='two' readOnly />
+      <RadioCog id='radio-three' name='radio' value='three' readOnly />
     </RadioState>
   ))
   .add('"checked" "tabIndex"', () => (
@@ -407,6 +442,7 @@ storiesOf('RadioCog', module)
       value='one'>
       <RadioCog id='radio-one' name='radio' value='one' tabIndex={0} />
       <RadioCog id='radio-two' name='radio' value='two' tabIndex={0} />
+      <RadioCog id='radio-three' name='radio' value='three' tabIndex={0} />
     </RadioState>
   ))
   .add('"checked" "accessKey"', () => (
@@ -414,6 +450,7 @@ storiesOf('RadioCog', module)
       value='one'>
       <RadioCog id='radio-one' name='radio' value='one' accessKey='1' />
       <RadioCog id='radio-two' name='radio' value='two' accessKey='2' />
+      <RadioCog id='radio-three' name='radio' value='three' accessKey='3' />
     </RadioState>
   ))
   .add('"checked" "required" "disabled" "readOnly" "tabIndex" "accessKey"', () => (
@@ -421,6 +458,7 @@ storiesOf('RadioCog', module)
       value='one'>
       <RadioCog id='radio-one' name='radio' value='one' required disabled readOnly tabIndex={0} accessKey='1' />
       <RadioCog id='radio-two' name='radio' value='two' required disabled readOnly tabIndex={0} accessKey='2' />
+      <RadioCog id='radio-three' name='radio' value='three' required disabled readOnly tabIndex={0} accessKey='3' />
     </RadioState>
   ))
   .add('"defaultChecked" "required"', () => (
@@ -428,6 +466,7 @@ storiesOf('RadioCog', module)
       defaultValue='one'>
       <RadioCog id='radio-one' name='radio' value='one' required />
       <RadioCog id='radio-two' name='radio' value='two' required />
+      <RadioCog id='radio-three' name='radio' value='three' required />
     </RadioState>
   ))
   .add('"defaultChecked" "disabled"', () => (
@@ -435,6 +474,7 @@ storiesOf('RadioCog', module)
       defaultValue='one'>
       <RadioCog id='radio-one' name='radio' value='one' disabled />
       <RadioCog id='radio-two' name='radio' value='two' disabled />
+      <RadioCog id='radio-three' name='radio' value='three' disabled />
     </RadioState>
   ))
   .add('"defaultChecked" "readOnly"', () => (
@@ -442,6 +482,7 @@ storiesOf('RadioCog', module)
       defaultValue='one'>
       <RadioCog id='radio-one' name='radio' value='one' readOnly />
       <RadioCog id='radio-two' name='radio' value='two' readOnly />
+      <RadioCog id='radio-three' name='radio' value='three' readOnly />
     </RadioState>
   ))
   .add('"defaultChecked" "tabIndex"', () => (
@@ -449,6 +490,7 @@ storiesOf('RadioCog', module)
       defaultValue='one'>
       <RadioCog id='radio-one' name='radio' value='one' tabIndex={0} />
       <RadioCog id='radio-two' name='radio' value='two' tabIndex={0} />
+      <RadioCog id='radio-three' name='radio' value='three' tabIndex={0} />
     </RadioState>
   ))
   .add('"defaultChecked" "accessKey"', () => (
@@ -456,6 +498,7 @@ storiesOf('RadioCog', module)
       defaultValue='one'>
       <RadioCog id='radio-one' name='radio' value='one' accessKey='1' />
       <RadioCog id='radio-two' name='radio' value='two' accessKey='2' />
+      <RadioCog id='radio-three' name='radio' value='three' accessKey='3' />
     </RadioState>
   ))
   .add('"defaultChecked" "required" "disabled" "readOnly" "tabIndex" "accessKey"', () => (
@@ -463,6 +506,7 @@ storiesOf('RadioCog', module)
       defaultValue='one'>
       <RadioCog id='radio-one' name='radio' value='one' required disabled readOnly tabIndex={0} accessKey='1' />
       <RadioCog id='radio-two' name='radio' value='two' required disabled readOnly tabIndex={0} accessKey='2' />
+      <RadioCog id='radio-three' name='radio' value='three' required disabled readOnly tabIndex={0} accessKey='3' />
     </RadioState>
   ))
 

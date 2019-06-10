@@ -70,6 +70,17 @@ export default class CheckboxCog extends CheckCog {
       />
     )
   }
+
+  render () {
+    const className = this.getClassName()
+
+    return (
+      <div className={className}>
+        {this.renderInput()}
+        {this.renderLabel()}
+      </div>
+    )
+  }
 }
 
 CheckboxCog.propTypes = {

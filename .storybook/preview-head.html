@@ -1,94 +1,224 @@
 <style type="text/css">
 
+	html,
 	body {
+		text-size-adjust: 100%;
+
+		margin: 0;
+		padding: 0;
+		border: none;
+
 		background-color: #fff;
-		font-size: 10px;
+
+		width: 100%;
+		height: 100%;
+
+		font-size: 16px;
+		line-height: 22px;
+
 		font-family: sans-serif;
 	}
 
 	input:not([type="checkbox"]):not([type="radio"]),
 	select,
 	textarea {
-		border-radius: 0;
-		background-color: inherit;
-		-webkit-appearance: none;
-	}
+		background-color: #fff;
 
-	select {
-		height: 36px;
+		margin: 0;
+		padding: 0.25rem;
+		border: 2px solid #333;
+
+		font-size: 1.25rem;
+		line-height: 1.75rem;
 	}
 
 	input:not([type="checkbox"]):not([type="radio"]),
 	textarea {
-		height: 24px;
+		width: 100%;
+	}
+
+	select {
+		height: 2.5rem;
+	}
+
+	input:not([type="checkbox"]):not([type="radio"]),
+	textarea {
+		min-height: 1.75rem;
 	}
 
 	input:not([type="checkbox"]):not([type="radio"]),
 	select,
 	textarea {
-		flex-direction: column;
-		flex: 2;
-		line-height: inherit;
+		line-height: 1.75rem;
 	}
 
 	input[type="checkbox"],
 	input[type="radio"] {
-		margin: 6px;
-		height: 24px;
-		padding: 0 6px;
 		text-align: center;
-	}
-
-	input[type="checkbox"] {
-		width: 14px;
-		margin-left: 8px;
-		margin-right: 8px;
-	}
-
-	input[type="radio"] {
-		width: 18px;
+		margin: auto;
+		padding: 0;
 	}
 
 	input:focus,
 	select:focus,
 	textarea:focus {
 		outline: 3px solid orange;
+		outline-offset: 0;
+	}
+
+	input[type="checkbox"]:focus,
+	input[type="radio"]:focus {
+		outline: none;
 	}
 
 	label {
-		flex-direction: column;
-		flex: 1;
-		line-height: inherit;
-		height: 100%;
+		display: block;
+		margin-bottom: 4px;
+		padding: 0;
 	}
 
 	.cog {
-		display: flex;
-		align-items: center;
-		border: 1px solid #999;
-		width: 50%;
-		margin-bottom: 1em;
+		margin: 1rem;
+		padding: 1rem;
+		font-size: 1.25rem;
+		line-height: 1.75rem;
 	}
 
-	.cog:last-of-type {
+	.cog.checkbox,
+	.cog.radio {
+		margin: .5rem 1rem;
+		padding: 0 1rem 0 1.75rem;
+		position: relative;
+	}
+
+	.cog.checkbox:first-of-type,
+	.cog.radio:first-of-type {
+		margin-top: 1rem;
+		padding-top: 1rem;
+	}
+
+	.cog.checkbox:last-of-type,
+	.cog.radio:last-of-type {
+		margin-bottom: 1rem;
+		padding-bottom: 1rem;
+	}
+
+	.cog.checkbox input,
+	.cog.radio input {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0.5rem;
+	}
+
+	.cog.checkbox:first-of-type input,
+	.cog.radio:first-of-type input {
+		top: 1rem;
+	}
+
+	.cog.checkbox:last-of-type input,
+	.cog.radio:last-of-type input {
+		bottom: 1rem;
+	}
+
+	.cog.checkbox label,
+	.cog.radio label {
 		margin-bottom: 0;
+		padding-left: .625rem;
+	}
+
+	.cog.checkbox label:before {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		width: 1.625rem;
+		height: 1.625rem;
+		border: 2px solid black;
+		content: ' ';
+		box-sizing: border-box;
+		background-color: #fff;
+	}
+
+	.cog.radio label:before {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		width: 1.625rem;
+		height: 1.625rem;
+		border: 2px solid black;
+		border-radius: 50%;
+		content: ' ';
+		box-sizing: border-box;
+		background-color: #fff;
+	}
+
+	.cog.checkbox:first-of-type label:before,
+	.cog.radio:first-of-type label:before {
+		top: 1rem;
+	}
+
+	.cog.checkbox:last-of-type label:before,
+	.cog.radio:last-of-type label:before {
+		bottom: 1rem;
+	}
+
+	input[type="checkbox"]:focus + label:before {
+		outline: 3px solid orange;
+	}
+
+	input[type="checkbox"]:checked + label:after {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		width: 1.625rem;
+		height: 1.625rem;
+		border: none;
+		content: '✓';
+		text-align: center;
+		font-size: 1.25rem;
+		line-height: 1.75rem;
+	}
+
+	.cog.checkbox:first-of-type input[type="checkbox"]:checked + label:after {
+		top: 1rem;
+	}
+
+	.cog.checkbox:last-of-type input[type="checkbox"]:checked + label:after {
+		bottom: 1rem;
+	}
+
+	input[type="radio"]:focus + label:before {
+		box-shadow: 0 0 0 3px orange;
+	}
+
+	input[type="radio"]:checked + label:after {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		width: 1.625rem;
+		height: 1.625rem;
+		border: none;
+		content: '•';
+		text-align: center;
+		font-size: 1.25rem;
+		line-height: 1.75rem;
+	}
+
+	.cog.radio:first-of-type input[type="radio"]:checked + label:after {
+		top: 1rem;
+	}
+
+	.cog.radio:last-of-type input[type="radio"]:checked + label:after {
+		bottom: 1rem;
 	}
 
 	.label,
 	.input {
-		font-size: 18px;
-		line-height: 24px;
 		color: #333;
-	}
-
-	.label {
-		margin: 6px 8px;
-	}
-
-	.input {
-		padding: 6px 8px;
-		border: none;
-		border-left: 1px solid #BBB;
 	}
 
 </style>
