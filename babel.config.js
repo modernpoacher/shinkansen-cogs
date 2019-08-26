@@ -1,26 +1,24 @@
 module.exports = {
-  'compact': true,
-  'comments': false,
-  'presets': [
+  compact: true,
+  comments: false,
+  presets: [
     [
       '@babel/env', {
         useBuiltIns: 'entry',
         targets: {
           node: 'current',
-          'browsers': [
+          browsers: [
             'last 2 versions'
           ]
         },
-        corejs: '3.0.1'
+        corejs: 3
       }
     ],
     '@babel/react'
   ],
-  'plugins': [
+  plugins: [
     '@babel/proposal-export-default-from',
-    '@babel/proposal-do-expressions',
     '@babel/proposal-export-namespace-from',
-    '@babel/proposal-throw-expressions',
     [
       '@babel/proposal-class-properties',
       {
@@ -31,9 +29,9 @@ module.exports = {
       'module-resolver', {
         root: ['./src'],
         cwd: 'babelrc',
-        'alias': {
+        alias: {
           'shinkansen-cogs': './src',
-          'stories': './stories'
+          stories: './stories'
         }
       }
     ]
