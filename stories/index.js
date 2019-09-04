@@ -25,9 +25,15 @@ import TextareaState from './state/textarea'
 storiesOf('CheckboxCog', module)
   .add('Required and default props', () => (
     <div className='group'>
-      <CheckboxCog name='checkbox-one' />
-      <CheckboxCog name='checkbox-two' />
-      <CheckboxCog name='checkbox-three' />
+      <CheckboxState>
+        <CheckboxCog name='checkbox-one' />
+      </CheckboxState>
+      <CheckboxState>
+        <CheckboxCog name='checkbox-two' />
+      </CheckboxState>
+      <CheckboxState>
+        <CheckboxCog name='checkbox-three' />
+      </CheckboxState>
     </div>
   ))
   .add('"checked"', () => (

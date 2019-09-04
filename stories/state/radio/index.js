@@ -4,7 +4,7 @@ import State from 'stories/state'
 
 import { action } from '@storybook/addon-actions'
 
-const actionClick = action('click')
+// const actionClick = action('click')
 const actionChange = action('change')
 
 export default class RadioState extends State {
@@ -76,7 +76,7 @@ export default class RadioState extends State {
         children,
         {
           ...props,
-          onClick: (value) => actionClick(value),
+          // onClick: (value) => actionClick(value),
           onChange: (value) => actionChange(value)
         },
         {
@@ -91,7 +91,7 @@ export default class RadioState extends State {
       children,
       {
         ...props,
-        onClick: (value) => { this.setState({ value }, () => actionClick(value)) },
+        // onClick: (value) => { this.setState({ value }, () => actionClick(value)) },
         onChange: (value) => { this.setState({ value }, () => actionChange(value)) }
       },
       {

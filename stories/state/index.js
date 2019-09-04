@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 import { action } from '@storybook/addon-actions'
 
+// const actionClick = action('click')
 const actionChange = action('change')
 
 export default class State extends Component {
@@ -130,6 +131,7 @@ export class CheckState extends Component {
         {
           ...props,
           defaultChecked: !!defaultChecked,
+          // onClick: (checked) => actionClick(checked),
           onChange: (checked) => actionChange(checked)
         }
       )
@@ -142,6 +144,7 @@ export class CheckState extends Component {
       {
         ...props,
         checked: !!checked,
+        // onClick: (checked) => { this.setState({ checked }, () => actionClick(checked)) },
         onChange: (checked) => {
           this.setState({ checked }, () => actionChange(checked))
         }
