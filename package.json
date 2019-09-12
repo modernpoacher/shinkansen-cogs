@@ -24,12 +24,14 @@
     "babel:watch": "npm run babel -- -w",
     "lint": "eslint src stories .storybook *.js",
     "lint:fix": "npm run lint -- --fix",
+    "test": "jest --verbose false --collect-coverage false",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "pre-commit": "npm run lint && npm run babel && git add lib",
+    "pre-commit": "npm run lint && npm run deps-install:peer && npm test && npm run babel && git add lib",
     "deps": "deps",
     "deps:prod": "deps --save-prod",
-    "deps:dev": "deps --save-dev"
+    "deps:dev": "deps --save-dev",
+    "deps-install:peer": "deps-install --peer"
   },
   "dependencies": {
     "classnames": "^2.2.6"
@@ -42,13 +44,16 @@
     "@babel/plugin-proposal-export-namespace-from": "^7.5.2",
     "@babel/preset-env": "^7.6.0",
     "@babel/preset-react": "^7.0.0",
-    "@modernpoacher/deps": "0.0.6",
+    "@modernpoacher/deps": "0.0.12",
     "@storybook/addon-actions": "^5.1.11",
     "@storybook/addon-links": "^5.1.11",
     "@storybook/react": "^5.1.11",
     "babel-eslint": "^10.0.3",
+    "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-module-resolver": "^3.2.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "eslint": "^6.3.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-import-resolver-babel-module": "^5.1.0",
@@ -58,6 +63,8 @@
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-standard": "^4.0.1",
     "husky": "^3.0.5",
+    "jest": "^24.9.0",
+    "react-test-renderer": "^16.9.0",
     "rimraf": "^3.0.0"
   },
   "peerDependencies": {
