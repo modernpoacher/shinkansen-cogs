@@ -127,6 +127,125 @@ describe('shinkansen-cogs/cogs', () => {
       })
     })
 
+    describe('`getInput()`', () => {
+      it('returns the `input` field of the instance', () => {
+        const component = (
+          <Cog name='MOCK NAME' />
+        )
+
+        const instance = (
+          shallow(component)
+            .instance()
+        )
+
+        const mockInput = {}
+
+        instance.input = mockInput
+
+        expect(instance.getInput())
+          .toBe(mockInput)
+      })
+    })
+
+    describe('`getLabel()`', () => {
+      it('returns the `label` field of the instance', () => {
+        const component = (
+          <Cog name='MOCK NAME' />
+        )
+
+        const wrapper = shallow(component)
+
+        const instance = wrapper.instance()
+
+        const mockLabel = {}
+
+        instance.label = mockLabel
+
+        expect(instance.getLabel())
+          .toBe(mockLabel)
+      })
+    })
+
+    describe('`setInput()`', () => {
+      describe('With a parameter', () => {
+        it('sets the parameter to the instance as the field `input`', () => {
+          const component = (
+            <Cog name='MOCK NAME' />
+          )
+
+          const instance = (
+            shallow(component)
+              .instance()
+          )
+
+          const mockInput = {}
+
+          instance.setInput(mockInput)
+
+          expect(instance.input)
+            .toBe(mockInput)
+        })
+      })
+
+      describe('With any parameters', () => {
+        it('deletes the field `input` from the instance', () => {
+          const component = (
+            <Cog name='MOCK NAME' />
+          )
+
+          const instance = (
+            shallow(component)
+              .instance()
+          )
+
+          instance.setInput()
+
+          expect(instance.input)
+            .toBeUndefined()
+        })
+      })
+    })
+
+    describe('`setLabel()`', () => {
+      describe('With a parameter', () => {
+        it('sets the parameter to the instance as the field `label`', () => {
+          const component = (
+            <Cog name='MOCK NAME' />
+          )
+
+          const instance = (
+            shallow(component)
+              .instance()
+          )
+
+          const mockLabel = {}
+
+          instance.setLabel(mockLabel)
+
+          expect(instance.label)
+            .toBe(mockLabel)
+        })
+      })
+
+      describe('Without any parameters', () => {
+        it('deletes the field `label` from the instance', () => {
+          const component = (
+            <Cog name='MOCK NAME' />
+          )
+
+          const instance = (
+            shallow(component)
+              .instance()
+          )
+
+          instance.setLabel()
+
+          expect(instance.label)
+            .toBeUndefined()
+        })
+      })
+    })
+
     describe('`getClassName()`', () => {
       beforeEach(() => {
         classnames.mockReset()
@@ -140,9 +259,10 @@ describe('shinkansen-cogs/cogs', () => {
             <Cog name='MOCK NAME' />
           )
 
-          const wrapper = shallow(component)
-
-          const instance = wrapper.instance()
+          const instance = (
+            shallow(component)
+              .instance()
+          )
 
           returnValue = instance.getClassName()
         })
@@ -169,9 +289,10 @@ describe('shinkansen-cogs/cogs', () => {
               <Cog name='MOCK NAME' required />
             )
 
-            const wrapper = shallow(component)
-
-            const instance = wrapper.instance()
+            const instance = (
+              shallow(component)
+                .instance()
+            )
 
             returnValue = instance.getClassName()
           })
@@ -197,9 +318,10 @@ describe('shinkansen-cogs/cogs', () => {
               <Cog name='MOCK NAME' disabled />
             )
 
-            const wrapper = shallow(component)
-
-            const instance = wrapper.instance()
+            const instance = (
+              shallow(component)
+                .instance()
+            )
 
             returnValue = instance.getClassName()
           })
@@ -225,9 +347,10 @@ describe('shinkansen-cogs/cogs', () => {
               <Cog name='MOCK NAME' readOnly />
             )
 
-            const wrapper = shallow(component)
-
-            const instance = wrapper.instance()
+            const instance = (
+              shallow(component)
+                .instance()
+            )
 
             returnValue = instance.getClassName()
           })
