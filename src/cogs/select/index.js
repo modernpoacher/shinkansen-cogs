@@ -10,7 +10,7 @@ import Input from 'shinkansen-cogs/components/input/select'
 
 export default class SelectCog extends ValueCog {
   getClassName () {
-    return classnames(super.getClassName(), ' select')
+    return classnames(super.getClassName(), 'select')
   }
 
   renderLabel () {

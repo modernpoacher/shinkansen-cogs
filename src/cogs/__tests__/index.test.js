@@ -477,9 +477,9 @@ describe('shinkansen-cogs/cogs', () => {
         />
       )
 
-      let getIdSpy
-
       let instance
+
+      let getIdSpy
 
       beforeEach(() => {
         jest.clearAllMocks()
@@ -528,11 +528,13 @@ describe('shinkansen-cogs/cogs', () => {
         />
       )
 
-      let getIdSpy
-
       let instance
 
+      let getIdSpy
+
       beforeEach(() => {
+        jest.clearAllMocks()
+
         const wrapper = mount(component)
 
         instance = wrapper.instance()
