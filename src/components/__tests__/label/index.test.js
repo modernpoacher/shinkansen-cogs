@@ -12,7 +12,7 @@ jest.mock('shinkansen-cogs/components/common/required', () => () => 'MOCK REQUIR
 jest.mock('shinkansen-cogs/components/common/disabled', () => () => 'MOCK DISABLED')
 jest.mock('shinkansen-cogs/components/common/readonly', () => () => 'MOCK READONLY')
 
-describe('shinkansen-cogs/components/input', () => {
+describe('shinkansen-cogs/components/label', () => {
   describe('<Label />', () => {
     describe('With required props', () => {
       const component = (

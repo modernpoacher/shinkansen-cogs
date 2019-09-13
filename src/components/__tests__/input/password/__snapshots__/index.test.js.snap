@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`shinkansen-cogs/components/input/password <Input /> With additional props renders 1`] = `
+<input
+  className="MOCK CLASSNAME"
+  disabled={true}
+  id="MOCK ID"
+  name="MOCK NAME"
+  onChange={[Function]}
+  readOnly={true}
+  required={true}
+  type="password"
+/>
+`;
+
+exports[`shinkansen-cogs/components/input/password <Input /> With required props renders 1`] = `
+<input
+  className="MOCK CLASSNAME"
+  disabled={false}
+  name="MOCK NAME"
+  onChange={[Function]}
+  readOnly={false}
+  required={false}
+  type="password"
+/>
+`;

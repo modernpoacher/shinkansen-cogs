@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`shinkansen-cogs/components/label/text <Label /> With additional props renders 1`] = `
+<label
+  className="MOCK CLASSNAME"
+  htmlFor="MOCK ID"
+>
+  MOCK TEXT CONTENT
+  MOCK REQUIRED
+  MOCK DISABLED
+  MOCK READONLY
+</label>
+`;
+
+exports[`shinkansen-cogs/components/label/text <Label /> With required props renders 1`] = `
+<label
+  className="MOCK CLASSNAME"
+  htmlFor="MOCK ID"
+>
+  MOCK TEXT CONTENT
+</label>
+`;

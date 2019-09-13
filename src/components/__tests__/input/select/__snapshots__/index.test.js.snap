@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`shinkansen-cogs/components/input/select <Input /> With additional props renders 1`] = `
+<select
+  className="MOCK CLASSNAME"
+  disabled={true}
+  id="MOCK ID"
+  name="MOCK NAME"
+  onChange={[Function]}
+  readOnly={true}
+  required={true}
+/>
+`;
+
+exports[`shinkansen-cogs/components/input/select <Input /> With required props renders 1`] = `
+<select
+  className="MOCK CLASSNAME"
+  disabled={false}
+  name="MOCK NAME"
+  onChange={[Function]}
+  readOnly={false}
+  required={false}
+/>
+`;

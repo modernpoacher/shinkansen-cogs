@@ -139,7 +139,7 @@ describe('shinkansen-cogs/cogs/textarea', () => {
         returnValue = instance.getClassName()
       })
 
-      it('does not invoke `classnames`', () => {
+      it('invokes `classnames`', () => {
         expect(classnames)
           .toBeCalledWith('MOCK GETCLASSNAME', 'textarea')
       })

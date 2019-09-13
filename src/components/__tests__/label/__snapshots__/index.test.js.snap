@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`shinkansen-cogs/components/input <Label /> With additional props renders 1`] = `
+exports[`shinkansen-cogs/components/label <Label /> With additional props renders 1`] = `
 <label
   className="label"
   htmlFor="MOCK ID"
@@ -12,7 +12,7 @@ exports[`shinkansen-cogs/components/input <Label /> With additional props render
 </label>
 `;
 
-exports[`shinkansen-cogs/components/input <Label /> With required props renders 1`] = `
+exports[`shinkansen-cogs/components/label <Label /> With required props renders 1`] = `
 <label
   className="label"
   htmlFor="MOCK ID"

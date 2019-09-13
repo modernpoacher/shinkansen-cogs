@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`shinkansen-cogs/components/input/checkbox <Input /> With additional props renders 1`] = `
+<input
+  className="MOCK CLASSNAME"
+  disabled={true}
+  id="MOCK ID"
+  name="MOCK NAME"
+  onChange={[Function]}
+  onClick={[Function]}
+  readOnly={true}
+  required={true}
+  type="checkbox"
+/>
+`;
+
+exports[`shinkansen-cogs/components/input/checkbox <Input /> With required props renders 1`] = `
+<input
+  className="MOCK CLASSNAME"
+  disabled={false}
+  name="MOCK NAME"
+  onChange={[Function]}
+  onClick={[Function]}
+  readOnly={false}
+  required={false}
+  type="checkbox"
+/>
+`;
