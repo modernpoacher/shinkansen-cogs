@@ -55,7 +55,6 @@ export default class Input extends Component {
 Input.propTypes = {
   id: PropTypes.string,
   name: PropTypes.string.isRequired,
-  // label: PropTypes.string,
   required: PropTypes.bool,
   disabled: PropTypes.bool,
   readOnly: PropTypes.bool,
@@ -66,11 +65,48 @@ Input.propTypes = {
 }
 
 Input.defaultProps = {
-  // label: 'Input',
   required: false,
   disabled: false,
   readOnly: false,
   onChange: () => {}
+}
+
+/**
+ * ValueInput component
+ */
+export class ValueInput extends Input {
+  getValue () {
+    return this.getDOMNode()
+      .value
+  }
+
+  setValue (value) {
+    this.getDOMNode()
+      .value = value
+  }
+
+  shouldComponentUpdate (props) {
+    return (
+      super.shouldComponentUpdate(props) ||
+      (props.value !== this.props.value)
+    )
+  }
+
+  handleChange = ({ target: { value } }) => {
+    const { onChange } = this.props
+
+    onChange(value)
+  }
+}
+
+ValueInput.propTypes = {
+  ...Input.propTypes,
+  value: PropTypes.string,
+  defaultValue: PropTypes.string
+}
+
+ValueInput.defaultProps = {
+  ...Input.defaultProps
 }
 
 /**
@@ -116,43 +152,5 @@ CheckInput.propTypes = {
 }
 
 CheckInput.defaultProps = {
-  ...Input.defaultProps
-}
-
-/**
- * ValueInput component
- */
-export class ValueInput extends Input {
-  getValue () {
-    return this.getInput()
-      .value
-  }
-
-  setValue (value) {
-    this.getInput()
-      .value = value
-  }
-
-  shouldComponentUpdate (props) {
-    return (
-      super.shouldComponentUpdate(props) ||
-      (props.value !== this.props.value)
-    )
-  }
-
-  handleChange = ({ target: { value } }) => {
-    const { onChange } = this.props
-
-    onChange(value)
-  }
-}
-
-ValueInput.propTypes = {
-  ...Input.propTypes,
-  value: PropTypes.string,
-  defaultValue: PropTypes.string
-}
-
-ValueInput.defaultProps = {
   ...Input.defaultProps
 }

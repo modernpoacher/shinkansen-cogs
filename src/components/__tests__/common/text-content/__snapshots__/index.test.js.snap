@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`shinkansen-cogs/components/common/text-content <Component /> With required props renders 1`] = `
+<span
+  className="text-content"
+>
+  MOCK TEXT CONTENT
+</span>
+`;
