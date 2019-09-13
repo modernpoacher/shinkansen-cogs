@@ -52,6 +52,5 @@ PasswordInput.propTypes = {
 }
 
 PasswordInput.defaultProps = {
-  ...ValueInput.defaultProps,
-  label: 'Password'
+  ...ValueInput.defaultProps
 }

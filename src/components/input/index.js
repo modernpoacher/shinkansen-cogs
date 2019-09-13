@@ -55,7 +55,7 @@ export default class Input extends Component {
 Input.propTypes = {
   id: PropTypes.string,
   name: PropTypes.string.isRequired,
-  label: PropTypes.string,
+  // label: PropTypes.string,
   required: PropTypes.bool,
   disabled: PropTypes.bool,
   readOnly: PropTypes.bool,
@@ -66,7 +66,7 @@ Input.propTypes = {
 }
 
 Input.defaultProps = {
-  label: 'Input',
+  // label: 'Input',
   required: false,
   disabled: false,
   readOnly: false,

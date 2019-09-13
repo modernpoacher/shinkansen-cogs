@@ -76,5 +76,5 @@ TextareaCog.propTypes = {
 
 TextareaCog.defaultProps = {
   ...ValueCog.defaultProps,
-  label: 'Textarea'
+  label: 'Textarea Cog'
 }

@@ -76,5 +76,5 @@ PasswordCog.propTypes = {
 
 PasswordCog.defaultProps = {
   ...ValueCog.defaultProps,
-  label: 'Password'
+  label: 'Password Cog'
 }

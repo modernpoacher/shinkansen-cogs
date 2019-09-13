@@ -58,6 +58,5 @@ SelectInput.propTypes = {
 }
 
 SelectInput.defaultProps = {
-  ...ValueInput.defaultProps,
-  label: 'Select'
+  ...ValueInput.defaultProps
 }

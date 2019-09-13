@@ -85,5 +85,5 @@ NumberCog.propTypes = {
 
 NumberCog.defaultProps = {
   ...ValueCog.defaultProps,
-  label: 'Number'
+  label: 'Number Cog'
 }

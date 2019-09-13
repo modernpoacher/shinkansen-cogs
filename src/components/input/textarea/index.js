@@ -51,6 +51,5 @@ TextareaInput.propTypes = {
 }
 
 TextareaInput.defaultProps = {
-  ...ValueInput.defaultProps,
-  label: 'Textarea'
+  ...ValueInput.defaultProps
 }

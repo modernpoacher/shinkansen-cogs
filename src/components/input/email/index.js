@@ -52,6 +52,5 @@ EmailInput.propTypes = {
 }
 
 EmailInput.defaultProps = {
-  ...ValueInput.defaultProps,
-  label: 'Email'
+  ...ValueInput.defaultProps
 }

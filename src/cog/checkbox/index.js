@@ -89,5 +89,5 @@ CheckboxCog.propTypes = {
 
 CheckboxCog.defaultProps = {
   ...CheckCog.defaultProps,
-  label: 'Checkbox'
+  label: 'Checkbox Cog'
 }

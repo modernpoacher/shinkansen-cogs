@@ -78,5 +78,5 @@ SelectCog.propTypes = {
 
 SelectCog.defaultProps = {
   ...ValueCog.defaultProps,
-  label: 'Select'
+  label: 'Select Cog'
 }

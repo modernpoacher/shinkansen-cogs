@@ -482,11 +482,13 @@ describe('shinkansen-cogs/cogs', () => {
       let instance
 
       beforeEach(() => {
+        jest.clearAllMocks()
+
         const wrapper = mount(component)
 
         instance = wrapper.instance()
 
-        getIdSpy = jest.spyOn(Cog.prototype, 'getId')
+        getIdSpy = jest.spyOn(Cog.prototype, 'getId').mockReturnValue('MOCK ID')
 
         instance.renderLabel()
       })
@@ -496,9 +498,15 @@ describe('shinkansen-cogs/cogs', () => {
           .toBeCalled()
       })
 
-      it('renders a `<Label />`', () => {
+      it('renders `<Label />`', () => {
         expect(Label)
-          .toBeCalled()
+          .toBeCalledWith({
+            id: 'MOCK ID',
+            label: 'MOCK LABEL',
+            disabled: true,
+            required: true,
+            readOnly: true
+          }, {})
       })
     })
 
@@ -539,9 +547,19 @@ describe('shinkansen-cogs/cogs', () => {
           .toBeCalled()
       })
 
-      it('renders a `<Input />`', () => {
+      it('renders `<Input />`', () => {
         expect(Input)
-          .toBeCalled()
+          .toBeCalledWith({
+            name: 'MOCK NAME',
+            id: 'MOCK ID',
+            tabIndex: 1,
+            accessKey: 'MOCK ACCESS KEY',
+            required: true,
+            disabled: true,
+            readOnly: true,
+            placeholder: 'MOCK PLACEHOLDER',
+            onChange: MOCK_ONCHANGE
+          }, {})
       })
     })
   })

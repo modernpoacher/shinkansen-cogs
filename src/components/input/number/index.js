@@ -61,6 +61,5 @@ NumberInput.propTypes = {
 }
 
 NumberInput.defaultProps = {
-  ...ValueInput.defaultProps,
-  label: 'Number'
+  ...ValueInput.defaultProps
 }

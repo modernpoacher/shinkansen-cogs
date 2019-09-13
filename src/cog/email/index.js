@@ -76,5 +76,5 @@ EmailCog.propTypes = {
 
 EmailCog.defaultProps = {
   ...ValueCog.defaultProps,
-  label: 'Email'
+  label: 'Email Cog'
 }

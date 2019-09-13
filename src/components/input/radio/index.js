@@ -68,6 +68,5 @@ RadioInput.propTypes = {
 }
 
 RadioInput.defaultProps = {
-  ...CheckInput.defaultProps,
-  label: 'Radio'
+  ...CheckInput.defaultProps
 }

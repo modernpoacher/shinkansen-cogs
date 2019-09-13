@@ -52,6 +52,5 @@ TextInput.propTypes = {
 }
 
 TextInput.defaultProps = {
-  ...ValueInput.defaultProps,
-  label: 'Text'
+  ...ValueInput.defaultProps
 }

@@ -51,6 +51,6 @@ CheckboxInput.propTypes = {
 }
 
 CheckboxInput.defaultProps = {
-  ...CheckInput.defaultProps,
-  label: 'Checkbox'
+  ...CheckInput.defaultProps /* ,
+  label: 'Checkbox' */
 }

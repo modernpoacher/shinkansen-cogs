@@ -76,5 +76,5 @@ TextCog.propTypes = {
 
 TextCog.defaultProps = {
   ...ValueCog.defaultProps,
-  label: 'Text'
+  label: 'Text Cog'
 }

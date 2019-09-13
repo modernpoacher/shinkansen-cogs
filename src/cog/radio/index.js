@@ -100,5 +100,5 @@ Radio.propTypes = {
 
 Radio.defaultProps = {
   ...CheckCog.defaultProps,
-  label: 'Radio'
+  label: 'Radio Cog'
 }
