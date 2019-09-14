@@ -496,6 +496,7 @@ describe('shinkansen-cogs/components/input', () => {
             readOnly
             checked
             placeholder='MOCK PLACEHOLDER'
+            onChange={jest.fn()}
             onClick={jest.fn()}
           />
         )
@@ -550,6 +551,7 @@ describe('shinkansen-cogs/components/input', () => {
     })
 
     describe('`shouldComponentUpdate()`', () => {
+      const MOCK_ONCHANGE = jest.fn()
       const MOCK_ONCLICK = jest.fn()
 
       const component = (
@@ -564,6 +566,7 @@ describe('shinkansen-cogs/components/input', () => {
           readOnly
           checked
           placeholder='MOCK PLACEHOLDER'
+          onChange={MOCK_ONCHANGE}
           onClick={MOCK_ONCLICK}
         />
       )

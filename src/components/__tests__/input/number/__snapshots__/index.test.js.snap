@@ -6,7 +6,6 @@ exports[`shinkansen-cogs/components/input/number <Input /> With additional props
   disabled={true}
   id="MOCK ID"
   name="MOCK NAME"
-  onChange={[Function]}
   readOnly={true}
   required={true}
   type="number"
@@ -16,11 +15,7 @@ exports[`shinkansen-cogs/components/input/number <Input /> With additional props
 exports[`shinkansen-cogs/components/input/number <Input /> With required props renders 1`] = `
 <input
   className="MOCK CLASSNAME"
-  disabled={false}
   name="MOCK NAME"
-  onChange={[Function]}
-  readOnly={false}
-  required={false}
   type="number"
 />
 `;

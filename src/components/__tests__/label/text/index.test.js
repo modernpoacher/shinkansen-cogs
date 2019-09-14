@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
 import Enzyme, { shallow } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
@@ -11,6 +11,23 @@ import Label from 'shinkansen-cogs/components/label/text'
 Enzyme.configure({ adapter: new Adapter() })
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
+
+jest.mock('shinkansen-cogs/components/label', () => ({
+  __esModule: true,
+  default: class MockLabel extends mockComponent {
+    getClassName () { }
+
+    render () {
+      const { id, children } = this.props
+
+      return (
+        <label htmlFor={id} className={this.getClassName()}>
+          {children}
+        </label>
+      )
+    }
+  }
+}))
 
 jest.mock('shinkansen-cogs/components/common/text-content', () => () => 'MOCK TEXT CONTENT')
 jest.mock('shinkansen-cogs/components/common/required', () => () => 'MOCK REQUIRED')

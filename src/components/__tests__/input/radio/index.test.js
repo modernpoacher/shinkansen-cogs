@@ -1,16 +1,29 @@
-import React from 'react'
+import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
 import Enzyme, { shallow } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 
 import classnames from 'classnames'
 
-import Super from 'shinkansen-cogs/components/input'
+import { CheckInput } from 'shinkansen-cogs/components/input'
 import Input from 'shinkansen-cogs/components/input/radio'
 
 Enzyme.configure({ adapter: new Adapter() })
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
+
+jest.mock('shinkansen-cogs/components/input', () => {
+  class MockInput extends mockComponent {
+    getClassName () { }
+  }
+
+  return {
+    __esModule: true,
+    ValueInput: class ValueInput extends MockInput { },
+    CheckInput: class CheckInput extends MockInput { },
+    default: MockInput
+  }
+})
 
 jest.mock('shinkansen-cogs/components/common/text-content', () => () => 'MOCK TEXT CONTENT')
 jest.mock('shinkansen-cogs/components/common/required', () => () => 'MOCK REQUIRED')
@@ -79,6 +92,7 @@ describe('shinkansen-cogs/components/input/radio', () => {
             required
             disabled
             readOnly
+            onClick={jest.fn()}
             onChange={jest.fn()}
           />
         )
@@ -92,7 +106,7 @@ describe('shinkansen-cogs/components/input/radio', () => {
       let returnValue
 
       beforeEach(() => {
-        jest.spyOn(Super.prototype, 'getClassName').mockReturnValue('MOCK GETCLASSNAME')
+        jest.spyOn(CheckInput.prototype, 'getClassName').mockReturnValue('MOCK GETCLASSNAME')
 
         const component = (
           <Input
