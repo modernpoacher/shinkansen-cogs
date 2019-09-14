@@ -38,13 +38,6 @@ describe('shinkansen-cogs/cogs/select', () => {
           })
         })
 
-        describe('`shouldComponentUpdate`', () => {
-          it('is defined', () => {
-            expect(Cog.prototype.shouldComponentUpdate)
-              .toBeDefined()
-          })
-        })
-
         describe('`renderLabel`', () => {
           it('is defined', () => {
             expect(Cog.prototype.renderLabel)
