@@ -24,11 +24,6 @@ jest.mock('shinkansen-cogs/components/input', () => {
   }
 })
 
-jest.mock('shinkansen-cogs/components/common/text-content', () => () => 'MOCK TEXT CONTENT')
-jest.mock('shinkansen-cogs/components/common/required', () => () => 'MOCK REQUIRED')
-jest.mock('shinkansen-cogs/components/common/disabled', () => () => 'MOCK DISABLED')
-jest.mock('shinkansen-cogs/components/common/readonly', () => () => 'MOCK READONLY')
-
 describe('shinkansen-cogs/components/input/password', () => {
   describe('<Input />', () => {
     describe('With required props', () => {
