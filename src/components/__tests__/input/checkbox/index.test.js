@@ -19,7 +19,6 @@ jest.mock('shinkansen-cogs/components/input', () => {
 
   return {
     __esModule: true,
-    ValueInput: class ValueInput extends MockInput { },
     CheckInput: class CheckInput extends MockInput { },
     default: MockInput
   }

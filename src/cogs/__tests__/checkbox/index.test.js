@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
 import Enzyme, { shallow, mount } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
@@ -15,6 +15,20 @@ Enzyme.configure({ adapter: new Adapter() })
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
+jest.mock('shinkansen-cogs/cogs', () => {
+  class MockCog extends mockComponent {
+    getClassName () { }
+
+    getId () { }
+  }
+
+  return {
+    __esModule: true,
+    CheckCog: class CheckCog extends MockCog { },
+    default: MockCog
+  }
+})
+
 jest.mock('shinkansen-cogs/components/label/checkbox')
 jest.mock('shinkansen-cogs/components/input/checkbox')
 
@@ -30,64 +44,24 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
           .toMatchSnapshot()
       })
 
-      describe('Prototype', () => {
-        describe('`getClassName`', () => {
-          it('is defined', () => {
-            expect(Cog.prototype.getClassName)
-              .toBeDefined()
-          })
-        })
-
-        describe('`renderLabel`', () => {
-          it('is defined', () => {
-            expect(Cog.prototype.renderLabel)
-              .toBeDefined()
-          })
-        })
-
-        describe('`renderInput`', () => {
-          it('is defined', () => {
-            expect(Cog.prototype.renderInput)
-              .toBeDefined()
-          })
+      describe('`getClassName`', () => {
+        it('is defined', () => {
+          expect(Cog.prototype.getClassName)
+            .toBeDefined()
         })
       })
 
-      describe('Instance', () => {
-        let instance
-
-        beforeEach(() => {
-          const wrapper = shallow(component)
-
-          instance = wrapper.instance()
+      describe('`renderLabel`', () => {
+        it('is defined', () => {
+          expect(Cog.prototype.renderLabel)
+            .toBeDefined()
         })
+      })
 
-        describe('`getInput`', () => {
-          it('is defined', () => {
-            expect(instance.getInput)
-              .toBeDefined()
-          })
-        })
-
-        describe('`getLabel`', () => {
-          it('is defined', () => {
-            expect(instance.getLabel)
-              .toBeDefined()
-          })
-        })
-
-        describe('`setInput`', () => {
-          it('is defined', () => {
-            expect(instance.setInput)
-              .toBeDefined()
-          })
-        })
-
-        describe('`setLabel`', () => {
-          it('is defined', () => {
-            expect(instance.setLabel)
-              .toBeDefined()
-          })
+      describe('`renderInput`', () => {
+        it('is defined', () => {
+          expect(Cog.prototype.renderInput)
+            .toBeDefined()
         })
       })
     })
@@ -141,73 +115,6 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
       it('returns the classname', () => {
         expect(returnValue)
           .toBe('MOCK CLASSNAME')
-      })
-    })
-
-    describe('`shouldComponentUpdate()`', () => {
-      const MOCK_ONCLICK = jest.fn()
-      const MOCK_ONCHANGE = jest.fn()
-
-      const component = (
-        <Cog
-          name='MOCK NAME'
-          id='MOCK ID'
-          label='MOCK LABEL'
-          tabIndex={1}
-          accessKey='MOCK ACCESS KEY'
-          required
-          disabled
-          readOnly
-          placeholder='MOCK PLACEHOLDER'
-          onClick={MOCK_ONCLICK}
-          onChange={MOCK_ONCHANGE}
-        />
-      )
-
-      let instance
-
-      beforeEach(() => {
-        const wrapper = shallow(component)
-
-        instance = wrapper.instance()
-      })
-
-      describe('`props` have changed', () => {
-        it('returns true', () => {
-          expect(instance.shouldComponentUpdate({
-            name: 'MOCK CHANGE NAME',
-            id: 'MOCK CHANGE ID',
-            label: 'MOCK CHANGE LABEL',
-            tabIndex: 0,
-            accessKey: 'MOCK CHANGE ACCESS KEY',
-            required: false,
-            disabled: false,
-            readOnly: false,
-            placeholder: 'MOCK CHANGE PLACEHOLDER',
-            onClick: jest.fn(),
-            onChange: jest.fn()
-          }))
-            .toBe(true)
-        })
-      })
-
-      describe('`props` have not changed', () => {
-        it('returns false', () => {
-          expect(instance.shouldComponentUpdate({ // instance.props
-            name: 'MOCK NAME',
-            id: 'MOCK ID',
-            label: 'MOCK LABEL',
-            tabIndex: 1,
-            accessKey: 'MOCK ACCESS KEY',
-            required: true,
-            disabled: true,
-            readOnly: true,
-            placeholder: 'MOCK PLACEHOLDER',
-            onClick: MOCK_ONCLICK,
-            onChange: MOCK_ONCHANGE
-          }))
-            .toBe(false)
-        })
       })
     })
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
 import Enzyme, { shallow, mount } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
@@ -15,6 +15,37 @@ Enzyme.configure({ adapter: new Adapter() })
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
+jest.mock('shinkansen-cogs/cogs', () => {
+  class MockCog extends mockComponent {
+    getClassName () { }
+
+    getId () { }
+
+    shouldComponentUpdate () { }
+
+    renderLabel () { }
+
+    renderInput () { }
+
+    render () {
+      const className = this.getClassName()
+
+      return (
+        <div className={className}>
+          {this.renderLabel()}
+          {this.renderInput()}
+        </div>
+      )
+    }
+  }
+
+  return {
+    __esModule: true,
+    CheckCog: class CheckCog extends MockCog { },
+    default: MockCog
+  }
+})
+
 jest.mock('shinkansen-cogs/components/label/radio')
 jest.mock('shinkansen-cogs/components/input/radio')
 
@@ -30,71 +61,24 @@ describe('shinkansen-cogs/cogs/radio', () => {
           .toMatchSnapshot()
       })
 
-      describe('Prototype', () => {
-        describe('`getClassName`', () => {
-          it('is defined', () => {
-            expect(Cog.prototype.getClassName)
-              .toBeDefined()
-          })
-        })
-
-        describe('`shouldComponentUpdate`', () => {
-          it('is defined', () => {
-            expect(Cog.prototype.shouldComponentUpdate)
-              .toBeDefined()
-          })
-        })
-
-        describe('`renderLabel`', () => {
-          it('is defined', () => {
-            expect(Cog.prototype.renderLabel)
-              .toBeDefined()
-          })
-        })
-
-        describe('`renderInput`', () => {
-          it('is defined', () => {
-            expect(Cog.prototype.renderInput)
-              .toBeDefined()
-          })
+      describe('`getClassName`', () => {
+        it('is defined', () => {
+          expect(Cog.prototype.getClassName)
+            .toBeDefined()
         })
       })
 
-      describe('Instance', () => {
-        let instance
-
-        beforeEach(() => {
-          const wrapper = shallow(component)
-
-          instance = wrapper.instance()
+      describe('`renderLabel`', () => {
+        it('is defined', () => {
+          expect(Cog.prototype.renderLabel)
+            .toBeDefined()
         })
+      })
 
-        describe('`getInput`', () => {
-          it('is defined', () => {
-            expect(instance.getInput)
-              .toBeDefined()
-          })
-        })
-
-        describe('`getLabel`', () => {
-          it('is defined', () => {
-            expect(instance.getLabel)
-              .toBeDefined()
-          })
-        })
-
-        describe('`setInput`', () => {
-          it('is defined', () => {
-            expect(instance.setInput)
-              .toBeDefined()
-          })
-        })
-
-        describe('`setLabel`', () => {
-          it('is defined', () => {
-            expect(instance.setLabel)
-              .toBeDefined()
-          })
+      describe('`renderInput`', () => {
+        it('is defined', () => {
+          expect(Cog.prototype.renderInput)
+            .toBeDefined()
         })
       })
     })
@@ -176,6 +160,11 @@ describe('shinkansen-cogs/cogs/radio', () => {
       let instance
 
       beforeEach(() => {
+        /**
+         *  Always return false (we're not testing conditions in `super.shouldComponentUpdate()`)
+         */
+        jest.spyOn(CheckCog.prototype, 'shouldComponentUpdate').mockReturnValue(false)
+
         const wrapper = shallow(component)
 
         instance = wrapper.instance()
