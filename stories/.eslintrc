@@ -1,0 +1,26 @@
+{
+  "env": {
+    "browser": true
+  },
+  "extends": [
+    "plugin:react/recommended"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "parserOptions": {
+    "ecmaVersion": 10,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "react/display-name": 0
+  }
+}
