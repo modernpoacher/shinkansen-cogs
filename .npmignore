@@ -5,3 +5,6 @@
 # NPM
 .npmignore
 .npmrc
+
+.editorconfig
+.eslintignore
