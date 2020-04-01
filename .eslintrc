@@ -2,6 +2,7 @@
   "extends": "standard",
   "env": {
     "node": true,
+    "browser": true,
     "es2020": true
   },
   "parser": "babel-eslint",
