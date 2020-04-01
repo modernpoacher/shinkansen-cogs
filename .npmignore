@@ -1,4 +1,7 @@
+.circleci
+
 .storybook
+.editorconfig
 .eslintignore
 .eslintrc
 
