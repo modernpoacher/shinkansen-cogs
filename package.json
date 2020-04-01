@@ -1,6 +1,6 @@
 {
   "name": "shinkansen-cogs",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Shinkansen Cogs",
   "main": "./index.js",
   "keywords": [
