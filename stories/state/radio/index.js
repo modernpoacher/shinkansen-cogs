@@ -76,8 +76,8 @@ export default class RadioState extends State {
         children,
         {
           ...props,
-          // onClick: (value) => actionClick(value),
-          onChange: (value) => actionChange(value)
+          // onClick: (name, value) => actionClick(name, value),
+          onChange: (name, value) => actionChange(name, value)
         },
         {
           defaultValue
@@ -91,8 +91,8 @@ export default class RadioState extends State {
       children,
       {
         ...props,
-        // onClick: (value) => { this.setState({ value }, () => actionClick(value)) },
-        onChange: (value) => { this.setState({ value }, () => actionChange(value)) }
+        // onClick: (name, value) => { this.setState({ value }, () => actionClick(name, value)) },
+        onChange: (name, value) => { this.setState({ value }, () => actionChange(name, value)) }
       },
       {
         value

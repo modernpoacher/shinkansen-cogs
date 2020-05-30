@@ -69,7 +69,7 @@ export class ValueState extends State {
         {
           ...props,
           defaultValue,
-          onChange: (value) => actionChange(value)
+          onChange: (name, value) => actionChange(name, value)
         }
       )
     }
@@ -81,8 +81,8 @@ export class ValueState extends State {
       {
         ...props,
         value,
-        onChange: (value) => {
-          this.setState({ value }, () => actionChange(value))
+        onChange: (name, value) => {
+          this.setState({ value }, () => actionChange(name, value))
         }
       }
     )
@@ -131,8 +131,8 @@ export class CheckState extends Component {
         {
           ...props,
           defaultChecked: !!defaultChecked,
-          // onClick: (checked) => actionClick(checked),
-          onChange: (checked) => actionChange(checked)
+          // onClick: (name, checked) => actionClick(name, checked),
+          onChange: (name, checked) => actionChange(name, checked)
         }
       )
     }
@@ -144,9 +144,9 @@ export class CheckState extends Component {
       {
         ...props,
         checked: !!checked,
-        // onClick: (checked) => { this.setState({ checked }, () => actionClick(checked)) },
-        onChange: (checked) => {
-          this.setState({ checked }, () => actionChange(checked))
+        // onClick: (name, checked) => { this.setState({ checked }, () => actionClick(name, checked)) },
+        onChange: (name, checked) => {
+          this.setState({ checked }, () => actionChange(name, checked))
         }
       }
     )
