@@ -7,9 +7,4 @@ exports[`shinkansen-cogs/components/title/textarea <Title /> With additional pro
 />
 `;
 
-exports[`shinkansen-cogs/components/title/textarea <Title /> With required props renders 1`] = `
-<label
-  className="MOCK CLASSNAME"
-  htmlFor="MOCK ID"
-/>
-`;
+exports[`shinkansen-cogs/components/title/textarea <Title /> With required props renders 1`] = `null`;

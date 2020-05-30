@@ -6,6 +6,7 @@ import Adapter from 'enzyme-adapter-react-16'
 import classnames from 'classnames'
 
 import Title from 'shinkansen-cogs/components/title/textarea'
+import Description from 'shinkansen-cogs/components/description/textarea'
 import Field from 'shinkansen-cogs/components/field/textarea'
 
 import { ValueCog } from 'shinkansen-cogs/cogs'
@@ -23,6 +24,8 @@ jest.mock('shinkansen-cogs/cogs', () => {
 
     renderTitle () { }
 
+    renderDescription () { }
+
     renderField () { }
 
     render () {
@@ -31,6 +34,7 @@ jest.mock('shinkansen-cogs/cogs', () => {
       return (
         <div className={className}>
           {this.renderTitle()}
+          {this.renderDescription()}
           {this.renderField()}
         </div>
       )
@@ -45,6 +49,7 @@ jest.mock('shinkansen-cogs/cogs', () => {
 })
 
 jest.mock('shinkansen-cogs/components/title/textarea')
+jest.mock('shinkansen-cogs/components/description/textarea')
 jest.mock('shinkansen-cogs/components/field/textarea')
 
 describe('shinkansen-cogs/cogs/textarea', () => {
@@ -73,6 +78,13 @@ describe('shinkansen-cogs/cogs/textarea', () => {
         })
       })
 
+      describe('`renderDescription`', () => {
+        it('is defined', () => {
+          expect(Cog.prototype.renderDescription)
+            .toBeDefined()
+        })
+      })
+
       describe('`renderField`', () => {
         it('is defined', () => {
           expect(Cog.prototype.renderField)
@@ -88,6 +100,7 @@ describe('shinkansen-cogs/cogs/textarea', () => {
             name='MOCK NAME'
             id='MOCK ID'
             title='MOCK TITLE'
+            description='MOCK DESCRIPTION'
             value='MOCK VALUE'
             tabIndex={1}
             accessKey='MOCK ACCESS KEY'
@@ -139,6 +152,7 @@ describe('shinkansen-cogs/cogs/textarea', () => {
           name='MOCK NAME'
           id='MOCK ID'
           title='MOCK TITLE'
+          description='MOCK DESCRIPTION'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -181,12 +195,59 @@ describe('shinkansen-cogs/cogs/textarea', () => {
       })
     })
 
+    describe('`renderDescription()`', () => {
+      const component = (
+        <Cog
+          name='MOCK NAME'
+          id='MOCK ID'
+          title='MOCK TITLE'
+          description='MOCK DESCRIPTION'
+          tabIndex={1}
+          accessKey='MOCK ACCESS KEY'
+          required
+          disabled
+          readOnly
+          placeholder='MOCK PLACEHOLDER'
+        />
+      )
+
+      let instance
+
+      let getIdSpy
+
+      beforeEach(() => {
+        jest.clearAllMocks()
+
+        const wrapper = mount(component)
+
+        instance = wrapper.instance()
+
+        getIdSpy = jest.spyOn(Cog.prototype, 'getId').mockReturnValue('MOCK ID')
+
+        instance.renderDescription()
+      })
+
+      it('invokes `getId`', () => {
+        expect(getIdSpy)
+          .toBeCalled()
+      })
+
+      it('renders `<Description />`', () => {
+        expect(Description)
+          .toBeCalledWith({
+            id: 'MOCK ID',
+            description: 'MOCK DESCRIPTION'
+          }, {})
+      })
+    })
+
     describe('`renderField()`', () => {
       const component = (
         <Cog
           name='MOCK NAME'
           id='MOCK ID'
           title='MOCK TITLE'
+          description='MOCK DESCRIPTION'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required

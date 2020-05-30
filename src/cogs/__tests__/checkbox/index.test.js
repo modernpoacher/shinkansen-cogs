@@ -6,6 +6,7 @@ import Adapter from 'enzyme-adapter-react-16'
 import classnames from 'classnames'
 
 import Title from 'shinkansen-cogs/components/title/checkbox'
+import Description from 'shinkansen-cogs/components/description/checkbox'
 import Field from 'shinkansen-cogs/components/field/checkbox'
 
 import { CheckCog } from 'shinkansen-cogs/cogs'
@@ -30,6 +31,7 @@ jest.mock('shinkansen-cogs/cogs', () => {
 })
 
 jest.mock('shinkansen-cogs/components/title/checkbox')
+jest.mock('shinkansen-cogs/components/description/checkbox')
 jest.mock('shinkansen-cogs/components/field/checkbox')
 
 describe('shinkansen-cogs/cogs/checkbox', () => {
@@ -58,6 +60,13 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
         })
       })
 
+      describe('`renderDescription`', () => {
+        it('is defined', () => {
+          expect(Cog.prototype.renderDescription)
+            .toBeDefined()
+        })
+      })
+
       describe('`renderField`', () => {
         it('is defined', () => {
           expect(Cog.prototype.renderField)
@@ -73,6 +82,7 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
             name='MOCK NAME'
             id='MOCK ID'
             title='MOCK TITLE'
+            description='MOCK DESCRIPTION'
             value='MOCK VALUE'
             tabIndex={1}
             accessKey='MOCK ACCESS KEY'
@@ -125,6 +135,56 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
           name='MOCK NAME'
           id='MOCK ID'
           title='MOCK TITLE'
+          description='MOCK DESCRIPTION'
+          tabIndex={1}
+          accessKey='MOCK ACCESS KEY'
+          required
+          disabled
+          readOnly
+          placeholder='MOCK PLACEHOLDER'
+        />
+      )
+
+      let instance
+
+      let getIdSpy
+
+      beforeEach(() => {
+        jest.clearAllMocks()
+
+        const wrapper = mount(component)
+
+        instance = wrapper.instance()
+
+        getIdSpy = jest.spyOn(Cog.prototype, 'getId').mockReturnValue('MOCK ID')
+
+        instance.renderDescription()
+      })
+
+      it('invokes `getId`', () => {
+        expect(getIdSpy)
+          .toBeCalled()
+      })
+
+      it('renders `<Title />`', () => {
+        expect(Title)
+          .toBeCalledWith({
+            id: 'MOCK ID',
+            title: 'MOCK TITLE',
+            disabled: true,
+            required: true,
+            readOnly: true
+          }, {})
+      })
+    })
+
+    describe('`renderDescription()`', () => {
+      const component = (
+        <Cog
+          name='MOCK NAME'
+          id='MOCK ID'
+          title='MOCK TITLE'
+          description='MOCK DESCRIPTION'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -155,14 +215,11 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
           .toBeCalled()
       })
 
-      it('renders `<Title />`', () => {
-        expect(Title)
+      it('renders `<Description />`', () => {
+        expect(Description)
           .toBeCalledWith({
             id: 'MOCK ID',
-            title: 'MOCK TITLE',
-            disabled: true,
-            required: true,
-            readOnly: true
+            description: 'MOCK DESCRIPTION'
           }, {})
       })
     })
@@ -173,6 +230,7 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
           name='MOCK NAME'
           id='MOCK ID'
           title='MOCK TITLE'
+          description='MOCK DESCRIPTION'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required

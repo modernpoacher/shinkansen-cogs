@@ -17,14 +17,22 @@ jest.mock('shinkansen-cogs/components/title', () => ({
   default: class MockTitle extends mockComponent {
     getClassName () { }
 
-    render () {
-      const { id, children } = this.props
+    renderTextContent () { }
 
-      return (
-        <label htmlFor={id} className={this.getClassName()}>
-          {children}
-        </label>
-      )
+    render () {
+      const { title } = this.props
+
+      if (title) {
+        const { id } = this.props
+
+        return (
+          <label htmlFor={id} className={this.getClassName()}>
+            {this.renderTextContent()}
+          </label>
+        )
+      }
+
+      return null
     }
   }
 }))

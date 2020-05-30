@@ -6,7 +6,7 @@ import Adapter from 'enzyme-adapter-react-16'
 import classnames from 'classnames'
 
 import Super from 'shinkansen-cogs/components/title'
-import Title from 'shinkansen-cogs/components/title/radio'
+import Description from 'shinkansen-cogs/components/title/select'
 
 Enzyme.configure({ adapter: new Adapter() })
 
@@ -14,21 +14,19 @@ jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
 jest.mock('shinkansen-cogs/components/title', () => ({
   __esModule: true,
-  default: class MockTitle extends mockComponent {
+  default: class MockDescription extends mockComponent {
     getClassName () { }
 
-    renderTextContent () { }
+    renderTextContent () {}
 
     render () {
-      const { title } = this.props
+      const { description } = this.props
 
-      if (title) {
-        const { id } = this.props
-
+      if (description) {
         return (
-          <label htmlFor={id} className={this.getClassName()}>
+          <span className={this.getClassName()}>
             {this.renderTextContent()}
-          </label>
+          </span>
         )
       }
 
@@ -37,11 +35,11 @@ jest.mock('shinkansen-cogs/components/title', () => ({
   }
 }))
 
-describe('shinkansen-cogs/components/title/radio', () => {
-  describe('<Title />', () => {
+describe('shinkansen-cogs/components/title/select', () => {
+  describe('<Description />', () => {
     describe('With required props', () => {
       const component = (
-        <Title id='MOCK ID' />
+        <Description id='MOCK ID' />
       )
 
       it('renders', () => {
@@ -51,7 +49,7 @@ describe('shinkansen-cogs/components/title/radio', () => {
 
       describe('`getClassName`', () => {
         it('is defined', () => {
-          expect(Title.prototype.getClassName)
+          expect(Description.prototype.getClassName)
             .toBeDefined()
         })
       })
@@ -60,12 +58,9 @@ describe('shinkansen-cogs/components/title/radio', () => {
     describe('With additional props', () => {
       it('renders', () => {
         const component = (
-          <Title
+          <Description
             id='MOCK ID'
-            title='MOCK TITLE'
-            required
-            disabled
-            readOnly
+            description='MOCK DESCRIPTION'
           />
         )
 
@@ -81,7 +76,7 @@ describe('shinkansen-cogs/components/title/radio', () => {
         jest.spyOn(Super.prototype, 'getClassName').mockReturnValue('MOCK GETCLASSNAME')
 
         const component = (
-          <Title id='MOCK ID' />
+          <Description id='MOCK ID' />
         )
 
         const instance = (
@@ -94,7 +89,7 @@ describe('shinkansen-cogs/components/title/radio', () => {
 
       it('invokes `classnames`', () => {
         expect(classnames)
-          .toBeCalledWith('MOCK GETCLASSNAME', 'radio')
+          .toBeCalledWith('MOCK GETCLASSNAME', 'select')
       })
 
       it('returns the classname', () => {
