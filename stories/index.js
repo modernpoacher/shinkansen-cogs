@@ -113,7 +113,6 @@ storiesOf('CheckboxCog', module)
     <CheckboxCog
       title='Checkbox Cog'
       description='Checkbox Cog'
-      description='Checkbox Cog'
       readOnly
       name='checkbox' />
   ))
@@ -121,14 +120,12 @@ storiesOf('CheckboxCog', module)
     <CheckboxCog
       title='Checkbox Cog'
       description='Checkbox Cog'
-      description='Checkbox Cog'
       tabIndex={0}
       name='checkbox' />
   ))
   .add('"accessKey"', () => (
     <CheckboxCog
       title='Checkbox Cog'
-      description='Checkbox Cog'
       description='Checkbox Cog'
       accessKey='A'
       name='checkbox' />
