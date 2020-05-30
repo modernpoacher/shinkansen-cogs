@@ -178,9 +178,10 @@ describe('shinkansen-cogs/components/input', () => {
       let instance
 
       beforeEach(() => {
-        const wrapper = shallow(component)
-
-        instance = wrapper.instance()
+        instance = (
+          shallow(component)
+            .instance()
+        )
       })
 
       describe('`props` have changed', () => {
@@ -366,9 +367,10 @@ describe('shinkansen-cogs/components/input', () => {
       let instance
 
       beforeEach(() => {
-        const wrapper = shallow(component)
-
-        instance = wrapper.instance()
+        instance = (
+          shallow(component)
+            .instance()
+        )
       })
 
       describe('`props` have changed', () => {
@@ -567,9 +569,10 @@ describe('shinkansen-cogs/components/input', () => {
       let instance
 
       beforeEach(() => {
-        const wrapper = shallow(component)
-
-        instance = wrapper.instance()
+        instance = (
+          shallow(component)
+            .instance()
+        )
       })
 
       describe('`props` have changed', () => {

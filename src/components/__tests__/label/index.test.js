@@ -199,9 +199,10 @@ describe('shinkansen-cogs/components/label', () => {
       let instance
 
       beforeEach(() => {
-        const wrapper = shallow(component)
-
-        instance = wrapper.instance()
+        instance = (
+          shallow(component)
+            .instance()
+        )
       })
 
       describe('`props` have changed', () => {
