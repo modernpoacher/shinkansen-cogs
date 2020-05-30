@@ -5,8 +5,8 @@ import Adapter from 'enzyme-adapter-react-16'
 
 import classnames from 'classnames'
 
-import Label from 'shinkansen-cogs/components/label/checkbox'
-import Input from 'shinkansen-cogs/components/input/checkbox'
+import Title from 'shinkansen-cogs/components/title/checkbox'
+import Field from 'shinkansen-cogs/components/field/checkbox'
 
 import { CheckCog } from 'shinkansen-cogs/cogs'
 import Cog from 'shinkansen-cogs/cogs/checkbox'
@@ -29,8 +29,8 @@ jest.mock('shinkansen-cogs/cogs', () => {
   }
 })
 
-jest.mock('shinkansen-cogs/components/label/checkbox')
-jest.mock('shinkansen-cogs/components/input/checkbox')
+jest.mock('shinkansen-cogs/components/title/checkbox')
+jest.mock('shinkansen-cogs/components/field/checkbox')
 
 describe('shinkansen-cogs/cogs/checkbox', () => {
   describe('<Cog />', () => {
@@ -51,16 +51,16 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
         })
       })
 
-      describe('`renderLabel`', () => {
+      describe('`renderTitle`', () => {
         it('is defined', () => {
-          expect(Cog.prototype.renderLabel)
+          expect(Cog.prototype.renderTitle)
             .toBeDefined()
         })
       })
 
-      describe('`renderInput`', () => {
+      describe('`renderField`', () => {
         it('is defined', () => {
-          expect(Cog.prototype.renderInput)
+          expect(Cog.prototype.renderField)
             .toBeDefined()
         })
       })
@@ -72,7 +72,7 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
           <Cog
             name='MOCK NAME'
             id='MOCK ID'
-            label='MOCK LABEL'
+            title='MOCK TITLE'
             value='MOCK VALUE'
             tabIndex={1}
             accessKey='MOCK ACCESS KEY'
@@ -119,12 +119,12 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
       })
     })
 
-    describe('`renderLabel()`', () => {
+    describe('`renderTitle()`', () => {
       const component = (
         <Cog
           name='MOCK NAME'
           id='MOCK ID'
-          label='MOCK LABEL'
+          title='MOCK TITLE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -147,7 +147,7 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
 
         getIdSpy = jest.spyOn(Cog.prototype, 'getId').mockReturnValue('MOCK ID')
 
-        instance.renderLabel()
+        instance.renderTitle()
       })
 
       it('invokes `getId`', () => {
@@ -155,11 +155,11 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
           .toBeCalled()
       })
 
-      it('renders `<Label />`', () => {
-        expect(Label)
+      it('renders `<Title />`', () => {
+        expect(Title)
           .toBeCalledWith({
             id: 'MOCK ID',
-            label: 'MOCK LABEL',
+            title: 'MOCK TITLE',
             disabled: true,
             required: true,
             readOnly: true
@@ -167,12 +167,12 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
       })
     })
 
-    describe('`renderInput()`', () => {
+    describe('`renderField()`', () => {
       const component = (
         <Cog
           name='MOCK NAME'
           id='MOCK ID'
-          label='MOCK LABEL'
+          title='MOCK TITLE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -197,7 +197,7 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
 
         getIdSpy = jest.spyOn(Cog.prototype, 'getId')
 
-        instance.renderInput()
+        instance.renderField()
       })
 
       it('invokes `getId`', () => {
@@ -205,8 +205,8 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
           .toBeCalled()
       })
 
-      it('renders `<Input />`', () => {
-        expect(Input)
+      it('renders `<Field />`', () => {
+        expect(Field)
           .toBeCalledWith({
             name: 'MOCK NAME',
             id: 'MOCK ID',

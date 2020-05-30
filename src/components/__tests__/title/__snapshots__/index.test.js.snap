@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`shinkansen-cogs/components/title <Title /> With additional props renders 1`] = `
+<label
+  className="title"
+  htmlFor="MOCK ID"
+>
+  MOCK TEXT CONTENT
+</label>
+`;
+
+exports[`shinkansen-cogs/components/title <Title /> With required props renders 1`] = `null`;

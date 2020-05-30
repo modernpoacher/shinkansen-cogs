@@ -5,8 +5,8 @@ import React from 'react'
 import classnames from 'classnames'
 
 import { CheckCog } from 'shinkansen-cogs/cogs'
-import Label from 'shinkansen-cogs/components/label/checkbox'
-import Input from 'shinkansen-cogs/components/input/checkbox'
+import Title from 'shinkansen-cogs/components/title/checkbox'
+import Field from 'shinkansen-cogs/components/field/checkbox'
 
 export default class CheckboxCog extends CheckCog {
   getClassName () {
@@ -31,29 +31,29 @@ export default class CheckboxCog extends CheckCog {
     onChange(name, value)
   }
 
-  renderLabel () {
+  renderTitle () {
     const id = this.getId()
 
     const {
-      label,
+      title,
       required,
       disabled,
       readOnly
     } = this.props
 
     return (
-      <Label
+      <Title
         id={id}
-        label={label}
+        title={title}
         required={required}
         disabled={disabled}
         readOnly={readOnly}
-        ref={this.setLabel}
+        ref={this.setTitle}
       />
     )
   }
 
-  renderInput () {
+  renderField () {
     const id = this.getId()
 
     const {
@@ -69,7 +69,7 @@ export default class CheckboxCog extends CheckCog {
     } = this.props
 
     return (
-      <Input
+      <Field
         id={id}
         name={name}
         checked={checked}
@@ -82,7 +82,7 @@ export default class CheckboxCog extends CheckCog {
         placeholder={placeholder}
         onClick={this.handleClick}
         onChange={this.handleChange}
-        ref={this.setInput}
+        ref={this.setField}
       />
     )
   }
@@ -92,8 +92,8 @@ export default class CheckboxCog extends CheckCog {
 
     return (
       <div className={className}>
-        {this.renderInput()}
-        {this.renderLabel()}
+        {this.renderField()}
+        {this.renderTitle()}
       </div>
     )
   }

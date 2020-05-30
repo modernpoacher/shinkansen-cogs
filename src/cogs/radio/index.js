@@ -6,8 +6,8 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 import { CheckCog } from 'shinkansen-cogs/cogs'
-import Label from 'shinkansen-cogs/components/label/radio'
-import Input from 'shinkansen-cogs/components/input/radio'
+import Title from 'shinkansen-cogs/components/title/radio'
+import Field from 'shinkansen-cogs/components/field/radio'
 
 export default class Radio extends CheckCog {
   getClassName () {
@@ -39,29 +39,29 @@ export default class Radio extends CheckCog {
     )
   }
 
-  renderLabel () {
+  renderTitle () {
     const id = this.getId()
 
     const {
-      label,
+      title,
       required,
       disabled,
       readOnly
     } = this.props
 
     return (
-      <Label
+      <Title
         id={id}
-        label={label}
+        title={title}
         required={required}
         disabled={disabled}
         readOnly={readOnly}
-        ref={this.setLabel}
+        ref={this.setTitle}
       />
     )
   }
 
-  renderInput () {
+  renderField () {
     const id = this.getId()
 
     const {
@@ -78,7 +78,7 @@ export default class Radio extends CheckCog {
     } = this.props
 
     return (
-      <Input
+      <Field
         id={id}
         name={name}
         value={value}
@@ -92,7 +92,7 @@ export default class Radio extends CheckCog {
         placeholder={placeholder}
         onClick={this.handleClick}
         onChange={this.handleChange}
-        ref={this.setInput}
+        ref={this.setField}
       />
     )
   }
@@ -102,8 +102,8 @@ export default class Radio extends CheckCog {
 
     return (
       <div className={className}>
-        {this.renderInput()}
-        {this.renderLabel()}
+        {this.renderField()}
+        {this.renderTitle()}
       </div>
     )
   }

@@ -5,8 +5,8 @@ import React from 'react'
 import classnames from 'classnames'
 
 import { ValueCog } from 'shinkansen-cogs/cogs'
-import Label from 'shinkansen-cogs/components/label/email'
-import Input from 'shinkansen-cogs/components/input/email'
+import Title from 'shinkansen-cogs/components/title/email'
+import Field from 'shinkansen-cogs/components/field/email'
 
 export default class EmailCog extends ValueCog {
   getClassName () {
@@ -22,29 +22,29 @@ export default class EmailCog extends ValueCog {
     onChange(name, value)
   }
 
-  renderLabel () {
+  renderTitle () {
     const id = this.getId()
 
     const {
-      label,
+      title,
       required,
       disabled,
       readOnly
     } = this.props
 
     return (
-      <Label
+      <Title
         id={id}
-        label={label}
+        title={title}
         required={required}
         disabled={disabled}
         readOnly={readOnly}
-        ref={this.setLabel}
+        ref={this.setTitle}
       />
     )
   }
 
-  renderInput () {
+  renderField () {
     const id = this.getId()
 
     const {
@@ -60,7 +60,7 @@ export default class EmailCog extends ValueCog {
     } = this.props
 
     return (
-      <Input
+      <Field
         id={id}
         name={name}
         value={value}
@@ -72,7 +72,7 @@ export default class EmailCog extends ValueCog {
         accessKey={accessKey}
         placeholder={placeholder}
         onChange={this.handleChange}
-        ref={this.setInput}
+        ref={this.setField}
       />
     )
   }

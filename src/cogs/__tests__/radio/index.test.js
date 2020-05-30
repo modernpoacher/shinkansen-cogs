@@ -5,8 +5,8 @@ import Adapter from 'enzyme-adapter-react-16'
 
 import classnames from 'classnames'
 
-import Label from 'shinkansen-cogs/components/label/radio'
-import Input from 'shinkansen-cogs/components/input/radio'
+import Title from 'shinkansen-cogs/components/title/radio'
+import Field from 'shinkansen-cogs/components/field/radio'
 
 import { CheckCog } from 'shinkansen-cogs/cogs'
 import Cog from 'shinkansen-cogs/cogs/radio'
@@ -23,17 +23,17 @@ jest.mock('shinkansen-cogs/cogs', () => {
 
     shouldComponentUpdate () { }
 
-    renderLabel () { }
+    renderTitle () { }
 
-    renderInput () { }
+    renderField () { }
 
     render () {
       const className = this.getClassName()
 
       return (
         <div className={className}>
-          {this.renderLabel()}
-          {this.renderInput()}
+          {this.renderTitle()}
+          {this.renderField()}
         </div>
       )
     }
@@ -46,8 +46,8 @@ jest.mock('shinkansen-cogs/cogs', () => {
   }
 })
 
-jest.mock('shinkansen-cogs/components/label/radio')
-jest.mock('shinkansen-cogs/components/input/radio')
+jest.mock('shinkansen-cogs/components/title/radio')
+jest.mock('shinkansen-cogs/components/field/radio')
 
 describe('shinkansen-cogs/cogs/radio', () => {
   describe('<Cog />', () => {
@@ -68,16 +68,16 @@ describe('shinkansen-cogs/cogs/radio', () => {
         })
       })
 
-      describe('`renderLabel`', () => {
+      describe('`renderTitle`', () => {
         it('is defined', () => {
-          expect(Cog.prototype.renderLabel)
+          expect(Cog.prototype.renderTitle)
             .toBeDefined()
         })
       })
 
-      describe('`renderInput`', () => {
+      describe('`renderField`', () => {
         it('is defined', () => {
-          expect(Cog.prototype.renderInput)
+          expect(Cog.prototype.renderField)
             .toBeDefined()
         })
       })
@@ -89,7 +89,7 @@ describe('shinkansen-cogs/cogs/radio', () => {
           <Cog
             name='MOCK NAME'
             id='MOCK ID'
-            label='MOCK LABEL'
+            title='MOCK TITLE'
             value='MOCK VALUE'
             tabIndex={1}
             accessKey='MOCK ACCESS KEY'
@@ -142,7 +142,7 @@ describe('shinkansen-cogs/cogs/radio', () => {
           name='MOCK NAME'
           id='MOCK ID'
           value='MOCK VALUE'
-          label='MOCK LABEL'
+          title='MOCK TITLE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -171,7 +171,7 @@ describe('shinkansen-cogs/cogs/radio', () => {
             name: 'MOCK CHANGE NAME',
             id: 'MOCK CHANGE ID',
             value: 'MOCK CHANGE VALUE',
-            label: 'MOCK CHANGE LABEL',
+            title: 'MOCK CHANGE TITLE',
             tabIndex: 0,
             accessKey: 'MOCK CHANGE ACCESS KEY',
             required: false,
@@ -189,7 +189,7 @@ describe('shinkansen-cogs/cogs/radio', () => {
             name: 'MOCK NAME',
             id: 'MOCK ID',
             value: 'MOCK VALUE',
-            label: 'MOCK LABEL',
+            title: 'MOCK TITLE',
             tabIndex: 1,
             accessKey: 'MOCK ACCESS KEY',
             required: true,
@@ -202,13 +202,13 @@ describe('shinkansen-cogs/cogs/radio', () => {
       })
     })
 
-    describe('`renderLabel()`', () => {
+    describe('`renderTitle()`', () => {
       const component = (
         <Cog
           name='MOCK NAME'
           id='MOCK ID'
           value='MOCK VALUE'
-          label='MOCK LABEL'
+          title='MOCK TITLE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -231,7 +231,7 @@ describe('shinkansen-cogs/cogs/radio', () => {
 
         getIdSpy = jest.spyOn(Cog.prototype, 'getId').mockReturnValue('MOCK ID')
 
-        instance.renderLabel()
+        instance.renderTitle()
       })
 
       it('invokes `getId`', () => {
@@ -239,11 +239,11 @@ describe('shinkansen-cogs/cogs/radio', () => {
           .toBeCalled()
       })
 
-      it('renders `<Label />`', () => {
-        expect(Label)
+      it('renders `<Title />`', () => {
+        expect(Title)
           .toBeCalledWith({
             id: 'MOCK ID',
-            label: 'MOCK LABEL',
+            title: 'MOCK TITLE',
             disabled: true,
             required: true,
             readOnly: true
@@ -251,13 +251,13 @@ describe('shinkansen-cogs/cogs/radio', () => {
       })
     })
 
-    describe('`renderInput()`', () => {
+    describe('`renderField()`', () => {
       const component = (
         <Cog
           name='MOCK NAME'
           id='MOCK ID'
           value='MOCK VALUE'
-          label='MOCK LABEL'
+          title='MOCK TITLE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -282,7 +282,7 @@ describe('shinkansen-cogs/cogs/radio', () => {
 
         getIdSpy = jest.spyOn(Cog.prototype, 'getId')
 
-        instance.renderInput()
+        instance.renderField()
       })
 
       it('invokes `getId`', () => {
@@ -290,8 +290,8 @@ describe('shinkansen-cogs/cogs/radio', () => {
           .toBeCalled()
       })
 
-      it('renders `<Input />`', () => {
-        expect(Input)
+      it('renders `<Field />`', () => {
+        expect(Field)
           .toBeCalledWith({
             name: 'MOCK NAME',
             id: 'MOCK ID',

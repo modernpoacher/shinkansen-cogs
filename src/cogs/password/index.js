@@ -5,8 +5,8 @@ import React from 'react'
 import classnames from 'classnames'
 
 import { ValueCog } from 'shinkansen-cogs/cogs'
-import Label from 'shinkansen-cogs/components/label/password'
-import Input from 'shinkansen-cogs/components/input/password'
+import Title from 'shinkansen-cogs/components/title/password'
+import Field from 'shinkansen-cogs/components/field/password'
 
 export default class PasswordCog extends ValueCog {
   getClassName () {
@@ -22,29 +22,29 @@ export default class PasswordCog extends ValueCog {
     onChange(name, value)
   }
 
-  renderLabel () {
+  renderTitle () {
     const id = this.getId()
 
     const {
-      label,
+      title,
       required,
       disabled,
       readOnly
     } = this.props
 
     return (
-      <Label
+      <Title
         id={id}
-        label={label}
+        title={title}
         required={required}
         disabled={disabled}
         readOnly={readOnly}
-        ref={this.setLabel}
+        ref={this.setTitle}
       />
     )
   }
 
-  renderInput () {
+  renderField () {
     const id = this.getId()
 
     const {
@@ -60,7 +60,7 @@ export default class PasswordCog extends ValueCog {
     } = this.props
 
     return (
-      <Input
+      <Field
         id={id}
         name={name}
         value={value}
@@ -72,7 +72,7 @@ export default class PasswordCog extends ValueCog {
         accessKey={accessKey}
         placeholder={placeholder}
         onChange={this.handleChange}
-        ref={this.setInput}
+        ref={this.setField}
       />
     )
   }

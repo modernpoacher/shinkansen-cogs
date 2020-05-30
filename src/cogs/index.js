@@ -6,8 +6,8 @@ import PropTypes from 'prop-types'
 
 import classNames from 'classnames'
 
-import Label from 'shinkansen-cogs/components/label'
-import Input from 'shinkansen-cogs/components/input'
+import Title from 'shinkansen-cogs/components/title'
+import Field from 'shinkansen-cogs/components/field'
 
 function onChange () {
   /* */
@@ -18,11 +18,11 @@ function onClick () {
 }
 
 export default class Cog extends Component {
-  getLabel = () => this.label
-  getInput = () => this.input
+  getTitle = () => this.title
+  getField = () => this.input
 
-  setLabel = (label) => !!(this.label = label) || delete this.label
-  setInput = (input) => !!(this.input = input) || delete this.input
+  setTitle = (title) => !!(this.title = title) || delete this.title
+  setField = (input) => !!(this.input = input) || delete this.input
 
   getClassName () {
     const {
@@ -49,7 +49,7 @@ export default class Cog extends Component {
     return (
       (props.name !== this.props.name) ||
       (props.id !== this.props.id) ||
-      (props.label !== this.props.label) ||
+      (props.title !== this.props.title) ||
       (props.required !== this.props.required) ||
       (props.disabled !== this.props.disabled) ||
       (props.readOnly !== this.props.readOnly) ||
@@ -60,29 +60,29 @@ export default class Cog extends Component {
     )
   }
 
-  renderLabel () {
+  renderTitle () {
     const id = this.getId()
 
     const {
-      label,
+      title,
       required,
       disabled,
       readOnly
     } = this.props
 
     return (
-      <Label
+      <Title
         id={id}
-        label={label}
+        title={title}
         required={required}
         disabled={disabled}
         readOnly={readOnly}
-        ref={this.setLabel}
+        ref={this.setTitle}
       />
     )
   }
 
-  renderInput () {
+  renderField () {
     const id = this.getId()
 
     const {
@@ -97,7 +97,7 @@ export default class Cog extends Component {
     } = this.props
 
     return (
-      <Input
+      <Field
         id={id}
         name={name}
         required={required}
@@ -107,7 +107,7 @@ export default class Cog extends Component {
         accessKey={accessKey}
         placeholder={placeholder}
         onChange={onChange}
-        ref={this.setInput}
+        ref={this.setField}
       />
     )
   }
@@ -117,8 +117,8 @@ export default class Cog extends Component {
 
     return (
       <div className={className}>
-        {this.renderLabel()}
-        {this.renderInput()}
+        {this.renderTitle()}
+        {this.renderField()}
       </div>
     )
   }
@@ -127,7 +127,7 @@ export default class Cog extends Component {
 Cog.propTypes = {
   id: PropTypes.string,
   name: PropTypes.string.isRequired,
-  label: PropTypes.string,
+  title: PropTypes.string,
   required: PropTypes.bool,
   disabled: PropTypes.bool,
   readOnly: PropTypes.bool,

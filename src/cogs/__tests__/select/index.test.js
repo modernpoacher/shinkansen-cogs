@@ -5,8 +5,8 @@ import Adapter from 'enzyme-adapter-react-16'
 
 import classnames from 'classnames'
 
-import Label from 'shinkansen-cogs/components/label/select'
-import Input from 'shinkansen-cogs/components/input/select'
+import Title from 'shinkansen-cogs/components/title/select'
+import Field from 'shinkansen-cogs/components/field/select'
 
 import { ValueCog } from 'shinkansen-cogs/cogs'
 import Cog from 'shinkansen-cogs/cogs/select'
@@ -21,17 +21,17 @@ jest.mock('shinkansen-cogs/cogs', () => {
 
     getId () { }
 
-    renderLabel () { }
+    renderTitle () { }
 
-    renderInput () { }
+    renderField () { }
 
     render () {
       const className = this.getClassName()
 
       return (
         <div className={className}>
-          {this.renderLabel()}
-          {this.renderInput()}
+          {this.renderTitle()}
+          {this.renderField()}
         </div>
       )
     }
@@ -45,8 +45,8 @@ jest.mock('shinkansen-cogs/cogs', () => {
   }
 })
 
-jest.mock('shinkansen-cogs/components/label/select')
-jest.mock('shinkansen-cogs/components/input/select')
+jest.mock('shinkansen-cogs/components/title/select')
+jest.mock('shinkansen-cogs/components/field/select')
 
 describe('shinkansen-cogs/cogs/select', () => {
   describe('<Cog />', () => {
@@ -67,16 +67,16 @@ describe('shinkansen-cogs/cogs/select', () => {
         })
       })
 
-      describe('`renderLabel`', () => {
+      describe('`renderTitle`', () => {
         it('is defined', () => {
-          expect(Cog.prototype.renderLabel)
+          expect(Cog.prototype.renderTitle)
             .toBeDefined()
         })
       })
 
-      describe('`renderInput`', () => {
+      describe('`renderField`', () => {
         it('is defined', () => {
-          expect(Cog.prototype.renderInput)
+          expect(Cog.prototype.renderField)
             .toBeDefined()
         })
       })
@@ -88,7 +88,7 @@ describe('shinkansen-cogs/cogs/select', () => {
           <Cog
             name='MOCK NAME'
             id='MOCK ID'
-            label='MOCK LABEL'
+            title='MOCK TITLE'
             value='MOCK VALUE'
             tabIndex={1}
             accessKey='MOCK ACCESS KEY'
@@ -134,12 +134,12 @@ describe('shinkansen-cogs/cogs/select', () => {
       })
     })
 
-    describe('`renderLabel()`', () => {
+    describe('`renderTitle()`', () => {
       const component = (
         <Cog
           name='MOCK NAME'
           id='MOCK ID'
-          label='MOCK LABEL'
+          title='MOCK TITLE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -162,7 +162,7 @@ describe('shinkansen-cogs/cogs/select', () => {
 
         getIdSpy = jest.spyOn(Cog.prototype, 'getId').mockReturnValue('MOCK ID')
 
-        instance.renderLabel()
+        instance.renderTitle()
       })
 
       it('invokes `getId`', () => {
@@ -170,11 +170,11 @@ describe('shinkansen-cogs/cogs/select', () => {
           .toBeCalled()
       })
 
-      it('renders `<Label />`', () => {
-        expect(Label)
+      it('renders `<Title />`', () => {
+        expect(Title)
           .toBeCalledWith({
             id: 'MOCK ID',
-            label: 'MOCK LABEL',
+            title: 'MOCK TITLE',
             disabled: true,
             required: true,
             readOnly: true
@@ -182,12 +182,12 @@ describe('shinkansen-cogs/cogs/select', () => {
       })
     })
 
-    describe('`renderInput()`', () => {
+    describe('`renderField()`', () => {
       const component = (
         <Cog
           name='MOCK NAME'
           id='MOCK ID'
-          label='MOCK LABEL'
+          title='MOCK TITLE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -211,7 +211,7 @@ describe('shinkansen-cogs/cogs/select', () => {
 
         getIdSpy = jest.spyOn(Cog.prototype, 'getId')
 
-        instance.renderInput()
+        instance.renderField()
       })
 
       it('invokes `getId`', () => {
@@ -219,8 +219,8 @@ describe('shinkansen-cogs/cogs/select', () => {
           .toBeCalled()
       })
 
-      it('renders `<Input />`', () => {
-        expect(Input)
+      it('renders `<Field />`', () => {
+        expect(Field)
           .toBeCalledWith({
             name: 'MOCK NAME',
             id: 'MOCK ID',
