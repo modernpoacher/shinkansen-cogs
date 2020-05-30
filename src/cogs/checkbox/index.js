@@ -6,6 +6,7 @@ import classnames from 'classnames'
 
 import { CheckCog } from 'shinkansen-cogs/cogs'
 import Title from 'shinkansen-cogs/components/title/checkbox'
+import Description from 'shinkansen-cogs/components/description/checkbox'
 import Field from 'shinkansen-cogs/components/field/checkbox'
 
 export default class CheckboxCog extends CheckCog {
@@ -53,6 +54,22 @@ export default class CheckboxCog extends CheckCog {
     )
   }
 
+  renderDescription () {
+    const id = this.getId()
+
+    const {
+      description
+    } = this.props
+
+    return (
+      <Description
+        id={id}
+        description={description}
+        ref={this.setDescription}
+      />
+    )
+  }
+
   renderField () {
     const id = this.getId()
 
@@ -94,6 +111,7 @@ export default class CheckboxCog extends CheckCog {
       <div className={className}>
         {this.renderField()}
         {this.renderTitle()}
+        {this.renderDescription()}
       </div>
     )
   }

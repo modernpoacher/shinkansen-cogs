@@ -7,6 +7,7 @@ import classnames from 'classnames'
 
 import { CheckCog } from 'shinkansen-cogs/cogs'
 import Title from 'shinkansen-cogs/components/title/radio'
+import Description from 'shinkansen-cogs/components/description/radio'
 import Field from 'shinkansen-cogs/components/field/radio'
 
 export default class Radio extends CheckCog {
@@ -61,6 +62,22 @@ export default class Radio extends CheckCog {
     )
   }
 
+  renderDescription () {
+    const id = this.getId()
+
+    const {
+      description
+    } = this.props
+
+    return (
+      <Description
+        id={id}
+        description={description}
+        ref={this.setDescription}
+      />
+    )
+  }
+
   renderField () {
     const id = this.getId()
 
@@ -104,6 +121,7 @@ export default class Radio extends CheckCog {
       <div className={className}>
         {this.renderField()}
         {this.renderTitle()}
+        {this.renderDescription()}
       </div>
     )
   }

@@ -28,16 +28,19 @@ storiesOf('CheckboxCog', module)
       <CheckboxState>
         <CheckboxCog
           title='Checkbox Cog'
+          description='Checkbox Cog'
           name='checkbox-one' />
       </CheckboxState>
       <CheckboxState>
         <CheckboxCog
           title='Checkbox Cog'
+          description='Checkbox Cog'
           name='checkbox-two' />
       </CheckboxState>
       <CheckboxState>
         <CheckboxCog
           title='Checkbox Cog'
+          description='Checkbox Cog'
           name='checkbox-three' />
       </CheckboxState>
     </div>
@@ -48,18 +51,21 @@ storiesOf('CheckboxCog', module)
         checked>
         <CheckboxCog
           title='Checkbox Cog'
+          description='Checkbox Cog'
           name='checkbox-one' />
       </CheckboxState>
       <CheckboxState
         checked>
         <CheckboxCog
           title='Checkbox Cog'
+          description='Checkbox Cog'
           name='checkbox-two' />
       </CheckboxState>
       <CheckboxState
         checked>
         <CheckboxCog
           title='Checkbox Cog'
+          description='Checkbox Cog'
           name='checkbox-three' />
       </CheckboxState>
     </div>
@@ -70,18 +76,21 @@ storiesOf('CheckboxCog', module)
         defaultChecked>
         <CheckboxCog
           title='Checkbox Cog'
+          description='Checkbox Cog'
           name='checkbox-one' />
       </CheckboxState>
       <CheckboxState
         defaultChecked>
         <CheckboxCog
           title='Checkbox Cog'
+          description='Checkbox Cog'
           name='checkbox-two' />
       </CheckboxState>
       <CheckboxState
         defaultChecked>
         <CheckboxCog
           title='Checkbox Cog'
+          description='Checkbox Cog'
           name='checkbox-three' />
       </CheckboxState>
     </div>
@@ -89,30 +98,38 @@ storiesOf('CheckboxCog', module)
   .add('"required"', () => (
     <CheckboxCog
       title='Checkbox Cog'
+      description='Checkbox Cog'
       required
       name='checkbox' />
   ))
   .add('"disabled"', () => (
     <CheckboxCog
       title='Checkbox Cog'
+      description='Checkbox Cog'
       disabled
       name='checkbox' />
   ))
   .add('"readOnly"', () => (
     <CheckboxCog
       title='Checkbox Cog'
+      description='Checkbox Cog'
+      description='Checkbox Cog'
       readOnly
       name='checkbox' />
   ))
   .add('"tabIndex"', () => (
     <CheckboxCog
       title='Checkbox Cog'
+      description='Checkbox Cog'
+      description='Checkbox Cog'
       tabIndex={0}
       name='checkbox' />
   ))
   .add('"accessKey"', () => (
     <CheckboxCog
       title='Checkbox Cog'
+      description='Checkbox Cog'
+      description='Checkbox Cog'
       accessKey='A'
       name='checkbox' />
   ))
@@ -121,6 +138,7 @@ storiesOf('CheckboxCog', module)
       checked>
       <CheckboxCog
         title='Checkbox Cog'
+        description='Checkbox Cog'
         required
         name='checkbox' />
     </CheckboxState>
@@ -130,6 +148,7 @@ storiesOf('CheckboxCog', module)
       checked>
       <CheckboxCog
         title='Checkbox Cog'
+        description='Checkbox Cog'
         disabled
         name='checkbox' />
     </CheckboxState>
@@ -139,6 +158,7 @@ storiesOf('CheckboxCog', module)
       checked>
       <CheckboxCog
         title='Checkbox Cog'
+        description='Checkbox Cog'
         readOnly
         name='checkbox' />
     </CheckboxState>
@@ -148,6 +168,7 @@ storiesOf('CheckboxCog', module)
       checked>
       <CheckboxCog
         title='Checkbox Cog'
+        description='Checkbox Cog'
         tabIndex={0}
         name='checkbox' />
     </CheckboxState>
@@ -157,6 +178,7 @@ storiesOf('CheckboxCog', module)
       checked>
       <CheckboxCog
         title='Checkbox Cog'
+        description='Checkbox Cog'
         accessKey='A'
         name='checkbox' />
     </CheckboxState>
@@ -166,6 +188,7 @@ storiesOf('CheckboxCog', module)
       checked>
       <CheckboxCog
         title='Checkbox Cog'
+        description='Checkbox Cog'
         required
         disabled
         readOnly
@@ -179,6 +202,7 @@ storiesOf('CheckboxCog', module)
       defaultChecked>
       <CheckboxCog
         title='Checkbox Cog'
+        description='Checkbox Cog'
         required
         name='checkbox' />
     </CheckboxState>
@@ -188,6 +212,7 @@ storiesOf('CheckboxCog', module)
       defaultChecked>
       <CheckboxCog
         title='Checkbox Cog'
+        description='Checkbox Cog'
         disabled
         name='checkbox' />
     </CheckboxState>
@@ -197,6 +222,7 @@ storiesOf('CheckboxCog', module)
       defaultChecked>
       <CheckboxCog
         title='Checkbox Cog'
+        description='Checkbox Cog'
         readOnly
         name='checkbox' />
     </CheckboxState>
@@ -206,6 +232,7 @@ storiesOf('CheckboxCog', module)
       defaultChecked>
       <CheckboxCog
         title='Checkbox Cog'
+        description='Checkbox Cog'
         tabIndex={0}
         name='checkbox' />
     </CheckboxState>
@@ -215,6 +242,7 @@ storiesOf('CheckboxCog', module)
       defaultChecked>
       <CheckboxCog
         title='Checkbox Cog'
+        description='Checkbox Cog'
         accessKey='A'
         name='checkbox' />
     </CheckboxState>
@@ -224,6 +252,7 @@ storiesOf('CheckboxCog', module)
       defaultChecked>
       <CheckboxCog
         title='Checkbox Cog'
+        description='Checkbox Cog'
         required
         disabled
         readOnly
@@ -237,6 +266,7 @@ storiesOf('EmailCog', module)
   .add('Required and default props', () => (
     <EmailCog
       title='Email Cog'
+      description='Email Cog'
       name='email' />
   ))
   .add('"value"', () => (
@@ -244,6 +274,7 @@ storiesOf('EmailCog', module)
       value='Email'>
       <EmailCog
         title='Email Cog'
+        description='Email Cog'
         name='email' />
     </EmailState>
   ))
@@ -252,42 +283,49 @@ storiesOf('EmailCog', module)
       defaultValue='Email'>
       <EmailCog
         title='Email Cog'
+        description='Email Cog'
         name='email' />
     </EmailState>
   ))
   .add('"required"', () => (
     <EmailCog
       title='Email Cog'
+      description='Email Cog'
       required
       name='email' />
   ))
   .add('"disabled"', () => (
     <EmailCog
       title='Email Cog'
+      description='Email Cog'
       disabled
       name='email' />
   ))
   .add('"readOnly"', () => (
     <EmailCog
       title='Email Cog'
+      description='Email Cog'
       readOnly
       name='email' />
   ))
   .add('"tabIndex"', () => (
     <EmailCog
       title='Email Cog'
+      description='Email Cog'
       tabIndex={0}
       name='email' />
   ))
   .add('"accessKey"', () => (
     <EmailCog
       title='Email Cog'
+      description='Email Cog'
       accessKey='A'
       name='email' />
   ))
   .add('"required" "disabled" "readOnly" "tabIndex" "accessKey"', () => (
     <EmailCog
       title='Email Cog'
+      description='Email Cog'
       required
       disabled
       readOnly
@@ -300,6 +338,7 @@ storiesOf('NumberCog', module)
   .add('Required and default props', () => (
     <NumberCog
       title='Number Cog'
+      description='Number Cog'
       name='number' />
   ))
   .add('"value"', () => (
@@ -307,6 +346,7 @@ storiesOf('NumberCog', module)
       value={1}>
       <NumberCog
         title='Number Cog'
+        description='Number Cog'
         name='number' />
     </NumberState>
   ))
@@ -315,42 +355,49 @@ storiesOf('NumberCog', module)
       defaultValue={1}>
       <NumberCog
         title='Number Cog'
+        description='Number Cog'
         name='number' />
     </NumberState>
   ))
   .add('"required"', () => (
     <NumberCog
       title='Number Cog'
+      description='Number Cog'
       required
       name='number' />
   ))
   .add('"disabled"', () => (
     <NumberCog
       title='Number Cog'
+      description='Number Cog'
       disabled
       name='number' />
   ))
   .add('"readOnly"', () => (
     <NumberCog
       title='Number Cog'
+      description='Number Cog'
       readOnly
       name='number' />
   ))
   .add('"tabIndex"', () => (
     <NumberCog
       title='Number Cog'
+      description='Number Cog'
       tabIndex={0}
       name='number' />
   ))
   .add('"accessKey"', () => (
     <NumberCog
       title='Number Cog'
+      description='Number Cog'
       accessKey='A'
       name='number' />
   ))
   .add('"required" "disabled" "readOnly" "tabIndex" "accessKey"', () => (
     <NumberCog
       title='Number Cog'
+      description='Number Cog'
       required
       disabled
       readOnly
@@ -363,6 +410,7 @@ storiesOf('PasswordCog', module)
   .add('Required and default props', () => (
     <PasswordCog
       title='Password Cog'
+      description='Password Cog'
       name='password' />
   ))
   .add('"value"', () => (
@@ -370,6 +418,7 @@ storiesOf('PasswordCog', module)
       value='Password'>
       <PasswordCog
         title='Password Cog'
+        description='Password Cog'
         name='password' />
     </PasswordState>
   ))
@@ -378,42 +427,49 @@ storiesOf('PasswordCog', module)
       defaultValue='Password'>
       <PasswordCog
         title='Password Cog'
+        description='Password Cog'
         name='password' />
     </PasswordState>
   ))
   .add('"required"', () => (
     <PasswordCog
       title='Password Cog'
+      description='Password Cog'
       required
       name='password' />
   ))
   .add('"disabled"', () => (
     <PasswordCog
       title='Password Cog'
+      description='Password Cog'
       disabled
       name='password' />
   ))
   .add('"readOnly"', () => (
     <PasswordCog
       title='Password Cog'
+      description='Password Cog'
       readOnly
       name='password' />
   ))
   .add('"tabIndex"', () => (
     <PasswordCog
       title='Password Cog'
+      description='Password Cog'
       tabIndex={0}
       name='password' />
   ))
   .add('"accessKey"', () => (
     <PasswordCog
       title='Password Cog'
+      description='Password Cog'
       accessKey='A'
       name='password' />
   ))
   .add('"required" "disabled" "readOnly" "tabIndex" "accessKey"', () => (
     <PasswordCog
       title='Password Cog'
+      description='Password Cog'
       required
       disabled
       readOnly
@@ -428,16 +484,19 @@ storiesOf('RadioCog', module)
       <RadioCog
         id='radio-one'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='one' />
       <RadioCog
         id='radio-two'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='two' />
       <RadioCog
         id='radio-three'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='three' />
     </RadioState>
@@ -448,16 +507,19 @@ storiesOf('RadioCog', module)
       <RadioCog
         id='radio-one'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='one' />
       <RadioCog
         id='radio-two'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='two' />
       <RadioCog
         id='radio-three'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='three' />
     </RadioState>
@@ -468,16 +530,19 @@ storiesOf('RadioCog', module)
       <RadioCog
         id='radio-one'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='one' />
       <RadioCog
         id='radio-two'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='two' />
       <RadioCog
         id='radio-three'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='three' />
     </RadioState>
@@ -487,18 +552,21 @@ storiesOf('RadioCog', module)
       <RadioCog
         id='radio-one'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='one'
         required />
       <RadioCog
         id='radio-two'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='two'
         required />
       <RadioCog
         id='radio-three'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='three'
         required />
@@ -509,18 +577,21 @@ storiesOf('RadioCog', module)
       <RadioCog
         id='radio-one'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='one'
         disabled />
       <RadioCog
         id='radio-two'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='two'
         disabled />
       <RadioCog
         id='radio-three'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='three'
         disabled />
@@ -531,18 +602,21 @@ storiesOf('RadioCog', module)
       <RadioCog
         id='radio-one'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='one'
         readOnly />
       <RadioCog
         id='radio-two'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='two'
         readOnly />
       <RadioCog
         id='radio-three'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='three'
         readOnly />
@@ -553,18 +627,21 @@ storiesOf('RadioCog', module)
       <RadioCog
         id='radio-one'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='one'
         tabIndex={0} />
       <RadioCog
         id='radio-two'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='two'
         tabIndex={0} />
       <RadioCog
         id='radio-three'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='three'
         tabIndex={0} />
@@ -575,18 +652,21 @@ storiesOf('RadioCog', module)
       <RadioCog
         id='radio-one'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='one'
         accessKey='1' />
       <RadioCog
         id='radio-two'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='two'
         accessKey='2' />
       <RadioCog
         id='radio-three'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='three'
         accessKey='3' />
@@ -598,18 +678,21 @@ storiesOf('RadioCog', module)
       <RadioCog
         id='radio-one'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='one'
         required />
       <RadioCog
         id='radio-two'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='two'
         required />
       <RadioCog
         id='radio-three'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='three'
         required />
@@ -621,18 +704,21 @@ storiesOf('RadioCog', module)
       <RadioCog
         id='radio-one'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='one'
         disabled />
       <RadioCog
         id='radio-two'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='two'
         disabled />
       <RadioCog
         id='radio-three'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='three'
         disabled />
@@ -644,18 +730,21 @@ storiesOf('RadioCog', module)
       <RadioCog
         id='radio-one'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='one'
         readOnly />
       <RadioCog
         id='radio-two'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='two'
         readOnly />
       <RadioCog
         id='radio-three'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='three'
         readOnly />
@@ -667,18 +756,21 @@ storiesOf('RadioCog', module)
       <RadioCog
         id='radio-one'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='one'
         tabIndex={0} />
       <RadioCog
         id='radio-two'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='two'
         tabIndex={0} />
       <RadioCog
         id='radio-three'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='three'
         tabIndex={0} />
@@ -690,18 +782,21 @@ storiesOf('RadioCog', module)
       <RadioCog
         id='radio-one'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='one'
         accessKey='1' />
       <RadioCog
         id='radio-two'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='two'
         accessKey='2' />
       <RadioCog
         id='radio-three'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='three'
         accessKey='3' />
@@ -713,6 +808,7 @@ storiesOf('RadioCog', module)
       <RadioCog
         id='radio-one'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='one'
         required
@@ -723,6 +819,7 @@ storiesOf('RadioCog', module)
       <RadioCog
         id='radio-two'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='two' required
         disabled
@@ -732,6 +829,7 @@ storiesOf('RadioCog', module)
       <RadioCog
         id='radio-three'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='three' required
         disabled
@@ -746,18 +844,21 @@ storiesOf('RadioCog', module)
       <RadioCog
         id='radio-one'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='one'
         required />
       <RadioCog
         id='radio-two'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='two'
         required />
       <RadioCog
         id='radio-three'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='three'
         required />
@@ -769,18 +870,21 @@ storiesOf('RadioCog', module)
       <RadioCog
         id='radio-one'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='one'
         disabled />
       <RadioCog
         id='radio-two'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='two'
         disabled />
       <RadioCog
         id='radio-three'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='three'
         disabled />
@@ -792,18 +896,21 @@ storiesOf('RadioCog', module)
       <RadioCog
         id='radio-one'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='one'
         readOnly />
       <RadioCog
         id='radio-two'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='two'
         readOnly />
       <RadioCog
         id='radio-three'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='three'
         readOnly />
@@ -815,18 +922,21 @@ storiesOf('RadioCog', module)
       <RadioCog
         id='radio-one'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='one'
         tabIndex={0} />
       <RadioCog
         id='radio-two'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='two'
         tabIndex={0} />
       <RadioCog
         id='radio-three'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='three'
         tabIndex={0} />
@@ -838,18 +948,21 @@ storiesOf('RadioCog', module)
       <RadioCog
         id='radio-one'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='one'
         accessKey='1' />
       <RadioCog
         id='radio-two'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='two'
         accessKey='2' />
       <RadioCog
         id='radio-three'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='three'
         accessKey='3' />
@@ -861,6 +974,7 @@ storiesOf('RadioCog', module)
       <RadioCog
         id='radio-one'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='one' required
         disabled
@@ -870,6 +984,7 @@ storiesOf('RadioCog', module)
       <RadioCog
         id='radio-two'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='two' required
         disabled
@@ -879,6 +994,7 @@ storiesOf('RadioCog', module)
       <RadioCog
         id='radio-three'
         title='Radio Cog'
+        description='Radio Cog'
         name='radio'
         value='three' required
         disabled
@@ -892,6 +1008,7 @@ storiesOf('SelectCog', module)
   .add('Required and default props', () => (
     <SelectCog
       title='Select Cog'
+      description='Select Cog'
       name='select'>
       <option>One</option>
       <option>Two</option>
@@ -903,6 +1020,7 @@ storiesOf('SelectCog', module)
       value='one'>
       <SelectCog
         title='Select Cog'
+        description='Select Cog'
         name='select'>
         <option value='one'>One</option>
         <option value='two'>Two</option>
@@ -915,6 +1033,7 @@ storiesOf('SelectCog', module)
       defaultValue='one'>
       <SelectCog
         title='Select Cog'
+        description='Select Cog'
         name='select'>
         <option value='one'>One</option>
         <option value='two'>Two</option>
@@ -925,6 +1044,7 @@ storiesOf('SelectCog', module)
   .add('"required"', () => (
     <SelectCog
       title='Select Cog'
+      description='Select Cog'
       required
       name='select'>
       <option>One</option>
@@ -935,6 +1055,7 @@ storiesOf('SelectCog', module)
   .add('"disabled"', () => (
     <SelectCog
       title='Select Cog'
+      description='Select Cog'
       disabled
       name='select'>
       <option>One</option>
@@ -945,6 +1066,7 @@ storiesOf('SelectCog', module)
   .add('"readOnly"', () => (
     <SelectCog
       title='Select Cog'
+      description='Select Cog'
       readOnly
       name='select'>
       <option>One</option>
@@ -955,6 +1077,7 @@ storiesOf('SelectCog', module)
   .add('"tabIndex"', () => (
     <SelectCog
       title='Select Cog'
+      description='Select Cog'
       tabIndex={0}
       name='select'>
       <option>One</option>
@@ -965,6 +1088,7 @@ storiesOf('SelectCog', module)
   .add('"accessKey"', () => (
     <SelectCog
       title='Select Cog'
+      description='Select Cog'
       accessKey='A'
       name='select'>
       <option>One</option>
@@ -975,6 +1099,7 @@ storiesOf('SelectCog', module)
   .add('"required" "disabled" "readOnly" "tabIndex" "accessKey"', () => (
     <SelectCog
       title='Select Cog'
+      description='Select Cog'
       required
       disabled
       readOnly
@@ -991,6 +1116,7 @@ storiesOf('TextCog', module)
   .add('Required and default props', () => (
     <TextCog
       title='Text Cog'
+      description='Text Cog'
       name='text' />
   ))
   .add('"value"', () => (
@@ -1010,36 +1136,42 @@ storiesOf('TextCog', module)
   .add('"required"', () => (
     <TextCog
       title='Text Cog'
+      description='Text Cog'
       required
       name='text' />
   ))
   .add('"disabled"', () => (
     <TextCog
       title='Text Cog'
+      description='Text Cog'
       disabled
       name='text' />
   ))
   .add('"readOnly"', () => (
     <TextCog
       title='Text Cog'
+      description='Text Cog'
       readOnly
       name='text' />
   ))
   .add('"tabIndex"', () => (
     <TextCog
       title='Text Cog'
+      description='Text Cog'
       tabIndex={0}
       name='text' />
   ))
   .add('"accessKey"', () => (
     <TextCog
       title='Text Cog'
+      description='Text Cog'
       accessKey='A'
       name='text' />
   ))
   .add('"required" "disabled" "readOnly" "tabIndex" "accessKey"', () => (
     <TextCog
       title='Text Cog'
+      description='Text Cog'
       required
       disabled
       readOnly
@@ -1052,6 +1184,7 @@ storiesOf('TextareaCog', module)
   .add('Required and default props', () => (
     <TextareaCog
       title='Textarea Cog'
+      description='Textarea Cog'
       name='textarea' />
   ))
   .add('"value"', () => (
@@ -1066,42 +1199,49 @@ storiesOf('TextareaCog', module)
       defaultValue='Textarea'>
       <TextareaCog
         title='Textarea Cog'
+        description='Textarea Cog'
         name='textarea' />
     </TextareaState>
   ))
   .add('"required"', () => (
     <TextareaCog
       title='Textarea Cog'
+      description='Textarea Cog'
       required
       name='textarea' />
   ))
   .add('"disabled"', () => (
     <TextareaCog
       title='Textarea Cog'
+      description='Textarea Cog'
       disabled
       name='textarea' />
   ))
   .add('"readOnly"', () => (
     <TextareaCog
       title='Textarea Cog'
+      description='Textarea Cog'
       readOnly
       name='textarea' />
   ))
   .add('"tabIndex"', () => (
     <TextareaCog
       title='Textarea Cog'
+      description='Textarea Cog'
       tabIndex={0}
       name='textarea' />
   ))
   .add('"accessKey"', () => (
     <TextareaCog
       title='Textarea Cog'
+      description='Textarea Cog'
       accessKey='A'
       name='textarea' />
   ))
   .add('"required" "disabled" "readOnly" "tabIndex" "accessKey"', () => (
     <TextareaCog
       title='Textarea Cog'
+      description='Textarea Cog'
       required
       disabled
       readOnly

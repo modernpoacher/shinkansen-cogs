@@ -7,6 +7,7 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
 import Title from 'shinkansen-cogs/components/title'
+import Description from 'shinkansen-cogs/components/description'
 import Field from 'shinkansen-cogs/components/field'
 
 function onChange () {
@@ -19,9 +20,11 @@ function onClick () {
 
 export default class Cog extends Component {
   getTitle = () => this.title
+  getDescription = () => this.description
   getField = () => this.input
 
   setTitle = (title) => !!(this.title = title) || delete this.title
+  setDescription = (description) => !!(this.description = description) || delete this.description
   setField = (input) => !!(this.input = input) || delete this.input
 
   getClassName () {
@@ -50,6 +53,7 @@ export default class Cog extends Component {
       (props.name !== this.props.name) ||
       (props.id !== this.props.id) ||
       (props.title !== this.props.title) ||
+      (props.description !== this.props.description) ||
       (props.required !== this.props.required) ||
       (props.disabled !== this.props.disabled) ||
       (props.readOnly !== this.props.readOnly) ||
@@ -78,6 +82,22 @@ export default class Cog extends Component {
         disabled={disabled}
         readOnly={readOnly}
         ref={this.setTitle}
+      />
+    )
+  }
+
+  renderDescription () {
+    const id = this.getId()
+
+    const {
+      description
+    } = this.props
+
+    return (
+      <Description
+        id={id}
+        description={description}
+        ref={this.setDescription}
       />
     )
   }
@@ -118,6 +138,7 @@ export default class Cog extends Component {
     return (
       <div className={className}>
         {this.renderTitle()}
+        {this.renderDescription()}
         {this.renderField()}
       </div>
     )
@@ -128,6 +149,7 @@ Cog.propTypes = {
   id: PropTypes.string,
   name: PropTypes.string.isRequired,
   title: PropTypes.string,
+  description: PropTypes.string,
   required: PropTypes.bool,
   disabled: PropTypes.bool,
   readOnly: PropTypes.bool,

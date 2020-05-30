@@ -6,6 +6,7 @@ import classnames from 'classnames'
 
 import { ValueCog } from 'shinkansen-cogs/cogs'
 import Title from 'shinkansen-cogs/components/title/password'
+import Description from 'shinkansen-cogs/components/description/password'
 import Field from 'shinkansen-cogs/components/field/password'
 
 export default class PasswordCog extends ValueCog {
@@ -40,6 +41,22 @@ export default class PasswordCog extends ValueCog {
         disabled={disabled}
         readOnly={readOnly}
         ref={this.setTitle}
+      />
+    )
+  }
+
+  renderDescription () {
+    const id = this.getId()
+
+    const {
+      description
+    } = this.props
+
+    return (
+      <Description
+        id={id}
+        description={description}
+        ref={this.setDescription}
       />
     )
   }
