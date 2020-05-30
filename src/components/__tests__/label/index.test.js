@@ -24,9 +24,37 @@ describe('shinkansen-cogs/components/label', () => {
           .toMatchSnapshot()
       })
 
-      describe('`textContent`', () => {
+      describe('`hasTextContent`', () => {
         it('is defined', () => {
-          expect(Label.prototype.textContent)
+          expect(Label.prototype.hasTextContent)
+            .toBeDefined()
+        })
+      })
+
+      describe('`getTextContent`', () => {
+        it('is defined', () => {
+          expect(Label.prototype.getTextContent)
+            .toBeDefined()
+        })
+      })
+
+      describe('`isRequired`', () => {
+        it('is defined', () => {
+          expect(Label.prototype.isRequired)
+            .toBeDefined()
+        })
+      })
+
+      describe('`isDisabled`', () => {
+        it('is defined', () => {
+          expect(Label.prototype.isDisabled)
+            .toBeDefined()
+        })
+      })
+
+      describe('`isReadOnly`', () => {
+        it('is defined', () => {
+          expect(Label.prototype.isReadOnly)
             .toBeDefined()
         })
       })
@@ -83,7 +111,6 @@ describe('shinkansen-cogs/components/label', () => {
             required
             disabled
             readOnly
-            onChange={jest.fn()}
           />
         )
 
@@ -92,7 +119,41 @@ describe('shinkansen-cogs/components/label', () => {
       })
     })
 
-    describe('`textContent()`', () => {
+    describe('`hasTextContent()`', () => {
+      describe('With a `label` prop', () => {
+        it('returns true', () => {
+          const component = (
+            <Label id='MOCK ID' label='MOCK LABEL' />
+          )
+
+          const instance = (
+            shallow(component)
+              .instance()
+          )
+
+          expect(instance.hasTextContent())
+            .toBe(true)
+        })
+      })
+
+      describe('Without a `label` prop', () => {
+        it('returns false', () => {
+          const component = (
+            <Label id='MOCK ID' />
+          )
+
+          const instance = (
+            shallow(component)
+              .instance()
+          )
+
+          expect(instance.hasTextContent())
+            .toBe(false)
+        })
+      })
+    })
+
+    describe('`getTextContent()`', () => {
       it('returns the `label` prop', () => {
         const component = (
           <Label id='MOCK ID' label='MOCK LABEL' />
@@ -103,7 +164,7 @@ describe('shinkansen-cogs/components/label', () => {
             .instance()
         )
 
-        expect(instance.textContent())
+        expect(instance.getTextContent())
           .toBe('MOCK LABEL')
       })
     })

@@ -89,16 +89,16 @@ describe('shinkansen-cogs/cogs/radio', () => {
           <Cog
             name='MOCK NAME'
             id='MOCK ID'
-            value='MOCK VALUE'
             label='MOCK LABEL'
+            value='MOCK VALUE'
             tabIndex={1}
             accessKey='MOCK ACCESS KEY'
             required
             disabled
             readOnly
             placeholder='MOCK PLACEHOLDER'
-            onClick={jest.fn()}
             onChange={jest.fn()}
+            onClick={jest.fn()}
           />
         )
 
@@ -137,9 +137,6 @@ describe('shinkansen-cogs/cogs/radio', () => {
     })
 
     describe('`shouldComponentUpdate()`', () => {
-      const MOCK_ONCLICK = jest.fn()
-      const MOCK_ONCHANGE = jest.fn()
-
       const component = (
         <Cog
           name='MOCK NAME'
@@ -152,8 +149,6 @@ describe('shinkansen-cogs/cogs/radio', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
-          onClick={MOCK_ONCLICK}
-          onChange={MOCK_ONCHANGE}
         />
       )
 
@@ -182,9 +177,7 @@ describe('shinkansen-cogs/cogs/radio', () => {
             required: false,
             disabled: false,
             readOnly: false,
-            placeholder: 'MOCK CHANGE PLACEHOLDER',
-            onClick: jest.fn(),
-            onChange: jest.fn()
+            placeholder: 'MOCK CHANGE PLACEHOLDER'
           }))
             .toBe(true)
         })
@@ -202,9 +195,7 @@ describe('shinkansen-cogs/cogs/radio', () => {
             required: true,
             disabled: true,
             readOnly: true,
-            placeholder: 'MOCK PLACEHOLDER',
-            onClick: MOCK_ONCLICK,
-            onChange: MOCK_ONCHANGE
+            placeholder: 'MOCK PLACEHOLDER'
           }))
             .toBe(false)
         })
@@ -212,9 +203,6 @@ describe('shinkansen-cogs/cogs/radio', () => {
     })
 
     describe('`renderLabel()`', () => {
-      const MOCK_ONCLICK = jest.fn()
-      const MOCK_ONCHANGE = jest.fn()
-
       const component = (
         <Cog
           name='MOCK NAME'
@@ -227,8 +215,6 @@ describe('shinkansen-cogs/cogs/radio', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
-          onClick={MOCK_ONCLICK}
-          onChange={MOCK_ONCHANGE}
         />
       )
 
@@ -266,9 +252,6 @@ describe('shinkansen-cogs/cogs/radio', () => {
     })
 
     describe('`renderInput()`', () => {
-      const MOCK_ONCLICK = jest.fn()
-      const MOCK_ONCHANGE = jest.fn()
-
       const component = (
         <Cog
           name='MOCK NAME'
@@ -281,8 +264,8 @@ describe('shinkansen-cogs/cogs/radio', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
-          onClick={MOCK_ONCLICK}
-          onChange={MOCK_ONCHANGE}
+          onChange={jest.fn()}
+          onClick={jest.fn()}
         />
       )
 
@@ -319,8 +302,8 @@ describe('shinkansen-cogs/cogs/radio', () => {
             disabled: true,
             readOnly: true,
             placeholder: 'MOCK PLACEHOLDER',
-            onClick: MOCK_ONCLICK,
-            onChange: MOCK_ONCHANGE
+            onChange: expect.any(Function),
+            onClick: expect.any(Function)
           }, {})
       })
     })

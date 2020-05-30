@@ -14,6 +14,15 @@ export default class NumberCog extends ValueCog {
     return classnames(super.getClassName(), 'number')
   }
 
+  handleChange = (value) => {
+    const {
+      onChange,
+      name
+    } = this.props
+
+    onChange(name, value)
+  }
+
   renderLabel () {
     const id = this.getId()
 
@@ -48,8 +57,7 @@ export default class NumberCog extends ValueCog {
       readOnly,
       tabIndex,
       accessKey,
-      placeholder,
-      onChange
+      placeholder
     } = this.props
 
     return (
@@ -64,7 +72,7 @@ export default class NumberCog extends ValueCog {
         tabIndex={tabIndex}
         accessKey={accessKey}
         placeholder={placeholder}
-        onChange={onChange}
+        onChange={this.handleChange}
         ref={this.setInput}
       />
     )
@@ -84,6 +92,5 @@ NumberCog.propTypes = {
 }
 
 NumberCog.defaultProps = {
-  ...ValueCog.defaultProps,
-  label: 'Number Cog'
+  ...ValueCog.defaultProps
 }

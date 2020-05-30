@@ -15,6 +15,5 @@ TextLabel.propTypes = {
 }
 
 TextLabel.defaultProps = {
-  ...Label.defaultProps,
-  label: 'Text'
+  ...Label.defaultProps
 }

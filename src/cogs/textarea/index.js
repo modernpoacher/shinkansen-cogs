@@ -13,6 +13,15 @@ export default class TextareaCog extends ValueCog {
     return classnames(super.getClassName(), 'textarea')
   }
 
+  handleChange = (value) => {
+    const {
+      onChange,
+      name
+    } = this.props
+
+    onChange(name, value)
+  }
+
   renderLabel () {
     const id = this.getId()
 
@@ -47,8 +56,7 @@ export default class TextareaCog extends ValueCog {
       readOnly,
       tabIndex,
       accessKey,
-      placeholder,
-      onChange
+      placeholder
     } = this.props
 
     return (
@@ -63,7 +71,7 @@ export default class TextareaCog extends ValueCog {
         tabIndex={tabIndex}
         accessKey={accessKey}
         placeholder={placeholder}
-        onChange={onChange}
+        onChange={this.handleChange}
         ref={this.setInput}
       />
     )
@@ -75,6 +83,5 @@ TextareaCog.propTypes = {
 }
 
 TextareaCog.defaultProps = {
-  ...ValueCog.defaultProps,
-  label: 'Textarea Cog'
+  ...ValueCog.defaultProps
 }

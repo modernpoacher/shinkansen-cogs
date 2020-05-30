@@ -15,6 +15,5 @@ PasswordLabel.propTypes = {
 }
 
 PasswordLabel.defaultProps = {
-  ...Label.defaultProps,
-  label: 'Password'
+  ...Label.defaultProps
 }

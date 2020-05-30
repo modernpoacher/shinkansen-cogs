@@ -84,6 +84,7 @@ describe('shinkansen-cogs/cogs/email', () => {
             name='MOCK NAME'
             id='MOCK ID'
             label='MOCK LABEL'
+            value='MOCK VALUE'
             tabIndex={1}
             accessKey='MOCK ACCESS KEY'
             required
@@ -129,8 +130,6 @@ describe('shinkansen-cogs/cogs/email', () => {
     })
 
     describe('`renderLabel()`', () => {
-      const MOCK_ONCHANGE = jest.fn()
-
       const component = (
         <Cog
           name='MOCK NAME'
@@ -142,7 +141,6 @@ describe('shinkansen-cogs/cogs/email', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
-          onChange={MOCK_ONCHANGE}
         />
       )
 
@@ -180,8 +178,6 @@ describe('shinkansen-cogs/cogs/email', () => {
     })
 
     describe('`renderInput()`', () => {
-      const MOCK_ONCHANGE = jest.fn()
-
       const component = (
         <Cog
           name='MOCK NAME'
@@ -193,7 +189,7 @@ describe('shinkansen-cogs/cogs/email', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
-          onChange={MOCK_ONCHANGE}
+          onChange={jest.fn()}
         />
       )
 
@@ -229,7 +225,7 @@ describe('shinkansen-cogs/cogs/email', () => {
             disabled: true,
             readOnly: true,
             placeholder: 'MOCK PLACEHOLDER',
-            onChange: MOCK_ONCHANGE
+            onChange: expect.any(Function)
           }, {})
       })
     })

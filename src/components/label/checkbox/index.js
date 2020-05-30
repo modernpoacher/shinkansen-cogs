@@ -15,6 +15,5 @@ CheckboxLabel.propTypes = {
 }
 
 CheckboxLabel.defaultProps = {
-  ...Label.defaultProps,
-  label: 'Checkbox'
+  ...Label.defaultProps
 }

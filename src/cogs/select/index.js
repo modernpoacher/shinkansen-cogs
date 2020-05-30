@@ -13,6 +13,15 @@ export default class SelectCog extends ValueCog {
     return classnames(super.getClassName(), 'select')
   }
 
+  handleChange = (value) => {
+    const {
+      onChange,
+      name
+    } = this.props
+
+    onChange(name, value)
+  }
+
   renderLabel () {
     const id = this.getId()
 
@@ -48,7 +57,6 @@ export default class SelectCog extends ValueCog {
       tabIndex,
       accessKey,
       placeholder,
-      onChange,
       children
     } = this.props
 
@@ -64,7 +72,7 @@ export default class SelectCog extends ValueCog {
         tabIndex={tabIndex}
         accessKey={accessKey}
         placeholder={placeholder}
-        onChange={onChange}
+        onChange={this.handleChange}
         ref={this.setInput}>
         {children}
       </Input>
@@ -77,6 +85,5 @@ SelectCog.propTypes = {
 }
 
 SelectCog.defaultProps = {
-  ...ValueCog.defaultProps,
-  label: 'Select Cog'
+  ...ValueCog.defaultProps
 }

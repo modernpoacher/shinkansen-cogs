@@ -15,6 +15,5 @@ EmailLabel.propTypes = {
 }
 
 EmailLabel.defaultProps = {
-  ...Label.defaultProps,
-  label: 'Email'
+  ...Label.defaultProps
 }

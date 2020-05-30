@@ -15,6 +15,5 @@ RadioLabel.propTypes = {
 }
 
 RadioLabel.defaultProps = {
-  ...Label.defaultProps,
-  label: 'Radio'
+  ...Label.defaultProps
 }

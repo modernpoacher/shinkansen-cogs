@@ -13,6 +13,24 @@ export default class CheckboxCog extends CheckCog {
     return classnames(super.getClassName(), 'checkbox')
   }
 
+  handleClick = (value) => {
+    const {
+      onClick,
+      name
+    } = this.props
+
+    onClick(name, value)
+  }
+
+  handleChange = (value) => {
+    const {
+      onChange,
+      name
+    } = this.props
+
+    onChange(name, value)
+  }
+
   renderLabel () {
     const id = this.getId()
 
@@ -47,9 +65,7 @@ export default class CheckboxCog extends CheckCog {
       readOnly,
       tabIndex,
       accessKey,
-      placeholder,
-      onClick,
-      onChange
+      placeholder
     } = this.props
 
     return (
@@ -64,8 +80,8 @@ export default class CheckboxCog extends CheckCog {
         tabIndex={tabIndex}
         accessKey={accessKey}
         placeholder={placeholder}
-        onClick={onClick}
-        onChange={onChange}
+        onClick={this.handleClick}
+        onChange={this.handleChange}
         ref={this.setInput}
       />
     )
@@ -88,6 +104,5 @@ CheckboxCog.propTypes = {
 }
 
 CheckboxCog.defaultProps = {
-  ...CheckCog.defaultProps,
-  label: 'Checkbox Cog'
+  ...CheckCog.defaultProps
 }

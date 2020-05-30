@@ -15,6 +15,5 @@ SelectLabel.propTypes = {
 }
 
 SelectLabel.defaultProps = {
-  ...Label.defaultProps,
-  label: 'Select'
+  ...Label.defaultProps
 }

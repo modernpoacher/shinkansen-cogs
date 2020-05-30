@@ -4,6 +4,14 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
+function onChange () {
+  /* */
+}
+
+function onClick () {
+  /* */
+}
+
 export default class Input extends Component {
   getDOMNode = () => this.domNode
   setDOMNode = (domNode) => !!(this.domNode = domNode) || delete this.domNode
@@ -68,7 +76,7 @@ Input.defaultProps = {
   required: false,
   disabled: false,
   readOnly: false,
-  onChange: () => {}
+  onChange
 }
 
 /**
@@ -152,5 +160,6 @@ CheckInput.propTypes = {
 }
 
 CheckInput.defaultProps = {
-  ...Input.defaultProps
+  ...Input.defaultProps,
+  onClick
 }

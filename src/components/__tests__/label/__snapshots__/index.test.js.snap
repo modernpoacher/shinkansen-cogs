@@ -6,17 +6,7 @@ exports[`shinkansen-cogs/components/label <Label /> With additional props render
   htmlFor="MOCK ID"
 >
   MOCK TEXT CONTENT
-  MOCK REQUIRED
-  MOCK DISABLED
-  MOCK READONLY
 </label>
 `;
 
-exports[`shinkansen-cogs/components/label <Label /> With required props renders 1`] = `
-<label
-  className="label"
-  htmlFor="MOCK ID"
->
-  MOCK TEXT CONTENT
-</label>
-`;
+exports[`shinkansen-cogs/components/label <Label /> With required props renders 1`] = `null`;

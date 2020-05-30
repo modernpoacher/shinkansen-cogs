@@ -9,12 +9,20 @@ import classNames from 'classnames'
 import Label from 'shinkansen-cogs/components/label'
 import Input from 'shinkansen-cogs/components/input'
 
-export default class Cog extends Component {
-  getInput = () => this.input
-  getLabel = () => this.label
+function onChange () {
+  /* */
+}
 
-  setInput = (input) => !!(this.input = input) || delete this.input
+function onClick () {
+  /* */
+}
+
+export default class Cog extends Component {
+  getLabel = () => this.label
+  getInput = () => this.input
+
   setLabel = (label) => !!(this.label = label) || delete this.label
+  setInput = (input) => !!(this.input = input) || delete this.input
 
   getClassName () {
     const {
@@ -128,11 +136,10 @@ Cog.propTypes = {
 }
 
 Cog.defaultProps = {
-  label: 'Cog',
   required: false,
   disabled: false,
   readOnly: false,
-  onChange: () => {}
+  onChange
 }
 
 export class ValueCog extends Cog {
@@ -173,5 +180,5 @@ CheckCog.propTypes = {
 
 CheckCog.defaultProps = {
   ...Cog.defaultProps,
-  onClick: () => {}
+  onClick
 }

@@ -15,6 +15,5 @@ NumberLabel.propTypes = {
 }
 
 NumberLabel.defaultProps = {
-  ...Label.defaultProps,
-  label: 'Number'
+  ...Label.defaultProps
 }

@@ -58,7 +58,6 @@ describe('shinkansen-cogs/components/label/radio', () => {
             required
             disabled
             readOnly
-            onChange={jest.fn()}
           />
         )
 

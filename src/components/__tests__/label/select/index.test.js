@@ -58,7 +58,6 @@ describe('shinkansen-cogs/components/label/select', () => {
             required
             disabled
             readOnly
-            onChange={jest.fn()}
           />
         )
 

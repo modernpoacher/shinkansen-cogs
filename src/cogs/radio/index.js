@@ -14,6 +14,24 @@ export default class Radio extends CheckCog {
     return classnames(super.getClassName(), 'radio')
   }
 
+  handleClick = (value) => {
+    const {
+      onClick,
+      name
+    } = this.props
+
+    onClick(name, value)
+  }
+
+  handleChange = (value) => {
+    const {
+      onChange,
+      name
+    } = this.props
+
+    onChange(name, value)
+  }
+
   shouldComponentUpdate (props) {
     return (
       super.shouldComponentUpdate(props) ||
@@ -56,9 +74,7 @@ export default class Radio extends CheckCog {
       readOnly,
       tabIndex,
       accessKey,
-      placeholder,
-      onClick,
-      onChange
+      placeholder
     } = this.props
 
     return (
@@ -74,8 +90,8 @@ export default class Radio extends CheckCog {
         tabIndex={tabIndex}
         accessKey={accessKey}
         placeholder={placeholder}
-        onClick={onClick}
-        onChange={onChange}
+        onClick={this.handleClick}
+        onChange={this.handleChange}
         ref={this.setInput}
       />
     )
@@ -99,6 +115,5 @@ Radio.propTypes = {
 }
 
 Radio.defaultProps = {
-  ...CheckCog.defaultProps,
-  label: 'Radio Cog'
+  ...CheckCog.defaultProps
 }

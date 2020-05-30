@@ -13,6 +13,15 @@ export default class TextCog extends ValueCog {
     return classnames(super.getClassName(), 'text')
   }
 
+  handleChange = (value) => {
+    const {
+      onChange,
+      name
+    } = this.props
+
+    onChange(name, value)
+  }
+
   renderLabel () {
     const id = this.getId()
 
@@ -47,8 +56,7 @@ export default class TextCog extends ValueCog {
       readOnly,
       tabIndex,
       accessKey,
-      placeholder,
-      onChange
+      placeholder
     } = this.props
 
     return (
@@ -63,7 +71,7 @@ export default class TextCog extends ValueCog {
         tabIndex={tabIndex}
         accessKey={accessKey}
         placeholder={placeholder}
-        onChange={onChange}
+        onChange={this.handleChange}
         ref={this.setInput}
       />
     )
@@ -75,6 +83,5 @@ TextCog.propTypes = {
 }
 
 TextCog.defaultProps = {
-  ...ValueCog.defaultProps,
-  label: 'Text Cog'
+  ...ValueCog.defaultProps
 }

@@ -73,7 +73,6 @@ describe('shinkansen-cogs/components/input', () => {
             disabled
             readOnly
             placeholder='MOCK PLACEHOLDER'
-            onChange={jest.fn()}
           />
         )
 
@@ -296,7 +295,6 @@ describe('shinkansen-cogs/components/input', () => {
             readOnly
             value='MOCK VALUE'
             placeholder='MOCK PLACEHOLDER'
-            onChange={jest.fn()}
           />
         )
 
@@ -350,8 +348,6 @@ describe('shinkansen-cogs/components/input', () => {
     })
 
     describe('`shouldComponentUpdate()`', () => {
-      const MOCK_ONCHANGE = jest.fn()
-
       const component = (
         <ValueInput
           name='MOCK NAME'
@@ -364,7 +360,6 @@ describe('shinkansen-cogs/components/input', () => {
           readOnly
           value='MOCK VALUE'
           placeholder='MOCK PLACEHOLDER'
-          onChange={MOCK_ONCHANGE}
         />
       )
 
@@ -496,8 +491,6 @@ describe('shinkansen-cogs/components/input', () => {
             readOnly
             checked
             placeholder='MOCK PLACEHOLDER'
-            onChange={jest.fn()}
-            onClick={jest.fn()}
           />
         )
 

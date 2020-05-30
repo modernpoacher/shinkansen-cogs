@@ -460,8 +460,6 @@ describe('shinkansen-cogs/cogs', () => {
     })
 
     describe('`renderLabel()`', () => {
-      const MOCK_ONCHANGE = jest.fn()
-
       const component = (
         <Cog
           name='MOCK NAME'
@@ -473,7 +471,6 @@ describe('shinkansen-cogs/cogs', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
-          onChange={MOCK_ONCHANGE}
         />
       )
 
@@ -511,8 +508,6 @@ describe('shinkansen-cogs/cogs', () => {
     })
 
     describe('`renderInput()`', () => {
-      const MOCK_ONCHANGE = jest.fn()
-
       const component = (
         <Cog
           name='MOCK NAME'
@@ -524,7 +519,6 @@ describe('shinkansen-cogs/cogs', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
-          onChange={MOCK_ONCHANGE}
         />
       )
 
@@ -560,7 +554,7 @@ describe('shinkansen-cogs/cogs', () => {
             disabled: true,
             readOnly: true,
             placeholder: 'MOCK PLACEHOLDER',
-            onChange: MOCK_ONCHANGE
+            onChange: expect.any(Function)
           }, {})
       })
     })
@@ -650,7 +644,8 @@ describe('shinkansen-cogs/cogs', () => {
         it('returns true', () => {
           expect(instance.shouldComponentUpdate({
             ...instance.props,
-            value: 'MOCK CHANGE VALUE'
+            value: 'MOCK CHANGE VALUE',
+            onChange: jest.fn()
           }))
             .toBe(true)
         })
@@ -660,7 +655,8 @@ describe('shinkansen-cogs/cogs', () => {
         it('returns false', () => {
           expect(instance.shouldComponentUpdate({
             ...instance.props,
-            value: 'MOCK VALUE'
+            value: 'MOCK VALUE',
+            onChange: MOCK_ONCHANGE
           }))
             .toBe(false)
         })
@@ -712,6 +708,7 @@ describe('shinkansen-cogs/cogs', () => {
             readOnly
             checked
             placeholder='MOCK PLACEHOLDER'
+            onChange={jest.fn()}
             onClick={jest.fn()}
           />
         )
@@ -722,7 +719,7 @@ describe('shinkansen-cogs/cogs', () => {
     })
 
     describe('`shouldComponentUpdate()`', () => {
-      const MOCK_ONCLICK = jest.fn()
+      const MOCK_ONCHANGE = jest.fn()
 
       const component = (
         <CheckCog
@@ -736,7 +733,7 @@ describe('shinkansen-cogs/cogs', () => {
           readOnly
           checked
           placeholder='MOCK PLACEHOLDER'
-          onClick={MOCK_ONCLICK}
+          onChange={MOCK_ONCHANGE}
         />
       )
 
@@ -752,8 +749,7 @@ describe('shinkansen-cogs/cogs', () => {
         it('returns true', () => {
           expect(instance.shouldComponentUpdate({
             ...instance.props,
-            checked: false,
-            onClick: jest.fn()
+            checked: false
           }))
             .toBe(true)
         })
@@ -763,8 +759,7 @@ describe('shinkansen-cogs/cogs', () => {
         it('returns false', () => {
           expect(instance.shouldComponentUpdate({ // instance.props
             ...instance.props,
-            checked: true,
-            onClick: MOCK_ONCLICK
+            checked: true
           }))
             .toBe(false)
         })

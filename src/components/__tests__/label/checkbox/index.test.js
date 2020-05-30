@@ -58,7 +58,6 @@ describe('shinkansen-cogs/components/label/checkbox', () => {
             required
             disabled
             readOnly
-            onChange={jest.fn()}
           />
         )
 

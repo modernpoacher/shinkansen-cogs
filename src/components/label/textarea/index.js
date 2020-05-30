@@ -15,6 +15,5 @@ TextareaLabel.propTypes = {
 }
 
 TextareaLabel.defaultProps = {
-  ...Label.defaultProps,
-  label: 'Textarea'
+  ...Label.defaultProps
 }

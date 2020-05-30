@@ -10,8 +10,34 @@ import Disabled from 'shinkansen-cogs/components/common/disabled'
 import ReadOnly from 'shinkansen-cogs/components/common/readonly'
 
 export default class Label extends Component {
-  textContent () {
-    return this.props.label
+  hasTextContent () {
+    const { label } = this.props
+
+    return !!label
+  }
+
+  getTextContent () {
+    const { label } = this.props
+
+    return label
+  }
+
+  isRequired () {
+    const { required } = this.props
+
+    return required
+  }
+
+  isDisabled () {
+    const { disabled } = this.props
+
+    return disabled
+  }
+
+  isReadOnly () {
+    const { readOnly } = this.props
+
+    return readOnly
   }
 
   getClassName () {
@@ -29,57 +55,61 @@ export default class Label extends Component {
   }
 
   renderTextContent () {
-    const { label } = this.props
+    if (this.hasTextContent()) {
+      const textContent = this.getTextContent()
 
-    if (label) {
       return (
-        <TextContent textContent={label} />
+        <TextContent textContent={textContent} />
       )
     }
+
+    return null
   }
 
   renderIsRequired () {
-    const { required } = this.props
-
-    if (required) {
+    if (this.isRequired()) {
       return (
         <Required />
       )
     }
+
+    return null
   }
 
   renderIsDisabled () {
-    const { disabled } = this.props
-
-    if (disabled) {
+    if (this.isDisabled()) {
       return (
         <Disabled />
       )
     }
+
+    return null
   }
 
   renderIsReadOnly () {
-    const { readOnly } = this.props
-
-    if (readOnly) {
+    if (this.isReadOnly()) {
       return (
         <ReadOnly />
       )
     }
+
+    return null
   }
 
   render () {
-    const { id, children } = this.props
+    const { label } = this.props
 
-    return (
-      <label htmlFor={id} className={this.getClassName()}>
-        {this.renderTextContent()}
-        {this.renderIsRequired()}
-        {this.renderIsDisabled()}
-        {this.renderIsReadOnly()}
-        {children}
-      </label>
-    )
+    if (label) {
+      const { id } = this.props
+
+      return (
+        <label htmlFor={id} className={this.getClassName()}>
+          {this.renderTextContent()}
+        </label>
+      )
+    }
+
+    return null
   }
 }
 
@@ -98,7 +128,6 @@ Label.propTypes = {
 }
 
 Label.defaultProps = {
-  label: 'Label',
   required: false,
   disabled: false,
   readOnly: false

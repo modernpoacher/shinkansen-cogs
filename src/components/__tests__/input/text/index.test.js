@@ -54,7 +54,6 @@ describe('shinkansen-cogs/components/input/text', () => {
             required
             disabled
             readOnly
-            onChange={jest.fn()}
           />
         )
 

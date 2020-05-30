@@ -73,14 +73,15 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
             name='MOCK NAME'
             id='MOCK ID'
             label='MOCK LABEL'
+            value='MOCK VALUE'
             tabIndex={1}
             accessKey='MOCK ACCESS KEY'
             required
             disabled
             readOnly
             placeholder='MOCK PLACEHOLDER'
-            onClick={jest.fn()}
             onChange={jest.fn()}
+            onClick={jest.fn()}
           />
         )
 
@@ -119,9 +120,6 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
     })
 
     describe('`renderLabel()`', () => {
-      const MOCK_ONCLICK = jest.fn()
-      const MOCK_ONCHANGE = jest.fn()
-
       const component = (
         <Cog
           name='MOCK NAME'
@@ -133,8 +131,6 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
-          onClick={MOCK_ONCLICK}
-          onChange={MOCK_ONCHANGE}
         />
       )
 
@@ -172,9 +168,6 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
     })
 
     describe('`renderInput()`', () => {
-      const MOCK_ONCLICK = jest.fn()
-      const MOCK_ONCHANGE = jest.fn()
-
       const component = (
         <Cog
           name='MOCK NAME'
@@ -186,8 +179,8 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
-          onClick={MOCK_ONCLICK}
-          onChange={MOCK_ONCHANGE}
+          onChange={jest.fn()}
+          onClick={jest.fn()}
         />
       )
 
@@ -223,8 +216,8 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
             disabled: true,
             readOnly: true,
             placeholder: 'MOCK PLACEHOLDER',
-            onClick: MOCK_ONCLICK,
-            onChange: MOCK_ONCHANGE
+            onChange: expect.any(Function),
+            onClick: expect.any(Function)
           }, {})
       })
     })
