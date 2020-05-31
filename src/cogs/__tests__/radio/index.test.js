@@ -7,6 +7,7 @@ import classnames from 'classnames'
 
 import Title from 'shinkansen-cogs/components/title/radio'
 import Description from 'shinkansen-cogs/components/description/radio'
+import ErrorMessage from 'shinkansen-cogs/components/error-message/radio'
 import Field from 'shinkansen-cogs/components/field/radio'
 
 import { CheckCog } from 'shinkansen-cogs/cogs'
@@ -35,9 +36,10 @@ jest.mock('shinkansen-cogs/cogs', () => {
 
       return (
         <div className={className}>
+          {this.renderField()}
           {this.renderTitle()}
           {this.renderDescription()}
-          {this.renderField()}
+          {this.renderErrorMessage()}
         </div>
       )
     }
@@ -52,6 +54,7 @@ jest.mock('shinkansen-cogs/cogs', () => {
 
 jest.mock('shinkansen-cogs/components/title/radio')
 jest.mock('shinkansen-cogs/components/description/radio')
+jest.mock('shinkansen-cogs/components/error-message/radio')
 jest.mock('shinkansen-cogs/components/field/radio')
 
 describe('shinkansen-cogs/cogs/radio', () => {
@@ -87,6 +90,13 @@ describe('shinkansen-cogs/cogs/radio', () => {
         })
       })
 
+      describe('`renderErrorMessage`', () => {
+        it('is defined', () => {
+          expect(Cog.prototype.renderErrorMessage)
+            .toBeDefined()
+        })
+      })
+
       describe('`renderField`', () => {
         it('is defined', () => {
           expect(Cog.prototype.renderField)
@@ -102,6 +112,8 @@ describe('shinkansen-cogs/cogs/radio', () => {
             name='MOCK NAME'
             id='MOCK ID'
             title='MOCK TITLE'
+            description='MOCK DESCRIPTION'
+            errorMessage='MOCK ERROR MESSAGE'
             value='MOCK VALUE'
             tabIndex={1}
             accessKey='MOCK ACCESS KEY'
@@ -153,9 +165,10 @@ describe('shinkansen-cogs/cogs/radio', () => {
         <Cog
           name='MOCK NAME'
           id='MOCK ID'
-          value='MOCK VALUE'
-          description='MOCK DESCRIPTION'
           title='MOCK TITLE'
+          description='MOCK DESCRIPTION'
+          errorMessage='MOCK ERROR MESSAGE'
+          value='MOCK VALUE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -220,9 +233,10 @@ describe('shinkansen-cogs/cogs/radio', () => {
         <Cog
           name='MOCK NAME'
           id='MOCK ID'
-          value='MOCK VALUE'
-          description='MOCK DESCRIPTION'
           title='MOCK TITLE'
+          description='MOCK DESCRIPTION'
+          errorMessage='MOCK ERROR MESSAGE'
+          value='MOCK VALUE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -239,9 +253,10 @@ describe('shinkansen-cogs/cogs/radio', () => {
       beforeEach(() => {
         jest.clearAllMocks()
 
-        const wrapper = mount(component)
-
-        instance = wrapper.instance()
+        instance = (
+          mount(component)
+            .instance()
+        )
 
         getIdSpy = jest.spyOn(Cog.prototype, 'getId').mockReturnValue('MOCK ID')
 
@@ -270,9 +285,10 @@ describe('shinkansen-cogs/cogs/radio', () => {
         <Cog
           name='MOCK NAME'
           id='MOCK ID'
-          value='MOCK VALUE'
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
+          errorMessage='MOCK ERROR MESSAGE'
+          value='MOCK VALUE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -284,30 +300,60 @@ describe('shinkansen-cogs/cogs/radio', () => {
 
       let instance
 
-      let getIdSpy
-
       beforeEach(() => {
         jest.clearAllMocks()
 
-        const wrapper = mount(component)
-
-        instance = wrapper.instance()
-
-        getIdSpy = jest.spyOn(Cog.prototype, 'getId').mockReturnValue('MOCK ID')
+        instance = (
+          mount(component)
+            .instance()
+        )
 
         instance.renderDescription()
-      })
-
-      it('invokes `getId`', () => {
-        expect(getIdSpy)
-          .toBeCalled()
       })
 
       it('renders `<Description />`', () => {
         expect(Description)
           .toBeCalledWith({
-            id: 'MOCK ID',
             description: 'MOCK DESCRIPTION'
+          }, {})
+      })
+    })
+
+    describe('`renderErrorMessage()`', () => {
+      const component = (
+        <Cog
+          name='MOCK NAME'
+          id='MOCK ID'
+          title='MOCK TITLE'
+          description='MOCK DESCRIPTION'
+          errorMessage='MOCK ERROR MESSAGE'
+          value='MOCK VALUE'
+          tabIndex={1}
+          accessKey='MOCK ACCESS KEY'
+          required
+          disabled
+          readOnly
+          placeholder='MOCK PLACEHOLDER'
+        />
+      )
+
+      let instance
+
+      beforeEach(() => {
+        jest.clearAllMocks()
+
+        instance = (
+          mount(component)
+            .instance()
+        )
+
+        instance.renderErrorMessage()
+      })
+
+      it('renders `<ErrorMessage />`', () => {
+        expect(ErrorMessage)
+          .toBeCalledWith({
+            errorMessage: 'MOCK ERROR MESSAGE'
           }, {})
       })
     })
@@ -317,9 +363,10 @@ describe('shinkansen-cogs/cogs/radio', () => {
         <Cog
           name='MOCK NAME'
           id='MOCK ID'
-          value='MOCK VALUE'
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
+          errorMessage='MOCK ERROR MESSAGE'
+          value='MOCK VALUE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -338,9 +385,10 @@ describe('shinkansen-cogs/cogs/radio', () => {
       beforeEach(() => {
         jest.clearAllMocks()
 
-        const wrapper = mount(component)
-
-        instance = wrapper.instance()
+        instance = (
+          mount(component)
+            .instance()
+        )
 
         getIdSpy = jest.spyOn(Cog.prototype, 'getId')
 

@@ -8,6 +8,7 @@ import classnames from 'classnames'
 import { ValueCog } from 'shinkansen-cogs/cogs'
 import Title from 'shinkansen-cogs/components/title/number'
 import Description from 'shinkansen-cogs/components/description/number'
+import ErrorMessage from 'shinkansen-cogs/components/error-message/number'
 import Field from 'shinkansen-cogs/components/field/number'
 
 export default class NumberCog extends ValueCog {
@@ -47,17 +48,27 @@ export default class NumberCog extends ValueCog {
   }
 
   renderDescription () {
-    const id = this.getId()
-
     const {
       description
     } = this.props
 
     return (
       <Description
-        id={id}
         description={description}
         ref={this.setDescription}
+      />
+    )
+  }
+
+  renderErrorMessage () {
+    const {
+      errorMessage
+    } = this.props
+
+    return (
+      <ErrorMessage
+        errorMessage={errorMessage}
+        ref={this.setErrorMessage}
       />
     )
   }

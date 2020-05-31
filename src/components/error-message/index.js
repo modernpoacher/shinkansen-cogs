@@ -1,31 +1,31 @@
 /**
- * Description component
+ * ErrorMessage component
  */
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import TextContent from 'shinkansen-cogs/components/common/text-content'
 
-export default class Description extends Component {
+export default class ErrorMessage extends Component {
   hasTextContent () {
-    const { description } = this.props
+    const { errorMessage } = this.props
 
-    return !!description
+    return !!errorMessage
   }
 
   getTextContent () {
-    const { description } = this.props
+    const { errorMessage } = this.props
 
-    return description
+    return errorMessage
   }
 
   getClassName () {
-    return 'description'
+    return 'error-message'
   }
 
   shouldComponentUpdate (props) {
     return (
-      (props.description !== this.props.description)
+      (props.errorMessage !== this.props.errorMessage)
     )
   }
 
@@ -42,9 +42,9 @@ export default class Description extends Component {
   }
 
   render () {
-    const { description } = this.props
+    const { errorMessage } = this.props
 
-    if (description) {
+    if (errorMessage) {
       return (
         <span className={this.getClassName()}>
           {this.renderTextContent()}
@@ -56,6 +56,6 @@ export default class Description extends Component {
   }
 }
 
-Description.propTypes = {
-  description: PropTypes.string
+ErrorMessage.propTypes = {
+  errorMessage: PropTypes.string
 }

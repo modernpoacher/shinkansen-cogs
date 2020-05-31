@@ -8,6 +8,7 @@ import classnames from 'classnames'
 import { CheckCog } from 'shinkansen-cogs/cogs'
 import Title from 'shinkansen-cogs/components/title/radio'
 import Description from 'shinkansen-cogs/components/description/radio'
+import ErrorMessage from 'shinkansen-cogs/components/error-message/radio'
 import Field from 'shinkansen-cogs/components/field/radio'
 
 export default class Radio extends CheckCog {
@@ -63,17 +64,27 @@ export default class Radio extends CheckCog {
   }
 
   renderDescription () {
-    const id = this.getId()
-
     const {
       description
     } = this.props
 
     return (
       <Description
-        id={id}
         description={description}
         ref={this.setDescription}
+      />
+    )
+  }
+
+  renderErrorMessage () {
+    const {
+      errorMessage
+    } = this.props
+
+    return (
+      <ErrorMessage
+        errorMessage={errorMessage}
+        ref={this.setErrorMessage}
       />
     )
   }
@@ -122,6 +133,7 @@ export default class Radio extends CheckCog {
         {this.renderField()}
         {this.renderTitle()}
         {this.renderDescription()}
+        {this.renderErrorMessage()}
       </div>
     )
   }

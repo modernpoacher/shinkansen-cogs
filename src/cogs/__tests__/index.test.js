@@ -255,6 +255,8 @@ describe('shinkansen-cogs/cogs', () => {
         let returnValue
 
         beforeEach(() => {
+          classnames.mockReturnValue('MOCK CLASSNAME')
+
           const component = (
             <Cog name='MOCK NAME' />
           )
@@ -267,14 +269,14 @@ describe('shinkansen-cogs/cogs', () => {
           returnValue = instance.getClassName()
         })
 
-        it('does not invoke `classnames`', () => {
+        it('invokes `classnames`', () => {
           expect(classnames)
-            .not.toBeCalled()
+            .toBeCalledWith('cog', { required: false, disabled: false, readOnly: false, error: false })
         })
 
         it('returns the classname', () => {
           expect(returnValue)
-            .toBe('cog')
+            .toBe('MOCK CLASSNAME')
         })
       })
 
@@ -299,7 +301,7 @@ describe('shinkansen-cogs/cogs', () => {
 
           it('invokes `classnames`', () => {
             expect(classnames)
-              .toBeCalledWith('cog', { required: true, disabled: false, readOnly: false })
+              .toBeCalledWith('cog', { required: true, disabled: false, readOnly: false, error: false })
           })
 
           it('returns the classname', () => {
@@ -328,7 +330,7 @@ describe('shinkansen-cogs/cogs', () => {
 
           it('invokes `classnames`', () => {
             expect(classnames)
-              .toBeCalledWith('cog', { required: false, disabled: true, readOnly: false })
+              .toBeCalledWith('cog', { required: false, disabled: true, readOnly: false, error: false })
           })
 
           it('returns the classname', () => {
@@ -357,7 +359,36 @@ describe('shinkansen-cogs/cogs', () => {
 
           it('invokes `classnames`', () => {
             expect(classnames)
-              .toBeCalledWith('cog', { required: false, disabled: false, readOnly: true })
+              .toBeCalledWith('cog', { required: false, disabled: false, readOnly: true, error: false })
+          })
+
+          it('returns the classname', () => {
+            expect(returnValue)
+              .toBe('MOCK CLASSNAME')
+          })
+        })
+
+        describe('`props` has `errorMessage`', () => {
+          let returnValue
+
+          beforeEach(() => {
+            classnames.mockReturnValue('MOCK CLASSNAME')
+
+            const component = (
+              <Cog name='MOCK NAME' errorMessage='MOCK ERROR MESSAGE' />
+            )
+
+            const instance = (
+              shallow(component)
+                .instance()
+            )
+
+            returnValue = instance.getClassName()
+          })
+
+          it('invokes `classnames`', () => {
+            expect(classnames)
+              .toBeCalledWith('cog', { required: false, disabled: false, readOnly: false, error: true })
           })
 
           it('returns the classname', () => {
@@ -481,9 +512,10 @@ describe('shinkansen-cogs/cogs', () => {
       beforeEach(() => {
         jest.clearAllMocks()
 
-        const wrapper = mount(component)
-
-        instance = wrapper.instance()
+        instance = (
+          mount(component)
+            .instance()
+        )
 
         getIdSpy = jest.spyOn(Cog.prototype, 'getId').mockReturnValue('MOCK ID')
 
@@ -529,9 +561,10 @@ describe('shinkansen-cogs/cogs', () => {
       beforeEach(() => {
         jest.clearAllMocks()
 
-        const wrapper = mount(component)
-
-        instance = wrapper.instance()
+        instance = (
+          mount(component)
+            .instance()
+        )
 
         getIdSpy = jest.spyOn(Cog.prototype, 'getId')
 

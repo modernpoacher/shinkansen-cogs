@@ -7,6 +7,7 @@ import classnames from 'classnames'
 
 import Title from 'shinkansen-cogs/components/title/checkbox'
 import Description from 'shinkansen-cogs/components/description/checkbox'
+import ErrorMessage from 'shinkansen-cogs/components/error-message/checkbox'
 import Field from 'shinkansen-cogs/components/field/checkbox'
 
 import { CheckCog } from 'shinkansen-cogs/cogs'
@@ -21,6 +22,27 @@ jest.mock('shinkansen-cogs/cogs', () => {
     getClassName () { }
 
     getId () { }
+
+    shouldComponentUpdate () { }
+
+    renderTitle () { }
+
+    renderDescription () { }
+
+    renderField () { }
+
+    render () {
+      const className = this.getClassName()
+
+      return (
+        <div className={className}>
+          {this.renderField()}
+          {this.renderTitle()}
+          {this.renderDescription()}
+          {this.renderErrorMessage()}
+        </div>
+      )
+    }
   }
 
   return {
@@ -32,6 +54,7 @@ jest.mock('shinkansen-cogs/cogs', () => {
 
 jest.mock('shinkansen-cogs/components/title/checkbox')
 jest.mock('shinkansen-cogs/components/description/checkbox')
+jest.mock('shinkansen-cogs/components/error-message/checkbox')
 jest.mock('shinkansen-cogs/components/field/checkbox')
 
 describe('shinkansen-cogs/cogs/checkbox', () => {
@@ -67,6 +90,13 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
         })
       })
 
+      describe('`renderErrorMessage`', () => {
+        it('is defined', () => {
+          expect(Cog.prototype.renderErrorMessage)
+            .toBeDefined()
+        })
+      })
+
       describe('`renderField`', () => {
         it('is defined', () => {
           expect(Cog.prototype.renderField)
@@ -83,6 +113,7 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
             id='MOCK ID'
             title='MOCK TITLE'
             description='MOCK DESCRIPTION'
+            errorMessage='MOCK ERROR MESSAGE'
             value='MOCK VALUE'
             tabIndex={1}
             accessKey='MOCK ACCESS KEY'
@@ -136,6 +167,7 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
           id='MOCK ID'
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
+          errorMessage='MOCK ERROR MESSAGE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -152,13 +184,14 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
       beforeEach(() => {
         jest.clearAllMocks()
 
-        const wrapper = mount(component)
-
-        instance = wrapper.instance()
+        instance = (
+          mount(component)
+            .instance()
+        )
 
         getIdSpy = jest.spyOn(Cog.prototype, 'getId').mockReturnValue('MOCK ID')
 
-        instance.renderDescription()
+        instance.renderTitle()
       })
 
       it('invokes `getId`', () => {
@@ -185,6 +218,7 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
           id='MOCK ID'
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
+          errorMessage='MOCK ERROR MESSAGE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -196,30 +230,59 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
 
       let instance
 
-      let getIdSpy
-
       beforeEach(() => {
         jest.clearAllMocks()
 
-        const wrapper = mount(component)
+        instance = (
+          mount(component)
+            .instance()
+        )
 
-        instance = wrapper.instance()
-
-        getIdSpy = jest.spyOn(Cog.prototype, 'getId').mockReturnValue('MOCK ID')
-
-        instance.renderTitle()
-      })
-
-      it('invokes `getId`', () => {
-        expect(getIdSpy)
-          .toBeCalled()
+        instance.renderDescription()
       })
 
       it('renders `<Description />`', () => {
         expect(Description)
           .toBeCalledWith({
-            id: 'MOCK ID',
             description: 'MOCK DESCRIPTION'
+          }, {})
+      })
+    })
+
+    describe('`renderErrorMessage()`', () => {
+      const component = (
+        <Cog
+          name='MOCK NAME'
+          id='MOCK ID'
+          title='MOCK TITLE'
+          description='MOCK DESCRIPTION'
+          errorMessage='MOCK ERROR MESSAGE'
+          tabIndex={1}
+          accessKey='MOCK ACCESS KEY'
+          required
+          disabled
+          readOnly
+          placeholder='MOCK PLACEHOLDER'
+        />
+      )
+
+      let instance
+
+      beforeEach(() => {
+        jest.clearAllMocks()
+
+        instance = (
+          mount(component)
+            .instance()
+        )
+
+        instance.renderErrorMessage()
+      })
+
+      it('renders `<ErrorMessage />`', () => {
+        expect(ErrorMessage)
+          .toBeCalledWith({
+            errorMessage: 'MOCK ERROR MESSAGE'
           }, {})
       })
     })
@@ -249,9 +312,10 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
       beforeEach(() => {
         jest.clearAllMocks()
 
-        const wrapper = mount(component)
-
-        instance = wrapper.instance()
+        instance = (
+          mount(component)
+            .instance()
+        )
 
         getIdSpy = jest.spyOn(Cog.prototype, 'getId')
 
