@@ -17,6 +17,12 @@ jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 jest.mock('shinkansen-cogs/components/title')
 jest.mock('shinkansen-cogs/components/field')
 
+const MOCK_ERROR_MESSAGE = {
+  type: 'MOCK TYPE',
+  params: {},
+  uri: 'MOCK URI'
+}
+
 describe('shinkansen-cogs/cogs', () => {
   describe('<Cog />', () => {
     describe('With required props', () => {
@@ -375,7 +381,7 @@ describe('shinkansen-cogs/cogs', () => {
             classnames.mockReturnValue('MOCK CLASSNAME')
 
             const component = (
-              <Cog name='MOCK NAME' errorMessage='MOCK ERROR MESSAGE' />
+              <Cog name='MOCK NAME' errorMessage={MOCK_ERROR_MESSAGE} />
             )
 
             const instance = (

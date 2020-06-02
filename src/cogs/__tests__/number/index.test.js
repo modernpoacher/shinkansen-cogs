@@ -27,6 +27,8 @@ jest.mock('shinkansen-cogs/cogs', () => {
 
     renderDescription () { }
 
+    renderErrorMessage () { }
+
     renderField () { }
 
     render () {
@@ -55,7 +57,36 @@ jest.mock('shinkansen-cogs/components/description/number')
 jest.mock('shinkansen-cogs/components/error-message/number')
 jest.mock('shinkansen-cogs/components/field/number')
 
+class MockErrorMessage extends mockComponent {
+  state = {}
+
+  static getDerivedStateFromProps () {
+    return {}
+  }
+
+  render () {
+    return null
+  }
+}
+
+const MOCK_ERROR_MESSAGE = {
+  type: 'MOCK TYPE',
+  params: {},
+  uri: 'MOCK URI'
+}
+
 describe('shinkansen-cogs/cogs/number', () => {
+  beforeAll(() => {
+    /*
+     *  class defines `state` for instance
+     */
+    ErrorMessage.mockImplementation(() => new MockErrorMessage())
+    /*
+     *  function returns `state`
+     */
+    ErrorMessage.getDerivedStateFromProps.mockReturnValue({})
+  })
+
   describe('<Cog />', () => {
     describe('With required props', () => {
       const component = (
@@ -111,7 +142,7 @@ describe('shinkansen-cogs/cogs/number', () => {
             id='MOCK ID'
             title='MOCK TITLE'
             description='MOCK DESCRIPTION'
-            errorMessage='MOCK ERROR MESSAGE'
+            errorMessage={MOCK_ERROR_MESSAGE}
             value='MOCK VALUE'
             tabIndex={1}
             accessKey='MOCK ACCESS KEY'
@@ -164,7 +195,7 @@ describe('shinkansen-cogs/cogs/number', () => {
           id='MOCK ID'
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
-          errorMessage='MOCK ERROR MESSAGE'
+          errorMessage={MOCK_ERROR_MESSAGE}
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -215,7 +246,7 @@ describe('shinkansen-cogs/cogs/number', () => {
           id='MOCK ID'
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
-          errorMessage='MOCK ERROR MESSAGE'
+          errorMessage={MOCK_ERROR_MESSAGE}
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -253,7 +284,7 @@ describe('shinkansen-cogs/cogs/number', () => {
           id='MOCK ID'
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
-          errorMessage='MOCK ERROR MESSAGE'
+          errorMessage={MOCK_ERROR_MESSAGE}
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -279,7 +310,7 @@ describe('shinkansen-cogs/cogs/number', () => {
       it('renders `<ErrorMessage />`', () => {
         expect(ErrorMessage)
           .toBeCalledWith({
-            errorMessage: 'MOCK ERROR MESSAGE'
+            errorMessage: MOCK_ERROR_MESSAGE
           }, {})
       })
     })
@@ -291,7 +322,7 @@ describe('shinkansen-cogs/cogs/number', () => {
           id='MOCK ID'
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
-          errorMessage='MOCK ERROR MESSAGE'
+          errorMessage={MOCK_ERROR_MESSAGE}
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required

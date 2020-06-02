@@ -164,7 +164,11 @@ Cog.propTypes = {
   name: PropTypes.string.isRequired,
   title: PropTypes.string,
   description: PropTypes.string,
-  errorMessage: PropTypes.string,
+  errorMessage: PropTypes.shape({
+    type: PropTypes.string.isRequired,
+    params: PropTypes.shape().isRequired,
+    uri: PropTypes.string.isRequired
+  }),
   required: PropTypes.bool,
   disabled: PropTypes.bool,
   readOnly: PropTypes.bool,

@@ -22,6 +22,14 @@ import SelectState from './state/select'
 import TextState from './state/text'
 import TextareaState from './state/textarea'
 
+const ERROR_MESSAGE = {
+  type: 'TYPE_INVALID',
+  params: {
+    expectedType: 'number'
+  },
+  uri: '#/'
+}
+
 storiesOf('CheckboxCog', module)
   .add('Required and default props', () => (
     <div className='group'>
@@ -51,7 +59,7 @@ storiesOf('CheckboxCog', module)
   .add('"errorMessage"', () => (
     <CheckboxCog
       title='Title'
-      errorMessage='Error Message'
+      errorMessage={ERROR_MESSAGE}
       name='checkbox-one' />
   ))
   .add('"checked"', () => (
@@ -277,7 +285,7 @@ storiesOf('EmailCog', module)
   .add('"errorMessage"', () => (
     <EmailCog
       title='Title'
-      errorMessage='Error Message'
+      errorMessage={ERROR_MESSAGE}
       name='email' />
   ))
   .add('"value"', () => (
@@ -352,7 +360,7 @@ storiesOf('NumberCog', module)
   .add('"errorMessage"', () => (
     <NumberCog
       title='Title'
-      errorMessage='Error Message'
+      errorMessage={ERROR_MESSAGE}
       name='number' />
   ))
   .add('"value"', () => (
@@ -427,7 +435,7 @@ storiesOf('PasswordCog', module)
   .add('"errorMessage"', () => (
     <PasswordCog
       title='Password Cog'
-      errorMessage='Error Message'
+      errorMessage={ERROR_MESSAGE}
       name='password' />
   ))
   .add('"value"', () => (
@@ -536,19 +544,19 @@ storiesOf('RadioCog', module)
       <RadioCog
         id='radio-one'
         title='Radio Cog'
-        errorMessage='Error Message'
+        errorMessage={ERROR_MESSAGE}
         name='radio'
         value='one' />
       <RadioCog
         id='radio-two'
         title='Radio Cog'
-        errorMessage='Error Message'
+        errorMessage={ERROR_MESSAGE}
         name='radio'
         value='two' />
       <RadioCog
         id='radio-three'
         title='Radio Cog'
-        errorMessage='Error Message'
+        errorMessage={ERROR_MESSAGE}
         name='radio'
         value='three' />
     </RadioState>
@@ -1022,7 +1030,7 @@ storiesOf('SelectCog', module)
   .add('"errorMessage"', () => (
     <SelectCog
       title='Select Cog'
-      errorMessage='Error Message'
+      errorMessage={ERROR_MESSAGE}
       name='select'>
       <option value='one'>One</option>
       <option value='two'>Two</option>
@@ -1134,7 +1142,7 @@ storiesOf('TextCog', module)
     <TextCog
       title='Title'
       name='text'
-      errorMessage='Error Message' />
+      errorMessage={ERROR_MESSAGE} />
   ))
   .add('"value"', () => (
     <TextState
@@ -1208,7 +1216,7 @@ storiesOf('TextareaCog', module)
   .add('"errorMessage"', () => (
     <TextareaCog
       title='Title'
-      errorMessage='Error Message'
+      errorMessage={ERROR_MESSAGE}
       name='textarea' />
   ))
   .add('"value"', () => (

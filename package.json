@@ -31,7 +31,8 @@
     "pre-commit": "npm run lint && npm test && npm run babel && git add lib"
   },
   "dependencies": {
-    "classnames": "^2.2.6"
+    "classnames": "^2.2.6",
+    "immutable": "3.8.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
