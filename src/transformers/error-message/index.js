@@ -157,7 +157,7 @@ export function getErrorTextForTypeInvalid ({ expectedType } = {}, components = 
     case 'null':
       return 'Type invalid (expected null)'
     default:
-      throw new Error('Error incompatible with Zashiki')
+      throw new Error('Incompatible with Shinkansen')
   }
 }
 
@@ -214,7 +214,7 @@ export function getErrorTextByType ({ type, params } = {}, components = {}) {
     case 'UNKNOWN':
       return getErrorTextForUnknown(components)
     default:
-      throw new Error('Error incompatible with Zashiki')
+      throw new Error('Incompatible with Shinkansen')
   }
 }
 
