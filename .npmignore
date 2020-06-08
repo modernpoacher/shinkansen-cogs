@@ -10,3 +10,6 @@
 # NPM
 .npmignore
 .npmrc
+
+# Storybook
+stories
