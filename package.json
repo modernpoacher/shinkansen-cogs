@@ -25,7 +25,7 @@
     "babel:watch": "npm run babel -- -w",
     "lint": "eslint src stories .storybook *.js",
     "lint:fix": "npm run lint -- --fix",
-    "test": "npm install prop-types react react-dom --no-save && jest --verbose false --collect-coverage false",
+    "test": "jest --verbose false --collect-coverage false",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "pre-commit": "npm run lint && npm test && npm run babel && git add lib"
@@ -61,13 +61,16 @@
     "eslint-plugin-standard": "^4.0.1",
     "husky": "^4.2.5",
     "jest": "^26.0.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-test-renderer": "^16.13.1",
     "rimraf": "^3.0.2"
   },
   "peerDependencies": {
     "prop-types": "^15.7.2",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "husky": {
     "hooks": {
