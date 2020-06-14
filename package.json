@@ -25,7 +25,7 @@
     "babel:watch": "npm run babel -- -w",
     "lint": "eslint src stories .storybook *.js",
     "lint:fix": "npm run lint -- --fix",
-    "test": "jest --verbose false --collect-coverage false",
+    "test": "NODE_ENV=test jest --verbose false --collect-coverage false",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "pre-commit": "npm run lint && npm test && npm run babel && git add lib"
