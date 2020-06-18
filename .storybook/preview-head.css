@@ -893,14 +893,35 @@ main {
 #root .cog.radio,
 .app .cog.radio {
   position: relative;
-  line-height: 2rem;
   padding-left: 3rem;
-  margin-bottom: .5rem
+  margin-bottom: .5rem;
+  min-height: 2rem
 }
 
 #root .cog.radio:last-of-type,
 .app .cog.radio:last-of-type {
   margin-bottom: 0
+}
+
+@media only screen and (max-width:767px) {
+  #root .cog.radio label,
+  .app .cog.radio label {
+    padding-top: .375rem
+  }
+}
+
+@media only screen and (min-width:576px) and (max-width:767px) {
+  #root .cog.radio label,
+  .app .cog.radio label {
+    padding-top: .375rem
+  }
+}
+
+@media only screen and (max-width:319px) {
+  #root .cog.radio label,
+  .app .cog.radio label {
+    padding-top: .375rem
+  }
 }
 
 #root .cog.radio label:before,
@@ -950,14 +971,35 @@ main {
 #root .cog.checkbox,
 .app .cog.checkbox {
   position: relative;
-  line-height: 2rem;
   padding-left: 3rem;
-  margin-bottom: .5rem
+  margin-bottom: .5rem;
+  min-height: 2rem
 }
 
 #root .cog.checkbox:last-of-type,
 .app .cog.checkbox:last-of-type {
   margin-bottom: 0
+}
+
+@media only screen and (max-width:767px) {
+  #root .cog.checkbox label,
+  .app .cog.checkbox label {
+    padding-top: .375rem
+  }
+}
+
+@media only screen and (min-width:576px) and (max-width:767px) {
+  #root .cog.checkbox label,
+  .app .cog.checkbox label {
+    padding-top: .375rem
+  }
+}
+
+@media only screen and (max-width:319px) {
+  #root .cog.checkbox label,
+  .app .cog.checkbox label {
+    padding-top: .375rem
+  }
 }
 
 #root .cog.checkbox label:before,
