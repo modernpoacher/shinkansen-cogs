@@ -32,7 +32,7 @@
     "test": "NODE_ENV=test jest --verbose false --collect-coverage false",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "pre-commit": "npm run lint && npm test && npm run babel && git add lib"
+    "pre-commit": "npm run lint && npm test && npm run build && npm run transform && git add lib"
   },
   "dependencies": {
     "classnames": "^2.2.6",
