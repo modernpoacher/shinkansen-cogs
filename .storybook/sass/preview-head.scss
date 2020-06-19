@@ -5,7 +5,7 @@
 @import "design-system/layouts";
 
 #root {
-  @extend .app;
+  @include zashiki;
 
   margin: 1rem auto;
 }
