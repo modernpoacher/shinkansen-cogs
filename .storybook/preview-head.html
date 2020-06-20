@@ -479,9 +479,16 @@ main {
   margin: 1rem auto
 }
 
-#root > div,
-#root > nav,
-#root header {
+#root > div.alpha,
+#root > div.confirm,
+#root > div.debark,
+#root > div.embark,
+#root > div.omega,
+#root > header.alpha,
+#root > header.confirm,
+#root > header.debark,
+#root > header.embark,
+#root > header.omega {
   padding: 0 1rem
 }
 
@@ -781,7 +788,8 @@ main {
 }
 
 #root .sprocket.fieldset.error {
-  border-left: .25rem solid #a00
+  border-left: .25rem solid #a00;
+  padding: 0 1rem
 }
 
 #root .sprocket.fieldset.error input:not([type=checkbox]):not([type=radio]),
@@ -1001,7 +1009,8 @@ main {
 }
 
 #root .cog.error {
-  border-left: .25rem solid #a00
+  border-left: .25rem solid #a00;
+  padding: 0 1rem
 }
 
 #root .cog.error input:not([type=checkbox]):not([type=radio]),
