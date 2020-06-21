@@ -36,14 +36,14 @@ describe('shinkansen-cogs/components/field/radio', () => {
       )
 
       it('renders', () => {
-        expect(renderer.create(component).toJSON())
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       describe('Prototype', () => {
         describe('`getClassName`', () => {
           it('is defined', () => {
-            expect(Field.prototype.getClassName)
+            return expect(Field.prototype.getClassName)
               .toBeDefined()
           })
         })
@@ -61,14 +61,14 @@ describe('shinkansen-cogs/components/field/radio', () => {
 
         describe('`handleClick`', () => {
           it('is defined', () => {
-            expect(instance.handleClick)
+            return expect(instance.handleClick)
               .toBeDefined()
           })
         })
 
         describe('`handleChange`', () => {
           it('is defined', () => {
-            expect(instance.handleChange)
+            return expect(instance.handleChange)
               .toBeDefined()
           })
         })
@@ -89,7 +89,7 @@ describe('shinkansen-cogs/components/field/radio', () => {
           />
         )
 
-        expect(renderer.create(component).toJSON())
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
     })
@@ -117,12 +117,12 @@ describe('shinkansen-cogs/components/field/radio', () => {
       })
 
       it('invokes `classnames`', () => {
-        expect(classnames)
+        return expect(classnames)
           .toBeCalledWith('MOCK GETCLASSNAME', 'radio')
       })
 
       it('returns the classname', () => {
-        expect(returnValue)
+        return expect(returnValue)
           .toBe('MOCK CLASSNAME')
       })
     })
@@ -147,7 +147,7 @@ describe('shinkansen-cogs/components/field/radio', () => {
 
         instance.handleClick({ target: { value: 'MOCK CHECKED' } })
 
-        expect(MOCK_ONCLICK)
+        return expect(MOCK_ONCLICK)
           .toBeCalledWith('MOCK CHECKED')
       })
     })
@@ -172,7 +172,7 @@ describe('shinkansen-cogs/components/field/radio', () => {
 
         instance.handleChange({ target: { value: 'MOCK CHECKED' } })
 
-        expect(MOCK_ONCHANGE)
+        return expect(MOCK_ONCHANGE)
           .toBeCalledWith('MOCK CHECKED')
       })
     })

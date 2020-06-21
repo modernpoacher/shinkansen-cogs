@@ -45,13 +45,13 @@ describe('shinkansen-cogs/components/title/number', () => {
       )
 
       it('renders', () => {
-        expect(renderer.create(component).toJSON())
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       describe('`getClassName`', () => {
         it('is defined', () => {
-          expect(Title.prototype.getClassName)
+          return expect(Title.prototype.getClassName)
             .toBeDefined()
         })
       })
@@ -69,7 +69,7 @@ describe('shinkansen-cogs/components/title/number', () => {
           />
         )
 
-        expect(renderer.create(component).toJSON())
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
     })
@@ -93,12 +93,12 @@ describe('shinkansen-cogs/components/title/number', () => {
       })
 
       it('invokes `classnames`', () => {
-        expect(classnames)
+        return expect(classnames)
           .toBeCalledWith('MOCK GETCLASSNAME', 'number')
       })
 
       it('returns the classname', () => {
-        expect(returnValue)
+        return expect(returnValue)
           .toBe('MOCK CLASSNAME')
       })
     })

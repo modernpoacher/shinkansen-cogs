@@ -32,13 +32,13 @@ describe('shinkansen-cogs/components/field/email', () => {
       )
 
       it('renders', () => {
-        expect(renderer.create(component).toJSON())
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       describe('`getClassName`', () => {
         it('is defined', () => {
-          expect(Field.prototype.getClassName)
+          return expect(Field.prototype.getClassName)
             .toBeDefined()
         })
       })
@@ -57,7 +57,7 @@ describe('shinkansen-cogs/components/field/email', () => {
           />
         )
 
-        expect(renderer.create(component).toJSON())
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
     })
@@ -81,12 +81,12 @@ describe('shinkansen-cogs/components/field/email', () => {
       })
 
       it('invokes `classnames`', () => {
-        expect(classnames)
+        return expect(classnames)
           .toBeCalledWith('MOCK GETCLASSNAME', 'email')
       })
 
       it('returns the classname', () => {
-        expect(returnValue)
+        return expect(returnValue)
           .toBe('MOCK CLASSNAME')
       })
     })

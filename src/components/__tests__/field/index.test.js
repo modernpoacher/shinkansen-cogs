@@ -15,21 +15,21 @@ describe('shinkansen-cogs/components/field', () => {
       )
 
       it('renders', () => {
-        expect(renderer.create(component).toJSON())
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       describe('Prototype', () => {
         describe('`getClassName`', () => {
           it('is defined', () => {
-            expect(Field.prototype.getClassName)
+            return expect(Field.prototype.getClassName)
               .toBeDefined()
           })
         })
 
         describe('`shouldComponentUpdate`', () => {
           it('is defined', () => {
-            expect(Field.prototype.shouldComponentUpdate)
+            return expect(Field.prototype.shouldComponentUpdate)
               .toBeDefined()
           })
         })
@@ -46,14 +46,14 @@ describe('shinkansen-cogs/components/field', () => {
 
         describe('`getDOMNode`', () => {
           it('is defined', () => {
-            expect(instance.getDOMNode)
+            return expect(instance.getDOMNode)
               .toBeDefined()
           })
         })
 
         describe('`setDOMNode`', () => {
           it('is defined', () => {
-            expect(instance.setDOMNode)
+            return expect(instance.setDOMNode)
               .toBeDefined()
           })
         })
@@ -76,7 +76,7 @@ describe('shinkansen-cogs/components/field', () => {
           />
         )
 
-        expect(renderer.create(component).toJSON())
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
     })
@@ -96,7 +96,7 @@ describe('shinkansen-cogs/components/field', () => {
 
         instance.domNode = mockDOMNode
 
-        expect(instance.getDOMNode())
+        return expect(instance.getDOMNode())
           .toBe(mockDOMNode)
       })
     })
@@ -117,7 +117,7 @@ describe('shinkansen-cogs/components/field', () => {
 
           instance.setDOMNode(mockDOMNode)
 
-          expect(instance.domNode)
+          return expect(instance.domNode)
             .toBe(mockDOMNode)
         })
       })
@@ -135,7 +135,7 @@ describe('shinkansen-cogs/components/field', () => {
 
           instance.setDOMNode()
 
-          expect(instance.domNode)
+          return expect(instance.domNode)
             .toBeUndefined()
         })
       })
@@ -152,7 +152,7 @@ describe('shinkansen-cogs/components/field', () => {
             .instance()
         )
 
-        expect(instance.getClassName())
+        return expect(instance.getClassName())
           .toBe('input')
       })
     })
@@ -186,7 +186,7 @@ describe('shinkansen-cogs/components/field', () => {
 
       describe('`props` have changed', () => {
         it('returns true', () => {
-          expect(instance.shouldComponentUpdate({
+          return expect(instance.shouldComponentUpdate({
             name: 'MOCK CHANGE NAME',
             id: 'MOCK CHANGE ID',
             title: 'MOCK CHANGE TITLE',
@@ -204,7 +204,7 @@ describe('shinkansen-cogs/components/field', () => {
 
       describe('`props` have not changed', () => {
         it('returns false', () => {
-          expect(instance.shouldComponentUpdate({ // instance.props
+          return expect(instance.shouldComponentUpdate({ // instance.props
             name: 'MOCK NAME',
             id: 'MOCK ID',
             title: 'MOCK TITLE',
@@ -229,28 +229,28 @@ describe('shinkansen-cogs/components/field', () => {
       )
 
       it('renders', () => {
-        expect(renderer.create(component).toJSON())
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       describe('Prototype', () => {
         describe('`getValue`', () => {
           it('is defined', () => {
-            expect(ValueField.prototype.getValue)
+            return expect(ValueField.prototype.getValue)
               .toBeDefined()
           })
         })
 
         describe('`setValue`', () => {
           it('is defined', () => {
-            expect(ValueField.prototype.setValue)
+            return expect(ValueField.prototype.setValue)
               .toBeDefined()
           })
         })
 
         describe('`shouldComponentUpdate`', () => {
           it('is defined', () => {
-            expect(ValueField.prototype.shouldComponentUpdate)
+            return expect(ValueField.prototype.shouldComponentUpdate)
               .toBeDefined()
           })
         })
@@ -268,14 +268,14 @@ describe('shinkansen-cogs/components/field', () => {
 
         describe('Extends `<Field />`', () => {
           it('is defined', () => {
-            expect(instance)
+            return expect(instance)
               .toBeInstanceOf(Field)
           })
         })
 
         describe('`handleChange`', () => {
           it('is defined', () => {
-            expect(instance.handleChange)
+            return expect(instance.handleChange)
               .toBeDefined()
           })
         })
@@ -299,7 +299,7 @@ describe('shinkansen-cogs/components/field', () => {
           />
         )
 
-        expect(renderer.create(component).toJSON())
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
     })
@@ -321,7 +321,7 @@ describe('shinkansen-cogs/components/field', () => {
 
         const value = instance.getValue()
 
-        expect(value)
+        return expect(value)
           .toBe('MOCK GET VALUE')
       })
     })
@@ -343,7 +343,7 @@ describe('shinkansen-cogs/components/field', () => {
 
         instance.setValue('MOCK SET VALUE')
 
-        expect(mockDOMNode.value)
+        return expect(mockDOMNode.value)
           .toBe('MOCK SET VALUE')
       })
     })
@@ -375,7 +375,7 @@ describe('shinkansen-cogs/components/field', () => {
 
       describe('`props` have changed', () => {
         it('returns true', () => {
-          expect(instance.shouldComponentUpdate({
+          return expect(instance.shouldComponentUpdate({
             ...instance.props,
             value: 'MOCK CHANGE VALUE'
           }))
@@ -385,7 +385,7 @@ describe('shinkansen-cogs/components/field', () => {
 
       describe('`props` have not changed', () => {
         it('returns false', () => {
-          expect(instance.shouldComponentUpdate({
+          return expect(instance.shouldComponentUpdate({
             ...instance.props,
             value: 'MOCK VALUE'
           }))
@@ -409,7 +409,7 @@ describe('shinkansen-cogs/components/field', () => {
 
         instance.handleChange({ target: { value: 'MOCK VALUE' } })
 
-        expect(MOCK_ONCHANGE)
+        return expect(MOCK_ONCHANGE)
           .toBeCalledWith('MOCK VALUE')
       })
     })
@@ -422,28 +422,28 @@ describe('shinkansen-cogs/components/field', () => {
       )
 
       it('renders', () => {
-        expect(renderer.create(component).toJSON())
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       describe('Prototype', () => {
         describe('`getValue`', () => {
           it('is defined', () => {
-            expect(CheckField.prototype.getValue)
+            return expect(CheckField.prototype.getValue)
               .toBeDefined()
           })
         })
 
         describe('`setValue`', () => {
           it('is defined', () => {
-            expect(CheckField.prototype.setValue)
+            return expect(CheckField.prototype.setValue)
               .toBeDefined()
           })
         })
 
         describe('`shouldComponentUpdate`', () => {
           it('is defined', () => {
-            expect(CheckField.prototype.shouldComponentUpdate)
+            return expect(CheckField.prototype.shouldComponentUpdate)
               .toBeDefined()
           })
         })
@@ -461,21 +461,21 @@ describe('shinkansen-cogs/components/field', () => {
 
         describe('Extends `<Field />`', () => {
           it('is defined', () => {
-            expect(instance)
+            return expect(instance)
               .toBeInstanceOf(Field)
           })
         })
 
         describe('`handleClick`', () => {
           it('is defined', () => {
-            expect(instance.handleClick)
+            return expect(instance.handleClick)
               .toBeDefined()
           })
         })
 
         describe('`handleChange`', () => {
           it('is defined', () => {
-            expect(instance.handleChange)
+            return expect(instance.handleChange)
               .toBeDefined()
           })
         })
@@ -496,7 +496,7 @@ describe('shinkansen-cogs/components/field', () => {
           />
         )
 
-        expect(renderer.create(component).toJSON())
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
     })
@@ -518,7 +518,7 @@ describe('shinkansen-cogs/components/field', () => {
 
         const checked = instance.getValue()
 
-        expect(checked)
+        return expect(checked)
           .toBe('MOCK GET VALUE')
       })
     })
@@ -540,7 +540,7 @@ describe('shinkansen-cogs/components/field', () => {
 
         instance.setValue('MOCK SET VALUE')
 
-        expect(mockDOMNode.checked)
+        return expect(mockDOMNode.checked)
           .toBe('MOCK SET VALUE')
       })
     })
@@ -577,7 +577,7 @@ describe('shinkansen-cogs/components/field', () => {
 
       describe('`props` have changed', () => {
         it('returns true', () => {
-          expect(instance.shouldComponentUpdate({
+          return expect(instance.shouldComponentUpdate({
             ...instance.props,
             checked: false,
             onClick: jest.fn()
@@ -588,7 +588,7 @@ describe('shinkansen-cogs/components/field', () => {
 
       describe('`props` have not changed', () => {
         it('returns false', () => {
-          expect(instance.shouldComponentUpdate({ // instance.props
+          return expect(instance.shouldComponentUpdate({ // instance.props
             ...instance.props,
             checked: true,
             onClick: MOCK_ONCLICK
@@ -613,7 +613,7 @@ describe('shinkansen-cogs/components/field', () => {
 
         instance.handleClick({ target: { checked: 'MOCK CHECKED' } })
 
-        expect(MOCK_ONCLICK)
+        return expect(MOCK_ONCLICK)
           .toBeCalledWith('MOCK CHECKED')
       })
     })
@@ -633,7 +633,7 @@ describe('shinkansen-cogs/components/field', () => {
 
         instance.handleChange({ target: { checked: 'MOCK CHECKED' } })
 
-        expect(MOCK_ONCHANGE)
+        return expect(MOCK_ONCHANGE)
           .toBeCalledWith('MOCK CHECKED')
       })
     })

@@ -20,83 +20,83 @@ describe('shinkansen-cogs/components/title', () => {
       )
 
       it('renders', () => {
-        expect(renderer.create(component).toJSON())
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       describe('`hasTextContent`', () => {
         it('is defined', () => {
-          expect(Title.prototype.hasTextContent)
+          return expect(Title.prototype.hasTextContent)
             .toBeDefined()
         })
       })
 
       describe('`getTextContent`', () => {
         it('is defined', () => {
-          expect(Title.prototype.getTextContent)
+          return expect(Title.prototype.getTextContent)
             .toBeDefined()
         })
       })
 
       describe('`isRequired`', () => {
         it('is defined', () => {
-          expect(Title.prototype.isRequired)
+          return expect(Title.prototype.isRequired)
             .toBeDefined()
         })
       })
 
       describe('`isDisabled`', () => {
         it('is defined', () => {
-          expect(Title.prototype.isDisabled)
+          return expect(Title.prototype.isDisabled)
             .toBeDefined()
         })
       })
 
       describe('`isReadOnly`', () => {
         it('is defined', () => {
-          expect(Title.prototype.isReadOnly)
+          return expect(Title.prototype.isReadOnly)
             .toBeDefined()
         })
       })
 
       describe('`getClassName`', () => {
         it('is defined', () => {
-          expect(Title.prototype.getClassName)
+          return expect(Title.prototype.getClassName)
             .toBeDefined()
         })
       })
 
       describe('`shouldComponentUpdate`', () => {
         it('is defined', () => {
-          expect(Title.prototype.shouldComponentUpdate)
+          return expect(Title.prototype.shouldComponentUpdate)
             .toBeDefined()
         })
       })
 
       describe('`renderTextContent`', () => {
         it('is defined', () => {
-          expect(Title.prototype.renderTextContent)
+          return expect(Title.prototype.renderTextContent)
             .toBeDefined()
         })
       })
 
       describe('`renderIsRequired`', () => {
         it('is defined', () => {
-          expect(Title.prototype.renderIsRequired)
+          return expect(Title.prototype.renderIsRequired)
             .toBeDefined()
         })
       })
 
       describe('`renderIsDisabled`', () => {
         it('is defined', () => {
-          expect(Title.prototype.renderIsDisabled)
+          return expect(Title.prototype.renderIsDisabled)
             .toBeDefined()
         })
       })
 
       describe('`renderIsReadOnly`', () => {
         it('is defined', () => {
-          expect(Title.prototype.renderIsReadOnly)
+          return expect(Title.prototype.renderIsReadOnly)
             .toBeDefined()
         })
       })
@@ -114,7 +114,7 @@ describe('shinkansen-cogs/components/title', () => {
           />
         )
 
-        expect(renderer.create(component).toJSON())
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
     })
@@ -131,7 +131,7 @@ describe('shinkansen-cogs/components/title', () => {
               .instance()
           )
 
-          expect(instance.hasTextContent())
+          return expect(instance.hasTextContent())
             .toBe(true)
         })
       })
@@ -147,7 +147,7 @@ describe('shinkansen-cogs/components/title', () => {
               .instance()
           )
 
-          expect(instance.hasTextContent())
+          return expect(instance.hasTextContent())
             .toBe(false)
         })
       })
@@ -164,7 +164,7 @@ describe('shinkansen-cogs/components/title', () => {
             .instance()
         )
 
-        expect(instance.getTextContent())
+        return expect(instance.getTextContent())
           .toBe('MOCK TITLE')
       })
     })
@@ -180,7 +180,7 @@ describe('shinkansen-cogs/components/title', () => {
             .instance()
         )
 
-        expect(instance.getClassName())
+        return expect(instance.getClassName())
           .toBe('title')
       })
     })
@@ -207,7 +207,7 @@ describe('shinkansen-cogs/components/title', () => {
 
       describe('`props` have changed', () => {
         it('returns true', () => {
-          expect(instance.shouldComponentUpdate({
+          return expect(instance.shouldComponentUpdate({
             id: 'MOCK CHANGE ID',
             title: 'MOCK CHANGE TITLE',
             required: false,
@@ -220,7 +220,7 @@ describe('shinkansen-cogs/components/title', () => {
 
       describe('`props` have not changed', () => {
         it('returns false', () => {
-          expect(instance.shouldComponentUpdate({ // instance.props
+          return expect(instance.shouldComponentUpdate({ // instance.props
             id: 'MOCK ID',
             title: 'MOCK TITLE',
             required: true,

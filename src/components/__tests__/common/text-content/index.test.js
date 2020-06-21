@@ -7,7 +7,7 @@ describe('shinkansen-cogs/components/common/text-content', () => {
   describe('<Component />', () => {
     describe('With required props', () => {
       it('renders', () => {
-        expect(renderer.create(<Component textContent='MOCK TEXT CONTENT' />).toJSON())
+        return expect(renderer.create(<Component textContent='MOCK TEXT CONTENT' />).toJSON())
           .toMatchSnapshot()
       })
     })

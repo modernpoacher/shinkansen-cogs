@@ -43,13 +43,13 @@ describe('shinkansen-cogs/components/title/checkbox', () => {
       )
 
       it('renders', () => {
-        expect(renderer.create(component).toJSON())
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       describe('`getClassName`', () => {
         it('is defined', () => {
-          expect(Description.prototype.getClassName)
+          return expect(Description.prototype.getClassName)
             .toBeDefined()
         })
       })
@@ -64,7 +64,7 @@ describe('shinkansen-cogs/components/title/checkbox', () => {
           />
         )
 
-        expect(renderer.create(component).toJSON())
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
     })
@@ -88,12 +88,12 @@ describe('shinkansen-cogs/components/title/checkbox', () => {
       })
 
       it('invokes `classnames`', () => {
-        expect(classnames)
+        return expect(classnames)
           .toBeCalledWith('MOCK GETCLASSNAME', 'checkbox')
       })
 
       it('returns the classname', () => {
-        expect(returnValue)
+        return expect(returnValue)
           .toBe('MOCK CLASSNAME')
       })
     })

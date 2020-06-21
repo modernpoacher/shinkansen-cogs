@@ -6,7 +6,7 @@ import Component from 'shinkansen-cogs/components/common/required'
 describe('shinkansen-cogs/components/common/required', () => {
   describe('<Component />', () => {
     it('renders', () => {
-      expect(renderer.create(<Component />).toJSON())
+      return expect(renderer.create(<Component />).toJSON())
         .toMatchSnapshot()
     })
   })

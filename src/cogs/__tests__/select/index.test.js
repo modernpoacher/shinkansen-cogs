@@ -95,41 +95,41 @@ describe('shinkansen-cogs/cogs/select', () => {
       )
 
       it('renders', () => {
-        expect(renderer.create(component).toJSON())
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
 
       describe('`getClassName`', () => {
         it('is defined', () => {
-          expect(Cog.prototype.getClassName)
+          return expect(Cog.prototype.getClassName)
             .toBeDefined()
         })
       })
 
       describe('`renderTitle`', () => {
         it('is defined', () => {
-          expect(Cog.prototype.renderTitle)
+          return expect(Cog.prototype.renderTitle)
             .toBeDefined()
         })
       })
 
       describe('`renderDescription`', () => {
         it('is defined', () => {
-          expect(Cog.prototype.renderDescription)
+          return expect(Cog.prototype.renderDescription)
             .toBeDefined()
         })
       })
 
       describe('`renderErrorMessage`', () => {
         it('is defined', () => {
-          expect(Cog.prototype.renderErrorMessage)
+          return expect(Cog.prototype.renderErrorMessage)
             .toBeDefined()
         })
       })
 
       describe('`renderField`', () => {
         it('is defined', () => {
-          expect(Cog.prototype.renderField)
+          return expect(Cog.prototype.renderField)
             .toBeDefined()
         })
       })
@@ -155,7 +155,7 @@ describe('shinkansen-cogs/cogs/select', () => {
           />
         )
 
-        expect(renderer.create(component).toJSON())
+        return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
       })
     })
@@ -179,12 +179,12 @@ describe('shinkansen-cogs/cogs/select', () => {
       })
 
       it('does not invoke `classnames`', () => {
-        expect(classnames)
+        return expect(classnames)
           .toBeCalledWith('MOCK GETCLASSNAME', 'select')
       })
 
       it('returns the classname', () => {
-        expect(returnValue)
+        return expect(returnValue)
           .toBe('MOCK CLASSNAME')
       })
     })
@@ -224,12 +224,12 @@ describe('shinkansen-cogs/cogs/select', () => {
       })
 
       it('invokes `getId`', () => {
-        expect(getIdSpy)
+        return expect(getIdSpy)
           .toBeCalled()
       })
 
       it('renders `<Title />`', () => {
-        expect(Title)
+        return expect(Title)
           .toBeCalledWith({
             id: 'MOCK ID',
             title: 'MOCK TITLE',
@@ -271,7 +271,7 @@ describe('shinkansen-cogs/cogs/select', () => {
       })
 
       it('renders `<Description />`', () => {
-        expect(Description)
+        return expect(Description)
           .toBeCalledWith({
             description: 'MOCK DESCRIPTION'
           }, {})
@@ -309,7 +309,7 @@ describe('shinkansen-cogs/cogs/select', () => {
       })
 
       it('renders `<ErrorMessage />`', () => {
-        expect(ErrorMessage)
+        return expect(ErrorMessage)
           .toBeCalledWith({
             errorMessage: MOCK_ERROR_MESSAGE
           }, {})
@@ -352,12 +352,12 @@ describe('shinkansen-cogs/cogs/select', () => {
       })
 
       it('invokes `getId`', () => {
-        expect(getIdSpy)
+        return expect(getIdSpy)
           .toBeCalled()
       })
 
       it('renders `<Field />`', () => {
-        expect(Field)
+        return expect(Field)
           .toBeCalledWith({
             name: 'MOCK NAME',
             id: 'MOCK ID',
