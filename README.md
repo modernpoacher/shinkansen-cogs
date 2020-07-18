@@ -1,4 +1,4 @@
-## @modernpoacher/shinkansen-cogs
+## shinkansen-cogs
 
 # Shinkansen Cogs
 
