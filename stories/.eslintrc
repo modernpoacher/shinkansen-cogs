@@ -1,13 +1,12 @@
 {
   "extends": [
+    "standard",
     "plugin:react/recommended"
   ],
   "env": {
     "browser": true
   },
   "parserOptions": {
-    "ecmaVersion": 2020,
-    "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
     }
