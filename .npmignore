@@ -19,7 +19,7 @@ build
 gulpfile.js
 
 # Jest
-**/__tests__/**
+__tests__
 jest.config.js
 
 # Coverage
