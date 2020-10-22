@@ -8,7 +8,7 @@ import {
   sourcePath
 } from 'build/paths'
 
-import handleWatchError from 'build/gulp/handle-watch-error'
+import handleError from 'build/gulp/handle-error'
 
 import {
   readFile,
@@ -16,6 +16,8 @@ import {
 } from 'fs/promises'
 
 const log = debug('shinkansen-cogs:transform')
+
+log('`transform` is awake')
 
 const STYLESHEET = /(<style type="text\/css">)[ -~\w\d"'+-:;,#%{}/*\n\s✓•]*(<\/style>)/gm
 
@@ -27,7 +29,7 @@ export async function transform () {
   const css = await readFile('.storybook/preview-head.css', 'utf8')
 
   return (
-    writeFile('.storybook/preview-head.html', (
+    await writeFile('.storybook/preview-head.html', (
       await readFile('.storybook/preview-head.html', 'utf8')
     ).replace(STYLESHEET, `$1\n${css.trim()}\n$2`), 'utf8')
   )
@@ -38,16 +40,13 @@ export function transformWatch () {
 
   return (
     gulp.watch(
-      [
-        path.join(buildSourcePath, '**/*.css')
-      ],
+      path.join(buildSourcePath, '**/*.css'),
       {
         name: 'css-watch',
         cwd: currentDir
       },
       transform
-    )
-      .on('error', handleWatchError)
+    ).on('error', handleError)
   )
 }
 
