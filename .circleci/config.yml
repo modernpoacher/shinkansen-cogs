@@ -26,8 +26,6 @@ jobs:
       - run:
           name: Publish to NPM
           command: |
-            #!/usr/bin/env bash
-
             set +e
 
             echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
