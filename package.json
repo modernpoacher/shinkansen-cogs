@@ -23,8 +23,8 @@
   "scripts": {
     "prepublishOnly": "cross-env NODE_ENV=production npm run build",
     "prebuild": "npm run clean",
-    "build": "cross-env NODE_ENV=development concurrently -r \"npm run babel -- --ignore \"**/__tests__/**\"\" \"gulp build\"",
-    "build:watch": "cross-env NODE_ENV=development concurrently -r \"npm run babel:watch\" \"gulp build:watch\"",
+    "build": "cross-env DEBUG=shinkansen:cogs npm run babel -- --ignore \"**/__tests__/**\" && gulp build",
+    "build:watch": "cross-env DEBUG=shinkansen:cogs concurrently -r \"npm run babel:watch\" \"gulp build:watch\"",
     "transform": "gulp transform",
     "transform:watch": "gulp transform:watch",
     "clean": "rimraf lib",
@@ -102,8 +102,8 @@
   },
   "peerDependencies": {
     "prop-types": "<=15.7.2",
-    "react": "<=16.40.0",
-    "react-dom": "<=16.40.0"
+    "react": "<=16.14.0",
+    "react-dom": "<=16.14.0"
   },
   "husky": {
     "hooks": {
