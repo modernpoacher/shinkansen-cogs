@@ -12,6 +12,7 @@
     }
   },
   "plugins": [
+    "standard",
     "react"
   ],
   "rules": {
