@@ -100,11 +100,6 @@
     "rimraf": "^3.0.2",
     "vinyl-paths": "^3.0.1"
   },
-  "peerDependencies": {
-    "prop-types": "<=15.7.2",
-    "react": "<=16.14.0",
-    "react-dom": "<=16.14.0"
-  },
   "husky": {
     "hooks": {
       "pre-commit": "npm run pre-commit"
