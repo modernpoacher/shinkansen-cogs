@@ -32,7 +32,7 @@
     "babel:watch": "npm run babel -- -w",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
-    "test": "cross-env NODE_ENV=test jest --collect-coverage false --verbose --run-in-band",
+    "test": "cross-env NODE_ENV=test jest --verbose --run-in-band",
     "storybook": "npm run build && npm run transform && start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "pre-commit": "npm run lint && npm test && npm run build && npm run transform && git add lib .storybook"
@@ -51,7 +51,7 @@
     "@babel/plugin-proposal-export-namespace-from": "^7.12.1",
     "@babel/plugin-transform-runtime": "^7.12.1",
     "@babel/preset-env": "^7.12.1",
-    "@babel/preset-react": "^7.12.1",
+    "@babel/preset-react": "^7.12.5",
     "@babel/register": "^7.12.1",
     "@modernpoacher/design-system": "0.0.142",
     "@storybook/addon-actions": "^6.0.28",
