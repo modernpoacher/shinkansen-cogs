@@ -6,7 +6,7 @@ import {
 
 import {
   currentDir
-} from 'build/paths'
+} from 'build/gulp/paths'
 
 const log = debug('shinkansen-cogs:handle-error')
 
