@@ -39,7 +39,7 @@
     "pre-commit": "npm run lint && npm test && npm run build && npm run transform && git add lib .storybook"
   },
   "dependencies": {
-    "classnames": "^2.3.0",
+    "classnames": "^2.3.1",
     "debug": "^4.3.1",
     "immutable": "3.8.2"
   },
