@@ -3,5 +3,6 @@ module.exports = {
   verbose: true,
   rootDir: './src',
   collectCoverage: true,
-  coverageDirectory: '../coverage'
+  coverageDirectory: '../coverage',
+  testEnvironment: 'jsdom'
 }
