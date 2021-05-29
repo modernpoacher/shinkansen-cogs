@@ -1,3 +1,5 @@
+import 'jsdom-global/register'
+
 import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
 import Enzyme, { shallow, mount } from 'enzyme'
