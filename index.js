@@ -1,6 +1,6 @@
 const debug = require('debug')
 
-const log = debug('shinkansen:cogs')
+const log = debug('shinkansen-cogs')
 
 log('`cogs` is awake')
 

@@ -1,11 +1,10 @@
+import debug from 'debug'
+
 import { Children, cloneElement } from 'react'
 
 import State from 'stories/state'
 
-import { action } from '@storybook/addon-actions'
-
-// const actionClick = action('click')
-const actionChange = action('change')
+const log = debug('shinkansen-cogs:stories')
 
 export default class RadioState extends State {
   state = {
@@ -76,8 +75,7 @@ export default class RadioState extends State {
         children,
         {
           ...props,
-          // onClick: (name, value) => actionClick(name, value),
-          onChange: (name, value) => actionChange(name, value)
+          onChange: (name, value) => log(name, value)
         },
         {
           defaultValue
@@ -91,8 +89,7 @@ export default class RadioState extends State {
       children,
       {
         ...props,
-        // onClick: (name, value) => { this.setState({ value }, () => actionClick(name, value)) },
-        onChange: (name, value) => { this.setState({ value }, () => actionChange(name, value)) }
+        onChange: (name, value) => { this.setState({ value }, () => log(name, value)) }
       },
       {
         value

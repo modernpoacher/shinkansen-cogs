@@ -1,10 +1,9 @@
+import debug from 'debug'
+
 import { Component, Children, cloneElement } from 'react'
 import PropTypes from 'prop-types'
 
-import { action } from '@storybook/addon-actions'
-
-// const actionClick = action('click')
-const actionChange = action('change')
+const log = debug('shinkansen-cogs:stories')
 
 export default class State extends Component {
   state = {
@@ -69,7 +68,7 @@ export class ValueState extends State {
         {
           ...props,
           defaultValue,
-          onChange: (name, value) => actionChange(name, value)
+          onChange: (name, value) => log(name, value)
         }
       )
     }
@@ -82,7 +81,7 @@ export class ValueState extends State {
         ...props,
         value,
         onChange: (name, value) => {
-          this.setState({ value }, () => actionChange(name, value))
+          this.setState({ value }, () => log(name, value))
         }
       }
     )
@@ -131,8 +130,7 @@ export class CheckState extends Component {
         {
           ...props,
           defaultChecked: !!defaultChecked,
-          // onClick: (name, checked) => actionClick(name, checked),
-          onChange: (name, checked) => actionChange(name, checked)
+          onChange: (name, checked) => log(name, checked)
         }
       )
     }
@@ -144,9 +142,8 @@ export class CheckState extends Component {
       {
         ...props,
         checked: !!checked,
-        // onClick: (name, checked) => { this.setState({ checked }, () => actionClick(name, checked)) },
         onChange: (name, checked) => {
-          this.setState({ checked }, () => actionChange(name, checked))
+          this.setState({ checked }, () => log(name, checked))
         }
       }
     )

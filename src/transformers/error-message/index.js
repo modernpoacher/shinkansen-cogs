@@ -1,6 +1,6 @@
 import debug from 'debug'
 
-const log = debug('shinkansen:cogs:transformers:error-message')
+const log = debug('shinkansen-cogs:transformers:error-message')
 
 export function getErrorTextForMaxItems (components = {}) {
   log('getErrorTextForMaxItems')
