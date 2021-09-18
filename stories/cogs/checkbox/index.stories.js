@@ -43,6 +43,7 @@ Checked.args = {
   readOnly: false,
   tabIndex: 0,
   accessKey: 'A',
+  id: 'checkbox',
   name: 'checkbox'
 }
 
@@ -60,5 +61,6 @@ DefaultChecked.args = {
   readOnly: false,
   tabIndex: 0,
   accessKey: 'A',
+  id: 'checkbox',
   name: 'checkbox'
 }
