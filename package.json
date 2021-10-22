@@ -102,6 +102,6 @@
     "regenerator-runtime": "^0.13.9",
     "rimraf": "^3.0.2",
     "sass": "^1.43.3",
-    "vinyl-paths": "3.0.1"
+    "vinyl-paths": "4.0.0"
   }
 }
