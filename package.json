@@ -90,7 +90,7 @@
     "jest": "^27.5.1",
     "jsdom": "^19.0.0",
     "jsdom-global": "^3.0.2",
-    "postcss": "^8.4.6",
+    "postcss": "^8.4.7",
     "postcss-easy-import": "^3.0.0",
     "postcss-map": "^0.11.0",
     "postcss-normalize": "^10.0.1",
@@ -101,7 +101,7 @@
     "react-test-renderer": "16.14.0",
     "regenerator-runtime": "^0.13.9",
     "rimraf": "^3.0.2",
-    "sass": "^1.49.8",
+    "sass": "^1.49.9",
     "vinyl-paths": "3.0.1"
   }
 }
