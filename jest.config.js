@@ -1,8 +1,8 @@
 module.exports = {
   bail: 1,
   verbose: true,
-  rootDir: './src',
+  rootDir: '.',
   collectCoverage: true,
-  coverageDirectory: '../coverage',
+  coverageDirectory: './coverage',
   testEnvironment: 'jsdom'
 }
