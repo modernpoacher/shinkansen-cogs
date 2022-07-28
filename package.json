@@ -10,7 +10,7 @@
     "Karakuri",
     "React"
   ],
-  "main": "./index.js",
+  "main": "./index.cjs",
   "type": "module",
   "author": "Jonathan Perry for Modern Poacher Limited <modernpoacher@modernpoacher.com>",
   "license": "MIT",
