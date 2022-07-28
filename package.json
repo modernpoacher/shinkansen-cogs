@@ -11,6 +11,7 @@
     "React"
   ],
   "main": "./index.js",
+  "type": "module",
   "author": "Jonathan Perry for Modern Poacher Limited <modernpoacher@modernpoacher.com>",
   "license": "MIT",
   "engines": {
@@ -32,7 +33,7 @@
     "babel": "babel src -d lib",
     "babel:watch": "npm run babel -- -w",
     "gulp": "bash gulp.sh --color",
-    "lint": "eslint . .storybook --ext .mjs --ext .cjs --ext .js",
+    "lint": "cross-env NODE_ENV=production eslint . .storybook --ext .mjs --ext .cjs --ext .js",
     "lint:fix": "npm run lint -- --fix",
     "test": "cross-env NODE_ENV=test jest --collect-coverage false --verbose --run-in-band",
     "storybook": "npm run build && npm run transform && start-storybook -p 6006",
