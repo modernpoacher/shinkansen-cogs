@@ -64,7 +64,7 @@
     "autoprefixer": "^10.4.13",
     "babel-jest": "^29.3.1",
     "babel-loader": "^9.1.2",
-    "babel-plugin-module-resolver": "4.1.0",
+    "babel-plugin-module-resolver": "5.0.0",
     "cheerio": "1.0.0-rc.6",
     "concurrently": "^7.6.0",
     "core-js": "^3.27.1",
