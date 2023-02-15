@@ -7,14 +7,14 @@ import SelectCog from './cogs/select'
 import TextCog from './cogs/text'
 import TextareaCog from './cogs/textarea'
 
-export CheckboxCog from './cogs/checkbox'
-export EmailCog from './cogs/email'
-export NumberCog from './cogs/number'
-export PasswordCog from './cogs/password'
-export RadioCog from './cogs/radio'
-export SelectCog from './cogs/select'
-export TextCog from './cogs/text'
-export TextareaCog from './cogs/textarea'
+export { default as CheckboxCog } from './cogs/checkbox'
+export { default as EmailCog } from './cogs/email'
+export { default as NumberCog } from './cogs/number'
+export { default as PasswordCog } from './cogs/password'
+export { default as RadioCog } from './cogs/radio'
+export { default as SelectCog } from './cogs/select'
+export { default as TextCog } from './cogs/text'
+export { default as TextareaCog } from './cogs/textarea'
 
 export default {
   CheckboxCog,
