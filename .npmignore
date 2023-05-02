@@ -2,9 +2,8 @@
 
 .circleci
 .github
-
-.storybook
 .husky
+
 .editorconfig
 .eslintignore
 .eslintrc
@@ -15,17 +14,21 @@
 .npmignore
 .npmrc
 
+# NVM
+.nvmrc
+nvm.sh
+
 # Build
 build
-gulpfile.js
-gulp.sh
+gulpfile.mjs
 
 # Jest
 __tests__
-jest.config.js
+jest.config.cjs
 
 # Coverage
 coverage
 
 # Storybook
+.storybook
 stories

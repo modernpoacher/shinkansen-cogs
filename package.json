@@ -35,10 +35,9 @@
     "gulp": "gulp --color",
     "lint": "cross-env NODE_ENV=production eslint . .storybook --ext .mjs --ext .cjs --ext .jsx",
     "lint:fix": "npm run lint -- --fix",
-    "test": "cross-env NODE_ENV=test jest --collect-coverage false --verbose --run-in-band",
+    "test": "npm run nvm && cross-env NODE_ENV=test jest --collect-coverage false --verbose --run-in-band",
     "nvm": "bash nvm.sh",
-    "storybook": "npm run build && npm run transform && start-storybook -p 6006",
-    "pre-commit": "npm run lint && npm test && npm run build && npm run transform && git add lib .storybook"
+    "storybook": "npm run build && npm run transform && start-storybook -p 6006"
   },
   "dependencies": {
     "classnames": "^2.3.2",
