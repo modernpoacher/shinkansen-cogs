@@ -106,7 +106,7 @@
     "regenerator-runtime": "^0.13.11",
     "rimraf": "^5.0.0",
     "sass": "^1.62.1",
-    "vinyl-paths": "3.0.1"
+    "vinyl-paths": "^5.0.0"
   },
   "imports": {
     "#cogs/checkbox": "./src/cogs/checkbox/index.cjs",
