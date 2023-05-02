@@ -4,5 +4,12 @@ module.exports = {
   rootDir: '.',
   collectCoverage: true,
   coverageDirectory: './coverage',
-  testEnvironment: 'jsdom'
+  testEnvironment: 'jsdom',
+  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(mjs?|mts?|jsx?|js?|tsx?|ts?)$',
+  transform: {
+    '^.+\\.jsx?$': 'babel-jest',
+    '^.+\\.mjs$': 'babel-jest',
+    '^.+\\.cjs$': 'babel-jest'
+  },
+  moduleFileExtensions: ['js', 'jsx', 'mjs', 'cjs']
 }
