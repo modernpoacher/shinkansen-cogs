@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`shinkansen-cogs/components/title/password <Title /> With additional props renders 1`] = `
+exports[`#components/title/password <Title /> With additional props renders 1`] = `
 <label
   className="MOCK CLASSNAME"
   htmlFor="MOCK ID"
 />
 `;
 
-exports[`shinkansen-cogs/components/title/password <Title /> With required props renders 1`] = `null`;
+exports[`#components/title/password <Title /> With required props renders 1`] = `null`;

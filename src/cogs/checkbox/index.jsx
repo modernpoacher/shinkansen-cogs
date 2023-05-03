@@ -4,11 +4,11 @@
 import React from 'react'
 import classnames from 'classnames'
 
-import { CheckCog } from 'shinkansen-cogs/cogs'
-import Title from 'shinkansen-cogs/components/title/checkbox'
-import Description from 'shinkansen-cogs/components/description/checkbox'
-import ErrorMessage from 'shinkansen-cogs/components/error-message/checkbox'
-import Field from 'shinkansen-cogs/components/field/checkbox'
+import { CheckCog } from '#cogs'
+import Title from '#components/title/checkbox'
+import Description from '#components/description/checkbox'
+import ErrorMessage from '#components/error-message/checkbox'
+import Field from '#components/field/checkbox'
 
 export default class CheckboxCog extends CheckCog {
   getClassName () {

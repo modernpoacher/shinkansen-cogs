@@ -3,16 +3,16 @@ import renderer from 'react-test-renderer'
 import Enzyme, { shallow } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 
-import Description from 'shinkansen-cogs/components/title'
+import Description from '#components/title'
 
 Enzyme.configure({ adapter: new Adapter() })
 
-jest.mock('shinkansen-cogs/components/common/text-content', () => () => 'MOCK TEXT CONTENT')
-jest.mock('shinkansen-cogs/components/common/required', () => () => 'MOCK REQUIRED')
-jest.mock('shinkansen-cogs/components/common/disabled', () => () => 'MOCK DISABLED')
-jest.mock('shinkansen-cogs/components/common/readonly', () => () => 'MOCK READONLY')
+jest.mock('#components/common/text-content', () => () => 'MOCK TEXT CONTENT')
+jest.mock('#components/common/required', () => () => 'MOCK REQUIRED')
+jest.mock('#components/common/disabled', () => () => 'MOCK DISABLED')
+jest.mock('#components/common/readonly', () => () => 'MOCK READONLY')
 
-describe('shinkansen-cogs/components/title', () => {
+describe('#components/title', () => {
   describe('<Description />', () => {
     describe('With required props', () => {
       const component = (

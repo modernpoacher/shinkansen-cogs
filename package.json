@@ -1,6 +1,7 @@
 {
   "name": "shinkansen-cogs",
   "version": "1.5.32",
+  "main": "./src/index.cjs",
   "description": "Shinkansen Cogs",
   "keywords": [
     "Shinkansen",
@@ -10,7 +11,6 @@
     "Karakuri",
     "React"
   ],
-  "main": "./index.mjs",
   "type": "module",
   "author": "Jonathan Perry for Modern Poacher Limited <modernpoacher@modernpoacher.com>",
   "license": "MIT",
@@ -23,19 +23,17 @@
   },
   "scripts": {
     "prepublishOnly": "cross-env NODE_ENV=production npm run build",
-    "prebuild": "npm run clean",
-    "build": "npm run nvm && cross-env DEBUG=shinkansen-cogs npm run babel -- --ignore \"**/__tests__/**\" && npm run gulp",
-    "build:watch": "npm run gulp -- build:watch",
-    "watch": "npm run nvm && cross-env DEBUG=shinkansen-cogs concurrently -r \"npm run babel:watch\" \"npm run build:watch\"",
-    "clean": "rimraf lib",
-    "transform": "npm run gulp -- transform",
-    "transform:watch": "npm run gulp -- transform:watch",
-    "babel": "babel src -d lib --out-file-extension .cjs",
-    "babel:watch": "npm run babel -- -w",
+    "build": "cross-env DEBUG=shinkansen-cogs npm run gulp -- build",
+    "build:watch": "cross-env DEBUG=shinkansen-cogs npm run gulp -- build:watch",
+    "transform": "cross-env DEBUG=shinkansen-cogs npm run gulp -- transform",
+    "transform:watch": "cross-env DEBUG=shinkansen-cogs npm run gulp -- transform:watch",
+    "pregulp": "npm run nvm",
     "gulp": "gulp --color",
+    "prelint": "npm run nvm",
     "lint": "cross-env NODE_ENV=production eslint . .storybook --ext .mjs --ext .cjs --ext .jsx",
     "lint:fix": "npm run lint -- --fix",
-    "test": "npm run nvm && cross-env NODE_ENV=test jest --collect-coverage false --verbose --run-in-band",
+    "pretest": "npm run nvm",
+    "test": "cross-env NODE_ENV=test jest --collect-coverage false --verbose --run-in-band",
     "nvm": "bash nvm.sh",
     "storybook": "npm run build && npm run transform && start-storybook -p 6006"
   },
@@ -157,7 +155,7 @@
     "#components/title/text": "./src/components/title/text/index.cjs",
     "#components/title/textarea": "./src/components/title/textarea/index.cjs",
     "#components/title": "./src/components/title/index.cjs",
-    "#transformers/error-message": "./src/transformers/error-message/index.cjs",
+    "#transformers/error-message": "./src/transformers/error-message/index.mjs",
     "#build/gulp/build": "./build/gulp/build/index.mjs",
     "#build/gulp/build/css-from-sass": "./build/gulp/build/css-from-sass.mjs",
     "#build/gulp/build/css": "./build/gulp/build/css.mjs",
@@ -222,6 +220,6 @@
     "./components/title/text": "./src/components/title/text/index.cjs",
     "./components/title/textarea": "./src/components/title/textarea/index.cjs",
     "./components/title": "./src/components/title/index.cjs",
-    "./transformers/error-message": "./src/transformers/error-message/index.cjs"
+    "./transformers/error-message": "./src/transformers/error-message/index.mjs"
   }
 }

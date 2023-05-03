@@ -2,7 +2,7 @@ import React from 'react'
 
 import errors from 'stories/errors'
 import RadioState from 'stories/state/radio'
-import RadioCog from 'shinkansen-cogs/cogs/radio'
+import RadioCog from '#cogs/radio'
 
 export default {
   title: 'Components/Radio',

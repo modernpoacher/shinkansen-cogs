@@ -4,11 +4,11 @@
 import React from 'react'
 import classnames from 'classnames'
 
-import { ValueCog } from 'shinkansen-cogs/cogs'
-import Title from 'shinkansen-cogs/components/title/textarea'
-import Description from 'shinkansen-cogs/components/description/textarea'
-import ErrorMessage from 'shinkansen-cogs/components/error-message/textarea'
-import Field from 'shinkansen-cogs/components/field/textarea'
+import { ValueCog } from '#cogs'
+import Title from '#components/title/textarea'
+import Description from '#components/description/textarea'
+import ErrorMessage from '#components/error-message/textarea'
+import Field from '#components/field/textarea'
 
 export default class TextareaCog extends ValueCog {
   getClassName () {

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`shinkansen-cogs/components/field <CheckField /> With additional props renders 1`] = `
+exports[`#components/field <CheckField /> With additional props renders 1`] = `
 <input
   className="input"
   disabled={true}
@@ -11,7 +11,7 @@ exports[`shinkansen-cogs/components/field <CheckField /> With additional props r
 />
 `;
 
-exports[`shinkansen-cogs/components/field <CheckField /> With required props renders 1`] = `
+exports[`#components/field <CheckField /> With required props renders 1`] = `
 <input
   className="input"
   disabled={false}
@@ -20,7 +20,7 @@ exports[`shinkansen-cogs/components/field <CheckField /> With required props ren
 />
 `;
 
-exports[`shinkansen-cogs/components/field <Field /> With additional props renders 1`] = `
+exports[`#components/field <Field /> With additional props renders 1`] = `
 <input
   accessKey="MOCK ACCESS KEY"
   className="input"
@@ -33,7 +33,7 @@ exports[`shinkansen-cogs/components/field <Field /> With additional props render
 />
 `;
 
-exports[`shinkansen-cogs/components/field <Field /> With required props renders 1`] = `
+exports[`#components/field <Field /> With required props renders 1`] = `
 <input
   className="input"
   disabled={false}
@@ -42,7 +42,7 @@ exports[`shinkansen-cogs/components/field <Field /> With required props renders 
 />
 `;
 
-exports[`shinkansen-cogs/components/field <ValueField /> With additional props renders 1`] = `
+exports[`#components/field <ValueField /> With additional props renders 1`] = `
 <input
   accessKey="MOCK ACCESS KEY"
   className="input"
@@ -55,7 +55,7 @@ exports[`shinkansen-cogs/components/field <ValueField /> With additional props r
 />
 `;
 
-exports[`shinkansen-cogs/components/field <ValueField /> With required props renders 1`] = `
+exports[`#components/field <ValueField /> With required props renders 1`] = `
 <input
   className="input"
   disabled={false}

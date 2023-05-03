@@ -3,7 +3,7 @@
  */
 import React from 'react'
 import classnames from 'classnames'
-import { CheckField } from 'shinkansen-cogs/components/field'
+import { CheckField } from '#components/field'
 
 export default class CheckboxField extends CheckField {
   getClassName () {

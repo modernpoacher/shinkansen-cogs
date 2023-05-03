@@ -2,7 +2,7 @@
  * CheckboxErrorMessage component
  */
 import classnames from 'classnames'
-import ErrorMessage from 'shinkansen-cogs/components/error-message'
+import ErrorMessage from '#components/error-message'
 
 export default class CheckboxErrorMessage extends ErrorMessage {
   getClassName () {

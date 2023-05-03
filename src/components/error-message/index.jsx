@@ -5,9 +5,9 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Immutable from 'immutable'
 
-import transform from 'shinkansen-cogs/transformers/error-message'
+import transform from '#transformers/error-message'
 
-import TextContent from 'shinkansen-cogs/components/common/text-content'
+import TextContent from '#components/common/text-content'
 
 export default class ErrorMessage extends Component {
   state = { errorMessage: Immutable.Map() }

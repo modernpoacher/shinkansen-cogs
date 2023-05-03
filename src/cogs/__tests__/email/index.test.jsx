@@ -5,19 +5,19 @@ import Adapter from 'enzyme-adapter-react-16'
 
 import classnames from 'classnames'
 
-import Title from 'shinkansen-cogs/components/title/email'
-import Description from 'shinkansen-cogs/components/description/email'
-import ErrorMessage from 'shinkansen-cogs/components/error-message/email'
-import Field from 'shinkansen-cogs/components/field/email'
+import Title from '#components/title/email'
+import Description from '#components/description/email'
+import ErrorMessage from '#components/error-message/email'
+import Field from '#components/field/email'
 
-import { ValueCog } from 'shinkansen-cogs/cogs'
-import Cog from 'shinkansen-cogs/cogs/email'
+import { ValueCog } from '#cogs'
+import Cog from '#cogs/email'
 
 Enzyme.configure({ adapter: new Adapter() })
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('shinkansen-cogs/cogs', () => {
+jest.mock('#cogs', () => {
   class MockCog extends mockComponent {
     getClassName () { }
 
@@ -52,10 +52,10 @@ jest.mock('shinkansen-cogs/cogs', () => {
   }
 })
 
-jest.mock('shinkansen-cogs/components/title/email')
-jest.mock('shinkansen-cogs/components/description/email')
-jest.mock('shinkansen-cogs/components/error-message/email')
-jest.mock('shinkansen-cogs/components/field/email')
+jest.mock('#components/title/email')
+jest.mock('#components/description/email')
+jest.mock('#components/error-message/email')
+jest.mock('#components/field/email')
 
 const MOCK_ERROR_MESSAGE = {
   type: 'MOCK TYPE',
@@ -75,7 +75,7 @@ class MockErrorMessage extends mockComponent {
   }
 }
 
-describe('shinkansen-cogs/cogs/email', () => {
+describe('#cogs/email', () => {
   beforeAll(() => {
     ErrorMessage.mockImplementation(() => new MockErrorMessage())
     ErrorMessage.getDerivedStateFromProps.mockReturnValue({})

@@ -2,7 +2,7 @@ import React from 'react'
 
 import errors from 'stories/errors'
 import EmailState from 'stories/state/email'
-import EmailCog from 'shinkansen-cogs/cogs/email'
+import EmailCog from '#cogs/email'
 
 export default {
   title: 'Components/Email',

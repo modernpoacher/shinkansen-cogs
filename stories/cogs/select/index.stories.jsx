@@ -2,7 +2,7 @@ import React from 'react'
 
 import errors from 'stories/errors'
 import SelectState from 'stories/state/select'
-import SelectCog from 'shinkansen-cogs/cogs/select'
+import SelectCog from '#cogs/select'
 
 export default {
   title: 'Components/Select',

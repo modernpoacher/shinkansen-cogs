@@ -5,17 +5,17 @@ import Adapter from 'enzyme-adapter-react-16'
 
 import classnames from 'classnames'
 
-import Title from 'shinkansen-cogs/components/title'
-import Field from 'shinkansen-cogs/components/field'
+import Title from '#components/title'
+import Field from '#components/field'
 
-import Cog, { ValueCog, CheckCog } from 'shinkansen-cogs/cogs'
+import Cog, { ValueCog, CheckCog } from '#cogs'
 
 Enzyme.configure({ adapter: new Adapter() })
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('shinkansen-cogs/components/title')
-jest.mock('shinkansen-cogs/components/field')
+jest.mock('#components/title')
+jest.mock('#components/field')
 
 const MOCK_ERROR_MESSAGE = {
   type: 'MOCK TYPE',
@@ -23,7 +23,7 @@ const MOCK_ERROR_MESSAGE = {
   uri: 'MOCK URI'
 }
 
-describe('shinkansen-cogs/cogs', () => {
+describe('#cogs', () => {
   describe('<Cog />', () => {
     describe('With required props', () => {
       const component = (
