@@ -11,7 +11,7 @@ import TextareaCog from './cogs/textarea/index.cjs'
 
 const log = debug('shinkansen-cogs')
 
-log('`cogs` is awake')
+log('`shinkansen` is awake')
 
 export { default as CheckboxCog } from './cogs/checkbox/index.cjs'
 export { default as EmailCog } from './cogs/email/index.cjs'

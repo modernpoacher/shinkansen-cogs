@@ -4,6 +4,6 @@ const debug = require('debug')
 
 const log = debug('shinkansen-cogs/components/error-message')
 
-log('`cogs` is awake')
+log('`shinkansen` is awake')
 
 module.exports = require('./index.jsx')

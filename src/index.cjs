@@ -4,7 +4,7 @@ const debug = require('debug')
 
 const log = debug('shinkansen-cogs')
 
-log('`cogs` is awake')
+log('`shinkansen` is awake')
 
 const { default: CheckboxCog } = require('./cogs/checkbox')
 const { default: EmailCog } = require('./cogs/email')

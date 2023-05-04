@@ -2,9 +2,9 @@ require('@babel/register')({ configFile: require.resolve('../../../babel.config.
 
 const debug = require('debug')
 
-const log = debug('shinkansen-cogs/cogs')
+const log = debug('shinkansen-cogs/cogs/textbox')
 
-log('`cogs` is awake')
+log('`shinkansen` is awake')
 
 const {
   default: component
