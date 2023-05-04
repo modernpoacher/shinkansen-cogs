@@ -1,4 +1,4 @@
-require('@babel/register')({ configFile: require.resolve('../../babel.config.cjs') })
+require('@babel/register')({ ignore: [/node_modules/], configFile: require.resolve('../../babel.config.cjs') })
 
 const debug = require('debug')
 

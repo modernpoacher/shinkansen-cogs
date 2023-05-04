@@ -1,4 +1,4 @@
-require('@babel/register')({ configFile: require.resolve('../babel.config.cjs') })
+require('@babel/register')({ ignore: [/node_modules/], configFile: require.resolve('../babel.config.cjs') })
 
 const debug = require('debug')
 
@@ -6,14 +6,14 @@ const log = debug('shinkansen-cogs')
 
 log('`shinkansen` is awake')
 
-const { default: CheckboxCog } = require('./cogs/checkbox')
-const { default: EmailCog } = require('./cogs/email')
-const { default: NumberCog } = require('./cogs/number')
-const { default: PasswordCog } = require('./cogs/password')
-const { default: RadioCog } = require('./cogs/radio')
-const { default: SelectCog } = require('./cogs/select')
-const { default: TextCog } = require('./cogs/text')
-const { default: TextareaCog } = require('./cogs/textarea')
+const { default: CheckboxCog } = require('./cogs/checkbox/index.cjs')
+const { default: EmailCog } = require('./cogs/email/index.cjs')
+const { default: NumberCog } = require('./cogs/number/index.cjs')
+const { default: PasswordCog } = require('./cogs/password/index.cjs')
+const { default: RadioCog } = require('./cogs/radio/index.cjs')
+const { default: SelectCog } = require('./cogs/select/index.cjs')
+const { default: TextCog } = require('./cogs/text/index.cjs')
+const { default: TextareaCog } = require('./cogs/textarea/index.cjs')
 
 module.exports.CheckboxCog = CheckboxCog
 module.exports.EmailCog = EmailCog
