@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`#components/common/disabled <Component /> renders 1`] = `
+exports[`shinkansen-cogs/components/common/disabled <Component /> renders 1`] = `
 <span
   className="is-disabled"
 >

@@ -2,7 +2,7 @@ import React from 'react'
 
 import errors from 'stories/errors'
 import NumberState from 'stories/state/number'
-import NumberCog from '#cogs/number'
+import NumberCog from 'shinkansen-cogs/cogs/number'
 
 export default {
   title: 'Components/Number',

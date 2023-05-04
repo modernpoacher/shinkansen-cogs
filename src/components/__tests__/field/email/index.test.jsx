@@ -5,14 +5,14 @@ import Adapter from 'enzyme-adapter-react-16'
 
 import classnames from 'classnames'
 
-import { ValueField } from '#components/field'
-import Field from '#components/field/email'
+import { ValueField } from 'shinkansen-cogs/components/field'
+import Field from 'shinkansen-cogs/components/field/email'
 
 Enzyme.configure({ adapter: new Adapter() })
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('#components/field', () => {
+jest.mock('shinkansen-cogs/components/field', () => {
   class MockField extends mockComponent {
     getClassName () { }
   }
@@ -24,7 +24,7 @@ jest.mock('#components/field', () => {
   }
 })
 
-describe('#components/field/email', () => {
+describe('shinkansen-cogs/components/field/email', () => {
   describe('<Field />', () => {
     describe('With required props', () => {
       const component = (

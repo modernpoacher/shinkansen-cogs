@@ -6,10 +6,10 @@ import PropTypes from 'prop-types'
 
 import classNames from 'classnames'
 
-import Title from '#components/title'
-import Description from '#components/description'
-import ErrorMessage from '#components/error-message'
-import Field from '#components/field'
+import Title from 'shinkansen-cogs/components/title'
+import Description from 'shinkansen-cogs/components/description'
+import ErrorMessage from 'shinkansen-cogs/components/error-message'
+import Field from 'shinkansen-cogs/components/field'
 
 function onChange () {
   /* */

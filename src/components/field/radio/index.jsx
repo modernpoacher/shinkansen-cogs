@@ -4,7 +4,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
-import { CheckField } from '#components/field'
+import { CheckField } from 'shinkansen-cogs/components/field'
 
 export default class RadioField extends CheckField {
   getClassName () {

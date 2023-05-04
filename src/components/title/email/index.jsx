@@ -2,7 +2,7 @@
  * EmailTitle component
  */
 import classnames from 'classnames'
-import Title from '#components/title'
+import Title from 'shinkansen-cogs/components/title'
 
 export default class EmailTitle extends Title {
   getClassName () {

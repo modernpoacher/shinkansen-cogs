@@ -1,3 +1,13 @@
-require('@babel/register')
+require('@babel/register')({ configFile: require.resolve('../../../../babel.config.cjs') })
 
-module.exports = require('./index.jsx')
+const debug = require('debug')
+
+const log = debug('shinkansen-cogs/components/common')
+
+log('`cogs` is awake')
+
+const {
+  default: component
+} = require('./index.jsx')
+
+module.exports = component

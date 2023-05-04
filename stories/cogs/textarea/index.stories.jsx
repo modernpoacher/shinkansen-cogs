@@ -2,7 +2,7 @@ import React from 'react'
 
 import errors from 'stories/errors'
 import TextareaState from 'stories/state/textarea'
-import TextareaCog from '#cogs/textarea'
+import TextareaCog from 'shinkansen-cogs/cogs/textarea'
 
 export default {
   title: 'Components/Textarea',

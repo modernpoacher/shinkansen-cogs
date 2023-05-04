@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`#cogs/password <Cog /> With additional props renders 1`] = `
+exports[`shinkansen-cogs/cogs/password <Cog /> With additional props renders 1`] = `
 <div
   className="MOCK CLASSNAME"
 />
 `;
 
-exports[`#cogs/password <Cog /> With required props renders 1`] = `
+exports[`shinkansen-cogs/cogs/password <Cog /> With required props renders 1`] = `
 <div
   className="MOCK CLASSNAME"
 />

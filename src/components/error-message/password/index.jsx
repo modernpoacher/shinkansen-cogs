@@ -2,7 +2,7 @@
  * PasswordErrorMessage component
  */
 import classnames from 'classnames'
-import ErrorMessage from '#components/error-message'
+import ErrorMessage from 'shinkansen-cogs/components/error-message'
 
 export default class PasswordErrorMessage extends ErrorMessage {
   getClassName () {

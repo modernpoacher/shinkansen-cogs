@@ -1,146 +1,146 @@
 import debug from 'debug'
 
-const log = debug('shinkansen-cogs:transformers:error-message')
+const log = debug('shinkansen-cogs/transformers/error-message')
 
-export function getErrorTextForMaxItems (components = {}) {
+export function getErrorTextForMaxItems () { // (components = {}) {
   log('getErrorTextForMaxItems')
 
   return 'Max items'
 }
 
-export function getErrorTextForMinItems (components = {}) {
+export function getErrorTextForMinItems () { // (components = {}) {
   log('getErrorTextForMinItems')
 
   return 'Min items'
 }
 
-export function getErrorTextForMaxLength (components = {}) {
+export function getErrorTextForMaxLength () { // (components = {}) {
   log('getErrorTextForMaxLength')
 
   return 'Max length'
 }
 
-export function getErrorTextForMinLength (components = {}) {
+export function getErrorTextForMinLength () { // (components = {}) {
   log('getErrorTextForMinLength')
 
   return 'Min length'
 }
 
-export function getErrorTextForMaxProperties (components = {}) {
+export function getErrorTextForMaxProperties () { // (components = {}) {
   log('getErrorTextForMaxProperties')
 
   return 'Max properties'
 }
 
-export function getErrorTextForMinProperties (components = {}) {
+export function getErrorTextForMinProperties () { // (components = {}) {
   log('getErrorTextForMinProperties')
 
   return 'Min properties'
 }
 
-export function getErrorTextForAdditionalItems (components = {}) {
+export function getErrorTextForAdditionalItems () { // (components = {}) {
   log('getErrorTextForAdditionalItems')
 
   return 'Additional items'
 }
 
-export function getErrorTextForMaximum (components = {}) {
+export function getErrorTextForMaximum () { // (components = {}) {
   log('getErrorTextForMaximum')
 
   return 'Maximum'
 }
 
-export function getErrorTextForMinimum (components = {}) {
+export function getErrorTextForMinimum () { // (components = {}) {
   log('getErrorTextForMinimum')
 
   return 'Minimum'
 }
 
-export function getErrorTextForFormat (components = {}) {
+export function getErrorTextForFormat () { // (components = {}) {
   log('getErrorTextForFormat')
 
   return 'Format'
 }
 
-export function getErrorTextForAdditionalProperties (components = {}) {
+export function getErrorTextForAdditionalProperties () { // (components = {}) {
   log('getErrorTextForAdditionalProperties')
 
   return 'Additional properties'
 }
 
-export function getErrorTextForDependencies (components = {}) {
+export function getErrorTextForDependencies () { // (components = {}) {
   log('getErrorTextForDependencies')
 
   return 'Dependencies'
 }
 
-export function getErrorTextForUniqeItems (components = {}) {
+export function getErrorTextForUniqeItems () { // (components = {}) {
   log('getErrorTextForUniqeItems')
 
   return 'Unique items'
 }
 
-export function getErrorTextForPropertyRequired (components = {}) {
+export function getErrorTextForPropertyRequired () { // (components = {}) {
   log('getErrorTextForPropertyRequired')
 
   return 'Property required'
 }
 
-export function getErrorTextForPropertyNames (components = {}) {
+export function getErrorTextForPropertyNames () { // (components = {}) {
   log('getErrorTextForPropertyNames')
 
   return 'Property names'
 }
 
-export function getErrorTextForPatternRequired (components = {}) {
+export function getErrorTextForPatternRequired () { // (components = {}) {
   log('getErrorTextForMultipleOf')
 
   return 'Pattern required'
 }
 
-export function getErrorTextForMultipleOf (components = {}) {
+export function getErrorTextForMultipleOf () { // (components = {}) {
   log('getErrorTextForMultipleOf')
 
   return 'Multiple of'
 }
 
-export function getErrorTextForPattern (components = {}) {
+export function getErrorTextForPattern () { // (components = {}) {
   log('getErrorTextForPattern')
 
   return 'Pattern'
 }
 
-export function getErrorTextForConst (components = {}) {
+export function getErrorTextForConst () { // (components = {}) {
   log('getErrorTextForConst')
 
   return 'Const'
 }
 
-export function getErrorTextForEnum (components = {}) {
+export function getErrorTextForEnum () { // (components = {}) {
   log('getErrorTextForEnum')
 
   return 'Enum'
 }
 
-export function getErrorTextFor$Ref (components = {}) {
+export function getErrorTextFor$Ref () { // (components = {}) {
   log('getErrorTextFor$Ref')
 
   return '$Ref'
 }
 
-export function getErrorTextForOneOf (components = {}) {
+export function getErrorTextForOneOf () { // (components = {}) {
   log('getErrorTextForOneOf')
 
   return 'One of'
 }
 
-export function getErrorTextForUnknown (components = {}) {
+export function getErrorTextForUnknown () { // (components = {}) {
   log('getErrorTextForUnknown')
 
   return 'Unknown'
 }
 
-export function getErrorTextForTypeInvalid ({ expectedType } = {}, components = {}) {
+export function getErrorTextForTypeInvalid ({ expectedType } = {}) { // , components = {}) {
   log('getErrorTextForTypeInvalid')
 
   switch (expectedType) {

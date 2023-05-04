@@ -4,11 +4,11 @@
 import React from 'react'
 import classnames from 'classnames'
 
-import { ValueCog } from '#cogs'
-import Title from '#components/title/select'
-import Description from '#components/description/select'
-import ErrorMessage from '#components/error-message/select'
-import Field from '#components/field/select'
+import { ValueCog } from 'shinkansen-cogs/cogs'
+import Title from 'shinkansen-cogs/components/title/select'
+import Description from 'shinkansen-cogs/components/description/select'
+import ErrorMessage from 'shinkansen-cogs/components/error-message/select'
+import Field from 'shinkansen-cogs/components/field/select'
 
 export default class SelectCog extends ValueCog {
   getClassName () {

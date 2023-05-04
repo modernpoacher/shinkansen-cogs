@@ -4,7 +4,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import TextContent from '#components/common/text-content'
+import TextContent from 'shinkansen-cogs/components/common/text-content'
 
 export default class Description extends Component {
   hasTextContent () {

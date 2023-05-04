@@ -2,7 +2,7 @@ import React from 'react'
 
 import errors from 'stories/errors'
 import TextState from 'stories/state/text'
-import TextCog from '#cogs/text'
+import TextCog from 'shinkansen-cogs/cogs/text'
 
 export default {
   title: 'Components/Text',

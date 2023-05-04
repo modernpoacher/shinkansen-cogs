@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`#components/title/select <Description /> With additional props renders 1`] = `
+exports[`shinkansen-cogs/components/title/select <Description /> With additional props renders 1`] = `
 <span
   className="MOCK CLASSNAME"
 />
 `;
 
-exports[`#components/title/select <Description /> With required props renders 1`] = `null`;
+exports[`shinkansen-cogs/components/title/select <Description /> With required props renders 1`] = `null`;

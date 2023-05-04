@@ -2,7 +2,7 @@ import React from 'react'
 
 import errors from 'stories/errors'
 import PasswordState from 'stories/state/password'
-import PasswordCog from '#cogs/password'
+import PasswordCog from 'shinkansen-cogs/cogs/password'
 
 export default {
   title: 'Components/Password',

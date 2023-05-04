@@ -5,19 +5,19 @@ import Adapter from 'enzyme-adapter-react-16'
 
 import classnames from 'classnames'
 
-import Title from '#components/title/checkbox'
-import Description from '#components/description/checkbox'
-import ErrorMessage from '#components/error-message/checkbox'
-import Field from '#components/field/checkbox'
+import Title from 'shinkansen-cogs/components/title/checkbox'
+import Description from 'shinkansen-cogs/components/description/checkbox'
+import ErrorMessage from 'shinkansen-cogs/components/error-message/checkbox'
+import Field from 'shinkansen-cogs/components/field/checkbox'
 
-import { CheckCog } from '#cogs'
-import Cog from '#cogs/checkbox'
+import { CheckCog } from 'shinkansen-cogs/cogs'
+import Cog from 'shinkansen-cogs/cogs/checkbox'
 
 Enzyme.configure({ adapter: new Adapter() })
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('#cogs', () => {
+jest.mock('shinkansen-cogs/cogs', () => {
   class MockCog extends mockComponent {
     getClassName () { }
 
@@ -54,10 +54,10 @@ jest.mock('#cogs', () => {
   }
 })
 
-jest.mock('#components/title/checkbox')
-jest.mock('#components/description/checkbox')
-jest.mock('#components/error-message/checkbox')
-jest.mock('#components/field/checkbox')
+jest.mock('shinkansen-cogs/components/title/checkbox')
+jest.mock('shinkansen-cogs/components/description/checkbox')
+jest.mock('shinkansen-cogs/components/error-message/checkbox')
+jest.mock('shinkansen-cogs/components/field/checkbox')
 
 class MockErrorMessage extends mockComponent {
   state = {}
@@ -77,7 +77,7 @@ const MOCK_ERROR_MESSAGE = {
   uri: 'MOCK URI'
 }
 
-describe('#cogs/checkbox', () => {
+describe('shinkansen-cogs/cogs/checkbox', () => {
   beforeAll(() => {
     /*
      *  class defines `state` for instance

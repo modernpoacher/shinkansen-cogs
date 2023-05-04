@@ -5,19 +5,19 @@ import Adapter from 'enzyme-adapter-react-16'
 
 import classnames from 'classnames'
 
-import Title from '#components/title/radio'
-import Description from '#components/description/radio'
-import ErrorMessage from '#components/error-message/radio'
-import Field from '#components/field/radio'
+import Title from 'shinkansen-cogs/components/title/radio'
+import Description from 'shinkansen-cogs/components/description/radio'
+import ErrorMessage from 'shinkansen-cogs/components/error-message/radio'
+import Field from 'shinkansen-cogs/components/field/radio'
 
-import { CheckCog } from '#cogs'
-import Cog from '#cogs/radio'
+import { CheckCog } from 'shinkansen-cogs/cogs'
+import Cog from 'shinkansen-cogs/cogs/radio'
 
 Enzyme.configure({ adapter: new Adapter() })
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('#cogs', () => {
+jest.mock('shinkansen-cogs/cogs', () => {
   class MockCog extends mockComponent {
     getClassName () { }
 
@@ -54,10 +54,10 @@ jest.mock('#cogs', () => {
   }
 })
 
-jest.mock('#components/title/radio')
-jest.mock('#components/description/radio')
-jest.mock('#components/error-message/radio')
-jest.mock('#components/field/radio')
+jest.mock('shinkansen-cogs/components/title/radio')
+jest.mock('shinkansen-cogs/components/description/radio')
+jest.mock('shinkansen-cogs/components/error-message/radio')
+jest.mock('shinkansen-cogs/components/field/radio')
 
 class MockErrorMessage extends mockComponent {
   state = {}
@@ -77,7 +77,7 @@ const MOCK_ERROR_MESSAGE = {
   uri: 'MOCK URI'
 }
 
-describe('#cogs/radio', () => {
+describe('shinkansen-cogs/cogs/radio', () => {
   beforeAll(() => {
     /*
      *  class defines `state` for instance

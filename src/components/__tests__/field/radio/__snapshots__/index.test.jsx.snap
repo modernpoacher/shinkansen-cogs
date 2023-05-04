@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`#components/field/radio <Field /> With additional props renders 1`] = `
+exports[`shinkansen-cogs/components/field/radio <Field /> With additional props renders 1`] = `
 <input
   className="MOCK CLASSNAME"
   disabled={true}
@@ -15,7 +15,7 @@ exports[`#components/field/radio <Field /> With additional props renders 1`] = `
 />
 `;
 
-exports[`#components/field/radio <Field /> With required props renders 1`] = `
+exports[`shinkansen-cogs/components/field/radio <Field /> With required props renders 1`] = `
 <input
   className="MOCK CLASSNAME"
   id="MOCK ID"

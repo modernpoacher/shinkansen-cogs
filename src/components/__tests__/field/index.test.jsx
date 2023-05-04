@@ -3,11 +3,11 @@ import renderer from 'react-test-renderer'
 import Enzyme, { shallow } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 
-import Field, { ValueField, CheckField } from '#components/field'
+import Field, { ValueField, CheckField } from 'shinkansen-cogs/components/field'
 
 Enzyme.configure({ adapter: new Adapter() })
 
-describe('#components/field', () => {
+describe('shinkansen-cogs/components/field', () => {
   describe('<Field />', () => {
     describe('With required props', () => {
       const component = (

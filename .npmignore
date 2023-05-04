@@ -10,13 +10,11 @@
 
 .depsrc
 
-# NPM
-.npmignore
+# User-defined NPM configuration
 .npmrc
 
-# NVM
+# User-defined NVM configuration
 .nvmrc
-nvm.sh
 
 # Build
 build

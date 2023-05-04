@@ -4,11 +4,11 @@
 import React from 'react'
 import classnames from 'classnames'
 
-import { ValueCog } from '#cogs'
-import Title from '#components/title/password'
-import Description from '#components/description/password'
-import ErrorMessage from '#components/error-message/password'
-import Field from '#components/field/password'
+import { ValueCog } from 'shinkansen-cogs/cogs'
+import Title from 'shinkansen-cogs/components/title/password'
+import Description from 'shinkansen-cogs/components/description/password'
+import ErrorMessage from 'shinkansen-cogs/components/error-message/password'
+import Field from 'shinkansen-cogs/components/field/password'
 
 export default class PasswordCog extends ValueCog {
   getClassName () {

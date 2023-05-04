@@ -4,11 +4,11 @@
 import React from 'react'
 import classnames from 'classnames'
 
-import { ValueCog } from '#cogs'
-import Title from '#components/title/text'
-import Description from '#components/description/text'
-import ErrorMessage from '#components/error-message/text'
-import Field from '#components/field/text'
+import { ValueCog } from 'shinkansen-cogs/cogs'
+import Title from 'shinkansen-cogs/components/title/text'
+import Description from 'shinkansen-cogs/components/description/text'
+import ErrorMessage from 'shinkansen-cogs/components/error-message/text'
+import Field from 'shinkansen-cogs/components/field/text'
 
 export default class TextCog extends ValueCog {
   getClassName () {

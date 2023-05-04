@@ -1,9 +1,9 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import Component from '#components/common/text-content'
+import Component from 'shinkansen-cogs/components/common/text-content'
 
-describe('#components/common/text-content', () => {
+describe('shinkansen-cogs/components/common/text-content', () => {
   describe('<Component />', () => {
     describe('With required props', () => {
       it('renders', () => {

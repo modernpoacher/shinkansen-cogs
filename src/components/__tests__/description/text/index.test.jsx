@@ -5,14 +5,14 @@ import Adapter from 'enzyme-adapter-react-16'
 
 import classnames from 'classnames'
 
-import Super from '#components/title'
-import Description from '#components/title/text'
+import Super from 'shinkansen-cogs/components/title'
+import Description from 'shinkansen-cogs/components/title/text'
 
 Enzyme.configure({ adapter: new Adapter() })
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('#components/title', () => ({
+jest.mock('shinkansen-cogs/components/title', () => ({
   __esModule: true,
   default: class MockDescription extends mockComponent {
     getClassName () { }
@@ -35,7 +35,7 @@ jest.mock('#components/title', () => ({
   }
 }))
 
-describe('#components/title/text', () => {
+describe('shinkansen-cogs/components/title/text', () => {
   describe('<Description />', () => {
     describe('With required props', () => {
       const component = (

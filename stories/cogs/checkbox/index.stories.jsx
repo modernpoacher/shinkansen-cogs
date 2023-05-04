@@ -2,7 +2,7 @@ import React from 'react'
 
 import errors from 'stories/errors'
 import CheckboxState from 'stories/state/checkbox'
-import CheckboxCog from '#cogs/checkbox'
+import CheckboxCog from 'shinkansen-cogs/cogs/checkbox'
 
 export default {
   title: 'Components/Checkbox',

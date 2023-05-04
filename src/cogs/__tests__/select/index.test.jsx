@@ -5,19 +5,19 @@ import Adapter from 'enzyme-adapter-react-16'
 
 import classnames from 'classnames'
 
-import Title from '#components/title/select'
-import Description from '#components/description/select'
-import ErrorMessage from '#components/error-message/select'
-import Field from '#components/field/select'
+import Title from 'shinkansen-cogs/components/title/select'
+import Description from 'shinkansen-cogs/components/description/select'
+import ErrorMessage from 'shinkansen-cogs/components/error-message/select'
+import Field from 'shinkansen-cogs/components/field/select'
 
-import { ValueCog } from '#cogs'
-import Cog from '#cogs/select'
+import { ValueCog } from 'shinkansen-cogs/cogs'
+import Cog from 'shinkansen-cogs/cogs/select'
 
 Enzyme.configure({ adapter: new Adapter() })
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('#cogs', () => {
+jest.mock('shinkansen-cogs/cogs', () => {
   class MockCog extends mockComponent {
     getClassName () { }
 
@@ -53,10 +53,10 @@ jest.mock('#cogs', () => {
   }
 })
 
-jest.mock('#components/title/select')
-jest.mock('#components/description/select')
-jest.mock('#components/error-message/select')
-jest.mock('#components/field/select')
+jest.mock('shinkansen-cogs/components/title/select')
+jest.mock('shinkansen-cogs/components/description/select')
+jest.mock('shinkansen-cogs/components/error-message/select')
+jest.mock('shinkansen-cogs/components/field/select')
 
 class MockErrorMessage extends mockComponent {
   state = {}
@@ -76,7 +76,7 @@ const MOCK_ERROR_MESSAGE = {
   uri: 'MOCK URI'
 }
 
-describe('#cogs/select', () => {
+describe('shinkansen-cogs/cogs/select', () => {
   beforeAll(() => {
     /*
      *  class defines `state` for instance

@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`#components/title/radio <Title /> With additional props renders 1`] = `
+exports[`shinkansen-cogs/components/title/radio <Title /> With additional props renders 1`] = `
 <label
   className="MOCK CLASSNAME"
   htmlFor="MOCK ID"
 />
 `;
 
-exports[`#components/title/radio <Title /> With required props renders 1`] = `null`;
+exports[`shinkansen-cogs/components/title/radio <Title /> With required props renders 1`] = `null`;
