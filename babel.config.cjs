@@ -66,7 +66,6 @@ module.exports = (api) => {
 
   return {
     presets,
-    plugins,
-    ignore: [/core-js/]
+    plugins
   }
 }
