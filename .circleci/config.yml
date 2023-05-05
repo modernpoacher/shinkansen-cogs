@@ -14,14 +14,10 @@ jobs:
           command: npm ci
       - run:
           name: Lint
-          command: |
-            NODE_ENV=test
-            npm run lint
+          command: npm run lint
       - run:
           name: Test
-          command: |
-            NODE_ENV=test
-            npm test
+          command: npm test
   publish:
     docker:
       - image: cimg/node:lts
@@ -71,4 +67,13 @@ workflows:
   version: 2
   commit-workflow:
     jobs:
-      - lint_and_test
+      - lint_and_test:
+          filters:
+            branches:
+              only: master
+      - publish:
+          requires:
+            - lint_and_test
+          filters:
+            tags:
+              only: /^v.*/
