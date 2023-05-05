@@ -34,7 +34,7 @@
     "lint:fix": "npm run lint -- --fix",
     "pretest": "npm run nvm",
     "test": "cross-env NODE_ENV=test jest --collect-coverage false --verbose --run-in-band",
-    "nvm": "bash nvm.sh",
+    "nvm": "bash nvm.sh 2> /dev/null",
     "storybook": "npm run build && npm run transform && start-storybook -p 6006"
   },
   "dependencies": {
