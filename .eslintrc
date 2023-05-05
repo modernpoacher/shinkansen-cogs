@@ -9,10 +9,7 @@
   "parser": "@babel/eslint-parser",
   "parserOptions": {
     "ecmaVersion": 2020,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
-    }
+    "sourceType": "module"
   },
   "settings": {
     "import/resolver": {
