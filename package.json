@@ -43,6 +43,7 @@
     "immutable": "3.8.2"
   },
   "devDependencies": {
+    "@babel/compat-data": "^7.21.7",
     "@babel/core": "^7.21.8",
     "@babel/eslint-parser": "^7.21.8",
     "@babel/plugin-proposal-class-properties": "^7.18.6",
