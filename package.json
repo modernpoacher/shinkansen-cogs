@@ -34,7 +34,7 @@
     "lint:fix": "npm run lint -- --fix",
     "pretest": "npm run nvm",
     "test": "cross-env NODE_ENV=test jest --collect-coverage false --verbose --run-in-band",
-    "nvm": "bash nvm.sh 2> /dev/null",
+    "nvm": "bash nvm.sh",
     "storybook": "npm run build && npm run transform && start-storybook -p 6006"
   },
   "dependencies": {
@@ -43,7 +43,6 @@
     "immutable": "3.8.2"
   },
   "devDependencies": {
-    "@babel/compat-data": "^7.21.7",
     "@babel/core": "^7.21.8",
     "@babel/eslint-parser": "^7.21.8",
     "@babel/plugin-proposal-class-properties": "^7.18.6",
@@ -63,8 +62,6 @@
     "autoprefixer": "^10.4.14",
     "babel-jest": "^29.5.0",
     "babel-plugin-module-resolver": "^5.0.0",
-    "cheerio": "1.0.0-rc.6",
-    "concurrently": "^8.0.1",
     "core-js": "^3.30.1",
     "cross-env": "^7.0.3",
     "cssnano": "^6.0.1",
