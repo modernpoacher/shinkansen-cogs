@@ -6,4 +6,11 @@ const log = debug('shinkansen-cogs/components/title')
 
 log('`shinkansen` is awake')
 
-module.exports = require('./index.jsx')
+const {
+  default: component
+} = require('./index.jsx')
+
+/**
+ *  Exports only default
+ */
+module.exports = component
