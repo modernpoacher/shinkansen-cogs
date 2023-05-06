@@ -119,6 +119,7 @@ module.exports = (api) => {
 
   return {
     presets,
-    plugins
+    plugins,
+    ignore: [/node_modules\/(?!shinkansen-)/]
   }
 }
