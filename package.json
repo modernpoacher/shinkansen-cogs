@@ -105,9 +105,8 @@
   "imports": {
     "#build/gulp/build/*": "./build/gulp/build/*.mjs",
     "#build/gulp/build": "./build/gulp/build/index.mjs",
-    "#build/gulp/paths": "./build/gulp/paths.mjs",
-    "#build/gulp/handle-watch-error": "./build/gulp/handle-watch-error.mjs",
     "#build/gulp/transform": "./build/gulp/transform/index.mjs",
+    "#build/gulp/*": "./build/gulp/*.mjs",
     "#build/paths": "./build/paths.mjs"
   },
   "exports": {
