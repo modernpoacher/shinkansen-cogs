@@ -1,3 +1,3 @@
-import { ValueState } from 'stories/state'
+import { ValueState } from '#stories/state'
 
 export default ValueState

@@ -1,11 +1,11 @@
 import React from 'react'
 
-import errors from 'stories/errors'
-import NumberState from 'stories/state/number'
 import NumberCog from 'shinkansen-cogs/cogs/number'
+import errors from '#stories/errors'
+import NumberState from '#stories/state/number'
 
 export default {
-  title: 'Components/Number',
+  title: 'Stories/Cogs/Number',
   component: NumberCog,
   argTypes: {
     errorMessage: {

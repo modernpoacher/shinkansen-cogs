@@ -2,7 +2,7 @@ import debug from 'debug'
 
 import { Children, cloneElement } from 'react'
 
-import State from 'stories/state'
+import State from '#stories/state'
 
 const log = debug('shinkansen-cogs:stories')
 

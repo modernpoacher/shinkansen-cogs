@@ -1,11 +1,11 @@
 import React from 'react'
 
-import errors from 'stories/errors'
-import PasswordState from 'stories/state/password'
 import PasswordCog from 'shinkansen-cogs/cogs/password'
+import errors from '#stories/errors'
+import PasswordState from '#stories/state/password'
 
 export default {
-  title: 'Components/Password',
+  title: 'Stories/Cogs/Password',
   component: PasswordCog,
   argTypes: {
     errorMessage: {

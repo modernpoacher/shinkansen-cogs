@@ -1,11 +1,11 @@
 import React from 'react'
 
-import errors from 'stories/errors'
-import EmailState from 'stories/state/email'
 import EmailCog from 'shinkansen-cogs/cogs/email'
+import errors from '#stories/errors'
+import EmailState from '#stories/state/email'
 
 export default {
-  title: 'Components/Email',
+  title: 'Stories/Cogs/Email',
   component: EmailCog,
   argTypes: {
     errorMessage: {

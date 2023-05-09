@@ -1,11 +1,11 @@
 import React from 'react'
 
-import errors from 'stories/errors'
-import SelectState from 'stories/state/select'
 import SelectCog from 'shinkansen-cogs/cogs/select'
+import errors from '#stories/errors'
+import SelectState from '#stories/state/select'
 
 export default {
-  title: 'Components/Select',
+  title: 'Stories/Cogs/Select',
   component: SelectCog,
   argTypes: {
     errorMessage: {

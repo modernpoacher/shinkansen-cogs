@@ -1,11 +1,11 @@
 import React from 'react'
 
-import errors from 'stories/errors'
-import TextState from 'stories/state/text'
 import TextCog from 'shinkansen-cogs/cogs/text'
+import errors from '#stories/errors'
+import TextState from '#stories/state/text'
 
 export default {
-  title: 'Components/Text',
+  title: 'Stories/Cogs/Text',
   component: TextCog,
   argTypes: {
     errorMessage: {

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { ValueState } from 'stories/state'
+import { ValueState } from '#stories/state'
 
 export default class NumberState extends ValueState { }
 

@@ -1,11 +1,11 @@
 import React from 'react'
 
-import errors from 'stories/errors'
-import RadioState from 'stories/state/radio'
 import RadioCog from 'shinkansen-cogs/cogs/radio'
+import errors from '#stories/errors'
+import RadioState from '#stories/state/radio'
 
 export default {
-  title: 'Components/Radio',
+  title: 'Stories/Cogs/Radio',
   component: RadioCog,
   argTypes: {
     errorMessage: {

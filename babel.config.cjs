@@ -104,8 +104,17 @@ const plugins = [
         'shinkansen-cogs/components/title/textarea': './src/components/title/textarea/index.cjs',
         'shinkansen-cogs/components/title': './src/components/title/index.cjs',
         'shinkansen-cogs/transformers/error-message': './src/transformers/error-message/index.mjs',
-        build: './build',
-        stories: './stories'
+        '#stories/state/checkbox': './stories/state/checkbox/index.jsx',
+        '#stories/state/email': './stories/state/email/index.jsx',
+        '#stories/state/number': './stories/state/number/index.jsx',
+        '#stories/state/password': './stories/state/password/index.jsx',
+        '#stories/state/radio': './stories/state/radio/index.jsx',
+        '#stories/state/select': './stories/state/select/index.jsx',
+        '#stories/state/text': './stories/state/text/index.jsx',
+        '#stories/state/textarea': './stories/state/textarea/index.jsx',
+        '#stories/state': './stories/state/index.jsx',
+        '#stories/errors': './stories/errors.mjs',
+        '#stories': './stories'
       }
     }
   ]

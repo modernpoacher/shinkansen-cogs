@@ -1,11 +1,11 @@
 import React from 'react'
 
-import errors from 'stories/errors'
-import CheckboxState from 'stories/state/checkbox'
 import CheckboxCog from 'shinkansen-cogs/cogs/checkbox'
+import errors from '#stories/errors'
+import CheckboxState from '#stories/state/checkbox'
 
 export default {
-  title: 'Components/Checkbox',
+  title: 'Stories/Cogs/Checkbox',
   component: CheckboxCog,
   argTypes: {
     errorMessage: {
@@ -16,9 +16,9 @@ export default {
         labels: {
           string: 'String',
           number: 'Number',
-          boolean: 'Boolean',
           array: 'Array',
           object: 'Object',
+          boolean: 'Boolean',
           null: 'Null'
         }
       }
