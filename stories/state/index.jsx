@@ -23,9 +23,9 @@ export default class State extends Component {
 
 State.propTypes = {
   children: PropTypes.oneOfType([
-    PropTypes.element,
+    PropTypes.node,
     PropTypes.arrayOf(
-      PropTypes.element
+      PropTypes.node
     )
   ]).isRequired
 }

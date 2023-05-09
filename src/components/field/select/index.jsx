@@ -50,9 +50,9 @@ export default class SelectField extends ValueField {
 SelectField.propTypes = {
   ...ValueField.propTypes,
   children: PropTypes.oneOfType([
-    PropTypes.element,
+    PropTypes.node,
     PropTypes.arrayOf(
-      PropTypes.element
+      PropTypes.node
     )
   ])
 }

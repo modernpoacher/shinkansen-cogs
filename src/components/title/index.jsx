@@ -120,9 +120,9 @@ Title.propTypes = {
   disabled: PropTypes.bool,
   readOnly: PropTypes.bool,
   children: PropTypes.oneOfType([
-    PropTypes.element,
+    PropTypes.node,
     PropTypes.arrayOf(
-      PropTypes.element
+      PropTypes.node
     )
   ])
 }
