@@ -16,9 +16,9 @@ export default {
         labels: {
           string: 'String',
           number: 'Number',
-          boolean: 'Boolean',
           array: 'Array',
           object: 'Object',
+          boolean: 'Boolean',
           null: 'Null'
         }
       }
