@@ -30,3 +30,6 @@ coverage
 # Storybook
 .storybook
 stories
+
+# Shell
+nvm.sh
