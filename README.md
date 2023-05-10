@@ -1,11 +1,14 @@
 ## `shinkansen-cogs`
 
-# Shinkansen Cogs
+Shinkansen generates JSON Schema valid documents from user submissions with `<html />` forms.
 
-*Cogs* are input fields for *React*.
+# Cogs
 
-*Cogs* are consistent with the [GOV.UK Design System](https://design-system.service.gov.uk/) but also encourage composition and inheritance.
+_Cogs_ are React components for input fields.
+
+_Cogs_ are the smallest components of _Engine_, for React form layouts.
 
 ## See also
 
-- [Shinkansen Sprockets](https://github.com/modernpoacher/shinkansen-sprockets)
+- [Sprockets](https://github.com/modernpoacher/shinkansen-sprockets)
+- [Engine](https://github.com/modernpoacher/shinkansen-engine)
