@@ -3,14 +3,14 @@
  */
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import Immutable from 'immutable'
+import equal from 'fast-deep-equal'
 
 import transform from 'shinkansen-cogs/transformers/error-message'
 
 import TextContent from 'shinkansen-cogs/components/common/text-content'
 
 export default class ErrorMessage extends Component {
-  state = { errorMessage: Immutable.Map() }
+  state = { errorMessage: {} }
 
   hasTextContent () {
     const { errorMessage } = this.props
@@ -36,21 +36,19 @@ export default class ErrorMessage extends Component {
   }
 
   /**
-   *  Convert latest 'props' to an Immutable.Map() and store in 'state'
+   *  Merge latest `props` to `state`
    *
    *  @param {Object} props   Latest props
    *  @param {Object} state   Current state
    */
   static getDerivedStateFromProps ({ errorMessage }, { errorMessage: E }) {
-    const e = Immutable.Map(errorMessage)
-
     return {
-      errorMessage: Immutable.is(E, e) ? E : e
+      errorMessage: equal(E, errorMessage) ? E : errorMessage
     }
   }
 
   /**
-   *  Compare latest 'props' via 'state' for changes to 'errorMessage'
+   *  Compare current and latest `state` for changes to `errorMessage`
    *
    *  @param {Object} props   Latest props
    *  @param {Object} state   Latest state
@@ -64,7 +62,7 @@ export default class ErrorMessage extends Component {
       errorMessage: E
     } = this.state
 
-    return (e !== E)
+    return !equal(E, e)
   }
 
   renderTextContent () {
