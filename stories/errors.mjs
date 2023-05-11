@@ -37,7 +37,7 @@ export default {
   null: {
     type: 'TYPE_INVALID',
     params: {
-      expectedType: 'object'
+      expectedType: 'null'
     },
     uri: '#/'
   }
