@@ -38,8 +38,9 @@ export default class ErrorMessage extends Component {
   /**
    *  Merge latest `props` to `state`
    *
-   *  @param {Object} props   Latest props
-   *  @param {Object} state   Current state
+   *  @param {{errorMessage?: CogsTypes.ErrorDefinitionType}} props   Latest props
+   *  @param {{errorMessage?: CogsTypes.ErrorDefinitionType}} state   Current state
+   *  @returns {{errorMessage: CogsTypes.ErrorDefinitionType}}
    */
   static getDerivedStateFromProps ({ errorMessage }, { errorMessage: E }) {
     return {
@@ -50,8 +51,9 @@ export default class ErrorMessage extends Component {
   /**
    *  Compare current and latest `state` for changes to `errorMessage`
    *
-   *  @param {Object} props   Latest props
-   *  @param {Object} state   Latest state
+   *  @param {{errorMessage?: CogsTypes.ErrorDefinitionType}} props   Latest props
+   *  @param {{errorMessage?: CogsTypes.ErrorDefinitionType}} state   Latest state
+   *  @returns {{errorMessage: CogsTypes.ErrorDefinitionType}}
    */
   shouldComponentUpdate (props, state) {
     const {
