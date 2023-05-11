@@ -10,7 +10,7 @@ import transform from 'shinkansen-cogs/transformers/error-message'
 import TextContent from 'shinkansen-cogs/components/common/text-content'
 
 export default class ErrorMessage extends Component {
-  state = { errorMessage: {} }
+  state = {}
 
   hasTextContent () {
     const { errorMessage } = this.props
@@ -40,7 +40,7 @@ export default class ErrorMessage extends Component {
    *
    *  @param {{errorMessage?: CogsTypes.ErrorDefinitionType}} props   Latest props
    *  @param {{errorMessage?: CogsTypes.ErrorDefinitionType}} state   Current state
-   *  @returns {{errorMessage: CogsTypes.ErrorDefinitionType}}
+   *  @returns {{errorMessage: CogsTypes.ErrorDefinitionType | void}}
    */
   static getDerivedStateFromProps ({ errorMessage }, { errorMessage: E }) {
     return {
@@ -53,7 +53,7 @@ export default class ErrorMessage extends Component {
    *
    *  @param {{errorMessage?: CogsTypes.ErrorDefinitionType}} props   Latest props
    *  @param {{errorMessage?: CogsTypes.ErrorDefinitionType}} state   Latest state
-   *  @returns {{errorMessage: CogsTypes.ErrorDefinitionType}}
+   *  @returns {boolean}
    */
   shouldComponentUpdate (props, state) {
     const {
