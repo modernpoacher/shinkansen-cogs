@@ -1,7 +1,5 @@
 import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
-import Enzyme, { shallow, mount } from 'enzyme'
-import Adapter from 'enzyme-adapter-react-16'
 
 import classnames from 'classnames'
 
@@ -12,8 +10,6 @@ import Field from 'shinkansen-cogs/components/field/checkbox'
 
 import { CheckCog } from 'shinkansen-cogs/cogs'
 import Cog from 'shinkansen-cogs/cogs/checkbox'
-
-Enzyme.configure({ adapter: new Adapter() })
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
@@ -173,8 +169,8 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
         )
 
         const instance = (
-          shallow(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         returnValue = instance.getClassName()
@@ -216,8 +212,8 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
         jest.clearAllMocks()
 
         instance = (
-          mount(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         getIdSpy = jest.spyOn(Cog.prototype, 'getId').mockReturnValue('MOCK ID')
@@ -265,8 +261,8 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
         jest.clearAllMocks()
 
         instance = (
-          mount(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         instance.renderDescription()
@@ -303,8 +299,8 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
         jest.clearAllMocks()
 
         instance = (
-          mount(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         instance.renderErrorMessage()
@@ -344,8 +340,8 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
         jest.clearAllMocks()
 
         instance = (
-          mount(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         getIdSpy = jest.spyOn(Cog.prototype, 'getId')

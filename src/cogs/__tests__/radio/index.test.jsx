@@ -1,7 +1,5 @@
 import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
-import Enzyme, { shallow, mount } from 'enzyme'
-import Adapter from 'enzyme-adapter-react-16'
 
 import classnames from 'classnames'
 
@@ -12,8 +10,6 @@ import Field from 'shinkansen-cogs/components/field/radio'
 
 import { CheckCog } from 'shinkansen-cogs/cogs'
 import Cog from 'shinkansen-cogs/cogs/radio'
-
-Enzyme.configure({ adapter: new Adapter() })
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
@@ -173,8 +169,8 @@ describe('shinkansen-cogs/cogs/radio', () => {
         )
 
         const instance = (
-          shallow(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         returnValue = instance.getClassName()
@@ -217,9 +213,7 @@ describe('shinkansen-cogs/cogs/radio', () => {
          */
         jest.spyOn(CheckCog.prototype, 'shouldComponentUpdate').mockReturnValue(false)
 
-        const wrapper = shallow(component)
-
-        instance = wrapper.instance()
+        instance = renderer.create(component).getInstance()
       })
 
       describe('`props` have changed', () => {
@@ -285,8 +279,8 @@ describe('shinkansen-cogs/cogs/radio', () => {
         jest.clearAllMocks()
 
         instance = (
-          mount(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         getIdSpy = jest.spyOn(Cog.prototype, 'getId').mockReturnValue('MOCK ID')
@@ -335,8 +329,8 @@ describe('shinkansen-cogs/cogs/radio', () => {
         jest.clearAllMocks()
 
         instance = (
-          mount(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         instance.renderDescription()
@@ -374,8 +368,8 @@ describe('shinkansen-cogs/cogs/radio', () => {
         jest.clearAllMocks()
 
         instance = (
-          mount(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         instance.renderErrorMessage()
@@ -417,8 +411,8 @@ describe('shinkansen-cogs/cogs/radio', () => {
         jest.clearAllMocks()
 
         instance = (
-          mount(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         getIdSpy = jest.spyOn(Cog.prototype, 'getId')

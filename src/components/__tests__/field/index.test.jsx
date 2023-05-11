@@ -1,11 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import Enzyme, { shallow } from 'enzyme'
-import Adapter from 'enzyme-adapter-react-16'
 
 import Field, { ValueField, CheckField } from 'shinkansen-cogs/components/field'
-
-Enzyme.configure({ adapter: new Adapter() })
 
 describe('shinkansen-cogs/components/field', () => {
   describe('<Field />', () => {
@@ -39,9 +35,10 @@ describe('shinkansen-cogs/components/field', () => {
         let instance
 
         beforeEach(() => {
-          const wrapper = shallow(component)
-
-          instance = wrapper.instance()
+          instance = (
+            renderer.create(component)
+              .getInstance()
+          )
         })
 
         describe('`getDOMNode`', () => {
@@ -88,8 +85,8 @@ describe('shinkansen-cogs/components/field', () => {
         )
 
         const instance = (
-          shallow(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         const mockDOMNode = {}
@@ -109,8 +106,8 @@ describe('shinkansen-cogs/components/field', () => {
           )
 
           const instance = (
-            shallow(component)
-              .instance()
+            renderer.create(component)
+              .getInstance()
           )
 
           const mockDOMNode = {}
@@ -129,8 +126,8 @@ describe('shinkansen-cogs/components/field', () => {
           )
 
           const instance = (
-            shallow(component)
-              .instance()
+            renderer.create(component)
+              .getInstance()
           )
 
           instance.setDOMNode()
@@ -148,8 +145,8 @@ describe('shinkansen-cogs/components/field', () => {
         )
 
         const instance = (
-          shallow(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         return expect(instance.getClassName())
@@ -179,8 +176,8 @@ describe('shinkansen-cogs/components/field', () => {
 
       beforeEach(() => {
         instance = (
-          shallow(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
       })
 
@@ -261,8 +258,8 @@ describe('shinkansen-cogs/components/field', () => {
 
         beforeEach(() => {
           instance = (
-            shallow(component)
-              .instance()
+            renderer.create(component)
+              .getInstance()
           )
         })
 
@@ -313,8 +310,8 @@ describe('shinkansen-cogs/components/field', () => {
         const mockDOMNode = { value: 'MOCK GET VALUE' }
 
         const instance = (
-          shallow(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         jest.spyOn(instance, 'getDOMNode').mockReturnValue(mockDOMNode)
@@ -335,8 +332,8 @@ describe('shinkansen-cogs/components/field', () => {
         const mockDOMNode = {}
 
         const instance = (
-          shallow(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         jest.spyOn(instance, 'getDOMNode').mockReturnValue(mockDOMNode)
@@ -368,8 +365,8 @@ describe('shinkansen-cogs/components/field', () => {
 
       beforeEach(() => {
         instance = (
-          shallow(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
       })
 
@@ -403,8 +400,8 @@ describe('shinkansen-cogs/components/field', () => {
         )
 
         const instance = (
-          shallow(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         instance.handleChange({ target: { value: 'MOCK VALUE' } })
@@ -454,8 +451,8 @@ describe('shinkansen-cogs/components/field', () => {
 
         beforeEach(() => {
           instance = (
-            shallow(component)
-              .instance()
+            renderer.create(component)
+              .getInstance()
           )
         })
 
@@ -510,8 +507,8 @@ describe('shinkansen-cogs/components/field', () => {
         const mockDOMNode = { checked: 'MOCK GET VALUE' }
 
         const instance = (
-          shallow(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         jest.spyOn(instance, 'getDOMNode').mockReturnValue(mockDOMNode)
@@ -532,8 +529,8 @@ describe('shinkansen-cogs/components/field', () => {
         const mockDOMNode = {}
 
         const instance = (
-          shallow(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         jest.spyOn(instance, 'getDOMNode').mockReturnValue(mockDOMNode)
@@ -570,8 +567,8 @@ describe('shinkansen-cogs/components/field', () => {
 
       beforeEach(() => {
         instance = (
-          shallow(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
       })
 
@@ -607,8 +604,8 @@ describe('shinkansen-cogs/components/field', () => {
         )
 
         const instance = (
-          shallow(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         instance.handleClick({ target: { checked: 'MOCK CHECKED' } })
@@ -627,8 +624,8 @@ describe('shinkansen-cogs/components/field', () => {
         )
 
         const instance = (
-          shallow(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         instance.handleChange({ target: { checked: 'MOCK CHECKED' } })

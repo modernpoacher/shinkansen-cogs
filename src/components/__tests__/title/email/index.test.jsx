@@ -1,14 +1,10 @@
 import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
-import Enzyme, { shallow } from 'enzyme'
-import Adapter from 'enzyme-adapter-react-16'
 
 import classnames from 'classnames'
 
 import Super from 'shinkansen-cogs/components/title'
 import Title from 'shinkansen-cogs/components/title/email'
-
-Enzyme.configure({ adapter: new Adapter() })
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
@@ -85,8 +81,8 @@ describe('shinkansen-cogs/components/title/email', () => {
         )
 
         const instance = (
-          shallow(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         returnValue = instance.getClassName()

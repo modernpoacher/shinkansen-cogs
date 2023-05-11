@@ -1,7 +1,5 @@
 import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
-import Enzyme, { shallow, mount } from 'enzyme'
-import Adapter from 'enzyme-adapter-react-16'
 
 import classnames from 'classnames'
 
@@ -12,8 +10,6 @@ import Field from 'shinkansen-cogs/components/field/email'
 
 import { ValueCog } from 'shinkansen-cogs/cogs'
 import Cog from 'shinkansen-cogs/cogs/email'
-
-Enzyme.configure({ adapter: new Adapter() })
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
@@ -164,8 +160,8 @@ describe('shinkansen-cogs/cogs/email', () => {
         )
 
         const instance = (
-          shallow(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         returnValue = instance.getClassName()
@@ -207,8 +203,8 @@ describe('shinkansen-cogs/cogs/email', () => {
         jest.clearAllMocks()
 
         instance = (
-          mount(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         getIdSpy = jest.spyOn(Cog.prototype, 'getId').mockReturnValue('MOCK ID')
@@ -256,8 +252,8 @@ describe('shinkansen-cogs/cogs/email', () => {
         jest.clearAllMocks()
 
         instance = (
-          mount(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         instance.renderDescription()
@@ -294,8 +290,8 @@ describe('shinkansen-cogs/cogs/email', () => {
         jest.clearAllMocks()
 
         instance = (
-          mount(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         instance.renderErrorMessage()
@@ -335,8 +331,8 @@ describe('shinkansen-cogs/cogs/email', () => {
         jest.clearAllMocks()
 
         instance = (
-          mount(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         getIdSpy = jest.spyOn(Cog.prototype, 'getId')

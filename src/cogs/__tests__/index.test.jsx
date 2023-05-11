@@ -1,7 +1,5 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import Enzyme, { shallow, mount } from 'enzyme'
-import Adapter from 'enzyme-adapter-react-16'
 
 import classnames from 'classnames'
 
@@ -10,17 +8,17 @@ import Field from 'shinkansen-cogs/components/field'
 
 import Cog, { ValueCog, CheckCog } from 'shinkansen-cogs/cogs'
 
-Enzyme.configure({ adapter: new Adapter() })
-
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
 jest.mock('shinkansen-cogs/components/title')
 jest.mock('shinkansen-cogs/components/field')
 
 const MOCK_ERROR_MESSAGE = {
-  type: 'MOCK TYPE',
-  params: {},
-  uri: 'MOCK URI'
+  type: 'UNKNOWN',
+  params: {
+    expectedType: 'string'
+  },
+  uri: '#/'
 }
 
 describe('shinkansen-cogs/cogs', () => {
@@ -76,9 +74,10 @@ describe('shinkansen-cogs/cogs', () => {
         let instance
 
         beforeEach(() => {
-          const wrapper = shallow(component)
-
-          instance = wrapper.instance()
+          instance = (
+            renderer.create(component)
+              .getInstance()
+          )
         })
 
         describe('`getField`', () => {
@@ -140,8 +139,8 @@ describe('shinkansen-cogs/cogs', () => {
         )
 
         const instance = (
-          shallow(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         const mockField = {}
@@ -159,9 +158,10 @@ describe('shinkansen-cogs/cogs', () => {
           <Cog name='MOCK NAME' />
         )
 
-        const wrapper = shallow(component)
-
-        const instance = wrapper.instance()
+        const instance = (
+          renderer.create(component)
+            .getInstance()
+        )
 
         const mockTitle = {}
 
@@ -180,8 +180,8 @@ describe('shinkansen-cogs/cogs', () => {
           )
 
           const instance = (
-            shallow(component)
-              .instance()
+            renderer.create(component)
+              .getInstance()
           )
 
           const mockField = {}
@@ -200,8 +200,8 @@ describe('shinkansen-cogs/cogs', () => {
           )
 
           const instance = (
-            shallow(component)
-              .instance()
+            renderer.create(component)
+              .getInstance()
           )
 
           instance.setField()
@@ -220,8 +220,8 @@ describe('shinkansen-cogs/cogs', () => {
           )
 
           const instance = (
-            shallow(component)
-              .instance()
+            renderer.create(component)
+              .getInstance()
           )
 
           const mockTitle = {}
@@ -240,8 +240,8 @@ describe('shinkansen-cogs/cogs', () => {
           )
 
           const instance = (
-            shallow(component)
-              .instance()
+            renderer.create(component)
+              .getInstance()
           )
 
           instance.setTitle()
@@ -268,8 +268,8 @@ describe('shinkansen-cogs/cogs', () => {
           )
 
           const instance = (
-            shallow(component)
-              .instance()
+            renderer.create(component)
+              .getInstance()
           )
 
           returnValue = instance.getClassName()
@@ -298,8 +298,8 @@ describe('shinkansen-cogs/cogs', () => {
             )
 
             const instance = (
-              shallow(component)
-                .instance()
+              renderer.create(component)
+                .getInstance()
             )
 
             returnValue = instance.getClassName()
@@ -327,8 +327,8 @@ describe('shinkansen-cogs/cogs', () => {
             )
 
             const instance = (
-              shallow(component)
-                .instance()
+              renderer.create(component)
+                .getInstance()
             )
 
             returnValue = instance.getClassName()
@@ -356,8 +356,8 @@ describe('shinkansen-cogs/cogs', () => {
             )
 
             const instance = (
-              shallow(component)
-                .instance()
+              renderer.create(component)
+                .getInstance()
             )
 
             returnValue = instance.getClassName()
@@ -385,8 +385,8 @@ describe('shinkansen-cogs/cogs', () => {
             )
 
             const instance = (
-              shallow(component)
-                .instance()
+              renderer.create(component)
+                .getInstance()
             )
 
             returnValue = instance.getClassName()
@@ -413,7 +413,7 @@ describe('shinkansen-cogs/cogs', () => {
               <Cog name='MOCK NAME' />
             )
 
-            return expect(shallow(component).instance().getId())
+            return expect(renderer.create(component).getInstance().getId())
               .toBe('MOCK NAME')
           })
         })
@@ -426,7 +426,7 @@ describe('shinkansen-cogs/cogs', () => {
               <Cog name='MOCK NAME' id='MOCK ID' />
             )
 
-            return expect(shallow(component).instance().getId())
+            return expect(renderer.create(component).getInstance().getId())
               .toBe('MOCK ID')
           })
         })
@@ -454,9 +454,7 @@ describe('shinkansen-cogs/cogs', () => {
       let instance
 
       beforeEach(() => {
-        const wrapper = shallow(component)
-
-        instance = wrapper.instance()
+        instance = renderer.create(component).getInstance()
       })
 
       describe('`props` have changed', () => {
@@ -519,8 +517,8 @@ describe('shinkansen-cogs/cogs', () => {
         jest.clearAllMocks()
 
         instance = (
-          mount(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         getIdSpy = jest.spyOn(Cog.prototype, 'getId').mockReturnValue('MOCK ID')
@@ -568,8 +566,8 @@ describe('shinkansen-cogs/cogs', () => {
         jest.clearAllMocks()
 
         instance = (
-          mount(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         getIdSpy = jest.spyOn(Cog.prototype, 'getId')
@@ -622,7 +620,7 @@ describe('shinkansen-cogs/cogs', () => {
       describe('Instance', () => {
         describe('Extends `<Cog />`', () => {
           it('is defined', () => {
-            return expect(shallow(component).instance())
+            return expect(renderer.create(component).getInstance())
               .toBeInstanceOf(Cog)
           })
         })
@@ -674,9 +672,7 @@ describe('shinkansen-cogs/cogs', () => {
       let instance
 
       beforeEach(() => {
-        const wrapper = shallow(component)
-
-        instance = wrapper.instance()
+        instance = renderer.create(component).getInstance()
       })
 
       describe('`props` have changed', () => {
@@ -726,7 +722,7 @@ describe('shinkansen-cogs/cogs', () => {
       describe('Instance', () => {
         describe('Extends `<Cog />`', () => {
           it('is defined', () => {
-            return expect(shallow(component).instance())
+            return expect(renderer.create(component).getInstance())
               .toBeInstanceOf(Cog)
           })
         })
@@ -779,9 +775,7 @@ describe('shinkansen-cogs/cogs', () => {
       let instance
 
       beforeEach(() => {
-        const wrapper = shallow(component)
-
-        instance = wrapper.instance()
+        instance = renderer.create(component).getInstance()
       })
 
       describe('`props` have changed', () => {

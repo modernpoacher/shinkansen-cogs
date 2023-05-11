@@ -1,14 +1,10 @@
 import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
-import Enzyme, { shallow } from 'enzyme'
-import Adapter from 'enzyme-adapter-react-16'
 
 import classnames from 'classnames'
 
 import { CheckField } from 'shinkansen-cogs/components/field'
 import Field from 'shinkansen-cogs/components/field/radio'
-
-Enzyme.configure({ adapter: new Adapter() })
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
@@ -54,8 +50,8 @@ describe('shinkansen-cogs/components/field/radio', () => {
 
         beforeEach(() => {
           instance = (
-            shallow(component)
-              .instance()
+            renderer.create(component)
+              .getInstance()
           )
         })
 
@@ -109,8 +105,8 @@ describe('shinkansen-cogs/components/field/radio', () => {
         )
 
         const instance = (
-          shallow(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         returnValue = instance.getClassName()
@@ -141,8 +137,8 @@ describe('shinkansen-cogs/components/field/radio', () => {
         )
 
         const instance = (
-          shallow(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         instance.handleClick({ target: { value: 'MOCK CHECKED' } })
@@ -166,8 +162,8 @@ describe('shinkansen-cogs/components/field/radio', () => {
         )
 
         const instance = (
-          shallow(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         instance.handleChange({ target: { value: 'MOCK CHECKED' } })

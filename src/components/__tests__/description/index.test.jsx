@@ -1,11 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import Enzyme, { shallow } from 'enzyme'
-import Adapter from 'enzyme-adapter-react-16'
 
 import Description from 'shinkansen-cogs/components/title'
-
-Enzyme.configure({ adapter: new Adapter() })
 
 jest.mock('shinkansen-cogs/components/common/text-content', () => () => 'MOCK TEXT CONTENT')
 jest.mock('shinkansen-cogs/components/common/required', () => () => 'MOCK REQUIRED')
@@ -124,8 +120,8 @@ describe('shinkansen-cogs/components/title', () => {
           )
 
           const instance = (
-            shallow(component)
-              .instance()
+            renderer.create(component)
+              .getInstance()
           )
 
           return expect(instance.hasTextContent())
@@ -140,8 +136,8 @@ describe('shinkansen-cogs/components/title', () => {
           )
 
           const instance = (
-            shallow(component)
-              .instance()
+            renderer.create(component)
+              .getInstance()
           )
 
           return expect(instance.hasTextContent())
@@ -157,8 +153,8 @@ describe('shinkansen-cogs/components/title', () => {
         )
 
         const instance = (
-          shallow(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         return expect(instance.getTextContent())
@@ -173,8 +169,8 @@ describe('shinkansen-cogs/components/title', () => {
         )
 
         const instance = (
-          shallow(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
 
         return expect(instance.getClassName())
@@ -197,8 +193,8 @@ describe('shinkansen-cogs/components/title', () => {
 
       beforeEach(() => {
         instance = (
-          shallow(component)
-            .instance()
+          renderer.create(component)
+            .getInstance()
         )
       })
 
