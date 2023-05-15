@@ -8,6 +8,8 @@
 .eslintignore
 .eslintrc
 
+.gitattributes
+
 .depsrc
 
 # User-defined NPM configuration
