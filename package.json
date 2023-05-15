@@ -33,7 +33,7 @@
     "lint": "cross-env NODE_ENV=production eslint . .storybook --ext .mjs --ext .cjs --ext .jsx --ext .mts --ext .cts",
     "lint:fix": "npm run lint -- --fix",
     "pretest": "npm run nvm",
-    "test": "cross-env NODE_ENV=test jest --collect-coverage false --run-in-band",
+    "test": "cross-env NODE_ENV=test jest",
     "nvm": "bash nvm.sh",
     "prestorybook": "npm run build && npm run transform",
     "storybook": "storybook dev -p 6006",

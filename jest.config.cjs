@@ -5,7 +5,7 @@ module.exports = {
   collectCoverage: true,
   coverageDirectory: './coverage',
   testEnvironment: 'jsdom',
-  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(mjs?|mts?|jsx?|js?|tsx?|ts?)$',
+  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(mjs?|jsx?)$',
   transform: {
     '^.+\\.jsx$': 'babel-jest',
     '^.+\\.mjs$': 'babel-jest'
