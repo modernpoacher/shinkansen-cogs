@@ -57,7 +57,7 @@
     "@babel/register": "^7.21.0",
     "@modernpoacher/design-system": "1.0.17",
     "@modernpoacher/hooks": "^1.0.405",
-    "@sequencemedia/gulp": "^1.0.14",
+    "@sequencemedia/gulp": "^1.0.15",
     "@storybook/addon-actions": "^7.0.12",
     "@storybook/addon-essentials": "^7.0.12",
     "@storybook/addon-links": "^7.0.12",
