@@ -9,8 +9,6 @@ import transform from 'shinkansen-cogs/transformers/error-message'
 
 import TextContent from 'shinkansen-cogs/components/common/text-content'
 
-console.log({ transform, TextContent })
-
 export default class ErrorMessage extends Component {
   state = {}
 
