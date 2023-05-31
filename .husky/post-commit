@@ -1,6 +1,14 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+get_changes () {
+  git diff HEAD~1..HEAD~0 -- origin/main build src stories "*.mjs" "*.cjs" "*.mts" "*.cts" "*.jsx"
+}
+
+has_changes () {
+  [ ! -z "$(get_changes)" ]
+}
+
 get_package_changes () {
   git diff HEAD~1..HEAD~0 -- origin/main package.json
 }
