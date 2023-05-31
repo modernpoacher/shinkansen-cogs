@@ -8,7 +8,7 @@ import {
   currentDir
 } from '#build/gulp/paths'
 
-const log = debug('shinkansen-cogs:handle-watch-error')
+const log = debug('shinkansen-cogs/handle-watch-error')
 
 log('`shinkansen` is awake')
 

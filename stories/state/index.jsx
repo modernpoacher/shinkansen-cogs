@@ -3,7 +3,7 @@ import debug from 'debug'
 import { Component, Children, cloneElement } from 'react'
 import PropTypes from 'prop-types'
 
-const log = debug('shinkansen-cogs:stories')
+const log = debug('shinkansen-cogs/stories')
 
 export default class State extends Component {
   state = {
