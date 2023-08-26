@@ -1,9 +1,9 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import Field, { ValueField, CheckField } from 'shinkansen-cogs/components/field'
+import Field, { ValueField, CheckField } from '@modernpoacher/cogs/components/field'
 
-describe('shinkansen-cogs/components/field', () => {
+describe('@modernpoacher/cogs/components/field', () => {
   describe('<Field />', () => {
     describe('With required props', () => {
       const component = (

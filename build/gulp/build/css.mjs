@@ -16,13 +16,13 @@ import handleWatchError from '#build/gulp/handle-watch-error'
 
 import cssFromSass from '#build/gulp/build/css-from-sass'
 
-const log = debug('shinkansen-cogs/build/gulp/build')
+const log = debug('@modernpoacher/cogs/build/gulp/build')
 
 const SOURCE_PATH = path.relative(currentDir, sourcePath)
 const TARGET_PATH = path.relative(currentDir, targetPath)
 const MODULE_PATH = path.relative(currentDir, modulePath)
 
-log('`shinkansen` is awake')
+log('`cogs` is awake')
 
 export function cleanCss () {
   log('cleanCss')

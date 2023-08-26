@@ -5,11 +5,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-import { ValueCog } from 'shinkansen-cogs/cogs'
-import Title from 'shinkansen-cogs/components/title/number'
-import Description from 'shinkansen-cogs/components/description/number'
-import ErrorMessage from 'shinkansen-cogs/components/error-message/number'
-import Field from 'shinkansen-cogs/components/field/number'
+import { ValueCog } from '@modernpoacher/cogs/cogs'
+import Title from '@modernpoacher/cogs/components/title/number'
+import Description from '@modernpoacher/cogs/components/description/number'
+import ErrorMessage from '@modernpoacher/cogs/components/error-message/number'
+import Field from '@modernpoacher/cogs/components/field/number'
 
 export default class NumberCog extends ValueCog {
   getClassName () {

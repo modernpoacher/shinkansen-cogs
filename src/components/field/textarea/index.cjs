@@ -1,14 +1,14 @@
 require('@babel/register')({
   ignore: [
-    /node_modules\/(?!shinkansen|@modernpoacher)/
+    /node_modules\/(?!@modernpoacher\/cogs|@modernpoacher\/sprockets)/
   ]
 })
 
 const debug = require('debug')
 
-const log = debug('shinkansen-cogs/components/field/textarea')
+const log = debug('@modernpoacher/cogs/components/field/textarea')
 
-log('`shinkansen` is awake')
+log('`cogs` is awake')
 
 const {
   default: component

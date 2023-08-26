@@ -1,14 +1,11 @@
-## `shinkansen-cogs`
-
-Shinkansen generates JSON Schema valid documents from user submissions with `<html />` forms.
+## `@modernpoacher/cogs`
 
 # Cogs
 
 _Cogs_ are React components for input fields.
 
-_Cogs_ are the smallest components of _Engine_, for React form layouts.
+_Cogs_ are composed into _Sprockets_.
 
 ## See also
 
-- [Sprockets](https://github.com/modernpoacher/shinkansen-sprockets)
-- [Engine](https://github.com/modernpoacher/shinkansen-engine)
+- [Sprockets](https://github.com/modernpoacher/sprockets)

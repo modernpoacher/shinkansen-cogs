@@ -1,30 +1,19 @@
 import React from 'react'
 
-import EmailCog from 'shinkansen-cogs/cogs/email'
-import errors from '#stories/errors'
+import EmailCog from '@modernpoacher/cogs/cogs/email'
 import EmailState from '#stories/state/email'
 
 export default {
   title: 'Stories/Cogs/Email',
   component: EmailCog,
   argTypes: {
-    errorMessage: {
-      options: Object.keys(errors),
-      mapping: errors,
-      control: {
-        type: 'select',
-        labels: {
-          string: 'String',
-          number: 'Number',
-          array: 'Array',
-          object: 'Object',
-          boolean: 'Boolean',
-          null: 'Null'
-        }
-      }
-    },
     placeholder: {
-      defaultValue: ''
+      control: 'text',
+      description: 'placeholder'
+    },
+    errorMessage: {
+      control: 'text',
+      description: 'errorMessage'
     }
   }
 }

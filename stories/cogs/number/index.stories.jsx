@@ -1,30 +1,19 @@
 import React from 'react'
 
-import NumberCog from 'shinkansen-cogs/cogs/number'
-import errors from '#stories/errors'
+import NumberCog from '@modernpoacher/cogs/cogs/number'
 import NumberState from '#stories/state/number'
 
 export default {
   title: 'Stories/Cogs/Number',
   component: NumberCog,
   argTypes: {
-    errorMessage: {
-      options: Object.keys(errors),
-      mapping: errors,
-      control: {
-        type: 'select',
-        labels: {
-          string: 'String',
-          number: 'Number',
-          array: 'Array',
-          object: 'Object',
-          boolean: 'Boolean',
-          null: 'Null'
-        }
-      }
-    },
     placeholder: {
-      defaultValue: ''
+      control: 'text',
+      description: 'placeholder'
+    },
+    errorMessage: {
+      control: 'text',
+      description: 'errorMessage'
     }
   }
 }

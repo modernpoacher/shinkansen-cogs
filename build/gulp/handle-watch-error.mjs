@@ -8,9 +8,9 @@ import {
   currentDir
 } from '#build/gulp/paths'
 
-const log = debug('shinkansen-cogs/handle-watch-error')
+const log = debug('@modernpoacher/cogs/handle-watch-error')
 
-log('`shinkansen` is awake')
+log('`cogs` is awake')
 
 export function handleWatchError ({
   code = 'No error code defined',

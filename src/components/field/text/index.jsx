@@ -3,7 +3,7 @@
  */
 import React from 'react'
 import classnames from 'classnames'
-import { ValueField } from 'shinkansen-cogs/components/field'
+import { ValueField } from '@modernpoacher/cogs/components/field'
 
 export default class TextField extends ValueField {
   getClassName () {

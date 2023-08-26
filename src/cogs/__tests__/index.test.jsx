@@ -3,25 +3,17 @@ import renderer from 'react-test-renderer'
 
 import classnames from 'classnames'
 
-import Title from 'shinkansen-cogs/components/title'
-import Field from 'shinkansen-cogs/components/field'
+import Title from '@modernpoacher/cogs/components/title'
+import Field from '@modernpoacher/cogs/components/field'
 
-import Cog, { ValueCog, CheckCog } from 'shinkansen-cogs/cogs'
+import Cog, { ValueCog, CheckCog } from '@modernpoacher/cogs/cogs'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('shinkansen-cogs/components/title')
-jest.mock('shinkansen-cogs/components/field')
+jest.mock('@modernpoacher/cogs/components/title')
+jest.mock('@modernpoacher/cogs/components/field')
 
-const MOCK_ERROR_MESSAGE = {
-  type: 'UNKNOWN',
-  params: {
-    expectedType: 'string'
-  },
-  uri: '#/'
-}
-
-describe('shinkansen-cogs/cogs', () => {
+describe('@modernpoacher/cogs/cogs', () => {
   describe('<Cog />', () => {
     describe('With required props', () => {
       const component = (
@@ -381,7 +373,7 @@ describe('shinkansen-cogs/cogs', () => {
             classnames.mockReturnValue('MOCK CLASSNAME')
 
             const component = (
-              <Cog name='MOCK NAME' errorMessage={MOCK_ERROR_MESSAGE} />
+              <Cog name='MOCK NAME' errorMessage='MOCK ERROR MESSAGE' />
             )
 
             const instance = (

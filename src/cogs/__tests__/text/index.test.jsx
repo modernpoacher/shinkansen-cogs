@@ -3,17 +3,17 @@ import renderer from 'react-test-renderer'
 
 import classnames from 'classnames'
 
-import Title from 'shinkansen-cogs/components/title/text'
-import Description from 'shinkansen-cogs/components/description/text'
-import ErrorMessage from 'shinkansen-cogs/components/error-message/text'
-import Field from 'shinkansen-cogs/components/field/text'
+import Title from '@modernpoacher/cogs/components/title/text'
+import Description from '@modernpoacher/cogs/components/description/text'
+import ErrorMessage from '@modernpoacher/cogs/components/error-message/text'
+import Field from '@modernpoacher/cogs/components/field/text'
 
-import { ValueCog } from 'shinkansen-cogs/cogs'
-import Cog from 'shinkansen-cogs/cogs/text'
+import { ValueCog } from '@modernpoacher/cogs/cogs'
+import Cog from '@modernpoacher/cogs/cogs/text'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('shinkansen-cogs/cogs', () => {
+jest.mock('@modernpoacher/cogs/cogs', () => {
   class MockCog extends mockComponent {
     getClassName () { }
 
@@ -48,39 +48,25 @@ jest.mock('shinkansen-cogs/cogs', () => {
   }
 })
 
-jest.mock('shinkansen-cogs/components/title/text')
-jest.mock('shinkansen-cogs/components/description/text')
-jest.mock('shinkansen-cogs/components/error-message/text')
-jest.mock('shinkansen-cogs/components/field/text')
+jest.mock('@modernpoacher/cogs/components/title/text')
+jest.mock('@modernpoacher/cogs/components/description/text')
+jest.mock('@modernpoacher/cogs/components/error-message/text')
+jest.mock('@modernpoacher/cogs/components/field/text')
 
 class MockErrorMessage extends mockComponent {
   state = {}
-
-  static getDerivedStateFromProps () {
-    return {}
-  }
 
   render () {
     return null
   }
 }
 
-const MOCK_ERROR_MESSAGE = {
-  type: 'MOCK TYPE',
-  params: {},
-  uri: 'MOCK URI'
-}
-
-describe('shinkansen-cogs/cogs/text', () => {
+describe('@modernpoacher/cogs/cogs/text', () => {
   beforeAll(() => {
     /*
      *  class defines `state` for instance
      */
     ErrorMessage.mockImplementation(() => new MockErrorMessage())
-    /*
-     *  function returns `state`
-     */
-    ErrorMessage.getDerivedStateFromProps.mockReturnValue({})
   })
 
   describe('<Cog />', () => {
@@ -138,7 +124,7 @@ describe('shinkansen-cogs/cogs/text', () => {
             id='MOCK ID'
             title='MOCK TITLE'
             description='MOCK DESCRIPTION'
-            errorMessage={MOCK_ERROR_MESSAGE}
+            errorMessage='MOCK ERROR MESSAGE'
             value='MOCK VALUE'
             tabIndex={1}
             accessKey='MOCK ACCESS KEY'
@@ -191,7 +177,7 @@ describe('shinkansen-cogs/cogs/text', () => {
           id='MOCK ID'
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
-          errorMessage={MOCK_ERROR_MESSAGE}
+          errorMessage='MOCK ERROR MESSAGE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -242,7 +228,7 @@ describe('shinkansen-cogs/cogs/text', () => {
           id='MOCK ID'
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
-          errorMessage={MOCK_ERROR_MESSAGE}
+          errorMessage='MOCK ERROR MESSAGE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -280,7 +266,7 @@ describe('shinkansen-cogs/cogs/text', () => {
           id='MOCK ID'
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
-          errorMessage={MOCK_ERROR_MESSAGE}
+          errorMessage='MOCK ERROR MESSAGE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -306,7 +292,7 @@ describe('shinkansen-cogs/cogs/text', () => {
       it('renders `<ErrorMessage />`', () => {
         return expect(ErrorMessage)
           .toBeCalledWith({
-            errorMessage: MOCK_ERROR_MESSAGE
+            errorMessage: 'MOCK ERROR MESSAGE'
           }, {})
       })
     })
@@ -318,7 +304,7 @@ describe('shinkansen-cogs/cogs/text', () => {
           id='MOCK ID'
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
-          errorMessage={MOCK_ERROR_MESSAGE}
+          errorMessage='MOCK ERROR MESSAGE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required

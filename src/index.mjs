@@ -9,9 +9,9 @@ import SelectCog from './cogs/select/index.cjs'
 import TextCog from './cogs/text/index.cjs'
 import TextareaCog from './cogs/textarea/index.cjs'
 
-const log = debug('shinkansen-cogs')
+const log = debug('@modernpoacher/cogs')
 
-log('`shinkansen` is awake')
+log('`cogs` is awake')
 
 export { default as CheckboxCog } from './cogs/checkbox/index.cjs'
 export { default as EmailCog } from './cogs/email/index.cjs'

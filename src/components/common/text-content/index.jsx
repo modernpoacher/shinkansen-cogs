@@ -1,7 +1,7 @@
 /**
  * TextContent component
  *
- * @typedef {import('shinkansen-cogs/components/common/text-content').TextContentProps} TextContentProps
+ * @typedef {import('@modernpoacher/cogs/components/common/text-content').TextContentProps} TextContentProps
  */
 
 import React from 'react'

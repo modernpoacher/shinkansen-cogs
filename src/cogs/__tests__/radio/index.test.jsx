@@ -3,17 +3,17 @@ import renderer from 'react-test-renderer'
 
 import classnames from 'classnames'
 
-import Title from 'shinkansen-cogs/components/title/radio'
-import Description from 'shinkansen-cogs/components/description/radio'
-import ErrorMessage from 'shinkansen-cogs/components/error-message/radio'
-import Field from 'shinkansen-cogs/components/field/radio'
+import Title from '@modernpoacher/cogs/components/title/radio'
+import Description from '@modernpoacher/cogs/components/description/radio'
+import ErrorMessage from '@modernpoacher/cogs/components/error-message/radio'
+import Field from '@modernpoacher/cogs/components/field/radio'
 
-import { CheckCog } from 'shinkansen-cogs/cogs'
-import Cog from 'shinkansen-cogs/cogs/radio'
+import { CheckCog } from '@modernpoacher/cogs/cogs'
+import Cog from '@modernpoacher/cogs/cogs/radio'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('shinkansen-cogs/cogs', () => {
+jest.mock('@modernpoacher/cogs/cogs', () => {
   class MockCog extends mockComponent {
     getClassName () { }
 
@@ -50,30 +50,20 @@ jest.mock('shinkansen-cogs/cogs', () => {
   }
 })
 
-jest.mock('shinkansen-cogs/components/title/radio')
-jest.mock('shinkansen-cogs/components/description/radio')
-jest.mock('shinkansen-cogs/components/error-message/radio')
-jest.mock('shinkansen-cogs/components/field/radio')
+jest.mock('@modernpoacher/cogs/components/title/radio')
+jest.mock('@modernpoacher/cogs/components/description/radio')
+jest.mock('@modernpoacher/cogs/components/error-message/radio')
+jest.mock('@modernpoacher/cogs/components/field/radio')
 
 class MockErrorMessage extends mockComponent {
   state = {}
-
-  static getDerivedStateFromProps () {
-    return {}
-  }
 
   render () {
     return null
   }
 }
 
-const MOCK_ERROR_MESSAGE = {
-  type: 'MOCK TYPE',
-  params: {},
-  uri: 'MOCK URI'
-}
-
-describe('shinkansen-cogs/cogs/radio', () => {
+describe('@modernpoacher/cogs/cogs/radio', () => {
   beforeAll(() => {
     /*
      *  class defines `state` for instance
@@ -82,7 +72,7 @@ describe('shinkansen-cogs/cogs/radio', () => {
     /*
      *  function returns `state`
      */
-    ErrorMessage.getDerivedStateFromProps.mockReturnValue({})
+    // ErrorMessage.getDerivedStateFromProps.mockReturnValue({})
   })
 
   describe('<Cog />', () => {
@@ -140,7 +130,7 @@ describe('shinkansen-cogs/cogs/radio', () => {
             id='MOCK ID'
             title='MOCK TITLE'
             description='MOCK DESCRIPTION'
-            errorMessage={MOCK_ERROR_MESSAGE}
+            errorMessage='MOCK ERROR MESSAGE'
             value='MOCK VALUE'
             tabIndex={1}
             accessKey='MOCK ACCESS KEY'
@@ -194,7 +184,7 @@ describe('shinkansen-cogs/cogs/radio', () => {
           id='MOCK ID'
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
-          errorMessage={MOCK_ERROR_MESSAGE}
+          errorMessage='MOCK ERROR MESSAGE'
           value='MOCK VALUE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
@@ -260,7 +250,7 @@ describe('shinkansen-cogs/cogs/radio', () => {
           id='MOCK ID'
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
-          errorMessage={MOCK_ERROR_MESSAGE}
+          errorMessage='MOCK ERROR MESSAGE'
           value='MOCK VALUE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
@@ -312,7 +302,7 @@ describe('shinkansen-cogs/cogs/radio', () => {
           id='MOCK ID'
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
-          errorMessage={MOCK_ERROR_MESSAGE}
+          errorMessage='MOCK ERROR MESSAGE'
           value='MOCK VALUE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
@@ -351,7 +341,7 @@ describe('shinkansen-cogs/cogs/radio', () => {
           id='MOCK ID'
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
-          errorMessage={MOCK_ERROR_MESSAGE}
+          errorMessage='MOCK ERROR MESSAGE'
           value='MOCK VALUE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
@@ -378,7 +368,7 @@ describe('shinkansen-cogs/cogs/radio', () => {
       it('renders `<ErrorMessage />`', () => {
         return expect(ErrorMessage)
           .toBeCalledWith({
-            errorMessage: MOCK_ERROR_MESSAGE
+            errorMessage: 'MOCK ERROR MESSAGE'
           }, {})
       })
     })
@@ -390,7 +380,7 @@ describe('shinkansen-cogs/cogs/radio', () => {
           id='MOCK ID'
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
-          errorMessage={MOCK_ERROR_MESSAGE}
+          errorMessage='MOCK ERROR MESSAGE'
           value='MOCK VALUE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'

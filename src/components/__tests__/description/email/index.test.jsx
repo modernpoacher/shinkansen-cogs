@@ -3,12 +3,12 @@ import renderer from 'react-test-renderer'
 
 import classnames from 'classnames'
 
-import Super from 'shinkansen-cogs/components/title'
-import Description from 'shinkansen-cogs/components/title/email'
+import Super from '@modernpoacher/cogs/components/title'
+import Description from '@modernpoacher/cogs/components/title/email'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('shinkansen-cogs/components/title', () => ({
+jest.mock('@modernpoacher/cogs/components/title', () => ({
   __esModule: true,
   default: class MockDescription extends mockComponent {
     getClassName () { }
@@ -31,7 +31,7 @@ jest.mock('shinkansen-cogs/components/title', () => ({
   }
 }))
 
-describe('shinkansen-cogs/components/title/email', () => {
+describe('@modernpoacher/cogs/components/title/email', () => {
   describe('<Description />', () => {
     describe('With required props', () => {
       const component = (

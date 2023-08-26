@@ -4,10 +4,10 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import TextContent from 'shinkansen-cogs/components/common/text-content'
-import Required from 'shinkansen-cogs/components/common/required'
-import Disabled from 'shinkansen-cogs/components/common/disabled'
-import ReadOnly from 'shinkansen-cogs/components/common/readonly'
+import TextContent from '@modernpoacher/cogs/components/common/text-content'
+import Required from '@modernpoacher/cogs/components/common/required'
+import Disabled from '@modernpoacher/cogs/components/common/disabled'
+import ReadOnly from '@modernpoacher/cogs/components/common/readonly'
 
 export default class Title extends Component {
   hasTextContent () {

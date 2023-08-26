@@ -2,7 +2,7 @@
  * EmailErrorMessage component
  */
 import classnames from 'classnames'
-import ErrorMessage from 'shinkansen-cogs/components/error-message'
+import ErrorMessage from '@modernpoacher/cogs/components/error-message'
 
 export default class EmailErrorMessage extends ErrorMessage {
   getClassName () {

@@ -2,7 +2,7 @@
  * NumberTitle component
  */
 import classnames from 'classnames'
-import Title from 'shinkansen-cogs/components/title'
+import Title from '@modernpoacher/cogs/components/title'
 
 export default class NumberTitle extends Title {
   getClassName () {

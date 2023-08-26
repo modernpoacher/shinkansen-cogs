@@ -1,36 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`shinkansen-cogs/cogs <CheckCog /> With additional props renders 1`] = `
+exports[`@modernpoacher/cogs/cogs <CheckCog /> With additional props renders 1`] = `
 <div
   className="MOCK CLASSNAME"
 />
 `;
 
-exports[`shinkansen-cogs/cogs <CheckCog /> With required props renders 1`] = `
+exports[`@modernpoacher/cogs/cogs <CheckCog /> With required props renders 1`] = `
 <div
   className="MOCK CLASSNAME"
 />
 `;
 
-exports[`shinkansen-cogs/cogs <Cog /> With additional props renders 1`] = `
+exports[`@modernpoacher/cogs/cogs <Cog /> With additional props renders 1`] = `
 <div
   className="MOCK CLASSNAME"
 />
 `;
 
-exports[`shinkansen-cogs/cogs <Cog /> With required props renders 1`] = `
+exports[`@modernpoacher/cogs/cogs <Cog /> With required props renders 1`] = `
 <div
   className="MOCK CLASSNAME"
 />
 `;
 
-exports[`shinkansen-cogs/cogs <ValueCog /> With additional props renders 1`] = `
+exports[`@modernpoacher/cogs/cogs <ValueCog /> With additional props renders 1`] = `
 <div
   className="MOCK CLASSNAME"
 />
 `;
 
-exports[`shinkansen-cogs/cogs <ValueCog /> With required props renders 1`] = `
+exports[`@modernpoacher/cogs/cogs <ValueCog /> With required props renders 1`] = `
 <div
   className="MOCK CLASSNAME"
 />

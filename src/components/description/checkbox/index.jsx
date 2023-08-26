@@ -2,7 +2,7 @@
  * CheckboxDescription component
  */
 import classnames from 'classnames'
-import Description from 'shinkansen-cogs/components/description'
+import Description from '@modernpoacher/cogs/components/description'
 
 export default class CheckboxDescription extends Description {
   getClassName () {

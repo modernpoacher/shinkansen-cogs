@@ -16,9 +16,9 @@ import {
   writeFile
 } from 'fs/promises'
 
-const log = debug('shinkansen-cogs/build/gulp/transform')
+const log = debug('@modernpoacher/cogs/build/gulp/transform')
 
-log('`shinkansen` is awake')
+log('`cogs` is awake')
 
 // eslint-disable-next-line no-irregular-whitespace
 // \u200b

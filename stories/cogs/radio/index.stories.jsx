@@ -1,30 +1,19 @@
 import React from 'react'
 
-import RadioCog from 'shinkansen-cogs/cogs/radio'
-import errors from '#stories/errors'
+import RadioCog from '@modernpoacher/cogs/cogs/radio'
 import RadioState from '#stories/state/radio'
 
 export default {
   title: 'Stories/Cogs/Radio',
   component: RadioCog,
   argTypes: {
-    errorMessage: {
-      options: Object.keys(errors),
-      mapping: errors,
-      control: {
-        type: 'select',
-        labels: {
-          string: 'String',
-          number: 'Number',
-          array: 'Array',
-          object: 'Object',
-          boolean: 'Boolean',
-          null: 'Null'
-        }
-      }
-    },
     placeholder: {
-      defaultValue: ''
+      control: 'text',
+      description: 'placeholder'
+    },
+    errorMessage: {
+      control: 'text',
+      description: 'errorMessage'
     }
   }
 }

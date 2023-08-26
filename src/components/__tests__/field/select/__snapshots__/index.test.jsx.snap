@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`shinkansen-cogs/components/field/select <Field /> With additional props renders 1`] = `
+exports[`@modernpoacher/cogs/components/field/select <Field /> With additional props renders 1`] = `
 <select
   className="MOCK CLASSNAME"
   disabled={true}
@@ -11,7 +11,7 @@ exports[`shinkansen-cogs/components/field/select <Field /> With additional props
 />
 `;
 
-exports[`shinkansen-cogs/components/field/select <Field /> With required props renders 1`] = `
+exports[`@modernpoacher/cogs/components/field/select <Field /> With required props renders 1`] = `
 <select
   className="MOCK CLASSNAME"
   name="MOCK NAME"

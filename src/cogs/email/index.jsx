@@ -4,11 +4,11 @@
 import React from 'react'
 import classnames from 'classnames'
 
-import { ValueCog } from 'shinkansen-cogs/cogs'
-import Title from 'shinkansen-cogs/components/title/email'
-import Description from 'shinkansen-cogs/components/description/email'
-import ErrorMessage from 'shinkansen-cogs/components/error-message/email'
-import Field from 'shinkansen-cogs/components/field/email'
+import { ValueCog } from '@modernpoacher/cogs/cogs'
+import Title from '@modernpoacher/cogs/components/title/email'
+import Description from '@modernpoacher/cogs/components/description/email'
+import ErrorMessage from '@modernpoacher/cogs/components/error-message/email'
+import Field from '@modernpoacher/cogs/components/field/email'
 
 export default class EmailCog extends ValueCog {
   getClassName () {

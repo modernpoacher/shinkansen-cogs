@@ -1,30 +1,19 @@
 import React from 'react'
 
-import SelectCog from 'shinkansen-cogs/cogs/select'
-import errors from '#stories/errors'
+import SelectCog from '@modernpoacher/cogs/cogs/select'
 import SelectState from '#stories/state/select'
 
 export default {
   title: 'Stories/Cogs/Select',
   component: SelectCog,
   argTypes: {
-    errorMessage: {
-      options: Object.keys(errors),
-      mapping: errors,
-      control: {
-        type: 'select',
-        labels: {
-          string: 'String',
-          number: 'Number',
-          array: 'Array',
-          object: 'Object',
-          boolean: 'Boolean',
-          null: 'Null'
-        }
-      }
-    },
     placeholder: {
-      defaultValue: ''
+      control: 'text',
+      description: 'placeholder'
+    },
+    errorMessage: {
+      control: 'text',
+      description: 'errorMessage'
     }
   }
 }

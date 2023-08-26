@@ -3,12 +3,12 @@ import renderer from 'react-test-renderer'
 
 import classnames from 'classnames'
 
-import { CheckField } from 'shinkansen-cogs/components/field'
-import Field from 'shinkansen-cogs/components/field/checkbox'
+import { CheckField } from '@modernpoacher/cogs/components/field'
+import Field from '@modernpoacher/cogs/components/field/checkbox'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('shinkansen-cogs/components/field', () => {
+jest.mock('@modernpoacher/cogs/components/field', () => {
   class MockField extends mockComponent {
     getClassName () { }
   }
@@ -20,7 +20,7 @@ jest.mock('shinkansen-cogs/components/field', () => {
   }
 })
 
-describe('shinkansen-cogs/components/field/checkbox', () => {
+describe('@modernpoacher/cogs/components/field/checkbox', () => {
   describe('<Field />', () => {
     describe('With required props', () => {
       const component = (

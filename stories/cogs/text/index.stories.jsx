@@ -1,30 +1,19 @@
 import React from 'react'
 
-import TextCog from 'shinkansen-cogs/cogs/text'
-import errors from '#stories/errors'
+import TextCog from '@modernpoacher/cogs/cogs/text'
 import TextState from '#stories/state/text'
 
 export default {
   title: 'Stories/Cogs/Text',
   component: TextCog,
   argTypes: {
-    errorMessage: {
-      options: Object.keys(errors),
-      mapping: errors,
-      control: {
-        type: 'select',
-        labels: {
-          string: 'String',
-          number: 'Number',
-          array: 'Array',
-          object: 'Object',
-          boolean: 'Boolean',
-          null: 'Null'
-        }
-      }
-    },
     placeholder: {
-      defaultValue: ''
+      control: 'text',
+      description: 'placeholder'
+    },
+    errorMessage: {
+      control: 'text',
+      description: 'errorMessage'
     }
   }
 }

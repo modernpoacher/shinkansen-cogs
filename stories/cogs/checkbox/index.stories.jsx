@@ -1,30 +1,19 @@
 import React from 'react'
 
-import CheckboxCog from 'shinkansen-cogs/cogs/checkbox'
-import errors from '#stories/errors'
+import CheckboxCog from '@modernpoacher/cogs/cogs/checkbox'
 import CheckboxState from '#stories/state/checkbox'
 
 export default {
   title: 'Stories/Cogs/Checkbox',
   component: CheckboxCog,
   argTypes: {
-    errorMessage: {
-      options: Object.keys(errors),
-      mapping: errors,
-      control: {
-        type: 'select',
-        labels: {
-          string: 'String',
-          number: 'Number',
-          array: 'Array',
-          object: 'Object',
-          boolean: 'Boolean',
-          null: 'Null'
-        }
-      }
-    },
     placeholder: {
-      defaultValue: ''
+      control: 'text',
+      description: 'placeholder'
+    },
+    errorMessage: {
+      control: 'text',
+      description: 'errorMessage'
     }
   }
 }

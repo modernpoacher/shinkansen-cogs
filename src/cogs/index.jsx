@@ -6,10 +6,10 @@ import PropTypes from 'prop-types'
 
 import classNames from 'classnames'
 
-import Title from 'shinkansen-cogs/components/title'
-import Description from 'shinkansen-cogs/components/description'
-import ErrorMessage from 'shinkansen-cogs/components/error-message'
-import Field from 'shinkansen-cogs/components/field'
+import Title from '@modernpoacher/cogs/components/title'
+import Description from '@modernpoacher/cogs/components/description'
+import ErrorMessage from '@modernpoacher/cogs/components/error-message'
+import Field from '@modernpoacher/cogs/components/field'
 
 function onChange () {
   /* */
@@ -164,11 +164,7 @@ Cog.propTypes = {
   name: PropTypes.string.isRequired,
   title: PropTypes.string,
   description: PropTypes.string,
-  errorMessage: PropTypes.shape({
-    type: PropTypes.string.isRequired,
-    params: PropTypes.shape().isRequired,
-    uri: PropTypes.string.isRequired
-  }),
+  errorMessage: PropTypes.string,
   required: PropTypes.bool,
   disabled: PropTypes.bool,
   readOnly: PropTypes.bool,

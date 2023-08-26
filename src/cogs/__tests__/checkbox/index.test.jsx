@@ -3,17 +3,17 @@ import renderer from 'react-test-renderer'
 
 import classnames from 'classnames'
 
-import Title from 'shinkansen-cogs/components/title/checkbox'
-import Description from 'shinkansen-cogs/components/description/checkbox'
-import ErrorMessage from 'shinkansen-cogs/components/error-message/checkbox'
-import Field from 'shinkansen-cogs/components/field/checkbox'
+import Title from '@modernpoacher/cogs/components/title/checkbox'
+import Description from '@modernpoacher/cogs/components/description/checkbox'
+import ErrorMessage from '@modernpoacher/cogs/components/error-message/checkbox'
+import Field from '@modernpoacher/cogs/components/field/checkbox'
 
-import { CheckCog } from 'shinkansen-cogs/cogs'
-import Cog from 'shinkansen-cogs/cogs/checkbox'
+import { CheckCog } from '@modernpoacher/cogs/cogs'
+import Cog from '@modernpoacher/cogs/cogs/checkbox'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('shinkansen-cogs/cogs', () => {
+jest.mock('@modernpoacher/cogs/cogs', () => {
   class MockCog extends mockComponent {
     getClassName () { }
 
@@ -50,39 +50,25 @@ jest.mock('shinkansen-cogs/cogs', () => {
   }
 })
 
-jest.mock('shinkansen-cogs/components/title/checkbox')
-jest.mock('shinkansen-cogs/components/description/checkbox')
-jest.mock('shinkansen-cogs/components/error-message/checkbox')
-jest.mock('shinkansen-cogs/components/field/checkbox')
+jest.mock('@modernpoacher/cogs/components/title/checkbox')
+jest.mock('@modernpoacher/cogs/components/description/checkbox')
+jest.mock('@modernpoacher/cogs/components/error-message/checkbox')
+jest.mock('@modernpoacher/cogs/components/field/checkbox')
 
 class MockErrorMessage extends mockComponent {
   state = {}
-
-  static getDerivedStateFromProps () {
-    return {}
-  }
 
   render () {
     return null
   }
 }
 
-const MOCK_ERROR_MESSAGE = {
-  type: 'MOCK TYPE',
-  params: {},
-  uri: 'MOCK URI'
-}
-
-describe('shinkansen-cogs/cogs/checkbox', () => {
+describe('@modernpoacher/cogs/cogs/checkbox', () => {
   beforeAll(() => {
     /*
      *  class defines `state` for instance
      */
     ErrorMessage.mockImplementation(() => new MockErrorMessage())
-    /*
-     *  function returns `state`
-     */
-    ErrorMessage.getDerivedStateFromProps.mockReturnValue({})
   })
 
   describe('<Cog />', () => {
@@ -140,7 +126,7 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
             id='MOCK ID'
             title='MOCK TITLE'
             description='MOCK DESCRIPTION'
-            errorMessage={MOCK_ERROR_MESSAGE}
+            errorMessage='MOCK ERROR MESSAGE'
             value='MOCK VALUE'
             tabIndex={1}
             accessKey='MOCK ACCESS KEY'
@@ -194,7 +180,7 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
           id='MOCK ID'
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
-          errorMessage={MOCK_ERROR_MESSAGE}
+          errorMessage='MOCK ERROR MESSAGE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -245,7 +231,7 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
           id='MOCK ID'
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
-          errorMessage={MOCK_ERROR_MESSAGE}
+          errorMessage='MOCK ERROR MESSAGE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -283,7 +269,7 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
           id='MOCK ID'
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
-          errorMessage={MOCK_ERROR_MESSAGE}
+          errorMessage='MOCK ERROR MESSAGE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -309,7 +295,7 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
       it('renders `<ErrorMessage />`', () => {
         return expect(ErrorMessage)
           .toBeCalledWith({
-            errorMessage: MOCK_ERROR_MESSAGE
+            errorMessage: 'MOCK ERROR MESSAGE'
           }, {})
       })
     })

@@ -1,30 +1,19 @@
 import React from 'react'
 
-import TextareaCog from 'shinkansen-cogs/cogs/textarea'
-import errors from '#stories/errors'
+import TextareaCog from '@modernpoacher/cogs/cogs/textarea'
 import TextareaState from '#stories/state/textarea'
 
 export default {
   title: 'Stories/Cogs/Textarea',
   component: TextareaCog,
   argTypes: {
-    errorMessage: {
-      options: Object.keys(errors),
-      mapping: errors,
-      control: {
-        type: 'select',
-        labels: {
-          string: 'String',
-          number: 'Number',
-          array: 'Array',
-          object: 'Object',
-          boolean: 'Boolean',
-          null: 'Null'
-        }
-      }
-    },
     placeholder: {
-      defaultValue: ''
+      control: 'text',
+      description: 'placeholder'
+    },
+    errorMessage: {
+      control: 'text',
+      description: 'errorMessage'
     }
   }
 }

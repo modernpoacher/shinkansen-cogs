@@ -1,5 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`shinkansen-cogs/components/title <Description /> With additional props renders 1`] = `null`;
+exports[`@modernpoacher/cogs/components/title <Description /> With additional props renders 1`] = `null`;
 
-exports[`shinkansen-cogs/components/title <Description /> With required props renders 1`] = `null`;
+exports[`@modernpoacher/cogs/components/title <Description /> With required props renders 1`] = `null`;

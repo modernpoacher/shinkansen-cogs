@@ -1,6 +1,6 @@
 const debug = require('debug')
 
-const log = debug('shinkansen-cogs')
+const log = debug('@modernpoacher/cogs')
 
 const {
   env: {
@@ -8,7 +8,7 @@ const {
   }
 } = process
 
-log('`shinkansen` is awake')
+log('`cogs` is awake')
 
 function env () {
   log({ NODE_ENV })
@@ -54,56 +54,55 @@ const plugins = [
         /**
          *  Storybook
          */
-        'shinkansen-cogs/cogs/checkbox': './src/cogs/checkbox/index.cjs',
-        'shinkansen-cogs/cogs/email': './src/cogs/email/index.cjs',
-        'shinkansen-cogs/cogs/number': './src/cogs/number/index.cjs',
-        'shinkansen-cogs/cogs/password': './src/cogs/password/index.cjs',
-        'shinkansen-cogs/cogs/radio': './src/cogs/radio/index.cjs',
-        'shinkansen-cogs/cogs/select': './src/cogs/select/index.cjs',
-        'shinkansen-cogs/cogs/text': './src/cogs/text/index.cjs',
-        'shinkansen-cogs/cogs/textarea': './src/cogs/textarea/index.cjs',
-        'shinkansen-cogs/cogs': './src/cogs/index.cjs',
-        'shinkansen-cogs/components/common/disabled': './src/components/common/disabled/index.cjs',
-        'shinkansen-cogs/components/common/readonly': './src/components/common/readonly/index.cjs',
-        'shinkansen-cogs/components/common/required': './src/components/common/required/index.cjs',
-        'shinkansen-cogs/components/common/text-content': './src/components/common/text-content/index.cjs',
-        'shinkansen-cogs/components/description/checkbox': './src/components/description/checkbox/index.cjs',
-        'shinkansen-cogs/components/description/email': './src/components/description/email/index.cjs',
-        'shinkansen-cogs/components/description/number': './src/components/description/number/index.cjs',
-        'shinkansen-cogs/components/description/password': './src/components/description/password/index.cjs',
-        'shinkansen-cogs/components/description/radio': './src/components/description/radio/index.cjs',
-        'shinkansen-cogs/components/description/select': './src/components/description/select/index.cjs',
-        'shinkansen-cogs/components/description/text': './src/components/description/text/index.cjs',
-        'shinkansen-cogs/components/description/textarea': './src/components/description/textarea/index.cjs',
-        'shinkansen-cogs/components/description': './src/components/description/index.cjs',
-        'shinkansen-cogs/components/error-message/checkbox': './src/components/error-message/checkbox/index.cjs',
-        'shinkansen-cogs/components/error-message/email': './src/components/error-message/email/index.cjs',
-        'shinkansen-cogs/components/error-message/number': './src/components/error-message/number/index.cjs',
-        'shinkansen-cogs/components/error-message/password': './src/components/error-message/password/index.cjs',
-        'shinkansen-cogs/components/error-message/radio': './src/components/error-message/radio/index.cjs',
-        'shinkansen-cogs/components/error-message/select': './src/components/error-message/select/index.cjs',
-        'shinkansen-cogs/components/error-message/text': './src/components/error-message/text/index.cjs',
-        'shinkansen-cogs/components/error-message/textarea': './src/components/error-message/textarea/index.cjs',
-        'shinkansen-cogs/components/error-message': './src/components/error-message/index.cjs',
-        'shinkansen-cogs/components/field/checkbox': './src/components/field/checkbox/index.cjs',
-        'shinkansen-cogs/components/field/email': './src/components/field/email/index.cjs',
-        'shinkansen-cogs/components/field/number': './src/components/field/number/index.cjs',
-        'shinkansen-cogs/components/field/password': './src/components/field/password/index.cjs',
-        'shinkansen-cogs/components/field/radio': './src/components/field/radio/index.cjs',
-        'shinkansen-cogs/components/field/select': './src/components/field/select/index.cjs',
-        'shinkansen-cogs/components/field/text': './src/components/field/text/index.cjs',
-        'shinkansen-cogs/components/field/textarea': './src/components/field/textarea/index.cjs',
-        'shinkansen-cogs/components/field': './src/components/field/index.cjs',
-        'shinkansen-cogs/components/title/checkbox': './src/components/title/checkbox/index.cjs',
-        'shinkansen-cogs/components/title/email': './src/components/title/email/index.cjs',
-        'shinkansen-cogs/components/title/number': './src/components/title/number/index.cjs',
-        'shinkansen-cogs/components/title/password': './src/components/title/password/index.cjs',
-        'shinkansen-cogs/components/title/radio': './src/components/title/radio/index.cjs',
-        'shinkansen-cogs/components/title/select': './src/components/title/select/index.cjs',
-        'shinkansen-cogs/components/title/text': './src/components/title/text/index.cjs',
-        'shinkansen-cogs/components/title/textarea': './src/components/title/textarea/index.cjs',
-        'shinkansen-cogs/components/title': './src/components/title/index.cjs',
-        'shinkansen-cogs/transformers/error-message': './src/transformers/error-message/index.mjs',
+        '@modernpoacher/cogs/cogs/checkbox': './src/cogs/checkbox/index.cjs',
+        '@modernpoacher/cogs/cogs/email': './src/cogs/email/index.cjs',
+        '@modernpoacher/cogs/cogs/number': './src/cogs/number/index.cjs',
+        '@modernpoacher/cogs/cogs/password': './src/cogs/password/index.cjs',
+        '@modernpoacher/cogs/cogs/radio': './src/cogs/radio/index.cjs',
+        '@modernpoacher/cogs/cogs/select': './src/cogs/select/index.cjs',
+        '@modernpoacher/cogs/cogs/text': './src/cogs/text/index.cjs',
+        '@modernpoacher/cogs/cogs/textarea': './src/cogs/textarea/index.cjs',
+        '@modernpoacher/cogs/cogs': './src/cogs/index.cjs',
+        '@modernpoacher/cogs/components/common/disabled': './src/components/common/disabled/index.cjs',
+        '@modernpoacher/cogs/components/common/readonly': './src/components/common/readonly/index.cjs',
+        '@modernpoacher/cogs/components/common/required': './src/components/common/required/index.cjs',
+        '@modernpoacher/cogs/components/common/text-content': './src/components/common/text-content/index.cjs',
+        '@modernpoacher/cogs/components/description/checkbox': './src/components/description/checkbox/index.cjs',
+        '@modernpoacher/cogs/components/description/email': './src/components/description/email/index.cjs',
+        '@modernpoacher/cogs/components/description/number': './src/components/description/number/index.cjs',
+        '@modernpoacher/cogs/components/description/password': './src/components/description/password/index.cjs',
+        '@modernpoacher/cogs/components/description/radio': './src/components/description/radio/index.cjs',
+        '@modernpoacher/cogs/components/description/select': './src/components/description/select/index.cjs',
+        '@modernpoacher/cogs/components/description/text': './src/components/description/text/index.cjs',
+        '@modernpoacher/cogs/components/description/textarea': './src/components/description/textarea/index.cjs',
+        '@modernpoacher/cogs/components/description': './src/components/description/index.cjs',
+        '@modernpoacher/cogs/components/error-message/checkbox': './src/components/error-message/checkbox/index.cjs',
+        '@modernpoacher/cogs/components/error-message/email': './src/components/error-message/email/index.cjs',
+        '@modernpoacher/cogs/components/error-message/number': './src/components/error-message/number/index.cjs',
+        '@modernpoacher/cogs/components/error-message/password': './src/components/error-message/password/index.cjs',
+        '@modernpoacher/cogs/components/error-message/radio': './src/components/error-message/radio/index.cjs',
+        '@modernpoacher/cogs/components/error-message/select': './src/components/error-message/select/index.cjs',
+        '@modernpoacher/cogs/components/error-message/text': './src/components/error-message/text/index.cjs',
+        '@modernpoacher/cogs/components/error-message/textarea': './src/components/error-message/textarea/index.cjs',
+        '@modernpoacher/cogs/components/error-message': './src/components/error-message/index.cjs',
+        '@modernpoacher/cogs/components/field/checkbox': './src/components/field/checkbox/index.cjs',
+        '@modernpoacher/cogs/components/field/email': './src/components/field/email/index.cjs',
+        '@modernpoacher/cogs/components/field/number': './src/components/field/number/index.cjs',
+        '@modernpoacher/cogs/components/field/password': './src/components/field/password/index.cjs',
+        '@modernpoacher/cogs/components/field/radio': './src/components/field/radio/index.cjs',
+        '@modernpoacher/cogs/components/field/select': './src/components/field/select/index.cjs',
+        '@modernpoacher/cogs/components/field/text': './src/components/field/text/index.cjs',
+        '@modernpoacher/cogs/components/field/textarea': './src/components/field/textarea/index.cjs',
+        '@modernpoacher/cogs/components/field': './src/components/field/index.cjs',
+        '@modernpoacher/cogs/components/title/checkbox': './src/components/title/checkbox/index.cjs',
+        '@modernpoacher/cogs/components/title/email': './src/components/title/email/index.cjs',
+        '@modernpoacher/cogs/components/title/number': './src/components/title/number/index.cjs',
+        '@modernpoacher/cogs/components/title/password': './src/components/title/password/index.cjs',
+        '@modernpoacher/cogs/components/title/radio': './src/components/title/radio/index.cjs',
+        '@modernpoacher/cogs/components/title/select': './src/components/title/select/index.cjs',
+        '@modernpoacher/cogs/components/title/text': './src/components/title/text/index.cjs',
+        '@modernpoacher/cogs/components/title/textarea': './src/components/title/textarea/index.cjs',
+        '@modernpoacher/cogs/components/title': './src/components/title/index.cjs',
         '#stories/state/checkbox': './stories/state/checkbox/index.jsx',
         '#stories/state/email': './stories/state/email/index.jsx',
         '#stories/state/number': './stories/state/number/index.jsx',
@@ -113,7 +112,6 @@ const plugins = [
         '#stories/state/text': './stories/state/text/index.jsx',
         '#stories/state/textarea': './stories/state/textarea/index.jsx',
         '#stories/state': './stories/state/index.jsx',
-        '#stories/errors': './stories/errors.mjs',
         '#stories': './stories'
       }
     }
@@ -127,7 +125,7 @@ module.exports = (api) => {
     presets,
     plugins,
     ignore: [
-      /node_modules\/(?!shinkansen|@modernpoacher)/
+      /node_modules\/(?!@modernpoacher\/cogs|@modernpoacher\/sprockets)/
     ]
   }
 }

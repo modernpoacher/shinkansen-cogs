@@ -4,11 +4,11 @@
 import React from 'react'
 import classnames from 'classnames'
 
-import { ValueCog } from 'shinkansen-cogs/cogs'
-import Title from 'shinkansen-cogs/components/title/password'
-import Description from 'shinkansen-cogs/components/description/password'
-import ErrorMessage from 'shinkansen-cogs/components/error-message/password'
-import Field from 'shinkansen-cogs/components/field/password'
+import { ValueCog } from '@modernpoacher/cogs/cogs'
+import Title from '@modernpoacher/cogs/components/title/password'
+import Description from '@modernpoacher/cogs/components/description/password'
+import ErrorMessage from '@modernpoacher/cogs/components/error-message/password'
+import Field from '@modernpoacher/cogs/components/field/password'
 
 export default class PasswordCog extends ValueCog {
   getClassName () {
