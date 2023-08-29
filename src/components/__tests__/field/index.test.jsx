@@ -30,31 +30,6 @@ describe('@modernpoacher/cogs/components/field', () => {
           })
         })
       })
-
-      describe('Instance', () => {
-        let instance
-
-        beforeEach(() => {
-          instance = (
-            renderer.create(component)
-              .getInstance()
-          )
-        })
-
-        describe('`getDOMNode`', () => {
-          it('is defined', () => {
-            return expect(instance.getDOMNode)
-              .toBeDefined()
-          })
-        })
-
-        describe('`setDOMNode`', () => {
-          it('is defined', () => {
-            return expect(instance.setDOMNode)
-              .toBeDefined()
-          })
-        })
-      })
     })
 
     describe('With additional props', () => {
@@ -75,66 +50,6 @@ describe('@modernpoacher/cogs/components/field', () => {
 
         return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
-      })
-    })
-
-    describe('`getDOMNode()`', () => {
-      it('returns the `domNode` field of the instance', () => {
-        const component = (
-          <Field name='MOCK NAME' />
-        )
-
-        const instance = (
-          renderer.create(component)
-            .getInstance()
-        )
-
-        const mockDOMNode = {}
-
-        instance.domNode = mockDOMNode
-
-        return expect(instance.getDOMNode())
-          .toBe(mockDOMNode)
-      })
-    })
-
-    describe('`setDOMNode()`', () => {
-      describe('With a parameter', () => {
-        it('sets the parameter to the instance as the field `domNode`', () => {
-          const component = (
-            <Field name='MOCK NAME' />
-          )
-
-          const instance = (
-            renderer.create(component)
-              .getInstance()
-          )
-
-          const mockDOMNode = {}
-
-          instance.setDOMNode(mockDOMNode)
-
-          return expect(instance.domNode)
-            .toBe(mockDOMNode)
-        })
-      })
-
-      describe('With any parameters', () => {
-        it('deletes the field `domNode` from the instance', () => {
-          const component = (
-            <Field name='MOCK NAME' />
-          )
-
-          const instance = (
-            renderer.create(component)
-              .getInstance()
-          )
-
-          instance.setDOMNode()
-
-          return expect(instance.domNode)
-            .toBeUndefined()
-        })
       })
     })
 
@@ -231,20 +146,6 @@ describe('@modernpoacher/cogs/components/field', () => {
       })
 
       describe('Prototype', () => {
-        describe('`getValue`', () => {
-          it('is defined', () => {
-            return expect(ValueField.prototype.getValue)
-              .toBeDefined()
-          })
-        })
-
-        describe('`setValue`', () => {
-          it('is defined', () => {
-            return expect(ValueField.prototype.setValue)
-              .toBeDefined()
-          })
-        })
-
         describe('`shouldComponentUpdate`', () => {
           it('is defined', () => {
             return expect(ValueField.prototype.shouldComponentUpdate)
@@ -298,50 +199,6 @@ describe('@modernpoacher/cogs/components/field', () => {
 
         return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
-      })
-    })
-
-    describe('`getValue()`', () => {
-      it('gets the domNode `value` attribute', () => {
-        const component = (
-          <ValueField name='MOCK NAME' />
-        )
-
-        const mockDOMNode = { value: 'MOCK GET VALUE' }
-
-        const instance = (
-          renderer.create(component)
-            .getInstance()
-        )
-
-        jest.spyOn(instance, 'getDOMNode').mockReturnValue(mockDOMNode)
-
-        const value = instance.getValue()
-
-        return expect(value)
-          .toBe('MOCK GET VALUE')
-      })
-    })
-
-    describe('`setValue()`', () => {
-      it('sets the domNode `value` attribute', () => {
-        const component = (
-          <ValueField name='MOCK NAME' />
-        )
-
-        const mockDOMNode = {}
-
-        const instance = (
-          renderer.create(component)
-            .getInstance()
-        )
-
-        jest.spyOn(instance, 'getDOMNode').mockReturnValue(mockDOMNode)
-
-        instance.setValue('MOCK SET VALUE')
-
-        return expect(mockDOMNode.value)
-          .toBe('MOCK SET VALUE')
       })
     })
 
@@ -424,20 +281,6 @@ describe('@modernpoacher/cogs/components/field', () => {
       })
 
       describe('Prototype', () => {
-        describe('`getValue`', () => {
-          it('is defined', () => {
-            return expect(CheckField.prototype.getValue)
-              .toBeDefined()
-          })
-        })
-
-        describe('`setValue`', () => {
-          it('is defined', () => {
-            return expect(CheckField.prototype.setValue)
-              .toBeDefined()
-          })
-        })
-
         describe('`shouldComponentUpdate`', () => {
           it('is defined', () => {
             return expect(CheckField.prototype.shouldComponentUpdate)
@@ -495,50 +338,6 @@ describe('@modernpoacher/cogs/components/field', () => {
 
         return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
-      })
-    })
-
-    describe('`getValue()`', () => {
-      it('gets the domNode `checked` attribute', () => {
-        const component = (
-          <CheckField name='MOCK NAME' />
-        )
-
-        const mockDOMNode = { checked: 'MOCK GET VALUE' }
-
-        const instance = (
-          renderer.create(component)
-            .getInstance()
-        )
-
-        jest.spyOn(instance, 'getDOMNode').mockReturnValue(mockDOMNode)
-
-        const checked = instance.getValue()
-
-        return expect(checked)
-          .toBe('MOCK GET VALUE')
-      })
-    })
-
-    describe('`setValue()`', () => {
-      it('sets the domNode `checked` attribute', () => {
-        const component = (
-          <CheckField name='MOCK NAME' />
-        )
-
-        const mockDOMNode = {}
-
-        const instance = (
-          renderer.create(component)
-            .getInstance()
-        )
-
-        jest.spyOn(instance, 'getDOMNode').mockReturnValue(mockDOMNode)
-
-        instance.setValue('MOCK SET VALUE')
-
-        return expect(mockDOMNode.checked)
-          .toBe('MOCK SET VALUE')
       })
     })
 

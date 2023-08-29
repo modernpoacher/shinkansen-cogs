@@ -21,7 +21,8 @@ export default class EmailField extends ValueField {
       readOnly,
       tabIndex,
       accessKey,
-      placeholder
+      placeholder,
+      fieldRef
     } = this.props
 
     const className = this.getClassName()
@@ -41,7 +42,7 @@ export default class EmailField extends ValueField {
         onChange={this.handleChange}
         className={className}
         type='email'
-        ref={this.setField}
+        ref={fieldRef}
       />
     )
   }

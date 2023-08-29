@@ -20,20 +20,6 @@ describe('@modernpoacher/cogs/components/title', () => {
           .toMatchSnapshot()
       })
 
-      describe('`hasTextContent`', () => {
-        it('is defined', () => {
-          return expect(Title.prototype.hasTextContent)
-            .toBeDefined()
-        })
-      })
-
-      describe('`getTextContent`', () => {
-        it('is defined', () => {
-          return expect(Title.prototype.getTextContent)
-            .toBeDefined()
-        })
-      })
-
       describe('`isRequired`', () => {
         it('is defined', () => {
           return expect(Title.prototype.isRequired)
@@ -65,13 +51,6 @@ describe('@modernpoacher/cogs/components/title', () => {
       describe('`shouldComponentUpdate`', () => {
         it('is defined', () => {
           return expect(Title.prototype.shouldComponentUpdate)
-            .toBeDefined()
-        })
-      })
-
-      describe('`renderTextContent`', () => {
-        it('is defined', () => {
-          return expect(Title.prototype.renderTextContent)
             .toBeDefined()
         })
       })
@@ -112,56 +91,6 @@ describe('@modernpoacher/cogs/components/title', () => {
 
         return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
-      })
-    })
-
-    describe('`hasTextContent()`', () => {
-      describe('With a `title` prop', () => {
-        it('returns true', () => {
-          const component = (
-            <Title id='MOCK ID' title='MOCK TITLE' />
-          )
-
-          const instance = (
-            renderer.create(component)
-              .getInstance()
-          )
-
-          return expect(instance.hasTextContent())
-            .toBe(true)
-        })
-      })
-
-      describe('Without a `title` prop', () => {
-        it('returns false', () => {
-          const component = (
-            <Title id='MOCK ID' />
-          )
-
-          const instance = (
-            renderer.create(component)
-              .getInstance()
-          )
-
-          return expect(instance.hasTextContent())
-            .toBe(false)
-        })
-      })
-    })
-
-    describe('`getTextContent()`', () => {
-      it('returns the `title` prop', () => {
-        const component = (
-          <Title id='MOCK ID' title='MOCK TITLE' />
-        )
-
-        const instance = (
-          renderer.create(component)
-            .getInstance()
-        )
-
-        return expect(instance.getTextContent())
-          .toBe('MOCK TITLE')
       })
     })
 

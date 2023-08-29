@@ -3,7 +3,9 @@
 exports[`@modernpoacher/cogs/components/title/textarea <Description /> With additional props renders 1`] = `
 <span
   className="MOCK CLASSNAME"
-/>
+>
+  MOCK DESCRIPTION
+</span>
 `;
 
 exports[`@modernpoacher/cogs/components/title/textarea <Description /> With required props renders 1`] = `null`;

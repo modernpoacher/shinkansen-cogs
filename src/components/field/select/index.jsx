@@ -22,7 +22,8 @@ export default class SelectField extends ValueField {
       readOnly,
       tabIndex,
       accessKey,
-      children
+      children,
+      fieldRef
     } = this.props
 
     const className = this.getClassName()
@@ -40,7 +41,7 @@ export default class SelectField extends ValueField {
         accessKey={accessKey}
         onChange={this.handleChange}
         className={className}
-        ref={this.setField}>
+        ref={fieldRef}>
         {children}
       </select>
     )

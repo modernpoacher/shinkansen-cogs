@@ -4,7 +4,9 @@ exports[`@modernpoacher/cogs/components/title/textarea <Title /> With additional
 <label
   className="MOCK CLASSNAME"
   htmlFor="MOCK ID"
-/>
+>
+  MOCK TITLE
+</label>
 `;
 
 exports[`@modernpoacher/cogs/components/title/textarea <Title /> With required props renders 1`] = `null`;

@@ -20,16 +20,6 @@ function onClick () {
 }
 
 export default class Cog extends Component {
-  getTitle = () => this.title
-  getDescription = () => this.description
-  getErrorMessage = () => this.errorMessage
-  getField = () => this.input
-
-  setTitle = (title) => !!(this.title = title) || delete this.title
-  setDescription = (description) => !!(this.description = description) || delete this.description
-  setErrorMessage = (errorMessage) => !!(this.errorMessage = errorMessage) || delete this.errorMessage
-  setField = (input) => !!(this.input = input) || delete this.input
-
   getClassName () {
     const {
       required,
@@ -84,7 +74,6 @@ export default class Cog extends Component {
         required={required}
         disabled={disabled}
         readOnly={readOnly}
-        ref={this.setTitle}
       />
     )
   }
@@ -97,7 +86,6 @@ export default class Cog extends Component {
     return (
       <Description
         description={description}
-        ref={this.setDescription}
       />
     )
   }
@@ -110,7 +98,6 @@ export default class Cog extends Component {
     return (
       <ErrorMessage
         errorMessage={errorMessage}
-        ref={this.setErrorMessage}
       />
     )
   }
@@ -126,7 +113,8 @@ export default class Cog extends Component {
       tabIndex,
       accessKey,
       placeholder,
-      onChange
+      onChange,
+      fieldRef
     } = this.props
 
     return (
@@ -140,7 +128,7 @@ export default class Cog extends Component {
         accessKey={accessKey}
         placeholder={placeholder}
         onChange={onChange}
-        ref={this.setField}
+        fieldRef={fieldRef}
       />
     )
   }
@@ -169,7 +157,10 @@ Cog.propTypes = {
   disabled: PropTypes.bool,
   readOnly: PropTypes.bool,
   placeholder: PropTypes.string,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
+  fieldRef: PropTypes.shape({
+    current: PropTypes.shape().isRequired
+  })
 }
 
 Cog.defaultProps = {

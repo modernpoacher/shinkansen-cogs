@@ -41,7 +41,6 @@ export default class EmailCog extends ValueCog {
         required={required}
         disabled={disabled}
         readOnly={readOnly}
-        ref={this.setTitle}
       />
     )
   }
@@ -54,7 +53,6 @@ export default class EmailCog extends ValueCog {
     return (
       <Description
         description={description}
-        ref={this.setDescription}
       />
     )
   }
@@ -67,7 +65,6 @@ export default class EmailCog extends ValueCog {
     return (
       <ErrorMessage
         errorMessage={errorMessage}
-        ref={this.setErrorMessage}
       />
     )
   }
@@ -84,7 +81,8 @@ export default class EmailCog extends ValueCog {
       readOnly,
       tabIndex,
       accessKey,
-      placeholder
+      placeholder,
+      fieldRef
     } = this.props
 
     return (
@@ -100,7 +98,7 @@ export default class EmailCog extends ValueCog {
         accessKey={accessKey}
         placeholder={placeholder}
         onChange={this.handleChange}
-        ref={this.setField}
+        fieldRef={fieldRef}
       />
     )
   }

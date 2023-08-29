@@ -22,7 +22,8 @@ export default class NumberField extends ValueField {
       readOnly,
       tabIndex,
       accessKey,
-      placeholder
+      placeholder,
+      fieldRef
     } = this.props
 
     const className = this.getClassName()
@@ -42,7 +43,7 @@ export default class NumberField extends ValueField {
         onChange={this.handleChange}
         className={className}
         type='number'
-        ref={this.setField}
+        ref={fieldRef}
       />
     )
   }

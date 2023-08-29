@@ -58,7 +58,6 @@ export default class Radio extends CheckCog {
         required={required}
         disabled={disabled}
         readOnly={readOnly}
-        ref={this.setTitle}
       />
     )
   }
@@ -71,7 +70,6 @@ export default class Radio extends CheckCog {
     return (
       <Description
         description={description}
-        ref={this.setDescription}
       />
     )
   }
@@ -84,7 +82,6 @@ export default class Radio extends CheckCog {
     return (
       <ErrorMessage
         errorMessage={errorMessage}
-        ref={this.setErrorMessage}
       />
     )
   }
@@ -102,7 +99,8 @@ export default class Radio extends CheckCog {
       readOnly,
       tabIndex,
       accessKey,
-      placeholder
+      placeholder,
+      fieldRef
     } = this.props
 
     return (
@@ -120,7 +118,7 @@ export default class Radio extends CheckCog {
         placeholder={placeholder}
         onClick={this.handleClick}
         onChange={this.handleChange}
-        ref={this.setField}
+        fieldRef={fieldRef}
       />
     )
   }

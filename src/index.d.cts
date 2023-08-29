@@ -47,7 +47,8 @@ declare module '@modernpoacher/cogs/cogs' {
     disabled: boolean,
     readOnly: boolean,
     placeholder: string,
-    onChange: CogsTypes.OnChangeType
+    onChange: CogsTypes.OnChangeType,
+    fieldRef: object
   }
 
   export default class Cog extends React.Component<CogProps> {}
@@ -255,7 +256,8 @@ declare module '@modernpoacher/cogs/components/field' {
     tabIndex: number,
     accessKey: string,
     placeholder: string,
-    onChange: CogsTypes.OnChangeType
+    onChange: CogsTypes.OnChangeType,
+    fieldRef: object
   }
 
   export default class Field extends React.Component<FieldProps> {}

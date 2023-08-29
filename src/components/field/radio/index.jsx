@@ -34,7 +34,8 @@ export default class RadioField extends CheckField {
       disabled,
       readOnly,
       tabIndex,
-      accessKey
+      accessKey,
+      fieldRef
     } = this.props
 
     const className = this.getClassName()
@@ -55,7 +56,7 @@ export default class RadioField extends CheckField {
         onChange={this.handleChange}
         className={className}
         type='radio'
-        ref={this.setDOMNode}
+        ref={fieldRef}
       />
     )
   }

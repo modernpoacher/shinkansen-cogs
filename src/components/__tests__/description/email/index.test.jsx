@@ -13,15 +13,13 @@ jest.mock('@modernpoacher/cogs/components/title', () => ({
   default: class MockDescription extends mockComponent {
     getClassName () { }
 
-    renderTextContent () {}
-
     render () {
       const { description } = this.props
 
       if (description) {
         return (
           <span className={this.getClassName()}>
-            {this.renderTextContent()}
+            {description}
           </span>
         )
       }

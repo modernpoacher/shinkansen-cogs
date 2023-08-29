@@ -21,7 +21,8 @@ export default class TextareaField extends ValueField {
       readOnly,
       tabIndex,
       accessKey,
-      placeholder
+      placeholder,
+      fieldRef
     } = this.props
 
     const className = this.getClassName()
@@ -40,7 +41,7 @@ export default class TextareaField extends ValueField {
         placeholder={placeholder}
         onChange={this.handleChange}
         className={className}
-        ref={this.setField}
+        ref={fieldRef}
       />
     )
   }

@@ -41,7 +41,6 @@ export default class SelectCog extends ValueCog {
         required={required}
         disabled={disabled}
         readOnly={readOnly}
-        ref={this.setTitle}
       />
     )
   }
@@ -54,7 +53,6 @@ export default class SelectCog extends ValueCog {
     return (
       <Description
         description={description}
-        ref={this.setDescription}
       />
     )
   }
@@ -67,7 +65,6 @@ export default class SelectCog extends ValueCog {
     return (
       <ErrorMessage
         errorMessage={errorMessage}
-        ref={this.setErrorMessage}
       />
     )
   }
@@ -85,6 +82,7 @@ export default class SelectCog extends ValueCog {
       tabIndex,
       accessKey,
       placeholder,
+      fieldRef,
       children
     } = this.props
 
@@ -101,7 +99,7 @@ export default class SelectCog extends ValueCog {
         accessKey={accessKey}
         placeholder={placeholder}
         onChange={this.handleChange}
-        ref={this.setField}>
+        fieldRef={fieldRef}>
         {children}
       </Field>
     )

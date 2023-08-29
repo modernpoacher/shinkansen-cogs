@@ -13,8 +13,6 @@ jest.mock('@modernpoacher/cogs/components/title', () => ({
   default: class MockTitle extends mockComponent {
     getClassName () { }
 
-    renderTextContent () { }
-
     render () {
       const { title } = this.props
 
@@ -23,7 +21,7 @@ jest.mock('@modernpoacher/cogs/components/title', () => ({
 
         return (
           <label htmlFor={id} className={this.getClassName()}>
-            {this.renderTextContent()}
+            {title}
           </label>
         )
       }
