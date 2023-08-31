@@ -2,6 +2,7 @@
  * SelectCog component
  */
 import React from 'react'
+import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 import { ValueCog } from '@modernpoacher/cogs/cogs'
@@ -11,6 +12,13 @@ import ErrorMessage from '@modernpoacher/cogs/components/error-message/select'
 import Field from '@modernpoacher/cogs/components/field/select'
 
 export default class SelectCog extends ValueCog {
+  shouldComponentUpdate (props) {
+    return (
+      super.shouldComponentUpdate(props) ||
+      (props.children !== this.props.children)
+    )
+  }
+
   getClassName () {
     return classnames(super.getClassName(), 'select')
   }
@@ -107,7 +115,13 @@ export default class SelectCog extends ValueCog {
 }
 
 SelectCog.propTypes = {
-  ...ValueCog.propTypes
+  ...ValueCog.propTypes,
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(
+      PropTypes.node
+    )
+  ])
 }
 
 SelectCog.defaultProps = {
