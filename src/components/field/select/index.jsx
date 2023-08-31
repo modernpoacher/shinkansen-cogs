@@ -7,6 +7,13 @@ import classnames from 'classnames'
 import { ValueField } from '@modernpoacher/cogs/components/field'
 
 export default class SelectField extends ValueField {
+  shouldComponentUpdate (props) {
+    return (
+      super.shouldComponentUpdate(props) ||
+      (props.children !== this.props.children)
+    )
+  }
+
   getClassName () {
     return classnames(super.getClassName(), 'select')
   }
