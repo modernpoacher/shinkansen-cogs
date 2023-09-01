@@ -25,11 +25,10 @@ export default class SelectCog extends ValueCog {
 
   handleChange = (value) => {
     const {
-      onChange,
-      name
+      onChange
     } = this.props
 
-    onChange(name, value)
+    onChange(value)
   }
 
   renderTitle () {

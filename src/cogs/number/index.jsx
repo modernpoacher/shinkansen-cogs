@@ -18,11 +18,10 @@ export default class NumberCog extends ValueCog {
 
   handleChange = (value) => {
     const {
-      onChange,
-      name
+      onChange
     } = this.props
 
-    onChange(name, value)
+    onChange(value)
   }
 
   renderTitle () {
