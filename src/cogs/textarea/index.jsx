@@ -5,10 +5,10 @@ import React from 'react'
 import classnames from 'classnames'
 
 import { ValueCog } from '@modernpoacher/cogs/cogs'
-import Title from '@modernpoacher/cogs/components/title/textarea'
-import Description from '@modernpoacher/cogs/components/description/textarea'
-import ErrorMessage from '@modernpoacher/cogs/components/error-message/textarea'
-import Field from '@modernpoacher/cogs/components/field/textarea'
+import Title from './title/index.jsx'
+import Description from './description/index.jsx'
+import ErrorMessage from './error-message/index.jsx'
+import Field from './field/index.jsx'
 
 export default class TextareaCog extends ValueCog {
   getClassName () {

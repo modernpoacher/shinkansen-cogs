@@ -3,13 +3,13 @@ import renderer from 'react-test-renderer'
 
 import classnames from 'classnames'
 
-import Title from '@modernpoacher/cogs/components/title/checkbox'
-import Description from '@modernpoacher/cogs/components/description/checkbox'
-import ErrorMessage from '@modernpoacher/cogs/components/error-message/checkbox'
-import Field from '@modernpoacher/cogs/components/field/checkbox'
-
 import { CheckCog } from '@modernpoacher/cogs/cogs'
 import Cog from '@modernpoacher/cogs/cogs/checkbox'
+
+import Title from '../title/index.jsx'
+import Description from '../description/index.jsx'
+import ErrorMessage from '../error-message/index.jsx'
+import Field from '../field/index.jsx'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
@@ -50,10 +50,10 @@ jest.mock('@modernpoacher/cogs/cogs', () => {
   }
 })
 
-jest.mock('@modernpoacher/cogs/components/title/checkbox')
-jest.mock('@modernpoacher/cogs/components/description/checkbox')
-jest.mock('@modernpoacher/cogs/components/error-message/checkbox')
-jest.mock('@modernpoacher/cogs/components/field/checkbox')
+jest.mock('../title/index.jsx')
+jest.mock('../description/index.jsx')
+jest.mock('../error-message/index.jsx')
+jest.mock('../field/index.jsx')
 
 class MockErrorMessage extends mockComponent {
   state = {}

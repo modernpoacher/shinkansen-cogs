@@ -6,10 +6,10 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 import { ValueCog } from '@modernpoacher/cogs/cogs'
-import Title from '@modernpoacher/cogs/components/title/number'
-import Description from '@modernpoacher/cogs/components/description/number'
-import ErrorMessage from '@modernpoacher/cogs/components/error-message/number'
-import Field from '@modernpoacher/cogs/components/field/number'
+import Title from './title/index.jsx'
+import Description from './description/index.jsx'
+import ErrorMessage from './error-message/index.jsx'
+import Field from './field/index.jsx'
 
 export default class NumberCog extends ValueCog {
   getClassName () {

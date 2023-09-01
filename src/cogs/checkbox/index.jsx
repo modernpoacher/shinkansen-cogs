@@ -5,10 +5,10 @@ import React from 'react'
 import classnames from 'classnames'
 
 import { CheckCog } from '@modernpoacher/cogs/cogs'
-import Title from '@modernpoacher/cogs/components/title/checkbox'
-import Description from '@modernpoacher/cogs/components/description/checkbox'
-import ErrorMessage from '@modernpoacher/cogs/components/error-message/checkbox'
-import Field from '@modernpoacher/cogs/components/field/checkbox'
+import Title from './title/index.jsx'
+import Description from './description/index.jsx'
+import ErrorMessage from './error-message/index.jsx'
+import Field from './field/index.jsx'
 
 export default class CheckboxCog extends CheckCog {
   getClassName () {

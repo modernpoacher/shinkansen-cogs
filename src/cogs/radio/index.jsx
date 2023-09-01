@@ -6,10 +6,10 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 import { CheckCog } from '@modernpoacher/cogs/cogs'
-import Title from '@modernpoacher/cogs/components/title/radio'
-import Description from '@modernpoacher/cogs/components/description/radio'
-import ErrorMessage from '@modernpoacher/cogs/components/error-message/radio'
-import Field from '@modernpoacher/cogs/components/field/radio'
+import Title from './title/index.jsx'
+import Description from './description/index.jsx'
+import ErrorMessage from './error-message/index.jsx'
+import Field from './field/index.jsx'
 
 export default class Radio extends CheckCog {
   getClassName () {

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@modernpoacher/cogs/cogs/select/field <Field /> With additional props renders 1`] = `
+<select
+  className="MOCK CLASSNAME"
+  disabled={true}
+  id="MOCK ID"
+  name="MOCK NAME"
+  readOnly={true}
+  required={true}
+/>
+`;
+
+exports[`@modernpoacher/cogs/cogs/select/field <Field /> With required props renders 1`] = `
+<select
+  className="MOCK CLASSNAME"
+  name="MOCK NAME"
+/>
+`;

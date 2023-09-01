@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@modernpoacher/cogs/cogs/radio/field <Field /> With additional props renders 1`] = `
+<input
+  className="MOCK CLASSNAME"
+  disabled={true}
+  id="MOCK ID"
+  name="MOCK NAME"
+  onChange={[Function]}
+  onClick={[Function]}
+  readOnly={true}
+  required={true}
+  type="radio"
+  value="MOCK VALUE"
+/>
+`;
+
+exports[`@modernpoacher/cogs/cogs/radio/field <Field /> With required props renders 1`] = `
+<input
+  className="MOCK CLASSNAME"
+  id="MOCK ID"
+  name="MOCK NAME"
+  onChange={[Function]}
+  onClick={[Function]}
+  type="radio"
+  value="MOCK VALUE"
+/>
+`;

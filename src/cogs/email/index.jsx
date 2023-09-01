@@ -5,10 +5,10 @@ import React from 'react'
 import classnames from 'classnames'
 
 import { ValueCog } from '@modernpoacher/cogs/cogs'
-import Title from '@modernpoacher/cogs/components/title/email'
-import Description from '@modernpoacher/cogs/components/description/email'
-import ErrorMessage from '@modernpoacher/cogs/components/error-message/email'
-import Field from '@modernpoacher/cogs/components/field/email'
+import Title from './title/index.jsx'
+import Description from './description/index.jsx'
+import ErrorMessage from './error-message/index.jsx'
+import Field from './field/index.jsx'
 
 export default class EmailCog extends ValueCog {
   getClassName () {

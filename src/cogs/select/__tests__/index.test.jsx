@@ -3,10 +3,10 @@ import renderer from 'react-test-renderer'
 
 import classnames from 'classnames'
 
-import Title from '@modernpoacher/cogs/components/title/select'
-import Description from '@modernpoacher/cogs/components/description/select'
-import ErrorMessage from '@modernpoacher/cogs/components/error-message/select'
-import Field from '@modernpoacher/cogs/components/field/select'
+import Title from '../title/index.jsx'
+import Description from '../description/index.jsx'
+import ErrorMessage from '../error-message/index.jsx'
+import Field from '../field/index.jsx'
 
 import { ValueCog } from '@modernpoacher/cogs/cogs'
 import Cog from '@modernpoacher/cogs/cogs/select'
@@ -49,10 +49,10 @@ jest.mock('@modernpoacher/cogs/cogs', () => {
   }
 })
 
-jest.mock('@modernpoacher/cogs/components/title/select')
-jest.mock('@modernpoacher/cogs/components/description/select')
-jest.mock('@modernpoacher/cogs/components/error-message/select')
-jest.mock('@modernpoacher/cogs/components/field/select')
+jest.mock('../title/index.jsx')
+jest.mock('../description/index.jsx')
+jest.mock('../error-message/index.jsx')
+jest.mock('../field/index.jsx')
 
 class MockErrorMessage extends mockComponent {
   state = {}
