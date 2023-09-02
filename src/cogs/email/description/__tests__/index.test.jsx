@@ -1,6 +1,5 @@
 import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
-
 import classnames from 'classnames'
 
 import Super from '@modernpoacher/cogs/components/description'
@@ -8,7 +7,7 @@ import Description from '../index.jsx'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('@modernpoacher/cogs/components/description', () => ({
+jest.mock('@modernpoacher/cogs/cogs/email/description', () => ({
   __esModule: true,
   default: class MockDescription extends mockComponent {
     getClassName () { }

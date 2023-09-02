@@ -3,6 +3,7 @@
  */
 import React from 'react'
 import classnames from 'classnames'
+
 import { CheckField } from '@modernpoacher/cogs/components/field'
 
 export default class CheckboxField extends CheckField {

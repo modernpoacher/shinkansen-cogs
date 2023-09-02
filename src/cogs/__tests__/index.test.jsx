@@ -1,6 +1,5 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-
 import classnames from 'classnames'
 
 import Title from '@modernpoacher/cogs/components/title'

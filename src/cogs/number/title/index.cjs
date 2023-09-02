@@ -6,7 +6,7 @@ require('@babel/register')({
 
 const debug = require('debug')
 
-const log = debug('@modernpoacher/cogs/components/title/number')
+const log = debug('@modernpoacher/cogs/cogs/number/title')
 
 log('`cogs` is awake')
 

@@ -1,15 +1,14 @@
 import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
-
 import classnames from 'classnames'
+
+import { CheckCog } from '@modernpoacher/cogs/cogs'
+import Cog from '@modernpoacher/cogs/cogs/radio'
 
 import Title from '../title/index.jsx'
 import Description from '../description/index.jsx'
 import ErrorMessage from '../error-message/index.jsx'
 import Field from '../field/index.jsx'
-
-import { CheckCog } from '@modernpoacher/cogs/cogs'
-import Cog from '@modernpoacher/cogs/cogs/radio'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 

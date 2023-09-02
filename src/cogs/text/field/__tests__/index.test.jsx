@@ -1,6 +1,5 @@
 import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
-
 import classnames from 'classnames'
 
 import { ValueField } from '@modernpoacher/cogs/components/field'

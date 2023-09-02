@@ -4,6 +4,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
+
 import { ValueField } from '@modernpoacher/cogs/components/field'
 
 export default class NumberField extends ValueField {

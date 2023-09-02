@@ -4,7 +4,11 @@ exports[`@modernpoacher/cogs/cogs/email/description <Description /> With additio
 <span
   className="MOCK CLASSNAME"
 >
-  MOCK DESCRIPTION
+  <span
+    className="text-content"
+  >
+    MOCK DESCRIPTION
+  </span>
 </span>
 `;
 

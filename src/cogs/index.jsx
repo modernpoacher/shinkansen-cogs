@@ -3,8 +3,7 @@
  */
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-
-import classNames from 'classnames'
+import classnames from 'classnames'
 
 import Title from '@modernpoacher/cogs/components/title'
 import Description from '@modernpoacher/cogs/components/description'
@@ -28,7 +27,7 @@ export default class Cog extends Component {
       errorMessage
     } = this.props
 
-    return classNames('cog', { required, disabled, readOnly, error: !!errorMessage })
+    return classnames('cog', { required, disabled, readOnly, error: !!errorMessage })
   }
 
   getId () {

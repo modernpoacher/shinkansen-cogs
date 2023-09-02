@@ -1,14 +1,9 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import Description from '@modernpoacher/cogs/components/title'
+import Description from '@modernpoacher/cogs/components/description'
 
-jest.mock('@modernpoacher/cogs/components/common/text-content', () => () => 'MOCK TEXT CONTENT')
-jest.mock('@modernpoacher/cogs/components/common/required', () => () => 'MOCK REQUIRED')
-jest.mock('@modernpoacher/cogs/components/common/disabled', () => () => 'MOCK DISABLED')
-jest.mock('@modernpoacher/cogs/components/common/readonly', () => () => 'MOCK READONLY')
-
-describe('@modernpoacher/cogs/components/title', () => {
+describe('@modernpoacher/cogs/components/description', () => {
   describe('<Description />', () => {
     describe('With required props', () => {
       const component = (
@@ -18,27 +13,6 @@ describe('@modernpoacher/cogs/components/title', () => {
       it('renders', () => {
         return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
-      })
-
-      describe('`isRequired`', () => {
-        it('is defined', () => {
-          return expect(Description.prototype.isRequired)
-            .toBeDefined()
-        })
-      })
-
-      describe('`isDisabled`', () => {
-        it('is defined', () => {
-          return expect(Description.prototype.isDisabled)
-            .toBeDefined()
-        })
-      })
-
-      describe('`isReadOnly`', () => {
-        it('is defined', () => {
-          return expect(Description.prototype.isReadOnly)
-            .toBeDefined()
-        })
       })
 
       describe('`getClassName`', () => {
@@ -54,34 +28,12 @@ describe('@modernpoacher/cogs/components/title', () => {
             .toBeDefined()
         })
       })
-
-      describe('`renderIsRequired`', () => {
-        it('is defined', () => {
-          return expect(Description.prototype.renderIsRequired)
-            .toBeDefined()
-        })
-      })
-
-      describe('`renderIsDisabled`', () => {
-        it('is defined', () => {
-          return expect(Description.prototype.renderIsDisabled)
-            .toBeDefined()
-        })
-      })
-
-      describe('`renderIsReadOnly`', () => {
-        it('is defined', () => {
-          return expect(Description.prototype.renderIsReadOnly)
-            .toBeDefined()
-        })
-      })
     })
 
     describe('With additional props', () => {
       it('renders', () => {
         const component = (
           <Description
-            id='MOCK ID'
             description='MOCK DESCRIPTION'
           />
         )
@@ -94,7 +46,7 @@ describe('@modernpoacher/cogs/components/title', () => {
     describe('`getClassName()`', () => {
       it('returns the classname', () => {
         const component = (
-          <Description id='MOCK ID' />
+          <Description />
         )
 
         const instance = (
@@ -103,18 +55,14 @@ describe('@modernpoacher/cogs/components/title', () => {
         )
 
         return expect(instance.getClassName())
-          .toBe('title')
+          .toBe('description')
       })
     })
 
     describe('`shouldComponentUpdate()`', () => {
       const component = (
         <Description
-          id='MOCK ID'
-          title='MOCK TITLE'
-          required
-          disabled
-          readOnly
+          description='MOCK DESCRIPTION'
         />
       )
 
@@ -130,11 +78,7 @@ describe('@modernpoacher/cogs/components/title', () => {
       describe('`props` have changed', () => {
         it('returns true', () => {
           return expect(instance.shouldComponentUpdate({
-            id: 'MOCK CHANGE ID',
-            title: 'MOCK CHANGE TITLE',
-            required: false,
-            disabled: false,
-            readOnly: false
+            description: 'MOCK CHANGE DESCRIPTION'
           }))
             .toBe(true)
         })
@@ -143,11 +87,7 @@ describe('@modernpoacher/cogs/components/title', () => {
       describe('`props` have not changed', () => {
         it('returns false', () => {
           return expect(instance.shouldComponentUpdate({ // instance.props
-            id: 'MOCK ID',
-            title: 'MOCK TITLE',
-            required: true,
-            disabled: true,
-            readOnly: true
+            description: 'MOCK DESCRIPTION'
           }))
             .toBe(false)
         })

@@ -1,6 +1,5 @@
 import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
-
 import classnames from 'classnames'
 
 import { CheckField } from '@modernpoacher/cogs/components/field'
@@ -8,7 +7,7 @@ import Field from '../index.jsx'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('@modernpoacher/cogs/components/field', () => {
+jest.mock('@modernpoacher/cogs/cogs/checkbox/field', () => {
   class MockField extends mockComponent {
     getClassName () { }
   }

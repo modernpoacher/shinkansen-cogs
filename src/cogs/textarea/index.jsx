@@ -5,6 +5,7 @@ import React from 'react'
 import classnames from 'classnames'
 
 import { ValueCog } from '@modernpoacher/cogs/cogs'
+
 import Title from './title/index.jsx'
 import Description from './description/index.jsx'
 import ErrorMessage from './error-message/index.jsx'

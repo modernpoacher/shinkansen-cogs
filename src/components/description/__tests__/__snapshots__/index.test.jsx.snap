@@ -1,5 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`@modernpoacher/cogs/components/title <Description /> With additional props renders 1`] = `null`;
+exports[`@modernpoacher/cogs/components/description <Description /> With additional props renders 1`] = `
+<span
+  className="description"
+>
+  <span
+    className="text-content"
+  >
+    MOCK DESCRIPTION
+  </span>
+</span>
+`;
 
-exports[`@modernpoacher/cogs/components/title <Description /> With required props renders 1`] = `null`;
+exports[`@modernpoacher/cogs/components/description <Description /> With required props renders 1`] = `null`;
