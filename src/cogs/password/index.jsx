@@ -5,10 +5,11 @@ import React from 'react'
 import classnames from 'classnames'
 
 import { ValueCog } from 'shinkansen-cogs/cogs'
-import Title from 'shinkansen-cogs/components/title/password'
-import Description from 'shinkansen-cogs/components/description/password'
-import ErrorMessage from 'shinkansen-cogs/components/error-message/password'
-import Field from 'shinkansen-cogs/components/field/password'
+
+import Title from './title/index.jsx'
+import Description from './description/index.jsx'
+import ErrorMessage from './error-message/index.jsx'
+import Field from './field/index.jsx'
 
 export default class PasswordCog extends ValueCog {
   getClassName () {
@@ -41,7 +42,6 @@ export default class PasswordCog extends ValueCog {
         required={required}
         disabled={disabled}
         readOnly={readOnly}
-        ref={this.setTitle}
       />
     )
   }
@@ -54,7 +54,6 @@ export default class PasswordCog extends ValueCog {
     return (
       <Description
         description={description}
-        ref={this.setDescription}
       />
     )
   }
@@ -67,7 +66,6 @@ export default class PasswordCog extends ValueCog {
     return (
       <ErrorMessage
         errorMessage={errorMessage}
-        ref={this.setErrorMessage}
       />
     )
   }
@@ -84,7 +82,8 @@ export default class PasswordCog extends ValueCog {
       readOnly,
       tabIndex,
       accessKey,
-      placeholder
+      placeholder,
+      fieldRef
     } = this.props
 
     return (
@@ -100,7 +99,7 @@ export default class PasswordCog extends ValueCog {
         accessKey={accessKey}
         placeholder={placeholder}
         onChange={this.handleChange}
-        ref={this.setField}
+        fieldRef={fieldRef}
       />
     )
   }

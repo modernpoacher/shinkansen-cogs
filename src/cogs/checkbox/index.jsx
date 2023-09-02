@@ -5,10 +5,11 @@ import React from 'react'
 import classnames from 'classnames'
 
 import { CheckCog } from 'shinkansen-cogs/cogs'
-import Title from 'shinkansen-cogs/components/title/checkbox'
-import Description from 'shinkansen-cogs/components/description/checkbox'
-import ErrorMessage from 'shinkansen-cogs/components/error-message/checkbox'
-import Field from 'shinkansen-cogs/components/field/checkbox'
+
+import Title from './title/index.jsx'
+import Description from './description/index.jsx'
+import ErrorMessage from './error-message/index.jsx'
+import Field from './field/index.jsx'
 
 export default class CheckboxCog extends CheckCog {
   getClassName () {
@@ -50,7 +51,6 @@ export default class CheckboxCog extends CheckCog {
         required={required}
         disabled={disabled}
         readOnly={readOnly}
-        ref={this.setTitle}
       />
     )
   }
@@ -63,7 +63,6 @@ export default class CheckboxCog extends CheckCog {
     return (
       <Description
         description={description}
-        ref={this.setDescription}
       />
     )
   }
@@ -76,7 +75,6 @@ export default class CheckboxCog extends CheckCog {
     return (
       <ErrorMessage
         errorMessage={errorMessage}
-        ref={this.setErrorMessage}
       />
     )
   }
@@ -93,7 +91,8 @@ export default class CheckboxCog extends CheckCog {
       readOnly,
       tabIndex,
       accessKey,
-      placeholder
+      placeholder,
+      fieldRef
     } = this.props
 
     return (
@@ -110,7 +109,7 @@ export default class CheckboxCog extends CheckCog {
         placeholder={placeholder}
         onClick={this.handleClick}
         onChange={this.handleChange}
-        ref={this.setField}
+        fieldRef={fieldRef}
       />
     )
   }

@@ -10,18 +10,6 @@ import Disabled from 'shinkansen-cogs/components/common/disabled'
 import ReadOnly from 'shinkansen-cogs/components/common/readonly'
 
 export default class Title extends Component {
-  hasTextContent () {
-    const { title } = this.props
-
-    return !!title
-  }
-
-  getTextContent () {
-    const { title } = this.props
-
-    return title
-  }
-
   isRequired () {
     const { required } = this.props
 
@@ -52,18 +40,6 @@ export default class Title extends Component {
       (props.disabled !== this.props.disabled) ||
       (props.readOnly !== this.props.readOnly)
     )
-  }
-
-  renderTextContent () {
-    if (this.hasTextContent()) {
-      const textContent = this.getTextContent()
-
-      return (
-        <TextContent textContent={textContent} />
-      )
-    }
-
-    return null
   }
 
   renderIsRequired () {
@@ -104,7 +80,7 @@ export default class Title extends Component {
 
       return (
         <label htmlFor={id} className={this.getClassName()}>
-          {this.renderTextContent()}
+          <TextContent textContent={title} />
         </label>
       )
     }

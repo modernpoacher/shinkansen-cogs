@@ -2,15 +2,24 @@
  * SelectCog component
  */
 import React from 'react'
+import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 import { ValueCog } from 'shinkansen-cogs/cogs'
-import Title from 'shinkansen-cogs/components/title/select'
-import Description from 'shinkansen-cogs/components/description/select'
-import ErrorMessage from 'shinkansen-cogs/components/error-message/select'
-import Field from 'shinkansen-cogs/components/field/select'
+
+import Title from './title/index.jsx'
+import Description from './description/index.jsx'
+import ErrorMessage from './error-message/index.jsx'
+import Field from './field/index.jsx'
 
 export default class SelectCog extends ValueCog {
+  shouldComponentUpdate (props) {
+    return (
+      super.shouldComponentUpdate(props) ||
+      (props.children !== this.props.children)
+    )
+  }
+
   getClassName () {
     return classnames(super.getClassName(), 'select')
   }
@@ -41,7 +50,6 @@ export default class SelectCog extends ValueCog {
         required={required}
         disabled={disabled}
         readOnly={readOnly}
-        ref={this.setTitle}
       />
     )
   }
@@ -54,7 +62,6 @@ export default class SelectCog extends ValueCog {
     return (
       <Description
         description={description}
-        ref={this.setDescription}
       />
     )
   }
@@ -67,7 +74,6 @@ export default class SelectCog extends ValueCog {
     return (
       <ErrorMessage
         errorMessage={errorMessage}
-        ref={this.setErrorMessage}
       />
     )
   }
@@ -85,6 +91,7 @@ export default class SelectCog extends ValueCog {
       tabIndex,
       accessKey,
       placeholder,
+      fieldRef,
       children
     } = this.props
 
@@ -101,7 +108,7 @@ export default class SelectCog extends ValueCog {
         accessKey={accessKey}
         placeholder={placeholder}
         onChange={this.handleChange}
-        ref={this.setField}>
+        fieldRef={fieldRef}>
         {children}
       </Field>
     )
@@ -109,7 +116,13 @@ export default class SelectCog extends ValueCog {
 }
 
 SelectCog.propTypes = {
-  ...ValueCog.propTypes
+  ...ValueCog.propTypes,
+  children: PropTypes.oneOfType([
+    PropTypes.node,
+    PropTypes.arrayOf(
+      PropTypes.node
+    )
+  ])
 }
 
 SelectCog.defaultProps = {

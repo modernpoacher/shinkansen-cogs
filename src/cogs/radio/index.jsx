@@ -6,10 +6,11 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 import { CheckCog } from 'shinkansen-cogs/cogs'
-import Title from 'shinkansen-cogs/components/title/radio'
-import Description from 'shinkansen-cogs/components/description/radio'
-import ErrorMessage from 'shinkansen-cogs/components/error-message/radio'
-import Field from 'shinkansen-cogs/components/field/radio'
+
+import Title from './title/index.jsx'
+import Description from './description/index.jsx'
+import ErrorMessage from './error-message/index.jsx'
+import Field from './field/index.jsx'
 
 export default class Radio extends CheckCog {
   getClassName () {
@@ -58,7 +59,6 @@ export default class Radio extends CheckCog {
         required={required}
         disabled={disabled}
         readOnly={readOnly}
-        ref={this.setTitle}
       />
     )
   }
@@ -71,7 +71,6 @@ export default class Radio extends CheckCog {
     return (
       <Description
         description={description}
-        ref={this.setDescription}
       />
     )
   }
@@ -84,7 +83,6 @@ export default class Radio extends CheckCog {
     return (
       <ErrorMessage
         errorMessage={errorMessage}
-        ref={this.setErrorMessage}
       />
     )
   }
@@ -102,7 +100,8 @@ export default class Radio extends CheckCog {
       readOnly,
       tabIndex,
       accessKey,
-      placeholder
+      placeholder,
+      fieldRef
     } = this.props
 
     return (
@@ -120,7 +119,7 @@ export default class Radio extends CheckCog {
         placeholder={placeholder}
         onClick={this.handleClick}
         onChange={this.handleChange}
-        ref={this.setField}
+        fieldRef={fieldRef}
       />
     )
   }

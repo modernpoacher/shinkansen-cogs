@@ -13,7 +13,15 @@
     "react"
   ],
   "rules": {
-    "react/display-name": 0
+    "react/display-name": 0,
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "jsx-quotes": [
+      "error",
+      "prefer-single"
+    ]
   },
   "overrides": [
     {

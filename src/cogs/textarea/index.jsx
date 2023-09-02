@@ -5,10 +5,11 @@ import React from 'react'
 import classnames from 'classnames'
 
 import { ValueCog } from 'shinkansen-cogs/cogs'
-import Title from 'shinkansen-cogs/components/title/textarea'
-import Description from 'shinkansen-cogs/components/description/textarea'
-import ErrorMessage from 'shinkansen-cogs/components/error-message/textarea'
-import Field from 'shinkansen-cogs/components/field/textarea'
+
+import Title from './title/index.jsx'
+import Description from './description/index.jsx'
+import ErrorMessage from './error-message/index.jsx'
+import Field from './field/index.jsx'
 
 export default class TextareaCog extends ValueCog {
   getClassName () {
@@ -41,7 +42,6 @@ export default class TextareaCog extends ValueCog {
         required={required}
         disabled={disabled}
         readOnly={readOnly}
-        ref={this.setTitle}
       />
     )
   }
@@ -54,7 +54,6 @@ export default class TextareaCog extends ValueCog {
     return (
       <Description
         description={description}
-        ref={this.setDescription}
       />
     )
   }
@@ -67,7 +66,6 @@ export default class TextareaCog extends ValueCog {
     return (
       <ErrorMessage
         errorMessage={errorMessage}
-        ref={this.setErrorMessage}
       />
     )
   }
@@ -84,7 +82,8 @@ export default class TextareaCog extends ValueCog {
       readOnly,
       tabIndex,
       accessKey,
-      placeholder
+      placeholder,
+      fieldRef
     } = this.props
 
     return (
@@ -100,7 +99,7 @@ export default class TextareaCog extends ValueCog {
         accessKey={accessKey}
         placeholder={placeholder}
         onChange={this.handleChange}
-        ref={this.setField}
+        fieldRef={fieldRef}
       />
     )
   }

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`shinkansen-cogs/cogs/password/field <Field /> With additional props renders 1`] = `
+<input
+  className="MOCK CLASSNAME"
+  disabled={true}
+  id="MOCK ID"
+  name="MOCK NAME"
+  readOnly={true}
+  required={true}
+  type="password"
+/>
+`;
+
+exports[`shinkansen-cogs/cogs/password/field <Field /> With required props renders 1`] = `
+<input
+  className="MOCK CLASSNAME"
+  name="MOCK NAME"
+  type="password"
+/>
+`;

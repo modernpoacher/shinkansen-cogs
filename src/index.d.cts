@@ -139,49 +139,49 @@ declare module 'shinkansen-cogs/components/description' {
   export default class Description extends React.Component<DescriptionProps> {}
 }
 
-declare module 'shinkansen-cogs/components/description/checkbox' {
+declare module 'shinkansen-cogs/cogs/checkbox/description' {
   import Description from 'shinkansen-cogs/components/description'
 
   export default class CheckboxDescription extends Description {}
 }
 
-declare module 'shinkansen-cogs/components/description/email' {
+declare module 'shinkansen-cogs/cogs/email/description' {
   import Description from 'shinkansen-cogs/components/description'
 
   export default class EmailDescription extends Description {}
 }
 
-declare module 'shinkansen-cogs/components/description/number' {
+declare module 'shinkansen-cogs/cogs/number/description' {
   import Description from 'shinkansen-cogs/components/description'
 
   export default class NumberDescription extends Description {}
 }
 
-declare module 'shinkansen-cogs/components/description/password' {
+declare module 'shinkansen-cogs/cogs/password/description' {
   import Description from 'shinkansen-cogs/components/description'
 
   export default class PasswordDescription extends Description {}
 }
 
-declare module 'shinkansen-cogs/components/description/radio' {
+declare module 'shinkansen-cogs/cogs/radio/description' {
   import Description from 'shinkansen-cogs/components/description'
 
   export default class RadioDescription extends Description {}
 }
 
-declare module 'shinkansen-cogs/components/description/select' {
+declare module 'shinkansen-cogs/cogs/select/description' {
   import Description from 'shinkansen-cogs/components/description'
 
   export default class SelectDescription extends Description {}
 }
 
-declare module 'shinkansen-cogs/components/description/text' {
+declare module 'shinkansen-cogs/cogs/text/description' {
   import Description from 'shinkansen-cogs/components/description'
 
   export default class TextDescription extends Description {}
 }
 
-declare module 'shinkansen-cogs/components/description/textarea' {
+declare module 'shinkansen-cogs/cogs/textarea/description' {
   import Description from 'shinkansen-cogs/components/description'
 
   export default class TextareaDescription extends Description {}
@@ -195,49 +195,49 @@ declare module 'shinkansen-cogs/components/error-message' {
   export default class ErrorMessage extends React.Component<ErrorMessageProps> {}
 }
 
-declare module 'shinkansen-cogs/components/error-message/checkbox' {
+declare module 'shinkansen-cogs/cogs/checkbox/error-message' {
   import ErrorMessage from 'shinkansen-cogs/components/error-message'
 
   export default class CheckboxErrorMessage extends ErrorMessage {}
 }
 
-declare module 'shinkansen-cogs/components/error-message/email' {
+declare module 'shinkansen-cogs/cogs/email/error-message' {
   import ErrorMessage from 'shinkansen-cogs/components/error-message'
 
   export default class EmailErrorMessage extends ErrorMessage {}
 }
 
-declare module 'shinkansen-cogs/components/error-message/number' {
+declare module 'shinkansen-cogs/cogs/number/error-message' {
   import ErrorMessage from 'shinkansen-cogs/components/error-message'
 
   export default class NumberErrorMessage extends ErrorMessage {}
 }
 
-declare module 'shinkansen-cogs/components/error-message/password' {
+declare module 'shinkansen-cogs/cogs/password/error-message' {
   import ErrorMessage from 'shinkansen-cogs/components/error-message'
 
   export default class PasswordErrorMessage extends ErrorMessage {}
 }
 
-declare module 'shinkansen-cogs/components/error-message/radio' {
+declare module 'shinkansen-cogs/cogs/radio/error-message' {
   import ErrorMessage from 'shinkansen-cogs/components/error-message'
 
   export default class RadioErrorMessage extends ErrorMessage {}
 }
 
-declare module 'shinkansen-cogs/components/error-message/select' {
+declare module 'shinkansen-cogs/cogs/select/error-message' {
   import ErrorMessage from 'shinkansen-cogs/components/error-message'
 
   export default class SelectErrorMessage extends ErrorMessage {}
 }
 
-declare module 'shinkansen-cogs/components/error-message/text' {
+declare module 'shinkansen-cogs/cogs/text/error-message' {
   import ErrorMessage from 'shinkansen-cogs/components/error-message'
 
   export default class TextErrorMessage extends ErrorMessage {}
 }
 
-declare module 'shinkansen-cogs/components/error-message/textarea' {
+declare module 'shinkansen-cogs/cogs/textarea/error-message' {
   import ErrorMessage from 'shinkansen-cogs/components/error-message'
 
   export default class TextareaErrorMessage extends ErrorMessage {}
@@ -261,49 +261,49 @@ declare module 'shinkansen-cogs/components/field' {
   export default class Field extends React.Component<FieldProps> {}
 }
 
-declare module 'shinkansen-cogs/components/field/checkbox' {
+declare module 'shinkansen-cogs/cogs/checkbox/field' {
   import Field from 'shinkansen-cogs/components/field'
 
   export default class CheckboxField extends Field {}
 }
 
-declare module 'shinkansen-cogs/components/field/email' {
+declare module 'shinkansen-cogs/cogs/email/field' {
   import Field from 'shinkansen-cogs/components/field'
 
   export default class EmailField extends Field {}
 }
 
-declare module 'shinkansen-cogs/components/field/number' {
+declare module 'shinkansen-cogs/cogs/number/field' {
   import Field from 'shinkansen-cogs/components/field'
 
   export default class NumberField extends Field {}
 }
 
-declare module 'shinkansen-cogs/components/field/password' {
+declare module 'shinkansen-cogs/cogs/password/field' {
   import Field from 'shinkansen-cogs/components/field'
 
   export default class PasswordField extends Field {}
 }
 
-declare module 'shinkansen-cogs/components/field/radio' {
+declare module 'shinkansen-cogs/cogs/radio/field' {
   import Field from 'shinkansen-cogs/components/field'
 
   export default class RadioField extends Field {}
 }
 
-declare module 'shinkansen-cogs/components/field/select' {
+declare module 'shinkansen-cogs/cogs/select/field' {
   import Field from 'shinkansen-cogs/components/field'
 
   export default class SelectField extends Field {}
 }
 
-declare module 'shinkansen-cogs/components/field/text' {
+declare module 'shinkansen-cogs/cogs/text/field' {
   import Field from 'shinkansen-cogs/components/field'
 
   export default class TextField extends Field {}
 }
 
-declare module 'shinkansen-cogs/components/field/textarea' {
+declare module 'shinkansen-cogs/cogs/textarea/field' {
   import Field from 'shinkansen-cogs/components/field'
 
   export default class TextareaField extends Field {}
@@ -324,49 +324,49 @@ declare module 'shinkansen-cogs/components/title' {
   export default class Title extends React.Component<TitleProps> {}
 }
 
-declare module 'shinkansen-cogs/components/title/checkbox' {
+declare module 'shinkansen-cogs/cogs/checkbox/title' {
   import Title from 'shinkansen-cogs/components/title'
 
   export default class CheckboxTitle extends Title {}
 }
 
-declare module 'shinkansen-cogs/components/title/email' {
+declare module 'shinkansen-cogs/cogs/email/title' {
   import Title from 'shinkansen-cogs/components/title'
 
   export default class EmailTitle extends Title {}
 }
 
-declare module 'shinkansen-cogs/components/title/number' {
+declare module 'shinkansen-cogs/cogs/number/title' {
   import Title from 'shinkansen-cogs/components/title'
 
   export default class NumberTitle extends Title {}
 }
 
-declare module 'shinkansen-cogs/components/title/password' {
+declare module 'shinkansen-cogs/cogs/password/title' {
   import Title from 'shinkansen-cogs/components/title'
 
   export default class PasswordTitle extends Title {}
 }
 
-declare module 'shinkansen-cogs/components/title/radio' {
+declare module 'shinkansen-cogs/cogs/radio/title' {
   import Title from 'shinkansen-cogs/components/title'
 
   export default class RadioTitle extends Title {}
 }
 
-declare module 'shinkansen-cogs/components/title/select' {
+declare module 'shinkansen-cogs/cogs/select/title' {
   import Title from 'shinkansen-cogs/components/title'
 
   export default class SelectTitle extends Title {}
 }
 
-declare module 'shinkansen-cogs/components/title/text' {
+declare module 'shinkansen-cogs/cogs/text/title' {
   import Title from 'shinkansen-cogs/components/title'
 
   export default class TextTitle extends Title {}
 }
 
-declare module 'shinkansen-cogs/components/title/textarea' {
+declare module 'shinkansen-cogs/cogs/textarea/title' {
   import Title from 'shinkansen-cogs/components/title'
 
   export default class TextareaTitle extends Title {}

@@ -13,9 +13,6 @@ function onClick () {
 }
 
 export default class Field extends Component {
-  getDOMNode = () => this.domNode
-  setDOMNode = (domNode) => !!(this.domNode = domNode) || delete this.domNode
-
   getClassName () {
     return 'input'
   }
@@ -41,7 +38,8 @@ export default class Field extends Component {
       readOnly,
       tabIndex,
       accessKey,
-      placeholder
+      placeholder,
+      fieldRef
     } = this.props
 
     return (
@@ -54,7 +52,7 @@ export default class Field extends Component {
         accessKey={accessKey}
         placeholder={placeholder}
         className={this.getClassName()}
-        ref={this.setDOMNode}
+        ref={fieldRef}
       />
     )
   }
@@ -69,7 +67,10 @@ Field.propTypes = {
   tabIndex: PropTypes.number,
   accessKey: PropTypes.string,
   placeholder: PropTypes.string,
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
+  fieldRef: PropTypes.shape({
+    current: PropTypes.shape().isRequired
+  })
 }
 
 Field.defaultProps = {
@@ -83,16 +84,6 @@ Field.defaultProps = {
  * ValueField component
  */
 export class ValueField extends Field {
-  getValue () {
-    return this.getDOMNode()
-      .value
-  }
-
-  setValue (value) {
-    this.getDOMNode()
-      .value = value
-  }
-
   shouldComponentUpdate (props) {
     return (
       super.shouldComponentUpdate(props) ||
@@ -121,16 +112,6 @@ ValueField.defaultProps = {
  * CheckField component
  */
 export class CheckField extends Field {
-  getValue () {
-    return this.getDOMNode()
-      .checked
-  }
-
-  setValue (checked) {
-    this.getDOMNode()
-      .checked = checked
-  }
-
   shouldComponentUpdate (props) {
     return (
       super.shouldComponentUpdate(props) ||

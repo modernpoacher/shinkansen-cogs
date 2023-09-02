@@ -6,7 +6,7 @@ require('@babel/register')({
 
 const debug = require('debug')
 
-const log = debug('shinkansen-cogs/cogs/textbox')
+const log = debug('shinkansen-cogs/cogs/checkbox')
 
 log('`shinkansen` is awake')
 

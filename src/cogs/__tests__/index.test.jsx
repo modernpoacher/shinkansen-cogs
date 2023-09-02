@@ -1,6 +1,5 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-
 import classnames from 'classnames'
 
 import Title from 'shinkansen-cogs/components/title'
@@ -69,45 +68,6 @@ describe('shinkansen-cogs/cogs', () => {
           })
         })
       })
-
-      describe('Instance', () => {
-        let instance
-
-        beforeEach(() => {
-          instance = (
-            renderer.create(component)
-              .getInstance()
-          )
-        })
-
-        describe('`getField`', () => {
-          it('is defined', () => {
-            return expect(instance.getField)
-              .toBeDefined()
-          })
-        })
-
-        describe('`getTitle`', () => {
-          it('is defined', () => {
-            return expect(instance.getTitle)
-              .toBeDefined()
-          })
-        })
-
-        describe('`setField`', () => {
-          it('is defined', () => {
-            return expect(instance.setField)
-              .toBeDefined()
-          })
-        })
-
-        describe('`setTitle`', () => {
-          it('is defined', () => {
-            return expect(instance.setTitle)
-              .toBeDefined()
-          })
-        })
-      })
     })
 
     describe('With additional props', () => {
@@ -129,126 +89,6 @@ describe('shinkansen-cogs/cogs', () => {
 
         return expect(renderer.create(component).toJSON())
           .toMatchSnapshot()
-      })
-    })
-
-    describe('`getField()`', () => {
-      it('returns the `input` field of the instance', () => {
-        const component = (
-          <Cog name='MOCK NAME' />
-        )
-
-        const instance = (
-          renderer.create(component)
-            .getInstance()
-        )
-
-        const mockField = {}
-
-        instance.input = mockField
-
-        return expect(instance.getField())
-          .toBe(mockField)
-      })
-    })
-
-    describe('`getTitle()`', () => {
-      it('returns the `title` field of the instance', () => {
-        const component = (
-          <Cog name='MOCK NAME' />
-        )
-
-        const instance = (
-          renderer.create(component)
-            .getInstance()
-        )
-
-        const mockTitle = {}
-
-        instance.title = mockTitle
-
-        return expect(instance.getTitle())
-          .toBe(mockTitle)
-      })
-    })
-
-    describe('`setField()`', () => {
-      describe('With a parameter', () => {
-        it('sets the parameter to the instance as the field `input`', () => {
-          const component = (
-            <Cog name='MOCK NAME' />
-          )
-
-          const instance = (
-            renderer.create(component)
-              .getInstance()
-          )
-
-          const mockField = {}
-
-          instance.setField(mockField)
-
-          return expect(instance.input)
-            .toBe(mockField)
-        })
-      })
-
-      describe('With any parameters', () => {
-        it('deletes the field `input` from the instance', () => {
-          const component = (
-            <Cog name='MOCK NAME' />
-          )
-
-          const instance = (
-            renderer.create(component)
-              .getInstance()
-          )
-
-          instance.setField()
-
-          return expect(instance.input)
-            .toBeUndefined()
-        })
-      })
-    })
-
-    describe('`setTitle()`', () => {
-      describe('With a parameter', () => {
-        it('sets the parameter to the instance as the field `title`', () => {
-          const component = (
-            <Cog name='MOCK NAME' />
-          )
-
-          const instance = (
-            renderer.create(component)
-              .getInstance()
-          )
-
-          const mockTitle = {}
-
-          instance.setTitle(mockTitle)
-
-          return expect(instance.title)
-            .toBe(mockTitle)
-        })
-      })
-
-      describe('Without any parameters', () => {
-        it('deletes the field `title` from the instance', () => {
-          const component = (
-            <Cog name='MOCK NAME' />
-          )
-
-          const instance = (
-            renderer.create(component)
-              .getInstance()
-          )
-
-          instance.setTitle()
-
-          return expect(instance.title)
-            .toBeUndefined()
-        })
       })
     })
 
