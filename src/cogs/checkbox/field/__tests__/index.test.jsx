@@ -7,9 +7,13 @@ import Field from '../index.jsx'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('@modernpoacher/cogs/cogs/checkbox/field', () => {
+jest.mock('@modernpoacher/cogs/components/field', () => {
   class MockField extends mockComponent {
     getClassName () { }
+
+    handleChange () { }
+
+    handleClick () { }
   }
 
   return {

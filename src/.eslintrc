@@ -21,6 +21,14 @@
     "jsx-quotes": [
       "error",
       "prefer-single"
+    ],
+    "react/jsx-indent": [
+      2,
+      2,
+      {
+        "checkAttributes": true,
+        "indentLogicalExpressions": true
+      }
     ]
   },
   "overrides": [

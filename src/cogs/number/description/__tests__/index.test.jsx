@@ -32,7 +32,7 @@ describe('@modernpoacher/cogs/cogs/number/description', () => {
   describe('<Description />', () => {
     describe('With required props', () => {
       const component = (
-        <Description id='MOCK ID' />
+        <Description />
       )
 
       it('renders', () => {
@@ -52,7 +52,6 @@ describe('@modernpoacher/cogs/cogs/number/description', () => {
       it('renders', () => {
         const component = (
           <Description
-            id='MOCK ID'
             description='MOCK DESCRIPTION'
           />
         )
@@ -69,7 +68,7 @@ describe('@modernpoacher/cogs/cogs/number/description', () => {
         jest.spyOn(Super.prototype, 'getClassName').mockReturnValue('MOCK GETCLASSNAME')
 
         const component = (
-          <Description id='MOCK ID' />
+          <Description />
         )
 
         const instance = (

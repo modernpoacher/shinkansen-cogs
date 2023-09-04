@@ -7,7 +7,7 @@ import Description from '../index.jsx'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('@modernpoacher/cogs/cogs/checkbox/description', () => ({
+jest.mock('@modernpoacher/cogs/components/description', () => ({
   __esModule: true,
   default: class MockDescription extends mockComponent {
     getClassName () { }
@@ -32,7 +32,7 @@ describe('@modernpoacher/cogs/cogs/checkbox/description', () => {
   describe('<Description />', () => {
     describe('With required props', () => {
       const component = (
-        <Description id='MOCK ID' />
+        <Description />
       )
 
       it('renders', () => {
@@ -52,7 +52,6 @@ describe('@modernpoacher/cogs/cogs/checkbox/description', () => {
       it('renders', () => {
         const component = (
           <Description
-            id='MOCK ID'
             description='MOCK DESCRIPTION'
           />
         )
@@ -69,7 +68,7 @@ describe('@modernpoacher/cogs/cogs/checkbox/description', () => {
         jest.spyOn(Super.prototype, 'getClassName').mockReturnValue('MOCK GETCLASSNAME')
 
         const component = (
-          <Description id='MOCK ID' />
+          <Description />
         )
 
         const instance = (
