@@ -23,7 +23,7 @@
       "prefer-single"
     ],
     "react/jsx-indent": [
-      2,
+      "error",
       2,
       {
         "checkAttributes": true,
