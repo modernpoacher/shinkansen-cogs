@@ -18,11 +18,13 @@ export default {
   }
 }
 
-export const Value = (args) => (
-  <PasswordState value='password'>
-    <PasswordCog {...args} />
-  </PasswordState>
-)
+export function Value (args) {
+  return (
+    <PasswordState value='password'>
+      <PasswordCog {...args} />
+    </PasswordState>
+  )
+}
 
 Value.args = {
   title: 'Title',
@@ -36,11 +38,13 @@ Value.args = {
   name: 'password'
 }
 
-export const DefaultValue = (args) => (
-  <PasswordState defaultValue='password'>
-    <PasswordCog {...args} />
-  </PasswordState>
-)
+export function DefaultValue (args) {
+  return (
+    <PasswordState defaultValue='password'>
+      <PasswordCog {...args} />
+    </PasswordState>
+  )
+}
 
 DefaultValue.args = {
   title: 'Title',
