@@ -20,9 +20,9 @@ export default {
 
 export function Value (args) {
   return (
-  <TextState value='Value'>
-    <TextCog {...args} />
-  </TextState>
+    <TextState value='Value'>
+      <TextCog {...args} />
+    </TextState>
   )
 }
 

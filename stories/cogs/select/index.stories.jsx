@@ -20,13 +20,13 @@ export default {
 
 export function Value (args) {
   return (
-  <SelectState value='one'>
-    <SelectCog {...args}>
-      <option value='one'>One</option>
-      <option value='two'>Two</option>
-      <option value='three'>Three</option>
-    </SelectCog>
-  </SelectState>
+    <SelectState value='one'>
+      <SelectCog {...args}>
+        <option value='one'>One</option>
+        <option value='two'>Two</option>
+        <option value='three'>Three</option>
+      </SelectCog>
+    </SelectState>
   )
 }
 

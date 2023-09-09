@@ -15,7 +15,23 @@
     "react"
   ],
   "rules": {
-    "react/display-name": 0
+    "react/display-name": "off",
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "jsx-quotes": [
+      "error",
+      "prefer-single"
+    ],
+    "react/jsx-indent": [
+      "error",
+      2,
+      {
+        "checkAttributes": true,
+        "indentLogicalExpressions": true
+      }
+    ]
   },
   "settings": {
     "react": {
