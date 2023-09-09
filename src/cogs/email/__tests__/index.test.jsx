@@ -63,7 +63,6 @@ class MockErrorMessage extends mockComponent {
 describe('@modernpoacher/cogs/cogs/email', () => {
   beforeAll(() => {
     ErrorMessage.mockImplementation(() => new MockErrorMessage())
-    // ErrorMessage.getDerivedStateFromProps.mockReturnValue({})
   })
 
   describe('<Cog />', () => {

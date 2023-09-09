@@ -7,7 +7,7 @@ describe('@modernpoacher/cogs/components/description', () => {
   describe('<Description />', () => {
     describe('With required props', () => {
       const component = (
-        <Description id='MOCK ID' />
+        <Description />
       )
 
       it('renders', () => {

@@ -68,10 +68,6 @@ describe('@modernpoacher/cogs/cogs/radio', () => {
      *  class defines `state` for instance
      */
     ErrorMessage.mockImplementation(() => new MockErrorMessage())
-    /*
-     *  function returns `state`
-     */
-    // ErrorMessage.getDerivedStateFromProps.mockReturnValue({})
   })
 
   describe('<Cog />', () => {
