@@ -29,11 +29,13 @@ export default {
   }
 }
 
-export const Checked = (args) => (
-  <CheckboxState checked>
-    <CheckboxCog {...args} />
-  </CheckboxState>
-)
+export function Checked (args) {
+  return (
+    <CheckboxState checked>
+      <CheckboxCog {...args} />
+    </CheckboxState>
+  )
+}
 
 Checked.args = {
   title: 'Title',
@@ -47,11 +49,13 @@ Checked.args = {
   name: 'checkbox'
 }
 
-export const DefaultChecked = (args) => (
-  <CheckboxState defaultChecked>
-    <CheckboxCog {...args} />
-  </CheckboxState>
-)
+export function DefaultChecked (args) {
+  return (
+    <CheckboxState defaultChecked>
+      <CheckboxCog {...args} />
+    </CheckboxState>
+  )
+}
 
 DefaultChecked.args = {
   title: 'Title',

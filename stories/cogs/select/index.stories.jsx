@@ -29,15 +29,17 @@ export default {
   }
 }
 
-export const Value = (args) => (
-  <SelectState value='one'>
-    <SelectCog {...args}>
-      <option value='one'>One</option>
-      <option value='two'>Two</option>
-      <option value='three'>Three</option>
-    </SelectCog>
-  </SelectState>
-)
+export function Value (args) {
+  return (
+    <SelectState value='one'>
+      <SelectCog {...args}>
+        <option value='one'>One</option>
+        <option value='two'>Two</option>
+        <option value='three'>Three</option>
+      </SelectCog>
+    </SelectState>
+  )
+}
 
 Value.args = {
   title: 'Title',
@@ -51,15 +53,17 @@ Value.args = {
   name: 'select'
 }
 
-export const DefaultValue = (args) => (
-  <SelectState defaultValue='one'>
-    <SelectCog {...args}>
-      <option value='one'>One</option>
-      <option value='two'>Two</option>
-      <option value='three'>Three</option>
-    </SelectCog>
-  </SelectState>
-)
+export function DefaultValue (args) {
+  return (
+    <SelectState defaultValue='one'>
+      <SelectCog {...args}>
+        <option value='one'>One</option>
+        <option value='two'>Two</option>
+        <option value='three'>Three</option>
+      </SelectCog>
+    </SelectState>
+  )
+}
 
 DefaultValue.args = {
   title: 'Title',

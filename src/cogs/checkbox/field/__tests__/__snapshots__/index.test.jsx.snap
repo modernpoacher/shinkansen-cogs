@@ -6,6 +6,8 @@ exports[`shinkansen-cogs/cogs/checkbox/field <Field /> With additional props ren
   disabled={true}
   id="MOCK ID"
   name="MOCK NAME"
+  onChange={[Function]}
+  onClick={[Function]}
   readOnly={true}
   required={true}
   type="checkbox"
@@ -16,6 +18,8 @@ exports[`shinkansen-cogs/cogs/checkbox/field <Field /> With required props rende
 <input
   className="MOCK CLASSNAME"
   name="MOCK NAME"
+  onChange={[Function]}
+  onClick={[Function]}
   type="checkbox"
 />
 `;

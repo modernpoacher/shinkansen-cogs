@@ -29,11 +29,13 @@ export default {
   }
 }
 
-export const Value = (args) => (
-  <RadioState value='value'>
-    <RadioCog {...args} id='radio' value='value' />
-  </RadioState>
-)
+export function Value (args) {
+  return (
+    <RadioState value='value'>
+      <RadioCog {...args} id='radio' value='value' />
+    </RadioState>
+  )
+}
 
 Value.args = {
   title: 'Title',
@@ -46,11 +48,13 @@ Value.args = {
   name: 'radio'
 }
 
-export const DefaultValue = (args) => (
-  <RadioState defaultValue='value'>
-    <RadioCog {...args} id='radio' value='value' />
-  </RadioState>
-)
+export function DefaultValue (args) {
+  return (
+    <RadioState defaultValue='value'>
+      <RadioCog {...args} id='radio' value='value' />
+    </RadioState>
+  )
+}
 
 DefaultValue.args = {
   title: 'Title',

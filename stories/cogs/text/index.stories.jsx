@@ -29,11 +29,13 @@ export default {
   }
 }
 
-export const Value = (args) => (
-  <TextState value='Value'>
-    <TextCog {...args} />
-  </TextState>
-)
+export function Value (args) {
+  return (
+    <TextState value='Value'>
+      <TextCog {...args} />
+    </TextState>
+  )
+}
 
 Value.args = {
   title: 'Title',
@@ -47,11 +49,13 @@ Value.args = {
   name: 'text'
 }
 
-export const DefaultValue = (args) => (
-  <TextState defaultValue='Default value'>
-    <TextCog {...args} />
-  </TextState>
-)
+export function DefaultValue (args) {
+  return (
+    <TextState defaultValue='Default value'>
+      <TextCog {...args} />
+    </TextState>
+  )
+}
 
 DefaultValue.args = {
   title: 'Title',

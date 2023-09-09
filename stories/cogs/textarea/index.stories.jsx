@@ -29,11 +29,13 @@ export default {
   }
 }
 
-export const Value = (args) => (
-  <TextareaState value='Value'>
-    <TextareaCog {...args} />
-  </TextareaState>
-)
+export function Value (args) {
+  return (
+    <TextareaState value='Value'>
+      <TextareaCog {...args} />
+    </TextareaState>
+  )
+}
 
 Value.args = {
   title: 'Title',
@@ -47,11 +49,13 @@ Value.args = {
   name: 'textarea'
 }
 
-export const DefaultValue = (args) => (
-  <TextareaState defaultValue='Default value'>
-    <TextareaCog {...args} />
-  </TextareaState>
-)
+export function DefaultValue (args) {
+  return (
+    <TextareaState defaultValue='Default value'>
+      <TextareaCog {...args} />
+    </TextareaState>
+  )
+}
 
 DefaultValue.args = {
   title: 'Title',
