@@ -1,5 +1,7 @@
 /**
  * Cog component
+ *
+ * @typedef {import('shinkansen-cogs/cogs').CogProps} CogProps
  */
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
@@ -39,6 +41,10 @@ export default class Cog extends Component {
     return id || name
   }
 
+  /**
+   * @param {CogProps} props
+   * @returns {boolean}
+   */
   shouldComponentUpdate (props) {
     return (
       (props.name !== this.props.name) ||
