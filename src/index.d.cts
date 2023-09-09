@@ -1,35 +1,16 @@
 declare namespace CogsTypes {
   export type OnChangeType = () => void
 
-  export type AnswerDefinitionType = {
-    answer: {
-      title: string
-      value: string | string[]
-    }
-    changeAnswer: {
-      text: string
-      href: string
-      visuallyHiddenText?: string
-    }
-  }
-
-  export type ErrorDefinitionType = {
-    type: string,
-    uri: string,
+  export interface ErrorDefinitionType {
+    type: string
+    uri: string
     params: {
       expectedType: string
     }
   }
 
-  export type ComponentsType = {}
-
-  export type FieldChangeType = {
-    text: string,
-    href: string
-  }
-
-  export type FieldErrorType = {
-    text: string,
+  export interface FieldErrorType {
+    text: string
     href: string
   }
 }
@@ -37,16 +18,16 @@ declare namespace CogsTypes {
 declare module 'shinkansen-cogs/cogs' {
   import React from 'react'
 
-  export type CogProps = {
-    id: string,
-    name: string,
-    title: string,
-    description: string,
-    errorMessage: CogsTypes.ErrorDefinitionType,
-    required: boolean,
-    disabled: boolean,
-    readOnly: boolean,
-    placeholder: string,
+  export interface CogProps {
+    id: string
+    name: string
+    title: string
+    description: string
+    errorMessage: CogsTypes.ErrorDefinitionType
+    required: boolean
+    disabled: boolean
+    readOnly: boolean
+    placeholder: string
     onChange: CogsTypes.OnChangeType
   }
 
@@ -102,37 +83,37 @@ declare module 'shinkansen-cogs/cogs/textarea' {
 }
 
 declare module 'shinkansen-cogs/components/common/disabled' {
-  import React from 'react'
+  import type React from 'react'
 
-  export default function Disabled(): React.JSX.Element
+  export default function Disabled (): React.JSX.Element
 }
 
 declare module 'shinkansen-cogs/components/common/readonly' {
-  import React from 'react'
+  import type React from 'react'
 
-  export default function ReadOnly(): React.JSX.Element
+  export default function ReadOnly (): React.JSX.Element
 }
 
 declare module 'shinkansen-cogs/components/common/required' {
-  import React from 'react'
+  import type React from 'react'
 
-  export default function Required(): React.JSX.Element
+  export default function Required (): React.JSX.Element
 }
 
 declare module 'shinkansen-cogs/components/common/text-content' {
-  import React from 'react'
+  import type React from 'react'
 
-  export type TextContentProps = {
+  export interface TextContentProps {
     textContent: string
   }
 
-  export default function TextContent(props: TextContentProps): React.JSX.Element
+  export default function TextContent (props: TextContentProps): React.JSX.Element
 }
 
 declare module 'shinkansen-cogs/components/description' {
   import React from 'react'
 
-  export type DescriptionProps = {
+  export interface DescriptionProps {
     description: string
   }
 
@@ -246,15 +227,15 @@ declare module 'shinkansen-cogs/cogs/textarea/error-message' {
 declare module 'shinkansen-cogs/components/field' {
   import React from 'react'
 
-  export type FieldProps = {
-    id: string,
-    name: string,
-    required: boolean,
-    disabled: boolean,
-    readOnly: boolean,
-    tabIndex: number,
-    accessKey: string,
-    placeholder: string,
+  export interface FieldProps {
+    id: string
+    name: string
+    required: boolean
+    disabled: boolean
+    readOnly: boolean
+    tabIndex: number
+    accessKey: string
+    placeholder: string
     onChange: CogsTypes.OnChangeType
   }
 
@@ -312,12 +293,12 @@ declare module 'shinkansen-cogs/cogs/textarea/field' {
 declare module 'shinkansen-cogs/components/title' {
   import React from 'react'
 
-  export type TitleProps = {
-    id: string,
-    title: string,
-    required: boolean,
-    disabled: boolean,
-    readOnly: boolean,
+  export interface TitleProps {
+    id: string
+    title: string
+    required: boolean
+    disabled: boolean
+    readOnly: boolean
     children: React.JSX.Element | React.JSX.Element[]
   }
 
