@@ -1,7 +1,11 @@
 import debug from 'debug'
 
 import path from 'node:path'
-import gulp from '@sequencemedia/gulp'
+
+import {
+  readFile,
+  writeFile
+} from 'node:fs/promises'
 
 import {
   currentDir,
@@ -9,14 +13,7 @@ import {
   targetPath
 } from '#build/paths'
 
-import handleWatchError from '#build/gulp/handle-watch-error'
-
-import {
-  readFile,
-  writeFile
-} from 'fs/promises'
-
-const log = debug('@modernpoacher/cogs/build/gulp/transform')
+const log = debug('@modernpoacher/cogs/build/transform')
 
 log('`cogs` is awake')
 
@@ -30,40 +27,19 @@ const CSS = /(<style.*>)[ -~"'+-:;,#%{}()/*\n\s\u200b\u2713\u2022]*(<\/style>)/g
 const SOURCE_PATH = path.relative(currentDir, sourcePath)
 const TARGET_PATH = path.relative(currentDir, targetPath)
 
-async function getCss (css = '') {
+async function getCss () {
+  log('getCss')
+
   const filePath = path.join(SOURCE_PATH, 'css/preview-head.css')
   const fileData = await readFile(filePath, 'utf8')
 
   return `$1\n${fileData.trim()}\n$2`.trim()
 }
 
-export async function transform () {
+export default async function transform () {
   log('transform')
 
   const htmlFilePath = path.join(TARGET_PATH, 'preview-head.html')
 
   return (await writeFile(htmlFilePath, (await readFile(htmlFilePath, 'utf8')).replace(CSS, await getCss()), 'utf8'))
 }
-
-export function transformClean () {
-  log('transformClean')
-
-  return Promise.resolve()
-}
-
-export function transformWatch () {
-  log('transformWatch')
-
-  return (
-    gulp.watch(
-      path.join(SOURCE_PATH, 'css/*.css'),
-      {
-        name: 'css-watch',
-        cwd: currentDir
-      },
-      transform
-    ).on('error', handleWatchError)
-  )
-}
-
-export default transform
