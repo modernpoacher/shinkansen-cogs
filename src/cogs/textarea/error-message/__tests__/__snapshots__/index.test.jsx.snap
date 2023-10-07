@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@modernpoacher/cogs/cogs/textarea/error-message <ErrorMessage /> With additional props renders 1`] = `
+<span
+  className="MOCK CLASSNAME"
+>
+  MOCK ERROR MESSAGE
+</span>
+`;
+
+exports[`@modernpoacher/cogs/cogs/textarea/error-message <ErrorMessage /> With required props renders 1`] = `null`;
