@@ -10,6 +10,8 @@ jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 jest.mock('@modernpoacher/cogs/components/field', () => {
   class MockField extends mockComponent {
     getClassName () { }
+
+    shouldComponentUpdate () { }
   }
 
   return {
@@ -83,6 +85,78 @@ describe('@modernpoacher/cogs/cogs/select/field', () => {
       it('returns the classname', () => {
         return expect(returnValue)
           .toBe('MOCK CLASSNAME')
+      })
+    })
+
+    describe('`shouldComponentUpdate()`', () => {
+      const component = (
+        <Field
+          name='MOCK NAME'
+          id='MOCK ID'
+          title='MOCK TITLE'
+          description='MOCK DESCRIPTION'
+          errorMessage='MOCK ERROR MESSAGE'
+          value='MOCK VALUE'
+          tabIndex={1}
+          accessKey='MOCK ACCESS KEY'
+          required
+          disabled
+          readOnly
+          placeholder='MOCK PLACEHOLDER'
+          onChange={jest.fn()}>
+          MOCK CHILDREN
+        </Field>
+      )
+
+      let instance
+
+      beforeEach(() => {
+        /**
+         *  Always return false (we're not testing conditions in `super.shouldComponentUpdate()`)
+         */
+        jest.spyOn(ValueField.prototype, 'shouldComponentUpdate').mockReturnValue(false)
+
+        instance = renderer.create(component).getInstance()
+      })
+
+      describe('`props` have changed', () => {
+        it('returns true', () => {
+          return expect(instance.shouldComponentUpdate({
+            name: 'MOCK CHANGE NAME',
+            id: 'MOCK CHANGE ID',
+            value: 'MOCK CHANGE VALUE',
+            title: 'MOCK CHANGE TITLE',
+            tabIndex: 0,
+            accessKey: 'MOCK CHANGE ACCESS KEY',
+            required: false,
+            disabled: false,
+            readOnly: false,
+            placeholder: 'MOCK CHANGE PLACEHOLDER',
+            children: 'MOCK CHANGE CHILDREN',
+            onChange: expect.any(Function)
+          }))
+            .toBe(true)
+        })
+      })
+
+      describe('`props` have not changed', () => {
+        it('returns false', () => {
+          return expect(instance.shouldComponentUpdate({ // instance.props
+            name: 'MOCK NAME',
+            id: 'MOCK ID',
+            value: 'MOCK VALUE',
+            title: 'MOCK TITLE',
+            tabIndex: 1,
+            accessKey: 'MOCK ACCESS KEY',
+            required: true,
+            disabled: true,
+            readOnly: true,
+            placeholder: 'MOCK PLACEHOLDER',
+            children: 'MOCK CHILDREN',
+            onChange: expect.any(Function)
+          }))
+            .toBe(false)
+        })
       })
     })
   })
