@@ -121,8 +121,9 @@ describe('@modernpoacher/cogs/components/title', () => {
           title='MOCK TITLE'
           required
           disabled
-          readOnly
-        />
+          readOnly>
+          MOCK CHILDREN
+        </Title>
       )
 
       let instance
@@ -141,7 +142,8 @@ describe('@modernpoacher/cogs/components/title', () => {
             title: 'MOCK CHANGE TITLE',
             required: false,
             disabled: false,
-            readOnly: false
+            readOnly: false,
+            children: 'MOCK CHANGE CHILDREN'
           }))
             .toBe(true)
         })
@@ -154,7 +156,8 @@ describe('@modernpoacher/cogs/components/title', () => {
             title: 'MOCK TITLE',
             required: true,
             disabled: true,
-            readOnly: true
+            readOnly: true,
+            children: 'MOCK CHILDREN'
           }))
             .toBe(false)
         })
