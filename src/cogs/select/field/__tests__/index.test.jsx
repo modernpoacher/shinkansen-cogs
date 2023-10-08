@@ -47,7 +47,6 @@ describe('shinkansen-cogs/cogs/select/field', () => {
           <Field
             id='MOCK ID'
             name='MOCK NAME'
-            title='MOCK TITLE'
             required
             disabled
             readOnly
@@ -94,9 +93,6 @@ describe('shinkansen-cogs/cogs/select/field', () => {
         <Field
           name='MOCK NAME'
           id='MOCK ID'
-          title='MOCK TITLE'
-          description='MOCK DESCRIPTION'
-          errorMessage='MOCK ERROR MESSAGE'
           value='MOCK VALUE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
@@ -127,7 +123,6 @@ describe('shinkansen-cogs/cogs/select/field', () => {
             name: 'MOCK CHANGE NAME',
             id: 'MOCK CHANGE ID',
             value: 'MOCK CHANGE VALUE',
-            title: 'MOCK CHANGE TITLE',
             tabIndex: 0,
             accessKey: 'MOCK CHANGE ACCESS KEY',
             required: false,
@@ -148,7 +143,6 @@ describe('shinkansen-cogs/cogs/select/field', () => {
             name: 'MOCK NAME',
             id: 'MOCK ID',
             value: 'MOCK VALUE',
-            title: 'MOCK TITLE',
             tabIndex: 1,
             accessKey: 'MOCK ACCESS KEY',
             required: true,

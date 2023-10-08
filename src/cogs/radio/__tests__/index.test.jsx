@@ -72,6 +72,12 @@ const MOCK_ERROR_MESSAGE = {
   uri: 'MOCK URI'
 }
 
+const MOCK_CHANGE_ERROR_MESSAGE = {
+  type: 'MOCK CHANGE TYPE',
+  params: {},
+  uri: 'MOCK CHANGE URI'
+}
+
 describe('shinkansen-cogs/cogs/radio', () => {
   beforeAll(() => {
     /*
@@ -224,6 +230,8 @@ describe('shinkansen-cogs/cogs/radio', () => {
             id: 'MOCK CHANGE ID',
             value: 'MOCK CHANGE VALUE',
             title: 'MOCK CHANGE TITLE',
+            description: 'MOCK CHANGE DESCRIPTION',
+            errorMessage: MOCK_CHANGE_ERROR_MESSAGE,
             tabIndex: 0,
             accessKey: 'MOCK CHANGE ACCESS KEY',
             required: false,
@@ -242,6 +250,8 @@ describe('shinkansen-cogs/cogs/radio', () => {
             id: 'MOCK ID',
             value: 'MOCK VALUE',
             title: 'MOCK TITLE',
+            description: 'MOCK DESCRIPTION',
+            errorMessage: MOCK_ERROR_MESSAGE,
             tabIndex: 1,
             accessKey: 'MOCK ACCESS KEY',
             required: true,
