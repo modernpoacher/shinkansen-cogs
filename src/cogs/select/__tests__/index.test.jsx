@@ -126,7 +126,7 @@ describe('@modernpoacher/cogs/cogs/select', () => {
             title='MOCK TITLE'
             description='MOCK DESCRIPTION'
             errorMessage='MOCK ERROR MESSAGE'
-            value='MOCK VALUE'
+            value={[]}
             tabIndex={1}
             accessKey='MOCK ACCESS KEY'
             required
@@ -180,6 +180,7 @@ describe('@modernpoacher/cogs/cogs/select', () => {
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
           errorMessage='MOCK ERROR MESSAGE'
+          value={[]}
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -211,6 +212,7 @@ describe('@modernpoacher/cogs/cogs/select', () => {
             title: 'MOCK CHANGE TITLE',
             description: 'MOCK CHANGE DESCRIPTION',
             errorMessage: 'MOCK CHANGE ERROR MESSAGE',
+            value: expect.any(Array),
             tabIndex: 0,
             accessKey: 'MOCK CHANGE ACCESS KEY',
             required: false,
@@ -233,6 +235,7 @@ describe('@modernpoacher/cogs/cogs/select', () => {
             title: 'MOCK TITLE',
             description: 'MOCK DESCRIPTION',
             errorMessage: 'MOCK ERROR MESSAGE',
+            value: expect.any(Array),
             tabIndex: 1,
             accessKey: 'MOCK ACCESS KEY',
             required: true,
@@ -256,12 +259,15 @@ describe('@modernpoacher/cogs/cogs/select', () => {
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
           errorMessage='MOCK ERROR MESSAGE'
+          value={[]}
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
+          multiple
+          onChange={jest.fn()}
         />
       )
 
@@ -307,12 +313,15 @@ describe('@modernpoacher/cogs/cogs/select', () => {
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
           errorMessage='MOCK ERROR MESSAGE'
+          value={[]}
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
+          multiple
+          onChange={jest.fn()}
         />
       )
 
@@ -345,12 +354,15 @@ describe('@modernpoacher/cogs/cogs/select', () => {
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
           errorMessage='MOCK ERROR MESSAGE'
+          value={[]}
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
+          multiple
+          onChange={jest.fn()}
         />
       )
 
@@ -383,6 +395,7 @@ describe('@modernpoacher/cogs/cogs/select', () => {
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
           errorMessage='MOCK ERROR MESSAGE'
+          value={[]}
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -406,7 +419,7 @@ describe('@modernpoacher/cogs/cogs/select', () => {
             .getInstance()
         )
 
-        getIdSpy = jest.spyOn(Cog.prototype, 'getId')
+        getIdSpy = jest.spyOn(Cog.prototype, 'getId').mockReturnValue('MOCK ID')
 
         instance.renderField()
       })
@@ -421,6 +434,7 @@ describe('@modernpoacher/cogs/cogs/select', () => {
           .toBeCalledWith({
             name: 'MOCK NAME',
             id: 'MOCK ID',
+            value: expect.any(Array),
             tabIndex: 1,
             accessKey: 'MOCK ACCESS KEY',
             required: true,

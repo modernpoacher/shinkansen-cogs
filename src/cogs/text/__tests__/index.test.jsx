@@ -177,12 +177,14 @@ describe('@modernpoacher/cogs/cogs/text', () => {
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
           errorMessage='MOCK ERROR MESSAGE'
+          value='MOCK VALUE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
+          onChange={jest.fn()}
         />
       )
 
@@ -228,12 +230,14 @@ describe('@modernpoacher/cogs/cogs/text', () => {
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
           errorMessage='MOCK ERROR MESSAGE'
+          value='MOCK VALUE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
+          onChange={jest.fn()}
         />
       )
 
@@ -266,12 +270,14 @@ describe('@modernpoacher/cogs/cogs/text', () => {
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
           errorMessage='MOCK ERROR MESSAGE'
+          value='MOCK VALUE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
+          onChange={jest.fn()}
         />
       )
 
@@ -304,6 +310,7 @@ describe('@modernpoacher/cogs/cogs/text', () => {
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
           errorMessage='MOCK ERROR MESSAGE'
+          value='MOCK VALUE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -326,7 +333,7 @@ describe('@modernpoacher/cogs/cogs/text', () => {
             .getInstance()
         )
 
-        getIdSpy = jest.spyOn(Cog.prototype, 'getId')
+        getIdSpy = jest.spyOn(Cog.prototype, 'getId').mockReturnValue('MOCK ID')
 
         instance.renderField()
       })
@@ -341,6 +348,7 @@ describe('@modernpoacher/cogs/cogs/text', () => {
           .toBeCalledWith({
             name: 'MOCK NAME',
             id: 'MOCK ID',
+            value: 'MOCK VALUE',
             tabIndex: 1,
             accessKey: 'MOCK ACCESS KEY',
             required: true,
