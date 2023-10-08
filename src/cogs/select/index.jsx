@@ -16,6 +16,7 @@ export default class SelectCog extends ValueCog {
   shouldComponentUpdate (props) {
     return (
       super.shouldComponentUpdate(props) ||
+      (props.multiple !== this.props.multiple) ||
       (props.children !== this.props.children)
     )
   }
