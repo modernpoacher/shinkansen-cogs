@@ -133,6 +133,7 @@ describe('@modernpoacher/cogs/cogs/select', () => {
             disabled
             readOnly
             placeholder='MOCK PLACEHOLDER'
+            onChange={jest.fn()}
           />
         )
 
@@ -178,7 +179,6 @@ describe('@modernpoacher/cogs/cogs/select', () => {
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
           errorMessage='MOCK ERROR MESSAGE'
-          value='MOCK VALUE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -206,8 +206,9 @@ describe('@modernpoacher/cogs/cogs/select', () => {
           return expect(instance.shouldComponentUpdate({
             name: 'MOCK CHANGE NAME',
             id: 'MOCK CHANGE ID',
-            value: 'MOCK CHANGE VALUE',
             title: 'MOCK CHANGE TITLE',
+            description: 'MOCK CHANGE DESCRIPTION',
+            errorMessage: 'MOCK CHANGE ERROR MESSAGE',
             tabIndex: 0,
             accessKey: 'MOCK CHANGE ACCESS KEY',
             required: false,
@@ -226,8 +227,9 @@ describe('@modernpoacher/cogs/cogs/select', () => {
           return expect(instance.shouldComponentUpdate({ // instance.props
             name: 'MOCK NAME',
             id: 'MOCK ID',
-            value: 'MOCK VALUE',
             title: 'MOCK TITLE',
+            description: 'MOCK DESCRIPTION',
+            errorMessage: 'MOCK ERROR MESSAGE',
             tabIndex: 1,
             accessKey: 'MOCK ACCESS KEY',
             required: true,

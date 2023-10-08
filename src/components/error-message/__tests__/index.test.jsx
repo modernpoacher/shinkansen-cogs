@@ -81,6 +81,8 @@ describe('@modernpoacher/cogs/components/error-message', () => {
         it('returns true', () => {
           return expect(instance.shouldComponentUpdate({
             errorMessage: 'MOCK CHANGE ERROR MESSAGE'
+          }, {
+            errorMessage: 'MOCK CHANGE ERROR MESSAGE'
           }))
             .toBe(true)
         })
@@ -89,6 +91,8 @@ describe('@modernpoacher/cogs/components/error-message', () => {
       describe('`props` have not changed', () => {
         it('returns false', () => {
           return expect(instance.shouldComponentUpdate({ // instance.props
+            errorMessage: 'MOCK ERROR MESSAGE'
+          }, {
             errorMessage: 'MOCK ERROR MESSAGE'
           }))
             .toBe(false)
