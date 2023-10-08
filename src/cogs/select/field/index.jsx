@@ -7,16 +7,41 @@ import classnames from 'classnames'
 
 import { ValueField } from 'shinkansen-cogs/components/field'
 
+function getSelectedValues ({ target: { selectedOptions } }) {
+  return (
+    Array.from(selectedOptions)
+      .map(({ value, text }) => value || text)
+  )
+}
+
+function getSelectedValue ({ target: { value } }) {
+  return value
+}
+
 export default class SelectField extends ValueField {
   shouldComponentUpdate (props) {
     return (
       super.shouldComponentUpdate(props) ||
+      (props.multiple !== this.props.multiple) ||
       (props.children !== this.props.children)
     )
   }
 
   getClassName () {
     return classnames(super.getClassName(), 'select')
+  }
+
+  handleChange = (event) => {
+    const {
+      multiple,
+      onChange
+    } = this.props
+
+    if (multiple) {
+      onChange(getSelectedValues(event))
+    } else {
+      onChange(getSelectedValue(event))
+    }
   }
 
   render () {
@@ -30,6 +55,7 @@ export default class SelectField extends ValueField {
       readOnly,
       tabIndex,
       accessKey,
+      multiple,
       children,
       fieldRef
     } = this.props
@@ -47,6 +73,7 @@ export default class SelectField extends ValueField {
         readOnly={readOnly}
         tabIndex={tabIndex}
         accessKey={accessKey}
+        multiple={multiple}
         onChange={this.handleChange}
         className={className}
         ref={fieldRef}>
@@ -58,6 +85,19 @@ export default class SelectField extends ValueField {
 
 SelectField.propTypes = {
   ...ValueField.propTypes,
+  multiple: PropTypes.bool,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(
+      PropTypes.string
+    )
+  ]),
+  defaultValue: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(
+      PropTypes.string
+    )
+  ]),
   children: PropTypes.oneOfType([
     PropTypes.node,
     PropTypes.arrayOf(
@@ -67,5 +107,6 @@ SelectField.propTypes = {
 }
 
 SelectField.defaultProps = {
-  ...ValueField.defaultProps
+  ...ValueField.defaultProps,
+  multiple: false
 }

@@ -153,6 +153,7 @@ describe('shinkansen-cogs/cogs/select', () => {
             disabled
             readOnly
             placeholder='MOCK PLACEHOLDER'
+            multiple
             onChange={jest.fn()}
           />
         )
@@ -205,6 +206,7 @@ describe('shinkansen-cogs/cogs/select', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
+          multiple
           onChange={jest.fn()}>
           MOCK CHILDREN
         </Cog>
@@ -235,6 +237,7 @@ describe('shinkansen-cogs/cogs/select', () => {
             disabled: false,
             readOnly: false,
             placeholder: 'MOCK CHANGE PLACEHOLDER',
+            multiple: true,
             children: 'MOCK CHANGE CHILDREN',
             onChange: expect.any(Function)
           }))
@@ -257,6 +260,7 @@ describe('shinkansen-cogs/cogs/select', () => {
             readOnly: true,
             placeholder: 'MOCK PLACEHOLDER',
             children: 'MOCK CHILDREN',
+            multiple: true,
             onChange: expect.any(Function)
           }))
             .toBe(false)
@@ -405,6 +409,7 @@ describe('shinkansen-cogs/cogs/select', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
+          multiple
           onChange={jest.fn()}
         />
       )
@@ -442,6 +447,7 @@ describe('shinkansen-cogs/cogs/select', () => {
             disabled: true,
             readOnly: true,
             placeholder: 'MOCK PLACEHOLDER',
+            multiple: true,
             onChange: expect.any(Function)
           }, {})
       })

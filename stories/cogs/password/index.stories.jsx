@@ -21,10 +21,12 @@ export default {
           boolean: 'Boolean',
           null: 'Null'
         }
-      }
+      },
+      description: 'errorMessage'
     },
     placeholder: {
-      defaultValue: ''
+      control: 'text',
+      description: 'placeholder'
     }
   }
 }

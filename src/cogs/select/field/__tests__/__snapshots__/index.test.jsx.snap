@@ -5,7 +5,9 @@ exports[`shinkansen-cogs/cogs/select/field <Field /> With additional props rende
   className="MOCK CLASSNAME"
   disabled={true}
   id="MOCK ID"
+  multiple={true}
   name="MOCK NAME"
+  onChange={[Function]}
   readOnly={true}
   required={true}
 />
@@ -14,6 +16,8 @@ exports[`shinkansen-cogs/cogs/select/field <Field /> With additional props rende
 exports[`shinkansen-cogs/cogs/select/field <Field /> With required props renders 1`] = `
 <select
   className="MOCK CLASSNAME"
+  multiple={false}
   name="MOCK NAME"
+  onChange={[Function]}
 />
 `;
