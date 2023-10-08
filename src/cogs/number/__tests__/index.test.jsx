@@ -55,10 +55,6 @@ jest.mock('../field/index.jsx')
 class MockErrorMessage extends mockComponent {
   state = {}
 
-  static getDerivedStateFromProps () {
-    return {}
-  }
-
   render () {
     return null
   }

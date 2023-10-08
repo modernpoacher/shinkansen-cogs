@@ -38,7 +38,8 @@ export default class Title extends Component {
       (props.title !== this.props.title) ||
       (props.required !== this.props.required) ||
       (props.disabled !== this.props.disabled) ||
-      (props.readOnly !== this.props.readOnly)
+      (props.readOnly !== this.props.readOnly) ||
+      (props.children !== this.props.children)
     )
   }
 

@@ -3,10 +3,14 @@ import renderer from 'react-test-renderer'
 
 import Title from 'shinkansen-cogs/components/title'
 
+import Required from 'shinkansen-cogs/components/common/required'
+import Disabled from 'shinkansen-cogs/components/common/disabled'
+import ReadOnly from 'shinkansen-cogs/components/common/readonly'
+
 jest.mock('shinkansen-cogs/components/common/text-content', () => () => 'MOCK TEXT CONTENT')
-jest.mock('shinkansen-cogs/components/common/required', () => () => 'MOCK REQUIRED')
-jest.mock('shinkansen-cogs/components/common/disabled', () => () => 'MOCK DISABLED')
-jest.mock('shinkansen-cogs/components/common/readonly', () => () => 'MOCK READONLY')
+jest.mock('shinkansen-cogs/components/common/required') // , () => () => 'MOCK REQUIRED')
+jest.mock('shinkansen-cogs/components/common/disabled') // , () => () => 'MOCK DISABLED')
+jest.mock('shinkansen-cogs/components/common/readonly') // , () => () => 'MOCK READONLY')
 
 describe('shinkansen-cogs/components/title', () => {
   describe('<Title />', () => {
@@ -117,8 +121,9 @@ describe('shinkansen-cogs/components/title', () => {
           title='MOCK TITLE'
           required
           disabled
-          readOnly
-        />
+          readOnly>
+          MOCK CHILDREN
+        </Title>
       )
 
       let instance
@@ -137,7 +142,8 @@ describe('shinkansen-cogs/components/title', () => {
             title: 'MOCK CHANGE TITLE',
             required: false,
             disabled: false,
-            readOnly: false
+            readOnly: false,
+            children: 'MOCK CHANGE CHILDREN'
           }))
             .toBe(true)
         })
@@ -150,10 +156,128 @@ describe('shinkansen-cogs/components/title', () => {
             title: 'MOCK TITLE',
             required: true,
             disabled: true,
-            readOnly: true
+            readOnly: true,
+            children: 'MOCK CHILDREN'
           }))
             .toBe(false)
         })
+      })
+    })
+
+    describe('`renderIsRequired()`', () => {
+      const component = (
+        <Title
+          id='MOCK ID'
+          title='MOCK TITLE'
+          required
+          disabled
+          readOnly
+        />
+      )
+
+      let instance
+
+      let isRequiredSpy
+
+      beforeEach(() => {
+        jest.clearAllMocks()
+
+        instance = (
+          renderer.create(component)
+            .getInstance()
+        )
+
+        isRequiredSpy = jest.spyOn(Title.prototype, 'isRequired').mockReturnValue('MOCK IS REQUIRED')
+
+        instance.renderIsRequired()
+      })
+
+      it('invokes `isRequired`', () => {
+        return expect(isRequiredSpy)
+          .toBeCalled()
+      })
+
+      xit('renders `<Required />`', () => {
+        return expect(Required)
+          .toBeCalled()
+      })
+    })
+
+    describe('`renderIsDisabled()`', () => {
+      const component = (
+        <Title
+          id='MOCK ID'
+          title='MOCK TITLE'
+          required
+          disabled
+          readOnly
+        />
+      )
+
+      let instance
+
+      let isDisabledSpy
+
+      beforeEach(() => {
+        jest.clearAllMocks()
+
+        instance = (
+          renderer.create(component)
+            .getInstance()
+        )
+
+        isDisabledSpy = jest.spyOn(Title.prototype, 'isDisabled').mockReturnValue('MOCK IS DISABLED')
+
+        instance.renderIsDisabled()
+      })
+
+      it('invokes `isDisabled`', () => {
+        return expect(isDisabledSpy)
+          .toBeCalled()
+      })
+
+      xit('renders `<Disabled />`', () => {
+        return expect(Disabled)
+          .toBeCalled()
+      })
+    })
+
+    describe('`renderIsReadOnly()`', () => {
+      const component = (
+        <Title
+          id='MOCK ID'
+          title='MOCK TITLE'
+          required
+          disabled
+          readOnly
+        />
+      )
+
+      let instance
+
+      let isReadOnlySpy
+
+      beforeEach(() => {
+        jest.clearAllMocks()
+
+        instance = (
+          renderer.create(component)
+            .getInstance()
+        )
+
+        isReadOnlySpy = jest.spyOn(Title.prototype, 'isReadOnly').mockReturnValue('MOCK IS READONLY')
+
+        instance.renderIsReadOnly()
+      })
+
+      it('invokes `isReadOnly`', () => {
+        return expect(isReadOnlySpy)
+          .toBeCalled()
+      })
+
+      xit('renders `<ReadOnly />`', () => {
+        return expect(ReadOnly)
+          .toBeCalled()
       })
     })
   })

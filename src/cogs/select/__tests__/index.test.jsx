@@ -18,6 +18,8 @@ jest.mock('shinkansen-cogs/cogs', () => {
 
     getId () { }
 
+    shouldComponentUpdate () { }
+
     renderTitle () { }
 
     renderDescription () { }
@@ -43,7 +45,6 @@ jest.mock('shinkansen-cogs/cogs', () => {
   return {
     __esModule: true,
     ValueCog: class ValueCog extends MockCog { },
-    CheckCog: class CheckCog extends MockCog { },
     default: MockCog
   }
 })
@@ -69,6 +70,12 @@ const MOCK_ERROR_MESSAGE = {
   type: 'MOCK TYPE',
   params: {},
   uri: 'MOCK URI'
+}
+
+const MOCK_CHANGE_ERROR_MESSAGE = {
+  type: 'MOCK CHANGE TYPE',
+  params: {},
+  uri: 'MOCK CHANGE URI'
 }
 
 describe('shinkansen-cogs/cogs/select', () => {
@@ -181,6 +188,79 @@ describe('shinkansen-cogs/cogs/select', () => {
       it('returns the classname', () => {
         return expect(returnValue)
           .toBe('MOCK CLASSNAME')
+      })
+    })
+
+    describe('`shouldComponentUpdate()`', () => {
+      const component = (
+        <Cog
+          name='MOCK NAME'
+          id='MOCK ID'
+          title='MOCK TITLE'
+          description='MOCK DESCRIPTION'
+          errorMessage={MOCK_ERROR_MESSAGE}
+          tabIndex={1}
+          accessKey='MOCK ACCESS KEY'
+          required
+          disabled
+          readOnly
+          placeholder='MOCK PLACEHOLDER'
+          onChange={jest.fn()}>
+          MOCK CHILDREN
+        </Cog>
+      )
+
+      let instance
+
+      beforeEach(() => {
+        /**
+         *  Always return false (we're not testing conditions in `super.shouldComponentUpdate()`)
+         */
+        jest.spyOn(ValueCog.prototype, 'shouldComponentUpdate').mockReturnValue(false)
+
+        instance = renderer.create(component).getInstance()
+      })
+
+      describe('`props` have changed', () => {
+        it('returns true', () => {
+          return expect(instance.shouldComponentUpdate({
+            name: 'MOCK CHANGE NAME',
+            id: 'MOCK CHANGE ID',
+            title: 'MOCK CHANGE TITLE',
+            description: 'MOCK CHANGE DESCRIPTION',
+            errorMessage: MOCK_CHANGE_ERROR_MESSAGE,
+            tabIndex: 0,
+            accessKey: 'MOCK CHANGE ACCESS KEY',
+            required: false,
+            disabled: false,
+            readOnly: false,
+            placeholder: 'MOCK CHANGE PLACEHOLDER',
+            children: 'MOCK CHANGE CHILDREN',
+            onChange: expect.any(Function)
+          }))
+            .toBe(true)
+        })
+      })
+
+      describe('`props` have not changed', () => {
+        it('returns false', () => {
+          return expect(instance.shouldComponentUpdate({ // instance.props
+            name: 'MOCK NAME',
+            id: 'MOCK ID',
+            title: 'MOCK TITLE',
+            description: 'MOCK DESCRIPTION',
+            errorMessage: MOCK_ERROR_MESSAGE,
+            tabIndex: 1,
+            accessKey: 'MOCK ACCESS KEY',
+            required: true,
+            disabled: true,
+            readOnly: true,
+            placeholder: 'MOCK PLACEHOLDER',
+            children: 'MOCK CHILDREN',
+            onChange: expect.any(Function)
+          }))
+            .toBe(false)
+        })
       })
     })
 

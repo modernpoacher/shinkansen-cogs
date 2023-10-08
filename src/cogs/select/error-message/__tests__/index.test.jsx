@@ -2,23 +2,23 @@ import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
-import Super from 'shinkansen-cogs/components/description'
-import Description from '../index.jsx'
+import Super from 'shinkansen-cogs/components/error-message'
+import ErrorMessage from '../index.jsx'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('shinkansen-cogs/components/description', () => ({
+jest.mock('shinkansen-cogs/components/error-message', () => ({
   __esModule: true,
-  default: class MockDescription extends mockComponent {
+  default: class MockErrorMessage extends mockComponent {
     getClassName () { }
 
     render () {
-      const { description } = this.props
+      const { errorMessage } = this.props
 
-      if (description) {
+      if (errorMessage) {
         return (
           <span className={this.getClassName()}>
-            {description}
+            MOCK ERROR MESSAGE
           </span>
         )
       }
@@ -28,11 +28,19 @@ jest.mock('shinkansen-cogs/components/description', () => ({
   }
 }))
 
-describe('shinkansen-cogs/cogs/password/description', () => {
-  describe('<Description />', () => {
+const MOCK_ERROR_MESSAGE = {
+  type: 'UNKNOWN',
+  params: {
+    expectedType: 'string'
+  },
+  uri: '#/'
+}
+
+describe('shinkansen-cogs/cogs/select/error-message', () => {
+  describe('<ErrorMessage />', () => {
     describe('With required props', () => {
       const component = (
-        <Description />
+        <ErrorMessage />
       )
 
       it('renders', () => {
@@ -42,7 +50,7 @@ describe('shinkansen-cogs/cogs/password/description', () => {
 
       describe('`getClassName`', () => {
         it('is defined', () => {
-          return expect(Description.prototype.getClassName)
+          return expect(ErrorMessage.prototype.getClassName)
             .toBeDefined()
         })
       })
@@ -51,8 +59,8 @@ describe('shinkansen-cogs/cogs/password/description', () => {
     describe('With additional props', () => {
       it('renders', () => {
         const component = (
-          <Description
-            description='MOCK DESCRIPTION'
+          <ErrorMessage
+            errorMessage={MOCK_ERROR_MESSAGE}
           />
         )
 
@@ -68,7 +76,7 @@ describe('shinkansen-cogs/cogs/password/description', () => {
         jest.spyOn(Super.prototype, 'getClassName').mockReturnValue('MOCK GETCLASSNAME')
 
         const component = (
-          <Description />
+          <ErrorMessage />
         )
 
         const instance = (
@@ -81,7 +89,7 @@ describe('shinkansen-cogs/cogs/password/description', () => {
 
       it('invokes `classnames`', () => {
         return expect(classnames)
-          .toBeCalledWith('MOCK GETCLASSNAME', 'password')
+          .toBeCalledWith('MOCK GETCLASSNAME', 'select')
       })
 
       it('returns the classname', () => {
