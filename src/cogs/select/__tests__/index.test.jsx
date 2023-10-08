@@ -403,8 +403,9 @@ describe('@modernpoacher/cogs/cogs/select', () => {
           readOnly
           placeholder='MOCK PLACEHOLDER'
           multiple
-          onChange={jest.fn()}
-        />
+          onChange={jest.fn()}>
+          MOCK CHILDREN
+        </Cog>
       )
 
       let instance
@@ -442,7 +443,8 @@ describe('@modernpoacher/cogs/cogs/select', () => {
             readOnly: true,
             placeholder: 'MOCK PLACEHOLDER',
             multiple: true,
-            onChange: expect.any(Function)
+            onChange: expect.any(Function),
+            children: 'MOCK CHILDREN'
           }, {})
       })
     })
