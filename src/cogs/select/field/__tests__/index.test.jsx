@@ -51,6 +51,7 @@ describe('@modernpoacher/cogs/cogs/select/field', () => {
             required
             disabled
             readOnly
+            multiple
           />
         )
 
@@ -103,6 +104,7 @@ describe('@modernpoacher/cogs/cogs/select/field', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
+          multiple
           onChange={jest.fn()}>
           MOCK CHILDREN
         </Field>
@@ -132,6 +134,7 @@ describe('@modernpoacher/cogs/cogs/select/field', () => {
             disabled: false,
             readOnly: false,
             placeholder: 'MOCK CHANGE PLACEHOLDER',
+            multiple: false,
             children: 'MOCK CHANGE CHILDREN',
             onChange: expect.any(Function)
           }))
@@ -152,6 +155,7 @@ describe('@modernpoacher/cogs/cogs/select/field', () => {
             disabled: true,
             readOnly: true,
             placeholder: 'MOCK PLACEHOLDER',
+            multiple: true,
             children: 'MOCK CHILDREN',
             onChange: expect.any(Function)
           }))

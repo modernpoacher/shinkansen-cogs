@@ -90,6 +90,7 @@ export default class SelectCog extends ValueCog {
       tabIndex,
       accessKey,
       placeholder,
+      multiple,
       fieldRef,
       children
     } = this.props
@@ -106,6 +107,7 @@ export default class SelectCog extends ValueCog {
         tabIndex={tabIndex}
         accessKey={accessKey}
         placeholder={placeholder}
+        multiple={multiple}
         onChange={this.handleChange}
         fieldRef={fieldRef}>
         {children}
@@ -116,6 +118,19 @@ export default class SelectCog extends ValueCog {
 
 SelectCog.propTypes = {
   ...ValueCog.propTypes,
+  multiple: PropTypes.bool,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(
+      PropTypes.string
+    )
+  ]),
+  defaultValue: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(
+      PropTypes.string
+    )
+  ]),
   children: PropTypes.oneOfType([
     PropTypes.node,
     PropTypes.arrayOf(
@@ -125,5 +140,6 @@ SelectCog.propTypes = {
 }
 
 SelectCog.defaultProps = {
-  ...ValueCog.defaultProps
+  ...ValueCog.defaultProps,
+  multiple: false
 }

@@ -133,6 +133,7 @@ describe('@modernpoacher/cogs/cogs/select', () => {
             disabled
             readOnly
             placeholder='MOCK PLACEHOLDER'
+            multiple
             onChange={jest.fn()}
           />
         )
@@ -185,6 +186,7 @@ describe('@modernpoacher/cogs/cogs/select', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
+          multiple
           onChange={jest.fn()}>
           MOCK CHILDREN
         </Cog>
@@ -237,6 +239,7 @@ describe('@modernpoacher/cogs/cogs/select', () => {
             readOnly: true,
             placeholder: 'MOCK PLACEHOLDER',
             children: 'MOCK CHILDREN',
+            multiple: true,
             onChange: expect.any(Function)
           }))
             .toBe(false)
@@ -385,6 +388,7 @@ describe('@modernpoacher/cogs/cogs/select', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
+          multiple
           onChange={jest.fn()}
         />
       )
@@ -422,6 +426,7 @@ describe('@modernpoacher/cogs/cogs/select', () => {
             disabled: true,
             readOnly: true,
             placeholder: 'MOCK PLACEHOLDER',
+            multiple: true,
             onChange: expect.any(Function)
           }, {})
       })
