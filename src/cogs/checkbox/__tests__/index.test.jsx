@@ -140,7 +140,6 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
             title='MOCK TITLE'
             description='MOCK DESCRIPTION'
             errorMessage={MOCK_ERROR_MESSAGE}
-            value='MOCK VALUE'
             tabIndex={1}
             accessKey='MOCK ACCESS KEY'
             required
@@ -200,6 +199,8 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
+          onChange={jest.fn()}
+          onClick={jest.fn()}
         />
       )
 
@@ -251,6 +252,8 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
+          onChange={jest.fn()}
+          onClick={jest.fn()}
         />
       )
 
@@ -289,6 +292,8 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
+          onChange={jest.fn()}
+          onClick={jest.fn()}
         />
       )
 
@@ -320,6 +325,7 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
           id='MOCK ID'
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
+          errorMessage={MOCK_ERROR_MESSAGE}
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -343,7 +349,7 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
             .getInstance()
         )
 
-        getIdSpy = jest.spyOn(Cog.prototype, 'getId')
+        getIdSpy = jest.spyOn(Cog.prototype, 'getId').mockReturnValue('MOCK ID')
 
         instance.renderField()
       })

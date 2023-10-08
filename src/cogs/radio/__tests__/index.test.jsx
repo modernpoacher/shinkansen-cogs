@@ -201,6 +201,8 @@ describe('shinkansen-cogs/cogs/radio', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
+          onChange={jest.fn()}
+          onClick={jest.fn()}
         />
       )
 
@@ -267,6 +269,8 @@ describe('shinkansen-cogs/cogs/radio', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
+          onChange={jest.fn()}
+          onClick={jest.fn()}
         />
       )
 
@@ -319,6 +323,8 @@ describe('shinkansen-cogs/cogs/radio', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
+          onChange={jest.fn()}
+          onClick={jest.fn()}
         />
       )
 
@@ -358,6 +364,8 @@ describe('shinkansen-cogs/cogs/radio', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
+          onChange={jest.fn()}
+          onClick={jest.fn()}
         />
       )
 
@@ -414,7 +422,7 @@ describe('shinkansen-cogs/cogs/radio', () => {
             .getInstance()
         )
 
-        getIdSpy = jest.spyOn(Cog.prototype, 'getId')
+        getIdSpy = jest.spyOn(Cog.prototype, 'getId').mockReturnValue('MOCK ID')
 
         instance.renderField()
       })

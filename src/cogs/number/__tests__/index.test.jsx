@@ -193,6 +193,7 @@ describe('shinkansen-cogs/cogs/number', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
+          onChange={jest.fn()}
         />
       )
 
@@ -238,12 +239,14 @@ describe('shinkansen-cogs/cogs/number', () => {
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
           errorMessage={MOCK_ERROR_MESSAGE}
+          value='MOCK VALUE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
+          onChange={jest.fn()}
         />
       )
 
@@ -276,12 +279,14 @@ describe('shinkansen-cogs/cogs/number', () => {
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
           errorMessage={MOCK_ERROR_MESSAGE}
+          value='MOCK VALUE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
+          onChange={jest.fn()}
         />
       )
 
@@ -314,6 +319,7 @@ describe('shinkansen-cogs/cogs/number', () => {
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
           errorMessage={MOCK_ERROR_MESSAGE}
+          value='MOCK VALUE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -336,7 +342,7 @@ describe('shinkansen-cogs/cogs/number', () => {
             .getInstance()
         )
 
-        getIdSpy = jest.spyOn(Cog.prototype, 'getId')
+        getIdSpy = jest.spyOn(Cog.prototype, 'getId').mockReturnValue('MOCK ID')
 
         instance.renderField()
       })
@@ -351,6 +357,7 @@ describe('shinkansen-cogs/cogs/number', () => {
           .toBeCalledWith({
             name: 'MOCK NAME',
             id: 'MOCK ID',
+            value: 'MOCK VALUE',
             tabIndex: 1,
             accessKey: 'MOCK ACCESS KEY',
             required: true,
