@@ -217,6 +217,7 @@ describe('@modernpoacher/cogs/cogs/select', () => {
             disabled: false,
             readOnly: false,
             placeholder: 'MOCK CHANGE PLACEHOLDER',
+            multiple: true,
             children: 'MOCK CHANGE CHILDREN',
             onChange: expect.any(Function)
           }))

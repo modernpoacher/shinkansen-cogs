@@ -7,13 +7,13 @@ export default {
   title: 'Stories/Cogs/Number',
   component: NumberCog,
   argTypes: {
-    placeholder: {
-      control: 'text',
-      description: 'placeholder'
-    },
     errorMessage: {
       control: 'text',
       description: 'errorMessage'
+    },
+    placeholder: {
+      control: 'text',
+      description: 'placeholder'
     }
   }
 }

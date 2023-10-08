@@ -7,13 +7,13 @@ export default {
   title: 'Stories/Cogs/Password',
   component: PasswordCog,
   argTypes: {
-    placeholder: {
-      control: 'text',
-      description: 'placeholder'
-    },
     errorMessage: {
       control: 'text',
       description: 'errorMessage'
+    },
+    placeholder: {
+      control: 'text',
+      description: 'placeholder'
     }
   }
 }

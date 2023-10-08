@@ -7,13 +7,13 @@ export default {
   title: 'Stories/Cogs/Email',
   component: EmailCog,
   argTypes: {
-    placeholder: {
-      control: 'text',
-      description: 'placeholder'
-    },
     errorMessage: {
       control: 'text',
       description: 'errorMessage'
+    },
+    placeholder: {
+      control: 'text',
+      description: 'placeholder'
     }
   }
 }
