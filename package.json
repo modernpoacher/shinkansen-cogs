@@ -51,7 +51,7 @@
     "@babel/preset-react": "^7.22.15",
     "@babel/register": "^7.22.15",
     "@modernpoacher/design-system": "1.0.77",
-    "@modernpoacher/hooks": "^1.0.441",
+    "@modernpoacher/hooks": "^1.0.442",
     "@storybook/addon-actions": "^7.5.1",
     "@storybook/addon-essentials": "^7.5.1",
     "@storybook/addon-links": "^7.5.1",
