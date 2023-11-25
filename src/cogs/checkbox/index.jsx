@@ -2,6 +2,7 @@
  * CheckboxCog component
  */
 import React from 'react'
+import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 import { CheckCog } from 'shinkansen-cogs/cogs'
@@ -16,22 +17,29 @@ export default class CheckboxCog extends CheckCog {
     return classnames(super.getClassName(), 'checkbox')
   }
 
-  handleClick = (value) => {
+  handleClick = (value, checked) => {
     const {
       onClick,
       name
     } = this.props
 
-    onClick(name, value)
+    onClick(name, value, checked)
   }
 
-  handleChange = (value) => {
+  handleChange = (value, checked) => {
     const {
       onChange,
       name
     } = this.props
 
-    onChange(name, value)
+    onChange(name, value, checked)
+  }
+
+  shouldComponentUpdate (props) {
+    return (
+      super.shouldComponentUpdate(props) ||
+      (props.value !== this.props.value)
+    )
   }
 
   renderTitle () {
@@ -84,6 +92,7 @@ export default class CheckboxCog extends CheckCog {
 
     const {
       name,
+      value,
       checked,
       defaultChecked,
       required,
@@ -99,6 +108,7 @@ export default class CheckboxCog extends CheckCog {
       <Field
         id={id}
         name={name}
+        value={value}
         checked={checked}
         defaultChecked={defaultChecked}
         required={required}
@@ -129,7 +139,8 @@ export default class CheckboxCog extends CheckCog {
 }
 
 CheckboxCog.propTypes = {
-  ...CheckCog.propTypes
+  ...CheckCog.propTypes,
+  value: PropTypes.string.isRequired
 }
 
 CheckboxCog.defaultProps = {

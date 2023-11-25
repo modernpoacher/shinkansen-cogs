@@ -140,6 +140,7 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
             title='MOCK TITLE'
             description='MOCK DESCRIPTION'
             errorMessage={MOCK_ERROR_MESSAGE}
+            value='MOCK VALUE'
             tabIndex={1}
             accessKey='MOCK ACCESS KEY'
             required
@@ -163,7 +164,7 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
         jest.spyOn(CheckCog.prototype, 'getClassName').mockReturnValue('MOCK GETCLASSNAME')
 
         const component = (
-          <Cog name='MOCK NAME' />
+          <Cog name='MOCK NAME' value='MOCK VALUE' />
         )
 
         const instance = (
@@ -185,6 +186,78 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
       })
     })
 
+    describe('`shouldComponentUpdate()`', () => {
+      const component = (
+        <Cog
+          name='MOCK NAME'
+          id='MOCK ID'
+          title='MOCK TITLE'
+          description='MOCK DESCRIPTION'
+          errorMessage={MOCK_ERROR_MESSAGE}
+          value='MOCK VALUE'
+          tabIndex={1}
+          accessKey='MOCK ACCESS KEY'
+          required
+          disabled
+          readOnly
+          placeholder='MOCK PLACEHOLDER'
+          onChange={jest.fn()}
+          onClick={jest.fn()}
+        />
+      )
+
+      let instance
+
+      beforeEach(() => {
+        /**
+         *  Always return false (we're not testing conditions in `super.shouldComponentUpdate()`)
+         */
+        jest.spyOn(CheckCog.prototype, 'shouldComponentUpdate').mockReturnValue(false)
+
+        instance = renderer.create(component).getInstance()
+      })
+
+      describe('`props` have changed', () => {
+        it('returns true', () => {
+          return expect(instance.shouldComponentUpdate({
+            name: 'MOCK CHANGE NAME',
+            id: 'MOCK CHANGE ID',
+            value: 'MOCK CHANGE VALUE',
+            title: 'MOCK CHANGE TITLE',
+            description: 'MOCK CHANGE DESCRIPTION',
+            errorMessage: MOCK_ERROR_MESSAGE,
+            tabIndex: 0,
+            accessKey: 'MOCK CHANGE ACCESS KEY',
+            required: false,
+            disabled: false,
+            readOnly: false,
+            placeholder: 'MOCK CHANGE PLACEHOLDER'
+          }))
+            .toBe(true)
+        })
+      })
+
+      describe('`props` have not changed', () => {
+        it('returns false', () => {
+          return expect(instance.shouldComponentUpdate({ // instance.props
+            name: 'MOCK NAME',
+            id: 'MOCK ID',
+            value: 'MOCK VALUE',
+            title: 'MOCK TITLE',
+            description: 'MOCK DESCRIPTION',
+            errorMessage: MOCK_ERROR_MESSAGE,
+            tabIndex: 1,
+            accessKey: 'MOCK ACCESS KEY',
+            required: true,
+            disabled: true,
+            readOnly: true,
+            placeholder: 'MOCK PLACEHOLDER'
+          }))
+            .toBe(false)
+        })
+      })
+    })
+
     describe('`renderTitle()`', () => {
       const component = (
         <Cog
@@ -193,6 +266,7 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
           errorMessage={MOCK_ERROR_MESSAGE}
+          value='MOCK VALUE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required

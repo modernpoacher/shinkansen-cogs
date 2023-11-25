@@ -115,21 +115,22 @@ export class CheckField extends Field {
   shouldComponentUpdate (props) {
     return (
       super.shouldComponentUpdate(props) ||
+      (props.value !== this.props.value) ||
       (props.checked !== this.props.checked) ||
       (props.onClick !== this.props.onClick)
     )
   }
 
-  handleClick = ({ target: { checked } }) => {
+  handleClick = ({ target: { value, checked } }) => {
     const { onClick } = this.props
 
-    onClick(checked)
+    onClick(value, checked)
   }
 
-  handleChange = ({ target: { checked } }) => {
+  handleChange = ({ target: { value, checked } }) => {
     const { onChange } = this.props
 
-    onChange(checked)
+    onChange(value, checked)
   }
 }
 

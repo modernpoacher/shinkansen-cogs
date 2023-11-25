@@ -2,6 +2,7 @@
  * CheckboxField component
  */
 import React from 'react'
+import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 import { CheckField } from 'shinkansen-cogs/components/field'
@@ -15,6 +16,7 @@ export default class CheckboxField extends CheckField {
     const {
       id,
       name,
+      value,
       checked,
       defaultChecked,
       required,
@@ -31,6 +33,7 @@ export default class CheckboxField extends CheckField {
       <input
         id={id}
         name={name}
+        value={value}
         checked={checked}
         defaultChecked={defaultChecked}
         required={required}
@@ -49,7 +52,8 @@ export default class CheckboxField extends CheckField {
 }
 
 CheckboxField.propTypes = {
-  ...CheckField.propTypes
+  ...CheckField.propTypes,
+  value: PropTypes.string.isRequired
 }
 
 CheckboxField.defaultProps = {

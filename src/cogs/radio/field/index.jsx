@@ -12,18 +12,6 @@ export default class RadioField extends CheckField {
     return classnames(super.getClassName(), 'radio')
   }
 
-  handleClick = ({ target: { value } }) => {
-    const { onClick } = this.props
-
-    onClick(value)
-  }
-
-  handleChange = ({ target: { value } }) => {
-    const { onChange } = this.props
-
-    onChange(value)
-  }
-
   render () {
     const {
       id,
