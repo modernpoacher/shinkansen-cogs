@@ -17,20 +17,20 @@ export default class Radio extends CheckCog {
     return classnames(super.getClassName(), 'radio')
   }
 
-  handleClick = (value) => {
+  handleClick = (value, checked) => {
     const {
       onClick
     } = this.props
 
-    onClick(value)
+    onClick(value, checked)
   }
 
-  handleChange = (value) => {
+  handleChange = (value, checked) => {
     const {
       onChange
     } = this.props
 
-    onChange(value)
+    onChange(value, checked)
   }
 
   shouldComponentUpdate (props) {

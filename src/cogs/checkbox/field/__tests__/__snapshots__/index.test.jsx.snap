@@ -11,6 +11,7 @@ exports[`@modernpoacher/cogs/cogs/checkbox/field <Field /> With additional props
   readOnly={true}
   required={true}
   type="checkbox"
+  value="MOCK VALUE"
 />
 `;
 
@@ -21,5 +22,6 @@ exports[`@modernpoacher/cogs/cogs/checkbox/field <Field /> With required props r
   onChange={[Function]}
   onClick={[Function]}
   type="checkbox"
+  value="MOCK VALUE"
 />
 `;

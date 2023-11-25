@@ -75,7 +75,7 @@ export default class RadioState extends State {
         children,
         {
           ...props,
-          onChange: (name, value) => log(name, value)
+          onChange: (VALUE, CHECKED) => log(VALUE, CHECKED)
         },
         {
           defaultValue
@@ -89,7 +89,7 @@ export default class RadioState extends State {
       children,
       {
         ...props,
-        onChange: (name, value) => { this.setState({ value }, () => log(name, value)) }
+        onChange: (VALUE, CHECKED) => { this.setState({ value: VALUE, checked: CHECKED }, () => log(VALUE, CHECKED)) }
       },
       {
         value

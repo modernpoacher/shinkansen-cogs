@@ -137,7 +137,7 @@ describe('@modernpoacher/cogs/components/field', () => {
   describe('<ValueField />', () => {
     describe('With required props', () => {
       const component = (
-        <ValueField name='MOCK NAME' />
+        <ValueField name='MOCK NAME' value='MOCK VALUE' />
       )
 
       it('renders', () => {
@@ -208,12 +208,12 @@ describe('@modernpoacher/cogs/components/field', () => {
           name='MOCK NAME'
           id='MOCK ID'
           title='MOCK TITLE'
+          value='MOCK VALUE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
           disabled
           readOnly
-          value='MOCK VALUE'
           placeholder='MOCK PLACEHOLDER'
         />
       )
@@ -253,7 +253,7 @@ describe('@modernpoacher/cogs/components/field', () => {
         const MOCK_ONCHANGE = jest.fn()
 
         const component = (
-          <ValueField name='MOCK NAME' onChange={MOCK_ONCHANGE} />
+          <ValueField name='MOCK NAME' value='MOCK VALUE' onChange={MOCK_ONCHANGE} />
         )
 
         const instance = (
@@ -272,7 +272,7 @@ describe('@modernpoacher/cogs/components/field', () => {
   describe('<CheckField />', () => {
     describe('With required props', () => {
       const component = (
-        <CheckField name='MOCK NAME' />
+        <CheckField name='MOCK NAME' value='MOCK VALUE' />
       )
 
       it('renders', () => {
@@ -328,6 +328,7 @@ describe('@modernpoacher/cogs/components/field', () => {
           <CheckField
             name='MOCK NAME'
             id='MOCK ID'
+            value='MOCK VALUE'
             required
             disabled
             readOnly
@@ -350,6 +351,7 @@ describe('@modernpoacher/cogs/components/field', () => {
           name='MOCK NAME'
           id='MOCK ID'
           title='MOCK TITLE'
+          value='MOCK VALUE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -372,24 +374,50 @@ describe('@modernpoacher/cogs/components/field', () => {
       })
 
       describe('`props` have changed', () => {
-        it('returns true', () => {
-          return expect(instance.shouldComponentUpdate({
-            ...instance.props,
-            checked: false,
-            onClick: jest.fn()
-          }))
-            .toBe(true)
+        describe('`value`', () => {
+          it('returns true', () => {
+            return expect(instance.shouldComponentUpdate({
+              ...instance.props,
+              value: 'MOCK CHANGED VALUE',
+              onClick: jest.fn()
+            }))
+              .toBe(true)
+          })
+        })
+
+        describe('`checked`', () => {
+          it('returns true', () => {
+            return expect(instance.shouldComponentUpdate({
+              ...instance.props,
+              checked: false,
+              onClick: jest.fn()
+            }))
+              .toBe(true)
+          })
         })
       })
 
       describe('`props` have not changed', () => {
-        it('returns false', () => {
-          return expect(instance.shouldComponentUpdate({ // instance.props
-            ...instance.props,
-            checked: true,
-            onClick: MOCK_ONCLICK
-          }))
-            .toBe(false)
+        describe('`value`', () => {
+          it('returns false', () => {
+            return expect(instance.shouldComponentUpdate({ // instance.props
+              ...instance.props,
+              value: 'MOCK VALUE',
+              onClick: MOCK_ONCLICK
+            }))
+              .toBe(false)
+          })
+        })
+
+        describe('`checked`', () => {
+          it('returns false', () => {
+            return expect(instance.shouldComponentUpdate({ // instance.props
+              ...instance.props,
+              checked: true,
+              onClick: MOCK_ONCLICK
+            }))
+              .toBe(false)
+          })
         })
       })
     })
@@ -399,7 +427,7 @@ describe('@modernpoacher/cogs/components/field', () => {
         const MOCK_ONCLICK = jest.fn()
 
         const component = (
-          <CheckField name='MOCK NAME' onClick={MOCK_ONCLICK} />
+          <CheckField name='MOCK NAME' value='MOCK VALUE' onClick={MOCK_ONCLICK} />
         )
 
         const instance = (
@@ -407,10 +435,10 @@ describe('@modernpoacher/cogs/components/field', () => {
             .getInstance()
         )
 
-        instance.handleClick({ target: { checked: 'MOCK CHECKED' } })
+        instance.handleClick({ target: { value: 'MOCK VALUE', checked: 'MOCK CHECKED' } })
 
         return expect(MOCK_ONCLICK)
-          .toBeCalledWith('MOCK CHECKED')
+          .toBeCalledWith('MOCK VALUE', 'MOCK CHECKED')
       })
     })
 
@@ -419,7 +447,7 @@ describe('@modernpoacher/cogs/components/field', () => {
         const MOCK_ONCHANGE = jest.fn()
 
         const component = (
-          <CheckField name='MOCK NAME' onChange={MOCK_ONCHANGE} />
+          <CheckField name='MOCK NAME' value='MOCK VALUE' onChange={MOCK_ONCHANGE} />
         )
 
         const instance = (
@@ -427,10 +455,10 @@ describe('@modernpoacher/cogs/components/field', () => {
             .getInstance()
         )
 
-        instance.handleChange({ target: { checked: 'MOCK CHECKED' } })
+        instance.handleChange({ target: { value: 'MOCK VALUE', checked: 'MOCK CHECKED' } })
 
         return expect(MOCK_ONCHANGE)
-          .toBeCalledWith('MOCK CHECKED')
+          .toBeCalledWith('MOCK VALUE', 'MOCK CHECKED')
       })
     })
   })
