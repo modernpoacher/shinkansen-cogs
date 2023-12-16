@@ -27,7 +27,10 @@ describe('shinkansen-cogs/cogs/checkbox/field', () => {
   describe('<Field />', () => {
     describe('With required props', () => {
       const component = (
-        <Field name='MOCK NAME' />
+        <Field
+          name='MOCK NAME'
+          value='MOCK VALUE'
+        />
       )
 
       it('renders', () => {
@@ -50,6 +53,7 @@ describe('shinkansen-cogs/cogs/checkbox/field', () => {
             id='MOCK ID'
             name='MOCK NAME'
             title='MOCK TITLE'
+            value='MOCK VALUE'
             required
             disabled
             readOnly
@@ -68,7 +72,10 @@ describe('shinkansen-cogs/cogs/checkbox/field', () => {
         jest.spyOn(CheckField.prototype, 'getClassName').mockReturnValue('MOCK GETCLASSNAME')
 
         const component = (
-          <Field name='MOCK NAME' />
+          <Field
+            name='MOCK NAME'
+            value='MOCK VALUE'
+          />
         )
 
         const instance = (

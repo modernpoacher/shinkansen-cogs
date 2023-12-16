@@ -11,6 +11,7 @@ exports[`shinkansen-cogs/cogs/checkbox/field <Field /> With additional props ren
   readOnly={true}
   required={true}
   type="checkbox"
+  value="MOCK VALUE"
 />
 `;
 
@@ -21,5 +22,6 @@ exports[`shinkansen-cogs/cogs/checkbox/field <Field /> With required props rende
   onChange={[Function]}
   onClick={[Function]}
   type="checkbox"
+  value="MOCK VALUE"
 />
 `;
