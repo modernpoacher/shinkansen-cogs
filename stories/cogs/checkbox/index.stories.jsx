@@ -20,7 +20,7 @@ export default {
 
 export function Checked (args) {
   return (
-    <CheckboxState checked>
+    <CheckboxState value='value'>
       <CheckboxCog {...args} value='value' />
     </CheckboxState>
   )
