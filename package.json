@@ -41,7 +41,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "classnames": "^2.3.3",
+    "classnames": "^2.4.0",
     "debug": "^4.3.4"
   },
   "devDependencies": {
