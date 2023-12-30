@@ -41,17 +41,17 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "classnames": "^2.5.0",
+    "classnames": "^2.5.1",
     "debug": "^4.3.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.6",
+    "@babel/core": "^7.23.7",
     "@babel/eslint-parser": "^7.23.3",
-    "@babel/preset-env": "^7.23.6",
+    "@babel/preset-env": "^7.23.7",
     "@babel/preset-react": "^7.23.3",
-    "@babel/register": "^7.22.15",
+    "@babel/register": "^7.23.7",
     "@modernpoacher/design-system": "1.0.113",
-    "@modernpoacher/hooks": "^1.0.453",
+    "@modernpoacher/hooks": "^1.0.454",
     "@storybook/addon-actions": "^7.6.6",
     "@storybook/addon-essentials": "^7.6.6",
     "@storybook/addon-links": "^7.6.6",
