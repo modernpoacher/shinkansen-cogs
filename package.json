@@ -100,7 +100,7 @@
     "react-dom": "^18.2.0",
     "react-test-renderer": "^18.2.0",
     "regenerator-runtime": "^0.14.1",
-    "sass": "^1.69.6",
+    "sass": "^1.69.7",
     "storybook": "^7.6.7",
     "vinyl-paths": "^5.0.0"
   },
