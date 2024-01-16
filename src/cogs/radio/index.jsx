@@ -138,6 +138,7 @@ export default class Radio extends CheckCog {
 
 Radio.propTypes = {
   ...CheckCog.propTypes,
+  id: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired
 }
 

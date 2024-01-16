@@ -73,7 +73,11 @@ describe('@modernpoacher/cogs/cogs/radio', () => {
   describe('<Cog />', () => {
     describe('With required props', () => {
       const component = (
-        <Cog name='MOCK NAME' value='MOCK VALUE' />
+        <Cog
+          name='MOCK NAME'
+          id='MOCK ID'
+          value='MOCK VALUE'
+        />
       )
 
       it('renders', () => {
@@ -150,7 +154,11 @@ describe('@modernpoacher/cogs/cogs/radio', () => {
         jest.spyOn(CheckCog.prototype, 'getClassName').mockReturnValue('MOCK GETCLASSNAME')
 
         const component = (
-          <Cog name='MOCK NAME' value='MOCK VALUE' />
+          <Cog
+            name='MOCK NAME'
+            id='MOCK ID'
+            value='MOCK VALUE'
+          />
         )
 
         const instance = (
