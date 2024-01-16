@@ -38,10 +38,37 @@ describe('shinkansen-cogs/cogs/checkbox/field', () => {
           .toMatchSnapshot()
       })
 
-      describe('`getClassName`', () => {
-        it('is defined', () => {
-          return expect(Field.prototype.getClassName)
-            .toBeDefined()
+      describe('Prototype', () => {
+        describe('`getClassName`', () => {
+          it('is defined', () => {
+            return expect(Field.prototype.getClassName)
+              .toBeDefined()
+          })
+        })
+      })
+
+      describe('Instance', () => {
+        let instance
+
+        beforeEach(() => {
+          instance = (
+            renderer.create(component)
+              .getInstance()
+          )
+        })
+
+        describe('`handleClick`', () => {
+          it('is defined', () => {
+            return expect(instance.handleClick)
+              .toBeDefined()
+          })
+        })
+
+        describe('`handleChange`', () => {
+          it('is defined', () => {
+            return expect(instance.handleChange)
+              .toBeDefined()
+          })
         })
       })
     })
@@ -94,6 +121,54 @@ describe('shinkansen-cogs/cogs/checkbox/field', () => {
       it('returns the classname', () => {
         return expect(returnValue)
           .toBe('MOCK CLASSNAME')
+      })
+    })
+
+    describe('`handleClick()`', () => {
+      it('invokes the `onClick` prop', () => {
+        const MOCK_ONCLICK = jest.spyOn(CheckField.prototype, 'handleClick')
+
+        const component = (
+          <Field
+            name='MOCK NAME'
+            value='MOCK VALUE'
+            onClick={MOCK_ONCLICK}
+          />
+        )
+
+        const instance = (
+          renderer.create(component)
+            .getInstance()
+        )
+
+        instance.handleClick({ target: { value: 'MOCK VALUE', checked: 'MOCK CHECKED' } })
+
+        return expect(MOCK_ONCLICK)
+          .toBeCalledWith({ target: { value: 'MOCK VALUE', checked: 'MOCK CHECKED' } })
+      })
+    })
+
+    describe('`handleChange()`', () => {
+      it('invokes the `onChange` prop', () => {
+        const MOCK_ONCHANGE = jest.spyOn(CheckField.prototype, 'handleChange')
+
+        const component = (
+          <Field
+            name='MOCK NAME'
+            value='MOCK VALUE'
+            onChange={MOCK_ONCHANGE}
+          />
+        )
+
+        const instance = (
+          renderer.create(component)
+            .getInstance()
+        )
+
+        instance.handleChange({ target: { value: 'MOCK VALUE', checked: 'MOCK CHECKED' } })
+
+        return expect(MOCK_ONCHANGE)
+          .toBeCalledWith({ target: { value: 'MOCK VALUE', checked: 'MOCK CHECKED' } })
       })
     })
   })

@@ -72,7 +72,13 @@ class MockErrorMessage extends mockComponent {
 
 describe('shinkansen-cogs/cogs/email', () => {
   beforeAll(() => {
+    /*
+     *  class defines `state` for instance
+     */
     ErrorMessage.mockImplementation(() => new MockErrorMessage())
+    /*
+     *  function returns `state`
+     */
     ErrorMessage.getDerivedStateFromProps.mockReturnValue({})
   })
 

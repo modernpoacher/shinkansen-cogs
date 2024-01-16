@@ -28,8 +28,8 @@ describe('shinkansen-cogs/cogs/radio/field', () => {
     describe('With required props', () => {
       const component = (
         <Field
-          id='MOCK ID'
           name='MOCK NAME'
+          id='MOCK ID'
           value='MOCK VALUE'
         />
       )
@@ -101,8 +101,8 @@ describe('shinkansen-cogs/cogs/radio/field', () => {
 
         const component = (
           <Field
-            id='MOCK ID'
             name='MOCK NAME'
+            id='MOCK ID'
             value='MOCK VALUE'
           />
         )
@@ -132,8 +132,8 @@ describe('shinkansen-cogs/cogs/radio/field', () => {
 
         const component = (
           <Field
-            id='MOCK ID'
             name='MOCK NAME'
+            id='MOCK ID'
             value='MOCK VALUE'
             onClick={MOCK_ONCLICK}
           />
@@ -157,8 +157,8 @@ describe('shinkansen-cogs/cogs/radio/field', () => {
 
         const component = (
           <Field
-            id='MOCK ID'
             name='MOCK NAME'
+            id='MOCK ID'
             value='MOCK VALUE'
             onChange={MOCK_ONCHANGE}
           />
