@@ -37,7 +37,7 @@
     "nvm": "bash nvm.sh",
     "prestorybook": "npm run build && npm run transform",
     "storybook": "storybook dev -p 6006",
-    "prepare": "husky install",
+    "prepare": "husky",
     "build-storybook": "storybook build"
   },
   "dependencies": {
@@ -51,12 +51,12 @@
     "@babel/preset-react": "^7.23.3",
     "@babel/register": "^7.23.7",
     "@modernpoacher/design-system": "1.0.113",
-    "@modernpoacher/hooks": "^1.0.463",
-    "@storybook/addon-actions": "^7.6.15",
-    "@storybook/addon-essentials": "^7.6.15",
-    "@storybook/addon-links": "^7.6.15",
-    "@storybook/react": "^7.6.15",
-    "@storybook/react-webpack5": "^7.6.15",
+    "@modernpoacher/hooks": "^1.0.464",
+    "@storybook/addon-actions": "^7.6.16",
+    "@storybook/addon-essentials": "^7.6.16",
+    "@storybook/addon-links": "^7.6.16",
+    "@storybook/react": "^7.6.16",
+    "@storybook/react-webpack5": "^7.6.16",
     "@types/react": "^18.2.55",
     "@typescript-eslint/eslint-plugin": "^7.0.1",
     "@typescript-eslint/parser": "^7.0.1",
@@ -83,8 +83,8 @@
     "remove-files-webpack-plugin": "^1.5.0",
     "sass": "^1.70.0",
     "sass-loader": "^14.1.0",
-    "storybook": "^7.6.15",
-    "webpack": "^5.90.1",
+    "storybook": "^7.6.16",
+    "webpack": "^5.90.2",
     "webpack-cli": "^5.1.4"
   },
   "imports": {
