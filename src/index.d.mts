@@ -10,12 +10,6 @@ declare namespace CogsTypes {
   }
 }
 
-declare module '@modernpoacher/cogs/cogs/textarea/title' {
-  import Title from '@modernpoacher/cogs/components/title'
-
-  export default class TextareaTitle extends Title {}
-}
-
 declare module '@modernpoacher/cogs' {
   export { default as CheckboxCog } from '@modernpoacher/cogs/cogs/checkbox'
   export { default as EmailCog } from '@modernpoacher/cogs/cogs/email'
