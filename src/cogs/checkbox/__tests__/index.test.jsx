@@ -73,7 +73,10 @@ describe('@modernpoacher/cogs/cogs/checkbox', () => {
   describe('<Cog />', () => {
     describe('With required props', () => {
       const component = (
-        <Cog name='MOCK NAME' value='MOCK VALUE' />
+        <Cog
+          name='MOCK NAME'
+          value='MOCK VALUE'
+        />
       )
 
       it('renders', () => {
@@ -150,7 +153,10 @@ describe('@modernpoacher/cogs/cogs/checkbox', () => {
         jest.spyOn(CheckCog.prototype, 'getClassName').mockReturnValue('MOCK GETCLASSNAME')
 
         const component = (
-          <Cog name='MOCK NAME' value='MOCK VALUE' />
+          <Cog
+            name='MOCK NAME'
+            value='MOCK VALUE'
+          />
         )
 
         const instance = (
@@ -208,10 +214,10 @@ describe('@modernpoacher/cogs/cogs/checkbox', () => {
           return expect(instance.shouldComponentUpdate({
             name: 'MOCK CHANGE NAME',
             id: 'MOCK CHANGE ID',
-            value: 'MOCK CHANGE VALUE',
             title: 'MOCK CHANGE TITLE',
             description: 'MOCK CHANGE DESCRIPTION',
             errorMessage: 'MOCK CHANGE ERROR MESSAGE',
+            value: 'MOCK CHANGE VALUE',
             tabIndex: 0,
             accessKey: 'MOCK CHANGE ACCESS KEY',
             required: false,
@@ -228,10 +234,10 @@ describe('@modernpoacher/cogs/cogs/checkbox', () => {
           return expect(instance.shouldComponentUpdate({ // instance.props
             name: 'MOCK NAME',
             id: 'MOCK ID',
-            value: 'MOCK VALUE',
             title: 'MOCK TITLE',
             description: 'MOCK DESCRIPTION',
             errorMessage: 'MOCK ERROR MESSAGE',
+            value: 'MOCK VALUE',
             tabIndex: 1,
             accessKey: 'MOCK ACCESS KEY',
             required: true,
