@@ -228,10 +228,10 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
           return expect(instance.shouldComponentUpdate({
             name: 'MOCK CHANGE NAME',
             id: 'MOCK CHANGE ID',
-            value: 'MOCK CHANGE VALUE',
             title: 'MOCK CHANGE TITLE',
             description: 'MOCK CHANGE DESCRIPTION',
             errorMessage: MOCK_ERROR_MESSAGE,
+            value: 'MOCK CHANGE VALUE',
             tabIndex: 0,
             accessKey: 'MOCK CHANGE ACCESS KEY',
             required: false,
@@ -248,10 +248,10 @@ describe('shinkansen-cogs/cogs/checkbox', () => {
           return expect(instance.shouldComponentUpdate({ // instance.props
             name: 'MOCK NAME',
             id: 'MOCK ID',
-            value: 'MOCK VALUE',
             title: 'MOCK TITLE',
             description: 'MOCK DESCRIPTION',
             errorMessage: MOCK_ERROR_MESSAGE,
+            value: 'MOCK VALUE',
             tabIndex: 1,
             accessKey: 'MOCK ACCESS KEY',
             required: true,

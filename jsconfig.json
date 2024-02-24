@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "shinkansen-cogs/*": [
+        "src/*",
+        "stories/*"
+      ]
+    }
+  }
+}

@@ -187,6 +187,7 @@ describe('shinkansen-cogs/cogs/number', () => {
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
           errorMessage={MOCK_ERROR_MESSAGE}
+          value='MOCK VALUE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
