@@ -11,14 +11,18 @@ import PropTypes from 'prop-types'
  * @param {TextContentProps}
  * @returns {React.JSX.Element}
  */
-const TextContent = ({ textContent }) => (
-  <span className='text-content'>
-    {textContent}
-  </span>
-)
+export default function TextContent ({ textContent }) {
+  if (textContent) {
+    return (
+      <span className='text-content'>
+        {textContent}
+      </span>
+    )
+  }
+
+  return null
+}
 
 TextContent.propTypes = {
   textContent: PropTypes.string.isRequired
 }
-
-export default TextContent
