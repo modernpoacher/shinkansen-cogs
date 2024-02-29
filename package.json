@@ -45,9 +45,9 @@
     "debug": "^4.3.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.9",
+    "@babel/core": "^7.24.0",
     "@babel/eslint-parser": "^7.23.10",
-    "@babel/preset-env": "^7.23.9",
+    "@babel/preset-env": "^7.24.0",
     "@babel/preset-react": "^7.23.3",
     "@babel/register": "^7.23.7",
     "@modernpoacher/design-system": "1.0.113",
@@ -74,7 +74,7 @@
     "mini-css-extract-plugin": "^2.8.1",
     "postcss": "^8.4.35",
     "postcss-import": "^16.0.1",
-    "postcss-loader": "^8.1.0",
+    "postcss-loader": "^8.1.1",
     "postcss-map": "^0.11.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
