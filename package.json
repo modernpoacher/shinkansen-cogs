@@ -45,13 +45,13 @@
     "debug": "^4.3.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.24.1",
+    "@babel/core": "^7.24.3",
     "@babel/eslint-parser": "^7.24.1",
-    "@babel/preset-env": "^7.24.1",
+    "@babel/preset-env": "^7.24.3",
     "@babel/preset-react": "^7.24.1",
     "@babel/register": "^7.23.7",
     "@modernpoacher/design-system": "1.0.113",
-    "@modernpoacher/hooks": "^1.0.468",
+    "@modernpoacher/hooks": "^1.0.469",
     "@storybook/addon-actions": "^8.0.2",
     "@storybook/addon-essentials": "^8.0.2",
     "@storybook/addon-links": "^8.0.2",
@@ -72,8 +72,8 @@
     "husky": "^9.0.11",
     "jest": "^29.7.0",
     "mini-css-extract-plugin": "^2.8.1",
-    "postcss": "^8.4.37",
-    "postcss-import": "^16.0.1",
+    "postcss": "^8.4.38",
+    "postcss-import": "^16.1.0",
     "postcss-loader": "^8.1.1",
     "postcss-map": "^0.11.0",
     "prop-types": "^15.8.1",
@@ -84,7 +84,7 @@
     "sass": "^1.72.0",
     "sass-loader": "^14.1.1",
     "storybook": "^8.0.2",
-    "webpack": "^5.90.3",
+    "webpack": "^5.91.0",
     "webpack-cli": "^5.1.4"
   },
   "imports": {
