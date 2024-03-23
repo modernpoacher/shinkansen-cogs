@@ -57,7 +57,7 @@
     "@storybook/addon-links": "^8.0.4",
     "@storybook/react": "^8.0.4",
     "@storybook/react-webpack5": "^8.0.4",
-    "@types/react": "^18.2.67",
+    "@types/react": "^18.2.69",
     "@typescript-eslint/eslint-plugin": "^7.3.1",
     "@typescript-eslint/parser": "^7.3.1",
     "babel-plugin-module-resolver": "^5.0.0",
