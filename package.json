@@ -1,6 +1,6 @@
 {
   "name": "shinkansen-cogs",
-  "version": "1.7.149",
+  "version": "1.7.150",
   "description": "Shinkansen Cogs",
   "keywords": [
     "Shinkansen",
@@ -155,7 +155,6 @@
     "./cogs/textarea/error-message": "./src/cogs/textarea/error-message/index.cjs",
     "./cogs/textarea/field": "./src/cogs/textarea/field/index.cjs",
     "./cogs/textarea/title": "./src/cogs/textarea/title/index.cjs",
-    "./common": "./src/common/index.mjs",
     "./components/common/disabled": "./src/components/common/disabled/index.cjs",
     "./components/common/readonly": "./src/components/common/readonly/index.cjs",
     "./components/common/required": "./src/components/common/required/index.cjs",
