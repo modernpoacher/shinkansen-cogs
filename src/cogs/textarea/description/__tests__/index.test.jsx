@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
 import Super from '@modernpoacher/cogs/components/description'
-import Description from '../index.jsx'
+import Description from '@modernpoacher/cogs/cogs/textarea/description'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 

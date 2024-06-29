@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
 import Super from '@modernpoacher/cogs/components/error-message'
-import ErrorMessage from '../index.jsx'
+import ErrorMessage from '@modernpoacher/cogs/cogs/password/error-message'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 

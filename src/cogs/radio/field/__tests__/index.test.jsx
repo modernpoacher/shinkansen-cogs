@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
 import { CheckField } from '@modernpoacher/cogs/components/field'
-import Field from '../index.jsx'
+import Field from '@modernpoacher/cogs/cogs/radio/field'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 

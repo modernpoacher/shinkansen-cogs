@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
 import Super from '@modernpoacher/cogs/components/title'
-import Title from '../index.jsx'
+import Title from '@modernpoacher/cogs/cogs/checkbox/title'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
