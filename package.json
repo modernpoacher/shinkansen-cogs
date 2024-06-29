@@ -113,7 +113,6 @@
       "require": "./src/index.cjs",
       "import": "./src/index.mjs"
     },
-    "./common": "./src/common/index.mjs",
     "./cogs": "./src/cogs/index.cjs",
     "./cogs/checkbox": "./src/cogs/checkbox/index.cjs",
     "./cogs/checkbox/description": "./src/cogs/checkbox/description/index.cjs",
@@ -155,6 +154,7 @@
     "./cogs/textarea/error-message": "./src/cogs/textarea/error-message/index.cjs",
     "./cogs/textarea/field": "./src/cogs/textarea/field/index.cjs",
     "./cogs/textarea/title": "./src/cogs/textarea/title/index.cjs",
+    "./common": "./src/common/index.mjs",
     "./components/common/disabled": "./src/components/common/disabled/index.cjs",
     "./components/common/readonly": "./src/components/common/readonly/index.cjs",
     "./components/common/required": "./src/components/common/required/index.cjs",
