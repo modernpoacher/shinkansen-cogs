@@ -15,7 +15,10 @@ exports[`shinkansen-cogs/cogs/password/field <Field /> With additional props ren
 exports[`shinkansen-cogs/cogs/password/field <Field /> With required props renders 1`] = `
 <input
   className="MOCK CLASSNAME"
+  disabled={false}
   name="MOCK NAME"
+  readOnly={false}
+  required={false}
   type="password"
 />
 `;

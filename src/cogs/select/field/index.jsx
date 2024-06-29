@@ -5,6 +5,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
+import {
+  DEFAULT_HANDLE_CHANGE
+} from 'shinkansen-cogs/common'
+
 import { ValueField } from 'shinkansen-cogs/components/field'
 
 function getSelectedValues ({ target: { selectedOptions } }) {
@@ -33,8 +37,8 @@ export default class SelectField extends ValueField {
 
   handleChange = (event) => {
     const {
-      multiple,
-      onChange
+      multiple = false,
+      onChange = DEFAULT_HANDLE_CHANGE
     } = this.props
 
     if (multiple) {
@@ -50,12 +54,12 @@ export default class SelectField extends ValueField {
       name,
       value,
       defaultValue,
-      required,
-      disabled,
-      readOnly,
+      required = false,
+      disabled = false,
+      readOnly = false,
       tabIndex,
       accessKey,
-      multiple,
+      multiple = false,
       children,
       fieldRef
     } = this.props

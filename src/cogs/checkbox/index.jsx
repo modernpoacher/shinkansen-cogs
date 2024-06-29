@@ -7,6 +7,11 @@ import classnames from 'classnames'
 
 import { CheckCog } from 'shinkansen-cogs/cogs'
 
+import {
+  DEFAULT_HANDLE_CHANGE,
+  DEFAULT_HANDLE_CLICK
+} from 'shinkansen-cogs/common'
+
 import Title from './title/index.jsx'
 import Description from './description/index.jsx'
 import ErrorMessage from './error-message/index.jsx'
@@ -17,22 +22,22 @@ export default class CheckboxCog extends CheckCog {
     return classnames(super.getClassName(), 'checkbox')
   }
 
-  handleClick = (value, checked) => {
-    const {
-      onClick,
-      name
-    } = this.props
-
-    onClick(name, value, checked)
-  }
-
   handleChange = (value, checked) => {
     const {
-      onChange,
+      onChange = DEFAULT_HANDLE_CHANGE,
       name
     } = this.props
 
     onChange(name, value, checked)
+  }
+
+  handleClick = (value, checked) => {
+    const {
+      onClick = DEFAULT_HANDLE_CLICK,
+      name
+    } = this.props
+
+    onClick(name, value, checked)
   }
 
   shouldComponentUpdate (props) {
@@ -47,9 +52,9 @@ export default class CheckboxCog extends CheckCog {
 
     const {
       title,
-      required,
-      disabled,
-      readOnly
+      required = false,
+      disabled = false,
+      readOnly = false
     } = this.props
 
     return (
@@ -95,9 +100,9 @@ export default class CheckboxCog extends CheckCog {
       value,
       checked,
       defaultChecked,
-      required,
-      disabled,
-      readOnly,
+      required = false,
+      disabled = false,
+      readOnly = false,
       tabIndex,
       accessKey,
       placeholder,
@@ -117,8 +122,8 @@ export default class CheckboxCog extends CheckCog {
         tabIndex={tabIndex}
         accessKey={accessKey}
         placeholder={placeholder}
-        onClick={this.handleClick}
         onChange={this.handleChange}
+        onClick={this.handleClick}
         fieldRef={fieldRef}
       />
     )

@@ -1,5 +1,5 @@
 declare namespace CogsTypes {
-  export type OnChangeType = () => undefined
+  export type OnChangeType = () => void
 
   export interface ErrorDefinitionType {
     type: string
