@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
 import Super from 'shinkansen-cogs/components/title'
-import Title from '../index.jsx'
+import Title from 'shinkansen-cogs/cogs/text/title'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
@@ -30,7 +30,7 @@ jest.mock('shinkansen-cogs/components/title', () => ({
   }
 }))
 
-describe('shinkansen-cogs/cogs/title/cogs/text', () => {
+describe('shinkansen-cogs/cogs/text/title', () => {
   describe('<Title />', () => {
     describe('With required props', () => {
       const component = (

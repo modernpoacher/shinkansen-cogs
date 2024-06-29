@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
 import Super from 'shinkansen-cogs/components/title'
-import Title from '../index.jsx'
+import Title from 'shinkansen-cogs/cogs/email/title'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
