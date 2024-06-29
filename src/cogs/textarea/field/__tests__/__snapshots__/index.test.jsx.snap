@@ -14,6 +14,9 @@ exports[`shinkansen-cogs/cogs/textarea/field <Field /> With additional props ren
 exports[`shinkansen-cogs/cogs/textarea/field <Field /> With required props renders 1`] = `
 <textarea
   className="MOCK CLASSNAME"
+  disabled={false}
   name="MOCK NAME"
+  readOnly={false}
+  required={false}
 />
 `;

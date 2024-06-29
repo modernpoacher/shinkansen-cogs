@@ -4,13 +4,10 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-function onChange () {
-  /* */
-}
-
-function onClick () {
-  /* */
-}
+import {
+  DEFAULT_HANDLE_CHANGE,
+  DEFAULT_HANDLE_CLICK
+} from 'shinkansen-cogs/common'
 
 export default class Field extends Component {
   getClassName () {
@@ -33,9 +30,9 @@ export default class Field extends Component {
   render () {
     const {
       id,
-      required,
-      disabled,
-      readOnly,
+      required = false,
+      disabled = false,
+      readOnly = false,
       tabIndex,
       accessKey,
       placeholder,
@@ -77,22 +74,24 @@ Field.defaultProps = {
   required: false,
   disabled: false,
   readOnly: false,
-  onChange
+  onChange: DEFAULT_HANDLE_CHANGE
 }
 
 /**
  * ValueField component
  */
 export class ValueField extends Field {
-  shouldComponentUpdate (props) {
+  shouldComponentUpdate (props, state) {
     return (
-      super.shouldComponentUpdate(props) ||
+      super.shouldComponentUpdate(props, state) ||
       (props.value !== this.props.value)
     )
   }
 
   handleChange = ({ target: { value } }) => {
-    const { onChange } = this.props
+    const {
+      onChange = DEFAULT_HANDLE_CHANGE
+    } = this.props
 
     onChange(value)
   }
@@ -112,9 +111,9 @@ ValueField.defaultProps = {
  * CheckField component
  */
 export class CheckField extends Field {
-  shouldComponentUpdate (props) {
+  shouldComponentUpdate (props, state) {
     return (
-      super.shouldComponentUpdate(props) ||
+      super.shouldComponentUpdate(props, state) ||
       (props.value !== this.props.value) ||
       (props.checked !== this.props.checked) ||
       (props.onClick !== this.props.onClick)
@@ -122,13 +121,17 @@ export class CheckField extends Field {
   }
 
   handleClick = ({ target: { value, checked } }) => {
-    const { onClick } = this.props
+    const {
+      onClick = DEFAULT_HANDLE_CLICK
+    } = this.props
 
     onClick(value, checked)
   }
 
   handleChange = ({ target: { value, checked } }) => {
-    const { onChange } = this.props
+    const {
+      onChange = DEFAULT_HANDLE_CHANGE
+    } = this.props
 
     onChange(value, checked)
   }
@@ -143,5 +146,5 @@ CheckField.propTypes = {
 
 CheckField.defaultProps = {
   ...Field.defaultProps,
-  onClick
+  onClick: DEFAULT_HANDLE_CLICK
 }

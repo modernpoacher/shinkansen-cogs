@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
 import Super from 'shinkansen-cogs/components/error-message'
-import ErrorMessage from '../index.jsx'
+import ErrorMessage from 'shinkansen-cogs/cogs/password/error-message'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 

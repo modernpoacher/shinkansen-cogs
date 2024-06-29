@@ -35,3 +35,5 @@ export default class Description extends Component {
 Description.propTypes = {
   description: PropTypes.string
 }
+
+Description.defaultProps = {}

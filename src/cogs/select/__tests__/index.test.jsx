@@ -5,10 +5,10 @@ import classnames from 'classnames'
 import { ValueCog } from 'shinkansen-cogs/cogs'
 import Cog from 'shinkansen-cogs/cogs/select'
 
-import Title from '../title/index.jsx'
-import Description from '../description/index.jsx'
-import ErrorMessage from '../error-message/index.jsx'
-import Field from '../field/index.jsx'
+import Title from 'shinkansen-cogs/cogs/select/title'
+import Description from 'shinkansen-cogs/cogs/select/description'
+import ErrorMessage from 'shinkansen-cogs/cogs/select/error-message'
+import Field from 'shinkansen-cogs/cogs/select/field'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
@@ -49,10 +49,10 @@ jest.mock('shinkansen-cogs/cogs', () => {
   }
 })
 
-jest.mock('../title/index.jsx')
-jest.mock('../description/index.jsx')
-jest.mock('../error-message/index.jsx')
-jest.mock('../field/index.jsx')
+jest.mock('shinkansen-cogs/cogs/select/title')
+jest.mock('shinkansen-cogs/cogs/select/description')
+jest.mock('shinkansen-cogs/cogs/select/error-message')
+jest.mock('shinkansen-cogs/cogs/select/field')
 
 class MockErrorMessage extends mockComponent {
   state = {}

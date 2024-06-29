@@ -15,7 +15,10 @@ exports[`shinkansen-cogs/cogs/email/field <Field /> With additional props render
 exports[`shinkansen-cogs/cogs/email/field <Field /> With required props renders 1`] = `
 <input
   className="MOCK CLASSNAME"
+  disabled={false}
   name="MOCK NAME"
+  readOnly={false}
+  required={false}
   type="email"
 />
 `;

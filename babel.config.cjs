@@ -47,6 +47,7 @@ const plugins = [
         /**
          *  Storybook
          */
+        'shinkansen-cogs/common': './src/common/index.mjs',
         'shinkansen-cogs/cogs/checkbox/error-message': './src/cogs/checkbox/error-message/index.jsx',
         'shinkansen-cogs/cogs/checkbox/description': './src/cogs/checkbox/description/index.jsx',
         'shinkansen-cogs/cogs/checkbox/field': './src/cogs/checkbox/field/index.jsx',

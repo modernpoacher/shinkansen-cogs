@@ -7,6 +7,10 @@ import classnames from 'classnames'
 
 import { ValueCog } from 'shinkansen-cogs/cogs'
 
+import {
+  DEFAULT_HANDLE_CHANGE
+} from 'shinkansen-cogs/common'
+
 import Title from './title/index.jsx'
 import Description from './description/index.jsx'
 import ErrorMessage from './error-message/index.jsx'
@@ -27,7 +31,7 @@ export default class SelectCog extends ValueCog {
 
   handleChange = (value) => {
     const {
-      onChange,
+      onChange = DEFAULT_HANDLE_CHANGE,
       name
     } = this.props
 
@@ -39,9 +43,9 @@ export default class SelectCog extends ValueCog {
 
     const {
       title,
-      required,
-      disabled,
-      readOnly
+      required = false,
+      disabled = false,
+      readOnly = false
     } = this.props
 
     return (
@@ -86,13 +90,13 @@ export default class SelectCog extends ValueCog {
       name,
       value,
       defaultValue,
-      required,
-      disabled,
-      readOnly,
+      required = false,
+      disabled = false,
+      readOnly = false,
       tabIndex,
       accessKey,
       placeholder,
-      multiple,
+      multiple = false,
       fieldRef,
       children
     } = this.props

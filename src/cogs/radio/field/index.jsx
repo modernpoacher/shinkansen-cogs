@@ -18,9 +18,9 @@ export default class RadioField extends CheckField {
       id,
       name,
       value,
-      required,
-      disabled,
-      readOnly,
+      required = false,
+      disabled = false,
+      readOnly = false,
       tabIndex,
       accessKey,
       fieldRef
@@ -40,8 +40,8 @@ export default class RadioField extends CheckField {
           readOnly={readOnly}
           tabIndex={tabIndex}
           accessKey={accessKey}
-          onClick={this.handleClick}
           onChange={this.handleChange}
+          onClick={this.handleClick}
           className={className}
           type='radio'
           ref={fieldRef}
@@ -64,8 +64,8 @@ export default class RadioField extends CheckField {
         readOnly={readOnly}
         tabIndex={tabIndex}
         accessKey={accessKey}
-        onClick={this.handleClick}
         onChange={this.handleChange}
+        onClick={this.handleClick}
         className={className}
         type='radio'
         ref={fieldRef}
