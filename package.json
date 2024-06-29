@@ -113,6 +113,7 @@
       "require": "./src/index.cjs",
       "import": "./src/index.mjs"
     },
+    "./common": "./src/common/index.mjs",
     "./cogs": "./src/cogs/index.cjs",
     "./cogs/checkbox": "./src/cogs/checkbox/index.cjs",
     "./cogs/checkbox/description": "./src/cogs/checkbox/description/index.cjs",
