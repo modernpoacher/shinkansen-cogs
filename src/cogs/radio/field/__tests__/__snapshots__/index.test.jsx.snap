@@ -18,10 +18,13 @@ exports[`@modernpoacher/cogs/cogs/radio/field <Field /> With additional props re
 exports[`@modernpoacher/cogs/cogs/radio/field <Field /> With required props renders 1`] = `
 <input
   className="MOCK CLASSNAME"
+  disabled={false}
   id="MOCK ID"
   name="MOCK NAME"
   onChange={[Function]}
   onClick={[Function]}
+  readOnly={false}
+  required={false}
   type="radio"
   value="MOCK VALUE"
 />

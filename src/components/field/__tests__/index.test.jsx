@@ -1,7 +1,10 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import Field, { ValueField, CheckField } from '@modernpoacher/cogs/components/field'
+import Field, {
+  ValueField,
+  CheckField
+} from '@modernpoacher/cogs/components/field'
 
 describe('@modernpoacher/cogs/components/field', () => {
   describe('<Field />', () => {
@@ -70,7 +73,7 @@ describe('@modernpoacher/cogs/components/field', () => {
     })
 
     describe('`shouldComponentUpdate()`', () => {
-      const MOCK_ONCHANGE = jest.fn()
+      const MOCK_ON_CHANGE = jest.fn()
 
       const component = (
         <Field
@@ -83,7 +86,7 @@ describe('@modernpoacher/cogs/components/field', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
-          onChange={MOCK_ONCHANGE}
+          onChange={MOCK_ON_CHANGE}
         />
       )
 
@@ -126,7 +129,7 @@ describe('@modernpoacher/cogs/components/field', () => {
             disabled: true,
             readOnly: true,
             placeholder: 'MOCK PLACEHOLDER',
-            onChange: MOCK_ONCHANGE
+            onChange: MOCK_ON_CHANGE
           }))
             .toBe(false)
         })
@@ -250,10 +253,10 @@ describe('@modernpoacher/cogs/components/field', () => {
 
     describe('`handleChange()`', () => {
       it('invokes the `onChange` prop', () => {
-        const MOCK_ONCHANGE = jest.fn()
+        const MOCK_ON_CHANGE = jest.fn()
 
         const component = (
-          <ValueField name='MOCK NAME' value='MOCK VALUE' onChange={MOCK_ONCHANGE} />
+          <ValueField name='MOCK NAME' value='MOCK VALUE' onChange={MOCK_ON_CHANGE} />
         )
 
         const instance = (
@@ -263,7 +266,7 @@ describe('@modernpoacher/cogs/components/field', () => {
 
         instance.handleChange({ target: { value: 'MOCK VALUE' } })
 
-        return expect(MOCK_ONCHANGE)
+        return expect(MOCK_ON_CHANGE)
           .toBeCalledWith('MOCK VALUE')
       })
     })
@@ -343,8 +346,8 @@ describe('@modernpoacher/cogs/components/field', () => {
     })
 
     describe('`shouldComponentUpdate()`', () => {
-      const MOCK_ONCHANGE = jest.fn()
-      const MOCK_ONCLICK = jest.fn()
+      const MOCK_ON_CHANGE = jest.fn()
+      const MOCK_ON_CLICK = jest.fn()
 
       const component = (
         <CheckField
@@ -359,8 +362,8 @@ describe('@modernpoacher/cogs/components/field', () => {
           readOnly
           checked
           placeholder='MOCK PLACEHOLDER'
-          onChange={MOCK_ONCHANGE}
-          onClick={MOCK_ONCLICK}
+          onChange={MOCK_ON_CHANGE}
+          onClick={MOCK_ON_CLICK}
         />
       )
 
@@ -403,7 +406,7 @@ describe('@modernpoacher/cogs/components/field', () => {
             return expect(instance.shouldComponentUpdate({ // instance.props
               ...instance.props,
               value: 'MOCK VALUE',
-              onClick: MOCK_ONCLICK
+              onClick: MOCK_ON_CLICK
             }))
               .toBe(false)
           })
@@ -414,7 +417,7 @@ describe('@modernpoacher/cogs/components/field', () => {
             return expect(instance.shouldComponentUpdate({ // instance.props
               ...instance.props,
               checked: true,
-              onClick: MOCK_ONCLICK
+              onClick: MOCK_ON_CLICK
             }))
               .toBe(false)
           })
@@ -424,10 +427,10 @@ describe('@modernpoacher/cogs/components/field', () => {
 
     describe('`handleClick()`', () => {
       it('invokes the `onClick` prop', () => {
-        const MOCK_ONCLICK = jest.fn()
+        const MOCK_ON_CLICK = jest.fn()
 
         const component = (
-          <CheckField name='MOCK NAME' value='MOCK VALUE' onClick={MOCK_ONCLICK} />
+          <CheckField name='MOCK NAME' value='MOCK VALUE' onClick={MOCK_ON_CLICK} />
         )
 
         const instance = (
@@ -437,17 +440,17 @@ describe('@modernpoacher/cogs/components/field', () => {
 
         instance.handleClick({ target: { value: 'MOCK VALUE', checked: 'MOCK CHECKED' } })
 
-        return expect(MOCK_ONCLICK)
+        return expect(MOCK_ON_CLICK)
           .toBeCalledWith('MOCK VALUE', 'MOCK CHECKED')
       })
     })
 
     describe('`handleChange()`', () => {
       it('invokes the `onChange` prop', () => {
-        const MOCK_ONCHANGE = jest.fn()
+        const MOCK_ON_CHANGE = jest.fn()
 
         const component = (
-          <CheckField name='MOCK NAME' value='MOCK VALUE' onChange={MOCK_ONCHANGE} />
+          <CheckField name='MOCK NAME' value='MOCK VALUE' onChange={MOCK_ON_CHANGE} />
         )
 
         const instance = (
@@ -457,7 +460,7 @@ describe('@modernpoacher/cogs/components/field', () => {
 
         instance.handleChange({ target: { value: 'MOCK VALUE', checked: 'MOCK CHECKED' } })
 
-        return expect(MOCK_ONCHANGE)
+        return expect(MOCK_ON_CHANGE)
           .toBeCalledWith('MOCK VALUE', 'MOCK CHECKED')
       })
     })

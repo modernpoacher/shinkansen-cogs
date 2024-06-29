@@ -266,7 +266,7 @@ describe('@modernpoacher/cogs/cogs', () => {
     })
 
     describe('`shouldComponentUpdate()`', () => {
-      const MOCK_ONCHANGE = jest.fn()
+      const MOCK_ON_CHANGE = jest.fn()
 
       const component = (
         <Cog
@@ -279,7 +279,7 @@ describe('@modernpoacher/cogs/cogs', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
-          onChange={MOCK_ONCHANGE}
+          onChange={MOCK_ON_CHANGE}
         />
       )
 
@@ -319,7 +319,7 @@ describe('@modernpoacher/cogs/cogs', () => {
             disabled: true,
             readOnly: true,
             placeholder: 'MOCK PLACEHOLDER',
-            onChange: MOCK_ONCHANGE
+            onChange: MOCK_ON_CHANGE
           }))
             .toBe(false)
         })
@@ -483,7 +483,7 @@ describe('@modernpoacher/cogs/cogs', () => {
     })
 
     describe('`shouldComponentUpdate()`', () => {
-      const MOCK_ONCHANGE = jest.fn()
+      const MOCK_ON_CHANGE = jest.fn()
 
       const component = (
         <ValueCog
@@ -497,7 +497,7 @@ describe('@modernpoacher/cogs/cogs', () => {
           readOnly
           value='MOCK VALUE'
           placeholder='MOCK PLACEHOLDER'
-          onChange={MOCK_ONCHANGE}
+          onChange={MOCK_ON_CHANGE}
         />
       )
 
@@ -523,7 +523,7 @@ describe('@modernpoacher/cogs/cogs', () => {
           return expect(instance.shouldComponentUpdate({
             ...instance.props,
             value: 'MOCK VALUE',
-            onChange: MOCK_ONCHANGE
+            onChange: MOCK_ON_CHANGE
           }))
             .toBe(false)
         })
@@ -586,7 +586,7 @@ describe('@modernpoacher/cogs/cogs', () => {
     })
 
     describe('`shouldComponentUpdate()`', () => {
-      const MOCK_ONCHANGE = jest.fn()
+      const MOCK_ON_CHANGE = jest.fn()
 
       const component = (
         <CheckCog
@@ -600,7 +600,7 @@ describe('@modernpoacher/cogs/cogs', () => {
           readOnly
           checked
           placeholder='MOCK PLACEHOLDER'
-          onChange={MOCK_ONCHANGE}
+          onChange={MOCK_ON_CHANGE}
         />
       )
 

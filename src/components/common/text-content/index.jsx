@@ -26,3 +26,5 @@ export default function TextContent ({ textContent }) {
 TextContent.propTypes = {
   textContent: PropTypes.string.isRequired
 }
+
+TextContent.defaultProps = {}

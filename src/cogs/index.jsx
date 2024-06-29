@@ -7,25 +7,25 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
+import {
+  DEFAULT_HANDLE_CHANGE,
+  DEFAULT_HANDLE_CLICK
+} from '@modernpoacher/cogs/common'
+
 import Title from '@modernpoacher/cogs/components/title'
 import Description from '@modernpoacher/cogs/components/description'
 import ErrorMessage from '@modernpoacher/cogs/components/error-message'
-import Field from '@modernpoacher/cogs/components/field'
-
-function onChange () {
-  /* */
-}
-
-function onClick () {
-  /* */
-}
+import Field, {
+  ValueField,
+  CheckField
+} from '@modernpoacher/cogs/components/field'
 
 export default class Cog extends Component {
   getClassName () {
     const {
-      required,
-      disabled,
-      readOnly,
+      required = false,
+      disabled = false,
+      readOnly = false,
       errorMessage
     } = this.props
 
@@ -67,9 +67,9 @@ export default class Cog extends Component {
 
     const {
       title,
-      required,
-      disabled,
-      readOnly
+      required = false,
+      disabled = false,
+      readOnly = false
     } = this.props
 
     return (
@@ -112,13 +112,13 @@ export default class Cog extends Component {
 
     const {
       name,
-      required,
-      disabled,
-      readOnly,
+      required = false,
+      disabled = false,
+      readOnly = false,
       tabIndex,
       accessKey,
       placeholder,
-      onChange,
+      onChange = DEFAULT_HANDLE_CHANGE,
       fieldRef
     } = this.props
 
@@ -172,7 +172,7 @@ Cog.defaultProps = {
   required: false,
   disabled: false,
   readOnly: false,
-  onChange
+  onChange: DEFAULT_HANDLE_CHANGE
 }
 
 export class ValueCog extends Cog {
@@ -180,6 +180,37 @@ export class ValueCog extends Cog {
     return (
       super.shouldComponentUpdate(props) ||
       (props.value !== this.props.value)
+    )
+  }
+
+  renderField () {
+    const id = this.getId()
+
+    const {
+      name,
+      required = false,
+      disabled = false,
+      readOnly = false,
+      tabIndex,
+      accessKey,
+      placeholder,
+      onChange = DEFAULT_HANDLE_CHANGE,
+      fieldRef
+    } = this.props
+
+    return (
+      <ValueField
+        id={id}
+        name={name}
+        required={required}
+        disabled={disabled}
+        readOnly={readOnly}
+        tabIndex={tabIndex}
+        accessKey={accessKey}
+        placeholder={placeholder}
+        onChange={onChange}
+        fieldRef={fieldRef}
+      />
     )
   }
 }
@@ -202,6 +233,39 @@ export class CheckCog extends Cog {
       (props.onClick !== this.props.onClick)
     )
   }
+
+  renderField () {
+    const id = this.getId()
+
+    const {
+      name,
+      required = false,
+      disabled = false,
+      readOnly = false,
+      tabIndex,
+      accessKey,
+      placeholder,
+      onChange = DEFAULT_HANDLE_CHANGE,
+      onClick = DEFAULT_HANDLE_CLICK,
+      fieldRef
+    } = this.props
+
+    return (
+      <CheckField
+        id={id}
+        name={name}
+        required={required}
+        disabled={disabled}
+        readOnly={readOnly}
+        tabIndex={tabIndex}
+        accessKey={accessKey}
+        placeholder={placeholder}
+        onChange={onChange}
+        onClick={onClick}
+        fieldRef={fieldRef}
+      />
+    )
+  }
 }
 
 CheckCog.propTypes = {
@@ -213,5 +277,5 @@ CheckCog.propTypes = {
 
 CheckCog.defaultProps = {
   ...Cog.defaultProps,
-  onClick
+  onClick: DEFAULT_HANDLE_CLICK
 }
