@@ -128,14 +128,14 @@ describe('shinkansen-cogs/cogs/radio/field', () => {
 
     describe('`handleClick()`', () => {
       it('invokes the `onClick` prop', () => {
-        const MOCK_ONCLICK = jest.spyOn(CheckField.prototype, 'handleClick')
+        const MOCK_ON_CLICK = jest.spyOn(CheckField.prototype, 'handleClick')
 
         const component = (
           <Field
             name='MOCK NAME'
             id='MOCK ID'
             value='MOCK VALUE'
-            onClick={MOCK_ONCLICK}
+            onClick={MOCK_ON_CLICK}
           />
         )
 
@@ -146,21 +146,21 @@ describe('shinkansen-cogs/cogs/radio/field', () => {
 
         instance.handleClick({ target: { value: 'MOCK VALUE', checked: 'MOCK CHECKED' } })
 
-        return expect(MOCK_ONCLICK)
+        return expect(MOCK_ON_CLICK)
           .toBeCalledWith({ target: { value: 'MOCK VALUE', checked: 'MOCK CHECKED' } })
       })
     })
 
     describe('`handleChange()`', () => {
       it('invokes the `onChange` prop', () => {
-        const MOCK_ONCHANGE = jest.spyOn(CheckField.prototype, 'handleChange')
+        const MOCK_ON_CHANGE = jest.spyOn(CheckField.prototype, 'handleChange')
 
         const component = (
           <Field
             name='MOCK NAME'
             id='MOCK ID'
             value='MOCK VALUE'
-            onChange={MOCK_ONCHANGE}
+            onChange={MOCK_ON_CHANGE}
           />
         )
 
@@ -171,7 +171,7 @@ describe('shinkansen-cogs/cogs/radio/field', () => {
 
         instance.handleChange({ target: { value: 'MOCK VALUE', checked: 'MOCK CHECKED' } })
 
-        return expect(MOCK_ONCHANGE)
+        return expect(MOCK_ON_CHANGE)
           .toBeCalledWith({ target: { value: 'MOCK VALUE', checked: 'MOCK CHECKED' } })
       })
     })

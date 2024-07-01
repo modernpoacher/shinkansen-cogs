@@ -18,9 +18,12 @@ exports[`shinkansen-cogs/cogs/checkbox/field <Field /> With additional props ren
 exports[`shinkansen-cogs/cogs/checkbox/field <Field /> With required props renders 1`] = `
 <input
   className="MOCK CLASSNAME"
+  disabled={false}
   name="MOCK NAME"
   onChange={[Function]}
   onClick={[Function]}
+  readOnly={false}
+  required={false}
   type="checkbox"
   value="MOCK VALUE"
 />

@@ -274,7 +274,7 @@ describe('shinkansen-cogs/cogs', () => {
     })
 
     describe('`shouldComponentUpdate()`', () => {
-      const MOCK_ONCHANGE = jest.fn()
+      const MOCK_ON_CHANGE = jest.fn()
 
       const component = (
         <Cog
@@ -287,7 +287,7 @@ describe('shinkansen-cogs/cogs', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
-          onChange={MOCK_ONCHANGE}
+          onChange={MOCK_ON_CHANGE}
         />
       )
 
@@ -327,7 +327,7 @@ describe('shinkansen-cogs/cogs', () => {
             disabled: true,
             readOnly: true,
             placeholder: 'MOCK PLACEHOLDER',
-            onChange: MOCK_ONCHANGE
+            onChange: MOCK_ON_CHANGE
           }))
             .toBe(false)
         })
@@ -491,7 +491,7 @@ describe('shinkansen-cogs/cogs', () => {
     })
 
     describe('`shouldComponentUpdate()`', () => {
-      const MOCK_ONCHANGE = jest.fn()
+      const MOCK_ON_CHANGE = jest.fn()
 
       const component = (
         <ValueCog
@@ -505,7 +505,7 @@ describe('shinkansen-cogs/cogs', () => {
           readOnly
           value='MOCK VALUE'
           placeholder='MOCK PLACEHOLDER'
-          onChange={MOCK_ONCHANGE}
+          onChange={MOCK_ON_CHANGE}
         />
       )
 
@@ -531,7 +531,7 @@ describe('shinkansen-cogs/cogs', () => {
           return expect(instance.shouldComponentUpdate({
             ...instance.props,
             value: 'MOCK VALUE',
-            onChange: MOCK_ONCHANGE
+            onChange: MOCK_ON_CHANGE
           }))
             .toBe(false)
         })
@@ -594,7 +594,7 @@ describe('shinkansen-cogs/cogs', () => {
     })
 
     describe('`shouldComponentUpdate()`', () => {
-      const MOCK_ONCHANGE = jest.fn()
+      const MOCK_ON_CHANGE = jest.fn()
 
       const component = (
         <CheckCog
@@ -608,7 +608,7 @@ describe('shinkansen-cogs/cogs', () => {
           readOnly
           checked
           placeholder='MOCK PLACEHOLDER'
-          onChange={MOCK_ONCHANGE}
+          onChange={MOCK_ON_CHANGE}
         />
       )
 
