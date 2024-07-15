@@ -112,7 +112,3 @@ export default class PasswordCog extends ValueCog {
 PasswordCog.propTypes = {
   ...ValueCog.propTypes
 }
-
-PasswordCog.defaultProps = {
-  ...ValueCog.defaultProps
-}

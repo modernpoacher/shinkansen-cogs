@@ -52,7 +52,3 @@ export default class TextField extends ValueField {
 TextField.propTypes = {
   ...ValueField.propTypes
 }
-
-TextField.defaultProps = {
-  ...ValueField.defaultProps
-}

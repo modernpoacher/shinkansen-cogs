@@ -13,7 +13,3 @@ export default class TextDescription extends Description {
 TextDescription.propTypes = {
   ...Description.propTypes
 }
-
-TextDescription.defaultProps = {
-  ...Description.defaultProps
-}

@@ -112,7 +112,3 @@ export default class TextCog extends ValueCog {
 TextCog.propTypes = {
   ...ValueCog.propTypes
 }
-
-TextCog.defaultProps = {
-  ...ValueCog.defaultProps
-}

@@ -13,7 +13,3 @@ export default class TextareaDescription extends Description {
 TextareaDescription.propTypes = {
   ...Description.propTypes
 }
-
-TextareaDescription.defaultProps = {
-  ...Description.defaultProps
-}

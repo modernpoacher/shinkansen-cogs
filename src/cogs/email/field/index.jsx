@@ -52,7 +52,3 @@ export default class EmailField extends ValueField {
 EmailField.propTypes = {
   ...ValueField.propTypes
 }
-
-EmailField.defaultProps = {
-  ...ValueField.defaultProps
-}

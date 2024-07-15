@@ -109,8 +109,3 @@ SelectField.propTypes = {
     )
   ])
 }
-
-SelectField.defaultProps = {
-  ...ValueField.defaultProps,
-  multiple: false
-}

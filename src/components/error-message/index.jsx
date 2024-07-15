@@ -101,5 +101,3 @@ ErrorMessage.propTypes = {
     uri: PropTypes.string.isRequired
   })
 }
-
-ErrorMessage.defaultProps = {}

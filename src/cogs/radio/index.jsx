@@ -148,7 +148,3 @@ Radio.propTypes = {
   id: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired
 }
-
-Radio.defaultProps = {
-  ...CheckCog.defaultProps
-}

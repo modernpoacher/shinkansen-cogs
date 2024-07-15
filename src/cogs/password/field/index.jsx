@@ -52,7 +52,3 @@ export default class PasswordField extends ValueField {
 PasswordField.propTypes = {
   ...ValueField.propTypes
 }
-
-PasswordField.defaultProps = {
-  ...ValueField.defaultProps
-}

@@ -13,7 +13,3 @@ export default class RadioTitle extends Title {
 RadioTitle.propTypes = {
   ...Title.propTypes
 }
-
-RadioTitle.defaultProps = {
-  ...Title.defaultProps
-}

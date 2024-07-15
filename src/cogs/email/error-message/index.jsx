@@ -13,7 +13,3 @@ export default class EmailErrorMessage extends ErrorMessage {
 EmailErrorMessage.propTypes = {
   ...ErrorMessage.propTypes
 }
-
-EmailErrorMessage.defaultProps = {
-  ...ErrorMessage.defaultProps
-}

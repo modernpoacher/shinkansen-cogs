@@ -13,7 +13,3 @@ export default class TextTitle extends Title {
 TextTitle.propTypes = {
   ...Title.propTypes
 }
-
-TextTitle.defaultProps = {
-  ...Title.defaultProps
-}

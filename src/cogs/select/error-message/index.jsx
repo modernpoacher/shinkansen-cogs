@@ -13,7 +13,3 @@ export default class SelectErrorMessage extends ErrorMessage {
 SelectErrorMessage.propTypes = {
   ...ErrorMessage.propTypes
 }
-
-SelectErrorMessage.defaultProps = {
-  ...ErrorMessage.defaultProps
-}

@@ -144,8 +144,3 @@ SelectCog.propTypes = {
     )
   ])
 }
-
-SelectCog.defaultProps = {
-  ...ValueCog.defaultProps,
-  multiple: false
-}

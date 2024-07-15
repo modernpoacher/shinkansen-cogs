@@ -147,7 +147,3 @@ CheckboxCog.propTypes = {
   ...CheckCog.propTypes,
   value: PropTypes.string.isRequired
 }
-
-CheckboxCog.defaultProps = {
-  ...CheckCog.defaultProps
-}

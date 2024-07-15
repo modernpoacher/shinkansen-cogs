@@ -13,7 +13,3 @@ export default class CheckboxTitle extends Title {
 CheckboxTitle.propTypes = {
   ...Title.propTypes
 }
-
-CheckboxTitle.defaultProps = {
-  ...Title.defaultProps
-}

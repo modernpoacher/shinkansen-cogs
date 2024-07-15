@@ -13,7 +13,3 @@ export default class NumberTitle extends Title {
 NumberTitle.propTypes = {
   ...Title.propTypes
 }
-
-NumberTitle.defaultProps = {
-  ...Title.defaultProps
-}

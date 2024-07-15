@@ -78,7 +78,3 @@ CheckboxField.propTypes = {
   ...CheckField.propTypes,
   value: PropTypes.string.isRequired
 }
-
-CheckboxField.defaultProps = {
-  ...CheckField.defaultProps
-}

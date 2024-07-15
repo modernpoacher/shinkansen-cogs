@@ -13,7 +13,3 @@ export default class RadioErrorMessage extends ErrorMessage {
 RadioErrorMessage.propTypes = {
   ...ErrorMessage.propTypes
 }
-
-RadioErrorMessage.defaultProps = {
-  ...ErrorMessage.defaultProps
-}

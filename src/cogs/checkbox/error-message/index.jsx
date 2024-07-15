@@ -13,7 +13,3 @@ export default class CheckboxErrorMessage extends ErrorMessage {
 CheckboxErrorMessage.propTypes = {
   ...ErrorMessage.propTypes
 }
-
-CheckboxErrorMessage.defaultProps = {
-  ...ErrorMessage.defaultProps
-}

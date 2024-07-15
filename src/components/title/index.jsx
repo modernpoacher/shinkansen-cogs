@@ -11,19 +11,25 @@ import ReadOnly from 'shinkansen-cogs/components/common/readonly'
 
 export default class Title extends Component {
   isRequired () {
-    const { required } = this.props
+    const {
+      required = false
+    } = this.props
 
     return required
   }
 
   isDisabled () {
-    const { disabled } = this.props
+    const {
+      disabled = false
+    } = this.props
 
     return disabled
   }
 
   isReadOnly () {
-    const { readOnly } = this.props
+    const {
+      readOnly = false
+    } = this.props
 
     return readOnly
   }
@@ -102,10 +108,4 @@ Title.propTypes = {
       PropTypes.node
     )
   ])
-}
-
-Title.defaultProps = {
-  required: false,
-  disabled: false,
-  readOnly: false
 }

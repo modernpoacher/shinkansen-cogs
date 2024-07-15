@@ -112,7 +112,3 @@ export default class EmailCog extends ValueCog {
 EmailCog.propTypes = {
   ...ValueCog.propTypes
 }
-
-EmailCog.defaultProps = {
-  ...ValueCog.defaultProps
-}

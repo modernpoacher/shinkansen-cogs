@@ -13,7 +13,3 @@ export default class NumberErrorMessage extends ErrorMessage {
 NumberErrorMessage.propTypes = {
   ...ErrorMessage.propTypes
 }
-
-NumberErrorMessage.defaultProps = {
-  ...ErrorMessage.defaultProps
-}

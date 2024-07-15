@@ -70,13 +70,6 @@ Field.propTypes = {
   })
 }
 
-Field.defaultProps = {
-  required: false,
-  disabled: false,
-  readOnly: false,
-  onChange: DEFAULT_HANDLE_CHANGE
-}
-
 /**
  * ValueField component
  */
@@ -101,10 +94,6 @@ ValueField.propTypes = {
   ...Field.propTypes,
   value: PropTypes.string,
   defaultValue: PropTypes.string
-}
-
-ValueField.defaultProps = {
-  ...Field.defaultProps
 }
 
 /**
@@ -142,9 +131,4 @@ CheckField.propTypes = {
   checked: PropTypes.bool,
   defaultChecked: PropTypes.bool,
   onClick: PropTypes.func
-}
-
-CheckField.defaultProps = {
-  ...Field.defaultProps,
-  onClick: DEFAULT_HANDLE_CLICK
 }

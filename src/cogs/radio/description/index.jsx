@@ -13,7 +13,3 @@ export default class RadioDescription extends Description {
 RadioDescription.propTypes = {
   ...Description.propTypes
 }
-
-RadioDescription.defaultProps = {
-  ...Description.defaultProps
-}

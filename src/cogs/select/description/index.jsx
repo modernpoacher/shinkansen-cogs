@@ -13,7 +13,3 @@ export default class SelectDescription extends Description {
 SelectDescription.propTypes = {
   ...Description.propTypes
 }
-
-SelectDescription.defaultProps = {
-  ...Description.defaultProps
-}

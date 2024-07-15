@@ -13,7 +13,3 @@ export default class CheckboxDescription extends Description {
 CheckboxDescription.propTypes = {
   ...Description.propTypes
 }
-
-CheckboxDescription.defaultProps = {
-  ...Description.defaultProps
-}
