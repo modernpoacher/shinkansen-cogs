@@ -64,7 +64,7 @@ export default {
             options: {
               sourceMap: false,
               sassOptions: {
-                includePaths: [
+                loadPaths: [
                   path.join(MODULE_PATH, '@modernpoacher/design-system/src/sass')
                 ]
               }
