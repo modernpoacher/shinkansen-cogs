@@ -13,7 +13,3 @@ export default class PasswordErrorMessage extends ErrorMessage {
 PasswordErrorMessage.propTypes = {
   ...ErrorMessage.propTypes
 }
-
-PasswordErrorMessage.defaultProps = {
-  ...ErrorMessage.defaultProps
-}

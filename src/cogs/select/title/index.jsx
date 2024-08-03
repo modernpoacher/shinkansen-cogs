@@ -13,7 +13,3 @@ export default class SelectTitle extends Title {
 SelectTitle.propTypes = {
   ...Title.propTypes
 }
-
-SelectTitle.defaultProps = {
-  ...Title.defaultProps
-}

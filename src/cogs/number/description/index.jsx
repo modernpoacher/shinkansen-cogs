@@ -13,7 +13,3 @@ export default class NumberDescription extends Description {
 NumberDescription.propTypes = {
   ...Description.propTypes
 }
-
-NumberDescription.defaultProps = {
-  ...Description.defaultProps
-}

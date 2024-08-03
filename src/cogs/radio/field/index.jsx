@@ -79,7 +79,3 @@ RadioField.propTypes = {
   id: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired
 }
-
-RadioField.defaultProps = {
-  ...CheckField.defaultProps
-}

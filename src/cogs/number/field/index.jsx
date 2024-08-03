@@ -61,7 +61,3 @@ NumberField.propTypes = {
     PropTypes.number
   ])
 }
-
-NumberField.defaultProps = {
-  ...ValueField.defaultProps
-}

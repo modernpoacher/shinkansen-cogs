@@ -13,7 +13,3 @@ export default class TextareaErrorMessage extends ErrorMessage {
 TextareaErrorMessage.propTypes = {
   ...ErrorMessage.propTypes
 }
-
-TextareaErrorMessage.defaultProps = {
-  ...ErrorMessage.defaultProps
-}

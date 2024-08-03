@@ -13,7 +13,3 @@ export default class PasswordDescription extends Description {
 PasswordDescription.propTypes = {
   ...Description.propTypes
 }
-
-PasswordDescription.defaultProps = {
-  ...Description.defaultProps
-}

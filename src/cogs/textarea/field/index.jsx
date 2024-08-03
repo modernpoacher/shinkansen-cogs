@@ -51,7 +51,3 @@ export default class TextareaField extends ValueField {
 TextareaField.propTypes = {
   ...ValueField.propTypes
 }
-
-TextareaField.defaultProps = {
-  ...ValueField.defaultProps
-}

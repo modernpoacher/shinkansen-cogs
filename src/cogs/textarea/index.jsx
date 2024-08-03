@@ -111,7 +111,3 @@ export default class TextareaCog extends ValueCog {
 TextareaCog.propTypes = {
   ...ValueCog.propTypes
 }
-
-TextareaCog.defaultProps = {
-  ...ValueCog.defaultProps
-}

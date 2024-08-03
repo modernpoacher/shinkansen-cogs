@@ -39,5 +39,3 @@ export default class ErrorMessage extends Component {
 ErrorMessage.propTypes = {
   errorMessage: PropTypes.string
 }
-
-ErrorMessage.defaultProps = {}

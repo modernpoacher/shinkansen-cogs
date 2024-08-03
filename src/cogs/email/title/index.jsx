@@ -13,7 +13,3 @@ export default class EmailTitle extends Title {
 EmailTitle.propTypes = {
   ...Title.propTypes
 }
-
-EmailTitle.defaultProps = {
-  ...Title.defaultProps
-}

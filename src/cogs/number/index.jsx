@@ -120,7 +120,3 @@ NumberCog.propTypes = {
     PropTypes.number
   ])
 }
-
-NumberCog.defaultProps = {
-  ...ValueCog.defaultProps
-}

@@ -13,7 +13,3 @@ export default class TextErrorMessage extends ErrorMessage {
 TextErrorMessage.propTypes = {
   ...ErrorMessage.propTypes
 }
-
-TextErrorMessage.defaultProps = {
-  ...ErrorMessage.defaultProps
-}

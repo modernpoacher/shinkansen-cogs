@@ -13,7 +13,3 @@ export default class TextareaTitle extends Title {
 TextareaTitle.propTypes = {
   ...Title.propTypes
 }
-
-TextareaTitle.defaultProps = {
-  ...Title.defaultProps
-}

@@ -168,13 +168,6 @@ Cog.propTypes = {
   })
 }
 
-Cog.defaultProps = {
-  required: false,
-  disabled: false,
-  readOnly: false,
-  onChange: DEFAULT_HANDLE_CHANGE
-}
-
 export class ValueCog extends Cog {
   shouldComponentUpdate (props) {
     return (
@@ -219,10 +212,6 @@ ValueCog.propTypes = {
   ...Cog.propTypes,
   value: PropTypes.string,
   defaultValue: PropTypes.string
-}
-
-ValueCog.defaultProps = {
-  ...Cog.defaultProps
 }
 
 export class CheckCog extends Cog {
@@ -273,9 +262,4 @@ CheckCog.propTypes = {
   checked: PropTypes.bool,
   defaultChecked: PropTypes.bool,
   onClick: PropTypes.func
-}
-
-CheckCog.defaultProps = {
-  ...Cog.defaultProps,
-  onClick: DEFAULT_HANDLE_CLICK
 }

@@ -13,7 +13,3 @@ export default class EmailDescription extends Description {
 EmailDescription.propTypes = {
   ...Description.propTypes
 }
-
-EmailDescription.defaultProps = {
-  ...Description.defaultProps
-}

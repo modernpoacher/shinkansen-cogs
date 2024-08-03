@@ -13,7 +13,3 @@ export default class PasswordTitle extends Title {
 PasswordTitle.propTypes = {
   ...Title.propTypes
 }
-
-PasswordTitle.defaultProps = {
-  ...Title.defaultProps
-}
