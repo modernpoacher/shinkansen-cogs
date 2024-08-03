@@ -24,6 +24,7 @@ export default class ErrorMessage extends Component {
 
   getTextContent () {
     const { errorMessage } = this.props
+
     const {
       text
     } = transform(errorMessage)
