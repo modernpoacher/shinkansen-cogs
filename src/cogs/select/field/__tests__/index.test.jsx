@@ -9,9 +9,13 @@ jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
 jest.mock('shinkansen-cogs/components/field', () => {
   class MockField extends mockComponent {
-    getClassName () { }
+    getClassName () {
+      return 'MOCK CLASSNAME'
+    }
 
-    shouldComponentUpdate () { }
+    shouldComponentUpdate () {
+      return false
+    }
   }
 
   return {

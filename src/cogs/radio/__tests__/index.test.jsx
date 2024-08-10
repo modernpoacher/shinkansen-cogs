@@ -14,19 +14,33 @@ jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
 jest.mock('shinkansen-cogs/cogs', () => {
   class MockCog extends mockComponent {
-    getClassName () { }
+    getClassName () {
+      return 'MOCK CLASSNAME'
+    }
 
-    getId () { }
+    getId () {
+      return 'MOCK ID'
+    }
 
-    shouldComponentUpdate () { }
+    shouldComponentUpdate () {
+      return false
+    }
 
-    renderTitle () { }
+    renderTitle () {
+      return 'MOCK TITLE'
+    }
 
-    renderDescription () { }
+    renderDescription () {
+      return 'MOCK DESCRIPTION'
+    }
 
-    renderErrorMessage () { }
+    renderErrorMessage () {
+      return 'MOCK ERROR MESSAGE'
+    }
 
-    renderField () { }
+    renderField () {
+      return 'MOCK FIELD'
+    }
 
     render () {
       const className = this.getClassName()

@@ -7,26 +7,30 @@ import ErrorMessage from 'shinkansen-cogs/cogs/text/error-message'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('shinkansen-cogs/components/error-message', () => ({
-  __esModule: true,
-  default: class MockErrorMessage extends mockComponent {
-    getClassName () { }
-
-    render () {
-      const { errorMessage } = this.props
-
-      if (errorMessage) {
-        return (
-          <span className={this.getClassName()}>
-            MOCK ERROR MESSAGE
-          </span>
-        )
+jest.mock('shinkansen-cogs/components/error-message', () => {
+  return {
+    __esModule: true,
+    default: class MockErrorMessage extends mockComponent {
+      getClassName () {
+        return 'MOCK CLASSNAME'
       }
 
-      return null
+      render () {
+        const { errorMessage } = this.props
+
+        if (errorMessage) {
+          return (
+            <span className={this.getClassName()}>
+              MOCK ERROR MESSAGE
+            </span>
+          )
+        }
+
+        return null
+      }
     }
   }
-}))
+})
 
 const MOCK_ERROR_MESSAGE = {
   type: 'UNKNOWN',
