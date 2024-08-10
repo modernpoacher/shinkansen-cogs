@@ -10,7 +10,9 @@ jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 jest.mock('@modernpoacher/cogs/components/description', () => ({
   __esModule: true,
   default: class MockDescription extends mockComponent {
-    getClassName () { }
+    getClassName () {
+      return 'MOCK CLASSNAME'
+    }
 
     render () {
       const { description } = this.props

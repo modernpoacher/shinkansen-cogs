@@ -7,26 +7,30 @@ import ErrorMessage from '@modernpoacher/cogs/cogs/number/error-message'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('@modernpoacher/cogs/components/error-message', () => ({
-  __esModule: true,
-  default: class MockErrorMessage extends mockComponent {
-    getClassName () { }
-
-    render () {
-      const { errorMessage } = this.props
-
-      if (errorMessage) {
-        return (
-          <span className={this.getClassName()}>
-            {errorMessage}
-          </span>
-        )
+jest.mock('@modernpoacher/cogs/components/error-message', () => {
+  return {
+    __esModule: true,
+    default: class MockErrorMessage extends mockComponent {
+      getClassName () {
+        return 'MOCK CLASSNAME'
       }
 
-      return null
+      render () {
+        const { errorMessage } = this.props
+
+        if (errorMessage) {
+          return (
+            <span className={this.getClassName()}>
+              {errorMessage}
+            </span>
+          )
+        }
+
+        return null
+      }
     }
   }
-}))
+})
 
 describe('@modernpoacher/cogs/cogs/number/error-message', () => {
   describe('<ErrorMessage />', () => {
