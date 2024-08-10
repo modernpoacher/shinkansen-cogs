@@ -7,30 +7,32 @@ import Title from '@modernpoacher/cogs/cogs/password/title'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('@modernpoacher/cogs/components/title', () => ({
-  __esModule: true,
-  default: class MockTitle extends mockComponent {
-    getClassName () {
-      return 'MOCK CLASSNAME'
-    }
-
-    render () {
-      const { title } = this.props
-
-      if (title) {
-        const { id } = this.props
-
-        return (
-          <label htmlFor={id} className={this.getClassName()}>
-            {title}
-          </label>
-        )
+jest.mock('@modernpoacher/cogs/components/title', () => {
+  return {
+    __esModule: true,
+    default: class MockTitle extends mockComponent {
+      getClassName () {
+        return 'MOCK CLASSNAME'
       }
 
-      return null
+      render () {
+        const { title } = this.props
+
+        if (title) {
+          const { id } = this.props
+
+          return (
+            <label htmlFor={id} className={this.getClassName()}>
+              {title}
+            </label>
+          )
+        }
+
+        return null
+      }
     }
   }
-}))
+})
 
 describe('@modernpoacher/cogs/cogs/password/title', () => {
   describe('<Title />', () => {

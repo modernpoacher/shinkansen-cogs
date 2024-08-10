@@ -14,7 +14,7 @@ jest.mock('@modernpoacher/cogs/components/field', () => {
     }
 
     shouldComponentUpdate () {
-      return false
+      return true
     }
   }
 

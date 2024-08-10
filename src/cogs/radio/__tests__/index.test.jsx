@@ -23,7 +23,7 @@ jest.mock('@modernpoacher/cogs/cogs', () => {
     }
 
     shouldComponentUpdate () {
-      return false
+      return true
     }
 
     renderTitle () {
