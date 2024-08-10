@@ -7,28 +7,30 @@ import Description from 'shinkansen-cogs/cogs/select/description'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('shinkansen-cogs/components/description', () => ({
-  __esModule: true,
-  default: class MockDescription extends mockComponent {
-    getClassName () {
-      return 'MOCK CLASSNAME'
-    }
-
-    render () {
-      const { description } = this.props
-
-      if (description) {
-        return (
-          <span className={this.getClassName()}>
-            {description}
-          </span>
-        )
+jest.mock('shinkansen-cogs/components/description', () => {
+  return {
+    __esModule: true,
+    default: class MockDescription extends mockComponent {
+      getClassName () {
+        return 'MOCK CLASSNAME'
       }
 
-      return null
+      render () {
+        const { description } = this.props
+
+        if (description) {
+          return (
+            <span className={this.getClassName()}>
+              {description}
+            </span>
+          )
+        }
+
+        return null
+      }
     }
   }
-}))
+})
 
 describe('shinkansen-cogs/cogs/select/description', () => {
   describe('<Description />', () => {

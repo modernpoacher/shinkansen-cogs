@@ -14,7 +14,7 @@ jest.mock('shinkansen-cogs/components/field', () => {
     }
 
     shouldComponentUpdate () {
-      return false
+      return true
     }
   }
 

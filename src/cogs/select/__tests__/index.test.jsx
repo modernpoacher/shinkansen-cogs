@@ -23,7 +23,7 @@ jest.mock('shinkansen-cogs/cogs', () => {
     }
 
     shouldComponentUpdate () {
-      return false
+      return true
     }
 
     renderTitle () {
