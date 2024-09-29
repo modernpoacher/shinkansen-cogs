@@ -48,11 +48,27 @@ export default {
                 config: false,
                 plugins: [
                   'postcss-import',
+                  'postcss-discard-comments',
+                  'postcss-discard-empty',
                   [
                     'postcss-map', {
                       maps: [
                         path.join(MODULE_PATH, '@modernpoacher/design-system/src/tokens/palette.json')
                       ]
+                    }
+                  ],
+                  [
+                    'autoprefixer', {
+                      remove: false
+                    }
+                  ],
+                  [
+                    'perfectionist', {
+                      trimLeadingZero: false,
+                      sourcemap: true,
+                      indentSize: 2,
+                      format: 'expanded',
+                      syntax: 'scss'
                     }
                   ]
                 ]
