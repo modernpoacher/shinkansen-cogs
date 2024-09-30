@@ -1,6 +1,9 @@
 import debug from 'debug'
 
-import path from 'node:path'
+import {
+  relative,
+  join
+} from 'node:path'
 
 import {
   readFile,
@@ -24,22 +27,21 @@ log('`cogs` is awake')
 
 const CSS = /(<style.*>)[ -~"'+-:;,#%{}()/*\n\s\u200b\u2713\u2022]*(<\/style>)/gm // eslint-disable-line no-irregular-whitespace
 
-const SOURCE_PATH = path.relative(currentDir, sourcePath)
-const TARGET_PATH = path.relative(currentDir, targetPath)
+const SOURCE_PATH = relative(currentDir, sourcePath)
+const TARGET_PATH = relative(currentDir, targetPath)
 
 async function getCss () {
   log('getCss')
 
-  const filePath = path.join(SOURCE_PATH, 'css/preview-head.css')
-  const fileData = await readFile(filePath, 'utf8')
+  const filePath = join(SOURCE_PATH, 'css/preview-head.css')
 
-  return `$1\n${fileData.trim()}\n$2`.trim()
+  return `$1\n${(await readFile(filePath, 'utf8')).trim()}\n$2`.trim()
 }
 
 export default async function transform () {
   log('transform')
 
-  const htmlFilePath = path.join(TARGET_PATH, 'preview-head.html')
+  const filePath = join(TARGET_PATH, 'preview-head.html')
 
-  return (await writeFile(htmlFilePath, (await readFile(htmlFilePath, 'utf8')).replace(CSS, await getCss()), 'utf8'))
+  return (await writeFile(filePath, (await readFile(filePath, 'utf8')).replace(CSS, await getCss()), 'utf8'))
 }
