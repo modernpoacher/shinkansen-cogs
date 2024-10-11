@@ -45,9 +45,9 @@
     "debug": "^4.3.7"
   },
   "devDependencies": {
-    "@babel/core": "^7.25.7",
-    "@babel/eslint-parser": "^7.25.7",
-    "@babel/preset-env": "^7.25.7",
+    "@babel/core": "^7.25.8",
+    "@babel/eslint-parser": "^7.25.8",
+    "@babel/preset-env": "^7.25.8",
     "@babel/preset-react": "^7.25.7",
     "@babel/register": "^7.25.7",
     "@modernpoacher/design-system": "1.1.0",
@@ -84,7 +84,7 @@
     "react-dom": "^18.3.1",
     "react-test-renderer": "^18.3.1",
     "remove-files-webpack-plugin": "^1.5.0",
-    "sass": "^1.79.4",
+    "sass": "^1.79.5",
     "sass-loader": "^16.0.2",
     "storybook": "7.6.20",
     "webpack": "^5.95.0",
