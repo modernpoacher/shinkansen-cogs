@@ -84,7 +84,7 @@
     "react-dom": "^18.3.1",
     "react-test-renderer": "^18.3.1",
     "remove-files-webpack-plugin": "^1.5.0",
-    "sass": "^1.80.2",
+    "sass": "^1.80.3",
     "sass-loader": "^16.0.2",
     "storybook": "7.6.20",
     "webpack": "^5.95.0",
