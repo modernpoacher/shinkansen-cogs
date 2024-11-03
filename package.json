@@ -59,7 +59,7 @@
     "@modernpoacher/design-system": "1.1.8",
     "@sequencemedia/gulp": "^1.1.264",
     "@sequencemedia/gulp-clean-css": "^1.0.176",
-    "@sequencemedia/gulp-css-purge": "^1.1.190",
+    "@sequencemedia/gulp-css-purge": "^1.1.191",
     "@sequencemedia/gulp-debug": "^1.0.187",
     "@sequencemedia/gulp-postcss": "^1.0.197",
     "@sequencemedia/gulp-sass": "^1.0.182",
