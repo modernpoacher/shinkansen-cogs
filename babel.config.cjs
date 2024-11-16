@@ -45,7 +45,7 @@ const plugins = [
     'module-resolver', {
       alias: {
         /**
-         *  Storybook
+         *  Jest & Storybook
          */
         '@modernpoacher/cogs/common/': './src/common/index.mjs',
         '@modernpoacher/cogs/cogs/checkbox/error-message': './src/cogs/checkbox/error-message/index.jsx',
