@@ -1,4 +1,4 @@
 #!/bin/bash
 
-DEBUG=@modernpoacher/cogs*
+DEBUG="${DEBUG:-@modernpoacher/cogs*}"
 node -e 'import("./build/transform.mjs").then(({ default: transform }) => transform())'

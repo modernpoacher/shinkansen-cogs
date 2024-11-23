@@ -23,9 +23,9 @@
     "url": "git@github.com/modernpoacher/cogs.git"
   },
   "scripts": {
-    "build": "cross-env DEBUG=@modernpoacher/cogs webpack",
+    "build": "cross-env DEBUG=@modernpoacher/cogs* webpack",
     "build-storybook": "storybook build",
-    "build:watch": "cross-env DEBUG=@modernpoacher/cogs webpack --watch",
+    "build:watch": "cross-env DEBUG=@modernpoacher/cogs* webpack --watch",
     "lint": "eslint . .storybook --ext .mjs,.cjs,.jsx,.mts,.cts",
     "lint:fix": "npm run lint -- --fix",
     "nvm": "bash nvm.sh",
@@ -36,7 +36,7 @@
     "pretest": "npm run nvm",
     "storybook": "storybook dev -p 6006",
     "test": "cross-env NODE_ENV=test jest",
-    "transform": "cross-env DEBUG=@modernpoacher/cogs ./transform.sh"
+    "transform": "cross-env DEBUG=@modernpoacher/cogs* ./transform.sh"
   },
   "dependencies": {
     "classnames": "^2.5.1",
