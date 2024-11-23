@@ -27,9 +27,9 @@
     "url": "git@github.com/modernpoacher/shinkansen-cogs.git"
   },
   "scripts": {
-    "build": "cross-env DEBUG=shinkansen-cogs webpack",
+    "build": "cross-env DEBUG=shinkansen-cogs* webpack",
     "build-storybook": "storybook build",
-    "build:watch": "cross-env DEBUG=shinkansen-cogs webpack --watch",
+    "build:watch": "cross-env DEBUG=shinkansen-cogs* webpack --watch",
     "lint": "eslint . .storybook --ext .mjs,.cjs,.jsx,.mts,.cts",
     "lint:fix": "npm run lint -- --fix",
     "nvm": "bash nvm.sh",
@@ -40,7 +40,7 @@
     "pretest": "npm run nvm",
     "storybook": "storybook dev -p 6006",
     "test": "cross-env NODE_ENV=test jest",
-    "transform": "cross-env DEBUG=shinkansen-cogs ./transform.sh"
+    "transform": "cross-env DEBUG=shinkansen-cogs* ./transform.sh"
   },
   "dependencies": {
     "classnames": "^2.5.1",
