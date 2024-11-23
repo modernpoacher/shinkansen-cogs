@@ -24,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com/modernpoacher/shinkansen-cogs.git"
+    "url": "git+ssh://git@github.com/modernpoacher/shinkansen-cogs.git"
   },
   "scripts": {
     "build": "cross-env DEBUG=shinkansen-cogs* webpack",
