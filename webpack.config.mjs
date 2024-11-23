@@ -1,28 +1,32 @@
-import path from 'node:path'
-import Webpack from 'webpack'
 import {
-  CleanWebpackPlugin
-} from 'clean-webpack-plugin'
-import RemoveFilesPlugin from 'remove-files-webpack-plugin'
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+  join
+} from 'node:path'
+
+import Webpack from 'webpack'
 
 import {
-  sourcePath as SOURCE_PATH,
-  targetPath as TARGET_PATH,
+  CleanWebpackPlugin as CleanPlugin
+} from 'clean-webpack-plugin'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import RemoveFilesPlugin from 'remove-files-webpack-plugin'
+
+import {
+  storybookPath as STORYBOOK_PATH,
   modulePath as MODULE_PATH
 } from '#build/paths'
 
 const {
+  EnvironmentPlugin,
   SourceMapDevToolPlugin
 } = Webpack
 
 export default {
   mode: 'production',
   entry: {
-    'preview-head': path.join(SOURCE_PATH, 'sass/preview-head.scss')
+    'preview-head': join(STORYBOOK_PATH, 'sass/preview-head.scss')
   },
   output: {
-    path: path.join(TARGET_PATH, 'css')
+    path: join(STORYBOOK_PATH, 'css')
   },
   stats: {
     colors: true
@@ -37,7 +41,8 @@ export default {
             loader: 'css-loader',
             options: {
               importLoaders: 1,
-              sourceMap: false
+              sourceMap: false,
+              url: false
             }
           },
           {
@@ -53,7 +58,7 @@ export default {
                   [
                     'postcss-map', {
                       maps: [
-                        path.join(MODULE_PATH, '@modernpoacher/design-system/src/tokens/palette.json')
+                        join(MODULE_PATH, '@modernpoacher/design-system/src/tokens/palette.json')
                       ]
                     }
                   ],
@@ -81,7 +86,7 @@ export default {
               sourceMap: false,
               sassOptions: {
                 loadPaths: [
-                  path.join(MODULE_PATH, '@modernpoacher/design-system/src/sass')
+                  join(MODULE_PATH, '@modernpoacher/design-system/src/sass')
                 ]
               }
             }
@@ -91,25 +96,28 @@ export default {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin({
+    new CleanPlugin({
       verbose: false,
       cleanOnceBeforeBuildPatterns: [
-        path.join(TARGET_PATH, 'css/*.css'),
-        path.join(TARGET_PATH, 'css/*.css.map')
+        join(STORYBOOK_PATH, 'css/*.css'),
+        join(STORYBOOK_PATH, 'css/*.css.map')
       ]
     }),
-    new MiniCssExtractPlugin({
-      filename: '[name].css'
+    new EnvironmentPlugin({
+      NODE_ENV: 'production'
     }),
     new SourceMapDevToolPlugin({
       test: /\.css$/i,
       filename: '[name].css.map'
     }),
+    new MiniCssExtractPlugin({
+      filename: '[name].css'
+    }),
     new RemoveFilesPlugin({
       after: {
         test: [
           {
-            folder: path.join(TARGET_PATH, 'css'),
+            folder: join(STORYBOOK_PATH, 'css'),
             method (filePath) {
               return /\.js$/m.test(filePath)
             }
