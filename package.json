@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com/modernpoacher/cogs.git"
+    "url": "git+ssh://git@github.com/modernpoacher/cogs.git"
   },
   "scripts": {
     "build": "cross-env DEBUG=@modernpoacher/cogs* webpack",
