@@ -4,7 +4,7 @@ import { Children, cloneElement } from 'react'
 
 import State from '#stories/state'
 
-const log = debug('@modernpoacher/cogs/stories')
+const log = debug('shinkansen-cogs/stories')
 
 export default class RadioState extends State {
   state = {
