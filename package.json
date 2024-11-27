@@ -94,7 +94,7 @@
     "#cogs/cogs/*": "./src/cogs/*/index.jsx",
     "#cogs/common": "./src/common/index.mjs",
     "#cogs/components/*": "./src/components/*/index.jsx",
-    "#stories/*": "./stories/*/index.stories.jsx",
+    "#stories/cogs/*": "./stories/cogs/*/index.stories.jsx",
     "#stories/state": "./stories/state/index.jsx",
     "#stories/state/*": "./stories/state/*/index.jsx"
   },
