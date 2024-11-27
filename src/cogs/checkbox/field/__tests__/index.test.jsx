@@ -2,12 +2,12 @@ import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
-import { CheckField } from 'shinkansen-cogs/components/field'
-import Field from 'shinkansen-cogs/cogs/checkbox/field'
+import { CheckField } from '#cogs/components/field'
+import Field from '#cogs/cogs/checkbox/field'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('shinkansen-cogs/components/field', () => {
+jest.mock('#cogs/components/field', () => {
   class MockField extends mockComponent {
     getClassName () {
       return 'MOCK CLASSNAME'
@@ -25,7 +25,7 @@ jest.mock('shinkansen-cogs/components/field', () => {
   }
 })
 
-describe('shinkansen-cogs/cogs/checkbox/field', () => {
+describe('#cogs/cogs/checkbox/field', () => {
   describe('<Field />', () => {
     describe('With required props', () => {
       const component = (

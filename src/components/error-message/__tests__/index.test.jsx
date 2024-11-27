@@ -1,7 +1,7 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import ErrorMessage from 'shinkansen-cogs/components/error-message'
+import ErrorMessage from '#cogs/components/error-message'
 
 jest.useFakeTimers()
 
@@ -21,7 +21,7 @@ const MOCK_CHANGE_ERROR_MESSAGE = {
   uri: '#/'
 }
 
-describe('shinkansen-cogs/components/error-message', () => {
+describe('#cogs/components/error-message', () => {
   describe('<ErrorMessage />', () => {
     describe('With required props', () => {
       const component = (

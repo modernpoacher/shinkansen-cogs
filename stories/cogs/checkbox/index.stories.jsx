@@ -1,6 +1,6 @@
 import React from 'react'
 
-import CheckboxCog from 'shinkansen-cogs/cogs/checkbox'
+import CheckboxCog from '#cogs/cogs/checkbox'
 import errors from '#stories/errors'
 import CheckboxState from '#stories/state/checkbox'
 

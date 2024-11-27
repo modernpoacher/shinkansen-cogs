@@ -1,9 +1,9 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import Description from 'shinkansen-cogs/components/description'
+import Description from '#cogs/components/description'
 
-describe('shinkansen-cogs/components/description', () => {
+describe('#cogs/components/description', () => {
   describe('<Description />', () => {
     describe('With required props', () => {
       const component = (

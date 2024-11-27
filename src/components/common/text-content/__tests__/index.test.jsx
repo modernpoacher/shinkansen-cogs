@@ -1,11 +1,11 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import Component from 'shinkansen-cogs/components/common/text-content'
+import Component from '#cogs/components/common/text-content'
 
 jest.useFakeTimers()
 
-describe('shinkansen-cogs/components/common/text-content', () => {
+describe('#cogs/components/common/text-content', () => {
   describe('<Component />', () => {
     describe('With required props', () => {
       it('renders', () => {

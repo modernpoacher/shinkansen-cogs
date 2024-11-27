@@ -2,12 +2,12 @@ import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
-import Super from 'shinkansen-cogs/components/error-message'
-import ErrorMessage from 'shinkansen-cogs/cogs/email/error-message'
+import Super from '#cogs/components/error-message'
+import ErrorMessage from '#cogs/cogs/email/error-message'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('shinkansen-cogs/components/error-message', () => {
+jest.mock('#cogs/components/error-message', () => {
   return {
     __esModule: true,
     default: class MockErrorMessage extends mockComponent {
@@ -40,7 +40,7 @@ const MOCK_ERROR_MESSAGE = {
   uri: '#/'
 }
 
-describe('shinkansen-cogs/cogs/email/error-message', () => {
+describe('#cogs/cogs/email/error-message', () => {
   describe('<ErrorMessage />', () => {
     describe('With required props', () => {
       const component = (

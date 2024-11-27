@@ -5,11 +5,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
+import { ValueField } from '#cogs/components/field'
+
 import {
   DEFAULT_HANDLE_CHANGE
-} from 'shinkansen-cogs/common'
-
-import { ValueField } from 'shinkansen-cogs/components/field'
+} from '#cogs/common'
 
 function getSelectedValues ({ target: { selectedOptions } }) {
   return (
@@ -23,7 +23,7 @@ function getSelectedValue ({ target: { value } }) {
 }
 
 export default class SelectField extends ValueField {
-  shouldComponentUpdate (props) {
+  shouldComponentUpdate (props, state) {
     return (
       super.shouldComponentUpdate(props) ||
       (props.multiple !== this.props.multiple) ||

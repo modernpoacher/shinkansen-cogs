@@ -1,6 +1,6 @@
 import React from 'react'
 
-import TextCog from 'shinkansen-cogs/cogs/text'
+import TextCog from '#cogs/cogs/text'
 import errors from '#stories/errors'
 import TextState from '#stories/state/text'
 

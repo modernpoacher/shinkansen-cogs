@@ -4,10 +4,10 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import TextContent from 'shinkansen-cogs/components/common/text-content'
-import Required from 'shinkansen-cogs/components/common/required'
-import Disabled from 'shinkansen-cogs/components/common/disabled'
-import ReadOnly from 'shinkansen-cogs/components/common/readonly'
+import TextContent from '#cogs/components/common/text-content'
+import Required from '#cogs/components/common/required'
+import Disabled from '#cogs/components/common/disabled'
+import ReadOnly from '#cogs/components/common/readonly'
 
 export default class Title extends Component {
   isRequired () {
@@ -38,7 +38,7 @@ export default class Title extends Component {
     return 'title'
   }
 
-  shouldComponentUpdate (props) {
+  shouldComponentUpdate (props, state) {
     return (
       (props.id !== this.props.id) ||
       (props.title !== this.props.title) ||

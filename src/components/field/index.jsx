@@ -7,14 +7,14 @@ import PropTypes from 'prop-types'
 import {
   DEFAULT_HANDLE_CHANGE,
   DEFAULT_HANDLE_CLICK
-} from 'shinkansen-cogs/common'
+} from '#cogs/common'
 
 export default class Field extends Component {
   getClassName () {
     return 'input'
   }
 
-  shouldComponentUpdate (props) {
+  shouldComponentUpdate (props, state) {
     return (
       (props.id !== this.props.id) ||
       (props.required !== this.props.required) ||

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import EmailCog from 'shinkansen-cogs/cogs/email'
+import EmailCog from '#cogs/cogs/email'
 import errors from '#stories/errors'
 import EmailState from '#stories/state/email'
 

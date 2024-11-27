@@ -1,4 +1,4 @@
-declare module 'shinkansen-cogs/components/title' {
+declare module '#cogs/components/title' {
   import React from 'react'
 
   export interface TitleProps {
@@ -11,4 +11,9 @@ declare module 'shinkansen-cogs/components/title' {
   }
 
   export default class Title extends React.Component<TitleProps> {}
+}
+
+declare module 'shinkansen-cogs/components/title' {
+  export { default } from '#cogs/components/title'
+  export * from '#cogs/components/title'
 }

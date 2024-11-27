@@ -1,6 +1,6 @@
 import React from 'react'
 
-import PasswordCog from 'shinkansen-cogs/cogs/password'
+import PasswordCog from '#cogs/cogs/password'
 import errors from '#stories/errors'
 import PasswordState from '#stories/state/password'
 

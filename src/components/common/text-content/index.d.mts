@@ -1,4 +1,4 @@
-declare module 'shinkansen-cogs/components/common/text-content' {
+declare module '#cogs/components/common/text-content' {
   import type React from 'react'
 
   export interface TextContentProps {
@@ -6,4 +6,9 @@ declare module 'shinkansen-cogs/components/common/text-content' {
   }
 
   export default function TextContent (props: TextContentProps): React.JSX.Element | null
+}
+
+declare module 'shinkansen-cogs/components/common/text-content' {
+  export { default } from '#cogs/components/common/text-content'
+  export * from '#cogs/components/common/text-content'
 }

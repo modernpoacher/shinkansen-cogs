@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`shinkansen-cogs/components/description <Description /> With additional props renders 1`] = `
+exports[`#cogs/components/description <Description /> With additional props renders 1`] = `
 <span
   className="description"
 >
@@ -12,4 +12,4 @@ exports[`shinkansen-cogs/components/description <Description /> With additional 
 </span>
 `;
 
-exports[`shinkansen-cogs/components/description <Description /> With required props renders 1`] = `null`;
+exports[`#cogs/components/description <Description /> With required props renders 1`] = `null`;

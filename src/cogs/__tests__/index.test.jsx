@@ -2,15 +2,15 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
-import Title from 'shinkansen-cogs/components/title'
-import Field from 'shinkansen-cogs/components/field'
+import Title from '#cogs/components/title'
+import Field from '#cogs/components/field'
 
-import Cog, { ValueCog, CheckCog } from 'shinkansen-cogs/cogs'
+import Cog, { ValueCog, CheckCog } from '#cogs/cogs'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('shinkansen-cogs/components/title')
-jest.mock('shinkansen-cogs/components/field')
+jest.mock('#cogs/components/title')
+jest.mock('#cogs/components/field')
 
 const MOCK_ERROR_MESSAGE = {
   type: 'UNKNOWN',
@@ -20,7 +20,7 @@ const MOCK_ERROR_MESSAGE = {
   uri: '#/'
 }
 
-describe('shinkansen-cogs/cogs', () => {
+describe('#cogs/cogs', () => {
   describe('<Cog />', () => {
     describe('With required props', () => {
       const component = (

@@ -1,4 +1,4 @@
-declare module 'shinkansen-cogs/components/description' {
+declare module '#cogs/components/description' {
   import React from 'react'
 
   export interface DescriptionProps {
@@ -6,4 +6,9 @@ declare module 'shinkansen-cogs/components/description' {
   }
 
   export default class Description extends React.Component<DescriptionProps> {}
+}
+
+declare module 'shinkansen-cogs/components/description' {
+  export { default } from '#cogs/components/description'
+  export * from '#cogs/components/description'
 }

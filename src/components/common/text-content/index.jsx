@@ -9,7 +9,7 @@ import PropTypes from 'prop-types'
 
 /**
  * @param {TextContentProps}
- * @returns {React.JSX.Element}
+ * @returns {React.JSX.Element | null}
  */
 export default function TextContent ({ textContent }) {
   if (textContent) {

@@ -1,5 +1,9 @@
-declare module 'shinkansen-cogs/cogs/number/description' {
-  import Description from 'shinkansen-cogs/components/description'
+declare module '#cogs/cogs/number/description' {
+  import Description from '#cogs/components/description'
 
   export default class NumberDescription extends Description {}
+}
+
+declare module 'shinkansen-cogs/cogs/number/description' {
+  export { default } from '#cogs/cogs/number/description'
 }

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`shinkansen-cogs/cogs/number/error-message <ErrorMessage /> With additional props renders 1`] = `
+exports[`#cogs/cogs/number/error-message <ErrorMessage /> With additional props renders 1`] = `
 <span
   className="MOCK CLASSNAME"
 >
@@ -8,4 +8,4 @@ exports[`shinkansen-cogs/cogs/number/error-message <ErrorMessage /> With additio
 </span>
 `;
 
-exports[`shinkansen-cogs/cogs/number/error-message <ErrorMessage /> With required props renders 1`] = `null`;
+exports[`#cogs/cogs/number/error-message <ErrorMessage /> With required props renders 1`] = `null`;

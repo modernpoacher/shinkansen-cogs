@@ -4,7 +4,7 @@
 import React from 'react'
 import classnames from 'classnames'
 
-import { ValueField } from 'shinkansen-cogs/components/field'
+import { ValueField } from '#cogs/components/field'
 
 export default class EmailField extends ValueField {
   getClassName () {

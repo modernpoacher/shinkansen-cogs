@@ -1,6 +1,6 @@
 import React from 'react'
 
-import NumberCog from 'shinkansen-cogs/cogs/number'
+import NumberCog from '#cogs/cogs/number'
 import errors from '#stories/errors'
 import NumberState from '#stories/state/number'
 

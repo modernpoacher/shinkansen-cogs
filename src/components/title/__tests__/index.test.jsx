@@ -1,18 +1,18 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import Title from 'shinkansen-cogs/components/title'
+import Title from '#cogs/components/title'
 
-import Required from 'shinkansen-cogs/components/common/required'
-import Disabled from 'shinkansen-cogs/components/common/disabled'
-import ReadOnly from 'shinkansen-cogs/components/common/readonly'
+import Required from '#cogs/components/common/required'
+import Disabled from '#cogs/components/common/disabled'
+import ReadOnly from '#cogs/components/common/readonly'
 
-jest.mock('shinkansen-cogs/components/common/text-content', () => () => 'MOCK TEXT CONTENT')
-jest.mock('shinkansen-cogs/components/common/required') // , () => () => 'MOCK REQUIRED')
-jest.mock('shinkansen-cogs/components/common/disabled') // , () => () => 'MOCK DISABLED')
-jest.mock('shinkansen-cogs/components/common/readonly') // , () => () => 'MOCK READONLY')
+jest.mock('#cogs/components/common/text-content', () => () => 'MOCK TEXT CONTENT')
+jest.mock('#cogs/components/common/required') // , () => () => 'MOCK REQUIRED')
+jest.mock('#cogs/components/common/disabled') // , () => () => 'MOCK DISABLED')
+jest.mock('#cogs/components/common/readonly') // , () => () => 'MOCK READONLY')
 
-describe('shinkansen-cogs/components/title', () => {
+describe('#cogs/components/title', () => {
   describe('<Title />', () => {
     describe('With required props', () => {
       const component = (

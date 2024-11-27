@@ -2,12 +2,12 @@ import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
-import Super from 'shinkansen-cogs/components/description'
-import Description from 'shinkansen-cogs/cogs/radio/description'
+import Super from '#cogs/components/description'
+import Description from '#cogs/cogs/radio/description'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('shinkansen-cogs/components/description', () => {
+jest.mock('#cogs/components/description', () => {
   return {
     __esModule: true,
     default: class MockDescription extends mockComponent {
@@ -32,7 +32,7 @@ jest.mock('shinkansen-cogs/components/description', () => {
   }
 })
 
-describe('shinkansen-cogs/cogs/radio/description', () => {
+describe('#cogs/cogs/radio/description', () => {
   describe('<Description />', () => {
     describe('With required props', () => {
       const component = (

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import SelectCog from 'shinkansen-cogs/cogs/select'
+import SelectCog from '#cogs/cogs/select'
 import errors from '#stories/errors'
 import SelectState from '#stories/state/select'
 

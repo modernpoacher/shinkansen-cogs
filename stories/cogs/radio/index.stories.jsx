@@ -1,6 +1,6 @@
 import React from 'react'
 
-import RadioCog from 'shinkansen-cogs/cogs/radio'
+import RadioCog from '#cogs/cogs/radio'
 import errors from '#stories/errors'
 import RadioState from '#stories/state/radio'
 

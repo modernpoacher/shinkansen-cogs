@@ -2,17 +2,17 @@ import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
-import { CheckCog } from 'shinkansen-cogs/cogs'
-import Cog from 'shinkansen-cogs/cogs/radio'
+import { CheckCog } from '#cogs/cogs'
+import Cog from '#cogs/cogs/radio'
 
-import Title from 'shinkansen-cogs/cogs/radio/title'
-import Description from 'shinkansen-cogs/cogs/radio/description'
-import ErrorMessage from 'shinkansen-cogs/cogs/radio/error-message'
-import Field from 'shinkansen-cogs/cogs/radio/field'
+import Title from '#cogs/cogs/radio/title'
+import Description from '#cogs/cogs/radio/description'
+import ErrorMessage from '#cogs/cogs/radio/error-message'
+import Field from '#cogs/cogs/radio/field'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('shinkansen-cogs/cogs', () => {
+jest.mock('#cogs/cogs', () => {
   class MockCog extends mockComponent {
     getClassName () {
       return 'MOCK CLASSNAME'
@@ -63,10 +63,10 @@ jest.mock('shinkansen-cogs/cogs', () => {
   }
 })
 
-jest.mock('shinkansen-cogs/cogs/radio/title')
-jest.mock('shinkansen-cogs/cogs/radio/description')
-jest.mock('shinkansen-cogs/cogs/radio/error-message')
-jest.mock('shinkansen-cogs/cogs/radio/field')
+jest.mock('#cogs/cogs/radio/title')
+jest.mock('#cogs/cogs/radio/description')
+jest.mock('#cogs/cogs/radio/error-message')
+jest.mock('#cogs/cogs/radio/field')
 
 class MockErrorMessage extends mockComponent {
   state = {}
@@ -92,7 +92,7 @@ const MOCK_CHANGE_ERROR_MESSAGE = {
   uri: 'MOCK CHANGE URI'
 }
 
-describe('shinkansen-cogs/cogs/radio', () => {
+describe('#cogs/cogs/radio', () => {
   beforeAll(() => {
     /*
      *  class defines `state` for instance

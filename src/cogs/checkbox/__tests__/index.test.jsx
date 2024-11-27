@@ -2,17 +2,17 @@ import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
-import { CheckCog } from 'shinkansen-cogs/cogs'
-import Cog from 'shinkansen-cogs/cogs/checkbox'
+import { CheckCog } from '#cogs/cogs'
+import Cog from '#cogs/cogs/checkbox'
 
-import Title from 'shinkansen-cogs/cogs/checkbox/title'
-import Description from 'shinkansen-cogs/cogs/checkbox/description'
-import ErrorMessage from 'shinkansen-cogs/cogs/checkbox/error-message'
-import Field from 'shinkansen-cogs/cogs/checkbox/field'
+import Title from '#cogs/cogs/checkbox/title'
+import Description from '#cogs/cogs/checkbox/description'
+import ErrorMessage from '#cogs/cogs/checkbox/error-message'
+import Field from '#cogs/cogs/checkbox/field'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('shinkansen-cogs/cogs', () => {
+jest.mock('#cogs/cogs', () => {
   class MockCog extends mockComponent {
     getClassName () {
       return 'MOCK CLASSNAME'
@@ -63,10 +63,10 @@ jest.mock('shinkansen-cogs/cogs', () => {
   }
 })
 
-jest.mock('shinkansen-cogs/cogs/checkbox/title')
-jest.mock('shinkansen-cogs/cogs/checkbox/description')
-jest.mock('shinkansen-cogs/cogs/checkbox/error-message')
-jest.mock('shinkansen-cogs/cogs/checkbox/field')
+jest.mock('#cogs/cogs/checkbox/title')
+jest.mock('#cogs/cogs/checkbox/description')
+jest.mock('#cogs/cogs/checkbox/error-message')
+jest.mock('#cogs/cogs/checkbox/field')
 
 class MockErrorMessage extends mockComponent {
   state = {}
@@ -86,7 +86,7 @@ const MOCK_ERROR_MESSAGE = {
   uri: 'MOCK URI'
 }
 
-describe('shinkansen-cogs/cogs/checkbox', () => {
+describe('#cogs/cogs/checkbox', () => {
   beforeAll(() => {
     /*
      *  class defines `state` for instance

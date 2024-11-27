@@ -1,6 +1,6 @@
 import React from 'react'
 
-import TextareaCog from 'shinkansen-cogs/cogs/textarea'
+import TextareaCog from '#cogs/cogs/textarea'
 import errors from '#stories/errors'
 import TextareaState from '#stories/state/textarea'
 

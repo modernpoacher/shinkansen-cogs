@@ -35,3 +35,7 @@ stories
 
 # Shell
 nvm.sh
+transform.sh
+
+# Webpack
+webpack.config.mjs

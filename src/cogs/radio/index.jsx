@@ -5,12 +5,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-import { CheckCog } from 'shinkansen-cogs/cogs'
+import { CheckCog } from '#cogs/cogs'
 
 import {
   DEFAULT_HANDLE_CHANGE,
   DEFAULT_HANDLE_CLICK
-} from 'shinkansen-cogs/common'
+} from '#cogs/common'
 
 import Title from './title/index.jsx'
 import Description from './description/index.jsx'
@@ -40,7 +40,7 @@ export default class Radio extends CheckCog {
     onClick(name, value, checked)
   }
 
-  shouldComponentUpdate (props) {
+  shouldComponentUpdate (props, state) {
     return (
       super.shouldComponentUpdate(props) ||
       (props.value !== this.props.value)

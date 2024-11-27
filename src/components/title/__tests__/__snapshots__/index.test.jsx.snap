@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`shinkansen-cogs/components/title <Title /> With additional props renders 1`] = `
+exports[`#cogs/components/title <Title /> With additional props renders 1`] = `
 <label
   className="title"
   htmlFor="MOCK ID"
@@ -9,4 +9,4 @@ exports[`shinkansen-cogs/components/title <Title /> With additional props render
 </label>
 `;
 
-exports[`shinkansen-cogs/components/title <Title /> With required props renders 1`] = `null`;
+exports[`#cogs/components/title <Title /> With required props renders 1`] = `null`;

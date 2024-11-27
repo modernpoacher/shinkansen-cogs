@@ -1,4 +1,4 @@
-declare module 'shinkansen-cogs/cogs' {
+declare module '#cogs/cogs' {
   import React from 'react'
 
   export interface CogProps {
@@ -16,4 +16,9 @@ declare module 'shinkansen-cogs/cogs' {
   }
 
   export default class Cog extends React.Component<CogProps> {}
+}
+
+declare module 'shinkansen-cogs/cogs' {
+  export { default } from '#cogs/cogs'
+  export * from '#cogs/cogs'
 }
