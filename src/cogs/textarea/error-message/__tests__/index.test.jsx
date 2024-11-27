@@ -2,12 +2,12 @@ import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
-import Super from '@modernpoacher/cogs/components/error-message'
-import ErrorMessage from '@modernpoacher/cogs/cogs/textarea/error-message'
+import Super from '#cogs/components/error-message'
+import ErrorMessage from '#cogs/cogs/textarea/error-message'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('@modernpoacher/cogs/components/error-message', () => {
+jest.mock('#cogs/components/error-message', () => {
   return {
     __esModule: true,
     default: class MockErrorMessage extends mockComponent {
@@ -32,7 +32,7 @@ jest.mock('@modernpoacher/cogs/components/error-message', () => {
   }
 })
 
-describe('@modernpoacher/cogs/cogs/textarea/error-message', () => {
+describe('#cogs/cogs/textarea/error-message', () => {
   describe('<ErrorMessage />', () => {
     describe('With required props', () => {
       const component = (

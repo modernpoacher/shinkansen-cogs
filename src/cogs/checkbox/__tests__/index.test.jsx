@@ -2,17 +2,17 @@ import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
-import { CheckCog } from '@modernpoacher/cogs/cogs'
-import Cog from '@modernpoacher/cogs/cogs/checkbox'
+import { CheckCog } from '#cogs/cogs'
+import Cog from '#cogs/cogs/checkbox'
 
-import Title from '@modernpoacher/cogs/cogs/checkbox/title'
-import Description from '@modernpoacher/cogs/cogs/checkbox/description'
-import ErrorMessage from '@modernpoacher/cogs/cogs/checkbox/error-message'
-import Field from '@modernpoacher/cogs/cogs/checkbox/field'
+import Title from '#cogs/cogs/checkbox/title'
+import Description from '#cogs/cogs/checkbox/description'
+import ErrorMessage from '#cogs/cogs/checkbox/error-message'
+import Field from '#cogs/cogs/checkbox/field'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('@modernpoacher/cogs/cogs', () => {
+jest.mock('#cogs/cogs', () => {
   class MockCog extends mockComponent {
     getClassName () {
       return 'MOCK CLASSNAME'
@@ -63,10 +63,10 @@ jest.mock('@modernpoacher/cogs/cogs', () => {
   }
 })
 
-jest.mock('@modernpoacher/cogs/cogs/checkbox/title')
-jest.mock('@modernpoacher/cogs/cogs/checkbox/description')
-jest.mock('@modernpoacher/cogs/cogs/checkbox/error-message')
-jest.mock('@modernpoacher/cogs/cogs/checkbox/field')
+jest.mock('#cogs/cogs/checkbox/title')
+jest.mock('#cogs/cogs/checkbox/description')
+jest.mock('#cogs/cogs/checkbox/error-message')
+jest.mock('#cogs/cogs/checkbox/field')
 
 class MockErrorMessage extends mockComponent {
   state = {}
@@ -76,7 +76,7 @@ class MockErrorMessage extends mockComponent {
   }
 }
 
-describe('@modernpoacher/cogs/cogs/checkbox', () => {
+describe('#cogs/cogs/checkbox', () => {
   beforeAll(() => {
     /*
      *  class defines `state` for instance

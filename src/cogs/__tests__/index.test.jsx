@@ -2,17 +2,17 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
-import Title from '@modernpoacher/cogs/components/title'
-import Field from '@modernpoacher/cogs/components/field'
+import Title from '#cogs/components/title'
+import Field from '#cogs/components/field'
 
-import Cog, { ValueCog, CheckCog } from '@modernpoacher/cogs/cogs'
+import Cog, { ValueCog, CheckCog } from '#cogs/cogs'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('@modernpoacher/cogs/components/title')
-jest.mock('@modernpoacher/cogs/components/field')
+jest.mock('#cogs/components/title')
+jest.mock('#cogs/components/field')
 
-describe('@modernpoacher/cogs/cogs', () => {
+describe('#cogs/cogs', () => {
   describe('<Cog />', () => {
     describe('With required props', () => {
       const component = (

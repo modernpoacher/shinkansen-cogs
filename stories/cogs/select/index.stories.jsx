@@ -1,6 +1,6 @@
 import React from 'react'
 
-import SelectCog from '@modernpoacher/cogs/cogs/select'
+import SelectCog from '#cogs/cogs/select'
 import SelectState from '#stories/state/select'
 
 export default {

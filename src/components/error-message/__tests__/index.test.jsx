@@ -1,11 +1,11 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import ErrorMessage from '@modernpoacher/cogs/components/error-message'
+import ErrorMessage from '#cogs/components/error-message'
 
 jest.useFakeTimers()
 
-describe('@modernpoacher/cogs/components/error-message', () => {
+describe('#cogs/components/error-message', () => {
   describe('<ErrorMessage />', () => {
     describe('With required props', () => {
       const component = (

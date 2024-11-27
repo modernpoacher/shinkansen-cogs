@@ -10,15 +10,15 @@ import classnames from 'classnames'
 import {
   DEFAULT_HANDLE_CHANGE,
   DEFAULT_HANDLE_CLICK
-} from '@modernpoacher/cogs/common'
+} from '#cogs/common'
 
-import Title from '@modernpoacher/cogs/components/title'
-import Description from '@modernpoacher/cogs/components/description'
-import ErrorMessage from '@modernpoacher/cogs/components/error-message'
+import Title from '#cogs/components/title'
+import Description from '#cogs/components/description'
+import ErrorMessage from '#cogs/components/error-message'
 import Field, {
   ValueField,
   CheckField
-} from '@modernpoacher/cogs/components/field'
+} from '#cogs/components/field'
 
 export default class Cog extends Component {
   getClassName () {
@@ -45,7 +45,7 @@ export default class Cog extends Component {
    * @param {CogProps} props
    * @returns {boolean}
    */
-  shouldComponentUpdate (props) {
+  shouldComponentUpdate (props, state) {
     return (
       (props.name !== this.props.name) ||
       (props.id !== this.props.id) ||
@@ -169,7 +169,7 @@ Cog.propTypes = {
 }
 
 export class ValueCog extends Cog {
-  shouldComponentUpdate (props) {
+  shouldComponentUpdate (props, state) {
     return (
       super.shouldComponentUpdate(props) ||
       (props.value !== this.props.value)
@@ -215,7 +215,7 @@ ValueCog.propTypes = {
 }
 
 export class CheckCog extends Cog {
-  shouldComponentUpdate (props) {
+  shouldComponentUpdate (props, state) {
     return (
       super.shouldComponentUpdate(props) ||
       (props.checked !== this.props.checked) ||

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import PasswordCog from '@modernpoacher/cogs/cogs/password'
+import PasswordCog from '#cogs/cogs/password'
 import PasswordState from '#stories/state/password'
 
 export default {

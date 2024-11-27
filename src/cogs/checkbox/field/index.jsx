@@ -5,7 +5,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-import { CheckField } from '@modernpoacher/cogs/components/field'
+import { CheckField } from '#cogs/components/field'
 
 export default class CheckboxField extends CheckField {
   getClassName () {

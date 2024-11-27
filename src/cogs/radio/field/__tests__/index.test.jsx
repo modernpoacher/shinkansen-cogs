@@ -2,12 +2,12 @@ import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
-import { CheckField } from '@modernpoacher/cogs/components/field'
-import Field from '@modernpoacher/cogs/cogs/radio/field'
+import { CheckField } from '#cogs/components/field'
+import Field from '#cogs/cogs/radio/field'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('@modernpoacher/cogs/components/field', () => {
+jest.mock('#cogs/components/field', () => {
   class MockField extends mockComponent {
     getClassName () {
       return 'MOCK CLASSNAME'
@@ -25,7 +25,7 @@ jest.mock('@modernpoacher/cogs/components/field', () => {
   }
 })
 
-describe('@modernpoacher/cogs/cogs/radio/field', () => {
+describe('#cogs/cogs/radio/field', () => {
   describe('<Field />', () => {
     describe('With required props', () => {
       const component = (

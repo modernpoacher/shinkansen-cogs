@@ -1,6 +1,6 @@
 import React from 'react'
 
-import EmailCog from '@modernpoacher/cogs/cogs/email'
+import EmailCog from '#cogs/cogs/email'
 import EmailState from '#stories/state/email'
 
 export default {

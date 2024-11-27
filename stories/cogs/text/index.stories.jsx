@@ -1,6 +1,6 @@
 import React from 'react'
 
-import TextCog from '@modernpoacher/cogs/cogs/text'
+import TextCog from '#cogs/cogs/text'
 import TextState from '#stories/state/text'
 
 export default {

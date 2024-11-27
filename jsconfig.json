@@ -1,11 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
-    "paths": {
-      "@modernpoacher/cogs/*": [
-        "src/*",
-        "stories/*"
-      ]
-    }
+    "baseUrl": "."
   }
 }

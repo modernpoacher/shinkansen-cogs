@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`@modernpoacher/cogs/components/common/text-content <Component /> With required props renders 1`] = `
+exports[`#cogs/components/common/text-content <Component /> With required props renders 1`] = `
 <span
   className="text-content"
 >

@@ -5,11 +5,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-import { ValueCog } from '@modernpoacher/cogs/cogs'
+import { ValueCog } from '#cogs/cogs'
 
 import {
   DEFAULT_HANDLE_CHANGE
-} from '@modernpoacher/cogs/common'
+} from '#cogs/common'
 
 import Title from './title/index.jsx'
 import Description from './description/index.jsx'

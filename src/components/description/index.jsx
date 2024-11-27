@@ -4,14 +4,14 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import TextContent from '@modernpoacher/cogs/components/common/text-content'
+import TextContent from '#cogs/components/common/text-content'
 
 export default class Description extends Component {
   getClassName () {
     return 'description'
   }
 
-  shouldComponentUpdate (props) {
+  shouldComponentUpdate (props, state) {
     return (
       (props.description !== this.props.description)
     )

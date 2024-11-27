@@ -10,13 +10,17 @@ declare namespace CogsTypes {
   }
 }
 
+declare module '#cogs' {
+  export { default as CheckboxCog } from '#cogs/cogs/checkbox'
+  export { default as EmailCog } from '#cogs/cogs/email'
+  export { default as NumberCog } from '#cogs/cogs/number'
+  export { default as PasswordCog } from '#cogs/cogs/password'
+  export { default as RadioCog } from '#cogs/cogs/radio'
+  export { default as SelectCog } from '#cogs/cogs/select'
+  export { default as TextCog } from '#cogs/cogs/text'
+  export { default as TextareaCog } from '#cogs/cogs/textarea'
+}
+
 declare module '@modernpoacher/cogs' {
-  export { default as CheckboxCog } from '@modernpoacher/cogs/cogs/checkbox'
-  export { default as EmailCog } from '@modernpoacher/cogs/cogs/email'
-  export { default as NumberCog } from '@modernpoacher/cogs/cogs/number'
-  export { default as PasswordCog } from '@modernpoacher/cogs/cogs/password'
-  export { default as RadioCog } from '@modernpoacher/cogs/cogs/radio'
-  export { default as SelectCog } from '@modernpoacher/cogs/cogs/select'
-  export { default as TextCog } from '@modernpoacher/cogs/cogs/text'
-  export { default as TextareaCog } from '@modernpoacher/cogs/cogs/textarea'
+  export * from '#cogs'
 }

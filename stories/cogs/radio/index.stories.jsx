@@ -1,6 +1,6 @@
 import React from 'react'
 
-import RadioCog from '@modernpoacher/cogs/cogs/radio'
+import RadioCog from '#cogs/cogs/radio'
 import RadioState from '#stories/state/radio'
 
 export default {

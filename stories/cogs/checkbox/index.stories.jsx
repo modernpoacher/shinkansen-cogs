@@ -1,6 +1,6 @@
 import React from 'react'
 
-import CheckboxCog from '@modernpoacher/cogs/cogs/checkbox'
+import CheckboxCog from '#cogs/cogs/checkbox'
 import CheckboxState from '#stories/state/checkbox'
 
 export default {

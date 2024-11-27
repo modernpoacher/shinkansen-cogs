@@ -1,9 +1,9 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import Description from '@modernpoacher/cogs/components/description'
+import Description from '#cogs/components/description'
 
-describe('@modernpoacher/cogs/components/description', () => {
+describe('#cogs/components/description', () => {
   describe('<Description />', () => {
     describe('With required props', () => {
       const component = (

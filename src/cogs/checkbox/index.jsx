@@ -5,12 +5,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-import { CheckCog } from '@modernpoacher/cogs/cogs'
+import { CheckCog } from '#cogs/cogs'
 
 import {
   DEFAULT_HANDLE_CHANGE,
   DEFAULT_HANDLE_CLICK
-} from '@modernpoacher/cogs/common'
+} from '#cogs/common'
 
 import Title from './title/index.jsx'
 import Description from './description/index.jsx'
@@ -38,7 +38,7 @@ export default class CheckboxCog extends CheckCog {
     onClick(value, checked)
   }
 
-  shouldComponentUpdate (props) {
+  shouldComponentUpdate (props, state) {
     return (
       super.shouldComponentUpdate(props) ||
       (props.value !== this.props.value)

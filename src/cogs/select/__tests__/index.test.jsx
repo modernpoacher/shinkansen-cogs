@@ -2,17 +2,17 @@ import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
-import { ValueCog } from '@modernpoacher/cogs/cogs'
-import Cog from '@modernpoacher/cogs/cogs/select'
+import { ValueCog } from '#cogs/cogs'
+import Cog from '#cogs/cogs/select'
 
-import Title from '@modernpoacher/cogs/cogs/select/title'
-import Description from '@modernpoacher/cogs/cogs/select/description'
-import ErrorMessage from '@modernpoacher/cogs/cogs/select/error-message'
-import Field from '@modernpoacher/cogs/cogs/select/field'
+import Title from '#cogs/cogs/select/title'
+import Description from '#cogs/cogs/select/description'
+import ErrorMessage from '#cogs/cogs/select/error-message'
+import Field from '#cogs/cogs/select/field'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('@modernpoacher/cogs/cogs', () => {
+jest.mock('#cogs/cogs', () => {
   class MockCog extends mockComponent {
     getClassName () {
       return 'MOCK CLASSNAME'
@@ -63,10 +63,10 @@ jest.mock('@modernpoacher/cogs/cogs', () => {
   }
 })
 
-jest.mock('@modernpoacher/cogs/cogs/select/title')
-jest.mock('@modernpoacher/cogs/cogs/select/description')
-jest.mock('@modernpoacher/cogs/cogs/select/error-message')
-jest.mock('@modernpoacher/cogs/cogs/select/field')
+jest.mock('#cogs/cogs/select/title')
+jest.mock('#cogs/cogs/select/description')
+jest.mock('#cogs/cogs/select/error-message')
+jest.mock('#cogs/cogs/select/field')
 
 class MockErrorMessage extends mockComponent {
   state = {}
@@ -76,7 +76,7 @@ class MockErrorMessage extends mockComponent {
   }
 }
 
-describe('@modernpoacher/cogs/cogs/select', () => {
+describe('#cogs/cogs/select', () => {
   beforeAll(() => {
     /*
      *  class defines `state` for instance

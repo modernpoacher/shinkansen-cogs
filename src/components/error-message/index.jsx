@@ -4,7 +4,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import TextContent from '@modernpoacher/cogs/components/common/text-content'
+import TextContent from '#cogs/components/common/text-content'
 
 export default class ErrorMessage extends Component {
   getClassName () {
@@ -17,7 +17,7 @@ export default class ErrorMessage extends Component {
    *  @param {{errorMessage?: string}} props   Latest props
    *  @returns {boolean}
    */
-  shouldComponentUpdate (props) {
+  shouldComponentUpdate (props, state) {
     return (props.errorMessage !== this.props.errorMessage)
   }
 

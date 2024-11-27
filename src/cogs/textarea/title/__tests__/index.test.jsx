@@ -2,12 +2,12 @@ import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
-import Super from '@modernpoacher/cogs/components/title'
-import Title from '@modernpoacher/cogs/cogs/textarea/title'
+import Super from '#cogs/components/title'
+import Title from '#cogs/cogs/textarea/title'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('@modernpoacher/cogs/components/title', () => {
+jest.mock('#cogs/components/title', () => {
   return {
     __esModule: true,
     default: class MockTitle extends mockComponent {
@@ -34,7 +34,7 @@ jest.mock('@modernpoacher/cogs/components/title', () => {
   }
 })
 
-describe('@modernpoacher/cogs/cogs/textarea/title', () => {
+describe('#cogs/cogs/textarea/title', () => {
   describe('<Title />', () => {
     describe('With required props', () => {
       const component = (

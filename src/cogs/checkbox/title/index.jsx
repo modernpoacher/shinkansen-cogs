@@ -2,7 +2,7 @@
  * CheckboxTitle component
  */
 import classnames from 'classnames'
-import Title from '@modernpoacher/cogs/components/title'
+import Title from '#cogs/components/title'
 
 export default class CheckboxTitle extends Title {
   getClassName () {

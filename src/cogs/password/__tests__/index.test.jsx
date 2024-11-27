@@ -2,17 +2,17 @@ import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
-import { ValueCog } from '@modernpoacher/cogs/cogs'
-import Cog from '@modernpoacher/cogs/cogs/password'
+import { ValueCog } from '#cogs/cogs'
+import Cog from '#cogs/cogs/password'
 
-import Title from '@modernpoacher/cogs/cogs/password/title'
-import Description from '@modernpoacher/cogs/cogs/password/description'
-import ErrorMessage from '@modernpoacher/cogs/cogs/password/error-message'
-import Field from '@modernpoacher/cogs/cogs/password/field'
+import Title from '#cogs/cogs/password/title'
+import Description from '#cogs/cogs/password/description'
+import ErrorMessage from '#cogs/cogs/password/error-message'
+import Field from '#cogs/cogs/password/field'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('@modernpoacher/cogs/cogs', () => {
+jest.mock('#cogs/cogs', () => {
   class MockCog extends mockComponent {
     getClassName () {
       return 'MOCK CLASSNAME'
@@ -59,10 +59,10 @@ jest.mock('@modernpoacher/cogs/cogs', () => {
   }
 })
 
-jest.mock('@modernpoacher/cogs/cogs/password/title')
-jest.mock('@modernpoacher/cogs/cogs/password/description')
-jest.mock('@modernpoacher/cogs/cogs/password/error-message')
-jest.mock('@modernpoacher/cogs/cogs/password/field')
+jest.mock('#cogs/cogs/password/title')
+jest.mock('#cogs/cogs/password/description')
+jest.mock('#cogs/cogs/password/error-message')
+jest.mock('#cogs/cogs/password/field')
 
 class MockErrorMessage extends mockComponent {
   state = {}
@@ -72,7 +72,7 @@ class MockErrorMessage extends mockComponent {
   }
 }
 
-describe('@modernpoacher/cogs/cogs/password', () => {
+describe('#cogs/cogs/password', () => {
   beforeAll(() => {
     /*
      *  class defines `state` for instance

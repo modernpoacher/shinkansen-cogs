@@ -1,6 +1,6 @@
 require('@babel/register')({
   ignore: [
-    /node_modules\/(?!@modernpoacher\/cogs|@modernpoacher\/sprockets)/
+    /node_modules\/(?!@modernpoacher\/cogs|@modernpoacher\/sprockets|@modernpoacher\/gremlins)/
   ]
 })
 

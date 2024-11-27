@@ -1,4 +1,4 @@
-declare module '@modernpoacher/cogs/components/field' {
+declare module '#cogs/components/field' {
   import React from 'react'
 
   export interface FieldProps {
@@ -15,4 +15,9 @@ declare module '@modernpoacher/cogs/components/field' {
   }
 
   export default class Field extends React.Component<FieldProps> {}
+}
+
+declare module '@modernpoacher/cogs/components/field' {
+  export { default } from '#cogs/components/field'
+  export * from '#cogs/components/field'
 }

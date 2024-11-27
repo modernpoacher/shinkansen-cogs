@@ -4,9 +4,9 @@ import renderer from 'react-test-renderer'
 import Field, {
   ValueField,
   CheckField
-} from '@modernpoacher/cogs/components/field'
+} from '#cogs/components/field'
 
-describe('@modernpoacher/cogs/components/field', () => {
+describe('#cogs/components/field', () => {
   describe('<Field />', () => {
     describe('With required props', () => {
       const component = (

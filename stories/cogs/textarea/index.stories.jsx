@@ -1,6 +1,6 @@
 import React from 'react'
 
-import TextareaCog from '@modernpoacher/cogs/cogs/textarea'
+import TextareaCog from '#cogs/cogs/textarea'
 import TextareaState from '#stories/state/textarea'
 
 export default {

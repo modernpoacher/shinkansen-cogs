@@ -1,18 +1,18 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import Title from '@modernpoacher/cogs/components/title'
+import Title from '#cogs/components/title'
 
-import Required from '@modernpoacher/cogs/components/common/required'
-import Disabled from '@modernpoacher/cogs/components/common/disabled'
-import ReadOnly from '@modernpoacher/cogs/components/common/readonly'
+import Required from '#cogs/components/common/required'
+import Disabled from '#cogs/components/common/disabled'
+import ReadOnly from '#cogs/components/common/readonly'
 
-jest.mock('@modernpoacher/cogs/components/common/text-content', () => () => 'MOCK TEXT CONTENT')
-jest.mock('@modernpoacher/cogs/components/common/required') // , () => () => 'MOCK REQUIRED')
-jest.mock('@modernpoacher/cogs/components/common/disabled') // , () => () => 'MOCK DISABLED')
-jest.mock('@modernpoacher/cogs/components/common/readonly') // , () => () => 'MOCK READONLY')
+jest.mock('#cogs/components/common/text-content', () => () => 'MOCK TEXT CONTENT')
+jest.mock('#cogs/components/common/required') // , () => () => 'MOCK REQUIRED')
+jest.mock('#cogs/components/common/disabled') // , () => () => 'MOCK DISABLED')
+jest.mock('#cogs/components/common/readonly') // , () => () => 'MOCK READONLY')
 
-describe('@modernpoacher/cogs/components/title', () => {
+describe('#cogs/components/title', () => {
   describe('<Title />', () => {
     describe('With required props', () => {
       const component = (

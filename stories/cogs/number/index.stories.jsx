@@ -1,6 +1,6 @@
 import React from 'react'
 
-import NumberCog from '@modernpoacher/cogs/cogs/number'
+import NumberCog from '#cogs/cogs/number'
 import NumberState from '#stories/state/number'
 
 export default {
