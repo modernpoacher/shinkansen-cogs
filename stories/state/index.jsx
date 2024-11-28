@@ -92,11 +92,7 @@ ValueState.propTypes = {
   ...State.propTypes
 }
 
-export class CheckState extends Component {
-  state = {
-    ...this.props
-  }
-
+export class CheckState extends State {
   hasDefaultChecked () {
     return (
       'defaultChecked' in this.props
@@ -148,12 +144,98 @@ export class CheckState extends Component {
       }
     )
   }
-
-  render () {
-    return this.getChildren()
-  }
 }
 
 CheckState.propTypes = {
+  ...State.propTypes
+}
+
+export class RadioState extends State {
+  hasDefaultChecked () {
+    return (
+      'defaultChecked' in this.props
+    )
+  }
+
+  mapDefaultChildren (children, props, { defaultChecked, value /* State value */ } = {}) {
+    return Children.map(children, (child) => {
+      const {
+        props: PROPS,
+        props: {
+          value: VALUE /* Component value */
+        }
+      } = child
+
+      return cloneElement(
+        child,
+        {
+          ...PROPS,
+          ...props,
+          defaultChecked: defaultChecked && value === VALUE,
+          value: VALUE
+        }
+      )
+    })
+  }
+
+  mapChildren (children, props, { checked, value /* State value */ } = {}) {
+    return Children.map(children, (child) => {
+      const {
+        props: PROPS,
+        props: {
+          value: VALUE /* Component value */
+        }
+      } = child
+
+      return cloneElement(
+        child,
+        {
+          ...PROPS,
+          ...props,
+          checked: checked && value === VALUE,
+          value: VALUE
+        }
+      )
+    })
+  }
+
+  getChildren () {
+    const { children, ...props } = this.props
+
+    if (this.hasDefaultChecked()) {
+      const { value, defaultChecked = false } = this.state
+
+      return this.mapDefaultChildren(
+        children,
+        {
+          ...props,
+          onChange: (value, checked) => { log(value, checked) }
+        },
+        {
+          value,
+          defaultChecked
+        }
+      )
+    }
+
+    const { value, checked = false } = this.state
+
+    return this.mapChildren(
+      children,
+      {
+        ...props,
+        onChange: (value, checked) => {
+          this.setState({ value, checked }, () => { log(value, checked) })
+        }
+      },
+      {
+        value,
+        checked
+      }
+    )
+  }
+}
+
+RadioState.propTypes = {
   ...State.propTypes
 }

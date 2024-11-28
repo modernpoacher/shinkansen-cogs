@@ -1,1 +1,1 @@
-export { CheckState as default } from '#stories/state'
+export { RadioState as default } from '#stories/state'
