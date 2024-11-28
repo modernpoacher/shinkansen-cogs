@@ -68,7 +68,7 @@ export class ValueState extends State {
         {
           ...props,
           defaultValue,
-          onChange: (NAME, VALUE) => log(NAME, VALUE)
+          onChange: (name, value) => { log(name, value) }
         }
       )
     }
@@ -80,8 +80,8 @@ export class ValueState extends State {
       {
         ...props,
         value,
-        onChange: (NAME, VALUE) => {
-          this.setState({ value: VALUE }, () => log(NAME, VALUE))
+        onChange: (name, value) => {
+          this.setState({ value }, () => { log(name, value) })
         }
       }
     )
@@ -123,29 +123,27 @@ export class CheckState extends Component {
     const { children, ...props } = this.props
 
     if (this.hasDefaultChecked()) {
-      const { value, defaultChecked } = this.state
+      const { defaultChecked } = this.state
 
       return this.mapChildren(
         children,
         {
           ...props,
-          value,
           defaultChecked: !!defaultChecked,
-          onChange: (name, value, checked) => log(name, value, checked)
+          onChange: (name, value, checked) => { log(name, value, checked) }
         }
       )
     }
 
-    const { value, checked } = this.state
+    const { checked } = this.state
 
     return this.mapChildren(
       children,
       {
         ...props,
-        value,
         checked: !!checked,
         onChange: (name, value, checked) => {
-          this.setState({ value, checked }, () => log(name, value, checked))
+          this.setState({ value, checked }, () => { log(name, value, checked) })
         }
       }
     )
