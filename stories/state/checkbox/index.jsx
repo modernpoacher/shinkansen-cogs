@@ -1,3 +1,1 @@
-import { CheckState } from '#stories/state'
-
-export default CheckState
+export { CheckState as default } from '#stories/state'

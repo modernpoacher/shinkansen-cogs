@@ -131,7 +131,7 @@ export class CheckState extends Component {
           ...props,
           value,
           defaultChecked: !!defaultChecked,
-          onChange: (NAME, VALUE, CHECKED) => log(NAME, VALUE, CHECKED)
+          onChange: (name, value, checked) => log(name, value, checked)
         }
       )
     }
@@ -144,8 +144,8 @@ export class CheckState extends Component {
         ...props,
         value,
         checked: !!checked,
-        onChange: (NAME, VALUE, CHECKED) => {
-          this.setState({ value: VALUE, checked: CHECKED }, () => log(NAME, VALUE, CHECKED))
+        onChange: (name, value, checked) => {
+          this.setState({ value, checked }, () => log(name, value, checked))
         }
       }
     )
