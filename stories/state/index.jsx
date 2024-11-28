@@ -68,7 +68,7 @@ export class ValueState extends State {
         {
           ...props,
           defaultValue,
-          onChange: (value) => log(value)
+          onChange: (value) => { log(value) }
         }
       )
     }
@@ -81,7 +81,7 @@ export class ValueState extends State {
         ...props,
         value,
         onChange: (value) => {
-          this.setState({ value }, () => log(value))
+          this.setState({ value }, () => { log(value) })
         }
       }
     )
@@ -130,7 +130,7 @@ export class CheckState extends Component {
         {
           ...props,
           defaultChecked: !!defaultChecked,
-          onChange: (checked) => log(checked)
+          onChange: (value, checked) => { log(value, checked) }
         }
       )
     }
@@ -142,8 +142,8 @@ export class CheckState extends Component {
       {
         ...props,
         checked: !!checked,
-        onChange: (checked) => {
-          this.setState({ checked }, () => log(checked))
+        onChange: (value, checked) => {
+          this.setState({ value, checked }, () => { log(value, checked) })
         }
       }
     )
