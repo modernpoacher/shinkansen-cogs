@@ -31,7 +31,7 @@
       "#stories/state/*": [
         "stories/state/*/index.jsx"
       ]
-  }
+    }
   },
   "include": [
     "src/**/*"

@@ -101,9 +101,9 @@
     "#cogs/components/*": "./src/components/*/index.jsx",
     "#cogs/transformers/*": "./src/transformers/*/index.mjs",
     "#stories/cogs/*": "./stories/cogs/*/index.stories.jsx",
+    "#stories/errors": "./stories/errors.mjs",
     "#stories/state": "./stories/state/index.jsx",
-    "#stories/state/*": "./stories/state/*/index.jsx",
-    "#stories/errors": "./stories/errors.mjs"
+    "#stories/state/*": "./stories/state/*/index.jsx"
   },
   "exports": {
     ".": {
