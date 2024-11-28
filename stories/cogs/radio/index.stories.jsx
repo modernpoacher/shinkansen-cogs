@@ -32,9 +32,11 @@ export default {
 }
 
 export function Value (args) {
+  const VALUE = 'value'
+
   return (
-    <RadioState value='value'>
-      <RadioCog {...args} id='radio' value='value' />
+    <RadioState value={VALUE}>
+      <RadioCog {...args} value={VALUE} id='radio' />
     </RadioState>
   )
 }
@@ -51,9 +53,11 @@ Value.args = {
 }
 
 export function DefaultValue (args) {
+  const DEFAULT_VALUE = 'value'
+
   return (
-    <RadioState defaultValue='value'>
-      <RadioCog {...args} id='radio' value='value' />
+    <RadioState defaultValue={DEFAULT_VALUE}>
+      <RadioCog {...args} defaultValue={DEFAULT_VALUE} id='radio' />
     </RadioState>
   )
 }

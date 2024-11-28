@@ -8,6 +8,16 @@ export default {
         color: /(background|color)$/i,
         date: /Date$/
       }
+    },
+    options: {
+      storySort: {
+        order: [
+          'Stories',
+          [
+            'Cogs'
+          ]
+        ]
+      }
     }
   }
 }
