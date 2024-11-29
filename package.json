@@ -90,6 +90,7 @@
   },
   "imports": {
     "#build/paths": "./build/paths.mjs",
+    "#cogs": "./src/index.mjs",
     "#cogs/cogs": "./src/cogs/index.jsx",
     "#cogs/cogs/*": "./src/cogs/*/index.jsx",
     "#cogs/common": "./src/common/index.mjs",

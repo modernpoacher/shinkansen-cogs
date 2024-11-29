@@ -10,6 +10,9 @@
     "isolatedModules": true,
     "baseUrl": ".",
     "paths": {
+      "#cogs": [
+        "src/index.mjs"
+      ],
       "#cogs/cogs": [
         "src/cogs/index.jsx"
       ],
