@@ -1,15 +1,3 @@
-declare namespace CogsTypes {
-  export type OnChangeType = () => void
-
-  export interface ErrorDefinitionType {
-    type: string
-    uri: string
-    params: {
-      expectedType: string
-    }
-  }
-}
-
 declare module '#cogs' {
   export { default as CheckboxCog } from '#cogs/cogs/checkbox'
   export { default as EmailCog } from '#cogs/cogs/email'
