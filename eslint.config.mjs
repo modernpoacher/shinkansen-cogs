@@ -52,6 +52,11 @@ const reactSettings = {
 }
 
 export default [
+  {
+    ignores: [
+      'coverage'
+    ]
+  },
   /**
    *  React config for all `jsx` and `tsx` files
    */
@@ -102,6 +107,10 @@ export default [
       'src/**/*.tsx',
       'stories/**/*.jsx'
     ],
+    ignores: [
+      'src/**/__tests__/**/*.tsx',
+      'stories/**/__tests__/**/*.jsx'
+    ],
     languageOptions: {
       parser: babelParser,
       parserOptions: {
@@ -126,6 +135,36 @@ export default [
       }
     }
   }),
+  standard({
+    files: [
+      'src/**/__tests__/**/*.tsx',
+      'stories/**/__tests__/**/*.jsx'
+    ],
+    languageOptions: {
+      parser: babelParser,
+      parserOptions: {
+        ...reactParserOptions,
+        project: null
+      },
+      globals: {
+        ...globals.browser,
+        ...globals.jest
+      }
+    },
+    plugins: {
+      ...reactPlugins,
+      ...storybookPlugins
+    },
+    rules: {
+      ...reactRules
+    },
+    settings: {
+      ...reactSettings,
+      'import/resolver': {
+        'babel-module': {}
+      }
+    }
+  }),
   /**
    *  TypeScript config
    */
@@ -134,7 +173,8 @@ export default [
       '**/*.{mts,cts}'
     ],
     ignores: [
-      'src'
+      'src',
+      'stories'
     ],
     languageOptions: {
       globals: {
@@ -160,6 +200,9 @@ export default [
     files: [
       'src/**/*.tsx'
     ],
+    ignores: [
+      'src/**/__tests__/**/*.tsx'
+    ],
     languageOptions: {
       parser: typescriptParser,
       parserOptions: {
@@ -169,6 +212,32 @@ export default [
       },
       globals: {
         ...globals.browser
+      }
+    },
+    plugins: {
+      ...reactPlugins
+    },
+    rules: {
+      ...reactRules
+    },
+    settings: {
+      ...reactSettings
+    }
+  }),
+  typescript({
+    files: [
+      'src/**/__tests__/**/*.tsx'
+    ],
+    languageOptions: {
+      parser: typescriptParser,
+      parserOptions: {
+        ...reactParserOptions,
+        projectService: true,
+        project: 'tsconfig.json'
+      },
+      globals: {
+        ...globals.browser,
+        ...globals.jest
       }
     },
     plugins: {
