@@ -52,6 +52,11 @@ const reactSettings = {
 }
 
 export default [
+  {
+    ignores: [
+      'coverage'
+    ]
+  },
   /**
    *  React config for all `jsx` and `tsx` files
    */
