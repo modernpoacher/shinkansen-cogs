@@ -9,7 +9,3 @@ export default class CheckboxDescription extends Description {
     return classnames(super.getClassName(), 'checkbox')
   }
 }
-
-CheckboxDescription.propTypes = {
-  ...Description.propTypes
-}

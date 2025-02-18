@@ -2,7 +2,9 @@ import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
-import { CheckField } from '#cogs/components/field'
+import {
+  CheckField
+} from '#cogs/components/field'
 import Field from '#cogs/cogs/radio/field'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
@@ -51,6 +53,9 @@ describe('#cogs/cogs/radio/field', () => {
       })
 
       describe('Instance', () => {
+        /**
+         *  @type {void | null | renderer.ReactTestInstance}
+         */
         let instance
 
         beforeEach(() => {

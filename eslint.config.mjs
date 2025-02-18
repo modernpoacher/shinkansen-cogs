@@ -1,5 +1,7 @@
 import globals from 'globals'
+// @ts-ignore
 import standard from '@sequencemedia/eslint-config-standard/configs/recommended/merge'
+// @ts-ignore
 import typescript from '@sequencemedia/eslint-config-typescript/configs/recommended/merge'
 import babelParser from '@babel/eslint-parser'
 import typescriptParser from '@typescript-eslint/parser'
@@ -63,7 +65,6 @@ export default [
   {
     ...reactPlugin.configs.flat.recommended,
     settings: {
-      ...reactPlugin.configs.flat.recommended.settings,
       ...reactSettings
     }
   },

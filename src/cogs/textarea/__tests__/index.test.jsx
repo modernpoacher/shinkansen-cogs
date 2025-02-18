@@ -2,7 +2,9 @@ import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
-import { ValueCog } from '#cogs/cogs'
+import {
+  ValueCog
+} from '#cogs/cogs'
 import Cog from '#cogs/cogs/textarea'
 
 import Title from '#cogs/cogs/textarea/title'
@@ -214,6 +216,9 @@ describe('#cogs/cogs/textarea', () => {
         />
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
       let getIdSpy
@@ -267,6 +272,9 @@ describe('#cogs/cogs/textarea', () => {
         />
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
       beforeEach(() => {
@@ -307,6 +315,9 @@ describe('#cogs/cogs/textarea', () => {
         />
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
       beforeEach(() => {
@@ -347,6 +358,9 @@ describe('#cogs/cogs/textarea', () => {
         />
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
       let getIdSpy

@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import React from 'react'
 import renderer from 'react-test-renderer'
 
@@ -66,6 +68,9 @@ describe('#cogs/components/description', () => {
         />
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
       beforeEach(() => {

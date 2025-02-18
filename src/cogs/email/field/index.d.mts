@@ -1,7 +1,11 @@
 declare module '#cogs/cogs/email/field' {
-  import Field from '#cogs/components/field'
+  import {
+    ValueField
+  } from '#cogs/components/field'
 
-  export default class EmailField extends Field {}
+  type EmailProps = CogsTypes.Components.Field.Email.EmailProps
+
+  export default class EmailField<P extends EmailProps> extends ValueField<P> {}
 }
 
 declare module 'shinkansen-cogs/cogs/email/field' {

@@ -141,7 +141,10 @@ export function getErrorTextForUnknown () {
 
   return 'Unknown'
 }
-
+/**
+ *  @param {{ expectedType?: string }} params
+ *  @returns {string}
+ */
 export function getErrorTextForTypeInvalid ({ expectedType } = {}) {
   log('getErrorTextForTypeInvalid')
 
@@ -162,7 +165,10 @@ export function getErrorTextForTypeInvalid ({ expectedType } = {}) {
       throw new Error('Incompatible with Shinkansen')
   }
 }
-
+/**
+ *  @param {{ type?: string, params?: Record<PropertyKey, unknown> }} params
+ *  @returns {string}
+ */
 export function getErrorTextByType ({ type, params } = {}) {
   log('getErrorTextByType')
 
@@ -219,20 +225,18 @@ export function getErrorTextByType ({ type, params } = {}) {
       throw new Error('Incompatible with Shinkansen')
   }
 }
-
 /**
- * @param {CogsTypes.ErrorDefinitionType}
- * @returns {string}
+ *  @param {{ uri?: string }} [params]
+ *  @returns {string}
  */
 export function getErrorHref ({ uri = '' } = {}) {
   log('getErrorHref')
 
   return '#'.concat(uri)
 }
-
 /**
- * @param {CogsTypes.ErrorDefinitionType}
- * @returns {CogsTypes.FieldErrorType}
+ *  @param {CogsTypes.ErrorDefinitionType} error
+ *  @returns {CogsTypes.FieldErrorType}
  */
 export default function transform (error) {
   log('transform')

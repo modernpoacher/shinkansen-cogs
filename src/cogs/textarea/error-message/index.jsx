@@ -9,7 +9,3 @@ export default class TextareaErrorMessage extends ErrorMessage {
     return classnames(super.getClassName(), 'textarea')
   }
 }
-
-TextareaErrorMessage.propTypes = {
-  ...ErrorMessage.propTypes
-}

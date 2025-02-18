@@ -1,11 +1,18 @@
 /**
+ *  @typedef {CogsTypes.Cogs.Cog.ValueProps} ValueProps
+ *  @typedef {CogsTypes.Cogs.Cog.Number.NumberProps} NumberProps
+ */
+
+/**
  * NumberCog component
  */
 import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-import { ValueCog } from '#cogs/cogs'
+import {
+  ValueCog
+} from '#cogs/cogs'
 
 import {
   DEFAULT_HANDLE_CHANGE
@@ -16,15 +23,21 @@ import Description from './description/index.jsx'
 import ErrorMessage from './error-message/index.jsx'
 import Field from './field/index.jsx'
 
+/**
+ *  @extends {ValueCog<ValueProps & NumberProps>}
+ */
 export default class NumberCog extends ValueCog {
   getClassName () {
     return classnames(super.getClassName(), 'number')
   }
 
-  handleChange = (value) => {
+  /**
+   *  @param {string} name
+   *  @param {string | string[]} [value]
+   */
+  handleChange = (name, value) => {
     const {
-      onChange = DEFAULT_HANDLE_CHANGE,
-      name
+      onChange = DEFAULT_HANDLE_CHANGE
     } = this.props
 
     onChange(name, value)

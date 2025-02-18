@@ -1,11 +1,21 @@
 /**
+ *  @typedef {CogsTypes.Components.Field.ValueProps} ValueProps
+ *  @typedef {CogsTypes.Components.Field.Password.PasswordProps} PasswordProps
+ */
+
+/**
  * PasswordField component
  */
 import React from 'react'
 import classnames from 'classnames'
 
-import { ValueField } from '#cogs/components/field'
+import {
+  ValueField
+} from '#cogs/components/field'
 
+/**
+ *  @extends {ValueField<ValueProps & PasswordProps>}
+ */
 export default class PasswordField extends ValueField {
   getClassName () {
     return classnames(super.getClassName(), 'password')
@@ -47,8 +57,4 @@ export default class PasswordField extends ValueField {
       />
     )
   }
-}
-
-PasswordField.propTypes = {
-  ...ValueField.propTypes
 }
