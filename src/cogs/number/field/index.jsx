@@ -1,12 +1,22 @@
 /**
+ *  @typedef {CogsTypes.Components.Field.ValueProps} ValueProps
+ *  @typedef {CogsTypes.Components.Field.Number.NumberProps} NumberProps
+ */
+
+/**
  * NumberField component
  */
 import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-import { ValueField } from '#cogs/components/field'
+import {
+  ValueField
+} from '#cogs/components/field'
 
+/**
+ *  @extends {ValueField<ValueProps & NumberProps>}
+ */
 export default class NumberField extends ValueField {
   getClassName () {
     return classnames(super.getClassName(), 'number')

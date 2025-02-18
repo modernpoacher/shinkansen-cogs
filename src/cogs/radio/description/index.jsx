@@ -9,7 +9,3 @@ export default class RadioDescription extends Description {
     return classnames(super.getClassName(), 'radio')
   }
 }
-
-RadioDescription.propTypes = {
-  ...Description.propTypes
-}

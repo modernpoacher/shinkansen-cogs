@@ -9,7 +9,3 @@ export default class TextDescription extends Description {
     return classnames(super.getClassName(), 'text')
   }
 }
-
-TextDescription.propTypes = {
-  ...Description.propTypes
-}

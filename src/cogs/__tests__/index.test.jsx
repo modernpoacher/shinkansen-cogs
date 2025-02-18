@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import React from 'react'
 import renderer from 'react-test-renderer'
 import classnames from 'classnames'
@@ -5,7 +7,10 @@ import classnames from 'classnames'
 import Title from '#cogs/components/title'
 import Field from '#cogs/components/field'
 
-import Cog, { ValueCog, CheckCog } from '#cogs/cogs'
+import Cog, {
+  ValueCog,
+  CheckCog
+} from '#cogs/cogs'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
@@ -291,6 +296,9 @@ describe('#cogs/cogs', () => {
         />
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
       beforeEach(() => {
@@ -349,6 +357,9 @@ describe('#cogs/cogs', () => {
         />
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
       let getIdSpy
@@ -398,6 +409,9 @@ describe('#cogs/cogs', () => {
         />
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
       let getIdSpy
@@ -509,6 +523,9 @@ describe('#cogs/cogs', () => {
         />
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
       beforeEach(() => {
@@ -612,6 +629,9 @@ describe('#cogs/cogs', () => {
         />
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
       beforeEach(() => {

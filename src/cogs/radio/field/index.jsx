@@ -1,12 +1,22 @@
 /**
+ *  @typedef {CogsTypes.Components.Field.CheckProps} CheckProps
+ *  @typedef {CogsTypes.Components.Field.Radio.RadioProps} RadioProps
+ */
+
+/**
  * RadioField component
  */
 import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-import { CheckField } from '#cogs/components/field'
+import {
+  CheckField
+} from '#cogs/components/field'
 
+/**
+ *  @extends {CheckField<CheckProps & RadioProps>}
+ */
 export default class RadioField extends CheckField {
   getClassName () {
     return classnames(super.getClassName(), 'radio')

@@ -1,7 +1,23 @@
 declare module '#cogs/cogs/radio' {
-  import Cog from '#cogs/cogs'
+  import {
+    CheckCog
+  } from '#cogs/cogs'
 
-  export default class RadioCog extends Cog {}
+  type RadioProps = CogsTypes.Cogs.Cog.Radio.RadioProps
+
+  export default class RadioCog<P extends RadioProps> extends CheckCog<P> {
+    handleChange (
+      name: string,
+      value?: string | string[],
+      checked?: boolean
+    ): void
+
+    handleClick (
+      name: string,
+      value?: string | string[],
+      checked?: boolean
+    ): void
+  }
 }
 
 declare module 'shinkansen-cogs/cogs/radio' {

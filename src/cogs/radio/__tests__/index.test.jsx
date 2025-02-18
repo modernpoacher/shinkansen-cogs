@@ -2,7 +2,9 @@ import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
-import { CheckCog } from '#cogs/cogs'
+import {
+  CheckCog
+} from '#cogs/cogs'
 import Cog from '#cogs/cogs/radio'
 
 import Title from '#cogs/cogs/radio/title'
@@ -234,6 +236,9 @@ describe('#cogs/cogs/radio', () => {
         />
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
       beforeEach(() => {
@@ -306,6 +311,9 @@ describe('#cogs/cogs/radio', () => {
         />
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
       let getIdSpy
@@ -360,6 +368,9 @@ describe('#cogs/cogs/radio', () => {
         />
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
       beforeEach(() => {
@@ -401,6 +412,9 @@ describe('#cogs/cogs/radio', () => {
         />
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
       beforeEach(() => {
@@ -442,6 +456,9 @@ describe('#cogs/cogs/radio', () => {
         />
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
       let getIdSpy

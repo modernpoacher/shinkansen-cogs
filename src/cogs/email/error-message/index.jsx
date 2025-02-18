@@ -9,7 +9,3 @@ export default class EmailErrorMessage extends ErrorMessage {
     return classnames(super.getClassName(), 'email')
   }
 }
-
-EmailErrorMessage.propTypes = {
-  ...ErrorMessage.propTypes
-}

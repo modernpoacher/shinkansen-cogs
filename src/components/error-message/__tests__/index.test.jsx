@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import React from 'react'
 import renderer from 'react-test-renderer'
 
@@ -84,6 +86,9 @@ describe('#cogs/components/error-message', () => {
         />
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
       beforeEach(() => {

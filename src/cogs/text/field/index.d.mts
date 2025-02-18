@@ -1,7 +1,11 @@
 declare module '#cogs/cogs/text/field' {
-  import Field from '#cogs/components/field'
+  import {
+    ValueField
+  } from '#cogs/components/field'
 
-  export default class TextField extends Field {}
+  type TextProps = CogsTypes.Components.Field.Text.TextProps
+
+  export default class TextField<P extends TextProps> extends ValueField<P> {}
 }
 
 declare module 'shinkansen-cogs/cogs/text/field' {

@@ -1,4 +1,10 @@
 /**
+ *  @typedef {CogsTypes.ErrorDefinitionType} ErrorDefinitionType
+ *  @typedef {CogsTypes.Components.ErrorMessage.ErrorMessageProps} ErrorMessageProps
+ *  @typedef {CogsTypes.Components.ErrorMessage.ErrorMessageState} ErrorMessageState
+ */
+
+/**
  * ErrorMessage component
  */
 import React, { Component } from 'react'
@@ -10,10 +16,15 @@ import transform from '#cogs/transformers/error-message'
 import TextContent from '#cogs/components/common/text-content'
 
 export default class ErrorMessage extends Component {
+  /**
+   *  @type {ErrorMessageState}
+   */
   state = {}
 
   hasTextContent () {
-    const { errorMessage } = this.props
+    const {
+      errorMessage
+    } = this.props
 
     const {
       text
@@ -23,7 +34,9 @@ export default class ErrorMessage extends Component {
   }
 
   getTextContent () {
-    const { errorMessage } = this.props
+    const {
+      errorMessage
+    } = this.props
 
     const {
       text
@@ -39,21 +52,21 @@ export default class ErrorMessage extends Component {
   /**
    *  Merge latest `props` to `state`
    *
-   *  @param {{errorMessage?: CogsTypes.ErrorDefinitionType}} props   Latest props
-   *  @param {{errorMessage?: CogsTypes.ErrorDefinitionType}} state   Current state
-   *  @returns {{errorMessage: CogsTypes.ErrorDefinitionType | void}}
+   *  @param {ErrorMessageProps} props   Latest props
+   *  @param {ErrorMessageState} state   Current state
+   *  @returns {ErrorMessageState}
    */
   static getDerivedStateFromProps ({ errorMessage }, { errorMessage: E }) {
     return {
-      errorMessage: equal(E, errorMessage) ? E : errorMessage
+      errorMessage: equal(errorMessage, E) ? E : errorMessage
     }
   }
 
   /**
    *  Compare current and latest `state` for changes to `errorMessage`
    *
-   *  @param {{errorMessage?: CogsTypes.ErrorDefinitionType}} props   Latest props
-   *  @param {{errorMessage?: CogsTypes.ErrorDefinitionType}} state   Latest state
+   *  @param {ErrorMessageProps} props   Latest props
+   *  @param {ErrorMessageState} state   Latest state
    *  @returns {boolean}
    */
   shouldComponentUpdate (props, state) {
@@ -73,7 +86,9 @@ export default class ErrorMessage extends Component {
       const textContent = this.getTextContent()
 
       return (
-        <TextContent textContent={textContent} />
+        <TextContent
+          textContent={textContent}
+        />
       )
     }
 
@@ -81,7 +96,9 @@ export default class ErrorMessage extends Component {
   }
 
   render () {
-    const { errorMessage } = this.props
+    const {
+      errorMessage
+    } = this.props
 
     if (errorMessage) {
       return (
@@ -98,7 +115,7 @@ export default class ErrorMessage extends Component {
 ErrorMessage.propTypes = {
   errorMessage: PropTypes.shape({
     type: PropTypes.string.isRequired,
-    params: PropTypes.shape().isRequired,
+    params: PropTypes.shape({}).isRequired,
     uri: PropTypes.string.isRequired
   })
 }
