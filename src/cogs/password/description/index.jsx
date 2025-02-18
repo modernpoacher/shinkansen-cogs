@@ -9,7 +9,3 @@ export default class PasswordDescription extends Description {
     return classnames(super.getClassName(), 'password')
   }
 }
-
-PasswordDescription.propTypes = {
-  ...Description.propTypes
-}

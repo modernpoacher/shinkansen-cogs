@@ -1,4 +1,8 @@
 /**
+ *  @typedef {CogsTypes.Components.Description.DescriptionProps} DescriptionProps
+ */
+
+/**
  * Description component
  */
 import React, { Component } from 'react'
@@ -11,14 +15,20 @@ export default class Description extends Component {
     return 'description'
   }
 
-  shouldComponentUpdate (props, state) {
+  /**
+   *  @param {DescriptionProps} props
+   *  @returns {boolean}
+   */
+  shouldComponentUpdate (props) {
     return (
       (props.description !== this.props.description)
     )
   }
 
   render () {
-    const { description } = this.props
+    const {
+      description
+    } = this.props
 
     if (description) {
       return (

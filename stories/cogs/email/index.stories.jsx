@@ -1,3 +1,7 @@
+/**
+ *  @typedef {CogsTypes.Cogs.Cog.ValueProps} ValueProps
+ */
+
 import React from 'react'
 
 import EmailCog from '#cogs/cogs/email'
@@ -31,6 +35,10 @@ export default {
   }
 }
 
+/**
+ *  @param {ValueProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function Value (args) {
   return (
     <EmailState value='email@email.com'>
@@ -51,6 +59,10 @@ Value.args = {
   name: 'email'
 }
 
+/**
+ *  @param {ValueProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function DefaultValue (args) {
   return (
     <EmailState defaultValue='email@email.com'>

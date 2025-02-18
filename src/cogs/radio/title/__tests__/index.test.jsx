@@ -16,7 +16,9 @@ jest.mock('#cogs/components/title', () => {
       }
 
       render () {
-        const { title } = this.props
+        const {
+          title
+        } = this.props
 
         if (title) {
           const { id } = this.props

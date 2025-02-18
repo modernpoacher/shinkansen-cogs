@@ -9,7 +9,3 @@ export default class CheckboxErrorMessage extends ErrorMessage {
     return classnames(super.getClassName(), 'checkbox')
   }
 }
-
-CheckboxErrorMessage.propTypes = {
-  ...ErrorMessage.propTypes
-}

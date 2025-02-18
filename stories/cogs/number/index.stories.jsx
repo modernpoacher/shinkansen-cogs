@@ -1,3 +1,7 @@
+/**
+ *  @typedef {CogsTypes.Cogs.Cog.ValueProps} ValueProps
+ */
+
 import React from 'react'
 
 import NumberCog from '#cogs/cogs/number'
@@ -31,6 +35,10 @@ export default {
   }
 }
 
+/**
+ *  @param {ValueProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function Value (args) {
   return (
     <NumberState value={1}>
@@ -51,6 +59,10 @@ Value.args = {
   name: 'number'
 }
 
+/**
+ *  @param {ValueProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function DefaultValue (args) {
   return (
     <NumberState defaultValue={1}>

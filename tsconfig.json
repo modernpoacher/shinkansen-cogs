@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
-    "module": "ESNext",
+    "module": "NodeNext",
     "target": "ESNext",
     "allowJs": true,
-    "checkJs": false,
+    "checkJs": true,
     "allowSyntheticDefaultImports": true,
     "noEmit": true,
     "strict": true,
     "isolatedModules": true,
     "baseUrl": ".",
+    "jsx": "react",
     "paths": {
       "#cogs": [
         "src/index.mjs"
@@ -46,5 +47,8 @@
     ".",
     "src/**/*",
     "stories/**/*"
+  ],
+  "exclude": [
+    "**/__tests___/**/*"
   ]
 }

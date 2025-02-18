@@ -1,9 +1,7 @@
 declare module '#cogs/components/common/text-content' {
   import type React from 'react'
 
-  export interface TextContentProps {
-    textContent: string
-  }
+  export type TextContentProps = CogsTypes.Components.Common.TextContent.TextContentProps
 
   export default function TextContent (props: TextContentProps): React.JSX.Element | null
 }

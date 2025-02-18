@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import React from 'react'
 import renderer from 'react-test-renderer'
 
@@ -126,6 +128,9 @@ describe('#cogs/components/title', () => {
         </Title>
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
       beforeEach(() => {
@@ -175,6 +180,9 @@ describe('#cogs/components/title', () => {
         />
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
       let isRequiredSpy
@@ -214,6 +222,9 @@ describe('#cogs/components/title', () => {
         />
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
       let isDisabledSpy
@@ -253,6 +264,9 @@ describe('#cogs/components/title', () => {
         />
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
       let isReadOnlySpy

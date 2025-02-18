@@ -1,3 +1,7 @@
+/**
+ *  @typedef {CogsTypes.Cogs.Cog.ValueProps} ValueProps
+ */
+
 import React from 'react'
 
 import PasswordCog from '#cogs/cogs/password'
@@ -31,6 +35,10 @@ export default {
   }
 }
 
+/**
+ *  @param {ValueProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function Value (args) {
   return (
     <PasswordState value='password'>
@@ -51,6 +59,10 @@ Value.args = {
   name: 'password'
 }
 
+/**
+ *  @param {ValueProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function DefaultValue (args) {
   return (
     <PasswordState defaultValue='password'>

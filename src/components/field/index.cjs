@@ -12,5 +12,5 @@ log('`shinkansen` is awake')
 
 /**
  *  Exports default, etc
- */
+ */ // @ts-ignore
 module.exports = require('./index.jsx')

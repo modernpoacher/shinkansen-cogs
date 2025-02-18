@@ -1,11 +1,21 @@
 /**
+ *  @typedef {CogsTypes.Components.Field.ValueProps} ValueProps
+ *  @typedef {CogsTypes.Components.Field.Email.EmailProps} EmailProps
+ */
+
+/**
  * EmailField component
  */
 import React from 'react'
 import classnames from 'classnames'
 
-import { ValueField } from '#cogs/components/field'
+import {
+  ValueField
+} from '#cogs/components/field'
 
+/**
+ *  @extends {ValueField<ValueProps & EmailProps>}
+ */
 export default class EmailField extends ValueField {
   getClassName () {
     return classnames(super.getClassName(), 'email')
@@ -47,8 +57,4 @@ export default class EmailField extends ValueField {
       />
     )
   }
-}
-
-EmailField.propTypes = {
-  ...ValueField.propTypes
 }

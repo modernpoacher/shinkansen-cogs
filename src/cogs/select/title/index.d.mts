@@ -1,7 +1,9 @@
 declare module '#cogs/cogs/select/title' {
   import Title from '#cogs/components/title'
 
-  export default class SelectTitle extends Title {}
+  export type SelectProps = CogsTypes.Components.Title.Select.SelectProps
+
+  export default class SelectTitle<P extends SelectProps> extends Title<P> {}
 }
 
 declare module 'shinkansen-cogs/cogs/select/title' {
