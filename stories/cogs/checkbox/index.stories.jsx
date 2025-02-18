@@ -1,3 +1,7 @@
+/**
+ *  @typedef {CogsTypes.Cogs.Cog.CheckProps} CheckProps
+ */
+
 import React from 'react'
 
 import CheckboxCog from '#cogs/cogs/checkbox'
@@ -31,6 +35,10 @@ export default {
   }
 }
 
+/**
+ *  @param {CheckProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function Checked (args) {
   return (
     <CheckboxState checked>
@@ -51,6 +59,10 @@ Checked.args = {
   name: 'checkbox'
 }
 
+/**
+ *  @param {CheckProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function DefaultChecked (args) {
   return (
     <CheckboxState defaultChecked>

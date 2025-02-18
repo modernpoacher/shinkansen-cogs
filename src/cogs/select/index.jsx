@@ -1,11 +1,18 @@
 /**
+ *  @typedef {CogsTypes.Cogs.Cog.ValueProps} ValueProps
+ *  @typedef {CogsTypes.Cogs.Cog.Select.SelectProps} SelectProps
+ */
+
+/**
  * SelectCog component
  */
 import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-import { ValueCog } from '#cogs/cogs'
+import {
+  ValueCog
+} from '#cogs/cogs'
 
 import {
   DEFAULT_HANDLE_CHANGE
@@ -16,23 +23,43 @@ import Description from './description/index.jsx'
 import ErrorMessage from './error-message/index.jsx'
 import Field from './field/index.jsx'
 
+/**
+ *  @extends {ValueCog<ValueProps & SelectProps>}
+ */
 export default class SelectCog extends ValueCog {
-  shouldComponentUpdate (props, state) {
-    return (
-      super.shouldComponentUpdate(props) ||
-      (props.multiple !== this.props.multiple) ||
-      (props.children !== this.props.children)
-    )
-  }
-
   getClassName () {
     return classnames(super.getClassName(), 'select')
   }
 
-  handleChange = (value) => {
+  /**
+   *  @param {SelectProps} props
+   *  @returns {boolean}
+   */
+  shouldComponentUpdate (props) {
     const {
-      onChange = DEFAULT_HANDLE_CHANGE,
-      name
+      value,
+      defaultValue,
+      multiple,
+      children,
+      ...superProps
+    } = props
+
+    return (
+      super.shouldComponentUpdate(superProps) ||
+      (value !== this.props.value) ||
+      (defaultValue !== this.props.defaultValue) ||
+      (multiple !== this.props.multiple) ||
+      (children !== this.props.children)
+    )
+  }
+
+  /**
+   *  @param {string} name
+   *  @param {string | string[]} [value]
+   */
+  handleChange = (name, value) => {
+    const {
+      onChange = DEFAULT_HANDLE_CHANGE
     } = this.props
 
     onChange(name, value)

@@ -1,9 +1,15 @@
 declare module '#cogs/cogs/password/field' {
-  import Field from '#cogs/components/field'
+  import {
+    ValueField
+  } from '#cogs/components/field'
 
-  export default class PasswordField extends Field {}
+  type PasswordProps = CogsTypes.Components.Field.Password.PasswordProps
+
+  export default class PasswordField<P extends PasswordProps> extends ValueField<P> {}
 }
 
 declare module 'shinkansen-cogs/cogs/password/field' {
+  export type PasswordProps = CogsTypes.Components.Field.Password.PasswordProps
+
   export { default } from '#cogs/cogs/password/field'
 }

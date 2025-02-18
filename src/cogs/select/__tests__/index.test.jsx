@@ -2,7 +2,9 @@ import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
-import { ValueCog } from '#cogs/cogs'
+import {
+  ValueCog
+} from '#cogs/cogs'
 import Cog from '#cogs/cogs/select'
 
 import Title from '#cogs/cogs/select/title'
@@ -207,6 +209,12 @@ describe('#cogs/cogs/select', () => {
     })
 
     describe('`shouldComponentUpdate()`', () => {
+      /**
+       *  @type {string[]}
+       */
+      const MOCK_VALUE = []
+      const MOCK_ON_CHANGE = jest.fn()
+
       const component = (
         <Cog
           name='MOCK NAME'
@@ -214,7 +222,7 @@ describe('#cogs/cogs/select', () => {
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
           errorMessage={MOCK_ERROR_MESSAGE}
-          value={[]}
+          value={MOCK_VALUE}
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -222,11 +230,14 @@ describe('#cogs/cogs/select', () => {
           readOnly
           placeholder='MOCK PLACEHOLDER'
           multiple
-          onChange={jest.fn()}>
+          onChange={MOCK_ON_CHANGE}>
           MOCK CHILDREN
         </Cog>
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
       beforeEach(() => {
@@ -246,7 +257,7 @@ describe('#cogs/cogs/select', () => {
             title: 'MOCK CHANGE TITLE',
             description: 'MOCK CHANGE DESCRIPTION',
             errorMessage: MOCK_CHANGE_ERROR_MESSAGE,
-            value: expect.any(Array),
+            value: MOCK_VALUE,
             tabIndex: 0,
             accessKey: 'MOCK CHANGE ACCESS KEY',
             required: false,
@@ -255,7 +266,7 @@ describe('#cogs/cogs/select', () => {
             placeholder: 'MOCK CHANGE PLACEHOLDER',
             multiple: true,
             children: 'MOCK CHANGE CHILDREN',
-            onChange: expect.any(Function)
+            onChange: MOCK_ON_CHANGE
           }))
             .toBe(true)
         })
@@ -269,7 +280,7 @@ describe('#cogs/cogs/select', () => {
             title: 'MOCK TITLE',
             description: 'MOCK DESCRIPTION',
             errorMessage: MOCK_ERROR_MESSAGE,
-            value: expect.any(Array),
+            value: MOCK_VALUE,
             tabIndex: 1,
             accessKey: 'MOCK ACCESS KEY',
             required: true,
@@ -278,7 +289,7 @@ describe('#cogs/cogs/select', () => {
             placeholder: 'MOCK PLACEHOLDER',
             children: 'MOCK CHILDREN',
             multiple: true,
-            onChange: expect.any(Function)
+            onChange: MOCK_ON_CHANGE
           }))
             .toBe(false)
         })
@@ -305,8 +316,14 @@ describe('#cogs/cogs/select', () => {
         />
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
+      /**
+       *  @type {void | jest.SpyInstance}
+       */
       let getIdSpy
 
       beforeEach(() => {
@@ -359,6 +376,9 @@ describe('#cogs/cogs/select', () => {
         />
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
       beforeEach(() => {
@@ -400,6 +420,9 @@ describe('#cogs/cogs/select', () => {
         />
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
       beforeEach(() => {
@@ -442,6 +465,9 @@ describe('#cogs/cogs/select', () => {
         </Cog>
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
       let getIdSpy

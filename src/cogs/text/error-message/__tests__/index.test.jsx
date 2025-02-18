@@ -16,7 +16,9 @@ jest.mock('#cogs/components/error-message', () => {
       }
 
       render () {
-        const { errorMessage } = this.props
+        const {
+          errorMessage
+        } = this.props
 
         if (errorMessage) {
           return (

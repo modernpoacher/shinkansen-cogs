@@ -1,3 +1,7 @@
+/**
+ *  @typedef {CogsTypes.Cogs.Cog.ValueProps} ValueProps
+ */
+
 import React from 'react'
 
 import SelectCog from '#cogs/cogs/select'
@@ -31,6 +35,10 @@ export default {
   }
 }
 
+/**
+ *  @param {ValueProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function Value (args) {
   return (
     <SelectState value='one'>
@@ -55,6 +63,10 @@ Value.args = {
   name: 'select'
 }
 
+/**
+ *  @param {ValueProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function DefaultValue (args) {
   return (
     <SelectState defaultValue='one'>
@@ -79,6 +91,10 @@ DefaultValue.args = {
   name: 'select'
 }
 
+/**
+ *  @param {ValueProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function MultipleValue (args) {
   return (
     <SelectState value={['one', 'three']}>
@@ -106,6 +122,10 @@ MultipleValue.args = {
   name: 'select'
 }
 
+/**
+ *  @param {ValueProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function MultipleDefaultValue (args) {
   return (
     <SelectState defaultValue={['one', 'three']}>

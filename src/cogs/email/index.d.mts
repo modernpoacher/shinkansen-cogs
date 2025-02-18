@@ -1,9 +1,20 @@
 declare module '#cogs/cogs/email' {
-  import Cog from '#cogs/cogs'
+  import {
+    ValueCog
+  } from '#cogs/cogs'
 
-  export default class EmailCog extends Cog {}
+  type EmailProps = CogsTypes.Cogs.Cog.Email.EmailProps
+
+  export default class EmailCog<P extends EmailProps> extends ValueCog<P> {
+    handleChange (
+      name: string,
+      value?: string | string[]
+    ): void
+  }
 }
 
 declare module 'shinkansen-cogs/cogs/email' {
+  export type EmailProps = CogsTypes.Cogs.Cog.Email.EmailProps
+
   export { default } from '#cogs/cogs/email'
 }

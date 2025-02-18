@@ -1,4 +1,8 @@
 /**
+ *  @typedef {CogsTypes.Components.Title.TitleProps} TitleProps
+ */
+
+/**
  * Title component
  */
 import React, { Component } from 'react'
@@ -38,7 +42,11 @@ export default class Title extends Component {
     return 'title'
   }
 
-  shouldComponentUpdate (props, state) {
+  /**
+   *  @param {TitleProps} props
+   *  @returns {boolean}
+   */
+  shouldComponentUpdate (props) {
     return (
       (props.id !== this.props.id) ||
       (props.title !== this.props.title) ||
@@ -80,7 +88,9 @@ export default class Title extends Component {
   }
 
   render () {
-    const { title } = this.props
+    const {
+      title
+    } = this.props
 
     if (title) {
       const { id } = this.props

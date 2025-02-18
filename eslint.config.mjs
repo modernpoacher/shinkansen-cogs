@@ -1,5 +1,7 @@
 import globals from 'globals'
+// @ts-ignore
 import standard from '@sequencemedia/eslint-config-standard/configs/recommended/merge'
+// @ts-ignore
 import typescript from '@sequencemedia/eslint-config-typescript/configs/recommended/merge'
 import babelParser from '@babel/eslint-parser'
 import typescriptParser from '@typescript-eslint/parser'
@@ -58,12 +60,11 @@ export default [
     ]
   },
   /**
-   *  React config for all `jsx` and `tsx` files
+   *  React config for all `jsx` and `jsx` files
    */
   {
     ...reactPlugin.configs.flat.recommended,
     settings: {
-      ...reactPlugin.configs.flat.recommended.settings,
       ...reactSettings
     }
   },
@@ -100,15 +101,15 @@ export default [
     }
   }),
   /**
-   *  Standard config for all `jsx` and `tsx` files
+   *  Standard config for all `jsx`
    */
   standard({
     files: [
-      'src/**/*.tsx',
+      'src/**/*.jsx',
       'stories/**/*.jsx'
     ],
     ignores: [
-      'src/**/__tests__/**/*.tsx',
+      'src/**/__tests__/**/*.jsx',
       'stories/**/__tests__/**/*.jsx'
     ],
     languageOptions: {
@@ -137,7 +138,7 @@ export default [
   }),
   standard({
     files: [
-      'src/**/__tests__/**/*.tsx',
+      'src/**/__tests__/**/*.jsx',
       'stories/**/__tests__/**/*.jsx'
     ],
     languageOptions: {
@@ -176,6 +177,11 @@ export default [
       'src'
     ],
     languageOptions: {
+      parser: typescriptParser,
+      parserOptions: {
+        projectService: true,
+        project: 'tsconfig.json'
+      },
       globals: {
         ...globals.node,
         CogsTypes: 'readonly'
@@ -187,66 +193,15 @@ export default [
       'src/**/*.{mts,cts}'
     ],
     languageOptions: {
-      globals: {
-        ...globals.browser
-      }
-    }
-  }),
-  /**
-   *  TypeScript config for only `tsx` files
-   */
-  typescript({
-    files: [
-      'src/**/*.tsx'
-    ],
-    ignores: [
-      'src/**/__tests__/**/*.tsx'
-    ],
-    languageOptions: {
       parser: typescriptParser,
       parserOptions: {
-        ...reactParserOptions,
-        projectService: true,
-        project: 'tsconfig.json'
-      },
-      globals: {
-        ...globals.browser
-      }
-    },
-    plugins: {
-      ...reactPlugins
-    },
-    rules: {
-      ...reactRules
-    },
-    settings: {
-      ...reactSettings
-    }
-  }),
-  typescript({
-    files: [
-      'src/**/__tests__/**/*.tsx'
-    ],
-    languageOptions: {
-      parser: typescriptParser,
-      parserOptions: {
-        ...reactParserOptions,
         projectService: true,
         project: 'tsconfig.json'
       },
       globals: {
         ...globals.browser,
-        ...globals.jest
+        CogsTypes: 'readonly'
       }
-    },
-    plugins: {
-      ...reactPlugins
-    },
-    rules: {
-      ...reactRules
-    },
-    settings: {
-      ...reactSettings
     }
   })
 ]

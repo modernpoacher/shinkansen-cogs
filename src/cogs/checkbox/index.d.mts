@@ -1,9 +1,27 @@
 declare module '#cogs/cogs/checkbox' {
-  import Cog from '#cogs/cogs'
+  import {
+    CheckCog
+  } from '#cogs/cogs'
 
-  export default class CheckboxCog extends Cog {}
+  type CheckboxProps = CogsTypes.Cogs.Cog.Checkbox.CheckboxProps
+
+  export default class CheckboxCog<P extends CheckboxProps> extends CheckCog<P> {
+    handleChange (
+      name: string,
+      value?: string | string[],
+      checked?: boolean
+    ): void
+
+    handleClick (
+      name: string,
+      value?: string | string[],
+      checked?: boolean
+    ): void
+  }
 }
 
 declare module 'shinkansen-cogs/cogs/checkbox' {
+  export type CheckboxProps = CogsTypes.Cogs.Cog.Checkbox.CheckboxProps
+
   export { default } from '#cogs/cogs/checkbox'
 }

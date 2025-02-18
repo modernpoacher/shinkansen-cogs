@@ -10,5 +10,8 @@ declare module '#cogs' {
 }
 
 declare module 'shinkansen-cogs' {
+  export type ErrorDefinitionType = CogsTypes.ErrorDefinitionType
+  export type FieldErrorType = CogsTypes.FieldErrorType
+
   export * from '#cogs'
 }

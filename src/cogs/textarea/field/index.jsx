@@ -1,11 +1,21 @@
 /**
+ *  @typedef {CogsTypes.Components.Field.ValueProps} ValueProps
+ *  @typedef {CogsTypes.Components.Field.Textarea.TextareaProps} TextareaProps
+ */
+
+/**
  * TextareaField component
  */
 import React from 'react'
 import classnames from 'classnames'
 
-import { ValueField } from '#cogs/components/field'
+import {
+  ValueField
+} from '#cogs/components/field'
 
+/**
+ *  @extends {ValueField<ValueProps & TextareaProps>}
+ */
 export default class TextareaField extends ValueField {
   getClassName () {
     return classnames(super.getClassName(), 'textarea')
@@ -46,8 +56,4 @@ export default class TextareaField extends ValueField {
       />
     )
   }
-}
-
-TextareaField.propTypes = {
-  ...ValueField.propTypes
 }

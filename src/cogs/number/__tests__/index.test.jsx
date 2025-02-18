@@ -2,7 +2,9 @@ import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
-import { ValueCog } from '#cogs/cogs'
+import {
+  ValueCog
+} from '#cogs/cogs'
 import Cog from '#cogs/cogs/number'
 
 import Title from '#cogs/cogs/number/title'
@@ -210,6 +212,9 @@ describe('#cogs/cogs/number', () => {
         />
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
       let getIdSpy
@@ -263,6 +268,9 @@ describe('#cogs/cogs/number', () => {
         />
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
       beforeEach(() => {
@@ -303,6 +311,9 @@ describe('#cogs/cogs/number', () => {
         />
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
       beforeEach(() => {
@@ -343,6 +354,9 @@ describe('#cogs/cogs/number', () => {
         />
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
       let getIdSpy

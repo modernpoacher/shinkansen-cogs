@@ -1,50 +1,91 @@
 /**
+ *  @typedef {CogsTypes.Components.Field.ValueProps} ValueProps
+ *  @typedef {CogsTypes.Components.Field.Select.SelectProps} SelectProps
+ */
+
+/**
  * SelectField component
  */
 import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-import { ValueField } from '#cogs/components/field'
+import {
+  ValueField
+} from '#cogs/components/field'
 
 import {
   DEFAULT_HANDLE_CHANGE
 } from '#cogs/common'
 
+/**
+ *  @param {{ target: { selectedOptions: { value?: string, text?: string }[] } }} event
+ *  @returns {string[]}
+ */
 function getSelectedValues ({ target: { selectedOptions } }) {
   return (
     Array.from(selectedOptions)
-      .map(({ value, text }) => value || text)
+      .map(({ value, text }) => (value || text) ?? '')
   )
 }
 
+/**
+ *  @param {{ target: { value?: string } }} event
+ *  @returns {string}
+ */
 function getSelectedValue ({ target: { value } }) {
-  return value
+  return value ?? ''
 }
 
+/**
+ *  @extends {ValueField<ValueProps & SelectProps>}
+ */
 export default class SelectField extends ValueField {
-  shouldComponentUpdate (props, state) {
-    return (
-      super.shouldComponentUpdate(props) ||
-      (props.multiple !== this.props.multiple) ||
-      (props.children !== this.props.children)
-    )
-  }
-
   getClassName () {
     return classnames(super.getClassName(), 'select')
   }
 
+  /**
+   *  @param {SelectProps} props
+   *  @returns {boolean}
+   */
+  shouldComponentUpdate (props) {
+    const {
+      multiple,
+      children,
+      ...superProps
+    } = props
+
+    return (
+      super.shouldComponentUpdate(superProps) || // , state ||
+      (multiple !== this.props.multiple) ||
+      (children !== this.props.children)
+    )
+  }
+
+  /**
+   *  @overload
+   *  @param {{ target: { selectedOptions: { value?: string, text?: string }[] } }} event
+   *  @returns {void}
+   *
+   *  @overload
+   *  @param {{ target: { value?: string } }} event
+   *  @returns {void}
+   *
+   *  @param {any} event
+   *  @returns {void}
+   */
   handleChange = (event) => {
     const {
       multiple = false,
-      onChange = DEFAULT_HANDLE_CHANGE
+      onChange = DEFAULT_HANDLE_CHANGE,
+      name
     } = this.props
 
     if (multiple) {
-      onChange(getSelectedValues(event))
+      onChange(name, getSelectedValues(event))
     } else {
-      onChange(getSelectedValue(event))
+      onChange(name, getSelectedValue(event))
     }
   }
 
@@ -73,7 +114,7 @@ export default class SelectField extends ValueField {
         value={value}
         defaultValue={defaultValue}
         required={required}
-        disabled={disabled}
+        disabled={disabled} // @ts-ignore
         readOnly={readOnly}
         tabIndex={tabIndex}
         accessKey={accessKey}

@@ -16,7 +16,9 @@ jest.mock('#cogs/components/description', () => {
       }
 
       render () {
-        const { description } = this.props
+        const {
+          description
+        } = this.props
 
         if (description) {
           return (

@@ -1,3 +1,7 @@
+/**
+ *  @typedef {CogsTypes.Cogs.Cog.CheckProps} CheckProps
+ */
+
 import React from 'react'
 
 import RadioCog from '#cogs/cogs/radio'
@@ -31,6 +35,10 @@ export default {
   }
 }
 
+/**
+ *  @param {CheckProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function Checked (args) {
   return (
     <RadioState value='two' checked>
@@ -65,6 +73,10 @@ Checked.args = {
   name: 'radio'
 }
 
+/**
+ *  @param {CheckProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function DefaultChecked (args) {
   return (
     <RadioState value='two' defaultChecked>

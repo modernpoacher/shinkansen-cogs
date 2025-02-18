@@ -11,7 +11,7 @@ const log = debug('shinkansen-cogs/cogs/radio')
 log('`shinkansen` is awake')
 
 const {
-  default: component
+  default: component // @ts-ignore
 } = require('./index.jsx')
 
 module.exports = component

@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import React from 'react'
 import renderer from 'react-test-renderer'
 
@@ -90,6 +92,9 @@ describe('#cogs/components/field', () => {
         />
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
       beforeEach(() => {
@@ -158,6 +163,9 @@ describe('#cogs/components/field', () => {
       })
 
       describe('Instance', () => {
+        /**
+         *  @type {void | null | renderer.ReactTestInstance}
+         */
         let instance
 
         beforeEach(() => {
@@ -221,6 +229,9 @@ describe('#cogs/components/field', () => {
         />
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
       beforeEach(() => {
@@ -267,7 +278,7 @@ describe('#cogs/components/field', () => {
         instance.handleChange({ target: { value: 'MOCK VALUE' } })
 
         return expect(MOCK_ON_CHANGE)
-          .toBeCalledWith('MOCK VALUE')
+          .toBeCalledWith('MOCK NAME', 'MOCK VALUE')
       })
     })
   })
@@ -293,6 +304,9 @@ describe('#cogs/components/field', () => {
       })
 
       describe('Instance', () => {
+        /**
+         *  @type {void | null | renderer.ReactTestInstance}
+         */
         let instance
 
         beforeEach(() => {
@@ -367,6 +381,9 @@ describe('#cogs/components/field', () => {
         />
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
       beforeEach(() => {
@@ -441,7 +458,7 @@ describe('#cogs/components/field', () => {
         instance.handleClick({ target: { value: 'MOCK VALUE', checked: 'MOCK CHECKED' } })
 
         return expect(MOCK_ON_CLICK)
-          .toBeCalledWith('MOCK VALUE', 'MOCK CHECKED')
+          .toBeCalledWith('MOCK NAME', 'MOCK VALUE', 'MOCK CHECKED')
       })
     })
 
@@ -461,7 +478,7 @@ describe('#cogs/components/field', () => {
         instance.handleChange({ target: { value: 'MOCK VALUE', checked: 'MOCK CHECKED' } })
 
         return expect(MOCK_ON_CHANGE)
-          .toBeCalledWith('MOCK VALUE', 'MOCK CHECKED')
+          .toBeCalledWith('MOCK NAME', 'MOCK VALUE', 'MOCK CHECKED')
       })
     })
   })

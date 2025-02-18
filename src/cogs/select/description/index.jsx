@@ -9,7 +9,3 @@ export default class SelectDescription extends Description {
     return classnames(super.getClassName(), 'select')
   }
 }
-
-SelectDescription.propTypes = {
-  ...Description.propTypes
-}

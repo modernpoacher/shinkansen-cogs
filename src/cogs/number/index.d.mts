@@ -1,9 +1,20 @@
 declare module '#cogs/cogs/number' {
-  import Cog from '#cogs/cogs'
+  import {
+    ValueCog
+  } from '#cogs/cogs'
 
-  export default class NumberCog extends Cog {}
+  type NumberProps = CogsTypes.Cogs.Cog.Number.NumberProps
+
+  export default class NumberCog<P extends NumberProps> extends ValueCog<Omit<Omit<P, 'value'>, 'defaultValue'>> {
+    handleChange (
+      name: string,
+      value?: string | string[]
+    ): void
+  }
 }
 
 declare module 'shinkansen-cogs/cogs/number' {
+  export type NumberProps = CogsTypes.Cogs.Cog.Number.NumberProps
+
   export { default } from '#cogs/cogs/number'
 }

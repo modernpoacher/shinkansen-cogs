@@ -1,11 +1,18 @@
 /**
+ *  @typedef {CogsTypes.Cogs.Cog.CheckProps} CheckProps
+ *  @typedef {CogsTypes.Cogs.Cog.Radio.RadioProps} RadioProps
+ */
+
+/**
  * Radio component
  */
 import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-import { CheckCog } from '#cogs/cogs'
+import {
+  CheckCog
+} from '#cogs/cogs'
 
 import {
   DEFAULT_HANDLE_CHANGE,
@@ -17,34 +24,54 @@ import Description from './description/index.jsx'
 import ErrorMessage from './error-message/index.jsx'
 import Field from './field/index.jsx'
 
+/**
+ *  @extends {CheckCog<CheckProps & RadioProps>}
+ */
 export default class Radio extends CheckCog {
   getClassName () {
     return classnames(super.getClassName(), 'radio')
   }
 
-  handleChange = (value, checked) => {
+  /**
+   *  @param {CheckProps} props
+   *  @returns {boolean}
+   */
+  shouldComponentUpdate (props) {
     const {
-      onChange = DEFAULT_HANDLE_CHANGE,
-      name
+      value,
+      ...superProps
+    } = props
+
+    return (
+      super.shouldComponentUpdate(superProps) || // , state) //
+      (value !== this.props.value)
+    )
+  }
+
+  /**
+   *  @param {string} name
+   *  @param {string | string[]} [value]
+   *  @param {boolean} [checked]
+   */
+  handleChange = (name, value, checked) => {
+    const {
+      onChange = DEFAULT_HANDLE_CHANGE
     } = this.props
 
     onChange(name, value, checked)
   }
 
-  handleClick = (value, checked) => {
+  /**
+   *  @param {string} name
+   *  @param {string | string[]} [value]
+   *  @param {boolean} [checked]
+   */
+  handleClick = (name, value, checked) => {
     const {
-      onClick = DEFAULT_HANDLE_CLICK,
-      name
+      onClick = DEFAULT_HANDLE_CLICK
     } = this.props
 
     onClick(name, value, checked)
-  }
-
-  shouldComponentUpdate (props, state) {
-    return (
-      super.shouldComponentUpdate(props) ||
-      (props.value !== this.props.value)
-    )
   }
 
   renderTitle () {

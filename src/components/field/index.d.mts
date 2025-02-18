@@ -1,23 +1,38 @@
 declare module '#cogs/components/field' {
-  import React from 'react'
+  import React, { type ChangeEvent, type MouseEvent } from 'react'
 
-  export interface FieldProps {
-    id: string
-    name: string
-    required: boolean
-    disabled: boolean
-    readOnly: boolean
-    tabIndex: number
-    accessKey: string
-    placeholder: string
-    onChange: CogsTypes.OnChangeType
-    fieldRef: object
+  type FieldProps = CogsTypes.Components.Field.FieldProps
+  type ValueProps = CogsTypes.Components.Field.ValueProps
+  type CheckProps = CogsTypes.Components.Field.CheckProps
+
+  export default class Field<P extends FieldProps> extends React.Component<P> {
+    static propTypes: object
+
+    getClassName (): string
+
+    shouldComponentUpdate (props: FieldProps): boolean
   }
 
-  export default class Field extends React.Component<FieldProps> {}
+  export class ValueField<P extends ValueProps> extends Field<P> {
+    shouldComponentUpdate (props: ValueProps): boolean
+
+    handleChange (event: ChangeEvent<HTMLTextAreaElement> | ChangeEvent<HTMLInputElement>): void
+  }
+
+  export class CheckField<P extends CheckProps> extends Field<P> {
+    shouldComponentUpdate (props: CheckProps): boolean
+
+    handleChange (event: ChangeEvent<HTMLInputElement>): void
+
+    handleClick (event: MouseEvent<HTMLInputElement>): void
+  }
 }
 
 declare module 'shinkansen-cogs/components/field' {
+  export type FieldProps = CogsTypes.Components.Field.FieldProps
+  export type ValueProps = CogsTypes.Components.Field.ValueProps
+  export type CheckProps = CogsTypes.Components.Field.CheckProps
+
   export { default } from '#cogs/components/field'
   export * from '#cogs/components/field'
 }

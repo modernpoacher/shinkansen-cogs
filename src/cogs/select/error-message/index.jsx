@@ -9,7 +9,3 @@ export default class SelectErrorMessage extends ErrorMessage {
     return classnames(super.getClassName(), 'select')
   }
 }
-
-SelectErrorMessage.propTypes = {
-  ...ErrorMessage.propTypes
-}

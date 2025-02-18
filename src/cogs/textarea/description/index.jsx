@@ -9,7 +9,3 @@ export default class TextareaDescription extends Description {
     return classnames(super.getClassName(), 'textarea')
   }
 }
-
-TextareaDescription.propTypes = {
-  ...Description.propTypes
-}

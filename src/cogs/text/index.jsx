@@ -1,10 +1,17 @@
 /**
+ *  @typedef {CogsTypes.Cogs.Cog.ValueProps} ValueProps
+ *  @typedef {CogsTypes.Cogs.Cog.Text.TextProps} TextProps
+ */
+
+/**
  * TextCog component
  */
 import React from 'react'
 import classnames from 'classnames'
 
-import { ValueCog } from '#cogs/cogs'
+import {
+  ValueCog
+} from '#cogs/cogs'
 
 import {
   DEFAULT_HANDLE_CHANGE
@@ -15,15 +22,21 @@ import Description from './description/index.jsx'
 import ErrorMessage from './error-message/index.jsx'
 import Field from './field/index.jsx'
 
+/**
+ *  @extends {ValueCog<ValueProps & TextProps>}
+ */
 export default class TextCog extends ValueCog {
   getClassName () {
     return classnames(super.getClassName(), 'text')
   }
 
-  handleChange = (value) => {
+  /**
+   *  @param {string} name
+   *  @param {string | string[]} [value]
+   */
+  handleChange = (name, value) => {
     const {
-      onChange = DEFAULT_HANDLE_CHANGE,
-      name
+      onChange = DEFAULT_HANDLE_CHANGE
     } = this.props
 
     onChange(name, value)
@@ -107,8 +120,4 @@ export default class TextCog extends ValueCog {
       />
     )
   }
-}
-
-TextCog.propTypes = {
-  ...ValueCog.propTypes
 }

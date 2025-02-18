@@ -9,7 +9,3 @@ export default class NumberDescription extends Description {
     return classnames(super.getClassName(), 'number')
   }
 }
-
-NumberDescription.propTypes = {
-  ...Description.propTypes
-}

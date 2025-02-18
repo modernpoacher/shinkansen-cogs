@@ -9,7 +9,3 @@ export default class TextErrorMessage extends ErrorMessage {
     return classnames(super.getClassName(), 'text')
   }
 }
-
-TextErrorMessage.propTypes = {
-  ...ErrorMessage.propTypes
-}

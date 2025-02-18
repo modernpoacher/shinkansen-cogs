@@ -9,7 +9,3 @@ export default class PasswordErrorMessage extends ErrorMessage {
     return classnames(super.getClassName(), 'password')
   }
 }
-
-PasswordErrorMessage.propTypes = {
-  ...ErrorMessage.propTypes
-}

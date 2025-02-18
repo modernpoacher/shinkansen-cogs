@@ -1,9 +1,20 @@
 declare module '#cogs/cogs/text' {
-  import Cog from '#cogs/cogs'
+  import {
+    ValueCog
+  } from '#cogs/cogs'
 
-  export default class TextCog extends Cog {}
+  type TextProps = CogsTypes.Cogs.Cog.Text.TextProps
+
+  export default class TextCog<P extends TextProps> extends ValueCog<P> {
+    handleChange (
+      name: string,
+      value?: string | string[]
+    ): void
+  }
 }
 
 declare module 'shinkansen-cogs/cogs/text' {
+  export type TextProps = CogsTypes.Cogs.Cog.Text.TextProps
+
   export { default } from '#cogs/cogs/text'
 }

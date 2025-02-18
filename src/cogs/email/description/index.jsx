@@ -9,7 +9,3 @@ export default class EmailDescription extends Description {
     return classnames(super.getClassName(), 'email')
   }
 }
-
-EmailDescription.propTypes = {
-  ...Description.propTypes
-}

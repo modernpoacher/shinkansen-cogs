@@ -2,8 +2,10 @@ import React from 'react'
 
 const READONLY = String.fromCharCode(42)
 
-export default () => (
-  <span className='is-readonly'>
-    {READONLY}
-  </span>
-)
+export default function ReadOnly () {
+  return (
+    <span className='is-readonly'>
+      {READONLY}
+    </span>
+  )
+}

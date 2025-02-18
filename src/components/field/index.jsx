@@ -1,4 +1,10 @@
 /**
+ *  @typedef {CogsTypes.Components.Field.FieldProps} FieldProps
+ *  @typedef {CogsTypes.Components.Field.ValueProps} ValueProps
+ *  @typedef {CogsTypes.Components.Field.CheckProps} CheckProps
+ */
+
+/**
  * Field component
  */
 import React, { Component } from 'react'
@@ -14,7 +20,11 @@ export default class Field extends Component {
     return 'input'
   }
 
-  shouldComponentUpdate (props, state) {
+  /**
+   *  @param {FieldProps} props
+   *  @returns {boolean}
+   */
+  shouldComponentUpdate (props) {
     return (
       (props.id !== this.props.id) ||
       (props.required !== this.props.required) ||
@@ -66,7 +76,7 @@ Field.propTypes = {
   placeholder: PropTypes.string,
   onChange: PropTypes.func,
   fieldRef: PropTypes.shape({
-    current: PropTypes.shape().isRequired
+    current: PropTypes.shape({}).isRequired
   })
 }
 
@@ -74,19 +84,27 @@ Field.propTypes = {
  * ValueField component
  */
 export class ValueField extends Field {
-  shouldComponentUpdate (props, state) {
+  /**
+   *  @param {ValueProps} props
+   *  @returns {boolean}
+   */
+  shouldComponentUpdate (props) {
     return (
-      super.shouldComponentUpdate(props, state) ||
+      super.shouldComponentUpdate(props) || // }, state) ||
       (props.value !== this.props.value)
     )
   }
 
+  /**
+   *  @param {{ target: { value?: string } }} event
+   */
   handleChange = ({ target: { value } }) => {
     const {
-      onChange = DEFAULT_HANDLE_CHANGE
+      onChange = DEFAULT_HANDLE_CHANGE,
+      name
     } = this.props
 
-    onChange(value)
+    onChange(name, value)
   }
 }
 
@@ -100,34 +118,56 @@ ValueField.propTypes = {
  * CheckField component
  */
 export class CheckField extends Field {
-  shouldComponentUpdate (props, state) {
+  /**
+   *  @param {CheckProps} props
+   *  @returns {boolean}
+   */
+  shouldComponentUpdate (props) {
+    const {
+      value,
+      defaultChecked,
+      checked,
+      onClick,
+      ...superProps
+    } = props
+
     return (
-      super.shouldComponentUpdate(props, state) ||
-      (props.value !== this.props.value) ||
-      (props.checked !== this.props.checked) ||
-      (props.onClick !== this.props.onClick)
+      super.shouldComponentUpdate(superProps) ||
+      (value !== this.props.value) ||
+      (checked !== this.props.checked) ||
+      (defaultChecked !== this.props.defaultChecked) ||
+      (onClick !== this.props.onClick)
     )
   }
 
-  handleClick = ({ target: { value, checked } }) => {
-    const {
-      onClick = DEFAULT_HANDLE_CLICK
-    } = this.props
-
-    onClick(value, checked)
-  }
-
+  /**
+   *  @param {{ target: { value?: string, checked?: boolean } }} event
+   */
   handleChange = ({ target: { value, checked } }) => {
     const {
-      onChange = DEFAULT_HANDLE_CHANGE
+      onChange = DEFAULT_HANDLE_CHANGE,
+      name
     } = this.props
 
-    onChange(value, checked)
+    onChange(name, value, checked)
+  }
+
+  /**
+   *  @param {{ target: { value?: string, checked?: boolean } }} event
+   */
+  handleClick = ({ target: { value, checked } }) => {
+    const {
+      onClick = DEFAULT_HANDLE_CLICK,
+      name
+    } = this.props
+
+    onClick(name, value, checked)
   }
 }
 
 CheckField.propTypes = {
   ...Field.propTypes,
+  value: PropTypes.string,
   checked: PropTypes.bool,
   defaultChecked: PropTypes.bool,
   onClick: PropTypes.func

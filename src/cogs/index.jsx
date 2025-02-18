@@ -1,7 +1,11 @@
 /**
+ *  @typedef {CogsTypes.Cogs.Cog.CogProps} CogProps
+ *  @typedef {CogsTypes.Cogs.Cog.ValueProps} ValueProps
+ *  @typedef {CogsTypes.Cogs.Cog.CheckProps} CheckProps
+ */
+
+/**
  * Cog component
- *
- * @typedef {import('shinkansen-cogs/cogs').CogProps} CogProps
  */
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
@@ -42,10 +46,10 @@ export default class Cog extends Component {
   }
 
   /**
-   * @param {CogProps} props
-   * @returns {boolean}
+   *  @param {CogProps} props
+   *  @returns {boolean}
    */
-  shouldComponentUpdate (props, state) {
+  shouldComponentUpdate (props) {
     return (
       (props.name !== this.props.name) ||
       (props.id !== this.props.id) ||
@@ -159,24 +163,37 @@ Cog.propTypes = {
   description: PropTypes.string,
   errorMessage: PropTypes.shape({
     type: PropTypes.string.isRequired,
-    params: PropTypes.shape().isRequired,
+    params: PropTypes.shape({}).isRequired,
     uri: PropTypes.string.isRequired
   }),
   required: PropTypes.bool,
   disabled: PropTypes.bool,
   readOnly: PropTypes.bool,
+  tabIndex: PropTypes.number,
+  accessKey: PropTypes.string,
   placeholder: PropTypes.string,
   onChange: PropTypes.func,
   fieldRef: PropTypes.shape({
-    current: PropTypes.shape().isRequired
+    current: PropTypes.shape({}).isRequired
   })
 }
 
 export class ValueCog extends Cog {
-  shouldComponentUpdate (props, state) {
+  /**
+   *  @param {ValueProps} props
+   *  @returns {boolean}
+   */
+  shouldComponentUpdate (props) {
+    const {
+      value,
+      defaultValue,
+      ...superProps
+    } = props
+
     return (
-      super.shouldComponentUpdate(props) ||
-      (props.value !== this.props.value)
+      super.shouldComponentUpdate(superProps) ||
+      (value !== this.props.value) ||
+      (defaultValue !== this.props.defaultValue)
     )
   }
 
@@ -219,11 +236,23 @@ ValueCog.propTypes = {
 }
 
 export class CheckCog extends Cog {
-  shouldComponentUpdate (props, state) {
+  /**
+   *  @param {CheckProps} props
+   *  @returns {boolean}
+   */
+  shouldComponentUpdate (props) {
+    const {
+      checked,
+      defaultChecked,
+      onClick,
+      ...superProps
+    } = props
+
     return (
-      super.shouldComponentUpdate(props) ||
-      (props.checked !== this.props.checked) ||
-      (props.onClick !== this.props.onClick)
+      super.shouldComponentUpdate(superProps) ||
+      (checked !== this.props.checked) ||
+      (defaultChecked !== this.props.defaultChecked) ||
+      (onClick !== this.props.onClick)
     )
   }
 

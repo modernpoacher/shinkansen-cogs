@@ -1,15 +1,16 @@
 /**
- * TextContent component
- *
- * @typedef {import('shinkansen-cogs/components/common/text-content').TextContentProps} TextContentProps
+ *  @typedef {CogsTypes.Components.Common.TextContent.TextContentProps} TextContentProps
  */
 
+/**
+ * TextContent component
+ */
 import React from 'react'
 import PropTypes from 'prop-types'
 
 /**
- * @param {TextContentProps}
- * @returns {React.JSX.Element | null}
+ *  @param {TextContentProps} props
+ *  @returns {React.JSX.Element | null}
  */
 export default function TextContent ({ textContent }) {
   if (textContent) {

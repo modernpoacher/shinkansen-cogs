@@ -2,7 +2,9 @@ import React, { Component as mockComponent } from 'react'
 import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
-import { CheckCog } from '#cogs/cogs'
+import {
+  CheckCog
+} from '#cogs/cogs'
 import Cog from '#cogs/cogs/checkbox'
 
 import Title from '#cogs/cogs/checkbox/title'
@@ -226,6 +228,9 @@ describe('#cogs/cogs/checkbox', () => {
         />
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
       beforeEach(() => {
@@ -298,6 +303,9 @@ describe('#cogs/cogs/checkbox', () => {
         />
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
       let getIdSpy
@@ -352,6 +360,9 @@ describe('#cogs/cogs/checkbox', () => {
         />
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
       beforeEach(() => {
@@ -393,6 +404,9 @@ describe('#cogs/cogs/checkbox', () => {
         />
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
       beforeEach(() => {
@@ -434,6 +448,9 @@ describe('#cogs/cogs/checkbox', () => {
         />
       )
 
+      /**
+       *  @type {void | null | renderer.ReactTestInstance}
+       */
       let instance
 
       let getIdSpy

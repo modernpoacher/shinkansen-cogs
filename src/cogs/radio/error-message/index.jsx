@@ -9,7 +9,3 @@ export default class RadioErrorMessage extends ErrorMessage {
     return classnames(super.getClassName(), 'radio')
   }
 }
-
-RadioErrorMessage.propTypes = {
-  ...ErrorMessage.propTypes
-}

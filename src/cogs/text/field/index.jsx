@@ -1,11 +1,21 @@
 /**
+ *  @typedef {CogsTypes.Components.Field.ValueProps} ValueProps
+ *  @typedef {CogsTypes.Components.Field.Text.TextProps} TextProps
+ */
+
+/**
  * TextField component
  */
 import React from 'react'
 import classnames from 'classnames'
 
-import { ValueField } from '#cogs/components/field'
+import {
+  ValueField
+} from '#cogs/components/field'
 
+/**
+ *  @extends {ValueField<ValueProps & TextProps>}
+ */
 export default class TextField extends ValueField {
   getClassName () {
     return classnames(super.getClassName(), 'text')
@@ -47,8 +57,4 @@ export default class TextField extends ValueField {
       />
     )
   }
-}
-
-TextField.propTypes = {
-  ...ValueField.propTypes
 }
