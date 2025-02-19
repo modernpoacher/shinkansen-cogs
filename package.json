@@ -49,7 +49,7 @@
     "@babel/preset-react": "^7.26.3",
     "@babel/register": "^7.25.9",
     "@modernpoacher/design-system": "1.1.27",
-    "@sequencemedia/eslint-config-standard": "^0.2.24",
+    "@sequencemedia/eslint-config-standard": "^0.2.25",
     "@sequencemedia/eslint-config-typescript": "^0.1.36",
     "@storybook/addon-actions": "7.6.20",
     "@storybook/addon-essentials": "7.6.20",
