@@ -60,7 +60,7 @@ export default [
     ]
   },
   /**
-   *  React config for all `jsx` and `jsx` files
+   *  React config for all `jsx` files
    */
   {
     ...reactPlugin.configs.flat.recommended,
@@ -101,7 +101,7 @@ export default [
     }
   }),
   /**
-   *  Standard config for all `jsx`
+   *  Standard config for all `jsx` files
    */
   standard({
     files: [
