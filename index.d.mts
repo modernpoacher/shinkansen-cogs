@@ -65,14 +65,14 @@ declare global {
         }
 
         export interface ValueProps extends FieldProps {
-          value?: string,
+          value?: string
           defaultValue?: string
         }
 
         export interface CheckProps extends FieldProps {
-          value?: string,
-          checked?: boolean,
-          defaultChecked?: boolean,
+          value?: string
+          checked?: boolean
+          defaultChecked?: boolean
           onClick: OnClickType
         }
 
@@ -165,22 +165,22 @@ declare global {
           required?: boolean
           disabled?: boolean
           readOnly?: boolean
-          tabIndex?: number,
-          accessKey?: string,
+          tabIndex?: number
+          accessKey?: string
           placeholder?: string
           onChange?: OnChangeType
           fieldRef?: React.RefObject<any> // eslint-disable-line @typescript-eslint/no-explicit-any -- Simplicity
         }
 
         export interface ValueProps extends CogProps {
-          value?: string,
+          value?: string
           defaultValue?: string
         }
 
         export interface CheckProps extends CogProps {
-          value?: string,
-          checked?: boolean,
-          defaultChecked?: boolean,
+          value?: string
+          checked?: boolean
+          defaultChecked?: boolean
           onClick: OnClickType
         }
 
