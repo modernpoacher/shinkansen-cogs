@@ -1,9 +1,9 @@
 declare module '#cogs/cogs' {
   import React from 'react'
 
-  type CogProps = CogsTypes.Cogs.Cog.CogProps
-  type ValueProps = CogsTypes.Cogs.Cog.ValueProps
-  type CheckProps = CogsTypes.Cogs.Cog.CheckProps
+  export type CogProps = CogsTypes.Cogs.Cog.CogProps
+  export type ValueProps = CogsTypes.Cogs.Cog.ValueProps
+  export type CheckProps = CogsTypes.Cogs.Cog.CheckProps
 
   export default class Cog<P extends CogProps> extends React.Component<P> {
     static propTypes: Record<PropertyKey, unknown>
@@ -33,10 +33,6 @@ declare module '#cogs/cogs' {
 }
 
 declare module 'shinkansen-cogs/cogs' {
-  export type CogProps = CogsTypes.Cogs.Cog.CogProps
-  export type ValueProps = CogsTypes.Cogs.Cog.ValueProps
-  export type CheckProps = CogsTypes.Cogs.Cog.CheckProps
-
   export { default } from '#cogs/cogs'
   export * from '#cogs/cogs'
 }

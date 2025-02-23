@@ -3,7 +3,7 @@ declare module '#cogs/cogs/number' {
     ValueCog
   } from '#cogs/cogs'
 
-  type NumberProps = CogsTypes.Cogs.Cog.Number.NumberProps
+  export type NumberProps = CogsTypes.Cogs.Cog.Number.NumberProps
 
   export default class NumberCog<P extends NumberProps> extends ValueCog<Omit<Omit<P, 'value'>, 'defaultValue'>> {
     handleChange (
@@ -14,7 +14,6 @@ declare module '#cogs/cogs/number' {
 }
 
 declare module 'shinkansen-cogs/cogs/number' {
-  export type NumberProps = CogsTypes.Cogs.Cog.Number.NumberProps
-
   export { default } from '#cogs/cogs/number'
+  export * from '#cogs/cogs/number'
 }

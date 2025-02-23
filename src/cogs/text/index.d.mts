@@ -3,7 +3,7 @@ declare module '#cogs/cogs/text' {
     ValueCog
   } from '#cogs/cogs'
 
-  type TextProps = CogsTypes.Cogs.Cog.Text.TextProps
+  export type TextProps = CogsTypes.Cogs.Cog.Text.TextProps
 
   export default class TextCog<P extends TextProps> extends ValueCog<P> {
     handleChange (
@@ -14,7 +14,6 @@ declare module '#cogs/cogs/text' {
 }
 
 declare module 'shinkansen-cogs/cogs/text' {
-  export type TextProps = CogsTypes.Cogs.Cog.Text.TextProps
-
   export { default } from '#cogs/cogs/text'
+  export * from '#cogs/cogs/text'
 }

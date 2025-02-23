@@ -1,7 +1,7 @@
 declare module '#cogs/components/title' {
   import React from 'react'
 
-  type TitleProps = CogsTypes.Components.Title.TitleProps
+  export type TitleProps = CogsTypes.Components.Title.TitleProps
 
   export default class Title<P extends TitleProps> extends React.Component<P> {
     static propTypes: object
@@ -25,7 +25,6 @@ declare module '#cogs/components/title' {
 }
 
 declare module 'shinkansen-cogs/components/title' {
-  export type TitleProps = CogsTypes.Components.Title.TitleProps
-
   export { default } from '#cogs/components/title'
+  export * from '#cogs/components/title'
 }

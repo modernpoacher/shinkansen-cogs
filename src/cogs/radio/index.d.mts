@@ -3,7 +3,7 @@ declare module '#cogs/cogs/radio' {
     CheckCog
   } from '#cogs/cogs'
 
-  type RadioProps = CogsTypes.Cogs.Cog.Radio.RadioProps
+  export type RadioProps = CogsTypes.Cogs.Cog.Radio.RadioProps
 
   export default class RadioCog<P extends RadioProps> extends CheckCog<P> {
     handleChange (
@@ -21,7 +21,6 @@ declare module '#cogs/cogs/radio' {
 }
 
 declare module 'shinkansen-cogs/cogs/radio' {
-  export type RadioProps = CogsTypes.Cogs.Cog.Radio.RadioProps
-
   export { default } from '#cogs/cogs/radio'
+  export * from '#cogs/cogs/radio'
 }

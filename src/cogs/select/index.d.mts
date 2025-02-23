@@ -3,7 +3,7 @@ declare module '#cogs/cogs/select' {
     ValueCog
   } from '#cogs/cogs'
 
-  type SelectProps = CogsTypes.Cogs.Cog.Select.SelectProps
+  export type SelectProps = CogsTypes.Cogs.Cog.Select.SelectProps
 
   export default class SelectCog<P extends SelectProps> extends ValueCog<Omit<Omit<P, 'value'>, 'defaultValue'>> {
     handleChange (
@@ -14,7 +14,6 @@ declare module '#cogs/cogs/select' {
 }
 
 declare module 'shinkansen-cogs/cogs/select' {
-  export type SelectProps = CogsTypes.Cogs.Cog.Select.SelectProps
-
   export { default } from '#cogs/cogs/select'
+  export * from '#cogs/cogs/select'
 }

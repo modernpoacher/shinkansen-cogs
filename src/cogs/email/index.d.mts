@@ -3,7 +3,7 @@ declare module '#cogs/cogs/email' {
     ValueCog
   } from '#cogs/cogs'
 
-  type EmailProps = CogsTypes.Cogs.Cog.Email.EmailProps
+  export type EmailProps = CogsTypes.Cogs.Cog.Email.EmailProps
 
   export default class EmailCog<P extends EmailProps> extends ValueCog<P> {
     handleChange (
@@ -14,7 +14,6 @@ declare module '#cogs/cogs/email' {
 }
 
 declare module 'shinkansen-cogs/cogs/email' {
-  export type EmailProps = CogsTypes.Cogs.Cog.Email.EmailProps
-
   export { default } from '#cogs/cogs/email'
+  export * from '#cogs/cogs/email'
 }

@@ -3,7 +3,7 @@ declare module '#cogs/cogs/textarea' {
     ValueCog
   } from '#cogs/cogs'
 
-  type TextareaProps = CogsTypes.Cogs.Cog.Textarea.TextareaProps
+  export type TextareaProps = CogsTypes.Cogs.Cog.Textarea.TextareaProps
 
   export default class TextareaCog<P extends TextareaProps> extends ValueCog<P> {
     handleChange (
@@ -14,7 +14,6 @@ declare module '#cogs/cogs/textarea' {
 }
 
 declare module 'shinkansen-cogs/cogs/textarea' {
-  export type TextareaProps = CogsTypes.Cogs.Cog.Textarea.TextareaProps
-
   export { default } from '#cogs/cogs/textarea'
+  export * from '#cogs/cogs/textarea'
 }

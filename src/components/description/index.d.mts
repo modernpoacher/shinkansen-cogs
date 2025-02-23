@@ -1,7 +1,7 @@
 declare module '#cogs/components/description' {
   import React from 'react'
 
-  type DescriptionProps = CogsTypes.Components.Description.DescriptionProps
+  export type DescriptionProps = CogsTypes.Components.Description.DescriptionProps
 
   export default class Description extends React.Component<DescriptionProps> {
     static propTypes: object
@@ -13,7 +13,6 @@ declare module '#cogs/components/description' {
 }
 
 declare module 'shinkansen-cogs/components/description' {
-  export type DescriptionProps = CogsTypes.Components.Description.DescriptionProps
-
   export { default } from '#cogs/components/description'
+  export * from '#cogs/components/description'
 }

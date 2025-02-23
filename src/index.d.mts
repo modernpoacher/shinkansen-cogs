@@ -1,4 +1,7 @@
 declare module '#cogs' {
+  export type ErrorDefinitionType = CogsTypes.ErrorDefinitionType
+  export type FieldErrorType = CogsTypes.FieldErrorType
+
   export { default as CheckboxCog } from '#cogs/cogs/checkbox'
   export { default as EmailCog } from '#cogs/cogs/email'
   export { default as NumberCog } from '#cogs/cogs/number'
@@ -10,8 +13,5 @@ declare module '#cogs' {
 }
 
 declare module 'shinkansen-cogs' {
-  export type ErrorDefinitionType = CogsTypes.ErrorDefinitionType
-  export type FieldErrorType = CogsTypes.FieldErrorType
-
   export * from '#cogs'
 }

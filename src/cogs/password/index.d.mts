@@ -3,7 +3,7 @@ declare module '#cogs/cogs/password' {
     ValueCog
   } from '#cogs/cogs'
 
-  type PasswordProps = CogsTypes.Cogs.Cog.Password.PasswordProps
+  export type PasswordProps = CogsTypes.Cogs.Cog.Password.PasswordProps
 
   export default class PasswordCog<P extends PasswordProps> extends ValueCog<P> {
     handleChange (
@@ -14,7 +14,6 @@ declare module '#cogs/cogs/password' {
 }
 
 declare module 'shinkansen-cogs/cogs/password' {
-  export type PasswordProps = CogsTypes.Cogs.Cog.Password.PasswordProps
-
   export { default } from '#cogs/cogs/password'
+  export * from '#cogs/cogs/password'
 }

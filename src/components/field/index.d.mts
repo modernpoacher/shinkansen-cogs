@@ -1,9 +1,9 @@
 declare module '#cogs/components/field' {
   import React, { type ChangeEvent, type MouseEvent } from 'react'
 
-  type FieldProps = CogsTypes.Components.Field.FieldProps
-  type ValueProps = CogsTypes.Components.Field.ValueProps
-  type CheckProps = CogsTypes.Components.Field.CheckProps
+  export type FieldProps = CogsTypes.Components.Field.FieldProps
+  export type ValueProps = CogsTypes.Components.Field.ValueProps
+  export type CheckProps = CogsTypes.Components.Field.CheckProps
 
   export default class Field<P extends FieldProps> extends React.Component<P> {
     static propTypes: object
@@ -29,10 +29,6 @@ declare module '#cogs/components/field' {
 }
 
 declare module 'shinkansen-cogs/components/field' {
-  export type FieldProps = CogsTypes.Components.Field.FieldProps
-  export type ValueProps = CogsTypes.Components.Field.ValueProps
-  export type CheckProps = CogsTypes.Components.Field.CheckProps
-
   export { default } from '#cogs/components/field'
   export * from '#cogs/components/field'
 }
