@@ -8,37 +8,14 @@
     "noEmit": true,
     "strict": true,
     "isolatedModules": true,
-    "baseUrl": ".",
-    "paths": {
-      "#cogs": [
-        "src/index.mjs"
-      ],
-      "#cogs/cogs": [
-        "src/cogs/index.jsx"
-      ],
-      "#cogs/cogs/*": [
-        "src/cogs/*/index.jsx"
-      ],
-      "#cogs/common": [
-        "src/common/index.mjs"
-      ],
-      "#cogs/components/*": [
-        "src/components/*/index.jsx"
-      ],
-      "#stories/*": [
-        "stories/*/index.stories.jsx"
-      ],
-      "#stories/state": [
-        "stories/state/index.jsx"
-      ],
-      "#stories/state/*": [
-        "stories/state/*/index.jsx"
-      ]
-    }
+    "baseUrl": "."
   },
   "include": [
     ".",
     "src/**/*",
     "stories/**/*"
+  ],
+  "exclude": [
+    "**/__tests__/**/*"
   ]
 }
