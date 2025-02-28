@@ -73,7 +73,6 @@
     "core-js": "^3.40.0",
     "cross-env": "^7.0.3",
     "eslint": "^9.21.0",
-    "eslint-import-resolver-babel-module": "^5.3.2",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-storybook": "^0.11.3",
     "globals": "^16.0.0",
@@ -107,10 +106,7 @@
     "#cogs/cogs": "./src/cogs/index.cjs",
     "#cogs/cogs/*": "./src/cogs/*/index.cjs",
     "#cogs/common": "./src/common/index.mjs",
-    "#cogs/components/*": {
-      "require": "./src/components/*/index.cjs",
-      "import": "./src/components/*/index.mjs"
-    },
+    "#cogs/components/*": "./src/components/*/index.cjs",
     "#cogs/transformers/*": "./src/transformers/*/index.mjs",
     "#stories/cogs/*": "./stories/cogs/*/index.stories.jsx",
     "#stories/errors": "./stories/errors.mjs",
@@ -125,7 +121,7 @@
     "./cogs": "./src/cogs/index.cjs",
     "./cogs/*": "./src/cogs/*/index.cjs",
     "./common": "./src/common/index.mjs",
-    "./components/*": "./src/components/*/index.cjs",
+    "./components": "./src/components/*/index.cjs",
     "./transformers/*": "./src/transformers/*/index.mjs"
   }
 }
