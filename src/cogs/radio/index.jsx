@@ -19,10 +19,10 @@ import {
   DEFAULT_HANDLE_CLICK
 } from '#cogs/common'
 
-import Title from './title/index.jsx'
-import Description from './description/index.jsx'
-import ErrorMessage from './error-message/index.jsx'
-import Field from './field/index.jsx'
+import Title from '#cogs/cogs/radio/title'
+import Description from '#cogs/cogs/radio/description'
+import ErrorMessage from '#cogs/cogs/radio/error-message'
+import Field from '#cogs/cogs/radio/field'
 
 /**
  *  @extends {CheckCog<CheckProps & RadioProps>}

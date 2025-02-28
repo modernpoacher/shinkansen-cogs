@@ -79,9 +79,9 @@ class MockErrorMessage extends mockComponent {
 }
 
 const MOCK_ERROR_MESSAGE = {
-  type: 'MOCK TYPE',
+  type: 'UNKNOWN',
   params: {},
-  uri: 'MOCK URI'
+  uri: '#/'
 }
 
 describe('#cogs/cogs/textarea', () => {

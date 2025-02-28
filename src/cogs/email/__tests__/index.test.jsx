@@ -67,9 +67,9 @@ jest.mock('#cogs/cogs/email/error-message')
 jest.mock('#cogs/cogs/email/field')
 
 const MOCK_ERROR_MESSAGE = {
-  type: 'MOCK TYPE',
+  type: 'UNKNOWN',
   params: {},
-  uri: 'MOCK URI'
+  uri: '#/'
 }
 
 class MockErrorMessage extends mockComponent {

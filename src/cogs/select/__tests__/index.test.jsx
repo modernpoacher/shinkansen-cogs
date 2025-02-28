@@ -83,9 +83,9 @@ class MockErrorMessage extends mockComponent {
 }
 
 const MOCK_ERROR_MESSAGE = {
-  type: 'MOCK TYPE',
+  type: 'UNKNOWN',
   params: {},
-  uri: 'MOCK URI'
+  uri: '#/'
 }
 
 const MOCK_CHANGE_ERROR_MESSAGE = {

@@ -17,10 +17,10 @@ import {
   DEFAULT_HANDLE_CHANGE
 } from '#cogs/common'
 
-import Title from './title/index.jsx'
-import Description from './description/index.jsx'
-import ErrorMessage from './error-message/index.jsx'
-import Field from './field/index.jsx'
+import Title from '#cogs/cogs/email/title'
+import Description from '#cogs/cogs/email/description'
+import ErrorMessage from '#cogs/cogs/email/error-message'
+import Field from '#cogs/cogs/email/field'
 
 /**
  *  @extends {ValueCog<ValueProps & EmailProps>}

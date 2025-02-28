@@ -100,11 +100,17 @@
   },
   "imports": {
     "#build/paths": "./build/paths.mjs",
-    "#cogs": "./src/index.mjs",
-    "#cogs/cogs": "./src/cogs/index.jsx",
-    "#cogs/cogs/*": "./src/cogs/*/index.jsx",
+    "#cogs": {
+      "require": "./src/index.cjs",
+      "import": "./src/index.mjs"
+    },
+    "#cogs/cogs": "./src/cogs/index.cjs",
+    "#cogs/cogs/*": "./src/cogs/*/index.cjs",
     "#cogs/common": "./src/common/index.mjs",
-    "#cogs/components/*": "./src/components/*/index.jsx",
+    "#cogs/components/*": {
+      "require": "./src/components/*/index.cjs",
+      "import": "./src/components/*/index.mjs"
+    },
     "#cogs/transformers/*": "./src/transformers/*/index.mjs",
     "#stories/cogs/*": "./stories/cogs/*/index.stories.jsx",
     "#stories/errors": "./stories/errors.mjs",
