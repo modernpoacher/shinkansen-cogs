@@ -4,18 +4,12 @@
     "target": "ESNext",
     "allowJs": true,
     "checkJs": true,
-    "allowSyntheticDefaultImports": true,
     "noEmit": true,
     "strict": true,
     "isolatedModules": true,
     "baseUrl": ".",
     "jsx": "react"
   },
-  "include": [
-    ".",
-    "src/**/*",
-    "stories/**/*"
-  ],
   "exclude": [
     "**/__tests__/**/*"
   ]
