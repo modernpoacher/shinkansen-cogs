@@ -10,7 +10,7 @@
     "Karakuri",
     "React"
   ],
-  "main": "./src/index.cjs",
+  "main": "./src/index.mjs",
   "type": "module",
   "types": "./index.d.mts",
   "author": {
