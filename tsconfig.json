@@ -7,8 +7,36 @@
     "noEmit": true,
     "strict": true,
     "isolatedModules": true,
+    "jsx": "react",
     "baseUrl": ".",
-    "jsx": "react"
+    "paths": {
+      "#cogs": [
+        "src/index.cjs",
+        "src/index.mjs"
+      ],
+      "#cogs/cogs": [
+        "src/cogs/index.cjs"
+      ],
+      "#cogs/cogs/*": [
+        "src/cogs/*/index.cjs"
+      ],
+      "#cogs/common": [
+        "src/common/index.mjs"
+      ],
+      "#cogs/components": [
+        "src/components/index.cjs",
+        "src/components/index.mjs"
+      ],
+      "#cogs/components/*": [
+        "src/components/*/index.cjs"
+      ],
+      "#cogs/transformers": [
+        "src/transformers/index.mjs"
+      ],
+      "#cogs/transformers/*": [
+        "src/transformers/*/index.mjs"
+      ]
+    }
   },
   "exclude": [
     "**/__tests__/**/*"

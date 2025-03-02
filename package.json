@@ -106,7 +106,12 @@
     "#cogs/cogs": "./src/cogs/index.cjs",
     "#cogs/cogs/*": "./src/cogs/*/index.cjs",
     "#cogs/common": "./src/common/index.mjs",
+    "#cogs/components": {
+      "require": "./src/components/index.cjs",
+      "import": "./src/components/index.mjs"
+    },
     "#cogs/components/*": "./src/components/*/index.cjs",
+    "#cogs/transformers": "./src/transformers/index.mjs",
     "#cogs/transformers/*": "./src/transformers/*/index.mjs",
     "#stories/cogs/*": "./stories/cogs/*/index.stories.jsx",
     "#stories/errors": "./stories/errors.mjs",
