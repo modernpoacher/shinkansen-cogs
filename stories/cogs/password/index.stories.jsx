@@ -41,9 +41,11 @@ export default {
  */
 export function Value (args) {
   return (
-    <PasswordState value='password'>
-      <PasswordCog {...args} />
-    </PasswordState>
+    <form>
+      <PasswordState value='password'>
+        <PasswordCog {...args} />
+      </PasswordState>
+    </form>
   )
 }
 
@@ -65,9 +67,11 @@ Value.args = {
  */
 export function DefaultValue (args) {
   return (
-    <PasswordState defaultValue='password'>
-      <PasswordCog {...args} />
-    </PasswordState>
+    <form>
+      <PasswordState defaultValue='password'>
+        <PasswordCog {...args} />
+      </PasswordState>
+    </form>
   )
 }
 

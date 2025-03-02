@@ -41,23 +41,25 @@ export default {
  */
 export function Checked (args) {
   return (
-    <RadioState value='two' checked>
-      <RadioCog
-        {...args}
-        id='radio-a'
-        value='one'
-      />
-      <RadioCog
-        {...args}
-        id='radio-b'
-        value='two'
-      />
-      <RadioCog
-        {...args}
-        id='radio-c'
-        value='three'
-      />
-    </RadioState>
+    <form>
+      <RadioState value='two' checked>
+        <RadioCog
+          {...args}
+          id='radio-a'
+          value='one'
+        />
+        <RadioCog
+          {...args}
+          id='radio-b'
+          value='two'
+        />
+        <RadioCog
+          {...args}
+          id='radio-c'
+          value='three'
+        />
+      </RadioState>
+    </form>
   )
 }
 
@@ -79,23 +81,25 @@ Checked.args = {
  */
 export function DefaultChecked (args) {
   return (
-    <RadioState value='two' defaultChecked>
-      <RadioCog
-        {...args}
-        id='radio-1'
-        value='one'
-      />
-      <RadioCog
-        {...args}
-        id='radio-2'
-        value='two'
-      />
-      <RadioCog
-        {...args}
-        id='radio-3'
-        value='three'
-      />
-    </RadioState>
+    <form>
+      <RadioState value='two' defaultChecked>
+        <RadioCog
+          {...args}
+          id='radio-1'
+          value='one'
+        />
+        <RadioCog
+          {...args}
+          id='radio-2'
+          value='two'
+        />
+        <RadioCog
+          {...args}
+          id='radio-3'
+          value='three'
+        />
+      </RadioState>
+    </form>
   )
 }
 

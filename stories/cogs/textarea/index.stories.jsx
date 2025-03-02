@@ -41,9 +41,11 @@ export default {
  */
 export function Value (args) {
   return (
-    <TextareaState value='Value'>
-      <TextareaCog {...args} />
-    </TextareaState>
+    <form>
+      <TextareaState value='Value'>
+        <TextareaCog {...args} />
+      </TextareaState>
+    </form>
   )
 }
 
@@ -65,9 +67,11 @@ Value.args = {
  */
 export function DefaultValue (args) {
   return (
-    <TextareaState defaultValue='Default value'>
-      <TextareaCog {...args} />
-    </TextareaState>
+    <form>
+      <TextareaState defaultValue='Default value'>
+        <TextareaCog {...args} />
+      </TextareaState>
+    </form>
   )
 }
 

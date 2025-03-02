@@ -41,9 +41,11 @@ export default {
  */
 export function Value (args) {
   return (
-    <EmailState value='email@email.com'>
-      <EmailCog {...args} />
-    </EmailState>
+    <form>
+      <EmailState value='email@email.com'>
+        <EmailCog {...args} />
+      </EmailState>
+    </form>
   )
 }
 
@@ -65,9 +67,11 @@ Value.args = {
  */
 export function DefaultValue (args) {
   return (
-    <EmailState defaultValue='email@email.com'>
-      <EmailCog {...args} />
-    </EmailState>
+    <form>
+      <EmailState defaultValue='email@email.com'>
+        <EmailCog {...args} />
+      </EmailState>
+    </form>
   )
 }
 
