@@ -11,7 +11,10 @@ const log = debug('shinkansen-cogs/cogs/email')
 log('`shinkansen` is awake')
 
 const {
-  default: component // @ts-ignore
+  default: Email // @ts-expect-error
 } = require('./index.jsx')
 
-module.exports = component
+/**
+ *  Exports only default
+ */
+module.exports = Email

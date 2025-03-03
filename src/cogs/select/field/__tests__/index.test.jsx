@@ -22,8 +22,7 @@ jest.mock('#cogs/components/field', () => {
 
   return {
     __esModule: true,
-    ValueField: class ValueField extends MockField { },
-    default: MockField
+    ValueField: MockField
   }
 })
 

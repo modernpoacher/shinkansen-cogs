@@ -4,7 +4,7 @@
  */
 
 /**
- * TextareaField component
+ *  TextareaField component
  */
 import React from 'react'
 import classnames from 'classnames'

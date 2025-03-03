@@ -11,7 +11,10 @@ const log = debug('shinkansen-cogs/cogs/password')
 log('`shinkansen` is awake')
 
 const {
-  default: component // @ts-ignore
+  default: Password // @ts-expect-error
 } = require('./index.jsx')
 
-module.exports = component
+/**
+ *  Exports only default
+ */
+module.exports = Password

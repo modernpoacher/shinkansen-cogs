@@ -1,14 +1,14 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import Component from '#cogs/components/common/readonly'
+import ReadOnly from '#cogs/components/common/readonly'
 
 jest.useFakeTimers()
 
 describe('#cogs/components/common/readonly', () => {
-  describe('<Component />', () => {
+  describe('<ReadOnly />', () => {
     it('renders', () => {
-      return expect(renderer.create(<Component />).toJSON())
+      return expect(renderer.create(<ReadOnly />).toJSON())
         .toMatchSnapshot()
     })
   })

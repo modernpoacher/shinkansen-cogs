@@ -1,10 +1,11 @@
 /**
- *  @typedef {CogsTypes.Cogs.Cog.ValueProps} ValueProps
- *  @typedef {CogsTypes.Cogs.Cog.Select.SelectProps} SelectProps
+ *  @typedef {CogsTypes.OnEventType} OnEventType
+ *  @typedef {CogsTypes.Cogs.ValueProps} ValueProps
+ *  @typedef {CogsTypes.Cogs.Select.SelectProps} SelectProps
  */
 
 /**
- * SelectCog component
+ *  SelectCog component
  */
 import React from 'react'
 import PropTypes from 'prop-types'
@@ -14,14 +15,17 @@ import {
   ValueCog
 } from '#cogs/cogs'
 
-import {
-  DEFAULT_HANDLE_CHANGE
-} from '#cogs/common'
-
 import Title from '#cogs/cogs/select/title'
 import Description from '#cogs/cogs/select/description'
 import ErrorMessage from '#cogs/cogs/select/error-message'
 import Field from '#cogs/cogs/select/field'
+
+/**
+ *  @type {OnEventType}
+ */
+function DEFAULT_HANDLE_EVENT () {
+  //
+}
 
 /**
  *  @extends {ValueCog<ValueProps & SelectProps>}
@@ -59,7 +63,7 @@ export default class SelectCog extends ValueCog {
    */
   handleChange = (name, value) => {
     const {
-      onChange = DEFAULT_HANDLE_CHANGE
+      onChange = DEFAULT_HANDLE_EVENT
     } = this.props
 
     onChange(name, value)

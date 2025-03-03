@@ -1,10 +1,4 @@
-export function DEFAULT_HANDLE_CHANGE (
-  name: string,
-  value?: string | string[],
-  checked?: boolean
-): void
-
-export function DEFAULT_HANDLE_CLICK (
+export function DEFAULT_HANDLE_EVENT (
   name: string,
   value?: string | string[],
   checked?: boolean

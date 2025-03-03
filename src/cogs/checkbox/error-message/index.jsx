@@ -1,5 +1,5 @@
 /**
- * CheckboxErrorMessage component
+ *  CheckboxErrorMessage component
  */
 import classnames from 'classnames'
 import ErrorMessage from '#cogs/components/error-message'

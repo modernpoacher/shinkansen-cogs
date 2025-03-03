@@ -1,14 +1,14 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import Component from '#cogs/components/common/required'
+import Required from '#cogs/components/common/required'
 
 jest.useFakeTimers()
 
 describe('#cogs/components/common/required', () => {
-  describe('<Component />', () => {
+  describe('<Required />', () => {
     it('renders', () => {
-      return expect(renderer.create(<Component />).toJSON())
+      return expect(renderer.create(<Required />).toJSON())
         .toMatchSnapshot()
     })
   })

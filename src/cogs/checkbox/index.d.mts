@@ -3,7 +3,7 @@ declare module '#cogs/cogs/checkbox' {
     CheckCog
   } from '#cogs/cogs'
 
-  export type CheckboxProps = CogsTypes.Cogs.Cog.Checkbox.CheckboxProps
+  export type CheckboxProps = CogsTypes.Cogs.Checkbox.CheckboxProps
 
   export default class CheckboxCog<P extends CheckboxProps> extends CheckCog<P> {
     handleChange (

@@ -39,7 +39,9 @@
     "prestorybook": "npm run build && npm run transform",
     "pretest": "npm run nvm",
     "storybook": "storybook dev -p 6006",
-    "test": "cross-env NODE_ENV=test jest",
+    "test": "npm run test:mocha && npm run test:jest",
+    "test:jest": "cross-env NODE_ENV=test jest",
+    "test:mocha": "cross-env NODE_ENV=test mocha test --recursive",
     "transform": "cross-env DEBUG=shinkansen-cogs* ./transform.sh"
   },
   "dependencies": {
@@ -62,13 +64,16 @@
     "@storybook/react": "7.6.20",
     "@storybook/react-webpack5": "7.6.20",
     "@types/babel__register": "^7.17.3",
+    "@types/chai": "^5.0.1",
     "@types/debug": "^4.1.12",
     "@types/jest": "^29.5.14",
+    "@types/mocha": "^10.0.10",
     "@types/react": "18.3.13",
     "@types/react-test-renderer": "^19.0.0",
     "@typescript-eslint/eslint-plugin": "^8.26.0",
     "@typescript-eslint/parser": "^8.26.0",
     "autoprefixer": "^10.4.20",
+    "chai": "^5.2.0",
     "clean-webpack-plugin": "^4.0.0",
     "core-js": "^3.41.0",
     "cross-env": "^7.0.3",
@@ -79,6 +84,7 @@
     "husky": "^9.1.7",
     "jest": "^29.7.0",
     "mini-css-extract-plugin": "^2.9.2",
+    "mocha": "^11.1.0",
     "perfectionist": "^2.4.0",
     "postcss": "^8.5.3",
     "postcss-discard-comments": "^7.0.3",
@@ -105,12 +111,22 @@
     },
     "#cogs/cogs": "./src/cogs/index.cjs",
     "#cogs/cogs/*": "./src/cogs/*/index.cjs",
-    "#cogs/common": "./src/common/index.mjs",
     "#cogs/components": {
       "require": "./src/components/index.cjs",
       "import": "./src/components/index.mjs"
     },
     "#cogs/components/*": "./src/components/*/index.cjs",
+    "#cogs/super": {
+      "require": "./src/super/index.cjs",
+      "import": "./src/super/index.mjs"
+    },
+    "#cogs/super/cogs": "./src/super/cogs/index.cjs",
+    "#cogs/super/cogs/*": "./src/super/cogs/*/index.cjs",
+    "#cogs/super/components": {
+      "require": "./src/super/components/index.cjs",
+      "import": "./src/super/components/index.mjs"
+    },
+    "#cogs/super/components/*": "./src/super/components/*/index.cjs",
     "#cogs/transformers": "./src/transformers/index.mjs",
     "#cogs/transformers/*": "./src/transformers/*/index.mjs",
     "#stories/cogs/*": "./stories/cogs/*/index.stories.jsx",
@@ -125,8 +141,23 @@
     },
     "./cogs": "./src/cogs/index.cjs",
     "./cogs/*": "./src/cogs/*/index.cjs",
-    "./common": "./src/common/index.mjs",
-    "./components": "./src/components/*/index.cjs",
+    "./components": {
+      "require": "./src/components/index.cjs",
+      "import": "./src/components/index.mjs"
+    },
+    "./components/*": "./src/components/*/index.cjs",
+    "./super": {
+      "require": "./src/super/index.cjs",
+      "import": "./src/super/index.mjs"
+    },
+    "./super/cogs": "./src/super/cogs/index.cjs",
+    "./super/cogs/*": "./src/super/cogs/*/index.cjs",
+    "./super/components": {
+      "require": "./src/super/components/index.cjs",
+      "import": "./src/super/components/index.mjs"
+    },
+    "./super/components/*": "./src/super/components/*/index.cjs",
+    "./transformers": "./src/transformers/index.mjs",
     "./transformers/*": "./src/transformers/*/index.mjs"
   }
 }

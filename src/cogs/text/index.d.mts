@@ -3,7 +3,7 @@ declare module '#cogs/cogs/text' {
     ValueCog
   } from '#cogs/cogs'
 
-  export type TextProps = CogsTypes.Cogs.Cog.Text.TextProps
+  export type TextProps = CogsTypes.Cogs.Text.TextProps
 
   export default class TextCog<P extends TextProps> extends ValueCog<P> {
     handleChange (

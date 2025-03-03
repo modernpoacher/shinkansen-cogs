@@ -1,5 +1,5 @@
 /**
- * SelectDescription component
+ *  SelectDescription component
  */
 import classnames from 'classnames'
 import Description from '#cogs/components/description'

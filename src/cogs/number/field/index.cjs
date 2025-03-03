@@ -11,7 +11,10 @@ const log = debug('shinkansen-cogs/cogs/number/field')
 log('`shinkansen` is awake')
 
 const {
-  default: component // @ts-ignore
+  default: Field // @ts-expect-error
 } = require('./index.jsx')
 
-module.exports = component
+/**
+ *  Exports only default
+ */
+module.exports = Field

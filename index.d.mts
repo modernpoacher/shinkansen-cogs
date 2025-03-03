@@ -2,13 +2,7 @@ import type React from 'react'
 
 declare global {
   namespace CogsTypes {
-    export type OnChangeType = (
-      name: string,
-      value?: string | string[],
-      checked?: boolean
-    ) => void
-
-    export type OnClickType = (
+    export type OnEventType = (
       name: string,
       value?: string | string[],
       checked?: boolean
@@ -25,6 +19,69 @@ declare global {
       href: string
     }
 
+    export namespace Super {
+      export namespace Cogs {
+        export interface CogProps {
+          id?: string
+          name: string
+          title?: string
+          description?: string
+          errorMessage?: ErrorDefinitionType
+          required?: boolean
+          disabled?: boolean
+          readOnly?: boolean
+          tabIndex?: number
+          accessKey?: string
+          placeholder?: string
+          onChange?: OnEventType
+          fieldRef?: React.RefObject<any> // eslint-disable-line @typescript-eslint/no-explicit-any -- Simplicity
+        }
+      }
+
+      export namespace Components {
+        export namespace Description {
+          export interface DescriptionProps {
+            description?: string
+          }
+        }
+
+        export namespace ErrorMessage {
+          export interface ErrorMessageProps {
+            errorMessage?: ErrorDefinitionType
+          }
+
+          export interface ErrorMessageState {
+            errorMessage?: ErrorDefinitionType
+          }
+        }
+
+        export namespace Field {
+          export interface FieldProps extends React.PropsWithChildren {
+            id?: string
+            name: string
+            required?: boolean
+            disabled?: boolean
+            readOnly?: boolean
+            tabIndex?: number
+            accessKey?: string
+            placeholder?: string
+            onChange?: OnEventType
+            fieldRef?: React.RefObject<any> // eslint-disable-line @typescript-eslint/no-explicit-any -- Simplicity
+          }
+        }
+
+        export namespace Title {
+          export interface TitleProps extends React.PropsWithChildren {
+            id: string
+            title?: string
+            required?: boolean
+            disabled?: boolean
+            readOnly?: boolean
+          }
+        }
+      }
+    }
+
     export namespace Components {
       export namespace Common {
         export namespace TextContent {
@@ -35,45 +92,26 @@ declare global {
       }
 
       export namespace Description {
-        export interface DescriptionProps {
-          description?: string
-        }
+        export type DescriptionProps = Super.Components.Description.DescriptionProps
       }
 
       export namespace ErrorMessage {
-        export interface ErrorMessageProps {
-          errorMessage?: ErrorDefinitionType
-        }
+        export type ErrorMessageProps = Super.Components.ErrorMessage.ErrorMessageProps
 
-        export interface ErrorMessageState {
-          errorMessage?: ErrorDefinitionType
-        }
+        export type ErrorMessageState = Super.Components.ErrorMessage.ErrorMessageState
       }
 
       export namespace Field {
-        export interface FieldProps extends React.PropsWithChildren {
-          id?: string
-          name: string
-          required?: boolean
-          disabled?: boolean
-          readOnly?: boolean
-          tabIndex?: number
-          accessKey?: string
-          placeholder?: string
-          onChange?: OnChangeType
-          fieldRef?: React.RefObject<any> // eslint-disable-line @typescript-eslint/no-explicit-any -- Simplicity
-        }
-
-        export interface ValueProps extends FieldProps {
+        export interface ValueProps extends Super.Components.Field.FieldProps {
           value?: string
           defaultValue?: string
         }
 
-        export interface CheckProps extends FieldProps {
+        export interface CheckProps extends Super.Components.Field.FieldProps {
           value?: string
           checked?: boolean
           defaultChecked?: boolean
-          onClick: OnClickType
+          onClick: OnEventType
         }
 
         export namespace Checkbox {
@@ -112,116 +150,90 @@ declare global {
       }
 
       export namespace Title {
-        export interface TitleProps extends React.PropsWithChildren {
-          id: string
-          title?: string
-          required?: boolean
-          disabled?: boolean
-          readOnly?: boolean
-        }
-
         export namespace Checkbox {
-          export type CheckboxProps = TitleProps
+          export type CheckboxProps = Super.Components.Title.TitleProps
         }
 
         export namespace Email {
-          export type EmailProps = TitleProps
+          export type EmailProps = Super.Components.Title.TitleProps
         }
 
         export namespace Number {
-          export type NumberProps = TitleProps
+          export type NumberProps = Super.Components.Title.TitleProps
         }
 
         export namespace Password {
-          export type PasswordProps = TitleProps
+          export type PasswordProps = Super.Components.Title.TitleProps
         }
 
         export namespace Radio {
-          export type RadioProps = TitleProps
+          export type RadioProps = Super.Components.Title.TitleProps
         }
 
         export namespace Select {
-          export type SelectProps = TitleProps
+          export type SelectProps = Super.Components.Title.TitleProps
         }
 
         export namespace Text {
-          export type TextProps = TitleProps
+          export type TextProps = Super.Components.Title.TitleProps
         }
 
         export namespace Textarea {
-          export type TextareaProps = TitleProps
+          export type TextareaProps = Super.Components.Title.TitleProps
         }
       }
     }
 
     export namespace Cogs {
-      export namespace Cog {
-        export interface CogProps {
-          id?: string
-          name: string
-          title?: string
-          description?: string
-          errorMessage?: ErrorDefinitionType
-          required?: boolean
-          disabled?: boolean
-          readOnly?: boolean
-          tabIndex?: number
-          accessKey?: string
-          placeholder?: string
-          onChange?: OnChangeType
-          fieldRef?: React.RefObject<any> // eslint-disable-line @typescript-eslint/no-explicit-any -- Simplicity
-        }
+      export interface ValueProps extends Super.Cogs.CogProps {
+        value?: string
+        defaultValue?: string
+      }
 
-        export interface ValueProps extends CogProps {
-          value?: string
-          defaultValue?: string
-        }
+      export interface CheckProps extends Super.Cogs.CogProps {
+        value?: string
+        checked?: boolean
+        defaultChecked?: boolean
+        onClick: OnEventType
+      }
 
-        export interface CheckProps extends CogProps {
-          value?: string
-          checked?: boolean
-          defaultChecked?: boolean
-          onClick: OnClickType
-        }
+      export namespace Checkbox {
+        export type CheckboxProps = CheckProps
+      }
 
-        export namespace Checkbox {
-          export type CheckboxProps = CheckProps
-        }
+      export namespace Email {
+        export type EmailProps = ValueProps
+      }
 
-        export namespace Email {
-          export type EmailProps = ValueProps
+      export namespace Number {
+        export interface NumberProps extends Omit<Omit<ValueProps, 'value'>, 'defaultValue'> {
+          value?: string | number
+          defaultValue?: string | number
         }
+      }
 
-        export namespace Number {
-          export interface NumberProps extends Omit<Omit<ValueProps, 'value'>, 'defaultValue'> {
-            value?: string | number
-            defaultValue?: string | number
-          }
-        }
+      export namespace Password {
+        export type PasswordProps = ValueProps
+      }
 
-        export namespace Password {
-          export type PasswordProps = ValueProps
-        }
+      export namespace Radio {
+        export type RadioProps = CheckProps
+      }
 
-        export namespace Radio {
-          export type RadioProps = CheckProps
+      export namespace Select {
+        export interface SelectProps extends Omit<Omit<ValueProps, 'value'>, 'defaultValue'>, React.PropsWithChildren {
+          multiple?: boolean
+          value?: string | string[]
+          defaultValue?: string | string[]
         }
+      }
 
-        export namespace Select {
-          export interface SelectProps extends Omit<Omit<ValueProps, 'value'>, 'defaultValue'>, React.PropsWithChildren {
-            multiple?: boolean
-            value?: string | string[]
-            defaultValue?: string | string[]
-          }
-        }
+      export namespace Text {
+        export type TextProps = ValueProps
+      }
 
-        export namespace Text {
-          export type TextProps = ValueProps
-        }
-
-        export namespace Textarea {
-          export type TextareaProps = ValueProps
-        }
+      export namespace Textarea {
+        export type TextareaProps = ValueProps
       }
     }
   }

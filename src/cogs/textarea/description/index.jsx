@@ -1,5 +1,5 @@
 /**
- * TextareaDescription component
+ *  TextareaDescription component
  */
 import classnames from 'classnames'
 import Description from '#cogs/components/description'

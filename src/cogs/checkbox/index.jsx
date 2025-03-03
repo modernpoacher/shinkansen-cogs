@@ -1,10 +1,11 @@
 /**
- *  @typedef {CogsTypes.Cogs.Cog.CheckProps} CheckProps
- *  @typedef {CogsTypes.Cogs.Cog.Checkbox.CheckboxProps} CheckboxProps
+ *  @typedef {CogsTypes.OnEventType} OnEventType
+ *  @typedef {CogsTypes.Cogs.CheckProps} CheckProps
+ *  @typedef {CogsTypes.Cogs.Checkbox.CheckboxProps} CheckboxProps
  */
 
 /**
- * CheckboxCog component
+ *  CheckboxCog component
  */
 import React from 'react'
 import PropTypes from 'prop-types'
@@ -14,15 +15,17 @@ import {
   CheckCog
 } from '#cogs/cogs'
 
-import {
-  DEFAULT_HANDLE_CHANGE,
-  DEFAULT_HANDLE_CLICK
-} from '#cogs/common'
-
 import Title from '#cogs/cogs/checkbox/title'
 import Description from '#cogs/cogs/checkbox/description'
 import ErrorMessage from '#cogs/cogs/checkbox/error-message'
 import Field from '#cogs/cogs/checkbox/field'
+
+/**
+ *  @type {OnEventType}
+ */
+function DEFAULT_HANDLE_EVENT () {
+  //
+}
 
 /**
  *  @extends {CheckCog<CheckProps & CheckboxProps>}
@@ -55,7 +58,7 @@ export default class CheckboxCog extends CheckCog {
    */
   handleChange = (name, value, checked) => {
     const {
-      onChange = DEFAULT_HANDLE_CHANGE
+      onChange = DEFAULT_HANDLE_EVENT
     } = this.props
 
     onChange(name, value, checked)
@@ -68,7 +71,7 @@ export default class CheckboxCog extends CheckCog {
    */
   handleClick = (name, value, checked) => {
     const {
-      onClick = DEFAULT_HANDLE_CLICK
+      onClick = DEFAULT_HANDLE_EVENT
     } = this.props
 
     onClick(name, value, checked)

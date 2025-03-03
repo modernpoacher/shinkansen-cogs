@@ -1,10 +1,10 @@
 /**
- *  @typedef {CogsTypes.Components.Title.TitleProps} TitleProps
+ *  @typedef {CogsTypes.Super.Components.Title.TitleProps} TitleProps
  *  @typedef {CogsTypes.Components.Title.Text.TextProps} TextProps
  */
 
 /**
- * TextTitle component
+ *  TextTitle component
  */
 import classnames from 'classnames'
 import Title from '#cogs/components/title'

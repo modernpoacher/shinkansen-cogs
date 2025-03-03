@@ -1,5 +1,5 @@
 /**
- * PasswordDescription component
+ *  PasswordDescription component
  */
 import classnames from 'classnames'
 import Description from '#cogs/components/description'

@@ -1,10 +1,11 @@
 /**
- *  @typedef {CogsTypes.Cogs.Cog.ValueProps} ValueProps
- *  @typedef {CogsTypes.Cogs.Cog.Email.EmailProps} EmailProps
+ *  @typedef {CogsTypes.OnEventType} OnEventType
+ *  @typedef {CogsTypes.Cogs.ValueProps} ValueProps
+ *  @typedef {CogsTypes.Cogs.Email.EmailProps} EmailProps
  */
 
 /**
- * EmailCog component
+ *  EmailCog component
  */
 import React from 'react'
 import classnames from 'classnames'
@@ -13,14 +14,17 @@ import {
   ValueCog
 } from '#cogs/cogs'
 
-import {
-  DEFAULT_HANDLE_CHANGE
-} from '#cogs/common'
-
 import Title from '#cogs/cogs/email/title'
 import Description from '#cogs/cogs/email/description'
 import ErrorMessage from '#cogs/cogs/email/error-message'
 import Field from '#cogs/cogs/email/field'
+
+/**
+ *  @type {OnEventType}
+ */
+function DEFAULT_HANDLE_EVENT () {
+  //
+}
 
 /**
  *  @extends {ValueCog<ValueProps & EmailProps>}
@@ -36,7 +40,7 @@ export default class EmailCog extends ValueCog {
    */
   handleChange = (name, value) => {
     const {
-      onChange = DEFAULT_HANDLE_CHANGE
+      onChange = DEFAULT_HANDLE_EVENT
     } = this.props
 
     onChange(name, value)

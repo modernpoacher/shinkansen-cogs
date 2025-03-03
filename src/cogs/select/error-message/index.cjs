@@ -11,7 +11,10 @@ const log = debug('shinkansen-cogs/cogs/select/error-message')
 log('`shinkansen` is awake')
 
 const {
-  default: component // @ts-ignore
+  default: ErrorMessage // @ts-expect-error
 } = require('./index.jsx')
 
-module.exports = component
+/**
+ *  Exports only default
+ */
+module.exports = ErrorMessage

@@ -1,87 +1,28 @@
 /**
- *  @typedef {CogsTypes.Components.Field.FieldProps} FieldProps
+ *  @typedef {CogsTypes.OnEventType} OnEventType
+ *  @typedef {CogsTypes.Super.Components.Field.FieldProps} FieldProps
  *  @typedef {CogsTypes.Components.Field.ValueProps} ValueProps
  *  @typedef {CogsTypes.Components.Field.CheckProps} CheckProps
  */
 
 /**
- * Field component
+ *  Field component
  */
-import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import {
-  DEFAULT_HANDLE_CHANGE,
-  DEFAULT_HANDLE_CLICK
-} from '#cogs/common'
+import Field from '#cogs/super/components/field'
 
-export default class Field extends Component {
-  getClassName () {
-    return 'input'
-  }
-
-  /**
-   *  @param {FieldProps} props
-   *  @returns {boolean}
-   */
-  shouldComponentUpdate (props) {
-    return (
-      (props.id !== this.props.id) ||
-      (props.required !== this.props.required) ||
-      (props.disabled !== this.props.disabled) ||
-      (props.readOnly !== this.props.readOnly) ||
-      (props.tabIndex !== this.props.tabIndex) ||
-      (props.accessKey !== this.props.accessKey) ||
-      (props.placeholder !== this.props.placeholder) ||
-      (props.onChange !== this.props.onChange)
-    )
-  }
-
-  render () {
-    const {
-      id,
-      required = false,
-      disabled = false,
-      readOnly = false,
-      tabIndex,
-      accessKey,
-      placeholder,
-      fieldRef
-    } = this.props
-
-    return (
-      <input
-        id={id}
-        required={required}
-        disabled={disabled}
-        readOnly={readOnly}
-        tabIndex={tabIndex}
-        accessKey={accessKey}
-        placeholder={placeholder}
-        className={this.getClassName()}
-        ref={fieldRef}
-      />
-    )
-  }
-}
-
-Field.propTypes = {
-  id: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  required: PropTypes.bool,
-  disabled: PropTypes.bool,
-  readOnly: PropTypes.bool,
-  tabIndex: PropTypes.number,
-  accessKey: PropTypes.string,
-  placeholder: PropTypes.string,
-  onChange: PropTypes.func,
-  fieldRef: PropTypes.shape({
-    current: PropTypes.shape({}).isRequired
-  })
+/**
+ *  @type {OnEventType}
+ */
+function DEFAULT_HANDLE_EVENT () {
+  //
 }
 
 /**
- * ValueField component
+ *  ValueField component
+ *
+ *  @extends {Field<FieldProps & ValueProps>}
  */
 export class ValueField extends Field {
   /**
@@ -100,7 +41,7 @@ export class ValueField extends Field {
    */
   handleChange = ({ target: { value } }) => {
     const {
-      onChange = DEFAULT_HANDLE_CHANGE,
+      onChange = DEFAULT_HANDLE_EVENT,
       name
     } = this.props
 
@@ -115,7 +56,9 @@ ValueField.propTypes = {
 }
 
 /**
- * CheckField component
+ *  CheckField component
+ *
+ *  @extends {Field<FieldProps & CheckProps>}
  */
 export class CheckField extends Field {
   /**
@@ -145,7 +88,7 @@ export class CheckField extends Field {
    */
   handleChange = ({ target: { value, checked } }) => {
     const {
-      onChange = DEFAULT_HANDLE_CHANGE,
+      onChange = DEFAULT_HANDLE_EVENT,
       name
     } = this.props
 
@@ -157,7 +100,7 @@ export class CheckField extends Field {
    */
   handleClick = ({ target: { value, checked } }) => {
     const {
-      onClick = DEFAULT_HANDLE_CLICK,
+      onClick = DEFAULT_HANDLE_EVENT,
       name
     } = this.props
 

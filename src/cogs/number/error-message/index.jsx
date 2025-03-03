@@ -1,5 +1,5 @@
 /**
- * NumberErrorMessage component
+ *  NumberErrorMessage component
  */
 import classnames from 'classnames'
 import ErrorMessage from '#cogs/components/error-message'

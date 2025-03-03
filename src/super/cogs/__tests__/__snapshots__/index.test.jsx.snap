@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#cogs/super/cogs <Cog /> With additional props renders 1`] = `
+<div
+  className="MOCK CLASSNAME"
+/>
+`;
+
+exports[`#cogs/super/cogs <Cog /> With required props renders 1`] = `
+<div
+  className="MOCK CLASSNAME"
+/>
+`;

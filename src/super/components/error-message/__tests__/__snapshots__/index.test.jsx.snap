@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#cogs/super/components/error-message <ErrorMessage /> With additional props renders 1`] = `
+<span
+  className="error-message"
+>
+  <span
+    className="text-content"
+  >
+    Unknown
+  </span>
+</span>
+`;
+
+exports[`#cogs/super/components/error-message <ErrorMessage /> With required props renders 1`] = `null`;

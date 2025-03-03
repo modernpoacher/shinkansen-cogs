@@ -1,10 +1,11 @@
 /**
- *  @typedef {CogsTypes.Cogs.Cog.ValueProps} ValueProps
- *  @typedef {CogsTypes.Cogs.Cog.Number.NumberProps} NumberProps
+ *  @typedef {CogsTypes.OnEventType} OnEventType
+ *  @typedef {CogsTypes.Cogs.ValueProps} ValueProps
+ *  @typedef {CogsTypes.Cogs.Number.NumberProps} NumberProps
  */
 
 /**
- * NumberCog component
+ *  NumberCog component
  */
 import React from 'react'
 import PropTypes from 'prop-types'
@@ -14,14 +15,17 @@ import {
   ValueCog
 } from '#cogs/cogs'
 
-import {
-  DEFAULT_HANDLE_CHANGE
-} from '#cogs/common'
-
 import Title from '#cogs/cogs/number/title'
 import Description from '#cogs/cogs/number/description'
 import ErrorMessage from '#cogs/cogs/number/error-message'
 import Field from '#cogs/cogs/number/field'
+
+/**
+ *  @type {OnEventType}
+ */
+function DEFAULT_HANDLE_EVENT () {
+  //
+}
 
 /**
  *  @extends {ValueCog<ValueProps & NumberProps>}
@@ -37,7 +41,7 @@ export default class NumberCog extends ValueCog {
    */
   handleChange = (name, value) => {
     const {
-      onChange = DEFAULT_HANDLE_CHANGE
+      onChange = DEFAULT_HANDLE_EVENT
     } = this.props
 
     onChange(name, value)

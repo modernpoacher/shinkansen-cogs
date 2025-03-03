@@ -1,5 +1,5 @@
 /**
- *  @typedef {CogsTypes.Cogs.Cog.CheckProps} CheckProps
+ *  @typedef {CogsTypes.Cogs.CheckProps} CheckProps
  */
 
 import React from 'react'

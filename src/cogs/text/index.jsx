@@ -1,10 +1,11 @@
 /**
- *  @typedef {CogsTypes.Cogs.Cog.ValueProps} ValueProps
- *  @typedef {CogsTypes.Cogs.Cog.Text.TextProps} TextProps
+ *  @typedef {CogsTypes.OnEventType} OnEventType
+ *  @typedef {CogsTypes.Cogs.ValueProps} ValueProps
+ *  @typedef {CogsTypes.Cogs.Text.TextProps} TextProps
  */
 
 /**
- * TextCog component
+ *  TextCog component
  */
 import React from 'react'
 import classnames from 'classnames'
@@ -13,14 +14,17 @@ import {
   ValueCog
 } from '#cogs/cogs'
 
-import {
-  DEFAULT_HANDLE_CHANGE
-} from '#cogs/common'
-
 import Title from '#cogs/cogs/text/title'
 import Description from '#cogs/cogs/text/description'
 import ErrorMessage from '#cogs/cogs/text/error-message'
 import Field from '#cogs/cogs/text/field'
+
+/**
+ *  @type {OnEventType}
+ */
+function DEFAULT_HANDLE_EVENT () {
+  //
+}
 
 /**
  *  @extends {ValueCog<ValueProps & TextProps>}
@@ -36,7 +40,7 @@ export default class TextCog extends ValueCog {
    */
   handleChange = (name, value) => {
     const {
-      onChange = DEFAULT_HANDLE_CHANGE
+      onChange = DEFAULT_HANDLE_EVENT
     } = this.props
 
     onChange(name, value)

@@ -1,5 +1,5 @@
 /**
- * CheckboxDescription component
+ *  CheckboxDescription component
  */
 import classnames from 'classnames'
 import Description from '#cogs/components/description'

@@ -11,7 +11,10 @@ const log = debug('shinkansen-cogs/components/common/disabled')
 log('`shinkansen` is awake')
 
 const {
-  default: component // @ts-ignore
+  default: Disabled // @ts-expect-error
 } = require('./index.jsx')
 
-module.exports = component
+/**
+ *  Exports only default
+ */
+module.exports = Disabled

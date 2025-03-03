@@ -1,5 +1,5 @@
 /**
- *  @typedef {CogsTypes.Cogs.Cog.ValueProps} ValueProps
+ *  @typedef {CogsTypes.Cogs.ValueProps} ValueProps
  */
 
 import React from 'react'

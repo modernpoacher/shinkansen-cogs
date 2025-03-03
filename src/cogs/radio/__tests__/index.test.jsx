@@ -60,8 +60,7 @@ jest.mock('#cogs/cogs', () => {
 
   return {
     __esModule: true,
-    CheckCog: class CheckCog extends MockCog { },
-    default: MockCog
+    CheckCog: MockCog
   }
 })
 

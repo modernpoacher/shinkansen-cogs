@@ -11,7 +11,10 @@ const log = debug('shinkansen-cogs/cogs/text/description')
 log('`shinkansen` is awake')
 
 const {
-  default: component // @ts-ignore
+  default: Description // @ts-expect-error
 } = require('./index.jsx')
 
-module.exports = component
+/**
+ *  Exports only default
+ */
+module.exports = Description

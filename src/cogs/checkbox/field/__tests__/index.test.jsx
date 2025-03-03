@@ -9,7 +9,7 @@ import Field from '#cogs/cogs/checkbox/field'
 
 jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
 
-jest.mock('#cogs/components/field', () => {
+jest.mock('#cogs/super/components/field', () => {
   class MockField extends mockComponent {
     getClassName () {
       return 'MOCK CLASSNAME'
@@ -22,7 +22,6 @@ jest.mock('#cogs/components/field', () => {
 
   return {
     __esModule: true,
-    CheckField: class CheckField extends MockField { },
     default: MockField
   }
 })
@@ -151,7 +150,7 @@ describe('#cogs/cogs/checkbox/field', () => {
         instance.handleClick({ target: { value: 'MOCK VALUE', checked: 'MOCK CHECKED' } })
 
         return expect(MOCK_ON_CLICK)
-          .toBeCalledWith({ target: { value: 'MOCK VALUE', checked: 'MOCK CHECKED' } })
+          .toBeCalledWith('MOCK NAME', 'MOCK VALUE', 'MOCK CHECKED')
       })
     })
 
@@ -175,7 +174,7 @@ describe('#cogs/cogs/checkbox/field', () => {
         instance.handleChange({ target: { value: 'MOCK VALUE', checked: 'MOCK CHECKED' } })
 
         return expect(MOCK_ON_CHANGE)
-          .toBeCalledWith({ target: { value: 'MOCK VALUE', checked: 'MOCK CHECKED' } })
+          .toBeCalledWith('MOCK NAME', 'MOCK VALUE', 'MOCK CHECKED')
       })
     })
   })

@@ -79,7 +79,8 @@ export default [
     ],
     ignores: [
       'src',
-      'stories'
+      'stories',
+      'test'
     ],
     languageOptions: {
       globals: {
@@ -95,6 +96,16 @@ export default [
     languageOptions: {
       globals: {
         ...globals.browser
+      }
+    }
+  }),
+  standard({
+    files: [
+      'test/**/*.{mjs,cjs,mts,cts}'
+    ],
+    languageOptions: {
+      globals: {
+        ...globals.mocha
       }
     }
   }),
@@ -166,7 +177,8 @@ export default [
       '**/*.{mts,cts}'
     ],
     ignores: [
-      'src'
+      'src',
+      'test'
     ],
     languageOptions: {
       parser: typescriptParser,
@@ -182,7 +194,8 @@ export default [
   }),
   typescript({
     files: [
-      'src/**/*.{mts,cts}'
+      'src/**/*.{mts,cts}',
+      'test/**/*.{mts,cts}'
     ],
     languageOptions: {
       parser: typescriptParser,

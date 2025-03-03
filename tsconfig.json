@@ -6,7 +6,6 @@
     "checkJs": true,
     "noEmit": true,
     "strict": true,
-    "isolatedModules": true,
     "jsx": "react",
     "baseUrl": ".",
     "paths": {
@@ -20,15 +19,29 @@
       "#cogs/cogs/*": [
         "src/cogs/*/index.cjs"
       ],
-      "#cogs/common": [
-        "src/common/index.mjs"
-      ],
       "#cogs/components": [
         "src/components/index.cjs",
         "src/components/index.mjs"
       ],
       "#cogs/components/*": [
         "src/components/*/index.cjs"
+      ],
+      "#cogs/super": [
+        "src/super/index.cjs",
+        "src/super/index.mjs"
+      ],
+      "#cogs/super/cogs": [
+        "src/super/cogs/index.cjs"
+      ],
+      "#cogs/super/cogs/*": [
+        "src/super/cogs/*/index.cjs"
+      ],
+      "#cogs/super/components": [
+        "src/super/components/index.cjs",
+        "src/super/components/index.mjs"
+      ],
+      "#cogs/super/components/*": [
+        "src/super/components/*/index.cjs"
       ],
       "#cogs/transformers": [
         "src/transformers/index.mjs"
@@ -38,6 +51,9 @@
       ]
     }
   },
+  "include": [
+    "."
+  ],
   "exclude": [
     "**/__tests__/**/*"
   ]

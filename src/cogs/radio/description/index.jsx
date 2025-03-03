@@ -1,5 +1,5 @@
 /**
- * RadioDescription component
+ *  RadioDescription component
  */
 import classnames from 'classnames'
 import Description from '#cogs/components/description'

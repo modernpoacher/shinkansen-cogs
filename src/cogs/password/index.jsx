@@ -1,10 +1,11 @@
 /**
- *  @typedef {CogsTypes.Cogs.Cog.ValueProps} ValueProps
- *  @typedef {CogsTypes.Cogs.Cog.Password.PasswordProps} PasswordProps
+ *  @typedef {CogsTypes.OnEventType} OnEventType
+ *  @typedef {CogsTypes.Cogs.ValueProps} ValueProps
+ *  @typedef {CogsTypes.Cogs.Password.PasswordProps} PasswordProps
  */
 
 /**
- * PasswordCog component
+ *  PasswordCog component
  */
 import React from 'react'
 import classnames from 'classnames'
@@ -13,14 +14,17 @@ import {
   ValueCog
 } from '#cogs/cogs'
 
-import {
-  DEFAULT_HANDLE_CHANGE
-} from '#cogs/common'
-
 import Title from '#cogs/cogs/password/title'
 import Description from '#cogs/cogs/password/description'
 import ErrorMessage from '#cogs/cogs/password/error-message'
 import Field from '#cogs/cogs/password/field'
+
+/**
+ *  @type {OnEventType}
+ */
+function DEFAULT_HANDLE_EVENT () {
+  //
+}
 
 /**
  *  @extends {ValueCog<ValueProps & PasswordProps>}
@@ -36,7 +40,7 @@ export default class PasswordCog extends ValueCog {
    */
   handleChange = (name, value) => {
     const {
-      onChange = DEFAULT_HANDLE_CHANGE
+      onChange = DEFAULT_HANDLE_EVENT
     } = this.props
 
     onChange(name, value)

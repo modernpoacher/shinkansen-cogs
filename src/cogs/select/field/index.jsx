@@ -1,10 +1,11 @@
 /**
+ *  @typedef {CogsTypes.OnEventType} OnEventType
  *  @typedef {CogsTypes.Components.Field.ValueProps} ValueProps
  *  @typedef {CogsTypes.Components.Field.Select.SelectProps} SelectProps
  */
 
 /**
- * SelectField component
+ *  SelectField component
  */
 import React from 'react'
 import PropTypes from 'prop-types'
@@ -14,9 +15,12 @@ import {
   ValueField
 } from '#cogs/components/field'
 
-import {
-  DEFAULT_HANDLE_CHANGE
-} from '#cogs/common'
+/**
+ *  @type {OnEventType}
+ */
+function DEFAULT_HANDLE_EVENT () {
+  //
+}
 
 /**
  *  @param {{ target: { selectedOptions: { value?: string, text?: string }[] } }} event
@@ -78,7 +82,7 @@ export default class SelectField extends ValueField {
   handleChange = (event) => {
     const {
       multiple = false,
-      onChange = DEFAULT_HANDLE_CHANGE,
+      onChange = DEFAULT_HANDLE_EVENT,
       name
     } = this.props
 

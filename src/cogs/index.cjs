@@ -10,8 +10,10 @@ const log = debug('shinkansen-cogs/cogs')
 
 log('`shinkansen` is awake')
 
-/**
- *  Has default export, etc
- */
-// @ts-ignore
-module.exports = require('./index.jsx')
+const {
+  ValueCog,
+  CheckCog // @ts-expect-error
+} = require('./index.jsx')
+
+module.exports.ValueCog = ValueCog
+module.exports.CheckCog = CheckCog

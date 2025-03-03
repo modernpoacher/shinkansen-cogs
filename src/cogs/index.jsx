@@ -1,183 +1,33 @@
 /**
- *  @typedef {CogsTypes.Cogs.Cog.CogProps} CogProps
- *  @typedef {CogsTypes.Cogs.Cog.ValueProps} ValueProps
- *  @typedef {CogsTypes.Cogs.Cog.CheckProps} CheckProps
+ *  @typedef {CogsTypes.OnEventType} OnEventType
+ *  @typedef {CogsTypes.Super.Cogs.CogProps} CogProps
+ *  @typedef {CogsTypes.Cogs.ValueProps} ValueProps
+ *  @typedef {CogsTypes.Cogs.CheckProps} CheckProps
  */
 
 /**
- * Cog component
+ *  Cog component
  */
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-import classnames from 'classnames'
+
+import Cog from '#cogs/super/cogs'
 
 import {
-  DEFAULT_HANDLE_CHANGE,
-  DEFAULT_HANDLE_CLICK
-} from '#cogs/common'
-
-import Title from '#cogs/components/title'
-import Description from '#cogs/components/description'
-import ErrorMessage from '#cogs/components/error-message'
-import Field, {
   ValueField,
   CheckField
 } from '#cogs/components/field'
 
-export default class Cog extends Component {
-  getClassName () {
-    const {
-      required = false,
-      disabled = false,
-      readOnly = false,
-      errorMessage
-    } = this.props
-
-    return classnames('cog', { required, disabled, readOnly, error: !!errorMessage })
-  }
-
-  getId () {
-    const {
-      id,
-      name
-    } = this.props
-
-    return id || name
-  }
-
-  /**
-   *  @param {CogProps} props
-   *  @returns {boolean}
-   */
-  shouldComponentUpdate (props) {
-    return (
-      (props.name !== this.props.name) ||
-      (props.id !== this.props.id) ||
-      (props.title !== this.props.title) ||
-      (props.description !== this.props.description) ||
-      (props.errorMessage !== this.props.errorMessage) ||
-      (props.required !== this.props.required) ||
-      (props.disabled !== this.props.disabled) ||
-      (props.readOnly !== this.props.readOnly) ||
-      (props.tabIndex !== this.props.tabIndex) ||
-      (props.accessKey !== this.props.accessKey) ||
-      (props.placeholder !== this.props.placeholder) ||
-      (props.onChange !== this.props.onChange)
-    )
-  }
-
-  renderTitle () {
-    const id = this.getId()
-
-    const {
-      title,
-      required = false,
-      disabled = false,
-      readOnly = false
-    } = this.props
-
-    return (
-      <Title
-        id={id}
-        title={title}
-        required={required}
-        disabled={disabled}
-        readOnly={readOnly}
-      />
-    )
-  }
-
-  renderDescription () {
-    const {
-      description
-    } = this.props
-
-    return (
-      <Description
-        description={description}
-      />
-    )
-  }
-
-  renderErrorMessage () {
-    const {
-      errorMessage
-    } = this.props
-
-    return (
-      <ErrorMessage
-        errorMessage={errorMessage}
-      />
-    )
-  }
-
-  renderField () {
-    const id = this.getId()
-
-    const {
-      name,
-      required = false,
-      disabled = false,
-      readOnly = false,
-      tabIndex,
-      accessKey,
-      placeholder,
-      onChange = DEFAULT_HANDLE_CHANGE,
-      fieldRef
-    } = this.props
-
-    return (
-      <Field
-        id={id}
-        name={name}
-        required={required}
-        disabled={disabled}
-        readOnly={readOnly}
-        tabIndex={tabIndex}
-        accessKey={accessKey}
-        placeholder={placeholder}
-        onChange={onChange}
-        fieldRef={fieldRef}
-      />
-    )
-  }
-
-  render () {
-    const className = this.getClassName()
-
-    return (
-      <div className={className}>
-        {this.renderTitle()}
-        {this.renderDescription()}
-        {this.renderErrorMessage()}
-        {this.renderField()}
-      </div>
-    )
-  }
+/**
+ *  @type {OnEventType}
+ */
+function DEFAULT_HANDLE_EVENT () {
+  //
 }
 
-Cog.propTypes = {
-  id: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  title: PropTypes.string,
-  description: PropTypes.string,
-  errorMessage: PropTypes.shape({
-    type: PropTypes.string.isRequired,
-    params: PropTypes.shape({}).isRequired,
-    uri: PropTypes.string.isRequired
-  }),
-  required: PropTypes.bool,
-  disabled: PropTypes.bool,
-  readOnly: PropTypes.bool,
-  tabIndex: PropTypes.number,
-  accessKey: PropTypes.string,
-  placeholder: PropTypes.string,
-  onChange: PropTypes.func,
-  fieldRef: PropTypes.shape({
-    current: PropTypes.shape({}).isRequired
-  })
-}
-
+/**
+ *  @extends {Cog<CogProps & ValueProps>}
+ */
 export class ValueCog extends Cog {
   /**
    *  @param {ValueProps} props
@@ -208,7 +58,7 @@ export class ValueCog extends Cog {
       tabIndex,
       accessKey,
       placeholder,
-      onChange = DEFAULT_HANDLE_CHANGE,
+      onChange = DEFAULT_HANDLE_EVENT,
       fieldRef
     } = this.props
 
@@ -235,6 +85,9 @@ ValueCog.propTypes = {
   defaultValue: PropTypes.string
 }
 
+/**
+ *  @extends {Cog<CogProps & CheckProps>}
+ */
 export class CheckCog extends Cog {
   /**
    *  @param {CheckProps} props
@@ -267,8 +120,8 @@ export class CheckCog extends Cog {
       tabIndex,
       accessKey,
       placeholder,
-      onChange = DEFAULT_HANDLE_CHANGE,
-      onClick = DEFAULT_HANDLE_CLICK,
+      onChange = DEFAULT_HANDLE_EVENT,
+      onClick = DEFAULT_HANDLE_EVENT,
       fieldRef
     } = this.props
 

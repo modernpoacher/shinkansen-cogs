@@ -1,10 +1,11 @@
 /**
- *  @typedef {CogsTypes.Cogs.Cog.ValueProps} ValueProps
- *  @typedef {CogsTypes.Cogs.Cog.Textarea.TextareaProps} TextareaProps
+ *  @typedef {CogsTypes.OnEventType} OnEventType
+ *  @typedef {CogsTypes.Cogs.ValueProps} ValueProps
+ *  @typedef {CogsTypes.Cogs.Textarea.TextareaProps} TextareaProps
  */
 
 /**
- * TextareaCog component
+ *  TextareaCog component
  */
 import React from 'react'
 import classnames from 'classnames'
@@ -13,14 +14,17 @@ import {
   ValueCog
 } from '#cogs/cogs'
 
-import {
-  DEFAULT_HANDLE_CHANGE
-} from '#cogs/common'
-
 import Title from '#cogs/cogs/textarea/title'
 import Description from '#cogs/cogs/textarea/description'
 import ErrorMessage from '#cogs/cogs/textarea/error-message'
 import Field from '#cogs/cogs/textarea/field'
+
+/**
+ *  @type {OnEventType}
+ */
+function DEFAULT_HANDLE_EVENT () {
+  //
+}
 
 /**
  *  @extends {ValueCog<ValueProps & TextareaProps>}
@@ -36,7 +40,7 @@ export default class TextareaCog extends ValueCog {
    */
   handleChange = (name, value) => {
     const {
-      onChange = DEFAULT_HANDLE_CHANGE
+      onChange = DEFAULT_HANDLE_EVENT
     } = this.props
 
     onChange(name, value)
