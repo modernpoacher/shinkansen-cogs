@@ -4,9 +4,9 @@
     "target": "ESNext",
     "allowJs": true,
     "checkJs": false,
-    "allowSyntheticDefaultImports": true,
     "noEmit": true,
     "strict": true,
+    "allowSyntheticDefaultImports": true,
     "isolatedModules": true,
     "baseUrl": "."
   },
