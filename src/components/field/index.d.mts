@@ -10,7 +10,7 @@ declare module '#cogs/components/field' {
     tabIndex: number
     accessKey: string
     placeholder: string
-    onChange: CogsTypes.OnChangeType
+    onChange: CogsTypes.onEventType
     fieldRef: object
   }
 

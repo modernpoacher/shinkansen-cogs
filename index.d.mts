@@ -1,6 +1,6 @@
 declare global {
   namespace CogsTypes {
-    export type OnChangeType = () => void
+    export type onEventType = () => void
 
     export interface ErrorDefinitionType {
       type: string

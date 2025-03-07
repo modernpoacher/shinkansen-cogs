@@ -11,7 +11,7 @@ declare module '#cogs/cogs' {
     disabled: boolean
     readOnly: boolean
     placeholder: string
-    onChange: CogsTypes.OnChangeType
+    onChange: CogsTypes.onEventType
     fieldRef: object
   }
 
