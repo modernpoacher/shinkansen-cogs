@@ -1,0 +1,50 @@
+@use "design-system/palette";
+@use "design-system/typography";
+
+@mixin cog-error {
+  border-left: 0.25rem solid palette.$error-standard;
+  padding: 0 1rem;
+
+  input:not([type="checkbox"]):not([type="radio"]),
+  select,
+  textarea {
+    border: 2px solid palette.$error-standard;
+
+    &:focus {
+      border-color: palette.$black;
+    }
+  }
+
+  &.radio,
+  &.checkbox {
+    padding-left: 4rem;
+
+    // stylelint-disable-next-line no-descending-specificity
+    input {
+      left: 1.5rem;
+    }
+
+    // stylelint-disable-next-line no-descending-specificity
+    label:before {
+      left: 1rem;
+
+      border: 2px solid palette.$error-standard;
+    }
+  }
+
+  &.radio {
+    input:checked + label:after {
+      left: 1.5rem;
+    }
+  }
+
+  &.checkbox {
+    input:checked + label:after {
+      left: 1.3125rem; // 21px;
+    }
+  }
+}
+
+%cog-error {
+  @include cog-error;
+}

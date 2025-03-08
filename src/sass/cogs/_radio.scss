@@ -1,0 +1,94 @@
+@use "design-system/helpers/breakpoints";
+
+@use "design-system/palette";
+@use "design-system/typography";
+
+@mixin cog-radio {
+  position: relative;
+  padding-left: 3rem;
+  margin-bottom: 0.5rem;
+  min-height: 2rem;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  label {
+    @include breakpoints.breakpoint(mobile) {
+      padding-top: 0.375rem;
+    }
+
+    @include breakpoints.breakpoint(large-mobile) {
+      padding-top: 0.375rem;
+    }
+
+    @include breakpoints.breakpoint(small-mobile) {
+      padding-top: 0.375rem;
+    }
+  }
+
+  label:before {
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    height: 32px;
+    top: 0;
+    width: 32px;
+    overflow: hidden;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    content: "\200b";
+    background-color: palette.$white;
+  }
+
+  input {
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
+
+    &:focus + label:before {
+      box-shadow: 0 0 0 2px palette.$outline;
+    }
+
+    &:checked + label:after {
+      box-sizing: border-box;
+      position: absolute;
+      top: 0.5rem;
+      bottom: 0.5rem;
+      left: 0.5rem;
+      right: 0.5rem;
+      width: 1rem;
+      height: 1rem;
+      overflow: hidden;
+      border: 2px solid currentColor;
+      border-radius: 50%;
+      content: "\200b";
+      background-color: palette.$black;
+    }
+  }
+
+  &.disabled {
+    input + label {
+      &::before,
+      &::after {
+        border-color: palette.$disabled;
+      }
+    }
+
+    input:checked + label {
+      &::before,
+      &::after {
+        border-color: palette.$disabled;
+      }
+
+      // stylelint-disable-next-line no-descending-specificity
+      &::after {
+        background-color: palette.$disabled;
+      }
+    }
+  }
+}
+
+%cog-radio {
+  @include cog-radio;
+}

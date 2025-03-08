@@ -10,38 +10,38 @@
     "baseUrl": ".",
     "paths": {
       "#cogs": [
-        "src/index.cjs",
-        "src/index.mjs"
+        "src/js/index.cjs",
+        "src/js/index.mjs"
       ],
       "#cogs/cogs": [
-        "src/cogs/index.cjs"
+        "src/js/cogs/index.cjs"
       ],
       "#cogs/cogs/*": [
-        "src/cogs/*/index.cjs"
+        "src/js/cogs/*/index.cjs"
       ],
       "#cogs/components": [
-        "src/components/index.cjs",
-        "src/components/index.mjs"
+        "src/js/components/index.cjs",
+        "src/js/components/index.mjs"
       ],
       "#cogs/components/*": [
-        "src/components/*/index.cjs"
+        "src/js/components/*/index.cjs"
       ],
       "#cogs/super": [
-        "src/super/index.cjs",
-        "src/super/index.mjs"
+        "src/js/super/index.cjs",
+        "src/js/super/index.mjs"
       ],
       "#cogs/super/cogs": [
-        "src/super/cogs/index.cjs"
+        "src/js/super/cogs/index.cjs"
       ],
       "#cogs/super/cogs/*": [
-        "src/super/cogs/*/index.cjs"
+        "src/js/super/cogs/*/index.cjs"
       ],
       "#cogs/super/components": [
-        "src/super/components/index.cjs",
-        "src/super/components/index.mjs"
+        "src/js/super/components/index.cjs",
+        "src/js/super/components/index.mjs"
       ],
       "#cogs/super/components/*": [
-        "src/super/components/*/index.cjs"
+        "src/js/super/components/*/index.cjs"
       ],
       "#cogs/transformers": [
         "src/transformers/index.mjs"
@@ -55,6 +55,7 @@
     "."
   ],
   "exclude": [
-    "**/__tests__/**/*"
+    "**/__tests__/**/*",
+    ".storybook/**/*"
   ]
 }

@@ -1,0 +1,15 @@
+@use "design-system/palette";
+@use "design-system/typography";
+
+@mixin cog-disabled {
+  input:not([type="checkbox"]):not([type="radio"]),
+  select,
+  textarea {
+    border-color: palette.$disabled;
+    color: palette.$disabled;
+  }
+}
+
+%cog-disabled {
+  @include cog-disabled;
+}
