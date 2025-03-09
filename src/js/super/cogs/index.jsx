@@ -121,7 +121,7 @@ export default class Cog extends Component {
       accessKey,
       placeholder,
       onChange = DEFAULT_HANDLE_EVENT,
-      fieldRef
+      fieldRef = React.createRef()
     } = this.props
 
     return (
@@ -172,8 +172,8 @@ Cog.propTypes = {
   placeholder: PropTypes.string,
   onChange: PropTypes.func,
   fieldRef: PropTypes.shape({
-    current: PropTypes.shape({}).isRequired
+    current: PropTypes.shape({
+      value: PropTypes.string
+    })
   })
 }
-
-export class CheckCog { }

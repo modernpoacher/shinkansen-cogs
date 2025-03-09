@@ -21,10 +21,16 @@ const MOCK_ERROR_MESSAGE = {
 }
 
 describe('#cogs/super/cogs', () => {
+  const MOCK_FIELD_REF = { current: null }
+  const MOCK_ON_CHANGE = jest.fn()
+
   describe('<Cog />', () => {
     describe('With required props', () => {
       const component = (
-        <Cog name='MOCK NAME' />
+        <Cog
+          name='MOCK NAME'
+          fieldRef={MOCK_FIELD_REF}
+        />
       )
 
       it('renders', () => {
@@ -83,7 +89,8 @@ describe('#cogs/super/cogs', () => {
             disabled
             readOnly
             placeholder='MOCK PLACEHOLDER'
-            onChange={jest.fn()}
+            fieldRef={MOCK_FIELD_REF}
+            onChange={MOCK_ON_CHANGE}
           />
         )
 
@@ -104,7 +111,10 @@ describe('#cogs/super/cogs', () => {
           classnames.mockReturnValue('MOCK CLASSNAME')
 
           const component = (
-            <Cog name='MOCK NAME' />
+            <Cog
+              name='MOCK NAME'
+              fieldRef={MOCK_FIELD_REF}
+            />
           )
 
           const instance = (
@@ -134,7 +144,11 @@ describe('#cogs/super/cogs', () => {
             classnames.mockReturnValue('MOCK CLASSNAME')
 
             const component = (
-              <Cog name='MOCK NAME' required />
+              <Cog
+                name='MOCK NAME'
+                required
+                fieldRef={MOCK_FIELD_REF}
+              />
             )
 
             const instance = (
@@ -163,7 +177,11 @@ describe('#cogs/super/cogs', () => {
             classnames.mockReturnValue('MOCK CLASSNAME')
 
             const component = (
-              <Cog name='MOCK NAME' disabled />
+              <Cog
+                name='MOCK NAME'
+                disabled
+                fieldRef={MOCK_FIELD_REF}
+              />
             )
 
             const instance = (
@@ -192,7 +210,11 @@ describe('#cogs/super/cogs', () => {
             classnames.mockReturnValue('MOCK CLASSNAME')
 
             const component = (
-              <Cog name='MOCK NAME' readOnly />
+              <Cog
+                name='MOCK NAME'
+                readOnly
+                fieldRef={MOCK_FIELD_REF}
+              />
             )
 
             const instance = (
@@ -221,7 +243,11 @@ describe('#cogs/super/cogs', () => {
             classnames.mockReturnValue('MOCK CLASSNAME')
 
             const component = (
-              <Cog name='MOCK NAME' errorMessage={MOCK_ERROR_MESSAGE} />
+              <Cog
+                name='MOCK NAME'
+                errorMessage={MOCK_ERROR_MESSAGE}
+                fieldRef={MOCK_FIELD_REF}
+              />
             )
 
             const instance = (
@@ -250,7 +276,10 @@ describe('#cogs/super/cogs', () => {
         describe('`props` has `name`', () => {
           it('returns the id', () => {
             const component = (
-              <Cog name='MOCK NAME' />
+              <Cog
+                name='MOCK NAME'
+                fieldRef={MOCK_FIELD_REF}
+              />
             )
 
             return expect(renderer.create(component).getInstance().getId())
@@ -263,7 +292,11 @@ describe('#cogs/super/cogs', () => {
         describe('`props` has `id`', () => {
           it('returns the id', () => {
             const component = (
-              <Cog name='MOCK NAME' id='MOCK ID' />
+              <Cog
+                name='MOCK NAME'
+                id='MOCK ID'
+                fieldRef={MOCK_FIELD_REF}
+              />
             )
 
             return expect(renderer.create(component).getInstance().getId())
@@ -274,8 +307,6 @@ describe('#cogs/super/cogs', () => {
     })
 
     describe('`shouldComponentUpdate()`', () => {
-      const MOCK_ON_CHANGE = jest.fn()
-
       const component = (
         <Cog
           name='MOCK NAME'
@@ -287,6 +318,7 @@ describe('#cogs/super/cogs', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
+          fieldRef={MOCK_FIELD_REF}
           onChange={MOCK_ON_CHANGE}
         />
       )
@@ -349,6 +381,7 @@ describe('#cogs/super/cogs', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
+          fieldRef={MOCK_FIELD_REF}
         />
       )
 
@@ -401,6 +434,7 @@ describe('#cogs/super/cogs', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
+          fieldRef={MOCK_FIELD_REF}
         />
       )
 
@@ -440,6 +474,7 @@ describe('#cogs/super/cogs', () => {
             disabled: true,
             readOnly: true,
             placeholder: 'MOCK PLACEHOLDER',
+            fieldRef: expect.any(Object),
             onChange: expect.any(Function)
           }, {})
       })

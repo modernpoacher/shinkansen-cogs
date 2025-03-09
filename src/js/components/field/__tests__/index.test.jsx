@@ -9,10 +9,20 @@ import {
 } from '#cogs/components/field'
 
 describe('#cogs/components/field', () => {
+  const MOCK_ON_CHANGE = jest.fn()
+  const MOCK_ON_CLICK = jest.fn()
+  const MOCK_FIELD_REF = {
+    current: null
+  }
+
   describe('<ValueField />', () => {
     describe('With required props', () => {
       const component = (
-        <ValueField name='MOCK NAME' value='MOCK VALUE' />
+        <ValueField
+          name='MOCK NAME'
+          value='MOCK VALUE'
+          fieldRef={MOCK_FIELD_REF}
+        />
       )
 
       it('renders', () => {
@@ -72,6 +82,7 @@ describe('#cogs/components/field', () => {
             readOnly
             value='MOCK VALUE'
             placeholder='MOCK PLACEHOLDER'
+            fieldRef={MOCK_FIELD_REF}
           />
         )
 
@@ -93,6 +104,7 @@ describe('#cogs/components/field', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
+          fieldRef={MOCK_FIELD_REF}
         />
       )
 
@@ -131,10 +143,13 @@ describe('#cogs/components/field', () => {
 
     describe('`handleChange()`', () => {
       it('invokes the `onChange` prop', () => {
-        const MOCK_ON_CHANGE = jest.fn()
-
         const component = (
-          <ValueField name='MOCK NAME' value='MOCK VALUE' onChange={MOCK_ON_CHANGE} />
+          <ValueField
+            name='MOCK NAME'
+            value='MOCK VALUE'
+            fieldRef={MOCK_FIELD_REF}
+            onChange={MOCK_ON_CHANGE}
+          />
         )
 
         const instance = (
@@ -153,7 +168,11 @@ describe('#cogs/components/field', () => {
   describe('<CheckField />', () => {
     describe('With required props', () => {
       const component = (
-        <CheckField name='MOCK NAME' value='MOCK VALUE' />
+        <CheckField
+          name='MOCK NAME'
+          value='MOCK VALUE'
+          fieldRef={MOCK_FIELD_REF}
+        />
       )
 
       it('renders', () => {
@@ -218,6 +237,7 @@ describe('#cogs/components/field', () => {
             readOnly
             checked
             placeholder='MOCK PLACEHOLDER'
+            fieldRef={MOCK_FIELD_REF}
           />
         )
 
@@ -227,9 +247,6 @@ describe('#cogs/components/field', () => {
     })
 
     describe('`shouldComponentUpdate()`', () => {
-      const MOCK_ON_CHANGE = jest.fn()
-      const MOCK_ON_CLICK = jest.fn()
-
       const component = (
         <CheckField
           name='MOCK NAME'
@@ -243,6 +260,7 @@ describe('#cogs/components/field', () => {
           readOnly
           checked
           placeholder='MOCK PLACEHOLDER'
+          fieldRef={MOCK_FIELD_REF}
           onChange={MOCK_ON_CHANGE}
           onClick={MOCK_ON_CLICK}
         />
@@ -311,10 +329,13 @@ describe('#cogs/components/field', () => {
 
     describe('`handleClick()`', () => {
       it('invokes the `onClick` prop', () => {
-        const MOCK_ON_CLICK = jest.fn()
-
         const component = (
-          <CheckField name='MOCK NAME' value='MOCK VALUE' onClick={MOCK_ON_CLICK} />
+          <CheckField
+            name='MOCK NAME'
+            value='MOCK VALUE'
+            fieldRef={MOCK_FIELD_REF}
+            onClick={MOCK_ON_CLICK}
+          />
         )
 
         const instance = (
@@ -331,10 +352,13 @@ describe('#cogs/components/field', () => {
 
     describe('`handleChange()`', () => {
       it('invokes the `onChange` prop', () => {
-        const MOCK_ON_CHANGE = jest.fn()
-
         const component = (
-          <CheckField name='MOCK NAME' value='MOCK VALUE' onChange={MOCK_ON_CHANGE} />
+          <CheckField
+            name='MOCK NAME'
+            value='MOCK VALUE'
+            fieldRef={MOCK_FIELD_REF}
+            onChange={MOCK_ON_CHANGE}
+          />
         )
 
         const instance = (

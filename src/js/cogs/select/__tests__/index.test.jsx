@@ -106,9 +106,15 @@ describe('#cogs/cogs/select', () => {
   })
 
   describe('<Cog />', () => {
+    const MOCK_FIELD_REF = { current: null }
+    const MOCK_ON_CHANGE = jest.fn()
+
     describe('With required props', () => {
       const component = (
-        <Cog name='MOCK NAME' />
+        <Cog
+          name='MOCK NAME'
+          fieldRef={MOCK_FIELD_REF}
+        />
       )
 
       it('renders', () => {
@@ -154,6 +160,11 @@ describe('#cogs/cogs/select', () => {
 
     describe('With additional props', () => {
       it('renders', () => {
+        /**
+        *  @type {string[]}
+        */
+        const MOCK_VALUE = []
+
         const component = (
           <Cog
             name='MOCK NAME'
@@ -161,7 +172,7 @@ describe('#cogs/cogs/select', () => {
             title='MOCK TITLE'
             description='MOCK DESCRIPTION'
             errorMessage={MOCK_ERROR_MESSAGE}
-            value={[]}
+            value={MOCK_VALUE}
             tabIndex={1}
             accessKey='MOCK ACCESS KEY'
             required
@@ -169,7 +180,8 @@ describe('#cogs/cogs/select', () => {
             readOnly
             placeholder='MOCK PLACEHOLDER'
             multiple
-            onChange={jest.fn()}
+            fieldRef={MOCK_FIELD_REF}
+            onChange={MOCK_ON_CHANGE}
           />
         )
 
@@ -185,7 +197,10 @@ describe('#cogs/cogs/select', () => {
         jest.spyOn(ValueCog.prototype, 'getClassName').mockReturnValue('MOCK GETCLASSNAME')
 
         const component = (
-          <Cog name='MOCK NAME' />
+          <Cog
+            name='MOCK NAME'
+            fieldRef={MOCK_FIELD_REF}
+          />
         )
 
         const instance = (
@@ -212,7 +227,6 @@ describe('#cogs/cogs/select', () => {
        *  @type {string[]}
        */
       const MOCK_VALUE = []
-      const MOCK_ON_CHANGE = jest.fn()
 
       const component = (
         <Cog
@@ -229,6 +243,7 @@ describe('#cogs/cogs/select', () => {
           readOnly
           placeholder='MOCK PLACEHOLDER'
           multiple
+          fieldRef={MOCK_FIELD_REF}
           onChange={MOCK_ON_CHANGE}>
           MOCK CHILDREN
         </Cog>
@@ -296,6 +311,11 @@ describe('#cogs/cogs/select', () => {
     })
 
     describe('`renderTitle()`', () => {
+      /**
+       *  @type {string[]}
+       */
+      const MOCK_VALUE = []
+
       const component = (
         <Cog
           name='MOCK NAME'
@@ -303,7 +323,7 @@ describe('#cogs/cogs/select', () => {
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
           errorMessage={MOCK_ERROR_MESSAGE}
-          value={[]}
+          value={MOCK_VALUE}
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -311,7 +331,8 @@ describe('#cogs/cogs/select', () => {
           readOnly
           placeholder='MOCK PLACEHOLDER'
           multiple
-          onChange={jest.fn()}
+          fieldRef={MOCK_FIELD_REF}
+          onChange={MOCK_ON_CHANGE}
         />
       )
 
@@ -356,6 +377,11 @@ describe('#cogs/cogs/select', () => {
     })
 
     describe('`renderDescription()`', () => {
+      /**
+       *  @type {string[]}
+       */
+      const MOCK_VALUE = []
+
       const component = (
         <Cog
           name='MOCK NAME'
@@ -363,7 +389,7 @@ describe('#cogs/cogs/select', () => {
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
           errorMessage={MOCK_ERROR_MESSAGE}
-          value={[]}
+          value={MOCK_VALUE}
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -371,7 +397,8 @@ describe('#cogs/cogs/select', () => {
           readOnly
           placeholder='MOCK PLACEHOLDER'
           multiple
-          onChange={jest.fn()}
+          fieldRef={MOCK_FIELD_REF}
+          onChange={MOCK_ON_CHANGE}
         />
       )
 
@@ -400,6 +427,11 @@ describe('#cogs/cogs/select', () => {
     })
 
     describe('`renderErrorMessage()`', () => {
+      /**
+       *  @type {string[]}
+       */
+      const MOCK_VALUE = []
+
       const component = (
         <Cog
           name='MOCK NAME'
@@ -407,7 +439,7 @@ describe('#cogs/cogs/select', () => {
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
           errorMessage={MOCK_ERROR_MESSAGE}
-          value={[]}
+          value={MOCK_VALUE}
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -415,7 +447,8 @@ describe('#cogs/cogs/select', () => {
           readOnly
           placeholder='MOCK PLACEHOLDER'
           multiple
-          onChange={jest.fn()}
+          fieldRef={MOCK_FIELD_REF}
+          onChange={MOCK_ON_CHANGE}
         />
       )
 
@@ -444,6 +477,11 @@ describe('#cogs/cogs/select', () => {
     })
 
     describe('`renderField()`', () => {
+      /**
+       *  @type {string[]}
+       */
+      const MOCK_VALUE = []
+
       const component = (
         <Cog
           name='MOCK NAME'
@@ -451,7 +489,7 @@ describe('#cogs/cogs/select', () => {
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
           errorMessage={MOCK_ERROR_MESSAGE}
-          value={[]}
+          value={MOCK_VALUE}
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -459,7 +497,8 @@ describe('#cogs/cogs/select', () => {
           readOnly
           placeholder='MOCK PLACEHOLDER'
           multiple
-          onChange={jest.fn()}>
+          fieldRef={MOCK_FIELD_REF}
+          onChange={MOCK_ON_CHANGE}>
           MOCK CHILDREN
         </Cog>
       )
@@ -502,6 +541,7 @@ describe('#cogs/cogs/select', () => {
             readOnly: true,
             placeholder: 'MOCK PLACEHOLDER',
             multiple: true,
+            fieldRef: expect.any(Object),
             onChange: expect.any(Function),
             children: 'MOCK CHILDREN'
           }, {})

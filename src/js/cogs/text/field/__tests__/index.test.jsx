@@ -23,10 +23,15 @@ jest.mock('#cogs/components/field', () => {
 })
 
 describe('#cogs/cogs/text/field', () => {
+  const MOCK_FIELD_REF = { current: null }
+
   describe('<Field />', () => {
     describe('With required props', () => {
       const component = (
-        <Field name='MOCK NAME' />
+        <Field
+          name='MOCK NAME'
+          fieldRef={MOCK_FIELD_REF}
+        />
       )
 
       it('renders', () => {
@@ -52,6 +57,7 @@ describe('#cogs/cogs/text/field', () => {
             required
             disabled
             readOnly
+            fieldRef={MOCK_FIELD_REF}
           />
         )
 
@@ -67,7 +73,10 @@ describe('#cogs/cogs/text/field', () => {
         jest.spyOn(ValueField.prototype, 'getClassName').mockReturnValue('MOCK GETCLASSNAME')
 
         const component = (
-          <Field name='MOCK NAME' />
+          <Field
+            name='MOCK NAME'
+            fieldRef={MOCK_FIELD_REF}
+          />
         )
 
         const instance = (

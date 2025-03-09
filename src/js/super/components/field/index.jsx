@@ -69,6 +69,8 @@ Field.propTypes = {
   placeholder: PropTypes.string,
   onChange: PropTypes.func,
   fieldRef: PropTypes.shape({
-    current: PropTypes.shape({}).isRequired
-  })
+    current: PropTypes.shape({
+      value: PropTypes.string
+    })
+  }).isRequired
 }

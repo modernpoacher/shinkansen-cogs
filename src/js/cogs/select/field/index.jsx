@@ -10,6 +10,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
+import equal from 'fast-deep-equal'
 
 import {
   ValueField
@@ -23,13 +24,47 @@ function DEFAULT_HANDLE_EVENT () {
 }
 
 /**
- *  @param {{ target: { selectedOptions: { value?: string, text?: string }[] } }} event
+ * @param {HTMLOptionElement[]} selectedOptions
+ * @returns {string[]}
+ */
+function fromSelectedOptions (selectedOptions) {
+  return (
+    Array.from(selectedOptions)
+      .map(({ value, text }) => (value || text) ?? '')
+  )
+}
+
+/**
+ * @param {{ current?: { selectedOptions: HTMLOptionElement[] } }} fieldRef
+ * @returns {string[] | undefined}
+ */
+function getCurrentValues ({ current }) {
+  return (
+    current
+      ? fromSelectedOptions(current.selectedOptions)
+      : undefined
+  )
+}
+
+/**
+ * @param {{ current?: { value: string } }} fieldRef
+ * @returns {string | undefined}
+ */
+function getCurrentValue ({ current }) {
+  return (
+    current
+      ? current.value
+      : undefined
+  )
+}
+
+/**
+ *  @param {{ target: { selectedOptions: HTMLOptionElement[] } }} event
  *  @returns {string[]}
  */
 function getSelectedValues ({ target: { selectedOptions } }) {
   return (
-    Array.from(selectedOptions)
-      .map(({ value, text }) => (value || text) ?? '')
+    fromSelectedOptions(selectedOptions)
   )
 }
 
@@ -65,6 +100,42 @@ export default class SelectField extends ValueField {
       (multiple !== this.props.multiple) ||
       (children !== this.props.children)
     )
+  }
+
+  /**
+   *  @returns {void}
+   */
+  handleFieldRef = () => {
+    const {
+      fieldRef,
+      multiple,
+      defaultValue,
+      value = defaultValue
+    } = this.props
+
+    if (multiple) {
+      const currentValues = getCurrentValues(fieldRef)
+
+      if (!equal(value, currentValues)) {
+        const {
+          onChange = DEFAULT_HANDLE_EVENT,
+          name
+        } = this.props
+
+        onChange(name, currentValues)
+      }
+    } else {
+      const currentValue = getCurrentValue(fieldRef)
+
+      if (value !== currentValue) {
+        const {
+          onChange = DEFAULT_HANDLE_EVENT,
+          name
+        } = this.props
+
+        onChange(name, currentValue)
+      }
+    }
   }
 
   /**

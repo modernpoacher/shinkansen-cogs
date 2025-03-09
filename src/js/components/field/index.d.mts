@@ -7,13 +7,25 @@ declare module '#cogs/components/field' {
   export type CheckProps = CogsTypes.Components.Field.CheckProps
 
   export class ValueField<P extends ValueProps> extends Field<P> {
+    componentDidMount (): void
+
     shouldComponentUpdate (props: ValueProps): boolean
+
+    componentDidUpdate (): void
+
+    handleFieldRef (): void
 
     handleChange (event: ChangeEvent<HTMLTextAreaElement> | ChangeEvent<HTMLInputElement>): void
   }
 
   export class CheckField<P extends CheckProps> extends Field<P> {
+    componentDidMount (): void
+
     shouldComponentUpdate (props: CheckProps): boolean
+
+    componentDidUpdate (): void
+
+    handleFieldRef (): void
 
     handleChange (event: ChangeEvent<HTMLInputElement>): void
 

@@ -27,10 +27,16 @@ jest.mock('#cogs/components/field', () => {
 })
 
 describe('#cogs/cogs/select/field', () => {
+  const MOCK_FIELD_REF = { current: null }
+  const MOCK_ON_CHANGE = jest.fn()
+
   describe('<Field />', () => {
     describe('With required props', () => {
       const component = (
-        <Field name='MOCK NAME' />
+        <Field
+          name='MOCK NAME'
+          fieldRef={MOCK_FIELD_REF}
+        />
       )
 
       it('renders', () => {
@@ -56,6 +62,7 @@ describe('#cogs/cogs/select/field', () => {
             disabled
             readOnly
             multiple
+            fieldRef={MOCK_FIELD_REF}
           />
         )
 
@@ -71,7 +78,10 @@ describe('#cogs/cogs/select/field', () => {
         jest.spyOn(ValueField.prototype, 'getClassName').mockReturnValue('MOCK GETCLASSNAME')
 
         const component = (
-          <Field name='MOCK NAME' />
+          <Field
+            name='MOCK NAME'
+            fieldRef={MOCK_FIELD_REF}
+          />
         )
 
         const instance = (
@@ -106,7 +116,8 @@ describe('#cogs/cogs/select/field', () => {
           readOnly
           placeholder='MOCK PLACEHOLDER'
           multiple
-          onChange={jest.fn()}>
+          fieldRef={MOCK_FIELD_REF}
+          onChange={MOCK_ON_CHANGE}>
           MOCK CHILDREN
         </Field>
       )
@@ -139,6 +150,7 @@ describe('#cogs/cogs/select/field', () => {
             placeholder: 'MOCK CHANGE PLACEHOLDER',
             multiple: false,
             children: 'MOCK CHANGE CHILDREN',
+            fieldRef: expect.any(Object),
             onChange: expect.any(Function)
           }))
             .toBe(true)
@@ -159,6 +171,7 @@ describe('#cogs/cogs/select/field', () => {
             placeholder: 'MOCK PLACEHOLDER',
             multiple: true,
             children: 'MOCK CHILDREN',
+            fieldRef: expect.any(Object),
             onChange: expect.any(Function)
           }))
             .toBe(false)

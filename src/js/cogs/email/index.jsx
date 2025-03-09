@@ -104,7 +104,7 @@ export default class EmailCog extends ValueCog {
       tabIndex,
       accessKey,
       placeholder,
-      fieldRef
+      fieldRef = React.createRef()
     } = this.props
 
     return (

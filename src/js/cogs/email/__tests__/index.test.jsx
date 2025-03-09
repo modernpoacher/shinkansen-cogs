@@ -96,9 +96,15 @@ describe('#cogs/cogs/email', () => {
   })
 
   describe('<Cog />', () => {
+    const MOCK_FIELD_REF = { current: null }
+    const MOCK_ON_CHANGE = jest.fn()
+
     describe('With required props', () => {
       const component = (
-        <Cog name='MOCK NAME' />
+        <Cog
+          name='MOCK NAME'
+          fieldRef={MOCK_FIELD_REF}
+        />
       )
 
       it('renders', () => {
@@ -158,7 +164,8 @@ describe('#cogs/cogs/email', () => {
             disabled
             readOnly
             placeholder='MOCK PLACEHOLDER'
-            onChange={jest.fn()}
+            fieldRef={MOCK_FIELD_REF}
+            onChange={MOCK_ON_CHANGE}
           />
         )
 
@@ -174,7 +181,10 @@ describe('#cogs/cogs/email', () => {
         jest.spyOn(ValueCog.prototype, 'getClassName').mockReturnValue('MOCK GETCLASSNAME')
 
         const component = (
-          <Cog name='MOCK NAME' />
+          <Cog
+            name='MOCK NAME'
+            fieldRef={MOCK_FIELD_REF}
+          />
         )
 
         const instance = (
@@ -211,7 +221,8 @@ describe('#cogs/cogs/email', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
-          onChange={jest.fn()}
+          fieldRef={MOCK_FIELD_REF}
+          onChange={MOCK_ON_CHANGE}
         />
       )
 
@@ -267,7 +278,8 @@ describe('#cogs/cogs/email', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
-          onChange={jest.fn()}
+          fieldRef={MOCK_FIELD_REF}
+          onChange={MOCK_ON_CHANGE}
         />
       )
 
@@ -310,7 +322,8 @@ describe('#cogs/cogs/email', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
-          onChange={jest.fn()}
+          fieldRef={MOCK_FIELD_REF}
+          onChange={MOCK_ON_CHANGE}
         />
       )
 
@@ -353,7 +366,8 @@ describe('#cogs/cogs/email', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
-          onChange={jest.fn()}
+          fieldRef={MOCK_FIELD_REF}
+          onChange={MOCK_ON_CHANGE}
         />
       )
 
@@ -394,6 +408,7 @@ describe('#cogs/cogs/email', () => {
             disabled: true,
             readOnly: true,
             placeholder: 'MOCK PLACEHOLDER',
+            fieldRef: expect.any(Object),
             onChange: expect.any(Function)
           }, {})
       })

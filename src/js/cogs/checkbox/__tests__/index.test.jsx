@@ -100,11 +100,16 @@ describe('#cogs/cogs/checkbox', () => {
   })
 
   describe('<Cog />', () => {
+    const MOCK_FIELD_REF = { current: null }
+    const MOCK_ON_CHANGE = jest.fn()
+    const MOCK_ON_CLICK = jest.fn()
+
     describe('With required props', () => {
       const component = (
         <Cog
           name='MOCK NAME'
           value='MOCK VALUE'
+          fieldRef={MOCK_FIELD_REF}
         />
       )
 
@@ -165,8 +170,9 @@ describe('#cogs/cogs/checkbox', () => {
             disabled
             readOnly
             placeholder='MOCK PLACEHOLDER'
-            onChange={jest.fn()}
-            onClick={jest.fn()}
+            fieldRef={MOCK_FIELD_REF}
+            onChange={MOCK_ON_CHANGE}
+            onClick={MOCK_ON_CLICK}
           />
         )
 
@@ -185,6 +191,7 @@ describe('#cogs/cogs/checkbox', () => {
           <Cog
             name='MOCK NAME'
             value='MOCK VALUE'
+            fieldRef={MOCK_FIELD_REF}
           />
         )
 
@@ -222,8 +229,9 @@ describe('#cogs/cogs/checkbox', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
-          onChange={jest.fn()}
-          onClick={jest.fn()}
+          fieldRef={MOCK_FIELD_REF}
+          onChange={MOCK_ON_CHANGE}
+          onClick={MOCK_ON_CLICK}
         />
       )
 
@@ -297,8 +305,9 @@ describe('#cogs/cogs/checkbox', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
-          onChange={jest.fn()}
-          onClick={jest.fn()}
+          fieldRef={MOCK_FIELD_REF}
+          onChange={MOCK_ON_CHANGE}
+          onClick={MOCK_ON_CLICK}
         />
       )
 
@@ -354,8 +363,9 @@ describe('#cogs/cogs/checkbox', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
-          onChange={jest.fn()}
-          onClick={jest.fn()}
+          fieldRef={MOCK_FIELD_REF}
+          onChange={MOCK_ON_CHANGE}
+          onClick={MOCK_ON_CLICK}
         />
       )
 
@@ -398,8 +408,9 @@ describe('#cogs/cogs/checkbox', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
-          onChange={jest.fn()}
-          onClick={jest.fn()}
+          fieldRef={MOCK_FIELD_REF}
+          onChange={MOCK_ON_CHANGE}
+          onClick={MOCK_ON_CLICK}
         />
       )
 
@@ -442,8 +453,9 @@ describe('#cogs/cogs/checkbox', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
-          onChange={jest.fn()}
-          onClick={jest.fn()}
+          fieldRef={MOCK_FIELD_REF}
+          onChange={MOCK_ON_CHANGE}
+          onClick={MOCK_ON_CLICK}
         />
       )
 
@@ -484,6 +496,7 @@ describe('#cogs/cogs/checkbox', () => {
             disabled: true,
             readOnly: true,
             placeholder: 'MOCK PLACEHOLDER',
+            fieldRef: expect.any(Object),
             onChange: expect.any(Function),
             onClick: expect.any(Function)
           }, {})

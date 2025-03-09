@@ -4,10 +4,16 @@ import renderer from 'react-test-renderer'
 import Field from '#cogs/super/components/field'
 
 describe('#cogs/super/components/field', () => {
+  const MOCK_ON_CHANGE = jest.fn()
+  const MOCK_FIELD_REF = { current: null }
+
   describe('<Field />', () => {
     describe('With required props', () => {
       const component = (
-        <Field name='MOCK NAME' />
+        <Field
+          name='MOCK NAME'
+          fieldRef={MOCK_FIELD_REF}
+        />
       )
 
       it('renders', () => {
@@ -45,6 +51,7 @@ describe('#cogs/super/components/field', () => {
             disabled
             readOnly
             placeholder='MOCK PLACEHOLDER'
+            fieldRef={MOCK_FIELD_REF}
           />
         )
 
@@ -56,7 +63,10 @@ describe('#cogs/super/components/field', () => {
     describe('`getClassName()`', () => {
       it('returns the classname', () => {
         const component = (
-          <Field name='MOCK NAME' />
+          <Field
+            name='MOCK NAME'
+            fieldRef={MOCK_FIELD_REF}
+          />
         )
 
         const instance = (
@@ -70,8 +80,6 @@ describe('#cogs/super/components/field', () => {
     })
 
     describe('`shouldComponentUpdate()`', () => {
-      const MOCK_ON_CHANGE = jest.fn()
-
       const component = (
         <Field
           name='MOCK NAME'
@@ -83,6 +91,7 @@ describe('#cogs/super/components/field', () => {
           disabled
           readOnly
           placeholder='MOCK PLACEHOLDER'
+          fieldRef={MOCK_FIELD_REF}
           onChange={MOCK_ON_CHANGE}
         />
       )
@@ -111,7 +120,8 @@ describe('#cogs/super/components/field', () => {
             disabled: false,
             readOnly: false,
             placeholder: 'MOCK CHANGE PLACEHOLDER',
-            onChange: jest.fn()
+            onChange: jest.fn(),
+            fieldRef: MOCK_FIELD_REF
           }))
             .toBe(true)
         })
@@ -129,7 +139,8 @@ describe('#cogs/super/components/field', () => {
             disabled: true,
             readOnly: true,
             placeholder: 'MOCK PLACEHOLDER',
-            onChange: MOCK_ON_CHANGE
+            onChange: MOCK_ON_CHANGE,
+            fieldRef: MOCK_FIELD_REF
           }))
             .toBe(false)
         })

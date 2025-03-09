@@ -27,12 +27,15 @@ jest.mock('#cogs/super/components/field', () => {
 })
 
 describe('#cogs/cogs/checkbox/field', () => {
+  const MOCK_FIELD_REF = { current: null }
+
   describe('<Field />', () => {
     describe('With required props', () => {
       const component = (
         <Field
           name='MOCK NAME'
           value='MOCK VALUE'
+          fieldRef={MOCK_FIELD_REF}
         />
       )
 
@@ -90,6 +93,7 @@ describe('#cogs/cogs/checkbox/field', () => {
             required
             disabled
             readOnly
+            fieldRef={MOCK_FIELD_REF}
           />
         )
 
@@ -108,6 +112,7 @@ describe('#cogs/cogs/checkbox/field', () => {
           <Field
             name='MOCK NAME'
             value='MOCK VALUE'
+            fieldRef={MOCK_FIELD_REF}
           />
         )
 
@@ -138,6 +143,7 @@ describe('#cogs/cogs/checkbox/field', () => {
           <Field
             name='MOCK NAME'
             value='MOCK VALUE'
+            fieldRef={MOCK_FIELD_REF}
             onClick={MOCK_ON_CLICK}
           />
         )
@@ -162,6 +168,7 @@ describe('#cogs/cogs/checkbox/field', () => {
           <Field
             name='MOCK NAME'
             value='MOCK VALUE'
+            fieldRef={MOCK_FIELD_REF}
             onChange={MOCK_ON_CHANGE}
           />
         )

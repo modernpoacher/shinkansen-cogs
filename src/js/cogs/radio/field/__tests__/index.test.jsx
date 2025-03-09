@@ -27,6 +27,8 @@ jest.mock('#cogs/super/components/field', () => {
 })
 
 describe('#cogs/cogs/radio/field', () => {
+  const MOCK_FIELD_REF = { current: null }
+
   describe('<Field />', () => {
     describe('With required props', () => {
       const component = (
@@ -34,6 +36,7 @@ describe('#cogs/cogs/radio/field', () => {
           name='MOCK NAME'
           id='MOCK ID'
           value='MOCK VALUE'
+          fieldRef={MOCK_FIELD_REF}
         />
       )
 
@@ -91,6 +94,7 @@ describe('#cogs/cogs/radio/field', () => {
             required
             disabled
             readOnly
+            fieldRef={MOCK_FIELD_REF}
           />
         )
 
@@ -110,6 +114,7 @@ describe('#cogs/cogs/radio/field', () => {
             name='MOCK NAME'
             id='MOCK ID'
             value='MOCK VALUE'
+            fieldRef={MOCK_FIELD_REF}
           />
         )
 
@@ -141,6 +146,7 @@ describe('#cogs/cogs/radio/field', () => {
             name='MOCK NAME'
             id='MOCK ID'
             value='MOCK VALUE'
+            fieldRef={MOCK_FIELD_REF}
             onClick={MOCK_ON_CLICK}
           />
         )
@@ -166,6 +172,7 @@ describe('#cogs/cogs/radio/field', () => {
             name='MOCK NAME'
             id='MOCK ID'
             value='MOCK VALUE'
+            fieldRef={MOCK_FIELD_REF}
             onChange={MOCK_ON_CHANGE}
           />
         )

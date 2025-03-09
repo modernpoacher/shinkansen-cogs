@@ -66,7 +66,7 @@ declare global {
             accessKey?: string
             placeholder?: string
             onChange?: OnEventType
-            fieldRef?: React.RefObject<any> // eslint-disable-line @typescript-eslint/no-explicit-any -- Simplicity
+            fieldRef: React.RefObject<any> // eslint-disable-line @typescript-eslint/no-explicit-any -- Simplicity
           }
         }
 

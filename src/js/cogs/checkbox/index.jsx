@@ -136,7 +136,7 @@ export default class CheckboxCog extends CheckCog {
       tabIndex,
       accessKey,
       placeholder,
-      fieldRef
+      fieldRef = React.createRef()
     } = this.props
 
     return (

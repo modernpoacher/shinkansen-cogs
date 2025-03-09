@@ -59,7 +59,7 @@ export class ValueCog extends Cog {
       accessKey,
       placeholder,
       onChange = DEFAULT_HANDLE_EVENT,
-      fieldRef
+      fieldRef = React.createRef()
     } = this.props
 
     return (
@@ -122,7 +122,7 @@ export class CheckCog extends Cog {
       placeholder,
       onChange = DEFAULT_HANDLE_EVENT,
       onClick = DEFAULT_HANDLE_EVENT,
-      fieldRef
+      fieldRef = React.createRef()
     } = this.props
 
     return (
