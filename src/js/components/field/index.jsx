@@ -78,6 +78,8 @@ export class ValueField extends Field {
    *  @returns {void}
    */
   handleFieldRef = () => {
+    console.log('handleFieldRef')
+
     const {
       fieldRef,
       defaultValue,
@@ -85,6 +87,8 @@ export class ValueField extends Field {
     } = this.props
 
     const currentValue = getCurrentValue(fieldRef)
+
+    console.log(value !== currentValue)
 
     if (value !== currentValue) {
       const {
@@ -100,7 +104,11 @@ export class ValueField extends Field {
    *  @param {{ target: { value?: string } }} event
    *  @returns {void}
    */
-  handleChange = ({ target: { value } }) => {
+  handleChange = (event) => {
+    console.log('handleChange', event)
+
+    const { target: { value } } = event
+
     const {
       onChange = DEFAULT_HANDLE_EVENT,
       name
@@ -167,6 +175,8 @@ export class CheckField extends Field {
    *  @returns {void}
    */
   handleFieldRef = () => {
+    console.log('handleFieldRef')
+
     const {
       fieldRef,
       value,
@@ -176,6 +186,8 @@ export class CheckField extends Field {
 
     const currentValue = getCurrentValue(fieldRef)
     const currentChecked = getCurrentChecked(fieldRef)
+
+    console.log(value !== currentValue || checked !== currentChecked)
 
     if (value !== currentValue || checked !== currentChecked) {
       const {
@@ -191,7 +203,11 @@ export class CheckField extends Field {
    *  @param {{ target: { value?: string, checked?: boolean } }} event
    *  @returns {void}
    */
-  handleChange = ({ target: { value, checked } }) => {
+  handleChange = (event) => {
+    console.log('handleChange', event)
+
+    const { target: { value, checked } } = event
+
     const {
       onChange = DEFAULT_HANDLE_EVENT,
       name
