@@ -91,7 +91,7 @@ export class ValueField extends Field {
     const was = value === undefined ? '' : String(value)
     const now = current.value // getCurrentValue(fieldRef)
 
-    console.log(was, now)
+    console.log({ was, now })
 
     if (was !== now) {
       current._valueTracker = {
