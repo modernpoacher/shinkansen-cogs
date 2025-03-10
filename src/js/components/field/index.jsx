@@ -20,30 +20,6 @@ function DEFAULT_HANDLE_EVENT () {
 }
 
 /**
- * @param {{ current?: { value: string } }} fieldRef
- * @returns {string | undefined}
- */
-function getCurrentValue ({ current }) {
-  return (
-    current
-      ? current.value
-      : undefined
-  )
-}
-
-/**
- * @param {{ current?: { checked: boolean } }} fieldRef
- * @returns {boolean | undefined}
- */
-function getCurrentChecked ({ current }) {
-  return (
-    current
-      ? current.checked
-      : undefined
-  )
-}
-
-/**
  *  ValueField component
  *
  *  @extends {Field<FieldProps & ValueProps>}
@@ -89,7 +65,7 @@ export class ValueField extends Field {
     } = this.props
 
     const was = value === undefined ? '' : String(value)
-    const now = current.value // getCurrentValue(fieldRef)
+    const now = current.value
 
     console.log({ was, now })
 
