@@ -81,15 +81,39 @@ export class ValueField extends Field {
     console.log('handleFieldRef')
 
     const {
-      fieldRef,
+      fieldRef: {
+        current
+      },
       defaultValue,
       value = defaultValue
     } = this.props
 
-    const currentValue = getCurrentValue(fieldRef)
+    const currentValue = current.value // getCurrentValue(fieldRef)
 
-    console.log(value !== currentValue)
+    if (value !== currentValue) {
+      current._valueTracker = {
+        /**
+         *  @returns {string | undefined}
+         */
+        getValue () {
+          return String(value)
+        },
+        /**
+         *  @returns {void}
+         */
+        setValue () {
+          current.value = currentValue
+        }
+      }
 
+      const inputEvent = new InputEvent('input', { bubbles: true, inputType: 'insertText' })
+
+      current.dispatchEvent(inputEvent)
+
+      delete current._valueTracker
+    }
+
+    /*
     if (value !== currentValue) {
       const {
         onChange = DEFAULT_HANDLE_EVENT,
@@ -97,7 +121,7 @@ export class ValueField extends Field {
       } = this.props
 
       onChange(name, currentValue)
-    }
+    } */
   }
 
   /**
@@ -178,16 +202,16 @@ export class CheckField extends Field {
     console.log('handleFieldRef')
 
     const {
-      fieldRef,
+      fieldRef: {
+        current
+      },
       value,
       defaultChecked,
       checked = defaultChecked
     } = this.props
 
-    const currentValue = getCurrentValue(fieldRef)
-    const currentChecked = getCurrentChecked(fieldRef)
-
-    console.log(value !== currentValue || checked !== currentChecked)
+    const currentValue = current.value
+    const currentChecked = current.checked
 
     if (value !== currentValue || checked !== currentChecked) {
       const {
