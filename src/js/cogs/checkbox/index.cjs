@@ -11,7 +11,7 @@ const log = debug('shinkansen-cogs/cogs/checkbox')
 log('`shinkansen` is awake')
 
 const {
-  default: Checkbox // @ts-expect-error
+  default: Checkbox
 } = require('./index.jsx')
 
 /**

@@ -128,7 +128,7 @@ export default class SelectCog extends ValueCog {
       accessKey,
       placeholder,
       multiple = false,
-      fieldRef = React.createRef(),
+      fieldRef,
       children
     } = this.props
 

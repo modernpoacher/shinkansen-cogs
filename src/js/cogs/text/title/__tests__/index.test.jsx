@@ -40,7 +40,9 @@ describe('#cogs/cogs/text/title', () => {
   describe('<Title />', () => {
     describe('With required props', () => {
       const component = (
-        <Title id='MOCK ID' />
+        <Title
+          id='MOCK ID'
+        />
       )
 
       it('renders', () => {
@@ -80,7 +82,9 @@ describe('#cogs/cogs/text/title', () => {
         jest.spyOn(Super.prototype, 'getClassName').mockReturnValue('MOCK GETCLASSNAME')
 
         const component = (
-          <Title id='MOCK ID' />
+          <Title
+            id='MOCK ID'
+          />
         )
 
         const instance = (

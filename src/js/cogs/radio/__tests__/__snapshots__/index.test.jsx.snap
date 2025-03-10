@@ -1,6 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`#cogs/cogs/radio <Cog /> With additional props renders 1`] = `
+exports[`#cogs/cogs/radio <Cog /> With additional props Checked is a boolean renders 1`] = `
+<div
+  className="MOCK CLASSNAME"
+/>
+`;
+
+exports[`#cogs/cogs/radio <Cog /> With additional props Default checked is a boolean renders 1`] = `
 <div
   className="MOCK CLASSNAME"
 />

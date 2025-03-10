@@ -109,7 +109,6 @@ describe('#cogs/cogs/checkbox', () => {
         <Cog
           name='MOCK NAME'
           value='MOCK VALUE'
-          fieldRef={MOCK_FIELD_REF}
         />
       )
 

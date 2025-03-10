@@ -103,7 +103,6 @@ describe('#cogs/cogs/textarea', () => {
       const component = (
         <Cog
           name='MOCK NAME'
-          fieldRef={MOCK_FIELD_REF}
         />
       )
 

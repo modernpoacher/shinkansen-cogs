@@ -11,7 +11,7 @@ const log = debug('shinkansen-cogs/cogs/email/error-message')
 log('`shinkansen` is awake')
 
 const {
-  default: ErrorMessage // @ts-expect-error
+  default: ErrorMessage
 } = require('./index.jsx')
 
 /**

@@ -11,7 +11,7 @@ const log = debug('shinkansen-cogs/components/common/readonly')
 log('`shinkansen` is awake')
 
 const {
-  default: Required // @ts-expect-error
+  default: Required
 } = require('./index.jsx')
 
 /**

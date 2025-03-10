@@ -22,7 +22,10 @@ jest.mock('#cogs/components/field', () => {
 
   return {
     __esModule: true,
-    ValueField: MockField
+    ValueField: MockField,
+    toInputValue () {
+      return 'MOCK VALUE'
+    }
   }
 })
 
@@ -35,7 +38,6 @@ describe('#cogs/cogs/select/field', () => {
       const component = (
         <Field
           name='MOCK NAME'
-          fieldRef={MOCK_FIELD_REF}
         />
       )
 
@@ -53,21 +55,90 @@ describe('#cogs/cogs/select/field', () => {
     })
 
     describe('With additional props', () => {
-      it('renders', () => {
-        const component = (
-          <Field
-            id='MOCK ID'
-            name='MOCK NAME'
-            required
-            disabled
-            readOnly
-            multiple
-            fieldRef={MOCK_FIELD_REF}
-          />
-        )
+      describe('Multiple is true', () => {
+        describe('Value is an array', () => {
+          it('renders', () => {
+            const component = (
+              <Field
+                id='MOCK ID'
+                name='MOCK NAME'
+                value={['MOCK VALUE']}
+                required
+                disabled
+                readOnly
+                multiple
+                fieldRef={MOCK_FIELD_REF}
+              />
+            )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+            return expect(renderer.create(component).toJSON())
+              .toMatchSnapshot()
+          })
+        })
+
+        describe('Default value is an array', () => {
+          it('renders', () => {
+            const component = (
+              <Field
+                id='MOCK ID'
+                name='MOCK NAME'
+                defaultValue={['MOCK DEFAULT VALUE']}
+                required
+                disabled
+                readOnly
+                multiple
+                fieldRef={MOCK_FIELD_REF}
+              />
+            )
+
+            return expect(renderer.create(component).toJSON())
+              .toMatchSnapshot()
+          })
+        })
+      })
+
+      describe('Multiple is not true', () => {
+        describe('Value is a string', () => {
+          it('renders', () => {
+            const component = (
+              <Field
+                id='MOCK ID'
+                name='MOCK NAME'
+                title='MOCK TITLE'
+                value='MOCK VALUE'
+                required
+                disabled
+                readOnly
+                multiple
+                fieldRef={MOCK_FIELD_REF}
+              />
+            )
+
+            return expect(renderer.create(component).toJSON())
+              .toMatchSnapshot()
+          })
+        })
+
+        describe('Default value is a string', () => {
+          it('renders', () => {
+            const component = (
+              <Field
+                id='MOCK ID'
+                name='MOCK NAME'
+                title='MOCK TITLE'
+                defaultValue='MOCK DEFAULT VALUE'
+                required
+                disabled
+                readOnly
+                multiple
+                fieldRef={MOCK_FIELD_REF}
+              />
+            )
+
+            return expect(renderer.create(component).toJSON())
+              .toMatchSnapshot()
+          })
+        })
       })
     })
 
@@ -80,7 +151,6 @@ describe('#cogs/cogs/select/field', () => {
         const component = (
           <Field
             name='MOCK NAME'
-            fieldRef={MOCK_FIELD_REF}
           />
         )
 

@@ -11,7 +11,7 @@ const log = debug('shinkansen-cogs/cogs/textarea')
 log('`shinkansen` is awake')
 
 const {
-  default: Textarea // @ts-expect-error
+  default: Textarea
 } = require('./index.jsx')
 
 /**

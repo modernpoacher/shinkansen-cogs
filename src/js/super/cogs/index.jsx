@@ -121,7 +121,7 @@ export default class Cog extends Component {
       accessKey,
       placeholder,
       onChange = DEFAULT_HANDLE_EVENT,
-      fieldRef = React.createRef()
+      fieldRef
     } = this.props
 
     return (

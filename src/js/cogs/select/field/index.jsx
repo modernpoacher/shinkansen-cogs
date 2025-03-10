@@ -10,10 +10,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
-import equal from 'fast-deep-equal'
 
 import {
-  ValueField
+  ValueField,
+  toInputValue
 } from '#cogs/components/field'
 
 /**
@@ -31,30 +31,6 @@ function fromSelectedOptions (selectedOptions) {
   return (
     Array.from(selectedOptions)
       .map(({ value, text }) => (value || text) ?? '')
-  )
-}
-
-/**
- * @param {{ current?: { selectedOptions: HTMLOptionElement[] } }} fieldRef
- * @returns {string[] | undefined}
- */
-function getCurrentValues ({ current }) {
-  return (
-    current
-      ? fromSelectedOptions(current.selectedOptions)
-      : undefined
-  )
-}
-
-/**
- * @param {{ current?: { value: string } }} fieldRef
- * @returns {string | undefined}
- */
-function getCurrentValue ({ current }) {
-  return (
-    current
-      ? current.value
-      : undefined
   )
 }
 
@@ -103,42 +79,6 @@ export default class SelectField extends ValueField {
   }
 
   /**
-   *  @returns {void}
-   */
-  handleFieldRef = () => {
-    const {
-      fieldRef,
-      multiple,
-      defaultValue,
-      value = defaultValue
-    } = this.props
-
-    if (multiple) {
-      const currentValues = getCurrentValues(fieldRef)
-
-      if (!equal(value, currentValues)) {
-        const {
-          onChange = DEFAULT_HANDLE_EVENT,
-          name
-        } = this.props
-
-        onChange(name, currentValues)
-      }
-    } else {
-      const currentValue = getCurrentValue(fieldRef)
-
-      if (value !== currentValue) {
-        const {
-          onChange = DEFAULT_HANDLE_EVENT,
-          name
-        } = this.props
-
-        onChange(name, currentValue)
-      }
-    }
-  }
-
-  /**
    *  @overload
    *  @param {{ target: { selectedOptions: { value?: string, text?: string }[] } }} event
    *  @returns {void}
@@ -166,10 +106,9 @@ export default class SelectField extends ValueField {
 
   render () {
     const {
+      defaultValue,
       id,
       name,
-      value,
-      defaultValue,
       required = false,
       disabled = false,
       readOnly = false,
@@ -182,12 +121,35 @@ export default class SelectField extends ValueField {
 
     const className = this.getClassName()
 
+    if (defaultValue === undefined) {
+      const {
+        value
+      } = this.props
+
+      return (
+        <select
+          value={multiple ? Array.isArray(value) ? value : [toInputValue(value)] : toInputValue(value)}
+          id={id}
+          name={name}
+          required={required}
+          disabled={disabled} // @ts-ignore
+          readOnly={readOnly}
+          tabIndex={tabIndex}
+          accessKey={accessKey}
+          multiple={multiple}
+          onChange={this.handleChange}
+          className={className}
+          ref={fieldRef}>
+          {children}
+        </select>
+      )
+    }
+
     return (
       <select
+        defaultValue={multiple ? Array.isArray(defaultValue) ? defaultValue : [String(defaultValue)] : String(defaultValue)}
         id={id}
         name={name}
-        value={value}
-        defaultValue={defaultValue}
         required={required}
         disabled={disabled} // @ts-ignore
         readOnly={readOnly}

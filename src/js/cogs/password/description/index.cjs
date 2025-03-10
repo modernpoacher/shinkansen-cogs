@@ -11,7 +11,7 @@ const log = debug('shinkansen-cogs/cogs/password/description')
 log('`shinkansen` is awake')
 
 const {
-  default: Description // @ts-expect-error
+  default: Description
 } = require('./index.jsx')
 
 /**

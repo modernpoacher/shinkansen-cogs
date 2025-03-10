@@ -1,6 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`#cogs/cogs/text/field <Field /> With additional props renders 1`] = `
+exports[`#cogs/cogs/text/field <Field /> With additional props Default value is a string renders 1`] = `
+<input
+  className="MOCK CLASSNAME"
+  defaultValue="MOCK DEFAULT VALUE"
+  disabled={true}
+  id="MOCK ID"
+  name="MOCK NAME"
+  readOnly={true}
+  required={true}
+  type="text"
+/>
+`;
+
+exports[`#cogs/cogs/text/field <Field /> With additional props Value is a string renders 1`] = `
 <input
   className="MOCK CLASSNAME"
   disabled={true}
@@ -9,6 +22,7 @@ exports[`#cogs/cogs/text/field <Field /> With additional props renders 1`] = `
   readOnly={true}
   required={true}
   type="text"
+  value="MOCK VALUE"
 />
 `;
 
@@ -20,5 +34,6 @@ exports[`#cogs/cogs/text/field <Field /> With required props renders 1`] = `
   readOnly={false}
   required={false}
   type="text"
+  value="MOCK VALUE"
 />
 `;

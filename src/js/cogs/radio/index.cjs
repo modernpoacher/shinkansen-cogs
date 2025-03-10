@@ -11,7 +11,7 @@ const log = debug('shinkansen-cogs/cogs/radio')
 log('`shinkansen` is awake')
 
 const {
-  default: Radio // @ts-expect-error
+  default: Radio
 } = require('./index.jsx')
 
 /**

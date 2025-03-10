@@ -1,6 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`#cogs/cogs/select <Cog /> With additional props renders 1`] = `
+exports[`#cogs/cogs/select <Cog /> With additional props Multiple is not true Default value is a string renders 1`] = `
+<div
+  className="MOCK CLASSNAME"
+/>
+`;
+
+exports[`#cogs/cogs/select <Cog /> With additional props Multiple is not true Value is a string renders 1`] = `
+<div
+  className="MOCK CLASSNAME"
+/>
+`;
+
+exports[`#cogs/cogs/select <Cog /> With additional props Multiple is true Default value is an array renders 1`] = `
+<div
+  className="MOCK CLASSNAME"
+/>
+`;
+
+exports[`#cogs/cogs/select <Cog /> With additional props Multiple is true Value is an array renders 1`] = `
 <div
   className="MOCK CLASSNAME"
 />

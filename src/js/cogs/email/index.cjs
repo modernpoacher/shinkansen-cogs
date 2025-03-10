@@ -11,7 +11,7 @@ const log = debug('shinkansen-cogs/cogs/email')
 log('`shinkansen` is awake')
 
 const {
-  default: Email // @ts-expect-error
+  default: Email
 } = require('./index.jsx')
 
 /**

@@ -1,5 +1,5 @@
 const {
-  expect // @ts-expect-error
+  expect
 } = require('chai')
 
 const Text = require('#cogs/cogs/text')

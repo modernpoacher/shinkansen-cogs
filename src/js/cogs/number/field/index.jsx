@@ -11,7 +11,8 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 import {
-  ValueField
+  ValueField,
+  toInputValue
 } from '#cogs/components/field'
 
 /**
@@ -24,10 +25,9 @@ export default class NumberField extends ValueField {
 
   render () {
     const {
+      defaultValue,
       id,
       name,
-      value,
-      defaultValue,
       required = false,
       disabled = false,
       readOnly = false,
@@ -39,12 +39,35 @@ export default class NumberField extends ValueField {
 
     const className = this.getClassName()
 
+    if (defaultValue === undefined) {
+      const {
+        value
+      } = this.props
+
+      return (
+        <input
+          value={toInputValue(value)}
+          id={id}
+          name={name}
+          required={required}
+          disabled={disabled}
+          readOnly={readOnly}
+          tabIndex={tabIndex}
+          accessKey={accessKey}
+          placeholder={placeholder}
+          onChange={this.handleChange}
+          className={className}
+          type='number'
+          ref={fieldRef}
+        />
+      )
+    }
+
     return (
       <input
+        defaultValue={String(defaultValue)}
         id={id}
         name={name}
-        value={value}
-        defaultValue={defaultValue}
         required={required}
         disabled={disabled}
         readOnly={readOnly}

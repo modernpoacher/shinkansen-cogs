@@ -136,7 +136,7 @@ export default class Radio extends CheckCog {
       tabIndex,
       accessKey,
       placeholder,
-      fieldRef = React.createRef()
+      fieldRef
     } = this.props
 
     return (

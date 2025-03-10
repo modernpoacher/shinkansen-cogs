@@ -105,7 +105,7 @@ export default class NumberCog extends ValueCog {
       tabIndex,
       accessKey,
       placeholder,
-      fieldRef = React.createRef()
+      fieldRef
     } = this.props
 
     return (

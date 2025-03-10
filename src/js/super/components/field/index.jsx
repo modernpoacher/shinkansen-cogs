@@ -72,5 +72,5 @@ Field.propTypes = {
     current: PropTypes.shape({
       value: PropTypes.string
     })
-  }).isRequired
+  })
 }

@@ -1,5 +1,5 @@
 const {
-  expect // @ts-expect-error
+  expect
 } = require('chai')
 
 const ErrorMessage = require('#cogs/super/components/error-message')

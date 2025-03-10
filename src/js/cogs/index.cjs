@@ -12,8 +12,10 @@ log('`shinkansen` is awake')
 
 const {
   ValueCog,
-  CheckCog // @ts-expect-error
+  CheckCog,
+  toInputValue
 } = require('./index.jsx')
 
 module.exports.ValueCog = ValueCog
 module.exports.CheckCog = CheckCog
+module.exports.toInputValue = toInputValue

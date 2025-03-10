@@ -11,7 +11,8 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 import {
-  CheckField
+  CheckField,
+  toInputValue
 } from '#cogs/components/field'
 
 /**
@@ -44,7 +45,7 @@ export default class RadioField extends CheckField {
           checked={checked}
           id={id}
           name={name}
-          value={value}
+          value={toInputValue(value)}
           required={required}
           disabled={disabled}
           readOnly={readOnly}
@@ -68,7 +69,7 @@ export default class RadioField extends CheckField {
         defaultChecked={defaultChecked}
         id={id}
         name={name}
-        value={value}
+        value={toInputValue(value)}
         required={required}
         disabled={disabled}
         readOnly={readOnly}

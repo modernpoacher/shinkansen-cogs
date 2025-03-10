@@ -104,7 +104,7 @@ export default class TextareaCog extends ValueCog {
       tabIndex,
       accessKey,
       placeholder,
-      fieldRef = React.createRef()
+      fieldRef
     } = this.props
 
     return (

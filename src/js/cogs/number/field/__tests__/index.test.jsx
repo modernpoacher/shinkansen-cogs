@@ -18,7 +18,10 @@ jest.mock('#cogs/components/field', () => {
 
   return {
     __esModule: true,
-    ValueField: MockField
+    ValueField: MockField,
+    toInputValue () {
+      return 'MOCK VALUE'
+    }
   }
 })
 
@@ -30,7 +33,6 @@ describe('#cogs/cogs/number/field', () => {
       const component = (
         <Field
           name='MOCK NAME'
-          fieldRef={MOCK_FIELD_REF}
         />
       )
 
@@ -48,21 +50,84 @@ describe('#cogs/cogs/number/field', () => {
     })
 
     describe('With additional props', () => {
-      it('renders', () => {
-        const component = (
-          <Field
-            id='MOCK ID'
-            name='MOCK NAME'
-            title='MOCK TITLE'
-            required
-            disabled
-            readOnly
-            fieldRef={MOCK_FIELD_REF}
-          />
-        )
+      describe('Value is a string', () => {
+        it('renders', () => {
+          const component = (
+            <Field
+              id='MOCK ID'
+              name='MOCK NAME'
+              title='MOCK TITLE'
+              value='0'
+              required
+              disabled
+              readOnly
+              fieldRef={MOCK_FIELD_REF}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          return expect(renderer.create(component).toJSON())
+            .toMatchSnapshot()
+        })
+      })
+
+      describe('Value is a number', () => {
+        it('renders', () => {
+          const component = (
+            <Field
+              id='MOCK ID'
+              name='MOCK NAME'
+              title='MOCK TITLE'
+              value={0}
+              required
+              disabled
+              readOnly
+              fieldRef={MOCK_FIELD_REF}
+            />
+          )
+
+          return expect(renderer.create(component).toJSON())
+            .toMatchSnapshot()
+        })
+      })
+
+      describe('Default value is a string', () => {
+        it('renders', () => {
+          const component = (
+            <Field
+              id='MOCK ID'
+              name='MOCK NAME'
+              title='MOCK TITLE'
+              defaultValue='0'
+              required
+              disabled
+              readOnly
+              fieldRef={MOCK_FIELD_REF}
+            />
+          )
+
+          return expect(renderer.create(component).toJSON())
+            .toMatchSnapshot()
+        })
+      })
+
+      describe('Default value is a number', () => {
+        it('renders', () => {
+          const component = (
+            <Field
+              id='MOCK ID'
+              name='MOCK NAME'
+              title='MOCK TITLE'
+              defaultValue={0}
+              required
+              disabled
+              readOnly
+              fieldRef={MOCK_FIELD_REF}
+            />
+          )
+
+          return expect(renderer.create(component).toJSON())
+            .toMatchSnapshot()
+        })
       })
     })
 

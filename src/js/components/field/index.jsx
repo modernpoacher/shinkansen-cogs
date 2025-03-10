@@ -20,27 +20,11 @@ function DEFAULT_HANDLE_EVENT () {
 }
 
 /**
- * @param {{ current?: { value: string } }} fieldRef
- * @returns {string | undefined}
+ * @param {unknown} value
+ * @returns {string}
  */
-function getCurrentValue ({ current }) {
-  return (
-    current
-      ? current.value
-      : undefined
-  )
-}
-
-/**
- * @param {{ current?: { checked: boolean } }} fieldRef
- * @returns {boolean | undefined}
- */
-function getCurrentChecked ({ current }) {
-  return (
-    current
-      ? current.checked
-      : undefined
-  )
+export function toInputValue (value) {
+  return (value === undefined) ? '' : String(value)
 }
 
 /**
@@ -50,13 +34,6 @@ function getCurrentChecked ({ current }) {
  */
 export class ValueField extends Field {
   /**
-   *  @returns {void}
-   */
-  componentDidMount () {
-    this.handleFieldRef()
-  }
-
-  /**
    *  @param {ValueProps} props
    *  @returns {boolean}
    */
@@ -65,35 +42,6 @@ export class ValueField extends Field {
       super.shouldComponentUpdate(props) || // }, state) ||
       (props.value !== this.props.value)
     )
-  }
-
-  /**
-   *  @returns {void}
-   */
-  componentDidUpdate () {
-    this.handleFieldRef()
-  }
-
-  /**
-   *  @returns {void}
-   */
-  handleFieldRef = () => {
-    const {
-      fieldRef,
-      defaultValue,
-      value = defaultValue
-    } = this.props
-
-    const currentValue = getCurrentValue(fieldRef)
-
-    if (value !== currentValue) {
-      const {
-        onChange = DEFAULT_HANDLE_EVENT,
-        name
-      } = this.props
-
-      onChange(name, currentValue)
-    }
   }
 
   /**
@@ -113,12 +61,7 @@ export class ValueField extends Field {
 ValueField.propTypes = {
   ...Field.propTypes,
   value: PropTypes.string,
-  defaultValue: PropTypes.string,
-  fieldRef: PropTypes.shape({
-    current: PropTypes.shape({
-      value: PropTypes.string
-    })
-  }).isRequired
+  defaultValue: PropTypes.string
 }
 
 /**
@@ -127,13 +70,6 @@ ValueField.propTypes = {
  *  @extends {Field<FieldProps & CheckProps>}
  */
 export class CheckField extends Field {
-  /**
-   *  @returns {void}
-   */
-  componentDidMount () {
-    this.handleFieldRef()
-  }
-
   /**
    *  @param {CheckProps} props
    *  @returns {boolean}
@@ -154,37 +90,6 @@ export class CheckField extends Field {
       (defaultChecked !== this.props.defaultChecked) ||
       (onClick !== this.props.onClick)
     )
-  }
-
-  /**
-   *  @returns {void}
-   */
-  componentDidUpdate () {
-    this.handleFieldRef()
-  }
-
-  /**
-   *  @returns {void}
-   */
-  handleFieldRef = () => {
-    const {
-      fieldRef,
-      value,
-      defaultChecked,
-      checked = defaultChecked
-    } = this.props
-
-    const currentValue = getCurrentValue(fieldRef)
-    const currentChecked = getCurrentChecked(fieldRef)
-
-    if (value !== currentValue || checked !== currentChecked) {
-      const {
-        onChange = DEFAULT_HANDLE_EVENT,
-        name
-      } = this.props
-
-      onChange(name, currentValue, currentChecked)
-    }
   }
 
   /**
@@ -219,11 +124,5 @@ CheckField.propTypes = {
   value: PropTypes.string,
   checked: PropTypes.bool,
   defaultChecked: PropTypes.bool,
-  onClick: PropTypes.func,
-  fieldRef: PropTypes.shape({
-    current: PropTypes.shape({
-      value: PropTypes.string,
-      checked: PropTypes.bool
-    })
-  }).isRequired
+  onClick: PropTypes.func
 }

@@ -1,6 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`#cogs/cogs/number <Cog /> With additional props renders 1`] = `
+exports[`#cogs/cogs/number <Cog /> With additional props Default value is a number renders 1`] = `
+<div
+  className="MOCK CLASSNAME"
+/>
+`;
+
+exports[`#cogs/cogs/number <Cog /> With additional props Default value is a string renders 1`] = `
+<div
+  className="MOCK CLASSNAME"
+/>
+`;
+
+exports[`#cogs/cogs/number <Cog /> With additional props Value is a number renders 1`] = `
+<div
+  className="MOCK CLASSNAME"
+/>
+`;
+
+exports[`#cogs/cogs/number <Cog /> With additional props Value is a string renders 1`] = `
 <div
   className="MOCK CLASSNAME"
 />

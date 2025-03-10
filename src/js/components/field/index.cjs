@@ -12,7 +12,8 @@ log('`shinkansen` is awake')
 
 const {
   ValueField,
-  CheckField // @ts-expect-error
+  CheckField,
+  toInputValue
 } = require('./index.jsx')
 
 /**
@@ -20,3 +21,4 @@ const {
  */
 module.exports.ValueField = ValueField
 module.exports.CheckField = CheckField
+module.exports.toInputValue = toInputValue

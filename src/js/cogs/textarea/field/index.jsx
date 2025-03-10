@@ -10,7 +10,8 @@ import React from 'react'
 import classnames from 'classnames'
 
 import {
-  ValueField
+  ValueField,
+  toInputValue
 } from '#cogs/components/field'
 
 /**
@@ -25,7 +26,6 @@ export default class TextareaField extends ValueField {
     const {
       id,
       name,
-      value,
       defaultValue,
       required = false,
       disabled = false,
@@ -38,12 +38,34 @@ export default class TextareaField extends ValueField {
 
     const className = this.getClassName()
 
+    if (defaultValue === undefined) {
+      const {
+        value
+      } = this.props
+
+      return (
+        <textarea
+          value={toInputValue(value)}
+          id={id}
+          name={name}
+          required={required}
+          disabled={disabled}
+          readOnly={readOnly}
+          tabIndex={tabIndex}
+          accessKey={accessKey}
+          placeholder={placeholder}
+          onChange={this.handleChange}
+          className={className}
+          ref={fieldRef}
+        />
+      )
+    }
+
     return (
       <textarea
+        defaultValue={String(defaultValue)}
         id={id}
         name={name}
-        value={value}
-        defaultValue={defaultValue}
         required={required}
         disabled={disabled}
         readOnly={readOnly}

@@ -15,7 +15,8 @@ import Cog from '#cogs/super/cogs'
 
 import {
   ValueField,
-  CheckField
+  CheckField,
+  toInputValue
 } from '#cogs/components/field'
 
 /**
@@ -23,6 +24,10 @@ import {
  */
 function DEFAULT_HANDLE_EVENT () {
   //
+}
+
+export {
+  toInputValue
 }
 
 /**
@@ -59,7 +64,7 @@ export class ValueCog extends Cog {
       accessKey,
       placeholder,
       onChange = DEFAULT_HANDLE_EVENT,
-      fieldRef = React.createRef()
+      fieldRef
     } = this.props
 
     return (
@@ -122,7 +127,7 @@ export class CheckCog extends Cog {
       placeholder,
       onChange = DEFAULT_HANDLE_EVENT,
       onClick = DEFAULT_HANDLE_EVENT,
-      fieldRef = React.createRef()
+      fieldRef
     } = this.props
 
     return (

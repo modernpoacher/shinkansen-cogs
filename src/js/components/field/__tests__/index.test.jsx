@@ -21,7 +21,6 @@ describe('#cogs/components/field', () => {
         <ValueField
           name='MOCK NAME'
           value='MOCK VALUE'
-          fieldRef={MOCK_FIELD_REF}
         />
       )
 
@@ -69,25 +68,50 @@ describe('#cogs/components/field', () => {
     })
 
     describe('With additional props', () => {
-      it('renders', () => {
-        const component = (
-          <ValueField
-            name='MOCK NAME'
-            id='MOCK ID'
-            title='MOCK TITLE'
-            tabIndex={1}
-            accessKey='MOCK ACCESS KEY'
-            required
-            disabled
-            readOnly
-            value='MOCK VALUE'
-            placeholder='MOCK PLACEHOLDER'
-            fieldRef={MOCK_FIELD_REF}
-          />
-        )
+      describe('Value is a string', () => {
+        it('renders', () => {
+          const component = (
+            <ValueField
+              name='MOCK NAME'
+              id='MOCK ID'
+              title='MOCK TITLE'
+              value='MOCK VALUE'
+              tabIndex={1}
+              accessKey='MOCK ACCESS KEY'
+              required
+              disabled
+              readOnly
+              placeholder='MOCK PLACEHOLDER'
+              fieldRef={MOCK_FIELD_REF}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          return expect(renderer.create(component).toJSON())
+            .toMatchSnapshot()
+        })
+      })
+
+      describe('Default value is a string', () => {
+        it('renders', () => {
+          const component = (
+            <ValueField
+              name='MOCK NAME'
+              id='MOCK ID'
+              title='MOCK TITLE'
+              defaultValue='MOCK VALUE'
+              tabIndex={1}
+              accessKey='MOCK ACCESS KEY'
+              required
+              disabled
+              readOnly
+              placeholder='MOCK PLACEHOLDER'
+              fieldRef={MOCK_FIELD_REF}
+            />
+          )
+
+          return expect(renderer.create(component).toJSON())
+            .toMatchSnapshot()
+        })
       })
     })
 
@@ -147,7 +171,6 @@ describe('#cogs/components/field', () => {
           <ValueField
             name='MOCK NAME'
             value='MOCK VALUE'
-            fieldRef={MOCK_FIELD_REF}
             onChange={MOCK_ON_CHANGE}
           />
         )
@@ -171,7 +194,6 @@ describe('#cogs/components/field', () => {
         <CheckField
           name='MOCK NAME'
           value='MOCK VALUE'
-          fieldRef={MOCK_FIELD_REF}
         />
       )
 
@@ -226,23 +248,48 @@ describe('#cogs/components/field', () => {
     })
 
     describe('With additional props', () => {
-      it('renders', () => {
-        const component = (
-          <CheckField
-            name='MOCK NAME'
-            id='MOCK ID'
-            value='MOCK VALUE'
-            required
-            disabled
-            readOnly
-            checked
-            placeholder='MOCK PLACEHOLDER'
-            fieldRef={MOCK_FIELD_REF}
-          />
-        )
+      describe('Checked is a boolean', () => {
+        it('renders', () => {
+          const component = (
+            <CheckField
+              name='MOCK NAME'
+              id='MOCK ID'
+              title='MOCK TITLE'
+              value='MOCK VALUE'
+              checked
+              required
+              disabled
+              readOnly
+              placeholder='MOCK PLACEHOLDER'
+              fieldRef={MOCK_FIELD_REF}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          return expect(renderer.create(component).toJSON())
+            .toMatchSnapshot()
+        })
+      })
+
+      describe('Default checked is a boolean', () => {
+        it('renders', () => {
+          const component = (
+            <CheckField
+              name='MOCK NAME'
+              id='MOCK ID'
+              title='MOCK TITLE'
+              value='MOCK VALUE'
+              defaultChecked
+              required
+              disabled
+              readOnly
+              placeholder='MOCK PLACEHOLDER'
+              fieldRef={MOCK_FIELD_REF}
+            />
+          )
+
+          return expect(renderer.create(component).toJSON())
+            .toMatchSnapshot()
+        })
       })
     })
 
@@ -255,10 +302,10 @@ describe('#cogs/components/field', () => {
           value='MOCK VALUE'
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
+          checked
           required
           disabled
           readOnly
-          checked
           placeholder='MOCK PLACEHOLDER'
           fieldRef={MOCK_FIELD_REF}
           onChange={MOCK_ON_CHANGE}
@@ -333,7 +380,6 @@ describe('#cogs/components/field', () => {
           <CheckField
             name='MOCK NAME'
             value='MOCK VALUE'
-            fieldRef={MOCK_FIELD_REF}
             onClick={MOCK_ON_CLICK}
           />
         )
@@ -356,7 +402,6 @@ describe('#cogs/components/field', () => {
           <CheckField
             name='MOCK NAME'
             value='MOCK VALUE'
-            fieldRef={MOCK_FIELD_REF}
             onChange={MOCK_ON_CHANGE}
           />
         )

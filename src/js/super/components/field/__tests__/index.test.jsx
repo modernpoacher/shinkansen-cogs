@@ -12,7 +12,6 @@ describe('#cogs/super/components/field', () => {
       const component = (
         <Field
           name='MOCK NAME'
-          fieldRef={MOCK_FIELD_REF}
         />
       )
 
@@ -65,7 +64,6 @@ describe('#cogs/super/components/field', () => {
         const component = (
           <Field
             name='MOCK NAME'
-            fieldRef={MOCK_FIELD_REF}
           />
         )
 

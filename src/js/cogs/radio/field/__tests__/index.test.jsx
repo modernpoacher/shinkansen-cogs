@@ -36,7 +36,6 @@ describe('#cogs/cogs/radio/field', () => {
           name='MOCK NAME'
           id='MOCK ID'
           value='MOCK VALUE'
-          fieldRef={MOCK_FIELD_REF}
         />
       )
 
@@ -84,22 +83,46 @@ describe('#cogs/cogs/radio/field', () => {
     })
 
     describe('With additional props', () => {
-      it('renders', () => {
-        const component = (
-          <Field
-            id='MOCK ID'
-            name='MOCK NAME'
-            title='MOCK TITLE'
-            value='MOCK VALUE'
-            required
-            disabled
-            readOnly
-            fieldRef={MOCK_FIELD_REF}
-          />
-        )
+      describe('Checked is a boolean', () => {
+        it('renders', () => {
+          const component = (
+            <Field
+              id='MOCK ID'
+              name='MOCK NAME'
+              title='MOCK TITLE'
+              value='MOCK VALUE'
+              checked
+              required
+              disabled
+              readOnly
+              fieldRef={MOCK_FIELD_REF}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          return expect(renderer.create(component).toJSON())
+            .toMatchSnapshot()
+        })
+      })
+
+      describe('Default checked is a boolean', () => {
+        it('renders', () => {
+          const component = (
+            <Field
+              id='MOCK ID'
+              name='MOCK NAME'
+              title='MOCK TITLE'
+              value='MOCK VALUE'
+              defaultChecked
+              required
+              disabled
+              readOnly
+              fieldRef={MOCK_FIELD_REF}
+            />
+          )
+
+          return expect(renderer.create(component).toJSON())
+            .toMatchSnapshot()
+        })
       })
     })
 

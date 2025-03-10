@@ -16,7 +16,9 @@ describe('#cogs/components/title', () => {
   describe('<Title />', () => {
     describe('With required props', () => {
       const component = (
-        <Title id='MOCK ID' />
+        <Title
+          id='MOCK ID'
+        />
       )
 
       it('renders', () => {
@@ -101,7 +103,9 @@ describe('#cogs/components/title', () => {
     describe('`getClassName()`', () => {
       it('returns the classname', () => {
         const component = (
-          <Title id='MOCK ID' />
+          <Title
+            id='MOCK ID'
+          />
         )
 
         const instance = (

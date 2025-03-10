@@ -116,7 +116,6 @@ describe('#cogs/cogs/radio', () => {
           name='MOCK NAME'
           id='MOCK ID'
           value='MOCK VALUE'
-          fieldRef={MOCK_FIELD_REF}
         />
       )
 
@@ -162,29 +161,60 @@ describe('#cogs/cogs/radio', () => {
     })
 
     describe('With additional props', () => {
-      it('renders', () => {
-        const component = (
-          <Cog
-            name='MOCK NAME'
-            id='MOCK ID'
-            title='MOCK TITLE'
-            description='MOCK DESCRIPTION'
-            errorMessage={MOCK_ERROR_MESSAGE}
-            value='MOCK VALUE'
-            tabIndex={1}
-            accessKey='MOCK ACCESS KEY'
-            required
-            disabled
-            readOnly
-            placeholder='MOCK PLACEHOLDER'
-            fieldRef={MOCK_FIELD_REF}
-            onChange={MOCK_ON_CHANGE}
-            onClick={MOCK_ON_CLICK}
-          />
-        )
+      describe('Checked is a boolean', () => {
+        it('renders', () => {
+          const component = (
+            <Cog
+              name='MOCK NAME'
+              id='MOCK ID'
+              title='MOCK TITLE'
+              description='MOCK DESCRIPTION'
+              errorMessage={MOCK_ERROR_MESSAGE}
+              value='MOCK VALUE'
+              tabIndex={1}
+              accessKey='MOCK ACCESS KEY'
+              checked
+              required
+              disabled
+              readOnly
+              placeholder='MOCK PLACEHOLDER'
+              fieldRef={MOCK_FIELD_REF}
+              onChange={MOCK_ON_CHANGE}
+              onClick={MOCK_ON_CLICK}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          return expect(renderer.create(component).toJSON())
+            .toMatchSnapshot()
+        })
+      })
+
+      describe('Default checked is a boolean', () => {
+        it('renders', () => {
+          const component = (
+            <Cog
+              name='MOCK NAME'
+              id='MOCK ID'
+              title='MOCK TITLE'
+              description='MOCK DESCRIPTION'
+              errorMessage={MOCK_ERROR_MESSAGE}
+              value='MOCK VALUE'
+              tabIndex={1}
+              accessKey='MOCK ACCESS KEY'
+              defaultChecked
+              required
+              disabled
+              readOnly
+              placeholder='MOCK PLACEHOLDER'
+              fieldRef={MOCK_FIELD_REF}
+              onChange={MOCK_ON_CHANGE}
+              onClick={MOCK_ON_CLICK}
+            />
+          )
+
+          return expect(renderer.create(component).toJSON())
+            .toMatchSnapshot()
+        })
       })
     })
 

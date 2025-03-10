@@ -11,19 +11,19 @@ const log = debug('shinkansen-cogs/super/components')
 log('`shinkansen` is awake')
 
 const {
-  default: Description // @ts-expect-error
+  default: Description
 } = require('./description/index.jsx')
 
 const {
-  default: ErrorMessage // @ts-expect-error
+  default: ErrorMessage
 } = require('./error-message/index.jsx')
 
 const {
-  default: Field // @ts-expect-error
+  default: Field
 } = require('./field/index.jsx')
 
 const {
-  default: Title // @ts-expect-error
+  default: Title
 } = require('./title/index.jsx')
 
 module.exports.Description = Description // require('./description/index.cjs')
