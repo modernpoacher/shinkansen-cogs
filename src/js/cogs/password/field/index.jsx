@@ -24,9 +24,9 @@ export default class PasswordField extends ValueField {
 
   render () {
     const {
-      defaultValue,
       id,
       name,
+      defaultValue,
       required = false,
       disabled = false,
       readOnly = false,
@@ -45,9 +45,9 @@ export default class PasswordField extends ValueField {
 
       return (
         <input
-          value={toInputValue(value)}
           id={id}
           name={name}
+          value={toInputValue(value)}
           required={required}
           disabled={disabled}
           readOnly={readOnly}
@@ -64,9 +64,9 @@ export default class PasswordField extends ValueField {
 
     return (
       <input
-        defaultValue={String(defaultValue)}
         id={id}
         name={name}
+        defaultValue={String(defaultValue)}
         required={required}
         disabled={disabled}
         readOnly={readOnly}

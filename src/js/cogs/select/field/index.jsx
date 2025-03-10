@@ -106,9 +106,9 @@ export default class SelectField extends ValueField {
 
   render () {
     const {
-      defaultValue,
       id,
       name,
+      defaultValue,
       required = false,
       disabled = false,
       readOnly = false,
@@ -128,9 +128,15 @@ export default class SelectField extends ValueField {
 
       return (
         <select
-          value={multiple ? Array.isArray(value) ? value : [toInputValue(value)] : toInputValue(value)}
           id={id}
           name={name}
+          value={(
+            multiple
+              ? Array.isArray(value)
+                ? value
+                : [toInputValue(value)]
+              : toInputValue(value)
+          )}
           required={required}
           disabled={disabled} // @ts-ignore
           readOnly={readOnly}
@@ -147,9 +153,15 @@ export default class SelectField extends ValueField {
 
     return (
       <select
-        defaultValue={multiple ? Array.isArray(defaultValue) ? defaultValue : [String(defaultValue)] : String(defaultValue)}
         id={id}
         name={name}
+        defaultValue={(
+          multiple
+            ? Array.isArray(defaultValue)
+              ? defaultValue
+              : [String(defaultValue)]
+            : String(defaultValue)
+        )}
         required={required}
         disabled={disabled} // @ts-ignore
         readOnly={readOnly}

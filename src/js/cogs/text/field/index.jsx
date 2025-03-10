@@ -45,9 +45,9 @@ export default class TextField extends ValueField {
 
       return (
         <input
-          value={toInputValue(value)}
           id={id}
           name={name}
+          value={toInputValue(value)}
           required={required}
           disabled={disabled}
           readOnly={readOnly}
@@ -64,9 +64,9 @@ export default class TextField extends ValueField {
 
     return (
       <input
-        defaultValue={String(defaultValue)}
         id={id}
         name={name}
+        defaultValue={String(defaultValue)}
         required={required}
         disabled={disabled}
         readOnly={readOnly}

@@ -45,9 +45,9 @@ export default class TextareaField extends ValueField {
 
       return (
         <textarea
-          value={toInputValue(value)}
           id={id}
           name={name}
+          value={toInputValue(value)}
           required={required}
           disabled={disabled}
           readOnly={readOnly}
@@ -63,9 +63,9 @@ export default class TextareaField extends ValueField {
 
     return (
       <textarea
-        defaultValue={String(defaultValue)}
         id={id}
         name={name}
+        defaultValue={String(defaultValue)}
         required={required}
         disabled={disabled}
         readOnly={readOnly}
