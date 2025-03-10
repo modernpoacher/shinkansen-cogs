@@ -22,7 +22,10 @@ jest.mock('#cogs/super/components/field', () => {
 
   return {
     __esModule: true,
-    default: MockField
+    default: MockField,
+    toInputValue () {
+      return 'MOCK VALUE'
+    }
   }
 })
 

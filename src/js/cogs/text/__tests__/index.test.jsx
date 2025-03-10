@@ -68,10 +68,6 @@ jest.mock('#cogs/cogs/text/field')
 class MockErrorMessage extends mockComponent {
   state = {}
 
-  static getDerivedStateFromProps () {
-    return {}
-  }
-
   render () {
     return null
   }
@@ -222,7 +218,7 @@ describe('#cogs/cogs/text', () => {
         returnValue = instance.getClassName()
       })
 
-      it('does not invoke `classnames`', () => {
+      it('invokes `classnames`', () => {
         return expect(classnames)
           .toBeCalledWith('MOCK GETCLASSNAME', 'text')
       })
@@ -258,6 +254,9 @@ describe('#cogs/cogs/text', () => {
        */
       let instance
 
+      /**
+       *  @type {void | jest.SpyInstance}
+       */
       let getIdSpy
 
       beforeEach(() => {
@@ -403,6 +402,9 @@ describe('#cogs/cogs/text', () => {
        */
       let instance
 
+      /**
+       *  @type {void | jest.SpyInstance}
+       */
       let getIdSpy
 
       beforeEach(() => {

@@ -72,10 +72,6 @@ jest.mock('#cogs/cogs/checkbox/field')
 class MockErrorMessage extends mockComponent {
   state = {}
 
-  static getDerivedStateFromProps () {
-    return {}
-  }
-
   render () {
     return null
   }
@@ -85,6 +81,12 @@ const MOCK_ERROR_MESSAGE = {
   type: 'UNKNOWN',
   params: {},
   uri: '#/'
+}
+
+const MOCK_CHANGE_ERROR_MESSAGE = {
+  type: 'MOCK CHANGE TYPE',
+  params: {},
+  uri: 'MOCK CHANGE URI'
 }
 
 describe('#cogs/cogs/checkbox', () => {
@@ -154,29 +156,60 @@ describe('#cogs/cogs/checkbox', () => {
     })
 
     describe('With additional props', () => {
-      it('renders', () => {
-        const component = (
-          <Cog
-            name='MOCK NAME'
-            id='MOCK ID'
-            title='MOCK TITLE'
-            description='MOCK DESCRIPTION'
-            errorMessage={MOCK_ERROR_MESSAGE}
-            value='MOCK VALUE'
-            tabIndex={1}
-            accessKey='MOCK ACCESS KEY'
-            required
-            disabled
-            readOnly
-            placeholder='MOCK PLACEHOLDER'
-            fieldRef={MOCK_FIELD_REF}
-            onChange={MOCK_ON_CHANGE}
-            onClick={MOCK_ON_CLICK}
-          />
-        )
+      describe('Checked is a boolean', () => {
+        it('renders', () => {
+          const component = (
+            <Cog
+              name='MOCK NAME'
+              id='MOCK ID'
+              title='MOCK TITLE'
+              description='MOCK DESCRIPTION'
+              errorMessage={MOCK_ERROR_MESSAGE}
+              value='MOCK VALUE'
+              tabIndex={1}
+              accessKey='MOCK ACCESS KEY'
+              checked
+              required
+              disabled
+              readOnly
+              placeholder='MOCK PLACEHOLDER'
+              fieldRef={MOCK_FIELD_REF}
+              onChange={MOCK_ON_CHANGE}
+              onClick={MOCK_ON_CLICK}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          return expect(renderer.create(component).toJSON())
+            .toMatchSnapshot()
+        })
+      })
+
+      describe('Default checked is a boolean', () => {
+        it('renders', () => {
+          const component = (
+            <Cog
+              name='MOCK NAME'
+              id='MOCK ID'
+              title='MOCK TITLE'
+              description='MOCK DESCRIPTION'
+              errorMessage={MOCK_ERROR_MESSAGE}
+              value='MOCK VALUE'
+              tabIndex={1}
+              accessKey='MOCK ACCESS KEY'
+              defaultChecked
+              required
+              disabled
+              readOnly
+              placeholder='MOCK PLACEHOLDER'
+              fieldRef={MOCK_FIELD_REF}
+              onChange={MOCK_ON_CHANGE}
+              onClick={MOCK_ON_CLICK}
+            />
+          )
+
+          return expect(renderer.create(component).toJSON())
+            .toMatchSnapshot()
+        })
       })
     })
 
@@ -202,7 +235,7 @@ describe('#cogs/cogs/checkbox', () => {
         returnValue = instance.getClassName()
       })
 
-      it('does not invoke `classnames`', () => {
+      it('invokes `classnames`', () => {
         return expect(classnames)
           .toBeCalledWith('MOCK GETCLASSNAME', 'checkbox')
       })
@@ -255,7 +288,7 @@ describe('#cogs/cogs/checkbox', () => {
             id: 'MOCK CHANGE ID',
             title: 'MOCK CHANGE TITLE',
             description: 'MOCK CHANGE DESCRIPTION',
-            errorMessage: MOCK_ERROR_MESSAGE,
+            errorMessage: MOCK_CHANGE_ERROR_MESSAGE,
             value: 'MOCK CHANGE VALUE',
             tabIndex: 0,
             accessKey: 'MOCK CHANGE ACCESS KEY',
@@ -315,6 +348,9 @@ describe('#cogs/cogs/checkbox', () => {
        */
       let instance
 
+      /**
+       *  @type {void | jest.SpyInstance}
+       */
       let getIdSpy
 
       beforeEach(() => {
@@ -463,6 +499,9 @@ describe('#cogs/cogs/checkbox', () => {
        */
       let instance
 
+      /**
+       *  @type {void | jest.SpyInstance}
+       */
       let getIdSpy
 
       beforeEach(() => {

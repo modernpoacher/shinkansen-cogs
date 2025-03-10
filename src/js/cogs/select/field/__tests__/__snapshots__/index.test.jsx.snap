@@ -3,14 +3,10 @@
 exports[`#cogs/cogs/select/field <Field /> With additional props Multiple is not true Default value is a string renders 1`] = `
 <select
   className="MOCK CLASSNAME"
-  defaultValue={
-    [
-      "MOCK DEFAULT VALUE",
-    ]
-  }
+  defaultValue="MOCK DEFAULT VALUE"
   disabled={true}
   id="MOCK ID"
-  multiple={true}
+  multiple={false}
   name="MOCK NAME"
   onChange={[Function]}
   readOnly={true}
@@ -23,16 +19,12 @@ exports[`#cogs/cogs/select/field <Field /> With additional props Multiple is not
   className="MOCK CLASSNAME"
   disabled={true}
   id="MOCK ID"
-  multiple={true}
+  multiple={false}
   name="MOCK NAME"
   onChange={[Function]}
   readOnly={true}
   required={true}
-  value={
-    [
-      "MOCK VALUE",
-    ]
-  }
+  value="MOCK VALUE"
 />
 `;
 

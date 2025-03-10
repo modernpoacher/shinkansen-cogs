@@ -270,7 +270,7 @@ describe('#cogs/cogs/number', () => {
         returnValue = instance.getClassName()
       })
 
-      it('does not invoke `classnames`', () => {
+      it('invokes `classnames`', () => {
         return expect(classnames)
           .toBeCalledWith('MOCK GETCLASSNAME', 'number')
       })
@@ -306,6 +306,9 @@ describe('#cogs/cogs/number', () => {
        */
       let instance
 
+      /**
+       *  @type {void | jest.SpyInstance}
+       */
       let getIdSpy
 
       beforeEach(() => {
@@ -451,6 +454,9 @@ describe('#cogs/cogs/number', () => {
        */
       let instance
 
+      /**
+       *  @type {void | jest.SpyInstance}
+       */
       let getIdSpy
 
       beforeEach(() => {

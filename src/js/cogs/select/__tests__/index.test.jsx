@@ -72,10 +72,6 @@ jest.mock('#cogs/cogs/select/field')
 class MockErrorMessage extends mockComponent {
   state = {}
 
-  static getDerivedStateFromProps () {
-    return {}
-  }
-
   render () {
     return null
   }
@@ -195,7 +191,7 @@ describe('#cogs/cogs/select', () => {
                 title='MOCK TITLE'
                 description='MOCK DESCRIPTION'
                 errorMessage={MOCK_ERROR_MESSAGE}
-                defaultValue={['MOCK VALUE']}
+                defaultValue={['MOCK DEFAULT VALUE']}
                 tabIndex={1}
                 accessKey='MOCK ACCESS KEY'
                 required
@@ -231,7 +227,7 @@ describe('#cogs/cogs/select', () => {
                 disabled
                 readOnly
                 placeholder='MOCK PLACEHOLDER'
-                multiple
+                multiple={false}
                 fieldRef={MOCK_FIELD_REF}
                 onChange={MOCK_ON_CHANGE}
               />
@@ -251,14 +247,14 @@ describe('#cogs/cogs/select', () => {
                 title='MOCK TITLE'
                 description='MOCK DESCRIPTION'
                 errorMessage={MOCK_ERROR_MESSAGE}
-                defaultValue='MOCK VALUE'
+                defaultValue='MOCK DEFAULT VALUE'
                 tabIndex={1}
                 accessKey='MOCK ACCESS KEY'
                 required
                 disabled
                 readOnly
                 placeholder='MOCK PLACEHOLDER'
-                multiple
+                multiple={false}
                 fieldRef={MOCK_FIELD_REF}
                 onChange={MOCK_ON_CHANGE}
               />
@@ -292,7 +288,7 @@ describe('#cogs/cogs/select', () => {
         returnValue = instance.getClassName()
       })
 
-      it('does not invoke `classnames`', () => {
+      it('invokes `classnames`', () => {
         return expect(classnames)
           .toBeCalledWith('MOCK GETCLASSNAME', 'select')
       })
@@ -392,11 +388,6 @@ describe('#cogs/cogs/select', () => {
     })
 
     describe('`renderTitle()`', () => {
-      /**
-       *  @type {string[]}
-       */
-      const MOCK_VALUE = []
-
       const component = (
         <Cog
           name='MOCK NAME'
@@ -404,7 +395,7 @@ describe('#cogs/cogs/select', () => {
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
           errorMessage={MOCK_ERROR_MESSAGE}
-          value={MOCK_VALUE}
+          value={['MOCK VALUE']}
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -458,11 +449,6 @@ describe('#cogs/cogs/select', () => {
     })
 
     describe('`renderDescription()`', () => {
-      /**
-       *  @type {string[]}
-       */
-      const MOCK_VALUE = []
-
       const component = (
         <Cog
           name='MOCK NAME'
@@ -470,7 +456,7 @@ describe('#cogs/cogs/select', () => {
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
           errorMessage={MOCK_ERROR_MESSAGE}
-          value={MOCK_VALUE}
+          value={['MOCK VALUE']}
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -508,11 +494,6 @@ describe('#cogs/cogs/select', () => {
     })
 
     describe('`renderErrorMessage()`', () => {
-      /**
-       *  @type {string[]}
-       */
-      const MOCK_VALUE = []
-
       const component = (
         <Cog
           name='MOCK NAME'
@@ -520,7 +501,7 @@ describe('#cogs/cogs/select', () => {
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
           errorMessage={MOCK_ERROR_MESSAGE}
-          value={MOCK_VALUE}
+          value={['MOCK VALUE']}
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -558,11 +539,6 @@ describe('#cogs/cogs/select', () => {
     })
 
     describe('`renderField()`', () => {
-      /**
-       *  @type {string[]}
-       */
-      const MOCK_VALUE = []
-
       const component = (
         <Cog
           name='MOCK NAME'
@@ -570,7 +546,7 @@ describe('#cogs/cogs/select', () => {
           title='MOCK TITLE'
           description='MOCK DESCRIPTION'
           errorMessage={MOCK_ERROR_MESSAGE}
-          value={MOCK_VALUE}
+          value={['MOCK VALUE']}
           tabIndex={1}
           accessKey='MOCK ACCESS KEY'
           required
@@ -589,6 +565,9 @@ describe('#cogs/cogs/select', () => {
        */
       let instance
 
+      /**
+       *  @type {void | jest.SpyInstance}
+       */
       let getIdSpy
 
       beforeEach(() => {

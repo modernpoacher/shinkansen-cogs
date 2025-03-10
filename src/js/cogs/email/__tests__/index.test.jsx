@@ -65,22 +65,18 @@ jest.mock('#cogs/cogs/email/description')
 jest.mock('#cogs/cogs/email/error-message')
 jest.mock('#cogs/cogs/email/field')
 
-const MOCK_ERROR_MESSAGE = {
-  type: 'UNKNOWN',
-  params: {},
-  uri: '#/'
-}
-
 class MockErrorMessage extends mockComponent {
   state = {}
-
-  static getDerivedStateFromProps () {
-    return {}
-  }
 
   render () {
     return null
   }
+}
+
+const MOCK_ERROR_MESSAGE = {
+  type: 'UNKNOWN',
+  params: {},
+  uri: '#/'
 }
 
 describe('#cogs/cogs/email', () => {
@@ -222,7 +218,7 @@ describe('#cogs/cogs/email', () => {
         returnValue = instance.getClassName()
       })
 
-      it('does not invoke `classnames`', () => {
+      it('invokes `classnames`', () => {
         return expect(classnames)
           .toBeCalledWith('MOCK GETCLASSNAME', 'email')
       })
@@ -258,6 +254,9 @@ describe('#cogs/cogs/email', () => {
        */
       let instance
 
+      /**
+       *  @type {void | jest.SpyInstance}
+       */
       let getIdSpy
 
       beforeEach(() => {
@@ -403,6 +402,9 @@ describe('#cogs/cogs/email', () => {
        */
       let instance
 
+      /**
+       *  @type {void | jest.SpyInstance}
+       */
       let getIdSpy
 
       beforeEach(() => {

@@ -109,7 +109,7 @@ describe('#cogs/cogs/select/field', () => {
                 required
                 disabled
                 readOnly
-                multiple
+                multiple={false}
                 fieldRef={MOCK_FIELD_REF}
               />
             )
@@ -130,7 +130,7 @@ describe('#cogs/cogs/select/field', () => {
                 required
                 disabled
                 readOnly
-                multiple
+                multiple={false}
                 fieldRef={MOCK_FIELD_REF}
               />
             )

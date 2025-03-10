@@ -68,10 +68,6 @@ jest.mock('#cogs/cogs/textarea/field')
 class MockErrorMessage extends mockComponent {
   state = {}
 
-  static getDerivedStateFromProps () {
-    return {}
-  }
-
   render () {
     return null
   }
@@ -148,28 +144,56 @@ describe('#cogs/cogs/textarea', () => {
     })
 
     describe('With additional props', () => {
-      it('renders', () => {
-        const component = (
-          <Cog
-            name='MOCK NAME'
-            id='MOCK ID'
-            title='MOCK TITLE'
-            description='MOCK DESCRIPTION'
-            errorMessage={MOCK_ERROR_MESSAGE}
-            value='MOCK VALUE'
-            tabIndex={1}
-            accessKey='MOCK ACCESS KEY'
-            required
-            disabled
-            readOnly
-            placeholder='MOCK PLACEHOLDER'
-            fieldRef={MOCK_FIELD_REF}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Value is a string', () => {
+        it('renders', () => {
+          const component = (
+            <Cog
+              name='MOCK NAME'
+              id='MOCK ID'
+              title='MOCK TITLE'
+              description='MOCK DESCRIPTION'
+              errorMessage={MOCK_ERROR_MESSAGE}
+              value='MOCK VALUE'
+              tabIndex={1}
+              accessKey='MOCK ACCESS KEY'
+              required
+              disabled
+              readOnly
+              placeholder='MOCK PLACEHOLDER'
+              fieldRef={MOCK_FIELD_REF}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        return expect(renderer.create(component).toJSON())
-          .toMatchSnapshot()
+          return expect(renderer.create(component).toJSON())
+            .toMatchSnapshot()
+        })
+      })
+
+      describe('Default value is a string', () => {
+        it('renders', () => {
+          const component = (
+            <Cog
+              name='MOCK NAME'
+              id='MOCK ID'
+              title='MOCK TITLE'
+              description='MOCK DESCRIPTION'
+              errorMessage={MOCK_ERROR_MESSAGE}
+              defaultValue='MOCK DEFAULT VALUE'
+              tabIndex={1}
+              accessKey='MOCK ACCESS KEY'
+              required
+              disabled
+              readOnly
+              placeholder='MOCK PLACEHOLDER'
+              fieldRef={MOCK_FIELD_REF}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          return expect(renderer.create(component).toJSON())
+            .toMatchSnapshot()
+        })
       })
     })
 
@@ -230,6 +254,9 @@ describe('#cogs/cogs/textarea', () => {
        */
       let instance
 
+      /**
+       *  @type {void | jest.SpyInstance}
+       */
       let getIdSpy
 
       beforeEach(() => {
@@ -375,6 +402,9 @@ describe('#cogs/cogs/textarea', () => {
        */
       let instance
 
+      /**
+       *  @type {void | jest.SpyInstance}
+       */
       let getIdSpy
 
       beforeEach(() => {

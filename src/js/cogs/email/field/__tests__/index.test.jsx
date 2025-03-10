@@ -100,7 +100,6 @@ describe('#cogs/cogs/email/field', () => {
         const component = (
           <Field
             name='MOCK NAME'
-            fieldRef={MOCK_FIELD_REF}
           />
         )
 
