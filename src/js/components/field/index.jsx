@@ -88,9 +88,12 @@ export class ValueField extends Field {
       value = defaultValue
     } = this.props
 
-    const currentValue = current.value // getCurrentValue(fieldRef)
+    const was = String(value)
+    const now = current.value // getCurrentValue(fieldRef)
 
-    if (value !== currentValue) {
+    console.log(was, now)
+
+    if (was !== now) {
       current._valueTracker = {
         /**
          *  @returns {string | undefined}
@@ -102,7 +105,7 @@ export class ValueField extends Field {
          *  @returns {void}
          */
         setValue () {
-          current.value = currentValue
+          current.value = now
         }
       }
 
