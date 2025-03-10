@@ -88,7 +88,7 @@ export class ValueField extends Field {
       value = defaultValue
     } = this.props
 
-    const was = String(value)
+    const was = value === undefined ? '' : String(value)
     const now = current.value // getCurrentValue(fieldRef)
 
     console.log(was, now)
@@ -99,7 +99,7 @@ export class ValueField extends Field {
          *  @returns {string | undefined}
          */
         getValue () {
-          return String(value)
+          return was
         },
         /**
          *  @returns {void}
