@@ -29,6 +29,7 @@
     "lint": "eslint",
     "lint:fix": "npm run lint -- --fix",
     "nvm": "bash nvm.sh",
+    "prebuild": "npm run nvm",
     "prelint": "npm run nvm",
     "prepare": "husky",
     "prestorybook": "npm run build && npm run transform",
