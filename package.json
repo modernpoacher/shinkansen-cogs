@@ -31,7 +31,6 @@
     "nvm": "bash nvm.sh",
     "prelint": "npm run nvm",
     "prepare": "husky",
-    "prepublishOnly": "cross-env NODE_ENV=production npm run build",
     "prestorybook": "npm run build && npm run transform",
     "pretest": "npm run nvm",
     "storybook": "storybook dev -p 6006",
