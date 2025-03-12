@@ -87,7 +87,7 @@ describe('#cogs/cogs/password/description', () => {
 
       it('invokes `classnames`', () => {
         return expect(classnames)
-          .toBeCalledWith('MOCK GETCLASSNAME', 'password')
+          .toHaveBeenCalledWith('MOCK GETCLASSNAME', 'password')
       })
 
       it('returns the classname', () => {

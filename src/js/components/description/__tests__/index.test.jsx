@@ -43,22 +43,6 @@ describe('#cogs/components/description', () => {
       })
     })
 
-    describe('`getClassName()`', () => {
-      it('returns the classname', () => {
-        const component = (
-          <Description />
-        )
-
-        const instance = (
-          renderer.create(component)
-            .getInstance()
-        )
-
-        return expect(instance.getClassName())
-          .toBe('description')
-      })
-    })
-
     describe('`shouldComponentUpdate()`', () => {
       const component = (
         <Description
@@ -94,6 +78,22 @@ describe('#cogs/components/description', () => {
           }))
             .toBe(false)
         })
+      })
+    })
+
+    describe('`getClassName()`', () => {
+      it('returns the classname', () => {
+        const component = (
+          <Description />
+        )
+
+        const instance = (
+          renderer.create(component)
+            .getInstance()
+        )
+
+        return expect(instance.getClassName())
+          .toBe('description')
       })
     })
   })

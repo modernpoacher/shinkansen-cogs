@@ -5,6 +5,7 @@ import classnames from 'classnames'
 import {
   CheckCog
 } from '#cogs/cogs'
+
 import Cog from '#cogs/cogs/checkbox'
 
 import Title from '#cogs/cogs/checkbox/title'
@@ -213,39 +214,6 @@ describe('#cogs/cogs/checkbox', () => {
       })
     })
 
-    describe('`getClassName()`', () => {
-      let returnValue
-
-      beforeEach(() => {
-        jest.spyOn(CheckCog.prototype, 'getClassName').mockReturnValue('MOCK GETCLASSNAME')
-
-        const component = (
-          <Cog
-            name='MOCK NAME'
-            value='MOCK VALUE'
-            fieldRef={MOCK_FIELD_REF}
-          />
-        )
-
-        const instance = (
-          renderer.create(component)
-            .getInstance()
-        )
-
-        returnValue = instance.getClassName()
-      })
-
-      it('invokes `classnames`', () => {
-        return expect(classnames)
-          .toBeCalledWith('MOCK GETCLASSNAME', 'checkbox')
-      })
-
-      it('returns the classname', () => {
-        return expect(returnValue)
-          .toBe('MOCK CLASSNAME')
-      })
-    })
-
     describe('`shouldComponentUpdate()`', () => {
       const component = (
         <Cog
@@ -322,6 +290,39 @@ describe('#cogs/cogs/checkbox', () => {
       })
     })
 
+    describe('`getClassName()`', () => {
+      let returnValue
+
+      beforeEach(() => {
+        jest.spyOn(CheckCog.prototype, 'getClassName').mockReturnValue('MOCK GETCLASSNAME')
+
+        const component = (
+          <Cog
+            name='MOCK NAME'
+            value='MOCK VALUE'
+            fieldRef={MOCK_FIELD_REF}
+          />
+        )
+
+        const instance = (
+          renderer.create(component)
+            .getInstance()
+        )
+
+        returnValue = instance.getClassName()
+      })
+
+      it('invokes `classnames`', () => {
+        return expect(classnames)
+          .toHaveBeenCalledWith('MOCK GETCLASSNAME', 'checkbox')
+      })
+
+      it('returns the classname', () => {
+        return expect(returnValue)
+          .toBe('MOCK CLASSNAME')
+      })
+    })
+
     describe('`renderTitle()`', () => {
       const component = (
         <Cog
@@ -368,12 +369,12 @@ describe('#cogs/cogs/checkbox', () => {
 
       it('invokes `getId`', () => {
         return expect(getIdSpy)
-          .toBeCalled()
+          .toHaveBeenCalled()
       })
 
       it('renders `<Title />`', () => {
         return expect(Title)
-          .toBeCalledWith({
+          .toHaveBeenCalledWith({
             id: 'MOCK ID',
             title: 'MOCK TITLE',
             disabled: true,
@@ -422,7 +423,7 @@ describe('#cogs/cogs/checkbox', () => {
 
       it('renders `<Description />`', () => {
         return expect(Description)
-          .toBeCalledWith({
+          .toHaveBeenCalledWith({
             description: 'MOCK DESCRIPTION'
           }, {})
       })
@@ -467,7 +468,7 @@ describe('#cogs/cogs/checkbox', () => {
 
       it('renders `<ErrorMessage />`', () => {
         return expect(ErrorMessage)
-          .toBeCalledWith({
+          .toHaveBeenCalledWith({
             errorMessage: MOCK_ERROR_MESSAGE
           }, {})
       })
@@ -519,12 +520,12 @@ describe('#cogs/cogs/checkbox', () => {
 
       it('invokes `getId`', () => {
         return expect(getIdSpy)
-          .toBeCalled()
+          .toHaveBeenCalled()
       })
 
       it('renders `<Field />`', () => {
         return expect(Field)
-          .toBeCalledWith({
+          .toHaveBeenCalledWith({
             name: 'MOCK NAME',
             id: 'MOCK ID',
             value: 'MOCK VALUE',

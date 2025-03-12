@@ -95,7 +95,7 @@ describe('#cogs/cogs/checkbox/error-message', () => {
 
       it('invokes `classnames`', () => {
         return expect(classnames)
-          .toBeCalledWith('MOCK GETCLASSNAME', 'checkbox')
+          .toHaveBeenCalledWith('MOCK GETCLASSNAME', 'checkbox')
       })
 
       it('returns the classname', () => {

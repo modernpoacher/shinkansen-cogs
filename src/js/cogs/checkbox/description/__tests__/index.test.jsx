@@ -87,7 +87,7 @@ describe('#cogs/cogs/checkbox/description', () => {
 
       it('invokes `classnames`', () => {
         return expect(classnames)
-          .toBeCalledWith('MOCK GETCLASSNAME', 'checkbox')
+          .toHaveBeenCalledWith('MOCK GETCLASSNAME', 'checkbox')
       })
 
       it('returns the classname', () => {

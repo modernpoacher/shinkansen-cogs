@@ -97,7 +97,7 @@ describe('#cogs/cogs/radio/title', () => {
 
       it('invokes `classnames`', () => {
         return expect(classnames)
-          .toBeCalledWith('MOCK GETCLASSNAME', 'radio')
+          .toHaveBeenCalledWith('MOCK GETCLASSNAME', 'radio')
       })
 
       it('returns the classname', () => {

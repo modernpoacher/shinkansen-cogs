@@ -61,22 +61,6 @@ describe('#cogs/components/error-message', () => {
       })
     })
 
-    describe('`getClassName()`', () => {
-      it('returns the classname', () => {
-        const component = (
-          <ErrorMessage />
-        )
-
-        const instance = (
-          renderer.create(component)
-            .getInstance()
-        )
-
-        return expect(instance.getClassName())
-          .toBe('error-message')
-      })
-    })
-
     describe('`shouldComponentUpdate()`', () => {
       const component = (
         <ErrorMessage
@@ -116,6 +100,22 @@ describe('#cogs/components/error-message', () => {
           }))
             .toBe(false)
         })
+      })
+    })
+
+    describe('`getClassName()`', () => {
+      it('returns the classname', () => {
+        const component = (
+          <ErrorMessage />
+        )
+
+        const instance = (
+          renderer.create(component)
+            .getInstance()
+        )
+
+        return expect(instance.getClassName())
+          .toBe('error-message')
       })
     })
   })

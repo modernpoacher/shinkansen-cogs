@@ -5,6 +5,7 @@ import classnames from 'classnames'
 import {
   ValueCog
 } from '#cogs/cogs'
+
 import Cog from '#cogs/cogs/textarea'
 
 import Title from '#cogs/cogs/textarea/title'
@@ -220,7 +221,7 @@ describe('#cogs/cogs/textarea', () => {
 
       it('invokes `classnames`', () => {
         return expect(classnames)
-          .toBeCalledWith('MOCK GETCLASSNAME', 'textarea')
+          .toHaveBeenCalledWith('MOCK GETCLASSNAME', 'textarea')
       })
 
       it('returns the classname', () => {
@@ -274,12 +275,12 @@ describe('#cogs/cogs/textarea', () => {
 
       it('invokes `getId`', () => {
         return expect(getIdSpy)
-          .toBeCalled()
+          .toHaveBeenCalled()
       })
 
       it('renders `<Title />`', () => {
         return expect(Title)
-          .toBeCalledWith({
+          .toHaveBeenCalledWith({
             id: 'MOCK ID',
             title: 'MOCK TITLE',
             disabled: true,
@@ -327,7 +328,7 @@ describe('#cogs/cogs/textarea', () => {
 
       it('renders `<Description />`', () => {
         return expect(Description)
-          .toBeCalledWith({
+          .toHaveBeenCalledWith({
             description: 'MOCK DESCRIPTION'
           }, {})
       })
@@ -371,7 +372,7 @@ describe('#cogs/cogs/textarea', () => {
 
       it('renders `<ErrorMessage />`', () => {
         return expect(ErrorMessage)
-          .toBeCalledWith({
+          .toHaveBeenCalledWith({
             errorMessage: MOCK_ERROR_MESSAGE
           }, {})
       })
@@ -422,12 +423,12 @@ describe('#cogs/cogs/textarea', () => {
 
       it('invokes `getId`', () => {
         return expect(getIdSpy)
-          .toBeCalled()
+          .toHaveBeenCalled()
       })
 
       it('renders `<Field />`', () => {
         return expect(Field)
-          .toBeCalledWith({
+          .toHaveBeenCalledWith({
             name: 'MOCK NAME',
             id: 'MOCK ID',
             value: 'MOCK VALUE',

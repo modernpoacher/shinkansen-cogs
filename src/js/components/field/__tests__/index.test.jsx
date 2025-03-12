@@ -183,7 +183,7 @@ describe('#cogs/components/field', () => {
         instance.handleChange({ target: { value: 'MOCK VALUE' } })
 
         return expect(MOCK_ON_CHANGE)
-          .toBeCalledWith('MOCK NAME', 'MOCK VALUE')
+          .toHaveBeenCalledWith('MOCK NAME', 'MOCK VALUE')
       })
     })
   })
@@ -392,7 +392,7 @@ describe('#cogs/components/field', () => {
         instance.handleClick({ target: { value: 'MOCK VALUE', checked: 'MOCK CHECKED' } })
 
         return expect(MOCK_ON_CLICK)
-          .toBeCalledWith('MOCK NAME', 'MOCK VALUE', 'MOCK CHECKED')
+          .toHaveBeenCalledWith('MOCK NAME', 'MOCK VALUE', 'MOCK CHECKED')
       })
     })
 
@@ -414,7 +414,7 @@ describe('#cogs/components/field', () => {
         instance.handleChange({ target: { value: 'MOCK VALUE', checked: 'MOCK CHECKED' } })
 
         return expect(MOCK_ON_CHANGE)
-          .toBeCalledWith('MOCK NAME', 'MOCK VALUE', 'MOCK CHECKED')
+          .toHaveBeenCalledWith('MOCK NAME', 'MOCK VALUE', 'MOCK CHECKED')
       })
     })
   })

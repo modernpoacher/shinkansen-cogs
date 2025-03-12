@@ -59,24 +59,6 @@ describe('#cogs/super/components/field', () => {
       })
     })
 
-    describe('`getClassName()`', () => {
-      it('returns the classname', () => {
-        const component = (
-          <Field
-            name='MOCK NAME'
-          />
-        )
-
-        const instance = (
-          renderer.create(component)
-            .getInstance()
-        )
-
-        return expect(instance.getClassName())
-          .toBe('input')
-      })
-    })
-
     describe('`shouldComponentUpdate()`', () => {
       const component = (
         <Field
@@ -142,6 +124,24 @@ describe('#cogs/super/components/field', () => {
           }))
             .toBe(false)
         })
+      })
+    })
+
+    describe('`getClassName()`', () => {
+      it('returns the classname', () => {
+        const component = (
+          <Field
+            name='MOCK NAME'
+          />
+        )
+
+        const instance = (
+          renderer.create(component)
+            .getInstance()
+        )
+
+        return expect(instance.getClassName())
+          .toBe('input')
       })
     })
   })

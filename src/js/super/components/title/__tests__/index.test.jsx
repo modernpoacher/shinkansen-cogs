@@ -100,24 +100,6 @@ describe('#cogs/components/title', () => {
       })
     })
 
-    describe('`getClassName()`', () => {
-      it('returns the classname', () => {
-        const component = (
-          <Title
-            id='MOCK ID'
-          />
-        )
-
-        const instance = (
-          renderer.create(component)
-            .getInstance()
-        )
-
-        return expect(instance.getClassName())
-          .toBe('title')
-      })
-    })
-
     describe('`shouldComponentUpdate()`', () => {
       const component = (
         <Title
@@ -171,6 +153,24 @@ describe('#cogs/components/title', () => {
       })
     })
 
+    describe('`getClassName()`', () => {
+      it('returns the classname', () => {
+        const component = (
+          <Title
+            id='MOCK ID'
+          />
+        )
+
+        const instance = (
+          renderer.create(component)
+            .getInstance()
+        )
+
+        return expect(instance.getClassName())
+          .toBe('title')
+      })
+    })
+
     describe('`renderIsRequired()`', () => {
       const component = (
         <Title
@@ -204,12 +204,12 @@ describe('#cogs/components/title', () => {
 
       it('invokes `isRequired`', () => {
         return expect(isRequiredSpy)
-          .toBeCalled()
+          .toHaveBeenCalled()
       })
 
       xit('renders `<Required />`', () => {
         return expect(Required)
-          .toBeCalled()
+          .toHaveBeenCalled()
       })
     })
 
@@ -246,12 +246,12 @@ describe('#cogs/components/title', () => {
 
       it('invokes `isDisabled`', () => {
         return expect(isDisabledSpy)
-          .toBeCalled()
+          .toHaveBeenCalled()
       })
 
       xit('renders `<Disabled />`', () => {
         return expect(Disabled)
-          .toBeCalled()
+          .toHaveBeenCalled()
       })
     })
 
@@ -288,12 +288,12 @@ describe('#cogs/components/title', () => {
 
       it('invokes `isReadOnly`', () => {
         return expect(isReadOnlySpy)
-          .toBeCalled()
+          .toHaveBeenCalled()
       })
 
       xit('renders `<ReadOnly />`', () => {
         return expect(ReadOnly)
-          .toBeCalled()
+          .toHaveBeenCalled()
       })
     })
   })

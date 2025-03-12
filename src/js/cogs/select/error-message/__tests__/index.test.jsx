@@ -95,7 +95,7 @@ describe('#cogs/cogs/select/error-message', () => {
 
       it('invokes `classnames`', () => {
         return expect(classnames)
-          .toBeCalledWith('MOCK GETCLASSNAME', 'select')
+          .toHaveBeenCalledWith('MOCK GETCLASSNAME', 'select')
       })
 
       it('returns the classname', () => {

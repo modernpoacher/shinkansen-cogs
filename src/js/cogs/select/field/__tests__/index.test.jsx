@@ -142,37 +142,6 @@ describe('#cogs/cogs/select/field', () => {
       })
     })
 
-    describe('`getClassName()`', () => {
-      let returnValue
-
-      beforeEach(() => {
-        jest.spyOn(ValueField.prototype, 'getClassName').mockReturnValue('MOCK GETCLASSNAME')
-
-        const component = (
-          <Field
-            name='MOCK NAME'
-          />
-        )
-
-        const instance = (
-          renderer.create(component)
-            .getInstance()
-        )
-
-        returnValue = instance.getClassName()
-      })
-
-      it('invokes `classnames`', () => {
-        return expect(classnames)
-          .toBeCalledWith('MOCK GETCLASSNAME', 'select')
-      })
-
-      it('returns the classname', () => {
-        return expect(returnValue)
-          .toBe('MOCK CLASSNAME')
-      })
-    })
-
     describe('`shouldComponentUpdate()`', () => {
       const component = (
         <Field
@@ -246,6 +215,37 @@ describe('#cogs/cogs/select/field', () => {
           }))
             .toBe(false)
         })
+      })
+    })
+
+    describe('`getClassName()`', () => {
+      let returnValue
+
+      beforeEach(() => {
+        jest.spyOn(ValueField.prototype, 'getClassName').mockReturnValue('MOCK GETCLASSNAME')
+
+        const component = (
+          <Field
+            name='MOCK NAME'
+          />
+        )
+
+        const instance = (
+          renderer.create(component)
+            .getInstance()
+        )
+
+        returnValue = instance.getClassName()
+      })
+
+      it('invokes `classnames`', () => {
+        return expect(classnames)
+          .toHaveBeenCalledWith('MOCK GETCLASSNAME', 'select')
+      })
+
+      it('returns the classname', () => {
+        return expect(returnValue)
+          .toBe('MOCK CLASSNAME')
       })
     })
   })

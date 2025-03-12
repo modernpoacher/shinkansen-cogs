@@ -99,213 +99,6 @@ describe('#cogs/super/cogs', () => {
       })
     })
 
-    describe('`getClassName()`', () => {
-      beforeEach(() => {
-        classnames.mockReset()
-      })
-
-      describe('With required props', () => {
-        let returnValue
-
-        beforeEach(() => {
-          classnames.mockReturnValue('MOCK CLASSNAME')
-
-          const component = (
-            <Cog
-              name='MOCK NAME'
-              fieldRef={MOCK_FIELD_REF}
-            />
-          )
-
-          const instance = (
-            renderer.create(component)
-              .getInstance()
-          )
-
-          returnValue = instance.getClassName()
-        })
-
-        it('invokes `classnames`', () => {
-          return expect(classnames)
-            .toBeCalledWith('cog', { required: false, disabled: false, readOnly: false, error: false })
-        })
-
-        it('returns the classname', () => {
-          return expect(returnValue)
-            .toBe('MOCK CLASSNAME')
-        })
-      })
-
-      describe('With additional props', () => {
-        describe('`props` has `required`', () => {
-          let returnValue
-
-          beforeEach(() => {
-            classnames.mockReturnValue('MOCK CLASSNAME')
-
-            const component = (
-              <Cog
-                name='MOCK NAME'
-                required
-                fieldRef={MOCK_FIELD_REF}
-              />
-            )
-
-            const instance = (
-              renderer.create(component)
-                .getInstance()
-            )
-
-            returnValue = instance.getClassName()
-          })
-
-          it('invokes `classnames`', () => {
-            return expect(classnames)
-              .toBeCalledWith('cog', { required: true, disabled: false, readOnly: false, error: false })
-          })
-
-          it('returns the classname', () => {
-            return expect(returnValue)
-              .toBe('MOCK CLASSNAME')
-          })
-        })
-
-        describe('`props` has `disabled`', () => {
-          let returnValue
-
-          beforeEach(() => {
-            classnames.mockReturnValue('MOCK CLASSNAME')
-
-            const component = (
-              <Cog
-                name='MOCK NAME'
-                disabled
-                fieldRef={MOCK_FIELD_REF}
-              />
-            )
-
-            const instance = (
-              renderer.create(component)
-                .getInstance()
-            )
-
-            returnValue = instance.getClassName()
-          })
-
-          it('invokes `classnames`', () => {
-            return expect(classnames)
-              .toBeCalledWith('cog', { required: false, disabled: true, readOnly: false, error: false })
-          })
-
-          it('returns the classname', () => {
-            return expect(returnValue)
-              .toBe('MOCK CLASSNAME')
-          })
-        })
-
-        describe('`props` has `readOnly`', () => {
-          let returnValue
-
-          beforeEach(() => {
-            classnames.mockReturnValue('MOCK CLASSNAME')
-
-            const component = (
-              <Cog
-                name='MOCK NAME'
-                readOnly
-                fieldRef={MOCK_FIELD_REF}
-              />
-            )
-
-            const instance = (
-              renderer.create(component)
-                .getInstance()
-            )
-
-            returnValue = instance.getClassName()
-          })
-
-          it('invokes `classnames`', () => {
-            return expect(classnames)
-              .toBeCalledWith('cog', { required: false, disabled: false, readOnly: true, error: false })
-          })
-
-          it('returns the classname', () => {
-            return expect(returnValue)
-              .toBe('MOCK CLASSNAME')
-          })
-        })
-
-        describe('`props` has `errorMessage`', () => {
-          let returnValue
-
-          beforeEach(() => {
-            classnames.mockReturnValue('MOCK CLASSNAME')
-
-            const component = (
-              <Cog
-                name='MOCK NAME'
-                errorMessage={MOCK_ERROR_MESSAGE}
-                fieldRef={MOCK_FIELD_REF}
-              />
-            )
-
-            const instance = (
-              renderer.create(component)
-                .getInstance()
-            )
-
-            returnValue = instance.getClassName()
-          })
-
-          it('invokes `classnames`', () => {
-            return expect(classnames)
-              .toBeCalledWith('cog', { required: false, disabled: false, readOnly: false, error: true })
-          })
-
-          it('returns the classname', () => {
-            return expect(returnValue)
-              .toBe('MOCK CLASSNAME')
-          })
-        })
-      })
-    })
-
-    describe('`getId()`', () => {
-      describe('With required props', () => {
-        describe('`props` has `name`', () => {
-          it('returns the id', () => {
-            const component = (
-              <Cog
-                name='MOCK NAME'
-                fieldRef={MOCK_FIELD_REF}
-              />
-            )
-
-            return expect(renderer.create(component).getInstance().getId())
-              .toBe('MOCK NAME')
-          })
-        })
-      })
-
-      describe('With additional props', () => {
-        describe('`props` has `id`', () => {
-          it('returns the id', () => {
-            const component = (
-              <Cog
-                name='MOCK NAME'
-                id='MOCK ID'
-                fieldRef={MOCK_FIELD_REF}
-              />
-            )
-
-            return expect(renderer.create(component).getInstance().getId())
-              .toBe('MOCK ID')
-          })
-        })
-      })
-    })
-
     describe('`shouldComponentUpdate()`', () => {
       const component = (
         <Cog
@@ -369,6 +162,213 @@ describe('#cogs/super/cogs', () => {
       })
     })
 
+    describe('`getClassName()`', () => {
+      beforeEach(() => {
+        classnames.mockReset()
+      })
+
+      describe('With required props', () => {
+        let returnValue
+
+        beforeEach(() => {
+          classnames.mockReturnValue('MOCK CLASSNAME')
+
+          const component = (
+            <Cog
+              name='MOCK NAME'
+              fieldRef={MOCK_FIELD_REF}
+            />
+          )
+
+          const instance = (
+            renderer.create(component)
+              .getInstance()
+          )
+
+          returnValue = instance.getClassName()
+        })
+
+        it('invokes `classnames`', () => {
+          return expect(classnames)
+            .toHaveBeenCalledWith('cog', { required: false, disabled: false, readOnly: false, error: false })
+        })
+
+        it('returns the classname', () => {
+          return expect(returnValue)
+            .toBe('MOCK CLASSNAME')
+        })
+      })
+
+      describe('With additional props', () => {
+        describe('`props` has `required`', () => {
+          let returnValue
+
+          beforeEach(() => {
+            classnames.mockReturnValue('MOCK CLASSNAME')
+
+            const component = (
+              <Cog
+                name='MOCK NAME'
+                required
+                fieldRef={MOCK_FIELD_REF}
+              />
+            )
+
+            const instance = (
+              renderer.create(component)
+                .getInstance()
+            )
+
+            returnValue = instance.getClassName()
+          })
+
+          it('invokes `classnames`', () => {
+            return expect(classnames)
+              .toHaveBeenCalledWith('cog', { required: true, disabled: false, readOnly: false, error: false })
+          })
+
+          it('returns the classname', () => {
+            return expect(returnValue)
+              .toBe('MOCK CLASSNAME')
+          })
+        })
+
+        describe('`props` has `disabled`', () => {
+          let returnValue
+
+          beforeEach(() => {
+            classnames.mockReturnValue('MOCK CLASSNAME')
+
+            const component = (
+              <Cog
+                name='MOCK NAME'
+                disabled
+                fieldRef={MOCK_FIELD_REF}
+              />
+            )
+
+            const instance = (
+              renderer.create(component)
+                .getInstance()
+            )
+
+            returnValue = instance.getClassName()
+          })
+
+          it('invokes `classnames`', () => {
+            return expect(classnames)
+              .toHaveBeenCalledWith('cog', { required: false, disabled: true, readOnly: false, error: false })
+          })
+
+          it('returns the classname', () => {
+            return expect(returnValue)
+              .toBe('MOCK CLASSNAME')
+          })
+        })
+
+        describe('`props` has `readOnly`', () => {
+          let returnValue
+
+          beforeEach(() => {
+            classnames.mockReturnValue('MOCK CLASSNAME')
+
+            const component = (
+              <Cog
+                name='MOCK NAME'
+                readOnly
+                fieldRef={MOCK_FIELD_REF}
+              />
+            )
+
+            const instance = (
+              renderer.create(component)
+                .getInstance()
+            )
+
+            returnValue = instance.getClassName()
+          })
+
+          it('invokes `classnames`', () => {
+            return expect(classnames)
+              .toHaveBeenCalledWith('cog', { required: false, disabled: false, readOnly: true, error: false })
+          })
+
+          it('returns the classname', () => {
+            return expect(returnValue)
+              .toBe('MOCK CLASSNAME')
+          })
+        })
+
+        describe('`props` has `errorMessage`', () => {
+          let returnValue
+
+          beforeEach(() => {
+            classnames.mockReturnValue('MOCK CLASSNAME')
+
+            const component = (
+              <Cog
+                name='MOCK NAME'
+                errorMessage={MOCK_ERROR_MESSAGE}
+                fieldRef={MOCK_FIELD_REF}
+              />
+            )
+
+            const instance = (
+              renderer.create(component)
+                .getInstance()
+            )
+
+            returnValue = instance.getClassName()
+          })
+
+          it('invokes `classnames`', () => {
+            return expect(classnames)
+              .toHaveBeenCalledWith('cog', { required: false, disabled: false, readOnly: false, error: true })
+          })
+
+          it('returns the classname', () => {
+            return expect(returnValue)
+              .toBe('MOCK CLASSNAME')
+          })
+        })
+      })
+    })
+
+    describe('`getId()`', () => {
+      describe('With required props', () => {
+        describe('`props` has `name`', () => {
+          it('returns the id', () => {
+            const component = (
+              <Cog
+                name='MOCK NAME'
+                fieldRef={MOCK_FIELD_REF}
+              />
+            )
+
+            return expect(renderer.create(component).getInstance().getId())
+              .toBe('MOCK NAME')
+          })
+        })
+      })
+
+      describe('With additional props', () => {
+        describe('`props` has `id`', () => {
+          it('returns the id', () => {
+            const component = (
+              <Cog
+                name='MOCK NAME'
+                id='MOCK ID'
+                fieldRef={MOCK_FIELD_REF}
+              />
+            )
+
+            return expect(renderer.create(component).getInstance().getId())
+              .toBe('MOCK ID')
+          })
+        })
+      })
+    })
+
     describe('`renderTitle()`', () => {
       const component = (
         <Cog
@@ -410,12 +410,12 @@ describe('#cogs/super/cogs', () => {
 
       it('invokes `getId`', () => {
         return expect(getIdSpy)
-          .toBeCalled()
+          .toHaveBeenCalled()
       })
 
       it('renders `<Title />`', () => {
         return expect(Title)
-          .toBeCalledWith({
+          .toHaveBeenCalledWith({
             id: 'MOCK ID',
             title: 'MOCK TITLE',
             disabled: true,
@@ -466,12 +466,12 @@ describe('#cogs/super/cogs', () => {
 
       it('invokes `getId`', () => {
         return expect(getIdSpy)
-          .toBeCalled()
+          .toHaveBeenCalled()
       })
 
       it('renders `<Field />`', () => {
         return expect(Field)
-          .toBeCalledWith({
+          .toHaveBeenCalledWith({
             name: 'MOCK NAME',
             id: 'MOCK ID',
             tabIndex: 1,

@@ -97,7 +97,7 @@ describe('#cogs/cogs/select/title', () => {
 
       it('invokes `classnames`', () => {
         return expect(classnames)
-          .toBeCalledWith('MOCK GETCLASSNAME', 'select')
+          .toHaveBeenCalledWith('MOCK GETCLASSNAME', 'select')
       })
 
       it('returns the classname', () => {

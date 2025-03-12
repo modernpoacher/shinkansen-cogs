@@ -113,7 +113,7 @@ describe('#cogs/cogs/textarea/field', () => {
 
       it('invokes `classnames`', () => {
         return expect(classnames)
-          .toBeCalledWith('MOCK GETCLASSNAME', 'textarea')
+          .toHaveBeenCalledWith('MOCK GETCLASSNAME', 'textarea')
       })
 
       it('returns the classname', () => {

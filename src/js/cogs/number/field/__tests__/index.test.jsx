@@ -153,7 +153,7 @@ describe('#cogs/cogs/number/field', () => {
 
       it('invokes `classnames`', () => {
         return expect(classnames)
-          .toBeCalledWith('MOCK GETCLASSNAME', 'number')
+          .toHaveBeenCalledWith('MOCK GETCLASSNAME', 'number')
       })
 
       it('returns the classname', () => {

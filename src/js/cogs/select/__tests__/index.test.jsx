@@ -5,6 +5,7 @@ import classnames from 'classnames'
 import {
   ValueCog
 } from '#cogs/cogs'
+
 import Cog from '#cogs/cogs/select'
 
 import Title from '#cogs/cogs/select/title'
@@ -267,38 +268,6 @@ describe('#cogs/cogs/select', () => {
       })
     })
 
-    describe('`getClassName()`', () => {
-      let returnValue
-
-      beforeEach(() => {
-        jest.spyOn(ValueCog.prototype, 'getClassName').mockReturnValue('MOCK GETCLASSNAME')
-
-        const component = (
-          <Cog
-            name='MOCK NAME'
-            fieldRef={MOCK_FIELD_REF}
-          />
-        )
-
-        const instance = (
-          renderer.create(component)
-            .getInstance()
-        )
-
-        returnValue = instance.getClassName()
-      })
-
-      it('invokes `classnames`', () => {
-        return expect(classnames)
-          .toBeCalledWith('MOCK GETCLASSNAME', 'select')
-      })
-
-      it('returns the classname', () => {
-        return expect(returnValue)
-          .toBe('MOCK CLASSNAME')
-      })
-    })
-
     describe('`shouldComponentUpdate()`', () => {
       /**
        *  @type {string[]}
@@ -387,6 +356,38 @@ describe('#cogs/cogs/select', () => {
       })
     })
 
+    describe('`getClassName()`', () => {
+      let returnValue
+
+      beforeEach(() => {
+        jest.spyOn(ValueCog.prototype, 'getClassName').mockReturnValue('MOCK GETCLASSNAME')
+
+        const component = (
+          <Cog
+            name='MOCK NAME'
+            fieldRef={MOCK_FIELD_REF}
+          />
+        )
+
+        const instance = (
+          renderer.create(component)
+            .getInstance()
+        )
+
+        returnValue = instance.getClassName()
+      })
+
+      it('invokes `classnames`', () => {
+        return expect(classnames)
+          .toHaveBeenCalledWith('MOCK GETCLASSNAME', 'select')
+      })
+
+      it('returns the classname', () => {
+        return expect(returnValue)
+          .toBe('MOCK CLASSNAME')
+      })
+    })
+
     describe('`renderTitle()`', () => {
       const component = (
         <Cog
@@ -433,12 +434,12 @@ describe('#cogs/cogs/select', () => {
 
       it('invokes `getId`', () => {
         return expect(getIdSpy)
-          .toBeCalled()
+          .toHaveBeenCalled()
       })
 
       it('renders `<Title />`', () => {
         return expect(Title)
-          .toBeCalledWith({
+          .toHaveBeenCalledWith({
             id: 'MOCK ID',
             title: 'MOCK TITLE',
             disabled: true,
@@ -487,7 +488,7 @@ describe('#cogs/cogs/select', () => {
 
       it('renders `<Description />`', () => {
         return expect(Description)
-          .toBeCalledWith({
+          .toHaveBeenCalledWith({
             description: 'MOCK DESCRIPTION'
           }, {})
       })
@@ -532,7 +533,7 @@ describe('#cogs/cogs/select', () => {
 
       it('renders `<ErrorMessage />`', () => {
         return expect(ErrorMessage)
-          .toBeCalledWith({
+          .toHaveBeenCalledWith({
             errorMessage: MOCK_ERROR_MESSAGE
           }, {})
       })
@@ -585,12 +586,12 @@ describe('#cogs/cogs/select', () => {
 
       it('invokes `getId`', () => {
         return expect(getIdSpy)
-          .toBeCalled()
+          .toHaveBeenCalled()
       })
 
       it('renders `<Field />`', () => {
         return expect(Field)
-          .toBeCalledWith({
+          .toHaveBeenCalledWith({
             name: 'MOCK NAME',
             id: 'MOCK ID',
             value: expect.any(Array),

@@ -151,7 +151,7 @@ describe('#cogs/cogs/checkbox/field', () => {
 
       it('invokes `classnames`', () => {
         return expect(classnames)
-          .toBeCalledWith('MOCK GETCLASSNAME', 'checkbox')
+          .toHaveBeenCalledWith('MOCK GETCLASSNAME', 'checkbox')
       })
 
       it('returns the classname', () => {
@@ -181,7 +181,7 @@ describe('#cogs/cogs/checkbox/field', () => {
         instance.handleClick({ target: { value: 'MOCK VALUE', checked: 'MOCK CHECKED' } })
 
         return expect(MOCK_ON_CLICK)
-          .toBeCalledWith('MOCK NAME', 'MOCK VALUE', 'MOCK CHECKED')
+          .toHaveBeenCalledWith('MOCK NAME', 'MOCK VALUE', 'MOCK CHECKED')
       })
     })
 
@@ -206,7 +206,7 @@ describe('#cogs/cogs/checkbox/field', () => {
         instance.handleChange({ target: { value: 'MOCK VALUE', checked: 'MOCK CHECKED' } })
 
         return expect(MOCK_ON_CHANGE)
-          .toBeCalledWith('MOCK NAME', 'MOCK VALUE', 'MOCK CHECKED')
+          .toHaveBeenCalledWith('MOCK NAME', 'MOCK VALUE', 'MOCK CHECKED')
       })
     })
   })
