@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`#cogs/cogs/radio/field <Field /> With additional props Checked is a boolean renders 1`] = `
+exports[`#cogs/cogs/radio/field <Field /> With additional props Checked is a boolean matches the snapshot 1`] = `
 <input
   checked={true}
   className="MOCK CLASSNAME"
@@ -16,7 +16,7 @@ exports[`#cogs/cogs/radio/field <Field /> With additional props Checked is a boo
 />
 `;
 
-exports[`#cogs/cogs/radio/field <Field /> With additional props Default checked is a boolean renders 1`] = `
+exports[`#cogs/cogs/radio/field <Field /> With additional props Default checked is a boolean matches the snapshot 1`] = `
 <input
   className="MOCK CLASSNAME"
   defaultChecked={true}
@@ -32,7 +32,7 @@ exports[`#cogs/cogs/radio/field <Field /> With additional props Default checked 
 />
 `;
 
-exports[`#cogs/cogs/radio/field <Field /> With required props renders 1`] = `
+exports[`#cogs/cogs/radio/field <Field /> With required props matches the snapshot 1`] = `
 <input
   className="MOCK CLASSNAME"
   disabled={false}

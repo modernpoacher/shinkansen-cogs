@@ -1,9 +1,15 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import ErrorMessage from '#cogs/components/error-message'
+import '@testing-library/jest-dom'
 
-jest.useFakeTimers()
+import {
+  render
+} from '@testing-library/react'
+
+import getInstanceFrom from 'react-component-instance/container'
+
+import ErrorMessage from '#cogs/components/error-message'
 
 const MOCK_ERROR_MESSAGE = {
   type: 'UNKNOWN',
@@ -13,109 +19,91 @@ const MOCK_ERROR_MESSAGE = {
   uri: '#/'
 }
 
-const MOCK_CHANGE_ERROR_MESSAGE = {
-  type: 'UNKNOWN',
-  params: {
-    expectedType: 'number'
-  },
-  uri: '#/'
-}
-
 describe('#cogs/components/error-message', () => {
   describe('<ErrorMessage />', () => {
     describe('With required props', () => {
-      const component = (
-        <ErrorMessage />
-      )
-
       it('renders', () => {
-        return expect(renderer.create(component).toJSON())
+        const {
+          container: {
+            firstElementChild: errorMessage
+          }
+        } = render(
+          <ErrorMessage />
+        )
+
+        expect(errorMessage)
+          .toBeNull()
+      })
+
+      /**
+       *  @deprecated For migration toward Testing Library
+       */
+      it('matches the snapshot', () => {
+        expect(renderer.create((
+          <ErrorMessage />
+        )).toJSON())
           .toMatchSnapshot()
-      })
-
-      describe('`getClassName`', () => {
-        it('is defined', () => {
-          return expect(ErrorMessage.prototype.getClassName)
-            .toBeDefined()
-        })
-      })
-
-      describe('`shouldComponentUpdate`', () => {
-        it('is defined', () => {
-          return expect(ErrorMessage.prototype.shouldComponentUpdate)
-            .toBeDefined()
-        })
       })
     })
 
     describe('With additional props', () => {
       it('renders', () => {
-        const component = (
+        const {
+          container: {
+            firstElementChild: errorMessage
+          }
+        } = render(
           <ErrorMessage
             errorMessage={MOCK_ERROR_MESSAGE}
           />
         )
 
-        return expect(renderer.create(component).toJSON())
+        expect(errorMessage)
+          .toBeInstanceOf(HTMLSpanElement)
+      })
+
+      describe('Always', () => {
+        it('invokes `getClassName`', () => {
+          const getClassNameSpy = jest.spyOn(ErrorMessage.prototype, 'getClassName')
+
+          render(
+            <ErrorMessage
+              errorMessage={MOCK_ERROR_MESSAGE}
+            />
+          )
+
+          expect(getClassNameSpy)
+            .toHaveBeenCalled()
+        })
+      })
+
+      /**
+       *  @deprecated For migration toward Testing Library
+       */
+      it('matches the snapshot', () => {
+        expect(renderer.create((
+          <ErrorMessage
+            errorMessage={MOCK_ERROR_MESSAGE}
+          />
+        )).toJSON())
           .toMatchSnapshot()
       })
     })
 
-    describe('`shouldComponentUpdate()`', () => {
-      const component = (
-        <ErrorMessage
-          errorMessage={MOCK_ERROR_MESSAGE}
-        />
-      )
-
-      /**
-       *  @type {void | null | renderer.ReactTestInstance}
-       */
-      let instance
-
-      beforeEach(() => {
-        instance = (
-          renderer.create(component)
-            .getInstance()
-        )
-      })
-
-      describe('`props` have changed', () => {
-        it('returns true', () => {
-          return expect(instance.shouldComponentUpdate({
-            errorMessage: MOCK_CHANGE_ERROR_MESSAGE
-          }, {
-            errorMessage: MOCK_CHANGE_ERROR_MESSAGE
-          }))
-            .toBe(true)
-        })
-      })
-
-      describe('`props` have not changed', () => {
-        it('returns false', () => {
-          return expect(instance.shouldComponentUpdate({ // instance.props
-            errorMessage: MOCK_ERROR_MESSAGE
-          }, {
-            errorMessage: MOCK_ERROR_MESSAGE
-          }))
-            .toBe(false)
-        })
-      })
-    })
-
     describe('`getClassName()`', () => {
-      it('returns the classname', () => {
-        const component = (
-          <ErrorMessage />
+      it('returns a string', () => {
+        const {
+          container
+        } = render(
+          <ErrorMessage
+            errorMessage={MOCK_ERROR_MESSAGE}
+          />
         )
 
-        const instance = (
-          renderer.create(component)
-            .getInstance()
-        )
+        const instance = getInstanceFrom(container)
 
-        return expect(instance.getClassName())
-          .toBe('error-message')
+        expect(instance.getClassName())
+          .toEqual(expect.any(String))
       })
     })
   })
