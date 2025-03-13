@@ -106,8 +106,8 @@ export default class SelectField extends ValueField {
 
   render () {
     const {
-      id,
       name,
+      id,
       defaultValue,
       required = false,
       disabled = false,
@@ -128,8 +128,8 @@ export default class SelectField extends ValueField {
 
       return (
         <select
-          id={id}
           name={name}
+          id={id}
           value={(
             multiple
               ? Array.isArray(value)
@@ -153,8 +153,8 @@ export default class SelectField extends ValueField {
 
     return (
       <select
-        id={id}
         name={name}
+        id={id}
         defaultValue={(
           multiple
             ? Array.isArray(defaultValue)

@@ -16,6 +16,8 @@ declare module '#cogs/super/components/title' {
 
     shouldComponentUpdate (props: TitleProps): boolean
 
+    renderTextContent (textContent: string) : React.JSX.Element
+
     renderIsRequired (): React.JSX.Element | null
 
     renderIsDisabled (): React.JSX.Element | null

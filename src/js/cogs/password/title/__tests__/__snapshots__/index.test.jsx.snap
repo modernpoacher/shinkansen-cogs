@@ -1,12 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`#cogs/cogs/password/title <Title /> With additional props renders 1`] = `
+exports[`#cogs/cogs/password/title <Title /> With additional props matches the snapshot 1`] = `
 <label
   className="MOCK CLASSNAME"
   htmlFor="MOCK ID"
 >
-  MOCK TITLE
+  <span
+    className="text-content"
+  >
+    MOCK TITLE
+  </span>
+  <span
+    className="is-required"
+  >
+    *
+  </span>
+  <span
+    className="is-disabled"
+  >
+    *
+  </span>
+  <span
+    className="is-readonly"
+  >
+    *
+  </span>
 </label>
 `;
 
-exports[`#cogs/cogs/password/title <Title /> With required props renders 1`] = `null`;
+exports[`#cogs/cogs/password/title <Title /> With required props matches the snapshot 1`] = `null`;

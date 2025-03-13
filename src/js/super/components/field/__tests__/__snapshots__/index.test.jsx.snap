@@ -1,22 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`#cogs/super/components/field <Field /> With additional props renders 1`] = `
+exports[`#cogs/super/components/field <Field /> With additional props matches the snapshot 1`] = `
 <input
-  accessKey="MOCK ACCESS KEY"
   className="input"
   disabled={true}
   id="MOCK ID"
+  name="MOCK NAME"
+  onChange={[Function]}
   placeholder="MOCK PLACEHOLDER"
   readOnly={true}
   required={true}
-  tabIndex={1}
+  value="MOCK VALUE"
 />
 `;
 
-exports[`#cogs/super/components/field <Field /> With required props renders 1`] = `
+exports[`#cogs/super/components/field <Field /> With required props matches the snapshot 1`] = `
 <input
   className="input"
   disabled={false}
+  name="MOCK NAME"
+  onChange={[Function]}
   readOnly={false}
   required={false}
 />

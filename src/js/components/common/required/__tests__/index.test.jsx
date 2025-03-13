@@ -1,14 +1,34 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import Required from '#cogs/components/common/required'
+import '@testing-library/jest-dom'
 
-jest.useFakeTimers()
+import {
+  render
+} from '@testing-library/react'
+
+import Required from '#cogs/components/common/required'
 
 describe('#cogs/components/common/required', () => {
   describe('<Required />', () => {
     it('renders', () => {
-      return expect(renderer.create(<Required />).toJSON())
+      const {
+        container: {
+          firstElementChild: required
+        }
+      } = render(
+        <Required />
+      )
+
+      expect(required)
+        .toBeInstanceOf(HTMLSpanElement)
+    })
+
+    /**
+     *  @deprecated For migration toward Testing Library
+     */
+    it('matches the snapshot', () => {
+      expect(renderer.create(<Required />).toJSON())
         .toMatchSnapshot()
     })
   })

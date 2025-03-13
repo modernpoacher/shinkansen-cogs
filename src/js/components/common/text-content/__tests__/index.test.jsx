@@ -1,17 +1,35 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import TextContent from '#cogs/components/common/text-content'
+import '@testing-library/jest-dom'
 
-jest.useFakeTimers()
+import {
+  render
+} from '@testing-library/react'
+
+import TextContent from '#cogs/components/common/text-content'
 
 describe('#cogs/components/common/text-content', () => {
   describe('<TextContent />', () => {
-    describe('With required props', () => {
-      it('renders', () => {
-        return expect(renderer.create(<TextContent textContent='MOCK TEXT CONTENT' />).toJSON())
-          .toMatchSnapshot()
-      })
+    it('renders', () => {
+      const {
+        container: {
+          firstElementChild: textContent
+        }
+      } = render(
+        <TextContent textContent='MOCK TEXT CONTENT' />
+      )
+
+      expect(textContent)
+        .toBeInstanceOf(HTMLSpanElement)
+    })
+
+    /**
+     *  @deprecated For migration toward Testing Library
+     */
+    it('matches the snapshot', () => {
+      expect(renderer.create(<TextContent textContent='MOCK TEXT CONTENT' />).toJSON())
+        .toMatchSnapshot()
     })
   })
 })

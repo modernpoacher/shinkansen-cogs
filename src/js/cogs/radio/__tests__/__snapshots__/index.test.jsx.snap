@@ -1,19 +1,150 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`#cogs/cogs/radio <Cog /> With additional props Checked is a boolean renders 1`] = `
+exports[`#cogs/cogs/radio <Cog /> With additional props Checked is a boolean matches the snapshot 1`] = `
 <div
   className="MOCK CLASSNAME"
-/>
+>
+  <input
+    accessKey="MOCK ACCESS KEY"
+    checked={true}
+    className="MOCK CLASSNAME"
+    disabled={true}
+    id="MOCK ID"
+    name="MOCK NAME"
+    onChange={[Function]}
+    onClick={[Function]}
+    readOnly={true}
+    required={true}
+    tabIndex={1}
+    type="radio"
+    value="MOCK VALUE"
+  />
+  <label
+    className="MOCK CLASSNAME"
+    htmlFor="MOCK ID"
+  >
+    <span
+      className="text-content"
+    >
+      MOCK TITLE
+    </span>
+    <span
+      className="is-required"
+    >
+      *
+    </span>
+    <span
+      className="is-disabled"
+    >
+      *
+    </span>
+    <span
+      className="is-readonly"
+    >
+      *
+    </span>
+  </label>
+  <span
+    className="MOCK CLASSNAME"
+  >
+    <span
+      className="text-content"
+    >
+      MOCK DESCRIPTION
+    </span>
+  </span>
+  <span
+    className="MOCK CLASSNAME"
+  >
+    <span
+      className="text-content"
+    >
+      Unknown
+    </span>
+  </span>
+</div>
 `;
 
-exports[`#cogs/cogs/radio <Cog /> With additional props Default checked is a boolean renders 1`] = `
+exports[`#cogs/cogs/radio <Cog /> With additional props Default checked is a boolean matches the snapshot 1`] = `
 <div
   className="MOCK CLASSNAME"
-/>
+>
+  <input
+    accessKey="MOCK ACCESS KEY"
+    className="MOCK CLASSNAME"
+    defaultChecked={true}
+    disabled={true}
+    id="MOCK ID"
+    name="MOCK NAME"
+    onChange={[Function]}
+    onClick={[Function]}
+    readOnly={true}
+    required={true}
+    tabIndex={1}
+    type="radio"
+    value="MOCK VALUE"
+  />
+  <label
+    className="MOCK CLASSNAME"
+    htmlFor="MOCK ID"
+  >
+    <span
+      className="text-content"
+    >
+      MOCK TITLE
+    </span>
+    <span
+      className="is-required"
+    >
+      *
+    </span>
+    <span
+      className="is-disabled"
+    >
+      *
+    </span>
+    <span
+      className="is-readonly"
+    >
+      *
+    </span>
+  </label>
+  <span
+    className="MOCK CLASSNAME"
+  >
+    <span
+      className="text-content"
+    >
+      MOCK DESCRIPTION
+    </span>
+  </span>
+  <span
+    className="MOCK CLASSNAME"
+  >
+    <span
+      className="text-content"
+    >
+      Unknown
+    </span>
+  </span>
+</div>
 `;
 
-exports[`#cogs/cogs/radio <Cog /> With required props renders 1`] = `
+exports[`#cogs/cogs/radio <Cog /> With required props matches the snapshot 1`] = `
 <div
   className="MOCK CLASSNAME"
-/>
+>
+  <input
+    className="MOCK CLASSNAME"
+    disabled={false}
+    id="MOCK ID"
+    name="MOCK NAME"
+    onChange={[Function]}
+    onClick={[Function]}
+    readOnly={false}
+    required={false}
+    type="radio"
+    value="MOCK VALUE"
+  />
+</div>
 `;
