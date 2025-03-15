@@ -15,6 +15,9 @@ import transform from '#cogs/transformers/error-message'
 
 import TextContent from '#cogs/components/common/text-content'
 
+/**
+ *  @extends {Component<ErrorMessageProps, ErrorMessageState>}
+ */
 export default class ErrorMessage extends Component {
   /**
    *  @type {ErrorMessageState}
@@ -26,11 +29,15 @@ export default class ErrorMessage extends Component {
       errorMessage
     } = this.props
 
-    const {
-      text
-    } = transform(errorMessage)
+    if (errorMessage) {
+      const {
+        text
+      } = transform(errorMessage)
 
-    return !!text
+      return !!text
+    }
+
+    return false
   }
 
   getTextContent () {
@@ -38,11 +45,15 @@ export default class ErrorMessage extends Component {
       errorMessage
     } = this.props
 
-    const {
-      text
-    } = transform(errorMessage)
+    if (errorMessage) {
+      const {
+        text
+      } = transform(errorMessage)
 
-    return text
+      return text
+    }
+
+    return ''
   }
 
   getClassName () {
@@ -56,9 +67,9 @@ export default class ErrorMessage extends Component {
    *  @param {ErrorMessageState} state   Current state
    *  @returns {ErrorMessageState}
    */
-  static getDerivedStateFromProps ({ errorMessage }, { errorMessage: E }) {
+  static getDerivedStateFromProps ({ errorMessage: e }, { errorMessage: E }) {
     return {
-      errorMessage: equal(errorMessage, E) ? E : errorMessage
+      errorMessage: (e === E || equal(e, E)) ? E : e
     }
   }
 
@@ -72,13 +83,13 @@ export default class ErrorMessage extends Component {
   shouldComponentUpdate (props, state) {
     const {
       errorMessage: e
-    } = state
+    } = this.state
 
     const {
       errorMessage: E
-    } = this.state
+    } = state
 
-    return !equal(E, e)
+    return !(e === E || equal(e, E))
   }
 
   renderTextContent () {

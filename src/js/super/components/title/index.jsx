@@ -13,6 +13,9 @@ import Required from '#cogs/components/common/required'
 import Disabled from '#cogs/components/common/disabled'
 import ReadOnly from '#cogs/components/common/readonly'
 
+/**
+ *  @extends {Component<TitleProps>}
+ */
 export default class Title extends Component {
   isRequired () {
     const {
@@ -57,6 +60,18 @@ export default class Title extends Component {
     )
   }
 
+  /**
+   * @param {string} textContent
+   * @returns {React.JSX.Element}
+   */
+  renderTextContent (textContent) {
+    return (
+      <TextContent
+        textContent={textContent}
+      />
+    )
+  }
+
   renderIsRequired () {
     if (this.isRequired()) {
       return (
@@ -89,15 +104,17 @@ export default class Title extends Component {
 
   render () {
     const {
+      id,
       title
     } = this.props
 
-    if (title) {
-      const { id } = this.props
-
+    if (id && title) {
       return (
         <label htmlFor={id} className={this.getClassName()}>
-          <TextContent textContent={title} />
+          {this.renderTextContent(title)}
+          {this.renderIsRequired()}
+          {this.renderIsDisabled()}
+          {this.renderIsReadOnly()}
         </label>
       )
     }

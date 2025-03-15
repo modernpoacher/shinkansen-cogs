@@ -1,31 +1,279 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`#cogs/cogs/select <Cog /> With additional props Multiple is not true Default value is a string renders 1`] = `
+exports[`#cogs/cogs/select <Cog /> With additional props Multiple is not true Default value is a string matches the snapshot 1`] = `
 <div
   className="MOCK CLASSNAME"
-/>
+>
+  <label
+    className="MOCK CLASSNAME"
+    htmlFor="MOCK ID"
+  >
+    <span
+      className="text-content"
+    >
+      MOCK TITLE
+    </span>
+    <span
+      className="is-required"
+    >
+      *
+    </span>
+    <span
+      className="is-disabled"
+    >
+      *
+    </span>
+    <span
+      className="is-readonly"
+    >
+      *
+    </span>
+  </label>
+  <span
+    className="MOCK CLASSNAME"
+  >
+    <span
+      className="text-content"
+    >
+      MOCK DESCRIPTION
+    </span>
+  </span>
+  <span
+    className="MOCK CLASSNAME"
+  >
+    <span
+      className="text-content"
+    >
+      Unknown
+    </span>
+  </span>
+  <select
+    accessKey="MOCK ACCESS KEY"
+    className="MOCK CLASSNAME"
+    defaultValue="MOCK DEFAULT VALUE"
+    disabled={true}
+    id="MOCK ID"
+    multiple={false}
+    name="MOCK NAME"
+    onChange={[Function]}
+    readOnly={true}
+    required={true}
+    tabIndex={1}
+  />
+</div>
 `;
 
-exports[`#cogs/cogs/select <Cog /> With additional props Multiple is not true Value is a string renders 1`] = `
+exports[`#cogs/cogs/select <Cog /> With additional props Multiple is not true Value is a string matches the snapshot 1`] = `
 <div
   className="MOCK CLASSNAME"
-/>
+>
+  <label
+    className="MOCK CLASSNAME"
+    htmlFor="MOCK ID"
+  >
+    <span
+      className="text-content"
+    >
+      MOCK TITLE
+    </span>
+    <span
+      className="is-required"
+    >
+      *
+    </span>
+    <span
+      className="is-disabled"
+    >
+      *
+    </span>
+    <span
+      className="is-readonly"
+    >
+      *
+    </span>
+  </label>
+  <span
+    className="MOCK CLASSNAME"
+  >
+    <span
+      className="text-content"
+    >
+      MOCK DESCRIPTION
+    </span>
+  </span>
+  <span
+    className="MOCK CLASSNAME"
+  >
+    <span
+      className="text-content"
+    >
+      Unknown
+    </span>
+  </span>
+  <select
+    accessKey="MOCK ACCESS KEY"
+    className="MOCK CLASSNAME"
+    disabled={true}
+    id="MOCK ID"
+    multiple={false}
+    name="MOCK NAME"
+    onChange={[Function]}
+    readOnly={true}
+    required={true}
+    tabIndex={1}
+    value="MOCK VALUE"
+  />
+</div>
 `;
 
-exports[`#cogs/cogs/select <Cog /> With additional props Multiple is true Default value is an array renders 1`] = `
+exports[`#cogs/cogs/select <Cog /> With additional props Multiple is true Default value is an array matches the snapshot 1`] = `
 <div
   className="MOCK CLASSNAME"
-/>
+>
+  <label
+    className="MOCK CLASSNAME"
+    htmlFor="MOCK ID"
+  >
+    <span
+      className="text-content"
+    >
+      MOCK TITLE
+    </span>
+    <span
+      className="is-required"
+    >
+      *
+    </span>
+    <span
+      className="is-disabled"
+    >
+      *
+    </span>
+    <span
+      className="is-readonly"
+    >
+      *
+    </span>
+  </label>
+  <span
+    className="MOCK CLASSNAME"
+  >
+    <span
+      className="text-content"
+    >
+      MOCK DESCRIPTION
+    </span>
+  </span>
+  <span
+    className="MOCK CLASSNAME"
+  >
+    <span
+      className="text-content"
+    >
+      Unknown
+    </span>
+  </span>
+  <select
+    accessKey="MOCK ACCESS KEY"
+    className="MOCK CLASSNAME"
+    defaultValue={
+      [
+        "MOCK DEFAULT VALUE",
+      ]
+    }
+    disabled={true}
+    id="MOCK ID"
+    multiple={true}
+    name="MOCK NAME"
+    onChange={[Function]}
+    readOnly={true}
+    required={true}
+    tabIndex={1}
+  />
+</div>
 `;
 
-exports[`#cogs/cogs/select <Cog /> With additional props Multiple is true Value is an array renders 1`] = `
+exports[`#cogs/cogs/select <Cog /> With additional props Multiple is true Value is an array matches the snapshot 1`] = `
 <div
   className="MOCK CLASSNAME"
-/>
+>
+  <label
+    className="MOCK CLASSNAME"
+    htmlFor="MOCK ID"
+  >
+    <span
+      className="text-content"
+    >
+      MOCK TITLE
+    </span>
+    <span
+      className="is-required"
+    >
+      *
+    </span>
+    <span
+      className="is-disabled"
+    >
+      *
+    </span>
+    <span
+      className="is-readonly"
+    >
+      *
+    </span>
+  </label>
+  <span
+    className="MOCK CLASSNAME"
+  >
+    <span
+      className="text-content"
+    >
+      MOCK DESCRIPTION
+    </span>
+  </span>
+  <span
+    className="MOCK CLASSNAME"
+  >
+    <span
+      className="text-content"
+    >
+      Unknown
+    </span>
+  </span>
+  <select
+    accessKey="MOCK ACCESS KEY"
+    className="MOCK CLASSNAME"
+    disabled={true}
+    id="MOCK ID"
+    multiple={true}
+    name="MOCK NAME"
+    onChange={[Function]}
+    readOnly={true}
+    required={true}
+    tabIndex={1}
+    value={
+      [
+        "MOCK VALUE",
+      ]
+    }
+  />
+</div>
 `;
 
-exports[`#cogs/cogs/select <Cog /> With required props renders 1`] = `
+exports[`#cogs/cogs/select <Cog /> With required props matches the snapshot 1`] = `
 <div
   className="MOCK CLASSNAME"
-/>
+>
+  <select
+    className="MOCK CLASSNAME"
+    disabled={false}
+    id="MOCK NAME"
+    multiple={false}
+    name="MOCK NAME"
+    onChange={[Function]}
+    readOnly={false}
+    required={false}
+    value=""
+  />
+</div>
 `;

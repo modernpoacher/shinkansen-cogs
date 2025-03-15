@@ -32,35 +32,10 @@ export function toInputValue (value) {
  *
  *  @extends {Field<FieldProps & ValueProps>}
  */
-export class ValueField extends Field {
-  /**
-   *  @param {ValueProps} props
-   *  @returns {boolean}
-   */
-  shouldComponentUpdate (props) {
-    return (
-      super.shouldComponentUpdate(props) || // }, state) ||
-      (props.value !== this.props.value)
-    )
-  }
-
-  /**
-   *  @param {{ target: { value?: string } }} event
-   *  @returns {void}
-   */
-  handleChange = ({ target: { value } }) => {
-    const {
-      onChange = DEFAULT_HANDLE_EVENT,
-      name
-    } = this.props
-
-    onChange(name, value)
-  }
-}
+export class ValueField extends Field {}
 
 ValueField.propTypes = {
   ...Field.propTypes,
-  value: PropTypes.string,
   defaultValue: PropTypes.string
 }
 
@@ -76,18 +51,16 @@ export class CheckField extends Field {
    */
   shouldComponentUpdate (props) {
     const {
-      value,
-      defaultChecked,
       checked,
+      defaultChecked,
       onClick,
       ...superProps
     } = props
 
     return (
-      super.shouldComponentUpdate(superProps) ||
-      (value !== this.props.value) ||
       (checked !== this.props.checked) ||
       (defaultChecked !== this.props.defaultChecked) ||
+      super.shouldComponentUpdate(superProps) ||
       (onClick !== this.props.onClick)
     )
   }

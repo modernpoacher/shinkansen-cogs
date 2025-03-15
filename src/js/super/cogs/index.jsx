@@ -52,6 +52,7 @@ export default class Cog extends Component {
       (props.name !== this.props.name) ||
       (props.id !== this.props.id) ||
       (props.title !== this.props.title) ||
+      (props.value !== this.props.value) ||
       (props.description !== this.props.description) ||
       (props.errorMessage !== this.props.errorMessage) ||
       (props.required !== this.props.required) ||
@@ -114,6 +115,7 @@ export default class Cog extends Component {
 
     const {
       name,
+      value,
       required = false,
       disabled = false,
       readOnly = false,
@@ -126,8 +128,9 @@ export default class Cog extends Component {
 
     return (
       <Field
-        id={id}
         name={name}
+        id={id}
+        value={value}
         required={required}
         disabled={disabled}
         readOnly={readOnly}
@@ -155,9 +158,10 @@ export default class Cog extends Component {
 }
 
 Cog.propTypes = {
-  id: PropTypes.string,
   name: PropTypes.string.isRequired,
+  id: PropTypes.string,
   title: PropTypes.string,
+  value: PropTypes.string,
   description: PropTypes.string,
   errorMessage: PropTypes.shape({
     type: PropTypes.string.isRequired,

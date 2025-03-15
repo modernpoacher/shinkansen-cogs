@@ -1,19 +1,144 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`#cogs/cogs/textarea <Cog /> With additional props Default value is a string renders 1`] = `
+exports[`#cogs/cogs/textarea <Cog /> With additional props Default value is a string matches the snapshot 1`] = `
 <div
   className="MOCK CLASSNAME"
-/>
+>
+  <label
+    className="MOCK CLASSNAME"
+    htmlFor="MOCK ID"
+  >
+    <span
+      className="text-content"
+    >
+      MOCK TITLE
+    </span>
+    <span
+      className="is-required"
+    >
+      *
+    </span>
+    <span
+      className="is-disabled"
+    >
+      *
+    </span>
+    <span
+      className="is-readonly"
+    >
+      *
+    </span>
+  </label>
+  <span
+    className="MOCK CLASSNAME"
+  >
+    <span
+      className="text-content"
+    >
+      MOCK DESCRIPTION
+    </span>
+  </span>
+  <span
+    className="MOCK CLASSNAME"
+  >
+    <span
+      className="text-content"
+    >
+      Unknown
+    </span>
+  </span>
+  <textarea
+    accessKey="MOCK ACCESS KEY"
+    className="MOCK CLASSNAME"
+    defaultValue="MOCK DEFAULT VALUE"
+    disabled={true}
+    id="MOCK ID"
+    name="MOCK NAME"
+    onChange={[Function]}
+    placeholder="MOCK PLACEHOLDER"
+    readOnly={true}
+    required={true}
+    tabIndex={1}
+  />
+</div>
 `;
 
-exports[`#cogs/cogs/textarea <Cog /> With additional props Value is a string renders 1`] = `
+exports[`#cogs/cogs/textarea <Cog /> With additional props Value is a string matches the snapshot 1`] = `
 <div
   className="MOCK CLASSNAME"
-/>
+>
+  <label
+    className="MOCK CLASSNAME"
+    htmlFor="MOCK ID"
+  >
+    <span
+      className="text-content"
+    >
+      MOCK TITLE
+    </span>
+    <span
+      className="is-required"
+    >
+      *
+    </span>
+    <span
+      className="is-disabled"
+    >
+      *
+    </span>
+    <span
+      className="is-readonly"
+    >
+      *
+    </span>
+  </label>
+  <span
+    className="MOCK CLASSNAME"
+  >
+    <span
+      className="text-content"
+    >
+      MOCK DESCRIPTION
+    </span>
+  </span>
+  <span
+    className="MOCK CLASSNAME"
+  >
+    <span
+      className="text-content"
+    >
+      Unknown
+    </span>
+  </span>
+  <textarea
+    accessKey="MOCK ACCESS KEY"
+    className="MOCK CLASSNAME"
+    disabled={true}
+    id="MOCK ID"
+    name="MOCK NAME"
+    onChange={[Function]}
+    placeholder="MOCK PLACEHOLDER"
+    readOnly={true}
+    required={true}
+    tabIndex={1}
+    value="MOCK VALUE"
+  />
+</div>
 `;
 
-exports[`#cogs/cogs/textarea <Cog /> With required props renders 1`] = `
+exports[`#cogs/cogs/textarea <Cog /> With required props matches the snapshot 1`] = `
 <div
   className="MOCK CLASSNAME"
-/>
+>
+  <textarea
+    className="MOCK CLASSNAME"
+    disabled={false}
+    id="MOCK NAME"
+    name="MOCK NAME"
+    onChange={[Function]}
+    readOnly={false}
+    required={false}
+    value=""
+  />
+</div>
 `;
