@@ -26,8 +26,8 @@ export default class RadioField extends CheckField {
   render () {
     const {
       checked,
-      id,
       name,
+      id,
       value,
       required = false,
       disabled = false,
@@ -42,8 +42,8 @@ export default class RadioField extends CheckField {
     if (typeof checked === 'boolean') {
       return (
         <input
-          id={id}
           name={name}
+          id={id}
           value={toInputValue(value)}
           checked={checked}
           required={required}
@@ -66,8 +66,8 @@ export default class RadioField extends CheckField {
 
     return (
       <input
-        id={id}
         name={name}
+        id={id}
         value={toInputValue(value)}
         defaultChecked={defaultChecked}
         required={required}

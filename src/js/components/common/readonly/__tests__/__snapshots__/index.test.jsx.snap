@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`#cogs/components/common/readonly <ReadOnly /> renders 1`] = `
+exports[`#cogs/components/common/readonly <ReadOnly /> matches the snapshot 1`] = `
 <span
   className="is-readonly"
 >

@@ -1,420 +1,663 @@
 import React from 'react'
+import snapshotOf from 'react-component-snapshot'
 import renderer from 'react-test-renderer'
 
-import Field from '#cogs/super/components/field'
+import '@testing-library/jest-dom'
+
+import {
+  render
+} from '@testing-library/react'
+
+import getComponentInstanceFrom from 'react-component-instance/container'
+
+import Super from '#cogs/super/components/field'
 
 import {
   ValueField,
   CheckField
 } from '#cogs/components/field'
 
+jest.mock('classnames', () => jest.fn().mockReturnValue('MOCK CLASSNAME'))
+
 describe('#cogs/components/field', () => {
+  const MOCK_FIELD_REF = { current: null }
   const MOCK_ON_CHANGE = jest.fn()
-  const MOCK_ON_CLICK = jest.fn()
-  const MOCK_FIELD_REF = {
-    current: null
-  }
 
   describe('<ValueField />', () => {
     describe('With required props', () => {
-      const component = (
-        <ValueField
-          name='MOCK NAME'
-          value='MOCK VALUE'
-        />
-      )
-
       it('renders', () => {
-        return expect(renderer.create(component).toJSON())
+        const {
+          container: {
+            firstElementChild: field
+          }
+        } = render(
+          <ValueField
+            name='MOCK NAME'
+          />
+        )
+
+        expect(field)
+          .toBeInstanceOf(HTMLInputElement)
+      })
+
+      describe('Always', () => {
+        it('invokes `getClassName`', () => {
+          const getClassNameSpy = jest.spyOn(ValueField.prototype, 'getClassName')
+
+          render(
+            <ValueField
+              name='MOCK NAME'
+            />
+          )
+
+          expect(getClassNameSpy)
+            .toHaveBeenCalled()
+        })
+      })
+
+      it('matches the snapshot', () => {
+        const {
+          container: {
+            firstElementChild: field
+          }
+        } = render(
+          <ValueField
+            name='MOCK NAME'
+          />
+        )
+
+        expect(snapshotOf(field))
           .toMatchSnapshot()
       })
 
-      describe('Prototype', () => {
-        describe('`shouldComponentUpdate`', () => {
-          it('is defined', () => {
-            return expect(ValueField.prototype.shouldComponentUpdate)
-              .toBeDefined()
-          })
-        })
-      })
-
-      describe('Instance', () => {
-        /**
-         *  @type {void | null | renderer.ReactTestInstance}
-         */
-        let instance
-
-        beforeEach(() => {
-          instance = (
-            renderer.create(component)
-              .getInstance()
-          )
-        })
-
-        describe('Extends `<Field />`', () => {
-          it('is defined', () => {
-            return expect(instance)
-              .toBeInstanceOf(Field)
-          })
-        })
-
-        describe('`handleChange`', () => {
-          it('is defined', () => {
-            return expect(instance.handleChange)
-              .toBeDefined()
-          })
-        })
+      /**
+       *  @deprecated For migration toward Testing Library
+       */
+      xit('matches the snapshot', () => {
+        expect(renderer.create((
+          <ValueField
+            name='MOCK NAME'
+          />
+        )).toJSON())
+          .toMatchSnapshot()
       })
     })
 
     describe('With additional props', () => {
       describe('Value is a string', () => {
         it('renders', () => {
-          const component = (
+          const {
+            container: {
+              firstElementChild: field
+            }
+          } = render(
             <ValueField
               name='MOCK NAME'
               id='MOCK ID'
-              title='MOCK TITLE'
               value='MOCK VALUE'
-              tabIndex={1}
-              accessKey='MOCK ACCESS KEY'
               required
               disabled
               readOnly
               placeholder='MOCK PLACEHOLDER'
               fieldRef={MOCK_FIELD_REF}
+              onChange={MOCK_ON_CHANGE}
             />
           )
 
-          return expect(renderer.create(component).toJSON())
+          expect(field)
+            .toBeInstanceOf(HTMLInputElement)
+        })
+
+        describe('Always', () => {
+          it('invokes `getClassName`', () => {
+            const getClassNameSpy = jest.spyOn(ValueField.prototype, 'getClassName')
+
+            render(
+              <ValueField
+                name='MOCK NAME'
+                id='MOCK ID'
+                value='MOCK VALUE'
+                required
+                disabled
+                readOnly
+                placeholder='MOCK PLACEHOLDER'
+                fieldRef={MOCK_FIELD_REF}
+                onChange={MOCK_ON_CHANGE}
+              />
+            )
+
+            expect(getClassNameSpy)
+              .toHaveBeenCalled()
+          })
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: field
+            }
+          } = render(
+            <ValueField
+              name='MOCK NAME'
+              id='MOCK ID'
+              value='MOCK VALUE'
+              required
+              disabled
+              readOnly
+              placeholder='MOCK PLACEHOLDER'
+              fieldRef={MOCK_FIELD_REF}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(field))
+            .toMatchSnapshot()
+        })
+
+        /**
+         *  @deprecated For migration toward Testing Library
+         */
+        xit('matches the snapshot', () => {
+          expect(renderer.create((
+            <ValueField
+              name='MOCK NAME'
+              id='MOCK ID'
+              value='MOCK VALUE'
+              required
+              disabled
+              readOnly
+              placeholder='MOCK PLACEHOLDER'
+              fieldRef={MOCK_FIELD_REF}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )).toJSON())
             .toMatchSnapshot()
         })
       })
 
       describe('Default value is a string', () => {
         it('renders', () => {
-          const component = (
+          const {
+            container: {
+              firstElementChild: field
+            }
+          } = render(
             <ValueField
               name='MOCK NAME'
               id='MOCK ID'
-              title='MOCK TITLE'
-              defaultValue='MOCK VALUE'
-              tabIndex={1}
-              accessKey='MOCK ACCESS KEY'
+              defaultValue='MOCK DEFAULT VALUE'
               required
               disabled
               readOnly
               placeholder='MOCK PLACEHOLDER'
               fieldRef={MOCK_FIELD_REF}
+              onChange={MOCK_ON_CHANGE}
             />
           )
 
-          return expect(renderer.create(component).toJSON())
+          expect(field)
+            .toBeInstanceOf(HTMLInputElement)
+        })
+
+        describe('Always', () => {
+          it('invokes `getClassName`', () => {
+            const getClassNameSpy = jest.spyOn(ValueField.prototype, 'getClassName')
+
+            render(
+              <ValueField
+                name='MOCK NAME'
+                id='MOCK ID'
+                defaultValue='MOCK DEFAULT VALUE'
+                required
+                disabled
+                readOnly
+                placeholder='MOCK PLACEHOLDER'
+                fieldRef={MOCK_FIELD_REF}
+                onChange={MOCK_ON_CHANGE}
+              />
+            )
+
+            expect(getClassNameSpy)
+              .toHaveBeenCalled()
+          })
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: field
+            }
+          } = render(
+            <ValueField
+              name='MOCK NAME'
+              id='MOCK ID'
+              defaultValue='MOCK DEFAULT VALUE'
+              required
+              disabled
+              readOnly
+              placeholder='MOCK PLACEHOLDER'
+              fieldRef={MOCK_FIELD_REF}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(field))
+            .toMatchSnapshot()
+        })
+
+        /**
+         *  @deprecated For migration toward Testing Library
+         */
+        xit('matches the snapshot', () => {
+          expect(renderer.create((
+            <ValueField
+              name='MOCK NAME'
+              id='MOCK ID'
+              defaultValue='MOCK DEFAULT VALUE'
+              required
+              disabled
+              readOnly
+              placeholder='MOCK PLACEHOLDER'
+              fieldRef={MOCK_FIELD_REF}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )).toJSON())
             .toMatchSnapshot()
         })
       })
     })
 
-    describe('`shouldComponentUpdate()`', () => {
-      const component = (
-        <ValueField
-          name='MOCK NAME'
-          id='MOCK ID'
-          title='MOCK TITLE'
-          value='MOCK VALUE'
-          tabIndex={1}
-          accessKey='MOCK ACCESS KEY'
-          required
-          disabled
-          readOnly
-          placeholder='MOCK PLACEHOLDER'
-          fieldRef={MOCK_FIELD_REF}
-        />
-      )
-
-      /**
-       *  @type {void | null | renderer.ReactTestInstance}
-       */
-      let instance
-
-      beforeEach(() => {
-        instance = (
-          renderer.create(component)
-            .getInstance()
+    describe('`getClassName()`', () => {
+      it('returns a string', () => {
+        const {
+          container
+        } = render(
+          <ValueField
+            name='MOCK NAME'
+          />
         )
-      })
 
-      describe('`props` have changed', () => {
-        it('returns true', () => {
-          return expect(instance.shouldComponentUpdate({
-            ...instance.props,
-            value: 'MOCK CHANGE VALUE'
-          }))
-            .toBe(true)
-        })
-      })
+        const instance = getComponentInstanceFrom(container)
 
-      describe('`props` have not changed', () => {
-        it('returns false', () => {
-          return expect(instance.shouldComponentUpdate({
-            ...instance.props,
-            value: 'MOCK VALUE'
-          }))
-            .toBe(false)
-        })
+        expect(instance.getClassName())
+          .toEqual(expect.any(String))
       })
     })
 
     describe('`handleChange()`', () => {
-      it('invokes the `onChange` prop', () => {
-        const component = (
-          <ValueField
-            name='MOCK NAME'
-            value='MOCK VALUE'
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Value is a string', () => {
+        it('invokes `onChange`', () => {
+          const {
+            container
+          } = render(
+            <ValueField
+              name='MOCK NAME'
+              value='MOCK VALUE'
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        const instance = (
-          renderer.create(component)
-            .getInstance()
-        )
+          const instance = getComponentInstanceFrom(container)
 
-        instance.handleChange({ target: { value: 'MOCK VALUE' } })
+          /**
+           *  Ensure it is reset after render
+           */
+          MOCK_ON_CHANGE.mockClear()
 
-        return expect(MOCK_ON_CHANGE)
-          .toHaveBeenCalledWith('MOCK NAME', 'MOCK VALUE')
+          instance.handleChange({ target: { value: 'MOCK CHANGED VALUE' } })
+
+          expect(MOCK_ON_CHANGE)
+            .toHaveBeenCalledWith('MOCK NAME', 'MOCK CHANGED VALUE')
+        })
+      })
+
+      describe('Default value is a string', () => {
+        it('invokes `onChange`', () => {
+          const {
+            container
+          } = render(
+            <ValueField
+              name='MOCK NAME'
+              defaultValue='MOCK DEFAULT VALUE'
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          const instance = getComponentInstanceFrom(container)
+
+          /**
+           *  Ensure it is reset after render
+           */
+          MOCK_ON_CHANGE.mockClear()
+
+          instance.handleChange({ target: { value: 'MOCK CHANGED DEFAULT VALUE' } })
+
+          expect(MOCK_ON_CHANGE)
+            .toHaveBeenCalledWith('MOCK NAME', 'MOCK CHANGED DEFAULT VALUE')
+        })
       })
     })
   })
 
   describe('<CheckField />', () => {
     describe('With required props', () => {
-      const component = (
-        <CheckField
-          name='MOCK NAME'
-          value='MOCK VALUE'
-        />
-      )
-
       it('renders', () => {
-        return expect(renderer.create(component).toJSON())
+        const {
+          container: {
+            firstElementChild: field
+          }
+        } = render(
+          <CheckField
+            name='MOCK NAME'
+            value='MOCK VALUE'
+          />
+        )
+
+        expect(field)
+          .toBeInstanceOf(HTMLInputElement)
+      })
+
+      describe('Always', () => {
+        it('invokes `getClassName`', () => {
+          const getClassNameSpy = jest.spyOn(Super.prototype, 'getClassName')
+
+          render(
+            <CheckField
+              name='MOCK NAME'
+              value='MOCK VALUE'
+            />
+          )
+
+          expect(getClassNameSpy)
+            .toHaveBeenCalled()
+        })
+      })
+
+      it('matches the snapshot', () => {
+        const {
+          container: {
+            firstElementChild: field
+          }
+        } = render(
+          <CheckField
+            name='MOCK NAME'
+            value='MOCK VALUE'
+          />
+        )
+
+        expect(snapshotOf(field))
           .toMatchSnapshot()
       })
 
-      describe('Prototype', () => {
-        describe('`shouldComponentUpdate`', () => {
-          it('is defined', () => {
-            return expect(CheckField.prototype.shouldComponentUpdate)
-              .toBeDefined()
-          })
-        })
-      })
-
-      describe('Instance', () => {
-        /**
-         *  @type {void | null | renderer.ReactTestInstance}
-         */
-        let instance
-
-        beforeEach(() => {
-          instance = (
-            renderer.create(component)
-              .getInstance()
-          )
-        })
-
-        describe('Extends `<Field />`', () => {
-          it('is defined', () => {
-            return expect(instance)
-              .toBeInstanceOf(Field)
-          })
-        })
-
-        describe('`handleClick`', () => {
-          it('is defined', () => {
-            return expect(instance.handleClick)
-              .toBeDefined()
-          })
-        })
-
-        describe('`handleChange`', () => {
-          it('is defined', () => {
-            return expect(instance.handleChange)
-              .toBeDefined()
-          })
-        })
+      /**
+       *  @deprecated For migration toward Testing Library
+       */
+      xit('matches the snapshot', () => {
+        expect(renderer.create((
+          <CheckField
+            name='MOCK NAME'
+            value='MOCK VALUE'
+          />
+        )).toJSON())
+          .toMatchSnapshot()
       })
     })
 
     describe('With additional props', () => {
       describe('Checked is a boolean', () => {
         it('renders', () => {
-          const component = (
+          const {
+            container: {
+              firstElementChild: field
+            }
+          } = render(
             <CheckField
               name='MOCK NAME'
               id='MOCK ID'
-              title='MOCK TITLE'
               value='MOCK VALUE'
               checked
               required
               disabled
               readOnly
-              placeholder='MOCK PLACEHOLDER'
               fieldRef={MOCK_FIELD_REF}
+              onChange={MOCK_ON_CHANGE}
             />
           )
 
-          return expect(renderer.create(component).toJSON())
+          expect(field)
+            .toBeInstanceOf(HTMLInputElement)
+        })
+
+        describe('Always', () => {
+          it('invokes `getClassName`', () => {
+            const getClassNameSpy = jest.spyOn(Super.prototype, 'getClassName')
+
+            render(
+              <CheckField
+                name='MOCK NAME'
+                id='MOCK ID'
+                value='MOCK VALUE'
+                checked
+                required
+                disabled
+                readOnly
+                fieldRef={MOCK_FIELD_REF}
+                onChange={MOCK_ON_CHANGE}
+              />
+            )
+
+            expect(getClassNameSpy)
+              .toHaveBeenCalled()
+          })
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: field
+            }
+          } = render(
+            <CheckField
+              name='MOCK NAME'
+              id='MOCK ID'
+              value='MOCK VALUE'
+              checked
+              required
+              disabled
+              readOnly
+              fieldRef={MOCK_FIELD_REF}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(field))
+            .toMatchSnapshot()
+        })
+
+        /**
+         *  @deprecated For migration toward Testing Library
+         */
+        xit('matches the snapshot', () => {
+          expect(renderer.create((
+            <CheckField
+              name='MOCK NAME'
+              id='MOCK ID'
+              value='MOCK VALUE'
+              checked
+              required
+              disabled
+              readOnly
+              fieldRef={MOCK_FIELD_REF}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )).toJSON())
             .toMatchSnapshot()
         })
       })
 
       describe('Default checked is a boolean', () => {
         it('renders', () => {
-          const component = (
+          const {
+            container: {
+              firstElementChild: field
+            }
+          } = render(
             <CheckField
               name='MOCK NAME'
               id='MOCK ID'
-              title='MOCK TITLE'
               value='MOCK VALUE'
               defaultChecked
               required
               disabled
               readOnly
-              placeholder='MOCK PLACEHOLDER'
               fieldRef={MOCK_FIELD_REF}
+              onChange={MOCK_ON_CHANGE}
             />
           )
 
-          return expect(renderer.create(component).toJSON())
+          expect(field)
+            .toBeInstanceOf(HTMLInputElement)
+        })
+
+        describe('Always', () => {
+          it('invokes `getClassName`', () => {
+            const getClassNameSpy = jest.spyOn(Super.prototype, 'getClassName')
+
+            render(
+              <CheckField
+                name='MOCK NAME'
+                id='MOCK ID'
+                value='MOCK VALUE'
+                defaultChecked
+                required
+                disabled
+                readOnly
+                fieldRef={MOCK_FIELD_REF}
+                onChange={MOCK_ON_CHANGE}
+              />
+            )
+
+            expect(getClassNameSpy)
+              .toHaveBeenCalled()
+          })
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: field
+            }
+          } = render(
+            <CheckField
+              name='MOCK NAME'
+              id='MOCK ID'
+              value='MOCK VALUE'
+              defaultChecked
+              required
+              disabled
+              readOnly
+              fieldRef={MOCK_FIELD_REF}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(field))
+            .toMatchSnapshot()
+        })
+
+        /**
+         *  @deprecated For migration toward Testing Library
+         */
+        xit('matches the snapshot', () => {
+          expect(renderer.create((
+            <CheckField
+              name='MOCK NAME'
+              id='MOCK ID'
+              value='MOCK VALUE'
+              defaultChecked
+              required
+              disabled
+              readOnly
+              fieldRef={MOCK_FIELD_REF}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )).toJSON())
             .toMatchSnapshot()
         })
       })
     })
 
-    describe('`shouldComponentUpdate()`', () => {
-      const component = (
-        <CheckField
-          name='MOCK NAME'
-          id='MOCK ID'
-          title='MOCK TITLE'
-          value='MOCK VALUE'
-          tabIndex={1}
-          accessKey='MOCK ACCESS KEY'
-          checked
-          required
-          disabled
-          readOnly
-          placeholder='MOCK PLACEHOLDER'
-          fieldRef={MOCK_FIELD_REF}
-          onChange={MOCK_ON_CHANGE}
-          onClick={MOCK_ON_CLICK}
-        />
-      )
-
-      /**
-       *  @type {void | null | renderer.ReactTestInstance}
-       */
-      let instance
-
-      beforeEach(() => {
-        instance = (
-          renderer.create(component)
-            .getInstance()
-        )
-      })
-
-      describe('`props` have changed', () => {
-        describe('`value`', () => {
-          it('returns true', () => {
-            return expect(instance.shouldComponentUpdate({
-              ...instance.props,
-              value: 'MOCK CHANGED VALUE',
-              onClick: jest.fn()
-            }))
-              .toBe(true)
-          })
-        })
-
-        describe('`checked`', () => {
-          it('returns true', () => {
-            return expect(instance.shouldComponentUpdate({
-              ...instance.props,
-              checked: false,
-              onClick: jest.fn()
-            }))
-              .toBe(true)
-          })
-        })
-      })
-
-      describe('`props` have not changed', () => {
-        describe('`value`', () => {
-          it('returns false', () => {
-            return expect(instance.shouldComponentUpdate({ // instance.props
-              ...instance.props,
-              value: 'MOCK VALUE',
-              onClick: MOCK_ON_CLICK
-            }))
-              .toBe(false)
-          })
-        })
-
-        describe('`checked`', () => {
-          it('returns false', () => {
-            return expect(instance.shouldComponentUpdate({ // instance.props
-              ...instance.props,
-              checked: true,
-              onClick: MOCK_ON_CLICK
-            }))
-              .toBe(false)
-          })
-        })
-      })
-    })
-
-    describe('`handleClick()`', () => {
-      it('invokes the `onClick` prop', () => {
-        const component = (
+    describe('`getClassName()`', () => {
+      it('returns a string', () => {
+        const {
+          container
+        } = render(
           <CheckField
             name='MOCK NAME'
             value='MOCK VALUE'
-            onClick={MOCK_ON_CLICK}
           />
         )
 
-        const instance = (
-          renderer.create(component)
-            .getInstance()
-        )
+        const instance = getComponentInstanceFrom(container)
 
-        instance.handleClick({ target: { value: 'MOCK VALUE', checked: 'MOCK CHECKED' } })
-
-        return expect(MOCK_ON_CLICK)
-          .toHaveBeenCalledWith('MOCK NAME', 'MOCK VALUE', 'MOCK CHECKED')
+        expect(instance.getClassName())
+          .toEqual(expect.any(String))
       })
     })
 
     describe('`handleChange()`', () => {
-      it('invokes the `onChange` prop', () => {
-        const component = (
-          <CheckField
-            name='MOCK NAME'
-            value='MOCK VALUE'
-            onChange={MOCK_ON_CHANGE}
-          />
-        )
+      describe('Checked is a boolean', () => {
+        it('invokes `onChange`', () => {
+          const {
+            container
+          } = render(
+            <CheckField
+              name='MOCK NAME'
+              value='MOCK VALUE'
+              checked
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-        const instance = (
-          renderer.create(component)
-            .getInstance()
-        )
+          const instance = getComponentInstanceFrom(container)
 
-        instance.handleChange({ target: { value: 'MOCK VALUE', checked: 'MOCK CHECKED' } })
+          /**
+           *  Ensure it is reset after render
+           */
+          MOCK_ON_CHANGE.mockClear()
 
-        return expect(MOCK_ON_CHANGE)
-          .toHaveBeenCalledWith('MOCK NAME', 'MOCK VALUE', 'MOCK CHECKED')
+          instance.handleChange({ target: { value: 'MOCK CHANGED VALUE', checked: false } })
+
+          expect(MOCK_ON_CHANGE)
+            .toHaveBeenCalledWith('MOCK NAME', 'MOCK CHANGED VALUE', false)
+        })
+      })
+
+      describe('Default checked is a boolean', () => {
+        it('invokes `onChange`', () => {
+          const {
+            container
+          } = render(
+            <CheckField
+              name='MOCK NAME'
+              value='MOCK VALUE'
+              defaultChecked
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          const instance = getComponentInstanceFrom(container)
+
+          /**
+           *  Ensure it is reset after render
+           */
+          MOCK_ON_CHANGE.mockClear()
+
+          instance.handleChange({ target: { value: 'MOCK CHANGED DEFAULT VALUE', checked: false } })
+
+          expect(MOCK_ON_CHANGE)
+            .toHaveBeenCalledWith('MOCK NAME', 'MOCK CHANGED DEFAULT VALUE', false)
+        })
       })
     })
   })

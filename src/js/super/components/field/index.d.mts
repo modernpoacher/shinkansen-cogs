@@ -1,5 +1,8 @@
 declare module '#cogs/super/components/field' {
   import React from 'react'
+  import type {
+    ChangeEvent
+  } from 'react'
 
   export type FieldProps = CogsTypes.Super.Components.Field.FieldProps
 
@@ -9,6 +12,8 @@ declare module '#cogs/super/components/field' {
     getClassName (): string
 
     shouldComponentUpdate (props: FieldProps): boolean
+
+    handleChange (event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement> | ChangeEvent<HTMLSelectElement>): void
   }
 }
 

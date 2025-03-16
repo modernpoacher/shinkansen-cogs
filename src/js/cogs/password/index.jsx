@@ -109,8 +109,8 @@ export default class PasswordCog extends ValueCog {
 
     return (
       <Field
-        id={id}
         name={name}
+        id={id}
         value={value}
         defaultValue={defaultValue}
         required={required}

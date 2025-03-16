@@ -1,38 +1,20 @@
-import React, { Component as mockComponent } from 'react'
+import React from 'react'
+import snapshotOf from 'react-component-snapshot'
 import renderer from 'react-test-renderer'
 import classnames from 'classnames'
+
+import '@testing-library/jest-dom'
+
+import {
+  render
+} from '@testing-library/react'
+
+import getComponentInstanceFrom from 'react-component-instance/container'
 
 import Super from '#cogs/components/error-message'
 import ErrorMessage from '#cogs/cogs/select/error-message'
 
-jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
-
-jest.mock('#cogs/components/error-message', () => {
-  return {
-    __esModule: true,
-    default: class MockErrorMessage extends mockComponent {
-      getClassName () {
-        return 'MOCK CLASSNAME'
-      }
-
-      render () {
-        const {
-          errorMessage
-        } = this.props
-
-        if (errorMessage) {
-          return (
-            <span className={this.getClassName()}>
-              MOCK ERROR MESSAGE
-            </span>
-          )
-        }
-
-        return null
-      }
-    }
-  }
-})
+jest.mock('classnames', () => jest.fn().mockReturnValue('MOCK CLASSNAME'))
 
 const MOCK_ERROR_MESSAGE = {
   type: 'UNKNOWN',
@@ -45,62 +27,136 @@ const MOCK_ERROR_MESSAGE = {
 describe('#cogs/cogs/select/error-message', () => {
   describe('<ErrorMessage />', () => {
     describe('With required props', () => {
-      const component = (
-        <ErrorMessage />
-      )
-
       it('renders', () => {
-        return expect(renderer.create(component).toJSON())
+        const {
+          container: {
+            firstElementChild: errorMessage
+          }
+        } = render(
+          <ErrorMessage />
+        )
+
+        expect(errorMessage)
+          .toBeNull()
+      })
+
+      /**
+       *  Element is null
+       */
+      it('matches the snapshot', () => {
+        const {
+          container: {
+            firstElementChild: errorMessage
+          }
+        } = render(
+          <ErrorMessage />
+        )
+
+        expect(snapshotOf(errorMessage))
           .toMatchSnapshot()
       })
 
-      describe('`getClassName`', () => {
-        it('is defined', () => {
-          return expect(ErrorMessage.prototype.getClassName)
-            .toBeDefined()
-        })
+      /**
+       *  @deprecated For migration toward Testing Library
+       */
+      xit('matches the snapshot', () => {
+        expect(renderer.create((
+          <ErrorMessage />
+        )).toJSON())
+          .toMatchSnapshot()
       })
     })
 
     describe('With additional props', () => {
       it('renders', () => {
-        const component = (
+        const {
+          container: {
+            firstElementChild: errorMessage
+          }
+        } = render(
           <ErrorMessage
             errorMessage={MOCK_ERROR_MESSAGE}
           />
         )
 
-        return expect(renderer.create(component).toJSON())
+        expect(errorMessage)
+          .toBeInstanceOf(HTMLSpanElement)
+      })
+
+      describe('Always', () => {
+        it('invokes `getClassName`', () => {
+          const getClassNameSpy = jest.spyOn(ErrorMessage.prototype, 'getClassName')
+
+          render(
+            <ErrorMessage
+              errorMessage={MOCK_ERROR_MESSAGE}
+            />
+          )
+
+          expect(getClassNameSpy)
+            .toHaveBeenCalled()
+        })
+      })
+
+      it('matches the snapshot', () => {
+        const {
+          container: {
+            firstElementChild: errorMessage
+          }
+        } = render(
+          <ErrorMessage
+            errorMessage={MOCK_ERROR_MESSAGE}
+          />
+        )
+
+        expect(snapshotOf(errorMessage))
+          .toMatchSnapshot()
+      })
+
+      /**
+       *  @deprecated For migration toward Testing Library
+       */
+      xit('matches the snapshot', () => {
+        expect(renderer.create((
+          <ErrorMessage
+            errorMessage={MOCK_ERROR_MESSAGE}
+          />
+        )).toJSON())
           .toMatchSnapshot()
       })
     })
 
     describe('`getClassName()`', () => {
-      let returnValue
-
-      beforeEach(() => {
-        jest.spyOn(Super.prototype, 'getClassName').mockReturnValue('MOCK GETCLASSNAME')
-
-        const component = (
-          <ErrorMessage />
-        )
-
-        const instance = (
-          renderer.create(component)
-            .getInstance()
-        )
-
-        returnValue = instance.getClassName()
-      })
-
       it('invokes `classnames`', () => {
-        return expect(classnames)
-          .toHaveBeenCalledWith('MOCK GETCLASSNAME', 'select')
-      })
+        /**
+         *  Ensure `super.getClassName()` returns a value
+         */
+        const getClassNameSpy = jest.spyOn(Super.prototype, 'getClassName').mockReturnValue('MOCK CLASSNAME')
 
-      it('returns the classname', () => {
-        return expect(returnValue)
-          .toBe('MOCK CLASSNAME')
+        const {
+          container
+        } = render(
+          <ErrorMessage
+            errorMessage={MOCK_ERROR_MESSAGE}
+          />
+        )
+
+        const instance = getComponentInstanceFrom(container)
+
+        /**
+         *  Ensure it is reset after render
+         */
+        classnames.mockClear()
+
+        /**
+         *  Ensure it is reset after render
+         */
+        getClassNameSpy.mockClear()
+
+        instance.getClassName()
+
+        expect(classnames)
+          .toHaveBeenCalledWith('MOCK CLASSNAME', 'select')
       })
     })
   })

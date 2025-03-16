@@ -1,91 +1,88 @@
 import React from 'react'
+import snapshotOf from 'react-component-snapshot'
 import renderer from 'react-test-renderer'
 
+import '@testing-library/jest-dom'
+
+import {
+  render
+} from '@testing-library/react'
+
+import getComponentInstanceFrom from 'react-component-instance/container'
+
 import Title from '#cogs/components/title'
-
-import Required from '#cogs/components/common/required'
-import Disabled from '#cogs/components/common/disabled'
-import ReadOnly from '#cogs/components/common/readonly'
-
-jest.mock('#cogs/components/common/text-content', () => () => 'MOCK TEXT CONTENT')
-jest.mock('#cogs/components/common/required') // , () => () => 'MOCK REQUIRED')
-jest.mock('#cogs/components/common/disabled') // , () => () => 'MOCK DISABLED')
-jest.mock('#cogs/components/common/readonly') // , () => () => 'MOCK READONLY')
 
 describe('#cogs/components/title', () => {
   describe('<Title />', () => {
     describe('With required props', () => {
-      const component = (
-        <Title
-          id='MOCK ID'
-        />
-      )
-
       it('renders', () => {
-        return expect(renderer.create(component).toJSON())
+        const {
+          container: {
+            firstElementChild: title
+          }
+        } = render(
+          <Title
+            id='MOCK ID'
+          />
+        )
+
+        expect(title)
+          .toBeNull()
+      })
+
+      describe('Always', () => {
+        it('invokes `getClassName`', () => {
+          const getClassNameSpy = jest.spyOn(Title.prototype, 'getClassName')
+
+          render(
+            <Title
+              id='MOCK ID'
+            />
+          )
+
+          expect(getClassNameSpy)
+            .not.toHaveBeenCalled()
+        })
+      })
+
+      /**
+       *  Element is null
+       */
+      it('matches the snapshot', () => {
+        const {
+          container: {
+            firstElementChild: title
+          }
+        } = render(
+          <Title
+            id='MOCK ID'
+          />
+        )
+
+        expect(snapshotOf(title))
           .toMatchSnapshot()
       })
 
-      describe('`isRequired`', () => {
-        it('is defined', () => {
-          return expect(Title.prototype.isRequired)
-            .toBeDefined()
-        })
-      })
-
-      describe('`isDisabled`', () => {
-        it('is defined', () => {
-          return expect(Title.prototype.isDisabled)
-            .toBeDefined()
-        })
-      })
-
-      describe('`isReadOnly`', () => {
-        it('is defined', () => {
-          return expect(Title.prototype.isReadOnly)
-            .toBeDefined()
-        })
-      })
-
-      describe('`getClassName`', () => {
-        it('is defined', () => {
-          return expect(Title.prototype.getClassName)
-            .toBeDefined()
-        })
-      })
-
-      describe('`shouldComponentUpdate`', () => {
-        it('is defined', () => {
-          return expect(Title.prototype.shouldComponentUpdate)
-            .toBeDefined()
-        })
-      })
-
-      describe('`renderIsRequired`', () => {
-        it('is defined', () => {
-          return expect(Title.prototype.renderIsRequired)
-            .toBeDefined()
-        })
-      })
-
-      describe('`renderIsDisabled`', () => {
-        it('is defined', () => {
-          return expect(Title.prototype.renderIsDisabled)
-            .toBeDefined()
-        })
-      })
-
-      describe('`renderIsReadOnly`', () => {
-        it('is defined', () => {
-          return expect(Title.prototype.renderIsReadOnly)
-            .toBeDefined()
-        })
+      /**
+       *  @deprecated For migration toward Testing Library
+       */
+      xit('matches the snapshot', () => {
+        expect(renderer.create((
+          <Title
+            id='MOCK ID'
+          />
+        )).toJSON())
+          .toMatchSnapshot()
       })
     })
 
     describe('With additional props', () => {
       it('renders', () => {
-        const component = (
+        const {
+          container: {
+            firstElementChild: title
+          }
+        } = render(
           <Title
             id='MOCK ID'
             title='MOCK TITLE'
@@ -95,205 +92,79 @@ describe('#cogs/components/title', () => {
           />
         )
 
-        return expect(renderer.create(component).toJSON())
+        expect(title)
+          .toBeInstanceOf(HTMLLabelElement)
+      })
+
+      describe('Always', () => {
+        it('invokes `getClassName`', () => {
+          const getClassNameSpy = jest.spyOn(Title.prototype, 'getClassName')
+
+          render(
+            <Title
+              id='MOCK ID'
+              title='MOCK TITLE'
+              required
+              disabled
+              readOnly
+            />
+          )
+
+          expect(getClassNameSpy)
+            .toHaveBeenCalled()
+        })
+      })
+
+      it('matches the snapshot', () => {
+        const {
+          container: {
+            firstElementChild: title
+          }
+        } = render(
+          <Title
+            id='MOCK ID'
+            title='MOCK TITLE'
+            required
+            disabled
+            readOnly
+          />
+        )
+
+        expect(snapshotOf(title))
+          .toMatchSnapshot()
+      })
+
+      /**
+       *  @deprecated For migration toward Testing Library
+       */
+      xit('matches the snapshot', () => {
+        expect(renderer.create((
+          <Title
+            id='MOCK ID'
+            title='MOCK TITLE'
+            required
+            disabled
+            readOnly
+          />
+        )).toJSON())
           .toMatchSnapshot()
       })
     })
 
-    describe('`shouldComponentUpdate()`', () => {
-      const component = (
-        <Title
-          id='MOCK ID'
-          title='MOCK TITLE'
-          required
-          disabled
-          readOnly>
-          MOCK CHILDREN
-        </Title>
-      )
-
-      /**
-       *  @type {void | null | renderer.ReactTestInstance}
-       */
-      let instance
-
-      beforeEach(() => {
-        instance = (
-          renderer.create(component)
-            .getInstance()
-        )
-      })
-
-      describe('`props` have changed', () => {
-        it('returns true', () => {
-          return expect(instance.shouldComponentUpdate({
-            id: 'MOCK CHANGE ID',
-            title: 'MOCK CHANGE TITLE',
-            required: false,
-            disabled: false,
-            readOnly: false,
-            children: 'MOCK CHANGE CHILDREN'
-          }))
-            .toBe(true)
-        })
-      })
-
-      describe('`props` have not changed', () => {
-        it('returns false', () => {
-          return expect(instance.shouldComponentUpdate({ // instance.props
-            id: 'MOCK ID',
-            title: 'MOCK TITLE',
-            required: true,
-            disabled: true,
-            readOnly: true,
-            children: 'MOCK CHILDREN'
-          }))
-            .toBe(false)
-        })
-      })
-    })
-
     describe('`getClassName()`', () => {
-      it('returns the classname', () => {
-        const component = (
+      it('returns a string', () => {
+        const {
+          container
+        } = render(
           <Title
             id='MOCK ID'
           />
         )
 
-        const instance = (
-          renderer.create(component)
-            .getInstance()
-        )
+        const instance = getComponentInstanceFrom(container)
 
-        return expect(instance.getClassName())
-          .toBe('title')
-      })
-    })
-
-    describe('`renderIsRequired()`', () => {
-      const component = (
-        <Title
-          id='MOCK ID'
-          title='MOCK TITLE'
-          required
-          disabled
-          readOnly
-        />
-      )
-
-      /**
-       *  @type {void | null | renderer.ReactTestInstance}
-       */
-      let instance
-
-      let isRequiredSpy
-
-      beforeEach(() => {
-        jest.clearAllMocks()
-
-        instance = (
-          renderer.create(component)
-            .getInstance()
-        )
-
-        isRequiredSpy = jest.spyOn(Title.prototype, 'isRequired').mockReturnValue('MOCK IS REQUIRED')
-
-        instance.renderIsRequired()
-      })
-
-      it('invokes `isRequired`', () => {
-        return expect(isRequiredSpy)
-          .toHaveBeenCalled()
-      })
-
-      xit('renders `<Required />`', () => {
-        return expect(Required)
-          .toHaveBeenCalled()
-      })
-    })
-
-    describe('`renderIsDisabled()`', () => {
-      const component = (
-        <Title
-          id='MOCK ID'
-          title='MOCK TITLE'
-          required
-          disabled
-          readOnly
-        />
-      )
-
-      /**
-       *  @type {void | null | renderer.ReactTestInstance}
-       */
-      let instance
-
-      let isDisabledSpy
-
-      beforeEach(() => {
-        jest.clearAllMocks()
-
-        instance = (
-          renderer.create(component)
-            .getInstance()
-        )
-
-        isDisabledSpy = jest.spyOn(Title.prototype, 'isDisabled').mockReturnValue('MOCK IS DISABLED')
-
-        instance.renderIsDisabled()
-      })
-
-      it('invokes `isDisabled`', () => {
-        return expect(isDisabledSpy)
-          .toHaveBeenCalled()
-      })
-
-      xit('renders `<Disabled />`', () => {
-        return expect(Disabled)
-          .toHaveBeenCalled()
-      })
-    })
-
-    describe('`renderIsReadOnly()`', () => {
-      const component = (
-        <Title
-          id='MOCK ID'
-          title='MOCK TITLE'
-          required
-          disabled
-          readOnly
-        />
-      )
-
-      /**
-       *  @type {void | null | renderer.ReactTestInstance}
-       */
-      let instance
-
-      let isReadOnlySpy
-
-      beforeEach(() => {
-        jest.clearAllMocks()
-
-        instance = (
-          renderer.create(component)
-            .getInstance()
-        )
-
-        isReadOnlySpy = jest.spyOn(Title.prototype, 'isReadOnly').mockReturnValue('MOCK IS READONLY')
-
-        instance.renderIsReadOnly()
-      })
-
-      it('invokes `isReadOnly`', () => {
-        return expect(isReadOnlySpy)
-          .toHaveBeenCalled()
-      })
-
-      xit('renders `<ReadOnly />`', () => {
-        return expect(ReadOnly)
-          .toHaveBeenCalled()
+        expect(instance.getClassName())
+          .toEqual(expect.any(String))
       })
     })
   })

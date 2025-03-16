@@ -49,9 +49,15 @@ export default class SelectCog extends ValueCog {
     } = props
 
     return (
-      super.shouldComponentUpdate(superProps) ||
+      /**
+       *  `value` may be `string` or `string[]`
+       */
       (value !== this.props.value) ||
+      /**
+       *  `defaultValue` may be `string` or `string[]`
+       */
       (defaultValue !== this.props.defaultValue) ||
+      super.shouldComponentUpdate(superProps) ||
       (multiple !== this.props.multiple) ||
       (children !== this.props.children)
     )
@@ -134,8 +140,8 @@ export default class SelectCog extends ValueCog {
 
     return (
       <Field
-        id={id}
         name={name}
+        id={id}
         value={value}
         defaultValue={defaultValue}
         required={required}

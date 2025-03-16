@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`#cogs/cogs/number <Cog /> With additional props Default value is a number matches the snapshot 1`] = `
+exports[`#cogs/cogs <CheckCog /> With additional props Checked is a boolean matches the snapshot 1`] = `
 <div
   className="MOCK CLASSNAME"
 >
-  <NumberTitle>
+  <Title>
     <label
-      className="MOCK CLASSNAME"
+      className="title"
       htmlFor="MOCK ID"
     >
       <TextContent>
@@ -38,10 +38,10 @@ exports[`#cogs/cogs/number <Cog /> With additional props Default value is a numb
         </span>
       </ReadOnly>
     </label>
-  </NumberTitle>
-  <NumberDescription>
+  </Title>
+  <Description>
     <span
-      className="MOCK CLASSNAME"
+      className="description"
     >
       <TextContent>
         <span
@@ -51,10 +51,10 @@ exports[`#cogs/cogs/number <Cog /> With additional props Default value is a numb
         </span>
       </TextContent>
     </span>
-  </NumberDescription>
-  <NumberErrorMessage>
+  </Description>
+  <ErrorMessage>
     <span
-      className="MOCK CLASSNAME"
+      className="error-message"
     >
       <TextContent>
         <span
@@ -64,33 +64,31 @@ exports[`#cogs/cogs/number <Cog /> With additional props Default value is a numb
         </span>
       </TextContent>
     </span>
-  </NumberErrorMessage>
-  <NumberField>
+  </ErrorMessage>
+  <CheckField>
     <input
       accessKey="MOCK ACCESS KEY"
-      className="MOCK CLASSNAME"
-      defaultValue="0"
+      className="input"
       disabled={true}
       id="MOCK ID"
       name="MOCK NAME"
       onChange={[Function]}
-      placeholder="MOCK PLACEHOLDER"
       readOnly={true}
       required={true}
       tabIndex={1}
-      type="number"
+      value="MOCK VALUE"
     />
-  </NumberField>
+  </CheckField>
 </div>
 `;
 
-exports[`#cogs/cogs/number <Cog /> With additional props Default value is a string matches the snapshot 1`] = `
+exports[`#cogs/cogs <CheckCog /> With additional props Default checked is a boolean matches the snapshot 1`] = `
 <div
   className="MOCK CLASSNAME"
 >
-  <NumberTitle>
+  <Title>
     <label
-      className="MOCK CLASSNAME"
+      className="title"
       htmlFor="MOCK ID"
     >
       <TextContent>
@@ -122,10 +120,10 @@ exports[`#cogs/cogs/number <Cog /> With additional props Default value is a stri
         </span>
       </ReadOnly>
     </label>
-  </NumberTitle>
-  <NumberDescription>
+  </Title>
+  <Description>
     <span
-      className="MOCK CLASSNAME"
+      className="description"
     >
       <TextContent>
         <span
@@ -135,10 +133,10 @@ exports[`#cogs/cogs/number <Cog /> With additional props Default value is a stri
         </span>
       </TextContent>
     </span>
-  </NumberDescription>
-  <NumberErrorMessage>
+  </Description>
+  <ErrorMessage>
     <span
-      className="MOCK CLASSNAME"
+      className="error-message"
     >
       <TextContent>
         <span
@@ -148,213 +146,228 @@ exports[`#cogs/cogs/number <Cog /> With additional props Default value is a stri
         </span>
       </TextContent>
     </span>
-  </NumberErrorMessage>
-  <NumberField>
+  </ErrorMessage>
+  <CheckField>
     <input
       accessKey="MOCK ACCESS KEY"
-      className="MOCK CLASSNAME"
-      defaultValue="0"
+      className="input"
       disabled={true}
       id="MOCK ID"
       name="MOCK NAME"
       onChange={[Function]}
-      placeholder="MOCK PLACEHOLDER"
       readOnly={true}
       required={true}
       tabIndex={1}
-      type="number"
+      value="MOCK VALUE"
     />
-  </NumberField>
+  </CheckField>
 </div>
 `;
 
-exports[`#cogs/cogs/number <Cog /> With additional props Value is a number matches the snapshot 1`] = `
+exports[`#cogs/cogs <CheckCog /> With required props matches the snapshot 1`] = `
 <div
   className="MOCK CLASSNAME"
 >
-  <NumberTitle>
-    <label
-      className="MOCK CLASSNAME"
-      htmlFor="MOCK ID"
-    >
-      <TextContent>
-        <span
-          className="text-content"
-        >
-          MOCK TITLE
-        </span>
-      </TextContent>
-      <Required>
-        <span
-          className="is-required"
-        >
-          *
-        </span>
-      </Required>
-      <Disabled>
-        <span
-          className="is-disabled"
-        >
-          *
-        </span>
-      </Disabled>
-      <ReadOnly>
-        <span
-          className="is-readonly"
-        >
-          *
-        </span>
-      </ReadOnly>
-    </label>
-  </NumberTitle>
-  <NumberDescription>
-    <span
-      className="MOCK CLASSNAME"
-    >
-      <TextContent>
-        <span
-          className="text-content"
-        >
-          MOCK DESCRIPTION
-        </span>
-      </TextContent>
-    </span>
-  </NumberDescription>
-  <NumberErrorMessage>
-    <span
-      className="MOCK CLASSNAME"
-    >
-      <TextContent>
-        <span
-          className="text-content"
-        >
-          Unknown
-        </span>
-      </TextContent>
-    </span>
-  </NumberErrorMessage>
-  <NumberField>
+  <Title />
+  <Description />
+  <ErrorMessage />
+  <CheckField>
     <input
-      accessKey="MOCK ACCESS KEY"
-      className="MOCK CLASSNAME"
-      disabled={true}
-      id="MOCK ID"
-      name="MOCK NAME"
-      onChange={[Function]}
-      placeholder="MOCK PLACEHOLDER"
-      readOnly={true}
-      required={true}
-      tabIndex={1}
-      type="number"
-      value="0"
-    />
-  </NumberField>
-</div>
-`;
-
-exports[`#cogs/cogs/number <Cog /> With additional props Value is a string matches the snapshot 1`] = `
-<div
-  className="MOCK CLASSNAME"
->
-  <NumberTitle>
-    <label
-      className="MOCK CLASSNAME"
-      htmlFor="MOCK ID"
-    >
-      <TextContent>
-        <span
-          className="text-content"
-        >
-          MOCK TITLE
-        </span>
-      </TextContent>
-      <Required>
-        <span
-          className="is-required"
-        >
-          *
-        </span>
-      </Required>
-      <Disabled>
-        <span
-          className="is-disabled"
-        >
-          *
-        </span>
-      </Disabled>
-      <ReadOnly>
-        <span
-          className="is-readonly"
-        >
-          *
-        </span>
-      </ReadOnly>
-    </label>
-  </NumberTitle>
-  <NumberDescription>
-    <span
-      className="MOCK CLASSNAME"
-    >
-      <TextContent>
-        <span
-          className="text-content"
-        >
-          MOCK DESCRIPTION
-        </span>
-      </TextContent>
-    </span>
-  </NumberDescription>
-  <NumberErrorMessage>
-    <span
-      className="MOCK CLASSNAME"
-    >
-      <TextContent>
-        <span
-          className="text-content"
-        >
-          Unknown
-        </span>
-      </TextContent>
-    </span>
-  </NumberErrorMessage>
-  <NumberField>
-    <input
-      accessKey="MOCK ACCESS KEY"
-      className="MOCK CLASSNAME"
-      disabled={true}
-      id="MOCK ID"
-      name="MOCK NAME"
-      onChange={[Function]}
-      placeholder="MOCK PLACEHOLDER"
-      readOnly={true}
-      required={true}
-      tabIndex={1}
-      type="number"
-      value="0"
-    />
-  </NumberField>
-</div>
-`;
-
-exports[`#cogs/cogs/number <Cog /> With required props matches the snapshot 1`] = `
-<div
-  className="MOCK CLASSNAME"
->
-  <NumberTitle />
-  <NumberDescription />
-  <NumberErrorMessage />
-  <NumberField>
-    <input
-      className="MOCK CLASSNAME"
+      className="input"
       disabled={false}
       id="MOCK NAME"
       name="MOCK NAME"
       onChange={[Function]}
       readOnly={false}
       required={false}
-      type="number"
-      value=""
+      value="MOCK VALUE"
     />
-  </NumberField>
+  </CheckField>
+</div>
+`;
+
+exports[`#cogs/cogs <ValueCog /> With additional props Default value is a string matches the snapshot 1`] = `
+<div
+  className="MOCK CLASSNAME"
+>
+  <Title>
+    <label
+      className="title"
+      htmlFor="MOCK ID"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          MOCK TITLE
+        </span>
+      </TextContent>
+      <Required>
+        <span
+          className="is-required"
+        >
+          *
+        </span>
+      </Required>
+      <Disabled>
+        <span
+          className="is-disabled"
+        >
+          *
+        </span>
+      </Disabled>
+      <ReadOnly>
+        <span
+          className="is-readonly"
+        >
+          *
+        </span>
+      </ReadOnly>
+    </label>
+  </Title>
+  <Description>
+    <span
+      className="description"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          MOCK DESCRIPTION
+        </span>
+      </TextContent>
+    </span>
+  </Description>
+  <ErrorMessage>
+    <span
+      className="error-message"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          Unknown
+        </span>
+      </TextContent>
+    </span>
+  </ErrorMessage>
+  <ValueField>
+    <input
+      accessKey="MOCK ACCESS KEY"
+      className="input"
+      disabled={true}
+      id="MOCK ID"
+      name="MOCK NAME"
+      onChange={[Function]}
+      placeholder="MOCK PLACEHOLDER"
+      readOnly={true}
+      required={true}
+      tabIndex={1}
+    />
+  </ValueField>
+</div>
+`;
+
+exports[`#cogs/cogs <ValueCog /> With additional props Value is a string matches the snapshot 1`] = `
+<div
+  className="MOCK CLASSNAME"
+>
+  <Title>
+    <label
+      className="title"
+      htmlFor="MOCK ID"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          MOCK TITLE
+        </span>
+      </TextContent>
+      <Required>
+        <span
+          className="is-required"
+        >
+          *
+        </span>
+      </Required>
+      <Disabled>
+        <span
+          className="is-disabled"
+        >
+          *
+        </span>
+      </Disabled>
+      <ReadOnly>
+        <span
+          className="is-readonly"
+        >
+          *
+        </span>
+      </ReadOnly>
+    </label>
+  </Title>
+  <Description>
+    <span
+      className="description"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          MOCK DESCRIPTION
+        </span>
+      </TextContent>
+    </span>
+  </Description>
+  <ErrorMessage>
+    <span
+      className="error-message"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          Unknown
+        </span>
+      </TextContent>
+    </span>
+  </ErrorMessage>
+  <ValueField>
+    <input
+      accessKey="MOCK ACCESS KEY"
+      className="input"
+      disabled={true}
+      id="MOCK ID"
+      name="MOCK NAME"
+      onChange={[Function]}
+      placeholder="MOCK PLACEHOLDER"
+      readOnly={true}
+      required={true}
+      tabIndex={1}
+      value="MOCK VALUE"
+    />
+  </ValueField>
+</div>
+`;
+
+exports[`#cogs/cogs <ValueCog /> With required props matches the snapshot 1`] = `
+<div
+  className="MOCK CLASSNAME"
+>
+  <Title />
+  <Description />
+  <ErrorMessage />
+  <ValueField>
+    <input
+      className="input"
+      disabled={false}
+      id="MOCK NAME"
+      name="MOCK NAME"
+      onChange={[Function]}
+      readOnly={false}
+      required={false}
+    />
+  </ValueField>
 </div>
 `;

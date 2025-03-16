@@ -36,22 +36,6 @@ export default class Radio extends CheckCog {
   }
 
   /**
-   *  @param {CheckProps} props
-   *  @returns {boolean}
-   */
-  shouldComponentUpdate (props) {
-    const {
-      value,
-      ...superProps
-    } = props
-
-    return (
-      super.shouldComponentUpdate(superProps) || // , state) //
-      (value !== this.props.value)
-    )
-  }
-
-  /**
    *  @param {string} name
    *  @param {string | string[]} [value]
    *  @param {boolean} [checked]
@@ -141,8 +125,8 @@ export default class Radio extends CheckCog {
 
     return (
       <Field
-        id={id}
         name={name}
+        id={id}
         value={value}
         checked={checked}
         defaultChecked={defaultChecked}

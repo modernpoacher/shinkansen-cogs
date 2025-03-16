@@ -1,6 +1,20 @@
-import React, { Component as mockComponent } from 'react'
+/**
+ *  @typedef {CogsTypes.Cogs.CheckProps} CheckProps
+ *  @typedef {CogsTypes.Cogs.Checkbox.CheckboxProps} CheckboxProps
+ */
+
+import React from 'react'
+import snapshotOf from 'react-component-snapshot'
 import renderer from 'react-test-renderer'
 import classnames from 'classnames'
+
+import '@testing-library/jest-dom'
+
+import {
+  render
+} from '@testing-library/react'
+
+import getComponentInstanceFrom from 'react-component-instance/container'
 
 import {
   CheckCog
@@ -8,75 +22,7 @@ import {
 
 import Cog from '#cogs/cogs/checkbox'
 
-import Title from '#cogs/cogs/checkbox/title'
-import Description from '#cogs/cogs/checkbox/description'
-import ErrorMessage from '#cogs/cogs/checkbox/error-message'
-import Field from '#cogs/cogs/checkbox/field'
-
-jest.mock('classnames', () => jest.fn(() => 'MOCK CLASSNAME'))
-
-jest.mock('#cogs/cogs', () => {
-  class MockCog extends mockComponent {
-    getClassName () {
-      return 'MOCK CLASSNAME'
-    }
-
-    getId () {
-      return 'MOCK ID'
-    }
-
-    shouldComponentUpdate () {
-      return true
-    }
-
-    renderTitle () {
-      return 'MOCK TITLE'
-    }
-
-    renderDescription () {
-      return 'MOCK DESCRIPTION'
-    }
-
-    renderErrorMessage () {
-      return 'MOCK ERROR MESSAGE'
-    }
-
-    renderField () {
-      return 'MOCK FIELD'
-    }
-
-    render () {
-      const className = this.getClassName()
-
-      return (
-        <div className={className}>
-          {this.renderField()}
-          {this.renderTitle()}
-          {this.renderDescription()}
-          {this.renderErrorMessage()}
-        </div>
-      )
-    }
-  }
-
-  return {
-    __esModule: true,
-    CheckCog: MockCog
-  }
-})
-
-jest.mock('#cogs/cogs/checkbox/title')
-jest.mock('#cogs/cogs/checkbox/description')
-jest.mock('#cogs/cogs/checkbox/error-message')
-jest.mock('#cogs/cogs/checkbox/field')
-
-class MockErrorMessage extends mockComponent {
-  state = {}
-
-  render () {
-    return null
-  }
-}
+jest.mock('classnames', () => jest.fn().mockReturnValue('MOCK CLASSNAME'))
 
 const MOCK_ERROR_MESSAGE = {
   type: 'UNKNOWN',
@@ -84,82 +30,137 @@ const MOCK_ERROR_MESSAGE = {
   uri: '#/'
 }
 
-const MOCK_CHANGE_ERROR_MESSAGE = {
-  type: 'MOCK CHANGE TYPE',
-  params: {},
-  uri: 'MOCK CHANGE URI'
-}
-
 describe('#cogs/cogs/checkbox', () => {
-  beforeAll(() => {
-    /*
-     *  class defines `state` for instance
-     */
-    ErrorMessage.mockImplementation(() => new MockErrorMessage())
-    /*
-     *  function returns `state`
-     */
-    ErrorMessage.getDerivedStateFromProps.mockReturnValue({})
-  })
-
   describe('<Cog />', () => {
     const MOCK_FIELD_REF = { current: null }
     const MOCK_ON_CHANGE = jest.fn()
-    const MOCK_ON_CLICK = jest.fn()
 
     describe('With required props', () => {
-      const component = (
-        <Cog
-          name='MOCK NAME'
-          value='MOCK VALUE'
-        />
-      )
-
       it('renders', () => {
-        return expect(renderer.create(component).toJSON())
+        const {
+          container: {
+            firstElementChild: cog
+          }
+        } = render(
+          <Cog
+            name='MOCK NAME'
+            value='MOCK VALUE'
+          />
+        )
+
+        expect(cog)
+          .toBeInstanceOf(HTMLDivElement)
+      })
+
+      describe('Always', () => {
+        /**
+         *  @type {undefined | jest.SpyInstance}
+         */
+        let getClassNameSpy
+
+        /**
+         *  @type {undefined | jest.SpyInstance}
+         */
+        let renderTitleSpy
+
+        /**
+         *  @type {undefined | jest.SpyInstance}
+         */
+        let renderDescriptionSpy
+
+        /**
+         *  @type {undefined | jest.SpyInstance}
+         */
+        let renderErrorMessageSpy
+
+        /**
+         *  @type {undefined | jest.SpyInstance}
+         */
+        let renderFieldSpy
+
+        beforeEach(() => {
+          getClassNameSpy = jest.spyOn(Cog.prototype, 'getClassName')
+
+          renderTitleSpy = jest.spyOn(Cog.prototype, 'renderTitle')
+
+          renderDescriptionSpy = jest.spyOn(Cog.prototype, 'renderDescription')
+
+          renderErrorMessageSpy = jest.spyOn(Cog.prototype, 'renderErrorMessage')
+
+          renderFieldSpy = jest.spyOn(Cog.prototype, 'renderField')
+
+          render(
+            <Cog
+              name='MOCK NAME'
+              value='MOCK VALUE'
+            />
+          )
+        })
+
+        it('invokes `getClassName`', () => {
+          expect(getClassNameSpy)
+            .toHaveBeenCalled()
+        })
+
+        it('invokes `renderTitle`', () => {
+          expect(renderTitleSpy)
+            .toHaveBeenCalled()
+        })
+
+        it('invokes `renderDescription`', () => {
+          expect(renderDescriptionSpy)
+            .toHaveBeenCalled()
+        })
+
+        it('invokes `renderErrorMessage`', () => {
+          expect(renderErrorMessageSpy)
+            .toHaveBeenCalled()
+        })
+
+        it('invokes `renderField`', () => {
+          expect(renderFieldSpy)
+            .toHaveBeenCalled()
+        })
+      })
+
+      it('matches the snapshot', () => {
+        const {
+          container: {
+            firstElementChild: element
+          }
+        } = render(
+          <Cog
+            name='MOCK NAME'
+            value='MOCK VALUE'
+          />
+        )
+
+        expect(snapshotOf(element))
           .toMatchSnapshot()
       })
 
-      describe('`getClassName`', () => {
-        it('is defined', () => {
-          return expect(Cog.prototype.getClassName)
-            .toBeDefined()
-        })
-      })
-
-      describe('`renderTitle`', () => {
-        it('is defined', () => {
-          return expect(Cog.prototype.renderTitle)
-            .toBeDefined()
-        })
-      })
-
-      describe('`renderDescription`', () => {
-        it('is defined', () => {
-          return expect(Cog.prototype.renderDescription)
-            .toBeDefined()
-        })
-      })
-
-      describe('`renderErrorMessage`', () => {
-        it('is defined', () => {
-          return expect(Cog.prototype.renderErrorMessage)
-            .toBeDefined()
-        })
-      })
-
-      describe('`renderField`', () => {
-        it('is defined', () => {
-          return expect(Cog.prototype.renderField)
-            .toBeDefined()
-        })
+      /**
+       *  @deprecated For migration toward Testing Library
+       */
+      xit('matches the snapshot', () => {
+        expect(renderer.create((
+          <Cog
+            name='MOCK NAME'
+            value='MOCK VALUE'
+          />
+        )).toJSON())
+          .toMatchSnapshot()
       })
     })
 
     describe('With additional props', () => {
       describe('Checked is a boolean', () => {
         it('renders', () => {
-          const component = (
+          const {
+            container: {
+              firstElementChild: cog
+            }
+          } = render(
             <Cog
               name='MOCK NAME'
               id='MOCK ID'
@@ -173,21 +174,159 @@ describe('#cogs/cogs/checkbox', () => {
               required
               disabled
               readOnly
-              placeholder='MOCK PLACEHOLDER'
               fieldRef={MOCK_FIELD_REF}
               onChange={MOCK_ON_CHANGE}
-              onClick={MOCK_ON_CLICK}
             />
           )
 
-          return expect(renderer.create(component).toJSON())
+          expect(cog)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        describe('Always', () => {
+          /**
+           *  @type {undefined | jest.SpyInstance}
+           */
+          let getClassNameSpy
+
+          /**
+           *  @type {undefined | jest.SpyInstance}
+           */
+          let renderTitleSpy
+
+          /**
+           *  @type {undefined | jest.SpyInstance}
+           */
+          let renderDescriptionSpy
+
+          /**
+           *  @type {undefined | jest.SpyInstance}
+           */
+          let renderErrorMessageSpy
+
+          /**
+           *  @type {undefined | jest.SpyInstance}
+           */
+          let renderFieldSpy
+
+          beforeEach(() => {
+            getClassNameSpy = jest.spyOn(Cog.prototype, 'getClassName')
+
+            renderTitleSpy = jest.spyOn(Cog.prototype, 'renderTitle')
+
+            renderDescriptionSpy = jest.spyOn(Cog.prototype, 'renderDescription')
+
+            renderErrorMessageSpy = jest.spyOn(Cog.prototype, 'renderErrorMessage')
+
+            renderFieldSpy = jest.spyOn(Cog.prototype, 'renderField')
+
+            render(
+              <Cog
+                name='MOCK NAME'
+                id='MOCK ID'
+                title='MOCK TITLE'
+                description='MOCK DESCRIPTION'
+                errorMessage={MOCK_ERROR_MESSAGE}
+                value='MOCK VALUE'
+                tabIndex={1}
+                accessKey='MOCK ACCESS KEY'
+                checked
+                required
+                disabled
+                readOnly
+                fieldRef={MOCK_FIELD_REF}
+                onChange={MOCK_ON_CHANGE}
+              />
+            )
+          })
+
+          it('invokes `getClassName`', () => {
+            expect(getClassNameSpy)
+              .toHaveBeenCalled()
+          })
+
+          it('invokes `renderTitle`', () => {
+            expect(renderTitleSpy)
+              .toHaveBeenCalled()
+          })
+
+          it('invokes `renderDescription`', () => {
+            expect(renderDescriptionSpy)
+              .toHaveBeenCalled()
+          })
+
+          it('invokes `renderErrorMessage`', () => {
+            expect(renderErrorMessageSpy)
+              .toHaveBeenCalled()
+          })
+
+          it('invokes `renderField`', () => {
+            expect(renderFieldSpy)
+              .toHaveBeenCalled()
+          })
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: element
+            }
+          } = render(
+            <Cog
+              name='MOCK NAME'
+              id='MOCK ID'
+              title='MOCK TITLE'
+              description='MOCK DESCRIPTION'
+              errorMessage={MOCK_ERROR_MESSAGE}
+              value='MOCK VALUE'
+              tabIndex={1}
+              accessKey='MOCK ACCESS KEY'
+              checked
+              required
+              disabled
+              readOnly
+              fieldRef={MOCK_FIELD_REF}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(element))
+            .toMatchSnapshot()
+        })
+
+        /**
+         *  @deprecated For migration toward Testing Library
+         */
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Cog
+              name='MOCK NAME'
+              id='MOCK ID'
+              title='MOCK TITLE'
+              description='MOCK DESCRIPTION'
+              errorMessage={MOCK_ERROR_MESSAGE}
+              value='MOCK VALUE'
+              tabIndex={1}
+              accessKey='MOCK ACCESS KEY'
+              checked
+              required
+              disabled
+              readOnly
+              fieldRef={MOCK_FIELD_REF}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
             .toMatchSnapshot()
         })
       })
 
       describe('Default checked is a boolean', () => {
         it('renders', () => {
-          const component = (
+          const {
+            container: {
+              firstElementChild: cog
+            }
+          } = render(
             <Cog
               name='MOCK NAME'
               id='MOCK ID'
@@ -201,344 +340,323 @@ describe('#cogs/cogs/checkbox', () => {
               required
               disabled
               readOnly
-              placeholder='MOCK PLACEHOLDER'
               fieldRef={MOCK_FIELD_REF}
               onChange={MOCK_ON_CHANGE}
-              onClick={MOCK_ON_CLICK}
             />
           )
 
-          return expect(renderer.create(component).toJSON())
+          expect(cog)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        describe('Always', () => {
+          /**
+           *  @type {undefined | jest.SpyInstance}
+           */
+          let getClassNameSpy
+
+          /**
+           *  @type {undefined | jest.SpyInstance}
+           */
+          let renderTitleSpy
+
+          /**
+           *  @type {undefined | jest.SpyInstance}
+           */
+          let renderDescriptionSpy
+
+          /**
+           *  @type {undefined | jest.SpyInstance}
+           */
+          let renderErrorMessageSpy
+
+          /**
+           *  @type {undefined | jest.SpyInstance}
+           */
+          let renderFieldSpy
+
+          beforeEach(() => {
+            getClassNameSpy = jest.spyOn(Cog.prototype, 'getClassName')
+
+            renderTitleSpy = jest.spyOn(Cog.prototype, 'renderTitle')
+
+            renderDescriptionSpy = jest.spyOn(Cog.prototype, 'renderDescription')
+
+            renderErrorMessageSpy = jest.spyOn(Cog.prototype, 'renderErrorMessage')
+
+            renderFieldSpy = jest.spyOn(Cog.prototype, 'renderField')
+
+            render(
+              <Cog
+                name='MOCK NAME'
+                id='MOCK ID'
+                title='MOCK TITLE'
+                description='MOCK DESCRIPTION'
+                errorMessage={MOCK_ERROR_MESSAGE}
+                value='MOCK VALUE'
+                tabIndex={1}
+                accessKey='MOCK ACCESS KEY'
+                defaultChecked
+                required
+                disabled
+                readOnly
+                fieldRef={MOCK_FIELD_REF}
+                onChange={MOCK_ON_CHANGE}
+              />
+            )
+          })
+
+          it('invokes `getClassName`', () => {
+            expect(getClassNameSpy)
+              .toHaveBeenCalled()
+          })
+
+          it('invokes `renderTitle`', () => {
+            expect(renderTitleSpy)
+              .toHaveBeenCalled()
+          })
+
+          it('invokes `renderDescription`', () => {
+            expect(renderDescriptionSpy)
+              .toHaveBeenCalled()
+          })
+
+          it('invokes `renderErrorMessage`', () => {
+            expect(renderErrorMessageSpy)
+              .toHaveBeenCalled()
+          })
+
+          it('invokes `renderField`', () => {
+            expect(renderFieldSpy)
+              .toHaveBeenCalled()
+          })
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: element
+            }
+          } = render(
+            <Cog
+              name='MOCK NAME'
+              id='MOCK ID'
+              title='MOCK TITLE'
+              description='MOCK DESCRIPTION'
+              errorMessage={MOCK_ERROR_MESSAGE}
+              value='MOCK VALUE'
+              tabIndex={1}
+              accessKey='MOCK ACCESS KEY'
+              defaultChecked
+              required
+              disabled
+              readOnly
+              fieldRef={MOCK_FIELD_REF}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(element))
+            .toMatchSnapshot()
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: element
+            }
+          } = render(
+            <Cog
+              name='MOCK NAME'
+              id='MOCK ID'
+              title='MOCK TITLE'
+              description='MOCK DESCRIPTION'
+              errorMessage={MOCK_ERROR_MESSAGE}
+              value='MOCK VALUE'
+              tabIndex={1}
+              accessKey='MOCK ACCESS KEY'
+              defaultChecked
+              required
+              disabled
+              readOnly
+              fieldRef={MOCK_FIELD_REF}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(element))
+            .toMatchSnapshot()
+        })
+
+        /**
+         *  @deprecated For migration toward Testing Library
+         */
+        xit('matches the snapshot', () => {
+          expect(renderer.create(
+            <Cog
+              name='MOCK NAME'
+              id='MOCK ID'
+              title='MOCK TITLE'
+              description='MOCK DESCRIPTION'
+              errorMessage={MOCK_ERROR_MESSAGE}
+              value='MOCK VALUE'
+              tabIndex={1}
+              accessKey='MOCK ACCESS KEY'
+              defaultChecked
+              required
+              disabled
+              readOnly
+              fieldRef={MOCK_FIELD_REF}
+              onChange={MOCK_ON_CHANGE}
+            />
+          ).toJSON())
             .toMatchSnapshot()
         })
       })
     })
 
-    describe('`shouldComponentUpdate()`', () => {
-      const component = (
-        <Cog
-          name='MOCK NAME'
-          id='MOCK ID'
-          title='MOCK TITLE'
-          description='MOCK DESCRIPTION'
-          errorMessage={MOCK_ERROR_MESSAGE}
-          value='MOCK VALUE'
-          tabIndex={1}
-          accessKey='MOCK ACCESS KEY'
-          required
-          disabled
-          readOnly
-          placeholder='MOCK PLACEHOLDER'
-          fieldRef={MOCK_FIELD_REF}
-          onChange={MOCK_ON_CHANGE}
-          onClick={MOCK_ON_CLICK}
-        />
-      )
-
-      /**
-       *  @type {void | null | renderer.ReactTestInstance}
-       */
-      let instance
-
-      beforeEach(() => {
-        /**
-         *  Always return false (we're not testing conditions in `super.shouldComponentUpdate()`)
-         */
-        jest.spyOn(CheckCog.prototype, 'shouldComponentUpdate').mockReturnValue(false)
-
-        instance = renderer.create(component).getInstance()
-      })
-
-      describe('`props` have changed', () => {
-        it('returns true', () => {
-          return expect(instance.shouldComponentUpdate({
-            name: 'MOCK CHANGE NAME',
-            id: 'MOCK CHANGE ID',
-            title: 'MOCK CHANGE TITLE',
-            description: 'MOCK CHANGE DESCRIPTION',
-            errorMessage: MOCK_CHANGE_ERROR_MESSAGE,
-            value: 'MOCK CHANGE VALUE',
-            tabIndex: 0,
-            accessKey: 'MOCK CHANGE ACCESS KEY',
-            required: false,
-            disabled: false,
-            readOnly: false,
-            placeholder: 'MOCK CHANGE PLACEHOLDER'
-          }))
-            .toBe(true)
-        })
-      })
-
-      describe('`props` have not changed', () => {
-        it('returns false', () => {
-          return expect(instance.shouldComponentUpdate({ // instance.props
-            name: 'MOCK NAME',
-            id: 'MOCK ID',
-            title: 'MOCK TITLE',
-            description: 'MOCK DESCRIPTION',
-            errorMessage: MOCK_ERROR_MESSAGE,
-            value: 'MOCK VALUE',
-            tabIndex: 1,
-            accessKey: 'MOCK ACCESS KEY',
-            required: true,
-            disabled: true,
-            readOnly: true,
-            placeholder: 'MOCK PLACEHOLDER'
-          }))
-            .toBe(false)
-        })
-      })
-    })
-
     describe('`getClassName()`', () => {
-      let returnValue
+      it('invokes `classnames`', () => {
+        /**
+         *  Ensure `super.getClassName()` returns a value
+         */
+        const getClassNameSpy = jest.spyOn(CheckCog.prototype, 'getClassName').mockReturnValue('MOCK CLASSNAME')
 
-      beforeEach(() => {
-        jest.spyOn(CheckCog.prototype, 'getClassName').mockReturnValue('MOCK GETCLASSNAME')
-
-        const component = (
+        const {
+          container
+        } = render(
           <Cog
             name='MOCK NAME'
             value='MOCK VALUE'
-            fieldRef={MOCK_FIELD_REF}
           />
         )
 
-        const instance = (
-          renderer.create(component)
-            .getInstance()
-        )
+        const instance = getComponentInstanceFrom(container)
 
-        returnValue = instance.getClassName()
+        /**
+         *  Ensure it is reset after render
+         */
+        classnames.mockClear()
+
+        /**
+         *  Ensure it is reset after render
+         */
+        getClassNameSpy.mockClear()
+
+        instance.getClassName()
+
+        expect(classnames)
+          .toHaveBeenCalledWith('MOCK CLASSNAME', 'checkbox')
+      })
+    })
+
+    describe('`handleChange()`', () => {
+      describe('Checked is a boolean', () => {
+        it('invokes `onChange`', () => {
+          const {
+            container
+          } = render(
+            <Cog
+              name='MOCK NAME'
+              value='MOCK VALUE'
+              checked
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          const instance = getComponentInstanceFrom(container)
+
+          /**
+           *  Ensure it is reset after render
+           */
+          MOCK_ON_CHANGE.mockClear()
+
+          instance.handleChange('MOCK NAME', 'MOCK CHANGED VALUE', false)
+
+          expect(MOCK_ON_CHANGE)
+            .toHaveBeenCalledWith('MOCK NAME', 'MOCK CHANGED VALUE', false)
+        })
       })
 
-      it('invokes `classnames`', () => {
-        return expect(classnames)
-          .toHaveBeenCalledWith('MOCK GETCLASSNAME', 'checkbox')
-      })
+      describe('Default checked is a boolean', () => {
+        it('invokes `onChange`', () => {
+          const {
+            container
+          } = render(
+            <Cog
+              name='MOCK NAME'
+              value='MOCK VALUE'
+              defaultChecked
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
 
-      it('returns the classname', () => {
-        return expect(returnValue)
-          .toBe('MOCK CLASSNAME')
+          const instance = getComponentInstanceFrom(container)
+
+          /**
+           *  Ensure it is reset after render
+           */
+          MOCK_ON_CHANGE.mockClear()
+
+          instance.handleChange('MOCK NAME', 'MOCK CHANGED DEFAULT VALUE', false)
+
+          expect(MOCK_ON_CHANGE)
+            .toHaveBeenCalledWith('MOCK NAME', 'MOCK CHANGED DEFAULT VALUE', false)
+        })
       })
     })
 
     describe('`renderTitle()`', () => {
-      const component = (
-        <Cog
-          name='MOCK NAME'
-          id='MOCK ID'
-          title='MOCK TITLE'
-          description='MOCK DESCRIPTION'
-          errorMessage={MOCK_ERROR_MESSAGE}
-          value='MOCK VALUE'
-          tabIndex={1}
-          accessKey='MOCK ACCESS KEY'
-          required
-          disabled
-          readOnly
-          placeholder='MOCK PLACEHOLDER'
-          fieldRef={MOCK_FIELD_REF}
-          onChange={MOCK_ON_CHANGE}
-          onClick={MOCK_ON_CLICK}
-        />
-      )
-
-      /**
-       *  @type {void | null | renderer.ReactTestInstance}
-       */
-      let instance
-
-      /**
-       *  @type {void | jest.SpyInstance}
-       */
-      let getIdSpy
-
-      beforeEach(() => {
-        jest.clearAllMocks()
-
-        instance = (
-          renderer.create(component)
-            .getInstance()
+      it('invokes `getId`', () => {
+        const {
+          container
+        } = render(
+          <Cog
+            name='MOCK NAME'
+            id='MOCK ID'
+            title='MOCK TITLE'
+            value='MOCK VALUE'
+          />
         )
 
-        getIdSpy = jest.spyOn(Cog.prototype, 'getId').mockReturnValue('MOCK ID')
+        const instance = getComponentInstanceFrom(container)
+
+        /**
+         *  Spy (and mock the return value)
+         */
+        const getIdSpy = jest.spyOn(instance, 'getId').mockReturnValue('MOCK ID')
 
         instance.renderTitle()
-      })
 
-      it('invokes `getId`', () => {
-        return expect(getIdSpy)
+        expect(getIdSpy)
           .toHaveBeenCalled()
-      })
-
-      it('renders `<Title />`', () => {
-        return expect(Title)
-          .toHaveBeenCalledWith({
-            id: 'MOCK ID',
-            title: 'MOCK TITLE',
-            disabled: true,
-            required: true,
-            readOnly: true
-          }, {})
-      })
-    })
-
-    describe('`renderDescription()`', () => {
-      const component = (
-        <Cog
-          name='MOCK NAME'
-          id='MOCK ID'
-          title='MOCK TITLE'
-          description='MOCK DESCRIPTION'
-          errorMessage={MOCK_ERROR_MESSAGE}
-          value='MOCK VALUE'
-          tabIndex={1}
-          accessKey='MOCK ACCESS KEY'
-          required
-          disabled
-          readOnly
-          placeholder='MOCK PLACEHOLDER'
-          fieldRef={MOCK_FIELD_REF}
-          onChange={MOCK_ON_CHANGE}
-          onClick={MOCK_ON_CLICK}
-        />
-      )
-
-      /**
-       *  @type {void | null | renderer.ReactTestInstance}
-       */
-      let instance
-
-      beforeEach(() => {
-        jest.clearAllMocks()
-
-        instance = (
-          renderer.create(component)
-            .getInstance()
-        )
-
-        instance.renderDescription()
-      })
-
-      it('renders `<Description />`', () => {
-        return expect(Description)
-          .toHaveBeenCalledWith({
-            description: 'MOCK DESCRIPTION'
-          }, {})
-      })
-    })
-
-    describe('`renderErrorMessage()`', () => {
-      const component = (
-        <Cog
-          name='MOCK NAME'
-          id='MOCK ID'
-          title='MOCK TITLE'
-          description='MOCK DESCRIPTION'
-          errorMessage={MOCK_ERROR_MESSAGE}
-          value='MOCK VALUE'
-          tabIndex={1}
-          accessKey='MOCK ACCESS KEY'
-          required
-          disabled
-          readOnly
-          placeholder='MOCK PLACEHOLDER'
-          fieldRef={MOCK_FIELD_REF}
-          onChange={MOCK_ON_CHANGE}
-          onClick={MOCK_ON_CLICK}
-        />
-      )
-
-      /**
-       *  @type {void | null | renderer.ReactTestInstance}
-       */
-      let instance
-
-      beforeEach(() => {
-        jest.clearAllMocks()
-
-        instance = (
-          renderer.create(component)
-            .getInstance()
-        )
-
-        instance.renderErrorMessage()
-      })
-
-      it('renders `<ErrorMessage />`', () => {
-        return expect(ErrorMessage)
-          .toHaveBeenCalledWith({
-            errorMessage: MOCK_ERROR_MESSAGE
-          }, {})
       })
     })
 
     describe('`renderField()`', () => {
-      const component = (
-        <Cog
-          name='MOCK NAME'
-          id='MOCK ID'
-          title='MOCK TITLE'
-          description='MOCK DESCRIPTION'
-          errorMessage={MOCK_ERROR_MESSAGE}
-          value='MOCK VALUE'
-          tabIndex={1}
-          accessKey='MOCK ACCESS KEY'
-          required
-          disabled
-          readOnly
-          placeholder='MOCK PLACEHOLDER'
-          fieldRef={MOCK_FIELD_REF}
-          onChange={MOCK_ON_CHANGE}
-          onClick={MOCK_ON_CLICK}
-        />
-      )
-
-      /**
-       *  @type {void | null | renderer.ReactTestInstance}
-       */
-      let instance
-
-      /**
-       *  @type {void | jest.SpyInstance}
-       */
-      let getIdSpy
-
-      beforeEach(() => {
-        jest.clearAllMocks()
-
-        instance = (
-          renderer.create(component)
-            .getInstance()
+      it('invokes `getId`', () => {
+        const {
+          container
+        } = render(
+          <Cog
+            name='MOCK NAME'
+            id='MOCK ID'
+            title='MOCK TITLE'
+            value='MOCK VALUE'
+          />
         )
 
-        getIdSpy = jest.spyOn(Cog.prototype, 'getId').mockReturnValue('MOCK ID')
+        const instance = getComponentInstanceFrom(container)
+
+        /**
+         *  Spy (and mock the return value)
+         */
+        const getIdSpy = jest.spyOn(instance, 'getId').mockReturnValue('MOCK ID')
 
         instance.renderField()
-      })
 
-      it('invokes `getId`', () => {
-        return expect(getIdSpy)
+        expect(getIdSpy)
           .toHaveBeenCalled()
-      })
-
-      it('renders `<Field />`', () => {
-        return expect(Field)
-          .toHaveBeenCalledWith({
-            name: 'MOCK NAME',
-            id: 'MOCK ID',
-            value: 'MOCK VALUE',
-            tabIndex: 1,
-            accessKey: 'MOCK ACCESS KEY',
-            required: true,
-            disabled: true,
-            readOnly: true,
-            placeholder: 'MOCK PLACEHOLDER',
-            fieldRef: expect.any(Object),
-            onChange: expect.any(Function),
-            onClick: expect.any(Function)
-          }, {})
       })
     })
   })

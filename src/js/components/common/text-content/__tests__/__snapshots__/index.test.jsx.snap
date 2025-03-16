@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`#cogs/components/common/text-content <TextContent /> With required props renders 1`] = `
+exports[`#cogs/components/common/text-content <TextContent /> matches the snapshot 1`] = `
 <span
   className="text-content"
 >

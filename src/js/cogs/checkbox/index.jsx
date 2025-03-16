@@ -8,7 +8,6 @@
  *  CheckboxCog component
  */
 import React from 'react'
-import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 import {
@@ -33,22 +32,6 @@ function DEFAULT_HANDLE_EVENT () {
 export default class CheckboxCog extends CheckCog {
   getClassName () {
     return classnames(super.getClassName(), 'checkbox')
-  }
-
-  /**
-   *  @param {CheckProps} props
-   *  @returns {boolean}
-   */
-  shouldComponentUpdate (props) {
-    const {
-      value,
-      ...superProps
-    } = props
-
-    return (
-      super.shouldComponentUpdate(superProps) ||
-      (value !== this.props.value)
-    )
   }
 
   /**
@@ -141,8 +124,8 @@ export default class CheckboxCog extends CheckCog {
 
     return (
       <Field
-        id={id}
         name={name}
+        id={id}
         value={value}
         checked={checked}
         defaultChecked={defaultChecked}
@@ -171,9 +154,4 @@ export default class CheckboxCog extends CheckCog {
       </div>
     )
   }
-}
-
-CheckboxCog.propTypes = {
-  ...CheckCog.propTypes,
-  value: PropTypes.string.isRequired
 }

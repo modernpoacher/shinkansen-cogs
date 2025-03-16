@@ -24,8 +24,8 @@ export default class TextareaField extends ValueField {
 
   render () {
     const {
-      id,
       name,
+      id,
       defaultValue,
       required = false,
       disabled = false,
@@ -45,8 +45,8 @@ export default class TextareaField extends ValueField {
 
       return (
         <textarea
-          id={id}
           name={name}
+          id={id}
           value={toInputValue(value)}
           required={required}
           disabled={disabled}
@@ -63,8 +63,8 @@ export default class TextareaField extends ValueField {
 
     return (
       <textarea
-        id={id}
         name={name}
+        id={id}
         defaultValue={String(defaultValue)}
         required={required}
         disabled={disabled}

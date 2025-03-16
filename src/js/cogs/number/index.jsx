@@ -110,8 +110,8 @@ export default class NumberCog extends ValueCog {
 
     return (
       <Field
-        id={id}
         name={name}
+        id={id}
         value={value}
         defaultValue={defaultValue}
         required={required}

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`#cogs/cogs/select/field <Field /> With additional props Multiple is not true Default value is a string renders 1`] = `
+exports[`#cogs/cogs/select/field <Field /> With additional props Multiple is not true Default value is a string matches the snapshot 1`] = `
 <select
   className="MOCK CLASSNAME"
   defaultValue="MOCK DEFAULT VALUE"
@@ -14,7 +14,7 @@ exports[`#cogs/cogs/select/field <Field /> With additional props Multiple is not
 />
 `;
 
-exports[`#cogs/cogs/select/field <Field /> With additional props Multiple is not true Value is a string renders 1`] = `
+exports[`#cogs/cogs/select/field <Field /> With additional props Multiple is not true Value is a string matches the snapshot 1`] = `
 <select
   className="MOCK CLASSNAME"
   disabled={true}
@@ -28,7 +28,7 @@ exports[`#cogs/cogs/select/field <Field /> With additional props Multiple is not
 />
 `;
 
-exports[`#cogs/cogs/select/field <Field /> With additional props Multiple is true Default value is an array renders 1`] = `
+exports[`#cogs/cogs/select/field <Field /> With additional props Multiple is true Default value is an array matches the snapshot 1`] = `
 <select
   className="MOCK CLASSNAME"
   defaultValue={
@@ -46,7 +46,7 @@ exports[`#cogs/cogs/select/field <Field /> With additional props Multiple is tru
 />
 `;
 
-exports[`#cogs/cogs/select/field <Field /> With additional props Multiple is true Value is an array renders 1`] = `
+exports[`#cogs/cogs/select/field <Field /> With additional props Multiple is true Value is an array matches the snapshot 1`] = `
 <select
   className="MOCK CLASSNAME"
   disabled={true}
@@ -64,7 +64,7 @@ exports[`#cogs/cogs/select/field <Field /> With additional props Multiple is tru
 />
 `;
 
-exports[`#cogs/cogs/select/field <Field /> With required props renders 1`] = `
+exports[`#cogs/cogs/select/field <Field /> With required props matches the snapshot 1`] = `
 <select
   className="MOCK CLASSNAME"
   disabled={false}
@@ -73,6 +73,6 @@ exports[`#cogs/cogs/select/field <Field /> With required props renders 1`] = `
   onChange={[Function]}
   readOnly={false}
   required={false}
-  value="MOCK VALUE"
+  value=""
 />
 `;

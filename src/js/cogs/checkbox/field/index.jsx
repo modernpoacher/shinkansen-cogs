@@ -25,8 +25,8 @@ export default class CheckboxField extends CheckField {
 
   render () {
     const {
-      id,
       name,
+      id,
       value,
       checked,
       required = false,
@@ -42,8 +42,8 @@ export default class CheckboxField extends CheckField {
     if (typeof checked === 'boolean') {
       return (
         <input
-          id={id}
           name={name}
+          id={id}
           value={toInputValue(value)}
           checked={checked}
           required={required}
@@ -66,8 +66,8 @@ export default class CheckboxField extends CheckField {
 
     return (
       <input
-        id={id}
         name={name}
+        id={id}
         value={toInputValue(value)}
         defaultChecked={defaultChecked}
         required={required}

@@ -1,7 +1,10 @@
+/**
+ *  @typedef {CogsTypes.Cogs.CheckProps} CheckProps
+ *  @typedef {CogsTypes.Cogs.Checkbox.CheckboxProps} CheckboxProps
+ */
 import React from 'react'
 import snapshotOf from 'react-component-snapshot'
 import renderer from 'react-test-renderer'
-import classnames from 'classnames'
 
 import '@testing-library/jest-dom'
 
@@ -12,10 +15,11 @@ import {
 import getComponentInstanceFrom from 'react-component-instance/container'
 
 import {
-  ValueCog
+  ValueCog,
+  CheckCog
 } from '#cogs/cogs'
 
-import Cog from '#cogs/cogs/number'
+import Super from '#cogs/super/cogs'
 
 jest.mock('classnames', () => jest.fn().mockReturnValue('MOCK CLASSNAME'))
 
@@ -25,8 +29,8 @@ const MOCK_ERROR_MESSAGE = {
   uri: '#/'
 }
 
-describe('#cogs/cogs/number', () => {
-  describe('<Cog />', () => {
+describe('#cogs/cogs', () => {
+  describe('<ValueCog />', () => {
     const MOCK_FIELD_REF = { current: null }
     const MOCK_ON_CHANGE = jest.fn()
 
@@ -37,7 +41,7 @@ describe('#cogs/cogs/number', () => {
             firstElementChild: cog
           }
         } = render(
-          <Cog
+          <ValueCog
             name='MOCK NAME'
           />
         )
@@ -73,18 +77,18 @@ describe('#cogs/cogs/number', () => {
         let renderFieldSpy
 
         beforeEach(() => {
-          getClassNameSpy = jest.spyOn(Cog.prototype, 'getClassName')
+          getClassNameSpy = jest.spyOn(ValueCog.prototype, 'getClassName')
 
-          renderTitleSpy = jest.spyOn(Cog.prototype, 'renderTitle')
+          renderTitleSpy = jest.spyOn(ValueCog.prototype, 'renderTitle')
 
-          renderDescriptionSpy = jest.spyOn(Cog.prototype, 'renderDescription')
+          renderDescriptionSpy = jest.spyOn(ValueCog.prototype, 'renderDescription')
 
-          renderErrorMessageSpy = jest.spyOn(Cog.prototype, 'renderErrorMessage')
+          renderErrorMessageSpy = jest.spyOn(ValueCog.prototype, 'renderErrorMessage')
 
-          renderFieldSpy = jest.spyOn(Cog.prototype, 'renderField')
+          renderFieldSpy = jest.spyOn(ValueCog.prototype, 'renderField')
 
           render(
-            <Cog
+            <ValueCog
               name='MOCK NAME'
             />
           )
@@ -119,15 +123,15 @@ describe('#cogs/cogs/number', () => {
       it('matches the snapshot', () => {
         const {
           container: {
-            firstElementChild: cog
+            firstElementChild: element
           }
         } = render(
-          <Cog
+          <ValueCog
             name='MOCK NAME'
           />
         )
 
-        expect(snapshotOf(cog))
+        expect(snapshotOf(element))
           .toMatchSnapshot()
       })
 
@@ -135,11 +139,17 @@ describe('#cogs/cogs/number', () => {
        *  @deprecated For migration toward Testing Library
        */
       xit('matches the snapshot', () => {
-        expect(renderer.create((
-          <Cog
-            name='MOCK NAME'
-          />
-        )).toJSON())
+        let rendered
+
+        renderer.act(() => {
+          rendered = renderer.create((
+            <ValueCog
+              name='MOCK NAME'
+            />
+          ))
+        })
+
+        expect(rendered.toJSON())
           .toMatchSnapshot()
       })
     })
@@ -152,13 +162,13 @@ describe('#cogs/cogs/number', () => {
               firstElementChild: cog
             }
           } = render(
-            <Cog
+            <ValueCog
               name='MOCK NAME'
               id='MOCK ID'
               title='MOCK TITLE'
               description='MOCK DESCRIPTION'
               errorMessage={MOCK_ERROR_MESSAGE}
-              value='0'
+              value='MOCK VALUE'
               tabIndex={1}
               accessKey='MOCK ACCESS KEY'
               required
@@ -201,24 +211,24 @@ describe('#cogs/cogs/number', () => {
           let renderFieldSpy
 
           beforeEach(() => {
-            getClassNameSpy = jest.spyOn(Cog.prototype, 'getClassName')
+            getClassNameSpy = jest.spyOn(ValueCog.prototype, 'getClassName')
 
-            renderTitleSpy = jest.spyOn(Cog.prototype, 'renderTitle')
+            renderTitleSpy = jest.spyOn(ValueCog.prototype, 'renderTitle')
 
-            renderDescriptionSpy = jest.spyOn(Cog.prototype, 'renderDescription')
+            renderDescriptionSpy = jest.spyOn(ValueCog.prototype, 'renderDescription')
 
-            renderErrorMessageSpy = jest.spyOn(Cog.prototype, 'renderErrorMessage')
+            renderErrorMessageSpy = jest.spyOn(ValueCog.prototype, 'renderErrorMessage')
 
-            renderFieldSpy = jest.spyOn(Cog.prototype, 'renderField')
+            renderFieldSpy = jest.spyOn(ValueCog.prototype, 'renderField')
 
             render(
-              <Cog
+              <ValueCog
                 name='MOCK NAME'
                 id='MOCK ID'
                 title='MOCK TITLE'
                 description='MOCK DESCRIPTION'
                 errorMessage={MOCK_ERROR_MESSAGE}
-                value='0'
+                value='MOCK VALUE'
                 tabIndex={1}
                 accessKey='MOCK ACCESS KEY'
                 required
@@ -260,16 +270,16 @@ describe('#cogs/cogs/number', () => {
         it('matches the snapshot', () => {
           const {
             container: {
-              firstElementChild: cog
+              firstElementChild: element
             }
           } = render(
-            <Cog
+            <ValueCog
               name='MOCK NAME'
               id='MOCK ID'
               title='MOCK TITLE'
               description='MOCK DESCRIPTION'
               errorMessage={MOCK_ERROR_MESSAGE}
-              value='0'
+              value='MOCK VALUE'
               tabIndex={1}
               accessKey='MOCK ACCESS KEY'
               required
@@ -281,7 +291,7 @@ describe('#cogs/cogs/number', () => {
             />
           )
 
-          expect(snapshotOf(cog))
+          expect(snapshotOf(element))
             .toMatchSnapshot()
         })
 
@@ -289,102 +299,17 @@ describe('#cogs/cogs/number', () => {
          *  @deprecated For migration toward Testing Library
          */
         xit('matches the snapshot', () => {
-          expect(renderer.create(
-            <Cog
-              name='MOCK NAME'
-              id='MOCK ID'
-              title='MOCK TITLE'
-              description='MOCK DESCRIPTION'
-              errorMessage={MOCK_ERROR_MESSAGE}
-              value='0'
-              tabIndex={1}
-              accessKey='MOCK ACCESS KEY'
-              required
-              disabled
-              readOnly
-              placeholder='MOCK PLACEHOLDER'
-              fieldRef={MOCK_FIELD_REF}
-              onChange={MOCK_ON_CHANGE}
-            />
-          ).toJSON())
-            .toMatchSnapshot()
-        })
-      })
+          let rendered
 
-      describe('Value is a number', () => {
-        it('renders', () => {
-          const {
-            container: {
-              firstElementChild: cog
-            }
-          } = render(
-            <Cog
-              name='MOCK NAME'
-              id='MOCK ID'
-              title='MOCK TITLE'
-              description='MOCK DESCRIPTION'
-              errorMessage={MOCK_ERROR_MESSAGE}
-              value={0}
-              tabIndex={1}
-              accessKey='MOCK ACCESS KEY'
-              required
-              disabled
-              readOnly
-              placeholder='MOCK PLACEHOLDER'
-              fieldRef={MOCK_FIELD_REF}
-              onChange={MOCK_ON_CHANGE}
-            />
-          )
-
-          expect(cog)
-            .toBeInstanceOf(HTMLDivElement)
-        })
-
-        describe('Always', () => {
-          /**
-           *  @type {undefined | jest.SpyInstance}
-           */
-          let getClassNameSpy
-
-          /**
-           *  @type {undefined | jest.SpyInstance}
-           */
-          let renderTitleSpy
-
-          /**
-           *  @type {undefined | jest.SpyInstance}
-           */
-          let renderDescriptionSpy
-
-          /**
-           *  @type {undefined | jest.SpyInstance}
-           */
-          let renderErrorMessageSpy
-
-          /**
-           *  @type {undefined | jest.SpyInstance}
-           */
-          let renderFieldSpy
-
-          beforeEach(() => {
-            getClassNameSpy = jest.spyOn(Cog.prototype, 'getClassName')
-
-            renderTitleSpy = jest.spyOn(Cog.prototype, 'renderTitle')
-
-            renderDescriptionSpy = jest.spyOn(Cog.prototype, 'renderDescription')
-
-            renderErrorMessageSpy = jest.spyOn(Cog.prototype, 'renderErrorMessage')
-
-            renderFieldSpy = jest.spyOn(Cog.prototype, 'renderField')
-
-            render(
-              <Cog
+          renderer.act(() => {
+            rendered = renderer.create(
+              <ValueCog
                 name='MOCK NAME'
                 id='MOCK ID'
                 title='MOCK TITLE'
                 description='MOCK DESCRIPTION'
                 errorMessage={MOCK_ERROR_MESSAGE}
-                value={0}
+                value='MOCK VALUE'
                 tabIndex={1}
                 accessKey='MOCK ACCESS KEY'
                 required
@@ -397,82 +322,7 @@ describe('#cogs/cogs/number', () => {
             )
           })
 
-          it('invokes `getClassName`', () => {
-            expect(getClassNameSpy)
-              .toHaveBeenCalled()
-          })
-
-          it('invokes `renderTitle`', () => {
-            expect(renderTitleSpy)
-              .toHaveBeenCalled()
-          })
-
-          it('invokes `renderDescription`', () => {
-            expect(renderDescriptionSpy)
-              .toHaveBeenCalled()
-          })
-
-          it('invokes `renderErrorMessage`', () => {
-            expect(renderErrorMessageSpy)
-              .toHaveBeenCalled()
-          })
-
-          it('invokes `renderField`', () => {
-            expect(renderFieldSpy)
-              .toHaveBeenCalled()
-          })
-        })
-
-        it('matches the snapshot', () => {
-          const {
-            container: {
-              firstElementChild: cog
-            }
-          } = render(
-            <Cog
-              name='MOCK NAME'
-              id='MOCK ID'
-              title='MOCK TITLE'
-              description='MOCK DESCRIPTION'
-              errorMessage={MOCK_ERROR_MESSAGE}
-              value={0}
-              tabIndex={1}
-              accessKey='MOCK ACCESS KEY'
-              required
-              disabled
-              readOnly
-              placeholder='MOCK PLACEHOLDER'
-              fieldRef={MOCK_FIELD_REF}
-              onChange={MOCK_ON_CHANGE}
-            />
-          )
-
-          expect(snapshotOf(cog))
-            .toMatchSnapshot()
-        })
-
-        /**
-         *  @deprecated For migration toward Testing Library
-         */
-        xit('matches the snapshot', () => {
-          expect(renderer.create(
-            <Cog
-              name='MOCK NAME'
-              id='MOCK ID'
-              title='MOCK TITLE'
-              description='MOCK DESCRIPTION'
-              errorMessage={MOCK_ERROR_MESSAGE}
-              value={0}
-              tabIndex={1}
-              accessKey='MOCK ACCESS KEY'
-              required
-              disabled
-              readOnly
-              placeholder='MOCK PLACEHOLDER'
-              fieldRef={MOCK_FIELD_REF}
-              onChange={MOCK_ON_CHANGE}
-            />
-          ).toJSON())
+          expect(rendered.toJSON())
             .toMatchSnapshot()
         })
       })
@@ -484,13 +334,13 @@ describe('#cogs/cogs/number', () => {
               firstElementChild: cog
             }
           } = render(
-            <Cog
+            <ValueCog
               name='MOCK NAME'
               id='MOCK ID'
               title='MOCK TITLE'
               description='MOCK DESCRIPTION'
               errorMessage={MOCK_ERROR_MESSAGE}
-              defaultValue='0'
+              defaultValue='MOCK DEFAULT VALUE'
               tabIndex={1}
               accessKey='MOCK ACCESS KEY'
               required
@@ -533,24 +383,24 @@ describe('#cogs/cogs/number', () => {
           let renderFieldSpy
 
           beforeEach(() => {
-            getClassNameSpy = jest.spyOn(Cog.prototype, 'getClassName')
+            getClassNameSpy = jest.spyOn(ValueCog.prototype, 'getClassName')
 
-            renderTitleSpy = jest.spyOn(Cog.prototype, 'renderTitle')
+            renderTitleSpy = jest.spyOn(ValueCog.prototype, 'renderTitle')
 
-            renderDescriptionSpy = jest.spyOn(Cog.prototype, 'renderDescription')
+            renderDescriptionSpy = jest.spyOn(ValueCog.prototype, 'renderDescription')
 
-            renderErrorMessageSpy = jest.spyOn(Cog.prototype, 'renderErrorMessage')
+            renderErrorMessageSpy = jest.spyOn(ValueCog.prototype, 'renderErrorMessage')
 
-            renderFieldSpy = jest.spyOn(Cog.prototype, 'renderField')
+            renderFieldSpy = jest.spyOn(ValueCog.prototype, 'renderField')
 
             render(
-              <Cog
+              <ValueCog
                 name='MOCK NAME'
                 id='MOCK ID'
                 title='MOCK TITLE'
                 description='MOCK DESCRIPTION'
                 errorMessage={MOCK_ERROR_MESSAGE}
-                defaultValue='0'
+                defaultValue='MOCK DEFAULT VALUE'
                 tabIndex={1}
                 accessKey='MOCK ACCESS KEY'
                 required
@@ -592,16 +442,16 @@ describe('#cogs/cogs/number', () => {
         it('matches the snapshot', () => {
           const {
             container: {
-              firstElementChild: cog
+              firstElementChild: element
             }
           } = render(
-            <Cog
+            <ValueCog
               name='MOCK NAME'
               id='MOCK ID'
               title='MOCK TITLE'
               description='MOCK DESCRIPTION'
               errorMessage={MOCK_ERROR_MESSAGE}
-              defaultValue='0'
+              defaultValue='MOCK DEFAULT VALUE'
               tabIndex={1}
               accessKey='MOCK ACCESS KEY'
               required
@@ -613,7 +463,7 @@ describe('#cogs/cogs/number', () => {
             />
           )
 
-          expect(snapshotOf(cog))
+          expect(snapshotOf(element))
             .toMatchSnapshot()
         })
 
@@ -621,102 +471,17 @@ describe('#cogs/cogs/number', () => {
          *  @deprecated For migration toward Testing Library
          */
         xit('matches the snapshot', () => {
-          expect(renderer.create(
-            <Cog
-              name='MOCK NAME'
-              id='MOCK ID'
-              title='MOCK TITLE'
-              description='MOCK DESCRIPTION'
-              errorMessage={MOCK_ERROR_MESSAGE}
-              defaultValue='0'
-              tabIndex={1}
-              accessKey='MOCK ACCESS KEY'
-              required
-              disabled
-              readOnly
-              placeholder='MOCK PLACEHOLDER'
-              fieldRef={MOCK_FIELD_REF}
-              onChange={MOCK_ON_CHANGE}
-            />
-          ).toJSON())
-            .toMatchSnapshot()
-        })
-      })
+          let rendered
 
-      describe('Default value is a number', () => {
-        it('renders', () => {
-          const {
-            container: {
-              firstElementChild: cog
-            }
-          } = render(
-            <Cog
-              name='MOCK NAME'
-              id='MOCK ID'
-              title='MOCK TITLE'
-              description='MOCK DESCRIPTION'
-              errorMessage={MOCK_ERROR_MESSAGE}
-              defaultValue={0}
-              tabIndex={1}
-              accessKey='MOCK ACCESS KEY'
-              required
-              disabled
-              readOnly
-              placeholder='MOCK PLACEHOLDER'
-              fieldRef={MOCK_FIELD_REF}
-              onChange={MOCK_ON_CHANGE}
-            />
-          )
-
-          expect(cog)
-            .toBeInstanceOf(HTMLDivElement)
-        })
-
-        describe('Always', () => {
-          /**
-           *  @type {undefined | jest.SpyInstance}
-           */
-          let getClassNameSpy
-
-          /**
-           *  @type {undefined | jest.SpyInstance}
-           */
-          let renderTitleSpy
-
-          /**
-           *  @type {undefined | jest.SpyInstance}
-           */
-          let renderDescriptionSpy
-
-          /**
-           *  @type {undefined | jest.SpyInstance}
-           */
-          let renderErrorMessageSpy
-
-          /**
-           *  @type {undefined | jest.SpyInstance}
-           */
-          let renderFieldSpy
-
-          beforeEach(() => {
-            getClassNameSpy = jest.spyOn(Cog.prototype, 'getClassName')
-
-            renderTitleSpy = jest.spyOn(Cog.prototype, 'renderTitle')
-
-            renderDescriptionSpy = jest.spyOn(Cog.prototype, 'renderDescription')
-
-            renderErrorMessageSpy = jest.spyOn(Cog.prototype, 'renderErrorMessage')
-
-            renderFieldSpy = jest.spyOn(Cog.prototype, 'renderField')
-
-            render(
-              <Cog
+          renderer.act(() => {
+            rendered = renderer.create(
+              <ValueCog
                 name='MOCK NAME'
                 id='MOCK ID'
                 title='MOCK TITLE'
                 description='MOCK DESCRIPTION'
                 errorMessage={MOCK_ERROR_MESSAGE}
-                defaultValue={0}
+                defaultValue='MOCK DEFAULT VALUE'
                 tabIndex={1}
                 accessKey='MOCK ACCESS KEY'
                 required
@@ -729,223 +494,106 @@ describe('#cogs/cogs/number', () => {
             )
           })
 
-          it('invokes `getClassName`', () => {
-            expect(getClassNameSpy)
-              .toHaveBeenCalled()
-          })
-
-          it('invokes `renderTitle`', () => {
-            expect(renderTitleSpy)
-              .toHaveBeenCalled()
-          })
-
-          it('invokes `renderDescription`', () => {
-            expect(renderDescriptionSpy)
-              .toHaveBeenCalled()
-          })
-
-          it('invokes `renderErrorMessage`', () => {
-            expect(renderErrorMessageSpy)
-              .toHaveBeenCalled()
-          })
-
-          it('invokes `renderField`', () => {
-            expect(renderFieldSpy)
-              .toHaveBeenCalled()
-          })
-        })
-
-        it('matches the snapshot', () => {
-          const {
-            container: {
-              firstElementChild: cog
-            }
-          } = render(
-            <Cog
-              name='MOCK NAME'
-              id='MOCK ID'
-              title='MOCK TITLE'
-              description='MOCK DESCRIPTION'
-              errorMessage={MOCK_ERROR_MESSAGE}
-              defaultValue={0}
-              tabIndex={1}
-              accessKey='MOCK ACCESS KEY'
-              required
-              disabled
-              readOnly
-              placeholder='MOCK PLACEHOLDER'
-              fieldRef={MOCK_FIELD_REF}
-              onChange={MOCK_ON_CHANGE}
-            />
-          )
-
-          expect(snapshotOf(cog))
-            .toMatchSnapshot()
-        })
-
-        /**
-         *  @deprecated For migration toward Testing Library
-         */
-        xit('matches the snapshot', () => {
-          expect(renderer.create(
-            <Cog
-              name='MOCK NAME'
-              id='MOCK ID'
-              title='MOCK TITLE'
-              description='MOCK DESCRIPTION'
-              errorMessage={MOCK_ERROR_MESSAGE}
-              defaultValue={0}
-              tabIndex={1}
-              accessKey='MOCK ACCESS KEY'
-              required
-              disabled
-              readOnly
-              placeholder='MOCK PLACEHOLDER'
-              fieldRef={MOCK_FIELD_REF}
-              onChange={MOCK_ON_CHANGE}
-            />
-          ).toJSON())
+          expect(rendered.toJSON())
             .toMatchSnapshot()
         })
       })
     })
 
-    describe('`getClassName()`', () => {
-      it('invokes `classnames`', () => {
-        /**
-         *  Ensure `super.getClassName()` returns a value
-         */
-        const getClassNameSpy = jest.spyOn(ValueCog.prototype, 'getClassName').mockReturnValue('MOCK CLASSNAME')
-
-        const {
-          container
-        } = render(
-          <Cog
-            name='MOCK NAME'
-          />
-        )
-
-        const instance = getComponentInstanceFrom(container)
-
-        /**
-         *  Ensure it is reset after render
-         */
-        classnames.mockClear()
-
-        /**
-         *  Ensure it is reset after render
-         */
-        getClassNameSpy.mockClear()
-
-        instance.getClassName()
-
-        expect(classnames)
-          .toHaveBeenCalledWith('MOCK CLASSNAME', 'number')
-      })
-    })
-
-    describe('`handleChange()`', () => {
+    describe('`shouldComponentUpdate()`', () => {
       describe('Value is a string', () => {
-        it('invokes `onChange`', () => {
+        /**
+         *  @type {undefined | Super<CheckProps>}
+         */
+        let instance
+
+        beforeEach(() => {
+          /**
+           *  Always return false (we're not testing conditions in `super.shouldComponentUpdate()`)
+           */
+          jest.spyOn(Super.prototype, 'shouldComponentUpdate').mockReturnValue(false)
+
           const {
             container
           } = render(
-            <Cog
+            <ValueCog
               name='MOCK NAME'
-              value='0'
-              onChange={MOCK_ON_CHANGE}
+              id='MOCK ID'
+              title='MOCK TITLE'
+              value='MOCK VALUE'
             />
           )
 
-          const instance = getComponentInstanceFrom(container)
+          instance = getComponentInstanceFrom(container)
+        })
 
-          /**
-           *  Ensure it is reset after render
-           */
-          MOCK_ON_CHANGE.mockClear()
+        describe('`props` have changed', () => {
+          describe('Prop `value` has changed', () => {
+            it('returns true', () => {
+              expect(instance.shouldComponentUpdate({
+                ...instance.props,
+                value: 'MOCK CHANGED VALUE'
+              }))
+                .toBe(true)
+            })
+          })
+        })
 
-          instance.handleChange('MOCK NAME', '1')
-
-          expect(MOCK_ON_CHANGE)
-            .toHaveBeenCalledWith('MOCK NAME', '1')
+        describe('`props` have not changed', () => {
+          it('returns false', () => {
+            expect(instance.shouldComponentUpdate({ // instance.props
+              ...instance.props
+            }))
+              .toBe(false)
+          })
         })
       })
 
       describe('Default value is a string', () => {
-        it('invokes `onChange`', () => {
+        /**
+         *  @type {undefined | Super<CheckProps>}
+         */
+        let instance
+
+        beforeEach(() => {
+          /**
+           *  Always return false (we're not testing conditions in `super.shouldComponentUpdate()`)
+           */
+          jest.spyOn(Super.prototype, 'shouldComponentUpdate').mockReturnValue(false)
+
           const {
             container
           } = render(
-            <Cog
+            <ValueCog
               name='MOCK NAME'
-              defaultValue='0'
-              onChange={MOCK_ON_CHANGE}
+              id='MOCK ID'
+              title='MOCK TITLE'
+              defaultValue='MOCK DEFAULT VALUE'
             />
           )
 
-          const instance = getComponentInstanceFrom(container)
-
-          /**
-           *  Ensure it is reset after render
-           */
-          MOCK_ON_CHANGE.mockClear()
-
-          instance.handleChange('MOCK NAME', '1')
-
-          expect(MOCK_ON_CHANGE)
-            .toHaveBeenCalledWith('MOCK NAME', '1')
+          instance = getComponentInstanceFrom(container)
         })
-      })
 
-      describe('Value is a number', () => {
-        it('invokes `onChange`', () => {
-          const {
-            container
-          } = render(
-            <Cog
-              name='MOCK NAME'
-              value={0}
-              onChange={MOCK_ON_CHANGE}
-            />
-          )
-
-          const instance = getComponentInstanceFrom(container)
-
-          /**
-           *  Ensure it is reset after render
-           */
-          MOCK_ON_CHANGE.mockClear()
-
-          instance.handleChange('MOCK NAME', '1')
-
-          expect(MOCK_ON_CHANGE)
-            .toHaveBeenCalledWith('MOCK NAME', '1')
+        describe('`props` have changed', () => {
+          describe('Prop `defaultValue` has changed', () => {
+            it('returns true', () => {
+              expect(instance.shouldComponentUpdate({
+                ...instance.props,
+                defaultValue: 'MOCK CHANGED DEFAULT VALUE'
+              }))
+                .toBe(true)
+            })
+          })
         })
-      })
 
-      describe('Default value is a number', () => {
-        it('invokes `onChange`', () => {
-          const {
-            container
-          } = render(
-            <Cog
-              name='MOCK NAME'
-              defaultValue={0}
-              onChange={MOCK_ON_CHANGE}
-            />
-          )
-
-          const instance = getComponentInstanceFrom(container)
-
-          /**
-           *  Ensure it is reset after render
-           */
-          MOCK_ON_CHANGE.mockClear()
-
-          instance.handleChange('MOCK NAME', '1')
-
-          expect(MOCK_ON_CHANGE)
-            .toHaveBeenCalledWith('MOCK NAME', '1')
+        describe('`props` have not changed', () => {
+          it('returns false', () => {
+            expect(instance.shouldComponentUpdate({ // instance.props
+              ...instance.props
+            }))
+              .toBe(false)
+          })
         })
       })
     })
@@ -955,7 +603,7 @@ describe('#cogs/cogs/number', () => {
         const {
           container
         } = render(
-          <Cog
+          <ValueCog
             name='MOCK NAME'
             id='MOCK ID'
             title='MOCK TITLE'
@@ -982,7 +630,628 @@ describe('#cogs/cogs/number', () => {
         const {
           container
         } = render(
-          <Cog
+          <ValueCog
+            name='MOCK NAME'
+            id='MOCK ID'
+            title='MOCK TITLE'
+            value='MOCK VALUE'
+          />
+        )
+
+        const instance = getComponentInstanceFrom(container)
+
+        /**
+         *  Spy (and mock the return value)
+         */
+        const getIdSpy = jest.spyOn(instance, 'getId').mockReturnValue('MOCK ID')
+
+        instance.renderField()
+
+        expect(getIdSpy)
+          .toHaveBeenCalled()
+      })
+    })
+  })
+
+  describe('<CheckCog />', () => {
+    const MOCK_FIELD_REF = { current: null }
+    const MOCK_ON_CHANGE = jest.fn()
+
+    describe('With required props', () => {
+      it('renders', () => {
+        const {
+          container: {
+            firstElementChild: cog
+          }
+        } = render(
+          <CheckCog
+            name='MOCK NAME'
+            value='MOCK VALUE'
+          />
+        )
+
+        expect(cog)
+          .toBeInstanceOf(HTMLDivElement)
+      })
+
+      describe('Always', () => {
+        /**
+         *  @type {undefined | jest.SpyInstance}
+         */
+        let getClassNameSpy
+
+        /**
+         *  @type {undefined | jest.SpyInstance}
+         */
+        let renderTitleSpy
+
+        /**
+         *  @type {undefined | jest.SpyInstance}
+         */
+        let renderDescriptionSpy
+
+        /**
+         *  @type {undefined | jest.SpyInstance}
+         */
+        let renderErrorMessageSpy
+
+        /**
+         *  @type {undefined | jest.SpyInstance}
+         */
+        let renderFieldSpy
+
+        beforeEach(() => {
+          getClassNameSpy = jest.spyOn(CheckCog.prototype, 'getClassName')
+
+          renderTitleSpy = jest.spyOn(CheckCog.prototype, 'renderTitle')
+
+          renderDescriptionSpy = jest.spyOn(CheckCog.prototype, 'renderDescription')
+
+          renderErrorMessageSpy = jest.spyOn(CheckCog.prototype, 'renderErrorMessage')
+
+          renderFieldSpy = jest.spyOn(CheckCog.prototype, 'renderField')
+
+          render(
+            <CheckCog
+              name='MOCK NAME'
+              value='MOCK VALUE'
+            />
+          )
+        })
+
+        it('invokes `getClassName`', () => {
+          expect(getClassNameSpy)
+            .toHaveBeenCalled()
+        })
+
+        it('invokes `renderTitle`', () => {
+          expect(renderTitleSpy)
+            .toHaveBeenCalled()
+        })
+
+        it('invokes `renderDescription`', () => {
+          expect(renderDescriptionSpy)
+            .toHaveBeenCalled()
+        })
+
+        it('invokes `renderErrorMessage`', () => {
+          expect(renderErrorMessageSpy)
+            .toHaveBeenCalled()
+        })
+
+        it('invokes `renderField`', () => {
+          expect(renderFieldSpy)
+            .toHaveBeenCalled()
+        })
+      })
+
+      it('matches the snapshot', () => {
+        const {
+          container: {
+            firstElementChild: element
+          }
+        } = render(
+          <CheckCog
+            name='MOCK NAME'
+            value='MOCK VALUE'
+          />
+        )
+
+        expect(snapshotOf(element))
+          .toMatchSnapshot()
+      })
+
+      /**
+       *  @deprecated For migration toward Testing Library
+       */
+      xit('matches the snapshot', () => {
+        expect(renderer.create((
+          <CheckCog
+            name='MOCK NAME'
+            value='MOCK VALUE'
+          />
+        )).toJSON())
+          .toMatchSnapshot()
+      })
+    })
+
+    describe('With additional props', () => {
+      describe('Checked is a boolean', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: cog
+            }
+          } = render(
+            <CheckCog
+              name='MOCK NAME'
+              id='MOCK ID'
+              title='MOCK TITLE'
+              description='MOCK DESCRIPTION'
+              errorMessage={MOCK_ERROR_MESSAGE}
+              value='MOCK VALUE'
+              tabIndex={1}
+              accessKey='MOCK ACCESS KEY'
+              checked
+              required
+              disabled
+              readOnly
+              fieldRef={MOCK_FIELD_REF}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(cog)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        describe('Always', () => {
+          /**
+           *  @type {undefined | jest.SpyInstance}
+           */
+          let getClassNameSpy
+
+          /**
+           *  @type {undefined | jest.SpyInstance}
+           */
+          let renderTitleSpy
+
+          /**
+           *  @type {undefined | jest.SpyInstance}
+           */
+          let renderDescriptionSpy
+
+          /**
+           *  @type {undefined | jest.SpyInstance}
+           */
+          let renderErrorMessageSpy
+
+          /**
+           *  @type {undefined | jest.SpyInstance}
+           */
+          let renderFieldSpy
+
+          beforeEach(() => {
+            getClassNameSpy = jest.spyOn(CheckCog.prototype, 'getClassName')
+
+            renderTitleSpy = jest.spyOn(CheckCog.prototype, 'renderTitle')
+
+            renderDescriptionSpy = jest.spyOn(CheckCog.prototype, 'renderDescription')
+
+            renderErrorMessageSpy = jest.spyOn(CheckCog.prototype, 'renderErrorMessage')
+
+            renderFieldSpy = jest.spyOn(CheckCog.prototype, 'renderField')
+
+            render(
+              <CheckCog
+                name='MOCK NAME'
+                id='MOCK ID'
+                title='MOCK TITLE'
+                description='MOCK DESCRIPTION'
+                errorMessage={MOCK_ERROR_MESSAGE}
+                value='MOCK VALUE'
+                tabIndex={1}
+                accessKey='MOCK ACCESS KEY'
+                checked
+                required
+                disabled
+                readOnly
+                fieldRef={MOCK_FIELD_REF}
+                onChange={MOCK_ON_CHANGE}
+              />
+            )
+          })
+
+          it('invokes `getClassName`', () => {
+            expect(getClassNameSpy)
+              .toHaveBeenCalled()
+          })
+
+          it('invokes `renderTitle`', () => {
+            expect(renderTitleSpy)
+              .toHaveBeenCalled()
+          })
+
+          it('invokes `renderDescription`', () => {
+            expect(renderDescriptionSpy)
+              .toHaveBeenCalled()
+          })
+
+          it('invokes `renderErrorMessage`', () => {
+            expect(renderErrorMessageSpy)
+              .toHaveBeenCalled()
+          })
+
+          it('invokes `renderField`', () => {
+            expect(renderFieldSpy)
+              .toHaveBeenCalled()
+          })
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: element
+            }
+          } = render(
+            <CheckCog
+              name='MOCK NAME'
+              id='MOCK ID'
+              title='MOCK TITLE'
+              description='MOCK DESCRIPTION'
+              errorMessage={MOCK_ERROR_MESSAGE}
+              value='MOCK VALUE'
+              tabIndex={1}
+              accessKey='MOCK ACCESS KEY'
+              checked
+              required
+              disabled
+              readOnly
+              fieldRef={MOCK_FIELD_REF}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(element))
+            .toMatchSnapshot()
+        })
+
+        /**
+         *  @deprecated For migration toward Testing Library
+         */
+        xit('matches the snapshot', () => {
+          let rendered
+
+          renderer.act(() => {
+            rendered = renderer.create(
+              <CheckCog
+                name='MOCK NAME'
+                id='MOCK ID'
+                title='MOCK TITLE'
+                description='MOCK DESCRIPTION'
+                errorMessage={MOCK_ERROR_MESSAGE}
+                value='MOCK VALUE'
+                tabIndex={1}
+                accessKey='MOCK ACCESS KEY'
+                checked
+                required
+                disabled
+                readOnly
+                fieldRef={MOCK_FIELD_REF}
+                onChange={MOCK_ON_CHANGE}
+              />
+            )
+          })
+
+          expect(rendered.toJSON())
+            .toMatchSnapshot()
+        })
+      })
+
+      describe('Default checked is a boolean', () => {
+        it('renders', () => {
+          const {
+            container: {
+              firstElementChild: cog
+            }
+          } = render(
+            <CheckCog
+              name='MOCK NAME'
+              id='MOCK ID'
+              title='MOCK TITLE'
+              description='MOCK DESCRIPTION'
+              errorMessage={MOCK_ERROR_MESSAGE}
+              value='MOCK VALUE'
+              tabIndex={1}
+              accessKey='MOCK ACCESS KEY'
+              defaultChecked
+              required
+              disabled
+              readOnly
+              fieldRef={MOCK_FIELD_REF}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(cog)
+            .toBeInstanceOf(HTMLDivElement)
+        })
+
+        describe('Always', () => {
+          /**
+           *  @type {undefined | jest.SpyInstance}
+           */
+          let getClassNameSpy
+
+          /**
+           *  @type {undefined | jest.SpyInstance}
+           */
+          let renderTitleSpy
+
+          /**
+           *  @type {undefined | jest.SpyInstance}
+           */
+          let renderDescriptionSpy
+
+          /**
+           *  @type {undefined | jest.SpyInstance}
+           */
+          let renderErrorMessageSpy
+
+          /**
+           *  @type {undefined | jest.SpyInstance}
+           */
+          let renderFieldSpy
+
+          beforeEach(() => {
+            getClassNameSpy = jest.spyOn(CheckCog.prototype, 'getClassName')
+
+            renderTitleSpy = jest.spyOn(CheckCog.prototype, 'renderTitle')
+
+            renderDescriptionSpy = jest.spyOn(CheckCog.prototype, 'renderDescription')
+
+            renderErrorMessageSpy = jest.spyOn(CheckCog.prototype, 'renderErrorMessage')
+
+            renderFieldSpy = jest.spyOn(CheckCog.prototype, 'renderField')
+
+            render(
+              <CheckCog
+                name='MOCK NAME'
+                id='MOCK ID'
+                title='MOCK TITLE'
+                description='MOCK DESCRIPTION'
+                errorMessage={MOCK_ERROR_MESSAGE}
+                value='MOCK VALUE'
+                tabIndex={1}
+                accessKey='MOCK ACCESS KEY'
+                defaultChecked
+                required
+                disabled
+                readOnly
+                fieldRef={MOCK_FIELD_REF}
+                onChange={MOCK_ON_CHANGE}
+              />
+            )
+          })
+
+          it('invokes `getClassName`', () => {
+            expect(getClassNameSpy)
+              .toHaveBeenCalled()
+          })
+
+          it('invokes `renderTitle`', () => {
+            expect(renderTitleSpy)
+              .toHaveBeenCalled()
+          })
+
+          it('invokes `renderDescription`', () => {
+            expect(renderDescriptionSpy)
+              .toHaveBeenCalled()
+          })
+
+          it('invokes `renderErrorMessage`', () => {
+            expect(renderErrorMessageSpy)
+              .toHaveBeenCalled()
+          })
+
+          it('invokes `renderField`', () => {
+            expect(renderFieldSpy)
+              .toHaveBeenCalled()
+          })
+        })
+
+        it('matches the snapshot', () => {
+          const {
+            container: {
+              firstElementChild: element
+            }
+          } = render(
+            <CheckCog
+              name='MOCK NAME'
+              id='MOCK ID'
+              title='MOCK TITLE'
+              description='MOCK DESCRIPTION'
+              errorMessage={MOCK_ERROR_MESSAGE}
+              value='MOCK VALUE'
+              tabIndex={1}
+              accessKey='MOCK ACCESS KEY'
+              defaultChecked
+              required
+              disabled
+              readOnly
+              fieldRef={MOCK_FIELD_REF}
+              onChange={MOCK_ON_CHANGE}
+            />
+          )
+
+          expect(snapshotOf(element))
+            .toMatchSnapshot()
+        })
+
+        /**
+         *  @deprecated For migration toward Testing Library
+         */
+        xit('matches the snapshot', () => {
+          let rendered
+
+          renderer.act(() => {
+            rendered = renderer.create(
+              <CheckCog
+                name='MOCK NAME'
+                id='MOCK ID'
+                title='MOCK TITLE'
+                description='MOCK DESCRIPTION'
+                errorMessage={MOCK_ERROR_MESSAGE}
+                value='MOCK VALUE'
+                tabIndex={1}
+                accessKey='MOCK ACCESS KEY'
+                defaultChecked
+                required
+                disabled
+                readOnly
+                fieldRef={MOCK_FIELD_REF}
+                onChange={MOCK_ON_CHANGE}
+              />
+            )
+          })
+
+          expect(rendered.toJSON())
+            .toMatchSnapshot()
+        })
+      })
+    })
+
+    describe('`shouldComponentUpdate()`', () => {
+      describe('Checked is a boolean', () => {
+        /**
+         *  @type {undefined | Super<CheckProps>}
+         */
+        let instance
+
+        beforeEach(() => {
+          /**
+           *  Always return false (we're not testing conditions in `super.shouldComponentUpdate()`)
+           */
+          jest.spyOn(Super.prototype, 'shouldComponentUpdate').mockReturnValue(false)
+
+          const {
+            container
+          } = render(
+            <CheckCog
+              name='MOCK NAME'
+              id='MOCK ID'
+              title='MOCK TITLE'
+              checked
+            />
+          )
+
+          instance = getComponentInstanceFrom(container)
+        })
+
+        describe('`props` have changed', () => {
+          describe('Prop `checked` has changed', () => {
+            it('returns true', () => {
+              expect(instance.shouldComponentUpdate({
+                ...instance.props,
+                checked: false
+              }))
+                .toBe(true)
+            })
+          })
+        })
+
+        describe('`props` have not changed', () => {
+          it('returns false', () => {
+            expect(instance.shouldComponentUpdate({ // instance.props
+              ...instance.props
+            }))
+              .toBe(false)
+          })
+        })
+      })
+
+      describe('Default checked is a boolean', () => {
+        /**
+         *  @type {undefined | Super<CheckProps>}
+         */
+        let instance
+
+        beforeEach(() => {
+          /**
+           *  Always return false (we're not testing conditions in `super.shouldComponentUpdate()`)
+           */
+          jest.spyOn(Super.prototype, 'shouldComponentUpdate').mockReturnValue(false)
+
+          const {
+            container
+          } = render(
+            <CheckCog
+              name='MOCK NAME'
+              id='MOCK ID'
+              title='MOCK TITLE'
+              defaultChecked
+            />
+          )
+
+          instance = getComponentInstanceFrom(container)
+        })
+
+        describe('`props` have changed', () => {
+          describe('Prop `defaultChecked` has changed', () => {
+            it('returns true', () => {
+              expect(instance.shouldComponentUpdate({
+                ...instance.props,
+                defaultChecked: false
+              }))
+                .toBe(true)
+            })
+          })
+        })
+
+        describe('`props` have not changed', () => {
+          it('returns false', () => {
+            expect(instance.shouldComponentUpdate({ // instance.props
+              ...instance.props
+            }))
+              .toBe(false)
+          })
+        })
+      })
+    })
+
+    describe('`renderTitle()`', () => {
+      it('invokes `getId`', () => {
+        const {
+          container
+        } = render(
+          <CheckCog
+            name='MOCK NAME'
+            id='MOCK ID'
+            title='MOCK TITLE'
+            value='MOCK VALUE'
+          />
+        )
+
+        const instance = getComponentInstanceFrom(container)
+
+        /**
+         *  Spy (and mock the return value)
+         */
+        const getIdSpy = jest.spyOn(instance, 'getId').mockReturnValue('MOCK ID')
+
+        instance.renderTitle()
+
+        expect(getIdSpy)
+          .toHaveBeenCalled()
+      })
+    })
+
+    describe('`renderField()`', () => {
+      it('invokes `getId`', () => {
+        const {
+          container
+        } = render(
+          <CheckCog
             name='MOCK NAME'
             id='MOCK ID'
             title='MOCK TITLE'

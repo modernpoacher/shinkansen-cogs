@@ -46,9 +46,9 @@ export class ValueCog extends Cog {
     } = props
 
     return (
-      super.shouldComponentUpdate(superProps) ||
       (value !== this.props.value) ||
-      (defaultValue !== this.props.defaultValue)
+      (defaultValue !== this.props.defaultValue) ||
+      super.shouldComponentUpdate(superProps)
     )
   }
 
@@ -57,6 +57,7 @@ export class ValueCog extends Cog {
 
     const {
       name,
+      value,
       required = false,
       disabled = false,
       readOnly = false,
@@ -69,8 +70,9 @@ export class ValueCog extends Cog {
 
     return (
       <ValueField
-        id={id}
         name={name}
+        id={id}
+        value={value}
         required={required}
         disabled={disabled}
         readOnly={readOnly}
@@ -86,7 +88,6 @@ export class ValueCog extends Cog {
 
 ValueCog.propTypes = {
   ...Cog.propTypes,
-  value: PropTypes.string,
   defaultValue: PropTypes.string
 }
 
@@ -107,9 +108,9 @@ export class CheckCog extends Cog {
     } = props
 
     return (
-      super.shouldComponentUpdate(superProps) ||
       (checked !== this.props.checked) ||
       (defaultChecked !== this.props.defaultChecked) ||
+      super.shouldComponentUpdate(superProps) ||
       (onClick !== this.props.onClick)
     )
   }
@@ -119,6 +120,7 @@ export class CheckCog extends Cog {
 
     const {
       name,
+      value,
       required = false,
       disabled = false,
       readOnly = false,
@@ -132,8 +134,9 @@ export class CheckCog extends Cog {
 
     return (
       <CheckField
-        id={id}
         name={name}
+        id={id}
+        value={value}
         required={required}
         disabled={disabled}
         readOnly={readOnly}

@@ -1,5 +1,5 @@
 declare module '#cogs/components/field' {
-  import type { ChangeEvent, MouseEvent } from 'react'
+  import type { MouseEvent } from 'react'
 
   import Field from '#cogs/super/components/field'
 
@@ -10,14 +10,10 @@ declare module '#cogs/components/field' {
 
   export class ValueField<P extends ValueProps> extends Field<P> {
     shouldComponentUpdate (props: ValueProps): boolean
-
-    handleChange (event: ChangeEvent<HTMLTextAreaElement> | ChangeEvent<HTMLInputElement>): void
   }
 
   export class CheckField<P extends CheckProps> extends Field<P> {
     shouldComponentUpdate (props: CheckProps): boolean
-
-    handleChange (event: ChangeEvent<HTMLInputElement>): void
 
     handleClick (event: MouseEvent<HTMLInputElement>): void
   }

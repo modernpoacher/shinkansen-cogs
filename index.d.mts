@@ -25,6 +25,7 @@ declare global {
           id?: string
           name: string
           title?: string
+          value?: string
           description?: string
           errorMessage?: ErrorDefinitionType
           required?: boolean
@@ -59,6 +60,7 @@ declare global {
           export interface FieldProps extends React.PropsWithChildren {
             id?: string
             name: string
+            value?: string
             required?: boolean
             disabled?: boolean
             readOnly?: boolean
@@ -103,12 +105,10 @@ declare global {
 
       export namespace Field {
         export interface ValueProps extends Super.Components.Field.FieldProps {
-          value?: string
           defaultValue?: string
         }
 
         export interface CheckProps extends Super.Components.Field.FieldProps {
-          value?: string
           checked?: boolean
           defaultChecked?: boolean
           onClick: OnEventType
@@ -186,12 +186,10 @@ declare global {
 
     export namespace Cogs {
       export interface ValueProps extends Super.Cogs.CogProps {
-        value?: string
         defaultValue?: string
       }
 
       export interface CheckProps extends Super.Cogs.CogProps {
-        value?: string
         checked?: boolean
         defaultChecked?: boolean
         onClick: OnEventType
@@ -222,9 +220,9 @@ declare global {
 
       export namespace Select {
         export interface SelectProps extends Omit<Omit<ValueProps, 'value'>, 'defaultValue'>, React.PropsWithChildren {
-          multiple?: boolean
           value?: string | string[]
           defaultValue?: string | string[]
+          multiple?: boolean
         }
       }
 
