@@ -4,7 +4,6 @@
 
 import React from 'react'
 import snapshotOf from 'react-component-snapshot'
-import renderer from 'react-test-renderer'
 
 import '@testing-library/jest-dom'
 
@@ -64,18 +63,6 @@ describe('#cogs/super/components/field', () => {
         )
 
         expect(snapshotOf(field))
-          .toMatchSnapshot()
-      })
-
-      /**
-       *  @deprecated For migration toward Testing Library
-       */
-      xit('matches the snapshot', () => {
-        expect(renderer.create((
-          <Field
-            name='MOCK NAME'
-          />
-        )).toJSON())
           .toMatchSnapshot()
       })
     })
@@ -147,26 +134,6 @@ describe('#cogs/super/components/field', () => {
         )
 
         expect(snapshotOf(field))
-          .toMatchSnapshot()
-      })
-
-      /**
-       *  @deprecated For migration toward Testing Library
-       */
-      xit('matches the snapshot', () => {
-        expect(renderer.create((
-          <Field
-            name='MOCK NAME'
-            id='MOCK ID'
-            value='MOCK VALUE'
-            required
-            disabled
-            readOnly
-            placeholder='MOCK PLACEHOLDER'
-            fieldRef={MOCK_FIELD_REF}
-            onChange={MOCK_ON_CHANGE}
-          />
-        )).toJSON())
           .toMatchSnapshot()
       })
     })

@@ -4,7 +4,6 @@
 
 import React from 'react'
 import snapshotOf from 'react-component-snapshot'
-import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
 import '@testing-library/jest-dom'
@@ -134,18 +133,6 @@ describe('#cogs/super/cogs', () => {
         )
 
         expect(snapshotOf(cog))
-          .toMatchSnapshot()
-      })
-
-      /**
-       *  @deprecated For migration toward Testing Library
-       */
-      xit('matches the snapshot', () => {
-        expect(renderer.create((
-          <Cog
-            name='MOCK NAME'
-          />
-        )).toJSON())
           .toMatchSnapshot()
       })
     })
@@ -285,30 +272,6 @@ describe('#cogs/super/cogs', () => {
         )
 
         expect(snapshotOf(cog))
-          .toMatchSnapshot()
-      })
-
-      /**
-       *  @deprecated For migration toward Testing Library
-       */
-      xit('matches the snapshot', () => {
-        expect(renderer.create(
-          <Cog
-            name='MOCK NAME'
-            id='MOCK ID'
-            title='MOCK TITLE'
-            value='MOCK VALUE'
-            description='MOCK DESCRIPTION'
-            errorMessage={MOCK_ERROR_MESSAGE}
-            tabIndex={1}
-            accessKey='MOCK ACCESS KEY'
-            required
-            disabled
-            readOnly
-            fieldRef={MOCK_FIELD_REF}
-            onChange={MOCK_ON_CHANGE}
-          />
-        ).toJSON())
           .toMatchSnapshot()
       })
     })

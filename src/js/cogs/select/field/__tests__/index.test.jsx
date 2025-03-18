@@ -1,6 +1,5 @@
 import React from 'react'
 import snapshotOf from 'react-component-snapshot'
-import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
 import '@testing-library/jest-dom'
@@ -70,18 +69,6 @@ describe('#cogs/cogs/select/field', () => {
         )
 
         expect(snapshotOf(field))
-          .toMatchSnapshot()
-      })
-
-      /**
-       *  @deprecated For migration toward Testing Library
-       */
-      xit('matches the snapshot', () => {
-        expect(renderer.create((
-          <Field
-            name='MOCK NAME'
-          />
-        )).toJSON())
           .toMatchSnapshot()
       })
     })
@@ -157,26 +144,6 @@ describe('#cogs/cogs/select/field', () => {
             expect(snapshotOf(field))
               .toMatchSnapshot()
           })
-
-          /**
-           *  @deprecated For migration toward Testing Library
-           */
-          xit('matches the snapshot', () => {
-            expect(renderer.create((
-              <Field
-                name='MOCK NAME'
-                id='MOCK ID'
-                value={['MOCK VALUE']}
-                multiple
-                required
-                disabled
-                readOnly
-                fieldRef={MOCK_FIELD_REF}
-                onChange={MOCK_ON_CHANGE}
-              />
-            )).toJSON())
-              .toMatchSnapshot()
-          })
         })
 
         describe('Default value is an array', () => {
@@ -246,26 +213,6 @@ describe('#cogs/cogs/select/field', () => {
             )
 
             expect(snapshotOf(field))
-              .toMatchSnapshot()
-          })
-
-          /**
-           *  @deprecated For migration toward Testing Library
-           */
-          xit('matches the snapshot', () => {
-            expect(renderer.create((
-              <Field
-                name='MOCK NAME'
-                id='MOCK ID'
-                defaultValue={['MOCK DEFAULT VALUE']}
-                multiple
-                required
-                disabled
-                readOnly
-                fieldRef={MOCK_FIELD_REF}
-                onChange={MOCK_ON_CHANGE}
-              />
-            )).toJSON())
               .toMatchSnapshot()
           })
         })
@@ -344,26 +291,6 @@ describe('#cogs/cogs/select/field', () => {
             expect(snapshotOf(field))
               .toMatchSnapshot()
           })
-
-          /**
-           *  @deprecated For migration toward Testing Library
-           */
-          xit('matches the snapshot', () => {
-            expect(renderer.create((
-              <Field
-                name='MOCK NAME'
-                id='MOCK ID'
-                value='MOCK VALUE'
-                multiple={false}
-                required
-                disabled
-                readOnly
-                fieldRef={MOCK_FIELD_REF}
-                onChange={MOCK_ON_CHANGE}
-              />
-            )).toJSON())
-              .toMatchSnapshot()
-          })
         })
 
         describe('Default value is a string', () => {
@@ -433,26 +360,6 @@ describe('#cogs/cogs/select/field', () => {
             )
 
             expect(snapshotOf(field))
-              .toMatchSnapshot()
-          })
-
-          /**
-           *  @deprecated For migration toward Testing Library
-           */
-          xit('matches the snapshot', () => {
-            expect(renderer.create((
-              <Field
-                name='MOCK NAME'
-                id='MOCK ID'
-                defaultValue='MOCK DEFAULT VALUE'
-                multiple={false}
-                required
-                disabled
-                readOnly
-                fieldRef={MOCK_FIELD_REF}
-                onChange={MOCK_ON_CHANGE}
-              />
-            )).toJSON())
               .toMatchSnapshot()
           })
         })

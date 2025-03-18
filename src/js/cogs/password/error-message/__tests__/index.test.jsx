@@ -1,6 +1,5 @@
 import React from 'react'
 import snapshotOf from 'react-component-snapshot'
-import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
 import '@testing-library/jest-dom'
@@ -55,16 +54,6 @@ describe('#cogs/cogs/password/error-message', () => {
         expect(snapshotOf(errorMessage))
           .toMatchSnapshot()
       })
-
-      /**
-       *  @deprecated For migration toward Testing Library
-       */
-      xit('matches the snapshot', () => {
-        expect(renderer.create((
-          <ErrorMessage />
-        )).toJSON())
-          .toMatchSnapshot()
-      })
     })
 
     describe('With additional props', () => {
@@ -110,18 +99,6 @@ describe('#cogs/cogs/password/error-message', () => {
         )
 
         expect(snapshotOf(errorMessage))
-          .toMatchSnapshot()
-      })
-
-      /**
-       *  @deprecated For migration toward Testing Library
-       */
-      xit('matches the snapshot', () => {
-        expect(renderer.create((
-          <ErrorMessage
-            errorMessage={MOCK_ERROR_MESSAGE}
-          />
-        )).toJSON())
           .toMatchSnapshot()
       })
     })

@@ -1,6 +1,5 @@
 import React from 'react'
 import snapshotOf from 'react-component-snapshot'
-import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
 import '@testing-library/jest-dom'
@@ -67,18 +66,6 @@ describe('#cogs/cogs/email/field', () => {
         )
 
         expect(snapshotOf(field))
-          .toMatchSnapshot()
-      })
-
-      /**
-       *  @deprecated For migration toward Testing Library
-       */
-      xit('matches the snapshot', () => {
-        expect(renderer.create((
-          <Field
-            name='MOCK NAME'
-          />
-        )).toJSON())
           .toMatchSnapshot()
       })
     })
@@ -153,26 +140,6 @@ describe('#cogs/cogs/email/field', () => {
           expect(snapshotOf(field))
             .toMatchSnapshot()
         })
-
-        /**
-         *  @deprecated For migration toward Testing Library
-         */
-        xit('matches the snapshot', () => {
-          expect(renderer.create((
-            <Field
-              name='MOCK NAME'
-              id='MOCK ID'
-              value='MOCK VALUE'
-              required
-              disabled
-              readOnly
-              placeholder='MOCK PLACEHOLDER'
-              fieldRef={MOCK_FIELD_REF}
-              onChange={MOCK_ON_CHANGE}
-            />
-          )).toJSON())
-            .toMatchSnapshot()
-        })
       })
 
       describe('Default value is a string', () => {
@@ -242,26 +209,6 @@ describe('#cogs/cogs/email/field', () => {
           )
 
           expect(snapshotOf(field))
-            .toMatchSnapshot()
-        })
-
-        /**
-         *  @deprecated For migration toward Testing Library
-         */
-        xit('matches the snapshot', () => {
-          expect(renderer.create((
-            <Field
-              name='MOCK NAME'
-              id='MOCK ID'
-              defaultValue='MOCK DEFAULT VALUE'
-              required
-              disabled
-              readOnly
-              placeholder='MOCK PLACEHOLDER'
-              fieldRef={MOCK_FIELD_REF}
-              onChange={MOCK_ON_CHANGE}
-            />
-          )).toJSON())
             .toMatchSnapshot()
         })
       })

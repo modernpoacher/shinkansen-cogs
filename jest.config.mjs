@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   bail: true,
   verbose: true,
   rootDir: '.',

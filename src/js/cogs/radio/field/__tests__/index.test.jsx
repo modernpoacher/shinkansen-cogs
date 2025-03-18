@@ -1,6 +1,5 @@
 import React from 'react'
 import snapshotOf from 'react-component-snapshot'
-import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
 import '@testing-library/jest-dom'
@@ -75,20 +74,6 @@ describe('#cogs/cogs/radio/field', () => {
         expect(snapshotOf(field))
           .toMatchSnapshot()
       })
-
-      /**
-       *  @deprecated For migration toward Testing Library
-       */
-      xit('matches the snapshot', () => {
-        expect(renderer.create((
-          <Field
-            name='MOCK NAME'
-            id='MOCK ID'
-            value='MOCK VALUE'
-          />
-        )).toJSON())
-          .toMatchSnapshot()
-      })
     })
 
     describe('With additional props', () => {
@@ -161,26 +146,6 @@ describe('#cogs/cogs/radio/field', () => {
           expect(snapshotOf(field))
             .toMatchSnapshot()
         })
-
-        /**
-         *  @deprecated For migration toward Testing Library
-         */
-        xit('matches the snapshot', () => {
-          expect(renderer.create((
-            <Field
-              name='MOCK NAME'
-              id='MOCK ID'
-              value='MOCK VALUE'
-              checked
-              required
-              disabled
-              readOnly
-              fieldRef={MOCK_FIELD_REF}
-              onChange={MOCK_ON_CHANGE}
-            />
-          )).toJSON())
-            .toMatchSnapshot()
-        })
       })
 
       describe('Default checked is a boolean', () => {
@@ -250,26 +215,6 @@ describe('#cogs/cogs/radio/field', () => {
           )
 
           expect(snapshotOf(field))
-            .toMatchSnapshot()
-        })
-
-        /**
-         *  @deprecated For migration toward Testing Library
-         */
-        xit('matches the snapshot', () => {
-          expect(renderer.create((
-            <Field
-              name='MOCK NAME'
-              id='MOCK ID'
-              value='MOCK VALUE'
-              defaultChecked
-              required
-              disabled
-              readOnly
-              fieldRef={MOCK_FIELD_REF}
-              onChange={MOCK_ON_CHANGE}
-            />
-          )).toJSON())
             .toMatchSnapshot()
         })
       })

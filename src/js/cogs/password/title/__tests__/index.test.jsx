@@ -1,6 +1,5 @@
 import React from 'react'
 import snapshotOf from 'react-component-snapshot'
-import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
 import '@testing-library/jest-dom'
@@ -66,18 +65,6 @@ describe('#cogs/cogs/password/title', () => {
         expect(snapshotOf(title))
           .toMatchSnapshot()
       })
-
-      /**
-       *  @deprecated For migration toward Testing Library
-       */
-      xit('matches the snapshot', () => {
-        expect(renderer.create((
-          <Title
-            id='MOCK ID'
-          />
-        )).toJSON())
-          .toMatchSnapshot()
-      })
     })
 
     describe('With additional props', () => {
@@ -135,22 +122,6 @@ describe('#cogs/cogs/password/title', () => {
         )
 
         expect(snapshotOf(title))
-          .toMatchSnapshot()
-      })
-
-      /**
-       *  @deprecated For migration toward Testing Library
-       */
-      xit('matches the snapshot', () => {
-        expect(renderer.create((
-          <Title
-            id='MOCK ID'
-            title='MOCK TITLE'
-            required
-            disabled
-            readOnly
-          />
-        )).toJSON())
           .toMatchSnapshot()
       })
     })

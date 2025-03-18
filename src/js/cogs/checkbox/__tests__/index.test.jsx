@@ -5,7 +5,6 @@
 
 import React from 'react'
 import snapshotOf from 'react-component-snapshot'
-import renderer from 'react-test-renderer'
 import classnames from 'classnames'
 
 import '@testing-library/jest-dom'
@@ -136,19 +135,6 @@ describe('#cogs/cogs/checkbox', () => {
         )
 
         expect(snapshotOf(element))
-          .toMatchSnapshot()
-      })
-
-      /**
-       *  @deprecated For migration toward Testing Library
-       */
-      xit('matches the snapshot', () => {
-        expect(renderer.create((
-          <Cog
-            name='MOCK NAME'
-            value='MOCK VALUE'
-          />
-        )).toJSON())
           .toMatchSnapshot()
       })
     })
@@ -291,31 +277,6 @@ describe('#cogs/cogs/checkbox', () => {
           )
 
           expect(snapshotOf(element))
-            .toMatchSnapshot()
-        })
-
-        /**
-         *  @deprecated For migration toward Testing Library
-         */
-        xit('matches the snapshot', () => {
-          expect(renderer.create(
-            <Cog
-              name='MOCK NAME'
-              id='MOCK ID'
-              title='MOCK TITLE'
-              description='MOCK DESCRIPTION'
-              errorMessage={MOCK_ERROR_MESSAGE}
-              value='MOCK VALUE'
-              tabIndex={1}
-              accessKey='MOCK ACCESS KEY'
-              checked
-              required
-              disabled
-              readOnly
-              fieldRef={MOCK_FIELD_REF}
-              onChange={MOCK_ON_CHANGE}
-            />
-          ).toJSON())
             .toMatchSnapshot()
         })
       })
@@ -485,31 +446,6 @@ describe('#cogs/cogs/checkbox', () => {
           )
 
           expect(snapshotOf(element))
-            .toMatchSnapshot()
-        })
-
-        /**
-         *  @deprecated For migration toward Testing Library
-         */
-        xit('matches the snapshot', () => {
-          expect(renderer.create(
-            <Cog
-              name='MOCK NAME'
-              id='MOCK ID'
-              title='MOCK TITLE'
-              description='MOCK DESCRIPTION'
-              errorMessage={MOCK_ERROR_MESSAGE}
-              value='MOCK VALUE'
-              tabIndex={1}
-              accessKey='MOCK ACCESS KEY'
-              defaultChecked
-              required
-              disabled
-              readOnly
-              fieldRef={MOCK_FIELD_REF}
-              onChange={MOCK_ON_CHANGE}
-            />
-          ).toJSON())
             .toMatchSnapshot()
         })
       })

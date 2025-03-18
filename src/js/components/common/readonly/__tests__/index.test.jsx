@@ -1,6 +1,5 @@
 import React from 'react'
 import snapshotOf from 'react-component-snapshot'
-import renderer from 'react-test-renderer'
 
 import '@testing-library/jest-dom'
 
@@ -35,14 +34,6 @@ describe('#cogs/components/common/readonly', () => {
       )
 
       expect(snapshotOf(readOnly))
-        .toMatchSnapshot()
-    })
-
-    /**
-     *  @deprecated For migration toward Testing Library
-     */
-    xit('matches the snapshot', () => {
-      expect(renderer.create(<ReadOnly />).toJSON())
         .toMatchSnapshot()
     })
   })

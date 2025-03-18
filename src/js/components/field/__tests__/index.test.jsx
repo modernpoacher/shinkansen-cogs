@@ -1,6 +1,5 @@
 import React from 'react'
 import snapshotOf from 'react-component-snapshot'
-import renderer from 'react-test-renderer'
 
 import '@testing-library/jest-dom'
 
@@ -67,18 +66,6 @@ describe('#cogs/components/field', () => {
         )
 
         expect(snapshotOf(field))
-          .toMatchSnapshot()
-      })
-
-      /**
-       *  @deprecated For migration toward Testing Library
-       */
-      xit('matches the snapshot', () => {
-        expect(renderer.create((
-          <ValueField
-            name='MOCK NAME'
-          />
-        )).toJSON())
           .toMatchSnapshot()
       })
     })
@@ -153,26 +140,6 @@ describe('#cogs/components/field', () => {
           expect(snapshotOf(field))
             .toMatchSnapshot()
         })
-
-        /**
-         *  @deprecated For migration toward Testing Library
-         */
-        xit('matches the snapshot', () => {
-          expect(renderer.create((
-            <ValueField
-              name='MOCK NAME'
-              id='MOCK ID'
-              value='MOCK VALUE'
-              required
-              disabled
-              readOnly
-              placeholder='MOCK PLACEHOLDER'
-              fieldRef={MOCK_FIELD_REF}
-              onChange={MOCK_ON_CHANGE}
-            />
-          )).toJSON())
-            .toMatchSnapshot()
-        })
       })
 
       describe('Default value is a string', () => {
@@ -242,26 +209,6 @@ describe('#cogs/components/field', () => {
           )
 
           expect(snapshotOf(field))
-            .toMatchSnapshot()
-        })
-
-        /**
-         *  @deprecated For migration toward Testing Library
-         */
-        xit('matches the snapshot', () => {
-          expect(renderer.create((
-            <ValueField
-              name='MOCK NAME'
-              id='MOCK ID'
-              defaultValue='MOCK DEFAULT VALUE'
-              required
-              disabled
-              readOnly
-              placeholder='MOCK PLACEHOLDER'
-              fieldRef={MOCK_FIELD_REF}
-              onChange={MOCK_ON_CHANGE}
-            />
-          )).toJSON())
             .toMatchSnapshot()
         })
       })
@@ -388,19 +335,6 @@ describe('#cogs/components/field', () => {
         expect(snapshotOf(field))
           .toMatchSnapshot()
       })
-
-      /**
-       *  @deprecated For migration toward Testing Library
-       */
-      xit('matches the snapshot', () => {
-        expect(renderer.create((
-          <CheckField
-            name='MOCK NAME'
-            value='MOCK VALUE'
-          />
-        )).toJSON())
-          .toMatchSnapshot()
-      })
     })
 
     describe('With additional props', () => {
@@ -473,26 +407,6 @@ describe('#cogs/components/field', () => {
           expect(snapshotOf(field))
             .toMatchSnapshot()
         })
-
-        /**
-         *  @deprecated For migration toward Testing Library
-         */
-        xit('matches the snapshot', () => {
-          expect(renderer.create((
-            <CheckField
-              name='MOCK NAME'
-              id='MOCK ID'
-              value='MOCK VALUE'
-              checked
-              required
-              disabled
-              readOnly
-              fieldRef={MOCK_FIELD_REF}
-              onChange={MOCK_ON_CHANGE}
-            />
-          )).toJSON())
-            .toMatchSnapshot()
-        })
       })
 
       describe('Default checked is a boolean', () => {
@@ -562,26 +476,6 @@ describe('#cogs/components/field', () => {
           )
 
           expect(snapshotOf(field))
-            .toMatchSnapshot()
-        })
-
-        /**
-         *  @deprecated For migration toward Testing Library
-         */
-        xit('matches the snapshot', () => {
-          expect(renderer.create((
-            <CheckField
-              name='MOCK NAME'
-              id='MOCK ID'
-              value='MOCK VALUE'
-              defaultChecked
-              required
-              disabled
-              readOnly
-              fieldRef={MOCK_FIELD_REF}
-              onChange={MOCK_ON_CHANGE}
-            />
-          )).toJSON())
             .toMatchSnapshot()
         })
       })
