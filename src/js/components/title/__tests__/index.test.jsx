@@ -1,15 +1,18 @@
 import React from 'react'
+
 import {
   snapshotOf
 } from 'react-component-snapshot'
+
+import {
+  getInstanceFromContainerElement
+} from 'react-component-instance'
 
 import '@testing-library/jest-dom'
 
 import {
   render
 } from '@testing-library/react'
-
-import getComponentInstanceFrom from 'react-component-instance/container'
 
 import Title from '#cogs/components/title'
 
@@ -134,7 +137,7 @@ describe('#cogs/components/title', () => {
           />
         )
 
-        const instance = getComponentInstanceFrom(container)
+        const instance = getInstanceFromContainerElement(container)
 
         expect(instance.getClassName())
           .toEqual(expect.any(String))

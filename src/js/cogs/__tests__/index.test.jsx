@@ -3,17 +3,20 @@
  *  @typedef {CogsTypes.Cogs.Checkbox.CheckboxProps} CheckboxProps
  */
 import React from 'react'
+
 import {
   snapshotOf
 } from 'react-component-snapshot'
+
+import {
+  getInstanceFromContainerElement
+} from 'react-component-instance'
 
 import '@testing-library/jest-dom'
 
 import {
   render
 } from '@testing-library/react'
-
-import getComponentInstanceFrom from 'react-component-instance/container'
 
 import {
   ValueCog,
@@ -445,7 +448,7 @@ describe('#cogs/cogs', () => {
             />
           )
 
-          instance = getComponentInstanceFrom(container)
+          instance = getInstanceFromContainerElement(container)
         })
 
         describe('`props` have changed', () => {
@@ -493,7 +496,7 @@ describe('#cogs/cogs', () => {
             />
           )
 
-          instance = getComponentInstanceFrom(container)
+          instance = getInstanceFromContainerElement(container)
         })
 
         describe('`props` have changed', () => {
@@ -532,7 +535,7 @@ describe('#cogs/cogs', () => {
           />
         )
 
-        const instance = getComponentInstanceFrom(container)
+        const instance = getInstanceFromContainerElement(container)
 
         /**
          *  Spy (and mock the return value)
@@ -559,7 +562,7 @@ describe('#cogs/cogs', () => {
           />
         )
 
-        const instance = getComponentInstanceFrom(container)
+        const instance = getInstanceFromContainerElement(container)
 
         /**
          *  Spy (and mock the return value)
@@ -991,7 +994,7 @@ describe('#cogs/cogs', () => {
             />
           )
 
-          instance = getComponentInstanceFrom(container)
+          instance = getInstanceFromContainerElement(container)
         })
 
         describe('`props` have changed', () => {
@@ -1039,7 +1042,7 @@ describe('#cogs/cogs', () => {
             />
           )
 
-          instance = getComponentInstanceFrom(container)
+          instance = getInstanceFromContainerElement(container)
         })
 
         describe('`props` have changed', () => {
@@ -1078,7 +1081,7 @@ describe('#cogs/cogs', () => {
           />
         )
 
-        const instance = getComponentInstanceFrom(container)
+        const instance = getInstanceFromContainerElement(container)
 
         /**
          *  Spy (and mock the return value)
@@ -1105,7 +1108,7 @@ describe('#cogs/cogs', () => {
           />
         )
 
-        const instance = getComponentInstanceFrom(container)
+        const instance = getInstanceFromContainerElement(container)
 
         /**
          *  Spy (and mock the return value)

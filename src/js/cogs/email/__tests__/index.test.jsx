@@ -1,16 +1,19 @@
 import React from 'react'
+import classnames from 'classnames'
+
 import {
   snapshotOf
 } from 'react-component-snapshot'
-import classnames from 'classnames'
+
+import {
+  getInstanceFromContainerElement
+} from 'react-component-instance'
 
 import '@testing-library/jest-dom'
 
 import {
   render
 } from '@testing-library/react'
-
-import getComponentInstanceFrom from 'react-component-instance/container'
 
 import {
   ValueCog
@@ -438,7 +441,7 @@ describe('#cogs/cogs/email', () => {
           />
         )
 
-        const instance = getComponentInstanceFrom(container)
+        const instance = getInstanceFromContainerElement(container)
 
         /**
          *  Ensure it is reset after render
@@ -470,7 +473,7 @@ describe('#cogs/cogs/email', () => {
             />
           )
 
-          const instance = getComponentInstanceFrom(container)
+          const instance = getInstanceFromContainerElement(container)
 
           /**
            *  Ensure it is reset after render
@@ -496,7 +499,7 @@ describe('#cogs/cogs/email', () => {
             />
           )
 
-          const instance = getComponentInstanceFrom(container)
+          const instance = getInstanceFromContainerElement(container)
 
           /**
            *  Ensure it is reset after render
@@ -524,7 +527,7 @@ describe('#cogs/cogs/email', () => {
           />
         )
 
-        const instance = getComponentInstanceFrom(container)
+        const instance = getInstanceFromContainerElement(container)
 
         /**
          *  Spy (and mock the return value)
@@ -551,7 +554,7 @@ describe('#cogs/cogs/email', () => {
           />
         )
 
-        const instance = getComponentInstanceFrom(container)
+        const instance = getInstanceFromContainerElement(container)
 
         /**
          *  Spy (and mock the return value)

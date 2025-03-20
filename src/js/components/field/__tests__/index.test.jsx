@@ -1,15 +1,18 @@
 import React from 'react'
+
 import {
   snapshotOf
 } from 'react-component-snapshot'
+
+import {
+  getInstanceFromContainerElement
+} from 'react-component-instance'
 
 import '@testing-library/jest-dom'
 
 import {
   render
 } from '@testing-library/react'
-
-import getComponentInstanceFrom from 'react-component-instance/container'
 
 import Super from '#cogs/super/components/field'
 
@@ -226,7 +229,7 @@ describe('#cogs/components/field', () => {
           />
         )
 
-        const instance = getComponentInstanceFrom(container)
+        const instance = getInstanceFromContainerElement(container)
 
         expect(instance.getClassName())
           .toEqual(expect.any(String))
@@ -246,7 +249,7 @@ describe('#cogs/components/field', () => {
             />
           )
 
-          const instance = getComponentInstanceFrom(container)
+          const instance = getInstanceFromContainerElement(container)
 
           /**
            *  Ensure it is reset after render
@@ -272,7 +275,7 @@ describe('#cogs/components/field', () => {
             />
           )
 
-          const instance = getComponentInstanceFrom(container)
+          const instance = getInstanceFromContainerElement(container)
 
           /**
            *  Ensure it is reset after render
@@ -494,7 +497,7 @@ describe('#cogs/components/field', () => {
           />
         )
 
-        const instance = getComponentInstanceFrom(container)
+        const instance = getInstanceFromContainerElement(container)
 
         expect(instance.getClassName())
           .toEqual(expect.any(String))
@@ -515,7 +518,7 @@ describe('#cogs/components/field', () => {
             />
           )
 
-          const instance = getComponentInstanceFrom(container)
+          const instance = getInstanceFromContainerElement(container)
 
           /**
            *  Ensure it is reset after render
@@ -542,7 +545,7 @@ describe('#cogs/components/field', () => {
             />
           )
 
-          const instance = getComponentInstanceFrom(container)
+          const instance = getInstanceFromContainerElement(container)
 
           /**
            *  Ensure it is reset after render

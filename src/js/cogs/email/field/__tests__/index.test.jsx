@@ -1,16 +1,19 @@
 import React from 'react'
+import classnames from 'classnames'
+
 import {
   snapshotOf
 } from 'react-component-snapshot'
-import classnames from 'classnames'
+
+import {
+  getInstanceFromContainerElement
+} from 'react-component-instance'
 
 import '@testing-library/jest-dom'
 
 import {
   render
 } from '@testing-library/react'
-
-import getComponentInstanceFrom from 'react-component-instance/container'
 
 import {
   ValueField
@@ -231,7 +234,7 @@ describe('#cogs/cogs/email/field', () => {
           />
         )
 
-        const instance = getComponentInstanceFrom(container)
+        const instance = getInstanceFromContainerElement(container)
 
         /**
          *  Ensure it is reset after render
@@ -263,7 +266,7 @@ describe('#cogs/cogs/email/field', () => {
             />
           )
 
-          const instance = getComponentInstanceFrom(container)
+          const instance = getInstanceFromContainerElement(container)
 
           /**
            *  Ensure it is reset after render
@@ -289,7 +292,7 @@ describe('#cogs/cogs/email/field', () => {
             />
           )
 
-          const instance = getComponentInstanceFrom(container)
+          const instance = getInstanceFromContainerElement(container)
 
           /**
            *  Ensure it is reset after render
