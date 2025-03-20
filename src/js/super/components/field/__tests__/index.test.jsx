@@ -3,7 +3,9 @@
  */
 
 import React from 'react'
-import snapshotOf from 'react-component-snapshot'
+import {
+  snapshotOf
+} from 'react-component-snapshot'
 
 import '@testing-library/jest-dom'
 
