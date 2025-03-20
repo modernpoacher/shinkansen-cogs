@@ -1,12 +1,26 @@
 /**
- * ErrorMessage component
+ *  @typedef {CogsTypes.ErrorDefinitionType} ErrorDefinitionType
+ *  @typedef {CogsTypes.Super.Components.ErrorMessage.ErrorMessageProps} ErrorMessageProps
+ *  @typedef {CogsTypes.Super.Components.ErrorMessage.ErrorMessageState} ErrorMessageState
+ */
+
+/**
+ *  ErrorMessage component
  */
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import TextContent from '#cogs/components/common/text-content'
 
+/**
+ *  @extends {Component<ErrorMessageProps, ErrorMessageState>}
+ */
 export default class ErrorMessage extends Component {
+  /**
+   *  @type {ErrorMessageState}
+   */
+  state = {}
+
   getClassName () {
     return 'error-message'
   }
