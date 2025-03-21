@@ -1,6 +1,6 @@
 {
   "name": "shinkansen-cogs",
-  "version": "2.1.6",
+  "version": "2.1.7",
   "description": "Shinkansen Cogs",
   "keywords": [
     "Shinkansen",
@@ -107,7 +107,7 @@
     "prop-types": "^15.8.1",
     "react": "^19.0.0",
     "react-component-instance": "^0.0.11",
-    "react-component-snapshot": "^0.0.6",
+    "react-component-snapshot": "^0.0.8",
     "react-dom": "^19.0.0",
     "remove-files-webpack-plugin": "^1.5.0",
     "sass": "^1.86.0",
