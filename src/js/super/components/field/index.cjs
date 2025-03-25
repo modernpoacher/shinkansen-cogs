@@ -17,4 +17,4 @@ const {
 /**
  *  Exports only default
  */
-module.exports = Field // require('./index.jsx') // component
+module.exports = Field

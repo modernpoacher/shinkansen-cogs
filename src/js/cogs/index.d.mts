@@ -12,8 +12,14 @@ declare module '#cogs/cogs' {
   export class CheckCog<P extends CheckProps> extends Cog<P> {
     shouldComponentUpdate (props: CheckProps): boolean
   }
+
+  export function toInputValue (value: unknown): string
 }
 
 declare module 'shinkansen-cogs/cogs' {
-  export * from '#cogs/cogs'
+  export {
+    ValueCog,
+    CheckCog,
+    toInputValue
+  } from '#cogs/cogs'
 }

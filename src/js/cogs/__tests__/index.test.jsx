@@ -1,6 +1,6 @@
 /**
+ *  @typedef {CogsTypes.Cogs.ValueProps} ValueProps
  *  @typedef {CogsTypes.Cogs.CheckProps} CheckProps
- *  @typedef {CogsTypes.Cogs.Checkbox.CheckboxProps} CheckboxProps
  */
 import React from 'react'
 
@@ -427,7 +427,7 @@ describe('#cogs/cogs', () => {
     describe('`shouldComponentUpdate()`', () => {
       describe('Value is a string', () => {
         /**
-         *  @type {undefined | Super<CheckProps>}
+         *  @type {undefined | Super<ValueProps>}
          */
         let instance
 
@@ -475,7 +475,7 @@ describe('#cogs/cogs', () => {
 
       describe('Default value is a string', () => {
         /**
-         *  @type {undefined | Super<CheckProps>}
+         *  @type {undefined | Super<ValueProps>}
          */
         let instance
 

@@ -17,4 +17,4 @@ const {
 /**
  *  Exports only default
  */
-module.exports = Cog //  = require('./index.jsx')
+module.exports = Cog

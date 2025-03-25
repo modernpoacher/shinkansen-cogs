@@ -6,7 +6,8 @@
  */
 
 /**
- *  Cog component
+ *  ValueCog component
+ *  CheckCog component
  */
 import React from 'react'
 import PropTypes from 'prop-types'

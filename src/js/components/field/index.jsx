@@ -94,7 +94,6 @@ export class CheckField extends Field {
 
 CheckField.propTypes = {
   ...Field.propTypes,
-  value: PropTypes.string,
   checked: PropTypes.bool,
   defaultChecked: PropTypes.bool,
   onClick: PropTypes.func
