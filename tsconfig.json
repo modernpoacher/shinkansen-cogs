@@ -44,10 +44,10 @@
         "src/js/super/components/*/index.cjs"
       ],
       "#cogs/transformers": [
-        "src/transformers/index.mjs"
+        "src/js/transformers/index.mjs"
       ],
       "#cogs/transformers/*": [
-        "src/transformers/*/index.mjs"
+        "src/js/transformers/*/index.mjs"
       ]
     }
   },

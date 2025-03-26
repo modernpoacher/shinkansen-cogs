@@ -19,10 +19,6 @@
 # User-defined NVM configuration
 .nvmrc
 
-# Build
-build
-transform.sh
-
 # Mocha
 test
 

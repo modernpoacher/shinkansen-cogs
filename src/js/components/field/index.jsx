@@ -20,8 +20,8 @@ function DEFAULT_HANDLE_EVENT () {
 }
 
 /**
- * @param {unknown} value
- * @returns {string}
+ *  @param {unknown} value
+ *  @returns {string}
  */
 export function toInputValue (value) {
   return (value === undefined) ? '' : String(value)

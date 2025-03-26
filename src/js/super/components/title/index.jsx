@@ -61,8 +61,8 @@ export default class Title extends Component {
   }
 
   /**
-   * @param {string} textContent
-   * @returns {React.JSX.Element}
+   *  @param {string} textContent
+   *  @returns {React.JSX.Element}
    */
   renderTextContent (textContent) {
     return (

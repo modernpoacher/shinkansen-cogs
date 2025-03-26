@@ -24,8 +24,8 @@ function DEFAULT_HANDLE_EVENT () {
 }
 
 /**
- * @param {HTMLOptionElement[]} selectedOptions
- * @returns {string[]}
+ *  @param {HTMLOptionElement[]} selectedOptions
+ *  @returns {string[]}
  */
 function fromSelectedOptions (selectedOptions) {
   return (
