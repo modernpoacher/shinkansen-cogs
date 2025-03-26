@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#cogs/cogs/email/error-message <ErrorMessage /> With additional props matches the snapshot 1`] = `
+<span
+  className="MOCK CLASSNAME"
+>
+  <TextContent>
+    <span
+      className="text-content"
+    >
+      MOCK ERROR MESSAGE
+    </span>
+  </TextContent>
+</span>
+`;
+
+exports[`#cogs/cogs/email/error-message <ErrorMessage /> With required props matches the snapshot 1`] = `null`;

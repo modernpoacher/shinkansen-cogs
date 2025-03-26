@@ -6,7 +6,7 @@
     "Cogs",
     "React"
   ],
-  "main": "./src/index.cjs",
+  "main": "./src/js/index.mjs",
   "type": "module",
   "types": "./index.d.mts",
   "author": {
@@ -23,20 +23,27 @@
     "url": "git+ssh://git@github.com/modernpoacher/cogs.git"
   },
   "scripts": {
-    "build": "cross-env DEBUG=@modernpoacher/cogs* webpack",
+    "build": "cross-env DEBUG=@modernpoacher/cogs* webpack -c .storybook/webpack.config.mjs",
     "build-storybook": "storybook build",
-    "build:watch": "cross-env DEBUG=@modernpoacher/cogs* webpack --watch",
-    "lint": "eslint",
-    "lint:fix": "npm run lint -- --fix",
+    "build:watch": "npm run build -- -w",
+    "lint": "npm run lint:js && npm run lint:sass",
+    "lint:fix": "npm run lint:js:fix && npm run lint:sass:fix",
+    "lint:js": "eslint",
+    "lint:js:fix": "npm run lint:js -- --fix",
+    "lint:sass": "stylelint src/sass .storybook/*.scss",
+    "lint:sass:fix": "npm run lint:sass -- --fix",
     "nvm": "bash nvm.sh",
     "prebuild": "npm run nvm",
     "prelint": "npm run nvm",
     "prepare": "husky",
-    "prestorybook": "npm run build && npm run transform",
+    "prestorybook": "npm run build && npm run prettier && npm run transform",
     "pretest": "npm run nvm",
+    "prettier": "prettier src/sass .storybook --write",
     "storybook": "storybook dev -p 6006",
-    "test": "cross-env NODE_ENV=test jest",
-    "transform": "cross-env DEBUG=@modernpoacher/cogs* ./transform.sh"
+    "test": "npm run test:mocha && npm run test:jest",
+    "test:jest": "cross-env NODE_ENV=test jest",
+    "test:mocha": "cross-env NODE_ENV=test mocha test --recursive",
+    "transform": "cross-env DEBUG=@modernpoacher/cogs* .storybook/transform.sh"
   },
   "dependencies": {
     "classnames": "^2.5.1",
@@ -48,7 +55,7 @@
     "@babel/preset-env": "^7.26.9",
     "@babel/preset-react": "^7.26.3",
     "@babel/register": "^7.25.9",
-    "@modernpoacher/design-system": "1.2.0",
+    "@modernpoacher/design-system": "2.0.2",
     "@sequencemedia/eslint-config-standard": "^0.2.45",
     "@sequencemedia/eslint-config-typescript": "^0.1.66",
     "@storybook/addon-actions": "^8.6.9",
@@ -59,21 +66,31 @@
     "@storybook/react": "^8.6.9",
     "@storybook/react-webpack5": "^8.6.9",
     "@storybook/theming": "^8.6.9",
-    "@types/react": "18.3.13",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@types/babel__register": "^7.17.3",
+    "@types/chai": "^5.2.1",
+    "@types/debug": "^4.1.12",
+    "@types/jest": "^29.5.14",
+    "@types/mocha": "^10.0.10",
+    "@types/prop-types": "^15.7.14",
+    "@types/react": "^19.0.12",
+    "@types/react-dom": "^19.0.4",
     "@typescript-eslint/eslint-plugin": "^8.28.0",
     "@typescript-eslint/parser": "^8.28.0",
     "autoprefixer": "^10.4.21",
-    "clean-webpack-plugin": "^4.0.0",
+    "chai": "^5.2.0",
     "core-js": "^3.41.0",
     "cross-env": "^7.0.3",
     "eslint": "^9.23.0",
-    "eslint-import-resolver-babel-module": "^5.3.2",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-storybook": "^0.11.6",
     "globals": "^16.0.0",
     "husky": "^9.1.7",
     "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "mini-css-extract-plugin": "^2.9.2",
+    "mocha": "^11.1.0",
     "perfectionist": "^2.4.0",
     "postcss": "^8.5.3",
     "postcss-discard-comments": "^7.0.3",
@@ -81,36 +98,71 @@
     "postcss-import": "^16.1.0",
     "postcss-loader": "^8.1.1",
     "postcss-map": "^0.11.0",
+    "prettier": "^3.5.3",
     "prop-types": "^15.8.1",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-test-renderer": "18.3.1",
+    "react": "^19.0.0",
+    "react-component-instance": "^0.0.14",
+    "react-component-snapshot": "^0.0.13",
+    "react-dom": "^19.0.0",
     "remove-files-webpack-plugin": "^1.5.0",
     "sass": "^1.86.0",
     "sass-loader": "^16.0.5",
     "storybook": "^8.6.9",
+    "stylelint": "^16.16.0",
+    "stylelint-config-recommended-scss": "^14.1.0",
+    "stylelint-scss": "^6.11.1",
     "webpack": "^5.98.0",
     "webpack-cli": "^6.0.1"
   },
   "imports": {
-    "#build/paths": "./build/paths.mjs",
-    "#cogs": "./src/index.mjs",
-    "#cogs/cogs": "./src/cogs/index.jsx",
-    "#cogs/cogs/*": "./src/cogs/*/index.jsx",
-    "#cogs/common": "./src/common/index.mjs",
-    "#cogs/components/*": "./src/components/*/index.jsx",
+    "#cogs": {
+      "require": "./src/js/index.cjs",
+      "import": "./src/js/index.mjs"
+    },
+    "#cogs/cogs": "./src/js/cogs/index.cjs",
+    "#cogs/cogs/*": "./src/js/cogs/*/index.cjs",
+    "#cogs/components": {
+      "require": "./src/js/components/index.cjs",
+      "import": "./src/js/components/index.mjs"
+    },
+    "#cogs/components/*": "./src/js/components/*/index.cjs",
+    "#cogs/super": {
+      "require": "./src/js/super/index.cjs",
+      "import": "./src/js/super/index.mjs"
+    },
+    "#cogs/super/cogs": "./src/js/super/cogs/index.cjs",
+    "#cogs/super/cogs/*": "./src/js/super/cogs/*/index.cjs",
+    "#cogs/super/components": {
+      "require": "./src/js/super/components/index.cjs",
+      "import": "./src/js/super/components/index.mjs"
+    },
+    "#cogs/super/components/*": "./src/js/super/components/*/index.cjs",
     "#stories/cogs/*": "./stories/cogs/*/index.stories.jsx",
     "#stories/state": "./stories/state/index.jsx",
     "#stories/state/*": "./stories/state/*/index.jsx"
   },
   "exports": {
     ".": {
-      "require": "./src/index.cjs",
-      "import": "./src/index.mjs"
+      "require": "./src/js/index.cjs",
+      "import": "./src/js/index.mjs"
     },
-    "./cogs": "./src/cogs/index.cjs",
-    "./cogs/*": "./src/cogs/*/index.cjs",
-    "./common": "./src/common/index.mjs",
-    "./components/*": "./src/components/*/index.cjs"
+    "./cogs": "./src/js/cogs/index.cjs",
+    "./cogs/*": "./src/js/cogs/*/index.cjs",
+    "./components": {
+      "require": "./src/js/components/index.cjs",
+      "import": "./src/js/components/index.mjs"
+    },
+    "./components/*": "./src/js/components/*/index.cjs",
+    "./super": {
+      "require": "./src/js/super/index.cjs",
+      "import": "./src/js/super/index.mjs"
+    },
+    "./super/cogs": "./src/js/super/cogs/index.cjs",
+    "./super/cogs/*": "./src/js/super/cogs/*/index.cjs",
+    "./super/components": {
+      "require": "./src/js/super/components/index.cjs",
+      "import": "./src/js/super/components/index.mjs"
+    },
+    "./super/components/*": "./src/js/super/components/*/index.cjs"
   }
 }

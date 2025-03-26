@@ -1,3 +1,7 @@
+/**
+ *  @typedef {CogsTypes.Cogs.ValueProps} ValueProps
+ */
+
 import React from 'react'
 
 import TextareaCog from '#cogs/cogs/textarea'
@@ -18,11 +22,17 @@ export default {
   }
 }
 
+/**
+ *  @param {ValueProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function Value (args) {
   return (
-    <TextareaState value='Value'>
-      <TextareaCog {...args} />
-    </TextareaState>
+    <form>
+      <TextareaState value='Value'>
+        <TextareaCog {...args} />
+      </TextareaState>
+    </form>
   )
 }
 
@@ -38,11 +48,17 @@ Value.args = {
   name: 'textarea'
 }
 
+/**
+ *  @param {ValueProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function DefaultValue (args) {
   return (
-    <TextareaState defaultValue='Default value'>
-      <TextareaCog {...args} />
-    </TextareaState>
+    <form>
+      <TextareaState defaultValue='Default value'>
+        <TextareaCog {...args} />
+      </TextareaState>
+    </form>
   )
 }
 

@@ -1,9 +1,0 @@
-@use "design-system/layouts";
-
-#storybook-root {
-  @include layouts.design-system;
-
-  & { // stylelint-disable-line no-duplicate-selectors
-    margin: 0 auto;
-  }
-}

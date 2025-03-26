@@ -1,0 +1,64 @@
+@use "design-system/palette";
+@use "design-system/typography";
+
+@use "cogs/radio";
+@use "cogs/checkbox";
+@use "cogs/disabled";
+@use "cogs/error";
+
+@mixin cogs {
+  padding: 0;
+  margin: 1rem 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  line-height: 1.375rem;
+
+  &.radio {
+    @include radio.cog-radio;
+  }
+
+  &.checkbox {
+    @include checkbox.cog-checkbox;
+  }
+
+  &.disabled {
+    @include disabled.cog-disabled;
+  }
+
+  &.error {
+    @include error.cog-error;
+  }
+
+  .description {
+    @include typography.secondary-text;
+
+    // stylelint-disable-next-line no-duplicate-selectors
+    & {
+      display: block;
+      padding: 0;
+      margin: 0 0 0.25rem 0;
+    }
+  }
+
+  .error-message {
+    @include typography.error-standard;
+
+    // stylelint-disable-next-line no-duplicate-selectors
+    & {
+      display: block;
+      padding: 0;
+      margin: 0 0 0.25rem 0;
+    }
+  }
+}
+
+%cogs {
+  @include cogs;
+}

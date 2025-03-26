@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#cogs/cogs/checkbox/field <Field /> With additional props Checked is a boolean matches the snapshot 1`] = `
+<input
+  checked={true}
+  className="MOCK CLASSNAME"
+  disabled={true}
+  id="MOCK ID"
+  name="MOCK NAME"
+  onChange={[Function]}
+  onClick={[Function]}
+  readOnly={true}
+  required={true}
+  type="checkbox"
+  value="MOCK VALUE"
+/>
+`;
+
+exports[`#cogs/cogs/checkbox/field <Field /> With additional props Default checked is a boolean matches the snapshot 1`] = `
+<input
+  className="MOCK CLASSNAME"
+  defaultChecked={true}
+  disabled={true}
+  id="MOCK ID"
+  name="MOCK NAME"
+  onChange={[Function]}
+  onClick={[Function]}
+  readOnly={true}
+  required={true}
+  type="checkbox"
+  value="MOCK VALUE"
+/>
+`;
+
+exports[`#cogs/cogs/checkbox/field <Field /> With required props matches the snapshot 1`] = `
+<input
+  className="MOCK CLASSNAME"
+  disabled={false}
+  name="MOCK NAME"
+  onChange={[Function]}
+  onClick={[Function]}
+  readOnly={false}
+  required={false}
+  type="checkbox"
+  value="MOCK VALUE"
+/>
+`;

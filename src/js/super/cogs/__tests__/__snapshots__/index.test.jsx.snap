@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#cogs/super/cogs <Cog /> With additional props matches the snapshot 1`] = `
+<div
+  className="MOCK CLASSNAME"
+>
+  <Title>
+    <label
+      className="title"
+      htmlFor="MOCK ID"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          MOCK TITLE
+        </span>
+      </TextContent>
+      <Required>
+        <span
+          className="is-required"
+        >
+          *
+        </span>
+      </Required>
+      <Disabled>
+        <span
+          className="is-disabled"
+        >
+          *
+        </span>
+      </Disabled>
+      <ReadOnly>
+        <span
+          className="is-readonly"
+        >
+          *
+        </span>
+      </ReadOnly>
+    </label>
+  </Title>
+  <Description>
+    <span
+      className="description"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          MOCK DESCRIPTION
+        </span>
+      </TextContent>
+    </span>
+  </Description>
+  <ErrorMessage>
+    <span
+      className="error-message"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          MOCK ERROR MESSAGE
+        </span>
+      </TextContent>
+    </span>
+  </ErrorMessage>
+  <Field>
+    <input
+      accessKey="MOCK ACCESS KEY"
+      className="input"
+      disabled={true}
+      id="MOCK ID"
+      name="MOCK NAME"
+      onChange={[Function]}
+      readOnly={true}
+      required={true}
+      tabIndex={1}
+      value="MOCK VALUE"
+    />
+  </Field>
+</div>
+`;
+
+exports[`#cogs/super/cogs <Cog /> With required props matches the snapshot 1`] = `
+<div
+  className="MOCK CLASSNAME"
+>
+  <Title />
+  <Description />
+  <ErrorMessage />
+  <Field>
+    <input
+      className="input"
+      disabled={false}
+      id="MOCK NAME"
+      name="MOCK NAME"
+      onChange={[Function]}
+      readOnly={false}
+      required={false}
+    />
+  </Field>
+</div>
+`;

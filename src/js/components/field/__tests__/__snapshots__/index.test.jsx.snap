@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#cogs/components/field <CheckField /> With additional props Checked is a boolean matches the snapshot 1`] = `
+<input
+  className="input"
+  disabled={true}
+  id="MOCK ID"
+  name="MOCK NAME"
+  onChange={[Function]}
+  readOnly={true}
+  required={true}
+  value="MOCK VALUE"
+/>
+`;
+
+exports[`#cogs/components/field <CheckField /> With additional props Default checked is a boolean matches the snapshot 1`] = `
+<input
+  className="input"
+  disabled={true}
+  id="MOCK ID"
+  name="MOCK NAME"
+  onChange={[Function]}
+  readOnly={true}
+  required={true}
+  value="MOCK VALUE"
+/>
+`;
+
+exports[`#cogs/components/field <CheckField /> With required props matches the snapshot 1`] = `
+<input
+  className="input"
+  disabled={false}
+  name="MOCK NAME"
+  onChange={[Function]}
+  readOnly={false}
+  required={false}
+  value="MOCK VALUE"
+/>
+`;
+
+exports[`#cogs/components/field <ValueField /> With additional props Default value is a string matches the snapshot 1`] = `
+<input
+  className="input"
+  disabled={true}
+  id="MOCK ID"
+  name="MOCK NAME"
+  onChange={[Function]}
+  placeholder="MOCK PLACEHOLDER"
+  readOnly={true}
+  required={true}
+/>
+`;
+
+exports[`#cogs/components/field <ValueField /> With additional props Value is a string matches the snapshot 1`] = `
+<input
+  className="input"
+  disabled={true}
+  id="MOCK ID"
+  name="MOCK NAME"
+  onChange={[Function]}
+  placeholder="MOCK PLACEHOLDER"
+  readOnly={true}
+  required={true}
+  value="MOCK VALUE"
+/>
+`;
+
+exports[`#cogs/components/field <ValueField /> With required props matches the snapshot 1`] = `
+<input
+  className="input"
+  disabled={false}
+  name="MOCK NAME"
+  onChange={[Function]}
+  readOnly={false}
+  required={false}
+/>
+`;

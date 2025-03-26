@@ -58,12 +58,11 @@ export default [
     ]
   },
   /**
-   *  React config for all `jsx` and `tsx` files
+   *  React config for all `jsx` files
    */
   {
     ...reactPlugin.configs.flat.recommended,
     settings: {
-      ...reactPlugin.configs.flat.recommended.settings,
       ...reactSettings
     }
   },
@@ -80,7 +79,9 @@ export default [
     ],
     ignores: [
       'src',
-      'stories'
+      'stories',
+      'test',
+      'jest.*.mjs'
     ],
     languageOptions: {
       globals: {
@@ -99,16 +100,26 @@ export default [
       }
     }
   }),
+  standard({
+    files: [
+      'test/**/*.{mjs,cjs,mts,cts}'
+    ],
+    languageOptions: {
+      globals: {
+        ...globals.mocha
+      }
+    }
+  }),
   /**
-   *  Standard config for all `jsx` and `tsx` files
+   *  Standard config for all `jsx` files
    */
   standard({
     files: [
-      'src/**/*.tsx',
+      'src/**/*.jsx',
       'stories/**/*.jsx'
     ],
     ignores: [
-      'src/**/__tests__/**/*.tsx',
+      'src/**/__tests__/**/*.jsx',
       'stories/**/__tests__/**/*.jsx'
     ],
     languageOptions: {
@@ -120,25 +131,23 @@ export default [
       globals: {
         ...globals.browser
       }
-    },
+    }, // @ts-expect-error Storybook
     plugins: {
       ...reactPlugins,
       ...storybookPlugins
-    },
+    }, // @ts-expect-error Storybook
     rules: {
       ...reactRules
     },
     settings: {
-      ...reactSettings,
-      'import/resolver': {
-        'babel-module': {}
-      }
+      ...reactSettings
     }
   }),
   standard({
     files: [
-      'src/**/__tests__/**/*.tsx',
-      'stories/**/__tests__/**/*.jsx'
+      'src/**/__tests__/**/*.jsx',
+      'stories/**/__tests__/**/*.jsx',
+      'jest.*.mjs'
     ],
     languageOptions: {
       parser: babelParser,
@@ -150,19 +159,16 @@ export default [
         ...globals.browser,
         ...globals.jest
       }
-    },
+    }, // @ts-expect-error Storybook
     plugins: {
       ...reactPlugins,
       ...storybookPlugins
-    },
+    }, // @ts-expect-error Storybook
     rules: {
       ...reactRules
     },
     settings: {
-      ...reactSettings,
-      'import/resolver': {
-        'babel-module': {}
-      }
+      ...reactSettings
     }
   }),
   /**
@@ -174,9 +180,14 @@ export default [
     ],
     ignores: [
       'src',
-      'stories'
+      'test'
     ],
     languageOptions: {
+      parser: typescriptParser,
+      parserOptions: {
+        projectService: true,
+        project: 'tsconfig.json'
+      },
       globals: {
         ...globals.node,
         CogsTypes: 'readonly'
@@ -185,69 +196,19 @@ export default [
   }),
   typescript({
     files: [
-      'src/**/*.{mts,cts}'
-    ],
-    languageOptions: {
-      globals: {
-        ...globals.browser
-      }
-    }
-  }),
-  /**
-   *  TypeScript config for only `tsx` files
-   */
-  typescript({
-    files: [
-      'src/**/*.tsx'
-    ],
-    ignores: [
-      'src/**/__tests__/**/*.tsx'
+      'src/**/*.{mts,cts}',
+      'test/**/*.{mts,cts}'
     ],
     languageOptions: {
       parser: typescriptParser,
       parserOptions: {
-        ...reactParserOptions,
-        projectService: true,
-        project: 'tsconfig.json'
-      },
-      globals: {
-        ...globals.browser
-      }
-    },
-    plugins: {
-      ...reactPlugins
-    },
-    rules: {
-      ...reactRules
-    },
-    settings: {
-      ...reactSettings
-    }
-  }),
-  typescript({
-    files: [
-      'src/**/__tests__/**/*.tsx'
-    ],
-    languageOptions: {
-      parser: typescriptParser,
-      parserOptions: {
-        ...reactParserOptions,
         projectService: true,
         project: 'tsconfig.json'
       },
       globals: {
         ...globals.browser,
-        ...globals.jest
+        CogsTypes: 'readonly'
       }
-    },
-    plugins: {
-      ...reactPlugins
-    },
-    rules: {
-      ...reactRules
-    },
-    settings: {
-      ...reactSettings
     }
   })
 ]

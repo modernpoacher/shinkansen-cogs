@@ -1,3 +1,7 @@
+/**
+ *  @typedef {CogsTypes.Cogs.CheckProps} CheckProps
+ */
+
 import React from 'react'
 
 import RadioCog from '#cogs/cogs/radio'
@@ -18,25 +22,31 @@ export default {
   }
 }
 
+/**
+ *  @param {CheckProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function Checked (args) {
   return (
-    <RadioState value='two' checked>
-      <RadioCog
-        {...args}
-        id='radio-a'
-        value='one'
-      />
-      <RadioCog
-        {...args}
-        id='radio-b'
-        value='two'
-      />
-      <RadioCog
-        {...args}
-        id='radio-c'
-        value='three'
-      />
-    </RadioState>
+    <form>
+      <RadioState value='two' checked>
+        <RadioCog
+          {...args}
+          id='radio-a'
+          value='one'
+        />
+        <RadioCog
+          {...args}
+          id='radio-b'
+          value='two'
+        />
+        <RadioCog
+          {...args}
+          id='radio-c'
+          value='three'
+        />
+      </RadioState>
+    </form>
   )
 }
 
@@ -52,25 +62,31 @@ Checked.args = {
   name: 'radio'
 }
 
+/**
+ *  @param {CheckProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function DefaultChecked (args) {
   return (
-    <RadioState value='two' defaultChecked>
-      <RadioCog
-        {...args}
-        id='radio-1'
-        value='one'
-      />
-      <RadioCog
-        {...args}
-        id='radio-2'
-        value='two'
-      />
-      <RadioCog
-        {...args}
-        id='radio-3'
-        value='three'
-      />
-    </RadioState>
+    <form>
+      <RadioState value='two' defaultChecked>
+        <RadioCog
+          {...args}
+          id='radio-1'
+          value='one'
+        />
+        <RadioCog
+          {...args}
+          id='radio-2'
+          value='two'
+        />
+        <RadioCog
+          {...args}
+          id='radio-3'
+          value='three'
+        />
+      </RadioState>
+    </form>
   )
 }
 

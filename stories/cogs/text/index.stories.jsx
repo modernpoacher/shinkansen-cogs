@@ -1,3 +1,7 @@
+/**
+ *  @typedef {CogsTypes.Cogs.ValueProps} ValueProps
+ */
+
 import React from 'react'
 
 import TextCog from '#cogs/cogs/text'
@@ -18,11 +22,17 @@ export default {
   }
 }
 
+/**
+ *  @param {ValueProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function Value (args) {
   return (
-    <TextState value='Value'>
-      <TextCog {...args} />
-    </TextState>
+    <form>
+      <TextState value='Value'>
+        <TextCog {...args} />
+      </TextState>
+    </form>
   )
 }
 
@@ -38,11 +48,17 @@ Value.args = {
   name: 'text'
 }
 
+/**
+ *  @param {ValueProps} args
+ *  @returns {React.JSX.Element}
+ */
 export function DefaultValue (args) {
   return (
-    <TextState defaultValue='Default value'>
-      <TextCog {...args} />
-    </TextState>
+    <form>
+      <TextState defaultValue='Default value'>
+        <TextCog {...args} />
+      </TextState>
+    </form>
   )
 }
 

@@ -51,7 +51,10 @@ module.exports = (api) => {
     presets,
     plugins,
     ignore: [
-      /node_modules\/(?!@modernpoacher\/cogs|@modernpoacher\/sprockets|@modernpoacher\/gremlins)/
+      /node_modules\/(?!@modernpoacher\/cogs|@modernpoacher\/sprockets|@modernpoacher\/gremlins)\//,
+      /node_modules\/(?!react-component-instance)\//,
+      /node_modules\/(?!react-component-snapshot)\//,
+      /node_modules\/(?!react-component-name)\//
     ]
   }
 }

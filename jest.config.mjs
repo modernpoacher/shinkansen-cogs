@@ -14,5 +14,15 @@ export default {
     '^.+\\.jsx$': 'babel-jest',
     '^.+\\.mjs$': 'babel-jest'
   },
-  moduleFileExtensions: ['js', 'jsx', 'mjs']
+  transformIgnorePatterns: [
+    '/node_modules\\/(?!react-component-instance)\\/',
+    '/node_modules\\/(?!react-component-snapshot)\\/',
+    '/node_modules\\/(?!react-component-name)\\/'
+  ],
+  moduleFileExtensions: ['js', 'jsx', 'mjs'],
+  testEnvironment: 'jsdom',
+  setupFilesAfterEnv: [
+    '<rootDir>/jest.before-each.mjs',
+    '<rootDir>/jest.after-each.mjs'
+  ]
 }

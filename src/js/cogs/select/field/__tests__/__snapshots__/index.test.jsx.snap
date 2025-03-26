@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#cogs/cogs/select/field <Field /> With additional props Multiple is not true Default value is a string matches the snapshot 1`] = `
+<select
+  className="MOCK CLASSNAME"
+  defaultValue="MOCK DEFAULT VALUE"
+  disabled={true}
+  id="MOCK ID"
+  multiple={false}
+  name="MOCK NAME"
+  onChange={[Function]}
+  readOnly={true}
+  required={true}
+/>
+`;
+
+exports[`#cogs/cogs/select/field <Field /> With additional props Multiple is not true Value is a string matches the snapshot 1`] = `
+<select
+  className="MOCK CLASSNAME"
+  disabled={true}
+  id="MOCK ID"
+  multiple={false}
+  name="MOCK NAME"
+  onChange={[Function]}
+  readOnly={true}
+  required={true}
+  value="MOCK VALUE"
+/>
+`;
+
+exports[`#cogs/cogs/select/field <Field /> With additional props Multiple is true Default value is an array matches the snapshot 1`] = `
+<select
+  className="MOCK CLASSNAME"
+  defaultValue={
+    [
+      "MOCK DEFAULT VALUE",
+    ]
+  }
+  disabled={true}
+  id="MOCK ID"
+  multiple={true}
+  name="MOCK NAME"
+  onChange={[Function]}
+  readOnly={true}
+  required={true}
+/>
+`;
+
+exports[`#cogs/cogs/select/field <Field /> With additional props Multiple is true Value is an array matches the snapshot 1`] = `
+<select
+  className="MOCK CLASSNAME"
+  disabled={true}
+  id="MOCK ID"
+  multiple={true}
+  name="MOCK NAME"
+  onChange={[Function]}
+  readOnly={true}
+  required={true}
+  value={
+    [
+      "MOCK VALUE",
+    ]
+  }
+/>
+`;
+
+exports[`#cogs/cogs/select/field <Field /> With required props matches the snapshot 1`] = `
+<select
+  className="MOCK CLASSNAME"
+  disabled={false}
+  multiple={false}
+  name="MOCK NAME"
+  onChange={[Function]}
+  readOnly={false}
+  required={false}
+  value=""
+/>
+`;

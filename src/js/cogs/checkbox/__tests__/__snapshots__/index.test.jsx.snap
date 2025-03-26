@@ -1,0 +1,280 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#cogs/cogs/checkbox <Cog /> With additional props Checked is a boolean matches the snapshot 1`] = `
+<div
+  className="MOCK CLASSNAME"
+>
+  <CheckboxField>
+    <input
+      accessKey="MOCK ACCESS KEY"
+      checked={true}
+      className="MOCK CLASSNAME"
+      disabled={true}
+      id="MOCK ID"
+      name="MOCK NAME"
+      onChange={[Function]}
+      onClick={[Function]}
+      readOnly={true}
+      required={true}
+      tabIndex={1}
+      type="checkbox"
+      value="MOCK VALUE"
+    />
+  </CheckboxField>
+  <CheckboxTitle>
+    <label
+      className="MOCK CLASSNAME"
+      htmlFor="MOCK ID"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          MOCK TITLE
+        </span>
+      </TextContent>
+      <Required>
+        <span
+          className="is-required"
+        >
+          *
+        </span>
+      </Required>
+      <Disabled>
+        <span
+          className="is-disabled"
+        >
+          *
+        </span>
+      </Disabled>
+      <ReadOnly>
+        <span
+          className="is-readonly"
+        >
+          *
+        </span>
+      </ReadOnly>
+    </label>
+  </CheckboxTitle>
+  <CheckboxDescription>
+    <span
+      className="MOCK CLASSNAME"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          MOCK DESCRIPTION
+        </span>
+      </TextContent>
+    </span>
+  </CheckboxDescription>
+  <CheckboxErrorMessage>
+    <span
+      className="MOCK CLASSNAME"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          MOCK ERROR MESSAGE
+        </span>
+      </TextContent>
+    </span>
+  </CheckboxErrorMessage>
+</div>
+`;
+
+exports[`#cogs/cogs/checkbox <Cog /> With additional props Default checked is a boolean matches the snapshot 1`] = `
+<div
+  className="MOCK CLASSNAME"
+>
+  <CheckboxField>
+    <input
+      accessKey="MOCK ACCESS KEY"
+      className="MOCK CLASSNAME"
+      defaultChecked={true}
+      disabled={true}
+      id="MOCK ID"
+      name="MOCK NAME"
+      onChange={[Function]}
+      onClick={[Function]}
+      readOnly={true}
+      required={true}
+      tabIndex={1}
+      type="checkbox"
+      value="MOCK VALUE"
+    />
+  </CheckboxField>
+  <CheckboxTitle>
+    <label
+      className="MOCK CLASSNAME"
+      htmlFor="MOCK ID"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          MOCK TITLE
+        </span>
+      </TextContent>
+      <Required>
+        <span
+          className="is-required"
+        >
+          *
+        </span>
+      </Required>
+      <Disabled>
+        <span
+          className="is-disabled"
+        >
+          *
+        </span>
+      </Disabled>
+      <ReadOnly>
+        <span
+          className="is-readonly"
+        >
+          *
+        </span>
+      </ReadOnly>
+    </label>
+  </CheckboxTitle>
+  <CheckboxDescription>
+    <span
+      className="MOCK CLASSNAME"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          MOCK DESCRIPTION
+        </span>
+      </TextContent>
+    </span>
+  </CheckboxDescription>
+  <CheckboxErrorMessage>
+    <span
+      className="MOCK CLASSNAME"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          MOCK ERROR MESSAGE
+        </span>
+      </TextContent>
+    </span>
+  </CheckboxErrorMessage>
+</div>
+`;
+
+exports[`#cogs/cogs/checkbox <Cog /> With additional props Default checked is a boolean matches the snapshot 2`] = `
+<div
+  className="MOCK CLASSNAME"
+>
+  <CheckboxField>
+    <input
+      accessKey="MOCK ACCESS KEY"
+      className="MOCK CLASSNAME"
+      defaultChecked={true}
+      disabled={true}
+      id="MOCK ID"
+      name="MOCK NAME"
+      onChange={[Function]}
+      onClick={[Function]}
+      readOnly={true}
+      required={true}
+      tabIndex={1}
+      type="checkbox"
+      value="MOCK VALUE"
+    />
+  </CheckboxField>
+  <CheckboxTitle>
+    <label
+      className="MOCK CLASSNAME"
+      htmlFor="MOCK ID"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          MOCK TITLE
+        </span>
+      </TextContent>
+      <Required>
+        <span
+          className="is-required"
+        >
+          *
+        </span>
+      </Required>
+      <Disabled>
+        <span
+          className="is-disabled"
+        >
+          *
+        </span>
+      </Disabled>
+      <ReadOnly>
+        <span
+          className="is-readonly"
+        >
+          *
+        </span>
+      </ReadOnly>
+    </label>
+  </CheckboxTitle>
+  <CheckboxDescription>
+    <span
+      className="MOCK CLASSNAME"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          MOCK DESCRIPTION
+        </span>
+      </TextContent>
+    </span>
+  </CheckboxDescription>
+  <CheckboxErrorMessage>
+    <span
+      className="MOCK CLASSNAME"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          MOCK ERROR MESSAGE
+        </span>
+      </TextContent>
+    </span>
+  </CheckboxErrorMessage>
+</div>
+`;
+
+exports[`#cogs/cogs/checkbox <Cog /> With required props matches the snapshot 1`] = `
+<div
+  className="MOCK CLASSNAME"
+>
+  <CheckboxField>
+    <input
+      className="MOCK CLASSNAME"
+      disabled={false}
+      id="MOCK NAME"
+      name="MOCK NAME"
+      onChange={[Function]}
+      onClick={[Function]}
+      readOnly={false}
+      required={false}
+      type="checkbox"
+      value="MOCK VALUE"
+    />
+  </CheckboxField>
+  <CheckboxTitle />
+  <CheckboxDescription />
+  <CheckboxErrorMessage />
+</div>
+`;

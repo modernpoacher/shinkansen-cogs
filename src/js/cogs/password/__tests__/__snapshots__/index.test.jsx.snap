@@ -1,0 +1,192 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#cogs/cogs/password <Cog /> With additional props Default value is a string matches the snapshot 1`] = `
+<div
+  className="MOCK CLASSNAME"
+>
+  <PasswordTitle>
+    <label
+      className="MOCK CLASSNAME"
+      htmlFor="MOCK ID"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          MOCK TITLE
+        </span>
+      </TextContent>
+      <Required>
+        <span
+          className="is-required"
+        >
+          *
+        </span>
+      </Required>
+      <Disabled>
+        <span
+          className="is-disabled"
+        >
+          *
+        </span>
+      </Disabled>
+      <ReadOnly>
+        <span
+          className="is-readonly"
+        >
+          *
+        </span>
+      </ReadOnly>
+    </label>
+  </PasswordTitle>
+  <PasswordDescription>
+    <span
+      className="MOCK CLASSNAME"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          MOCK DESCRIPTION
+        </span>
+      </TextContent>
+    </span>
+  </PasswordDescription>
+  <PasswordErrorMessage>
+    <span
+      className="MOCK CLASSNAME"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          MOCK ERROR MESSAGE
+        </span>
+      </TextContent>
+    </span>
+  </PasswordErrorMessage>
+  <PasswordField>
+    <input
+      accessKey="MOCK ACCESS KEY"
+      className="MOCK CLASSNAME"
+      defaultValue="MOCK DEFAULT VALUE"
+      disabled={true}
+      id="MOCK ID"
+      name="MOCK NAME"
+      onChange={[Function]}
+      placeholder="MOCK PLACEHOLDER"
+      readOnly={true}
+      required={true}
+      tabIndex={1}
+      type="password"
+    />
+  </PasswordField>
+</div>
+`;
+
+exports[`#cogs/cogs/password <Cog /> With additional props Value is a string matches the snapshot 1`] = `
+<div
+  className="MOCK CLASSNAME"
+>
+  <PasswordTitle>
+    <label
+      className="MOCK CLASSNAME"
+      htmlFor="MOCK ID"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          MOCK TITLE
+        </span>
+      </TextContent>
+      <Required>
+        <span
+          className="is-required"
+        >
+          *
+        </span>
+      </Required>
+      <Disabled>
+        <span
+          className="is-disabled"
+        >
+          *
+        </span>
+      </Disabled>
+      <ReadOnly>
+        <span
+          className="is-readonly"
+        >
+          *
+        </span>
+      </ReadOnly>
+    </label>
+  </PasswordTitle>
+  <PasswordDescription>
+    <span
+      className="MOCK CLASSNAME"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          MOCK DESCRIPTION
+        </span>
+      </TextContent>
+    </span>
+  </PasswordDescription>
+  <PasswordErrorMessage>
+    <span
+      className="MOCK CLASSNAME"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          MOCK ERROR MESSAGE
+        </span>
+      </TextContent>
+    </span>
+  </PasswordErrorMessage>
+  <PasswordField>
+    <input
+      accessKey="MOCK ACCESS KEY"
+      className="MOCK CLASSNAME"
+      disabled={true}
+      id="MOCK ID"
+      name="MOCK NAME"
+      onChange={[Function]}
+      placeholder="MOCK PLACEHOLDER"
+      readOnly={true}
+      required={true}
+      tabIndex={1}
+      type="password"
+      value="MOCK VALUE"
+    />
+  </PasswordField>
+</div>
+`;
+
+exports[`#cogs/cogs/password <Cog /> With required props matches the snapshot 1`] = `
+<div
+  className="MOCK CLASSNAME"
+>
+  <PasswordTitle />
+  <PasswordDescription />
+  <PasswordErrorMessage />
+  <PasswordField>
+    <input
+      className="MOCK CLASSNAME"
+      disabled={false}
+      id="MOCK NAME"
+      name="MOCK NAME"
+      onChange={[Function]}
+      readOnly={false}
+      required={false}
+      type="password"
+      value=""
+    />
+  </PasswordField>
+</div>
+`;

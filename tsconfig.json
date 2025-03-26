@@ -1,21 +1,19 @@
 {
   "compilerOptions": {
-    "module": "ESNext",
+    "module": "NodeNext",
     "target": "ESNext",
     "allowJs": true,
-    "checkJs": false,
+    "checkJs": true,
     "noEmit": true,
     "strict": true,
-    "allowSyntheticDefaultImports": true,
-    "isolatedModules": true,
+    "jsx": "react",
     "baseUrl": "."
   },
   "include": [
-    ".",
-    "src/**/*",
-    "stories/**/*"
+    "."
   ],
   "exclude": [
+    ".storybook/**/*",
     "**/__tests__/**/*"
   ]
 }

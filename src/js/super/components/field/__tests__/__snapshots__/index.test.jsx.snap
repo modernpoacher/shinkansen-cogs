@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#cogs/super/components/field <Field /> With additional props matches the snapshot 1`] = `
+<input
+  className="input"
+  disabled={true}
+  id="MOCK ID"
+  name="MOCK NAME"
+  onChange={[Function]}
+  placeholder="MOCK PLACEHOLDER"
+  readOnly={true}
+  required={true}
+  value="MOCK VALUE"
+/>
+`;
+
+exports[`#cogs/super/components/field <Field /> With required props matches the snapshot 1`] = `
+<input
+  className="input"
+  disabled={false}
+  name="MOCK NAME"
+  onChange={[Function]}
+  readOnly={false}
+  required={false}
+/>
+`;

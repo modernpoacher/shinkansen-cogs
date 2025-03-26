@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#cogs/cogs/number/field <Field /> With additional props Default value is a number matches the snapshot 1`] = `
+<input
+  className="MOCK CLASSNAME"
+  defaultValue="0"
+  disabled={true}
+  id="MOCK ID"
+  name="MOCK NAME"
+  onChange={[Function]}
+  placeholder="MOCK PLACEHOLDER"
+  readOnly={true}
+  required={true}
+  type="number"
+/>
+`;
+
+exports[`#cogs/cogs/number/field <Field /> With additional props Default value is a string matches the snapshot 1`] = `
+<input
+  className="MOCK CLASSNAME"
+  defaultValue="0"
+  disabled={true}
+  id="MOCK ID"
+  name="MOCK NAME"
+  onChange={[Function]}
+  placeholder="MOCK PLACEHOLDER"
+  readOnly={true}
+  required={true}
+  type="number"
+/>
+`;
+
+exports[`#cogs/cogs/number/field <Field /> With additional props Value is a number matches the snapshot 1`] = `
+<input
+  className="MOCK CLASSNAME"
+  disabled={true}
+  id="MOCK ID"
+  name="MOCK NAME"
+  onChange={[Function]}
+  placeholder="MOCK PLACEHOLDER"
+  readOnly={true}
+  required={true}
+  type="number"
+  value="0"
+/>
+`;
+
+exports[`#cogs/cogs/number/field <Field /> With additional props Value is a string matches the snapshot 1`] = `
+<input
+  className="MOCK CLASSNAME"
+  disabled={true}
+  id="MOCK ID"
+  name="MOCK NAME"
+  onChange={[Function]}
+  placeholder="MOCK PLACEHOLDER"
+  readOnly={true}
+  required={true}
+  type="number"
+  value="0"
+/>
+`;
+
+exports[`#cogs/cogs/number/field <Field /> With required props matches the snapshot 1`] = `
+<input
+  className="MOCK CLASSNAME"
+  disabled={false}
+  name="MOCK NAME"
+  onChange={[Function]}
+  readOnly={false}
+  required={false}
+  type="number"
+  value=""
+/>
+`;

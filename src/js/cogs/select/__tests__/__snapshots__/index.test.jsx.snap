@@ -1,0 +1,364 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`#cogs/cogs/select <Cog /> With additional props Multiple is not true Default value is a string matches the snapshot 1`] = `
+<div
+  className="MOCK CLASSNAME"
+>
+  <SelectTitle>
+    <label
+      className="MOCK CLASSNAME"
+      htmlFor="MOCK ID"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          MOCK TITLE
+        </span>
+      </TextContent>
+      <Required>
+        <span
+          className="is-required"
+        >
+          *
+        </span>
+      </Required>
+      <Disabled>
+        <span
+          className="is-disabled"
+        >
+          *
+        </span>
+      </Disabled>
+      <ReadOnly>
+        <span
+          className="is-readonly"
+        >
+          *
+        </span>
+      </ReadOnly>
+    </label>
+  </SelectTitle>
+  <SelectDescription>
+    <span
+      className="MOCK CLASSNAME"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          MOCK DESCRIPTION
+        </span>
+      </TextContent>
+    </span>
+  </SelectDescription>
+  <SelectErrorMessage>
+    <span
+      className="MOCK CLASSNAME"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          MOCK ERROR MESSAGE
+        </span>
+      </TextContent>
+    </span>
+  </SelectErrorMessage>
+  <SelectField>
+    <select
+      accessKey="MOCK ACCESS KEY"
+      className="MOCK CLASSNAME"
+      defaultValue="MOCK DEFAULT VALUE"
+      disabled={true}
+      id="MOCK ID"
+      multiple={false}
+      name="MOCK NAME"
+      onChange={[Function]}
+      readOnly={true}
+      required={true}
+      tabIndex={1}
+    />
+  </SelectField>
+</div>
+`;
+
+exports[`#cogs/cogs/select <Cog /> With additional props Multiple is not true Value is a string matches the snapshot 1`] = `
+<div
+  className="MOCK CLASSNAME"
+>
+  <SelectTitle>
+    <label
+      className="MOCK CLASSNAME"
+      htmlFor="MOCK ID"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          MOCK TITLE
+        </span>
+      </TextContent>
+      <Required>
+        <span
+          className="is-required"
+        >
+          *
+        </span>
+      </Required>
+      <Disabled>
+        <span
+          className="is-disabled"
+        >
+          *
+        </span>
+      </Disabled>
+      <ReadOnly>
+        <span
+          className="is-readonly"
+        >
+          *
+        </span>
+      </ReadOnly>
+    </label>
+  </SelectTitle>
+  <SelectDescription>
+    <span
+      className="MOCK CLASSNAME"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          MOCK DESCRIPTION
+        </span>
+      </TextContent>
+    </span>
+  </SelectDescription>
+  <SelectErrorMessage>
+    <span
+      className="MOCK CLASSNAME"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          MOCK ERROR MESSAGE
+        </span>
+      </TextContent>
+    </span>
+  </SelectErrorMessage>
+  <SelectField>
+    <select
+      accessKey="MOCK ACCESS KEY"
+      className="MOCK CLASSNAME"
+      disabled={true}
+      id="MOCK ID"
+      multiple={false}
+      name="MOCK NAME"
+      onChange={[Function]}
+      readOnly={true}
+      required={true}
+      tabIndex={1}
+      value="MOCK VALUE"
+    />
+  </SelectField>
+</div>
+`;
+
+exports[`#cogs/cogs/select <Cog /> With additional props Multiple is true Default value is an array matches the snapshot 1`] = `
+<div
+  className="MOCK CLASSNAME"
+>
+  <SelectTitle>
+    <label
+      className="MOCK CLASSNAME"
+      htmlFor="MOCK ID"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          MOCK TITLE
+        </span>
+      </TextContent>
+      <Required>
+        <span
+          className="is-required"
+        >
+          *
+        </span>
+      </Required>
+      <Disabled>
+        <span
+          className="is-disabled"
+        >
+          *
+        </span>
+      </Disabled>
+      <ReadOnly>
+        <span
+          className="is-readonly"
+        >
+          *
+        </span>
+      </ReadOnly>
+    </label>
+  </SelectTitle>
+  <SelectDescription>
+    <span
+      className="MOCK CLASSNAME"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          MOCK DESCRIPTION
+        </span>
+      </TextContent>
+    </span>
+  </SelectDescription>
+  <SelectErrorMessage>
+    <span
+      className="MOCK CLASSNAME"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          MOCK ERROR MESSAGE
+        </span>
+      </TextContent>
+    </span>
+  </SelectErrorMessage>
+  <SelectField>
+    <select
+      accessKey="MOCK ACCESS KEY"
+      className="MOCK CLASSNAME"
+      defaultValue={
+        [
+          "MOCK DEFAULT VALUE",
+        ]
+      }
+      disabled={true}
+      id="MOCK ID"
+      multiple={true}
+      name="MOCK NAME"
+      onChange={[Function]}
+      readOnly={true}
+      required={true}
+      tabIndex={1}
+    />
+  </SelectField>
+</div>
+`;
+
+exports[`#cogs/cogs/select <Cog /> With additional props Multiple is true Value is an array matches the snapshot 1`] = `
+<div
+  className="MOCK CLASSNAME"
+>
+  <SelectTitle>
+    <label
+      className="MOCK CLASSNAME"
+      htmlFor="MOCK ID"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          MOCK TITLE
+        </span>
+      </TextContent>
+      <Required>
+        <span
+          className="is-required"
+        >
+          *
+        </span>
+      </Required>
+      <Disabled>
+        <span
+          className="is-disabled"
+        >
+          *
+        </span>
+      </Disabled>
+      <ReadOnly>
+        <span
+          className="is-readonly"
+        >
+          *
+        </span>
+      </ReadOnly>
+    </label>
+  </SelectTitle>
+  <SelectDescription>
+    <span
+      className="MOCK CLASSNAME"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          MOCK DESCRIPTION
+        </span>
+      </TextContent>
+    </span>
+  </SelectDescription>
+  <SelectErrorMessage>
+    <span
+      className="MOCK CLASSNAME"
+    >
+      <TextContent>
+        <span
+          className="text-content"
+        >
+          MOCK ERROR MESSAGE
+        </span>
+      </TextContent>
+    </span>
+  </SelectErrorMessage>
+  <SelectField>
+    <select
+      accessKey="MOCK ACCESS KEY"
+      className="MOCK CLASSNAME"
+      disabled={true}
+      id="MOCK ID"
+      multiple={true}
+      name="MOCK NAME"
+      onChange={[Function]}
+      readOnly={true}
+      required={true}
+      tabIndex={1}
+      value={
+        [
+          "MOCK VALUE",
+        ]
+      }
+    />
+  </SelectField>
+</div>
+`;
+
+exports[`#cogs/cogs/select <Cog /> With required props matches the snapshot 1`] = `
+<div
+  className="MOCK CLASSNAME"
+>
+  <SelectTitle />
+  <SelectDescription />
+  <SelectErrorMessage />
+  <SelectField>
+    <select
+      className="MOCK CLASSNAME"
+      disabled={false}
+      id="MOCK NAME"
+      multiple={false}
+      name="MOCK NAME"
+      onChange={[Function]}
+      readOnly={false}
+      required={false}
+      value=""
+    />
+  </SelectField>
+</div>
+`;
