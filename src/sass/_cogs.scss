@@ -39,8 +39,7 @@
   .description {
     @include typography.secondary-text;
 
-    // stylelint-disable-next-line no-duplicate-selectors
-    & {
+    & /* stylelint-disable-line no-duplicate-selectors */ {
       display: block;
       padding: 0;
       margin: 0 0 0.25rem 0;
@@ -50,8 +49,7 @@
   .error-message {
     @include typography.error-standard;
 
-    // stylelint-disable-next-line no-duplicate-selectors
-    & {
+    & /* stylelint-disable-line no-duplicate-selectors */ {
       display: block;
       padding: 0;
       margin: 0 0 0.25rem 0;

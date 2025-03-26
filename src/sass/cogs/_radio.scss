@@ -81,8 +81,7 @@
         border-color: palette.$disabled;
       }
 
-      // stylelint-disable-next-line no-descending-specificity
-      &::after {
+      &::after /* stylelint-disable-line no-descending-specificity */ {
         background-color: palette.$disabled;
       }
     }

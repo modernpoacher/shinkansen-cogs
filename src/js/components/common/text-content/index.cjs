@@ -11,10 +11,10 @@ const log = debug('shinkansen-cogs/components/common/text-content')
 log('`shinkansen` is awake')
 
 const {
-  default: TextComponent
+  default: TextContent
 } = require('./index.jsx')
 
 /**
  *  Exports only default
  */
-module.exports = TextComponent
+module.exports = TextContent

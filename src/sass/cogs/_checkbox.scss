@@ -76,8 +76,7 @@
       }
     }
 
-    // stylelint-disable-next-line no-descending-specificity
-    input + label::before {
+    input + label::before /* stylelint-disable-line no-descending-specificity */ {
       border-color: palette.$disabled;
     }
   }

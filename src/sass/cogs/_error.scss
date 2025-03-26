@@ -19,13 +19,11 @@
   &.checkbox {
     padding-left: 4rem;
 
-    // stylelint-disable-next-line no-descending-specificity
-    input {
+    input /* stylelint-disable-line no-descending-specificity */ {
       left: 1.5rem;
     }
 
-    // stylelint-disable-next-line no-descending-specificity
-    label:before {
+    label:before /* stylelint-disable-line no-descending-specificity */ {
       left: 1rem;
 
       border: 2px solid palette.$error-standard;

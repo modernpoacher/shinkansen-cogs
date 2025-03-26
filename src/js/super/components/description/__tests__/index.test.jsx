@@ -36,6 +36,19 @@ describe('#cogs/super/components/description', () => {
           .toBeNull()
       })
 
+      describe('Always', () => {
+        it('invokes `getClassName`', () => {
+          const getClassNameSpy = jest.spyOn(Description.prototype, 'getClassName')
+
+          render(
+            <Description />
+          )
+
+          expect(getClassNameSpy)
+            .not.toHaveBeenCalled()
+        })
+      })
+
       /**
        *  Element is null
        */

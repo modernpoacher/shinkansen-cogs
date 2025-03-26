@@ -111,7 +111,7 @@ declare global {
         export interface CheckProps extends Super.Components.Field.FieldProps {
           checked?: boolean
           defaultChecked?: boolean
-          onClick: OnEventType
+          onClick?: OnEventType
         }
 
         export namespace Checkbox {
@@ -192,7 +192,7 @@ declare global {
       export interface CheckProps extends Super.Cogs.CogProps {
         checked?: boolean
         defaultChecked?: boolean
-        onClick: OnEventType
+        onClick?: OnEventType
       }
 
       export namespace Checkbox {

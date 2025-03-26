@@ -28,11 +28,11 @@ const {
   default: Title
 } = require('./title/index.jsx')
 
-module.exports.Description = Description // require('./description/index.cjs')
-module.exports.ErrorMessage = ErrorMessage // require('./error-message/index.cjs')
+module.exports.Description = Description
+module.exports.ErrorMessage = ErrorMessage
 module.exports.Field = {
   ValueField,
   CheckField,
   toInputValue
-} // require('./field/index.cjs')
-module.exports.Title = Title // require('./title/index.cjs')
+}
+module.exports.Title = Title

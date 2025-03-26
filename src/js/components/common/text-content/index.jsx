@@ -25,5 +25,5 @@ export default function TextContent ({ textContent }) {
 }
 
 TextContent.propTypes = {
-  textContent: PropTypes.string.isRequired
+  textContent: PropTypes.string
 }
