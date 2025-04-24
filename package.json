@@ -42,7 +42,7 @@
     "prepare": "husky",
     "prestorybook": "npm run build && npm run prettier && npm run transform",
     "pretest": "npm run nvm",
-    "prettier": "prettier src/sass .storybook --write",
+    "prettier": "prettier src/sass/**/*.scss .storybook --write",
     "storybook": "storybook dev -p 6006",
     "test": "npm run test:mocha && npm run test:jest",
     "test:jest": "cross-env NODE_ENV=test jest",
