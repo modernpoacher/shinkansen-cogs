@@ -60,7 +60,7 @@
     "@babel/preset-env": "^7.27.2",
     "@babel/preset-react": "^7.27.1",
     "@babel/register": "^7.27.1",
-    "@modernpoacher/design-system": "2.0.8",
+    "@modernpoacher/design-system": "2.0.13",
     "@sequencemedia/eslint-config-standard": "^0.2.66",
     "@sequencemedia/eslint-config-typescript": "^0.1.104",
     "@storybook/addon-docs": "^9.0.10",
