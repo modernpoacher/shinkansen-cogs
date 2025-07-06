@@ -25,7 +25,7 @@ describe('#cogs/components', () => {
   })
 
   describe('`Field`', () => {
-    it('is a function', () => {
+    it('is an object', () => {
       expect(Field)
         .to.be.an('object')
     })

@@ -8,7 +8,7 @@ import {
 
 describe('#cogs/transformers', () => {
   describe('`errorMessage`', () => {
-    it('is a function', () => {
+    it('is an object', () => {
       expect(errorMessage)
         .to.be.an('object')
     })
