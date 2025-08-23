@@ -15,8 +15,8 @@
     }
   }
 
-  &.radio,
-  &.checkbox {
+  &.radi /* stylelint-disable-line nesting-selector-no-missing-scoping-root */,
+  &.checkbox /* stylelint-disable-line nesting-selector-no-missing-scoping-root */ {
     padding-left: 4rem;
 
     input /* stylelint-disable-line no-descending-specificity */ {
@@ -30,13 +30,13 @@
     }
   }
 
-  &.radio {
+  &.radio /* stylelint-disable-line nesting-selector-no-missing-scoping-root */ {
     input:checked + label:after {
       left: 1.5rem;
     }
   }
 
-  &.checkbox {
+  &.checkbox /* stylelint-disable-line nesting-selector-no-missing-scoping-root */ {
     input:checked + label:after {
       left: 1.3125rem; // 21px;
     }

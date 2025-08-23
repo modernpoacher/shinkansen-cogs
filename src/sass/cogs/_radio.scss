@@ -9,7 +9,7 @@
   margin-bottom: 0.5rem;
   min-height: 2rem;
 
-  &:last-of-type {
+  &:last-of-type /* stylelint-disable-line nesting-selector-no-missing-scoping-root */ {
     margin-bottom: 0;
   }
 
@@ -67,7 +67,7 @@
     }
   }
 
-  &.disabled {
+  &.disabled /* stylelint-disable-line nesting-selector-no-missing-scoping-root */ {
     input + label {
       &::before,
       &::after {
