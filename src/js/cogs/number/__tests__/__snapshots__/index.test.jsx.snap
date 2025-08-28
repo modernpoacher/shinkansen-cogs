@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`#cogs/cogs/number <Cog /> With additional props Default value is a number matches the snapshot 1`] = `
 <div
