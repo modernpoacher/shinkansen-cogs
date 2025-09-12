@@ -10,7 +10,7 @@ describe('#cogs/transformers', () => {
   describe('`errorMessage`', () => {
     it('is an object', () => {
       expect(errorMessage)
-        .to.be.an('object')
+        .to.be.a('module') // an('object')
     })
   })
 })
