@@ -103,7 +103,7 @@
     "prop-types": "^15.8.1",
     "react": "^19.2.0",
     "react-component-instance": "^0.0.101",
-    "react-component-snapshot": "^0.0.131",
+    "react-component-snapshot": "^0.0.132",
     "react-dom": "^19.2.0",
     "remove-files-webpack-plugin": "^1.5.0",
     "sass": "^1.93.2",
