@@ -6,6 +6,7 @@
     "checkJs": true,
     "noEmit": true,
     "strict": true,
+    "skipLibCheck": true,
     "jsx": "react",
     "baseUrl": ".",
     "paths": {
@@ -55,7 +56,12 @@
     "."
   ],
   "exclude": [
-    ".storybook/**/*",
-    "**/__tests__/**/*"
+    ".circleci",
+    ".github",
+    ".husky",
+    ".storybook",
+    "**/__tests__",
+    "coverage",
+    "node_modules"
   ]
 }
