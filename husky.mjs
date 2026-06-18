@@ -1,6 +1,6 @@
 // @ts-ignore
 Promise.resolve(import('husky'))
-  .then(({ default: husky }) => husky())
+  .then(({ default: husky }) => { husky() })
   .catch((e) => {
     if (e instanceof Error) {
       if ('code' in e) {
