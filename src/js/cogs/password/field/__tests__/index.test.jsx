@@ -24,14 +24,6 @@ import Field from '#cogs/cogs/password/field'
 jest.mock('classnames', () => jest.fn().mockReturnValue('MOCK CLASSNAME'))
 
 describe('#cogs/cogs/password/field', () => {
-  beforeAll(() => {
-    jest.useFakeTimers()
-  })
-
-  afterAll(() => {
-    jest.useRealTimers()
-  })
-
   const MOCK_FIELD_REF = { current: null }
   const MOCK_ON_CHANGE = jest.fn()
 

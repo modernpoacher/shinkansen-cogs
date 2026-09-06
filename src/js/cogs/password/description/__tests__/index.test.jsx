@@ -21,14 +21,6 @@ import Description from '#cogs/cogs/password/description'
 jest.mock('classnames', () => jest.fn().mockReturnValue('MOCK CLASSNAME'))
 
 describe('#cogs/cogs/password/description', () => {
-  beforeAll(() => {
-    jest.useFakeTimers()
-  })
-
-  afterAll(() => {
-    jest.useRealTimers()
-  })
-
   describe('<Description />', () => {
     describe('With required props', () => {
       it('renders', () => {

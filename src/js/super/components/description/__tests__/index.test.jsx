@@ -21,14 +21,6 @@ import {
 import Description from '#cogs/super/components/description'
 
 describe('#cogs/super/components/description', () => {
-  beforeAll(() => {
-    jest.useFakeTimers()
-  })
-
-  afterAll(() => {
-    jest.useRealTimers()
-  })
-
   describe('<Description />', () => {
     describe('With required props', () => {
       it('renders', () => {

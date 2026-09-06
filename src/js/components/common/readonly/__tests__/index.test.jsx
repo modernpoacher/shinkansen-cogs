@@ -12,14 +12,6 @@ import {
 import ReadOnly from '#cogs/components/common/readonly'
 
 describe('#cogs/components/common/readonly', () => {
-  beforeAll(() => {
-    jest.useFakeTimers()
-  })
-
-  afterAll(() => {
-    jest.useRealTimers()
-  })
-
   describe('<ReadOnly />', () => {
     it('renders', () => {
       const {
