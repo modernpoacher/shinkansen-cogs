@@ -21,6 +21,14 @@ import Title from '#cogs/cogs/radio/title'
 jest.mock('classnames', () => jest.fn().mockReturnValue('MOCK CLASSNAME'))
 
 describe('#cogs/cogs/radio/title', () => {
+  beforeAll(() => {
+    jest.useFakeTimers()
+  })
+
+  afterAll(() => {
+    jest.useRealTimers()
+  })
+
   describe('<Title />', () => {
     describe('With required props', () => {
       it('renders', () => {

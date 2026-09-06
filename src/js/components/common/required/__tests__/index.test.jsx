@@ -12,6 +12,14 @@ import {
 import Required from '#cogs/components/common/required'
 
 describe('#cogs/components/common/required', () => {
+  beforeAll(() => {
+    jest.useFakeTimers()
+  })
+
+  afterAll(() => {
+    jest.useRealTimers()
+  })
+
   describe('<Required />', () => {
     it('renders', () => {
       const {

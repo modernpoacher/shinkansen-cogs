@@ -12,6 +12,14 @@ import {
 import Disabled from '#cogs/components/common/disabled'
 
 describe('#cogs/components/common/disabled', () => {
+  beforeAll(() => {
+    jest.useFakeTimers()
+  })
+
+  afterAll(() => {
+    jest.useRealTimers()
+  })
+
   describe('<Disabled />', () => {
     it('renders', () => {
       const {

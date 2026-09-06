@@ -25,6 +25,14 @@ const MOCK_ERROR_MESSAGE = {
 }
 
 describe('#cogs/components/error-message', () => {
+  beforeAll(() => {
+    jest.useFakeTimers()
+  })
+
+  afterAll(() => {
+    jest.useRealTimers()
+  })
+
   describe('<ErrorMessage />', () => {
     describe('With required props', () => {
       it('renders', () => {
