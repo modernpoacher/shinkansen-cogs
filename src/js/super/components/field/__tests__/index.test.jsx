@@ -21,6 +21,14 @@ import {
 import Field from '#cogs/super/components/field'
 
 describe('#cogs/super/components/field', () => {
+  beforeAll(() => {
+    jest.useFakeTimers()
+  })
+
+  afterAll(() => {
+    jest.useRealTimers()
+  })
+
   const MOCK_FIELD_REF = { current: null }
   const MOCK_ON_CHANGE = jest.fn()
 

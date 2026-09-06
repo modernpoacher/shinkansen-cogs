@@ -34,6 +34,14 @@ const MOCK_ERROR_MESSAGE = {
 }
 
 describe('#cogs/cogs', () => {
+  beforeAll(() => {
+    jest.useFakeTimers()
+  })
+
+  afterAll(() => {
+    jest.useRealTimers()
+  })
+
   describe('<ValueCog />', () => {
     const MOCK_FIELD_REF = { current: null }
     const MOCK_ON_CHANGE = jest.fn()

@@ -21,6 +21,14 @@ import Description from '#cogs/cogs/checkbox/description'
 jest.mock('classnames', () => jest.fn().mockReturnValue('MOCK CLASSNAME'))
 
 describe('#cogs/cogs/checkbox/description', () => {
+  beforeAll(() => {
+    jest.useFakeTimers()
+  })
+
+  afterAll(() => {
+    jest.useRealTimers()
+  })
+
   describe('<Description />', () => {
     describe('With required props', () => {
       it('renders', () => {

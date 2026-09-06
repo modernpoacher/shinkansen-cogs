@@ -12,6 +12,14 @@ import {
 import TextContent from '#cogs/components/common/text-content'
 
 describe('#cogs/components/common/text-content', () => {
+  beforeAll(() => {
+    jest.useFakeTimers()
+  })
+
+  afterAll(() => {
+    jest.useRealTimers()
+  })
+
   describe('<TextContent />', () => {
     it('renders', () => {
       const {

@@ -17,6 +17,14 @@ import {
 import Title from '#cogs/components/title'
 
 describe('#cogs/components/title', () => {
+  beforeAll(() => {
+    jest.useFakeTimers()
+  })
+
+  afterAll(() => {
+    jest.useRealTimers()
+  })
+
   describe('<Title />', () => {
     describe('With required props', () => {
       it('renders', () => {

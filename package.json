@@ -75,6 +75,7 @@
     "@types/debug": "^4.1.13",
     "@types/jest": "^30.0.0",
     "@types/mocha": "^10.0.10",
+    "@types/node": "^26.4.1",
     "@types/prop-types": "^15.7.15",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.7",
@@ -174,5 +175,11 @@
     "./super/components/*": "./src/js/super/components/*/index.cjs",
     "./transformers": "./src/js/transformers/index.mjs",
     "./transformers/*": "./src/js/transformers/*/index.mjs"
+  },
+  "allowScripts": {
+    "@parcel/watcher@2.6.0": true,
+    "core-js@3.50.0": true,
+    "esbuild@0.28.2": true,
+    "unrs-resolver@1.12.2": true
   }
 }
