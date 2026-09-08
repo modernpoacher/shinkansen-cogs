@@ -50,6 +50,12 @@
     "transform": "cross-env DEBUG=shinkansen-cogs* .storybook/transform.sh",
     "type-check": "tsc --noEmit"
   },
+  "allowScripts": {
+    "@parcel/watcher@2.6.0": true,
+    "core-js@3.50.0": true,
+    "esbuild@0.28.2": true,
+    "unrs-resolver@1.12.2": true
+  },
   "dependencies": {
     "classnames": "^2.5.1",
     "debug": "^4.4.3",
@@ -76,12 +82,12 @@
     "@types/debug": "^4.1.13",
     "@types/jest": "^30.0.0",
     "@types/mocha": "^10.0.10",
-    "@types/node": "^26.4.1",
+    "@types/node": "^26.5.0",
     "@types/prop-types": "^15.7.15",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.7",
-    "@typescript-eslint/eslint-plugin": "^8.69.0",
-    "@typescript-eslint/parser": "^8.69.0",
+    "@typescript-eslint/eslint-plugin": "^8.70.0",
+    "@typescript-eslint/parser": "^8.70.0",
     "autoprefixer": "^10.5.5",
     "chai": "^6.2.2",
     "core-js": "^3.50.0",
@@ -176,11 +182,5 @@
     "./super/components/*": "./src/js/super/components/*/index.cjs",
     "./transformers": "./src/js/transformers/index.mjs",
     "./transformers/*": "./src/js/transformers/*/index.mjs"
-  },
-  "allowScripts": {
-    "@parcel/watcher@2.6.0": true,
-    "core-js@3.50.0": true,
-    "esbuild@0.28.2": true,
-    "unrs-resolver@1.12.2": true
   }
 }
