@@ -1,16 +1,17 @@
 <link rel="stylesheet" href="https://use.typekit.net/mog5fbr.css" />
 
 <style type="text/css">
+@charset "UTF-8";
 .heading-l,
 h1 {
+  color: #171819;
   font-family: proxima-nova-bold, sans-serif;
   font-weight: 700;
   font-style: normal;
-  color: #171819;
   font-size: 2rem;
   line-height: 2.5rem;
 }
-@media only screen and (width<=767px) {
+@media only screen and (max-width: 767px) {
   .heading-l,
   h1 {
     font-size: 1.5rem;
@@ -19,14 +20,14 @@ h1 {
 }
 .heading-m,
 h2 {
+  color: #171819;
   font-family: proxima-nova-bold, sans-serif;
   font-weight: 700;
   font-style: normal;
-  color: #171819;
   font-size: 1.625rem;
   line-height: 2.125rem;
 }
-@media only screen and (width<=767px) {
+@media only screen and (max-width: 767px) {
   .heading-m,
   h2 {
     font-size: 1.25rem;
@@ -35,14 +36,14 @@ h2 {
 }
 .heading-s,
 h3 {
+  color: #171819;
   font-family: proxima-nova-bold, sans-serif;
   font-weight: 700;
   font-style: normal;
-  color: #171819;
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
-@media only screen and (width<=767px) {
+@media only screen and (max-width: 767px) {
   .heading-s,
   h3 {
     font-size: 1rem;
@@ -50,42 +51,42 @@ h3 {
   }
 }
 .body-l {
+  color: #171819;
   font-family: proxima-nova-regular, sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: #171819;
   font-size: 1.5rem;
   line-height: 2rem;
 }
-@media only screen and (width<=767px) {
+@media only screen and (max-width: 767px) {
   .body-l {
     font-size: 1.125rem;
     line-height: 1.5rem;
   }
 }
 .body-m {
+  color: #171819;
   font-family: proxima-nova-regular, sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: #171819;
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
-@media only screen and (width<=767px) {
+@media only screen and (max-width: 767px) {
   .body-m {
     font-size: 1rem;
     line-height: 1.375rem;
   }
 }
 .body-s {
+  color: #171819;
   font-family: proxima-nova-regular, sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: #171819;
   font-size: 1rem;
   line-height: 1.375rem;
 }
-@media only screen and (width<=767px) {
+@media only screen and (max-width: 767px) {
   .body-s {
     font-size: 0.875rem;
     line-height: 1.25rem;
@@ -93,14 +94,14 @@ h3 {
 }
 .paragraph,
 p {
+  color: #171819;
   font-family: proxima-nova-regular, sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: #171819;
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
-@media only screen and (width<=767px) {
+@media only screen and (max-width: 767px) {
   .paragraph,
   p {
     font-size: 1rem;
@@ -110,17 +111,17 @@ p {
 .anchor,
 .skip-link,
 a {
+  color: #4d90fe;
   font-family: proxima-nova-regular, sans-serif;
   font-weight: 400;
   font-style: normal;
   text-decoration: underline;
-  color: #4d90fe;
 }
 .anchor:link,
 .skip-link:link,
 a:link {
-  text-decoration: underline;
   color: #4d90fe;
+  text-decoration: underline;
 }
 .anchor:hover,
 .skip-link:hover,
@@ -138,21 +139,21 @@ a:visited {
 .skip-link:focus,
 a:active,
 a:focus {
-  outline: 2px solid#0000;
-  background-color: #fd0;
   color: #171819;
+  background-color: #fd0;
+  outline: 2px solid transparent;
 }
 dl,
 ol,
 ul {
+  color: #171819;
   font-family: proxima-nova-regular, sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: #171819;
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
-@media only screen and (width<=767px) {
+@media only screen and (max-width: 767px) {
   dl,
   ol,
   ul {
@@ -161,14 +162,14 @@ ul {
   }
 }
 li {
+  color: #171819;
   font-family: proxima-nova-regular, sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: #171819;
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
-@media only screen and (width<=767px) {
+@media only screen and (max-width: 767px) {
   li {
     font-size: 1rem;
     line-height: 1.375rem;
@@ -197,44 +198,44 @@ li {
   margin: 0;
 }
 .skip-link {
-  font-size: 14px;
-  line-height: 16px;
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   white-space: nowrap;
-  display: block;
-  padding: 10px 15px;
   outline-offset: 0;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 10px 15px;
+  font-size: 14px;
+  line-height: 16px;
+  display: block;
+  position: absolute;
+  overflow: hidden;
 }
 .skip-link:active,
 .skip-link:focus {
-  position: static;
-  width: auto;
-  height: auto;
-  overflow: visible;
   clip: auto;
   clip-path: none;
+  width: auto;
+  height: auto;
   margin: 3px;
+  position: static;
+  overflow: visible;
 }
 .skip-link:active {
-  outline: 3px solid#fff;
-  background-color: #dcdcdc;
   color: #fff;
+  background-color: #dcdcdc;
+  outline: 3px solid #fff;
 }
 header {
-  flex-shrink: 0;
   background-color: #fff;
+  flex-shrink: 0;
   min-width: 320px;
   margin: 0 0 auto;
 }
 footer {
-  flex-shrink: 0;
   background-color: #fff;
+  flex-shrink: 0;
   min-width: 320px;
   margin: auto 0 0;
 }
@@ -243,40 +244,39 @@ html {
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  color: #171819;
+  background-color: #fff;
+  border: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
   font-family: proxima-nova-regular, sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: #171819;
-  margin: 0;
-  padding: 0;
-  border: none;
-  background-color: #fff;
-  width: 100%;
-  height: 100%;
   font-size: 16px;
   line-height: 22px;
   overflow: auto;
 }
 main {
-  display: block;
+  border: none;
   width: 100%;
   margin: 0;
   padding: 0;
-  border: none;
+  display: block;
 }
 #storybook-root {
   max-width: 1020px;
-  margin: 0 auto;
 }
 #storybook-root header h1 {
+  color: #171819;
   font-family: proxima-nova-bold, sans-serif;
   font-weight: 700;
   font-style: normal;
-  color: #171819;
   font-size: 3.5rem;
   line-height: 3.75rem;
 }
-@media only screen and (width<=767px) {
+@media only screen and (max-width: 767px) {
   #storybook-root header h1 {
     font-size: 2.5rem;
     line-height: 3rem;
@@ -285,34 +285,31 @@ main {
 #storybook-root button {
   outline-offset: 2px;
   font-family: proxima-nova-regular, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  color: #171819;
   font-size: 1rem;
   line-height: 1.375rem;
 }
-@media only screen and (width<=767px) {
+@media only screen and (max-width: 767px) {
   #storybook-root button {
     font-size: 0.875rem;
     line-height: 1.25rem;
   }
 }
 #storybook-root button {
-  font-family: proxima-nova-bold, sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  position: relative;
-  display: block;
   text-align: center;
   color: #fff;
   background-color: #24548a;
-  border: 2px solid#24548a;
+  border: 2px solid #24548a;
   border-radius: 4px;
   padding: 8px 16px;
+  font-family: proxima-nova-bold, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  display: block;
+  position: relative;
 }
 #storybook-root button[disabled] {
   background-color: #d8d8d8;
-  border: 2px solid#d8d8d8;
+  border: 2px solid #d8d8d8;
 }
 #storybook-root button span {
   display: block;
@@ -323,65 +320,63 @@ main {
 #storybook-root button:focus {
   color: #171819;
   background-color: #fd0;
-  border: 2px solid#fd0;
-  text-decoration: underline;
+  border: 2px solid #fd0;
   outline-color: #171819;
+  text-decoration: underline;
 }
 #storybook-root label {
+  color: #171819;
   font-family: proxima-nova-regular, sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: #171819;
   font-size: 1.25rem;
-  line-height: 1.75rem;
 }
-@media only screen and (width<=767px) {
+@media only screen and (max-width: 767px) {
   #storybook-root label {
     font-size: 1rem;
     line-height: 1.375rem;
   }
 }
 #storybook-root label {
-  display: block;
-  padding: 0;
   margin: 0 0 0.25rem;
+  padding: 0;
   line-height: 2rem;
+  display: block;
 }
 #storybook-root fieldset {
+  border: none;
   margin: 0;
   padding: 0;
-  border: none;
 }
 #storybook-root fieldset legend {
+  color: #171819;
   font-family: proxima-nova-bold, sans-serif;
   font-weight: 700;
   font-style: normal;
-  color: #171819;
   font-size: 1.625rem;
   line-height: 2.125rem;
 }
-@media only screen and (width<=767px) {
+@media only screen and (max-width: 767px) {
   #storybook-root fieldset legend {
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
 }
 #storybook-root fieldset legend {
-  padding: 0;
-  margin: 0 0 1em;
   border: none;
+  margin: 0 0 1em;
+  padding: 0;
 }
 #storybook-root input:not([type="checkbox"]):not([type="radio"]),
 #storybook-root select,
 #storybook-root textarea {
+  color: #171819;
   font-family: proxima-nova-regular, sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: #171819;
   font-size: 1.25rem;
-  line-height: 1.75rem;
 }
-@media only screen and (width<=767px) {
+@media only screen and (max-width: 767px) {
   #storybook-root input:not([type="checkbox"]):not([type="radio"]),
   #storybook-root select,
   #storybook-root textarea {
@@ -393,25 +388,25 @@ main {
 #storybook-root select,
 #storybook-root textarea {
   background-color: #fff;
-  border: 2px solid#000;
-  display: inline-block;
+  border: 2px solid #000;
   padding: 0.25rem;
   line-height: 2rem;
+  display: inline-block;
 }
 #storybook-root input:not([type="checkbox"]):not([type="radio"]):focus,
 #storybook-root select:focus,
 #storybook-root textarea:focus {
-  outline: 3px solid#fd0;
+  border-color: #000;
+  outline: 3px solid #fd0;
   outline-offset: 0;
   box-shadow: inset 0 0 0 2px;
-  border-color: #000;
 }
 #storybook-root {
   margin: 0 auto;
 }
 #storybook-root .cog {
-  padding: 0;
   margin: 1rem 0;
+  padding: 0;
 }
 #storybook-root .cog:first-child {
   margin-top: 0;
@@ -423,41 +418,41 @@ main {
   line-height: 1.375rem;
 }
 #storybook-root .cog.radio {
-  position: relative;
-  padding-left: 3rem;
-  margin-bottom: 0.5rem;
   min-height: 2rem;
+  margin-bottom: 0.5rem;
+  padding-left: 3rem;
+  position: relative;
 }
 #storybook-root .cog.radio:last-of-type {
   margin-bottom: 0;
 }
-@media only screen and (width<=767px) {
+@media only screen and (max-width: 767px) {
   #storybook-root .cog.radio label {
     padding-top: 0.375rem;
   }
 }
-@media only screen and (576px<=width<=767px) {
+@media only screen and (min-width: 576px) and (max-width: 767px) {
   #storybook-root .cog.radio label {
     padding-top: 0.375rem;
   }
 }
-@media only screen and (width<=319px) {
+@media only screen and (max-width: 319px) {
   #storybook-root .cog.radio label {
     padding-top: 0.375rem;
   }
 }
 #storybook-root .cog.radio label:before {
   box-sizing: border-box;
-  position: absolute;
-  left: 0;
-  height: 32px;
-  top: 0;
-  width: 32px;
-  overflow: hidden;
-  border: 2px solid;
-  border-radius: 50%;
   content: "​";
   background-color: #fff;
+  border: 2px solid;
+  border-radius: 50%;
+  height: 32px;
+  width: 32px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
 }
 #storybook-root .cog.radio input {
   position: absolute;
@@ -465,22 +460,27 @@ main {
   top: 0.5rem;
 }
 #storybook-root .cog.radio input:focus + label:before {
-  box-shadow: 0 0 0 2px#fd0;
+  box-shadow: 0 0 0 2px #fd0;
 }
 #storybook-root .cog.radio input:checked + label:after {
   box-sizing: border-box;
-  position: absolute;
-  inset: 0.5rem;
-  width: 1rem;
-  height: 1rem;
-  overflow: hidden;
-  border: 2px solid;
-  border-radius: 50%;
   content: "​";
   background-color: #000;
+  border: 2px solid;
+  border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  left: 0.5rem;
+  right: 0.5rem;
+  overflow: hidden;
 }
 #storybook-root .cog.radio.disabled input + label:after,
-#storybook-root .cog.radio.disabled input + label:before,
+#storybook-root .cog.radio.disabled input + label:before {
+  border-color: #737d82;
+}
 #storybook-root .cog.radio.disabled input:checked + label:after,
 #storybook-root .cog.radio.disabled input:checked + label:before {
   border-color: #737d82;
@@ -489,40 +489,40 @@ main {
   background-color: #737d82;
 }
 #storybook-root .cog.checkbox {
-  position: relative;
-  padding-left: 3rem;
-  margin-bottom: 0.5rem;
   min-height: 2rem;
+  margin-bottom: 0.5rem;
+  padding-left: 3rem;
+  position: relative;
 }
 #storybook-root .cog.checkbox:last-of-type {
   margin-bottom: 0;
 }
-@media only screen and (width<=767px) {
+@media only screen and (max-width: 767px) {
   #storybook-root .cog.checkbox label {
     padding-top: 0.375rem;
   }
 }
-@media only screen and (576px<=width<=767px) {
+@media only screen and (min-width: 576px) and (max-width: 767px) {
   #storybook-root .cog.checkbox label {
     padding-top: 0.375rem;
   }
 }
-@media only screen and (width<=319px) {
+@media only screen and (max-width: 319px) {
   #storybook-root .cog.checkbox label {
     padding-top: 0.375rem;
   }
 }
 #storybook-root .cog.checkbox label:before {
   box-sizing: border-box;
-  position: absolute;
-  left: 0;
-  height: 2rem;
-  top: 0;
-  width: 2rem;
-  overflow: hidden;
-  border: 2px solid;
   content: "​";
   background-color: #fff;
+  border: 2px solid;
+  height: 2rem;
+  width: 2rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
 }
 #storybook-root .cog.checkbox input {
   position: absolute;
@@ -530,21 +530,21 @@ main {
   top: 0.5rem;
 }
 #storybook-root .cog.checkbox input:focus + label:before {
-  box-shadow: 0 0 0 2px#fd0;
+  box-shadow: 0 0 0 2px #fd0;
 }
 #storybook-root .cog.checkbox input:checked + label:after {
   box-sizing: border-box;
+  content: "​";
+  background-color: #fff;
+  border-bottom: 4px solid;
+  border-left: 4px solid;
+  width: 1.375rem;
+  height: 0.625rem;
   position: absolute;
   top: 0.625rem;
   bottom: 0.625rem;
   left: 0.3125rem;
-  width: 1.375rem;
-  height: 0.625rem;
   overflow: hidden;
-  border-bottom: 4px solid;
-  border-left: 4px solid;
-  content: "​";
-  background-color: #fff;
   transform: rotate(-45deg);
 }
 #storybook-root .cog.checkbox.disabled input:checked + label:before {
@@ -560,17 +560,17 @@ main {
 #storybook-root .cog.disabled input:not([type="checkbox"]):not([type="radio"]),
 #storybook-root .cog.disabled select,
 #storybook-root .cog.disabled textarea {
-  border-color: #737d82;
   color: #737d82;
+  border-color: #737d82;
 }
 #storybook-root .cog.error {
-  border-left: 0.25rem solid#a00;
+  border-left: 0.25rem solid #a00;
   padding: 0 1rem;
 }
 #storybook-root .cog.error input:not([type="checkbox"]):not([type="radio"]),
 #storybook-root .cog.error select,
 #storybook-root .cog.error textarea {
-  border: 2px solid#a00;
+  border: 2px solid #a00;
 }
 #storybook-root
   .cog.error
@@ -589,8 +589,8 @@ main {
 }
 #storybook-root .cog.error.checkbox label:before,
 #storybook-root .cog.error.radi label:before {
+  border: 2px solid #a00;
   left: 1rem;
-  border: 2px solid#a00;
 }
 #storybook-root .cog.error.radio input:checked + label:after {
   left: 1.5rem;
@@ -602,11 +602,10 @@ main {
   font-family: proxima-nova-regular, sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: #171819;
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
-@media only screen and (width<=767px) {
+@media only screen and (max-width: 767px) {
   #storybook-root .cog .description {
     font-size: 1rem;
     line-height: 1.375rem;
@@ -614,19 +613,18 @@ main {
 }
 #storybook-root .cog .description {
   color: #626a6e;
-  display: block;
-  padding: 0;
   margin: 0 0 0.25rem;
+  padding: 0;
+  display: block;
 }
 #storybook-root .cog .error-message {
   font-family: proxima-nova-regular, sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: #171819;
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
-@media only screen and (width<=767px) {
+@media only screen and (max-width: 767px) {
   #storybook-root .cog .error-message {
     font-size: 1rem;
     line-height: 1.375rem;
@@ -634,8 +632,8 @@ main {
 }
 #storybook-root .cog .error-message {
   color: #a00;
-  display: block;
-  padding: 0;
   margin: 0 0 0.25rem;
+  padding: 0;
+  display: block;
 }
 </style>
