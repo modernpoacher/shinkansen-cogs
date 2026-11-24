@@ -1,6 +1,6 @@
 # Proposal: Mustache exports alongside React components
 
-Status: proposed
+Status: implemented
 
 ## Objective
 
