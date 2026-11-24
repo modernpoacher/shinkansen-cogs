@@ -1,0 +1,3 @@
+{%- from "./macros.njk" import description as render -%}
+{%- macro description(props={}) -%}{{ render(props) }}{%- endmacro -%}
+{{- description(props) -}}

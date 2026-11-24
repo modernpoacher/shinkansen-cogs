@@ -1,6 +1,6 @@
 # Proposal: Nunjucks exports alongside React components
 
-Status: proposed
+Status: implemented
 
 ## Objective
 

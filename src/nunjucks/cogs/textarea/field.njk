@@ -1,0 +1,5 @@
+{%- from "../../components/macros.njk" import field -%}
+{%- macro textareaField(props={}) -%}
+  {{- field(props, "textarea") -}}
+{%- endmacro -%}
+{{- textareaField(props) -}}

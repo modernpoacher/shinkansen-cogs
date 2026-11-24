@@ -1,0 +1,3 @@
+{%- from "./macros.njk" import title as render -%}
+{%- macro title(props={}) -%}{{ render(props) }}{%- endmacro -%}
+{{- title(props) -}}

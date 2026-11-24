@@ -1,0 +1,5 @@
+{%- from "../../components/macros.njk" import cog -%}
+{%- macro numberCog(props={}) -%}
+  {{- cog(props, "number") -}}
+{%- endmacro -%}
+{{- numberCog(props) -}}

@@ -1,0 +1,5 @@
+{%- from "../../components/macros.njk" import description -%}
+{%- macro numberDescription(props={}) -%}
+  {{- description(props, "number") -}}
+{%- endmacro -%}
+{{- numberDescription(props) -}}

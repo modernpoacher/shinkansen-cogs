@@ -1,0 +1,5 @@
+{%- from "../../components/macros.njk" import field -%}
+{%- macro passwordField(props={}) -%}
+  {{- field(props, "password") -}}
+{%- endmacro -%}
+{{- passwordField(props) -}}

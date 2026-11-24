@@ -1,0 +1,5 @@
+{%- from "../../components/macros.njk" import errorMessage -%}
+{%- macro selectErrorMessage(props={}) -%}
+  {{- errorMessage(props, "select") -}}
+{%- endmacro -%}
+{{- selectErrorMessage(props) -}}

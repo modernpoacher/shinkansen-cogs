@@ -1,0 +1,5 @@
+{%- from "../../components/macros.njk" import description -%}
+{%- macro checkboxDescription(props={}) -%}
+  {{- description(props, "checkbox") -}}
+{%- endmacro -%}
+{{- checkboxDescription(props) -}}

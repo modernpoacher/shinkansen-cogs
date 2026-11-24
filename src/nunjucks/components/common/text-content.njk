@@ -1,0 +1,3 @@
+{%- from "../macros.njk" import textContent as render -%}
+{%- macro textContent(props={}) -%}{{ render(props.textContent) }}{%- endmacro -%}
+{{- textContent(props) -}}

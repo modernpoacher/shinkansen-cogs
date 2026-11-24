@@ -1,0 +1,5 @@
+{%- from "../../components/macros.njk" import field -%}
+{%- macro checkboxField(props={}) -%}
+  {{- field(props, "checkbox") -}}
+{%- endmacro -%}
+{{- checkboxField(props) -}}

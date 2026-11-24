@@ -1,0 +1,5 @@
+{%- from "../../components/macros.njk" import cog -%}
+{%- macro emailCog(props={}) -%}
+  {{- cog(props, "email") -}}
+{%- endmacro -%}
+{{- emailCog(props) -}}

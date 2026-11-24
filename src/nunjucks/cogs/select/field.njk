@@ -1,0 +1,5 @@
+{%- from "../../components/macros.njk" import field -%}
+{%- macro selectField(props={}) -%}
+  {{- field(props, "select") -}}
+{%- endmacro -%}
+{{- selectField(props) -}}

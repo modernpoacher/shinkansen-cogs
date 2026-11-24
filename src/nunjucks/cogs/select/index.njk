@@ -1,0 +1,5 @@
+{%- from "../../components/macros.njk" import cog -%}
+{%- macro selectCog(props={}) -%}
+  {{- cog(props, "select") -}}
+{%- endmacro -%}
+{{- selectCog(props) -}}
