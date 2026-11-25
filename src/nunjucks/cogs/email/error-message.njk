@@ -1,0 +1,5 @@
+{%- from "../../components/macros.njk" import errorMessage -%}
+{%- macro emailErrorMessage(props={}) -%}
+  {{- errorMessage(props, "email") -}}
+{%- endmacro -%}
+{{- emailErrorMessage(props) -}}

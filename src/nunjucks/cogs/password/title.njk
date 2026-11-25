@@ -1,0 +1,5 @@
+{%- from "../../components/macros.njk" import title -%}
+{%- macro passwordTitle(props={}) -%}
+  {{- title(props, "password") -}}
+{%- endmacro -%}
+{{- passwordTitle(props) -}}

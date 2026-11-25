@@ -1,0 +1,3 @@
+{%- from "./macros.njk" import field as render -%}
+{%- macro field(props={}) -%}{{ render(props) }}{%- endmacro -%}
+{{- field(props) -}}

@@ -1,0 +1,5 @@
+{%- from "../../components/macros.njk" import cog -%}
+{%- macro textCog(props={}) -%}
+  {{- cog(props, "text") -}}
+{%- endmacro -%}
+{{- textCog(props) -}}

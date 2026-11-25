@@ -1,0 +1,5 @@
+{%- from "../../components/macros.njk" import description -%}
+{%- macro radioDescription(props={}) -%}
+  {{- description(props, "radio") -}}
+{%- endmacro -%}
+{{- radioDescription(props) -}}

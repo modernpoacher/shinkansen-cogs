@@ -1,0 +1,5 @@
+{%- from "../../components/macros.njk" import description -%}
+{%- macro textareaDescription(props={}) -%}
+  {{- description(props, "textarea") -}}
+{%- endmacro -%}
+{{- textareaDescription(props) -}}

@@ -1,0 +1,3 @@
+{%- from "../macros.njk" import readonly as render -%}
+{%- macro readonly() -%}{{ render() }}{%- endmacro -%}
+{{- readonly() -}}

@@ -1,0 +1,5 @@
+{%- from "../../components/macros.njk" import field -%}
+{%- macro emailField(props={}) -%}
+  {{- field(props, "email") -}}
+{%- endmacro -%}
+{{- emailField(props) -}}

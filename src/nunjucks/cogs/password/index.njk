@@ -1,0 +1,5 @@
+{%- from "../../components/macros.njk" import cog -%}
+{%- macro passwordCog(props={}) -%}
+  {{- cog(props, "password") -}}
+{%- endmacro -%}
+{{- passwordCog(props) -}}

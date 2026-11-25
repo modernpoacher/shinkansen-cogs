@@ -1,0 +1,5 @@
+{%- from "../../components/macros.njk" import errorMessage -%}
+{%- macro textareaErrorMessage(props={}) -%}
+  {{- errorMessage(props, "textarea") -}}
+{%- endmacro -%}
+{{- textareaErrorMessage(props) -}}

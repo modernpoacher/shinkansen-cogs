@@ -1,0 +1,5 @@
+{%- from "../../components/macros.njk" import errorMessage -%}
+{%- macro radioErrorMessage(props={}) -%}
+  {{- errorMessage(props, "radio") -}}
+{%- endmacro -%}
+{{- radioErrorMessage(props) -}}

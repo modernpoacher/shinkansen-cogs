@@ -1,0 +1,3 @@
+{%- from "../macros.njk" import disabled as render -%}
+{%- macro disabled() -%}{{ render() }}{%- endmacro -%}
+{{- disabled() -}}

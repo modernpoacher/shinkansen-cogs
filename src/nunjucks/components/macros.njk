@@ -1,0 +1,83 @@
+{# Shared static rendering. Keep all data escaped; only macros return safe markup. #}
+{% macro textContent(text) -%}
+  {%- if text %}<span class="text-content">{{ text }}</span>{% endif -%}
+{%- endmacro %}
+
+{% macro required() -%}<span class="is-required">*</span>{%- endmacro %}
+{% macro disabled() -%}<span class="is-disabled">*</span>{%- endmacro %}
+{% macro readonly() -%}<span class="is-readonly">*</span>{%- endmacro %}
+
+{% macro title(props, kind="", id=props.id) -%}
+  {%- if id and props.title -%}
+    <label for="{{ id }}" class="title{% if kind %} {{ kind }}{% endif %}">{{ textContent(props.title) }}{% if props.required %}{{ required() }}{% endif %}{% if props.disabled %}{{ disabled() }}{% endif %}{% if props.readOnly %}{{ readonly() }}{% endif %}</label>
+  {%- endif -%}
+{%- endmacro %}
+
+{% macro description(props, kind="") -%}
+  {%- if props.description -%}
+    <span class="description{% if kind %} {{ kind }}{% endif %}">{{ textContent(props.description) }}</span>
+  {%- endif -%}
+{%- endmacro %}
+
+{% macro errorMessage(props, kind="") -%}
+  {%- if props.errorMessage -%}
+    <span class="error-message{% if kind %} {{ kind }}{% endif %}">{{ textContent(props.errorMessage | cogsErrorText) }}</span>
+  {%- endif -%}
+{%- endmacro %}
+
+{% macro attribute(name, value) -%}
+  {%- if value is defined and value is not null and value is not sameas(true) and value is not sameas(false) -%}
+    {{ ' ' }}{{ name }}="{{ value }}"
+  {%- endif -%}
+{%- endmacro %}
+
+{% macro attributes(props, kind, id) -%}
+  {{- attribute("name", props.name) -}}
+  {{- attribute("id", id) -}}
+  {%- if props.required %} required=""{% endif -%}
+  {%- if props.disabled %} disabled=""{% endif -%}
+  {%- if props.readOnly %} readonly=""{% endif -%}
+  {{- attribute("tabindex", props.tabIndex) -}}
+  {{- attribute("accesskey", props.accessKey) -}}
+  {%- if kind != "checkbox" and kind != "radio" and kind != "select" -%}
+    {{- attribute("placeholder", props.placeholder) -}}
+  {%- endif -%}
+  {{ ' ' }}class="input{% if kind %} {{ kind }}{% endif %}"
+{%- endmacro %}
+
+{% macro options(items, selected) -%}
+  {%- for option in items -%}
+    {%- if option.options is defined -%}
+      <optgroup{{ attribute("label", option.label) }}{% if option.disabled %} disabled=""{% endif %}>{{ options(option.options, selected) }}</optgroup>
+    {%- else -%}
+      {%- set value = option.value if option.value is defined and option.value is not null else option.text -%}
+      <option{{ attribute("value", option.value) }}{{ attribute("label", option.label) }}{% if option.disabled %} disabled=""{% endif %}{% if (value | cogsString) in selected %} selected=""{% endif %}>{{ option.text }}</option>
+    {%- endif -%}
+  {%- endfor -%}
+{%- endmacro %}
+
+{% macro field(props, kind="", id=props.id) -%}
+  {%- set check = kind == "checkbox" or kind == "radio" -%}
+  {%- set value = props.value | cogsInputValue -%}
+  {%- if kind and not check and props.defaultValue is defined -%}
+    {%- set value = props.defaultValue | cogsString -%}
+  {%- endif -%}
+  {%- if kind == "textarea" -%}
+    <textarea{{ attributes(props, kind, id) }}>{% if value[0] == "\n" %}{{ "\n" }}{% endif %}{{ value }}</textarea>
+  {%- elif kind == "select" -%}
+    <select{{ attributes(props, kind, id) }}{% if props.multiple %} multiple=""{% endif %}>{{ options(props.options, props.value | cogsSelectedValues(props.defaultValue, props.multiple)) }}</select>
+  {%- else -%}
+    <input{{ attributes(props, kind, id) }}{% if kind %} type="{{ kind }}"{% endif %}{% if kind or props.value is defined and props.value is not null %} value="{{ value }}"{% endif %}{% if check %}{% if props.checked is sameas(true) or props.checked is not sameas(false) and props.defaultChecked %} checked=""{% endif %}{% endif %}>
+  {%- endif -%}
+{%- endmacro %}
+
+{% macro cog(props, kind) -%}
+  {%- set id = props.id or props.name -%}
+  <div class="cog{% if props.required %} required{% endif %}{% if props.disabled %} disabled{% endif %}{% if props.readOnly %} readOnly{% endif %}{% if props.errorMessage %} error{% endif %} {{ kind }}">
+    {%- if kind == "checkbox" or kind == "radio" %}{{ field(props, kind, id) }}{% endif -%}
+    {{- title(props, kind, id) -}}
+    {{- description(props, kind) -}}
+    {{- errorMessage(props, kind) -}}
+    {%- if kind != "checkbox" and kind != "radio" %}{{ field(props, kind, id) }}{% endif -%}
+  </div>
+{%- endmacro -%}
