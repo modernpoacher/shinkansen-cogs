@@ -8,6 +8,8 @@ _Cogs_ are React components for input fields.
 
 _Cogs_ are the smallest components of _Engine_, for React form layouts.
 
+Reusable [Handlebars companions](docs/HANDLEBARS.md#using-the-templates) render all eight cogs and their subcomponents as static HTML without React at runtime.
+
 Reusable [Mustache companions](docs/MUSTACHE.md#using-the-templates) render all eight cogs and their subcomponents as static HTML without React at runtime.
 
 ## See also

@@ -1,6 +1,6 @@
 # Proposal: Handlebars exports alongside React components
 
-Status: proposed
+Status: implemented
 
 ## Objective
 
